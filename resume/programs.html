@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="ChatGPT landing renderer">
+  <meta name="source-file" content="LANDING_SOURCE_PROGRAMS.md">
+  <meta name="source-sha256" content="1cdede1ef6ec0456b9c70c9a976c3cff8c514f071c3340a7685e168d48977a94">
+  <meta name="source-visible-text-sha256" content="68678379c4003a5f4cb4254bc9f92226b086793d3d07bc748c57bf10c3793230">
+  <meta name="handoff-file" content="LANDING_HANDOFF.md">
+  <meta name="handoff-sha256" content="52c9644617bbf7b867575c6d60d7793c13d2e5223ae66f063e8152e5b5a6358c">
+  <title>Программы</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --ink: #182230;
+      --muted: #5c6b7a;
+      --line: #d9e2ec;
+      --accent: #2563eb;
+      --accent-2: #7c3aed;
+      --accent-soft: #eaf1ff;
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --shadow: 0 22px 70px rgba(24, 34, 48, 0.10);
+      --shadow-soft: 0 14px 36px rgba(24, 34, 48, 0.08);
+      --max: 1160px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.14), transparent 34rem),
+        radial-gradient(circle at 85% 12%, rgba(124, 58, 237, 0.12), transparent 28rem),
+        linear-gradient(180deg, #fbfcff 0%, var(--bg) 100%);
+      color: var(--ink);
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.72;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+      padding: 40px 0 64px;
+    }
+
+    .program-section {
+      position: relative;
+      overflow: hidden;
+      margin: 22px 0;
+      padding: clamp(24px, 4vw, 48px);
+      border: 1px solid rgba(217, 226, 236, 0.90);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.98), rgba(255,255,255,0.86)),
+        var(--panel);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .program-section:first-child {
+      margin-top: 0;
+      padding-top: clamp(34px, 6vw, 72px);
+      padding-bottom: clamp(34px, 6vw, 72px);
+      border-color: rgba(37, 99, 235, 0.18);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(37, 99, 235, 0.18), transparent 22rem),
+        radial-gradient(circle at 0% 100%, rgba(124, 58, 237, 0.12), transparent 24rem),
+        linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .program-section::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      content: "";
+    }
+
+    .program-section::after {
+      position: absolute;
+      right: -72px;
+      bottom: -86px;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.10), rgba(37, 99, 235, 0.00) 70%);
+      content: "";
+      pointer-events: none;
+    }
+
+    h2 {
+      position: relative;
+      z-index: 1;
+      max-width: 920px;
+      margin: 0 0 22px;
+      color: #111827;
+      font-size: clamp(28px, 4.2vw, 48px);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    .program-section:not(:first-child) h2 {
+      font-size: clamp(24px, 3vw, 34px);
+      letter-spacing: -0.03em;
+    }
+
+    p {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .program-section:first-child p:first-of-type {
+      max-width: 960px;
+      color: #344054;
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.62;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 12px;
+      max-width: 900px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      padding: 14px 18px 14px 46px;
+      border: 1px solid rgba(217, 226, 236, 0.9);
+      border-radius: var(--radius-md);
+      background: rgba(234, 241, 255, 0.62);
+      color: #344054;
+    }
+
+    li::before {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      content: "";
+    }
+
+    .program-section:nth-child(2n) {
+      margin-left: clamp(0px, 3vw, 48px);
+    }
+
+    .program-section:nth-child(2n + 3) {
+      margin-right: clamp(0px, 3vw, 48px);
+    }
+
+    @media (max-width: 720px) {
+      body {
+        font-size: 16px;
+        line-height: 1.64;
+      }
+
+      .page {
+        width: min(100% - 20px, var(--max));
+        padding: 18px 0 36px;
+      }
+
+      .program-section,
+      .program-section:nth-child(2n),
+      .program-section:nth-child(2n + 3) {
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 22px;
+      }
+
+      h2 {
+        margin-bottom: 18px;
+      }
+
+      li {
+        padding-left: 38px;
+      }
+
+      li::before {
+        left: 16px;
+      }
+    }
+
+    @media print {
+      :root {
+        --bg: #ffffff;
+        --shadow: none;
+        --shadow-soft: none;
+      }
+
+      body {
+        background: #ffffff;
+        color: #111827;
+        font-size: 11pt;
+        line-height: 1.48;
+      }
+
+      .page {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+      }
+
+      .program-section,
+      .program-section:first-child {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin: 0 0 10mm;
+        padding: 10mm;
+        border: 1px solid #d9e2ec;
+        border-radius: 0;
+        background: #ffffff;
+        box-shadow: none;
+      }
+
+      .program-section::after {
+        display: none;
+      }
+
+      h2 {
+        font-size: 18pt;
+        line-height: 1.16;
+      }
+
+      .program-section:not(:first-child) h2 {
+        font-size: 16pt;
+      }
+
+      p,
+      li {
+        color: #222222;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+<section class="program-section" id="section-01" data-section-index="1">
+<h2 data-source-id="SRC-0001" data-source-sha256="628717e096b2c0307365be64c4eb55e5f2dc062e0ceaea40a3e5c04a535df084">1. «Искусственный интеллект и нейросети: практическое применение»</h2>
+<p data-source-id="SRC-0002" data-source-sha256="2ca103270d46b0100aa9fffbf8bba058c01d1b7de8b743ba6dd270dcd599e705">Это базовая программа для широкого круга школьников, примерно с 7 класса и старше. Её задача — не научить детей «тыкать кнопки в ChatGPT», а дать им современную цифровую грамотность: что такое генеративный ИИ, что он умеет и чего не умеет, как правильно формулировать задачу, как проверять ответ, как искать ошибки, как использовать ИИ для учёбы, исследований, творчества и подготовки проектов.</p>
+<p data-source-id="SRC-0003" data-source-sha256="3de674dea00cd2c7674ea98f2bbba63ae67334e31ac30031792ffa65d24d63df">Содержание я бы строил по нарастающей: сначала основы — чем ИИ отличается от обычной программы, что такое языковая модель, почему она может ошибаться; потом постановка задач и работа с промптами; затем практические сценарии — поиск и структурирование информации, подготовка конспектов, сравнение источников, создание презентаций, работа с изображениями, аудио и видео; отдельный блок — безопасность, персональные данные, авторство, фейки и проверка информации. В финале — индивидуальный или групповой проект, где ученик показывает не «какой сервис он знает», а какую задачу научился решать с ИИ.</p>
+<p data-source-id="SRC-0004" data-source-sha256="052cee101482bdb5afff7730379d79b1de56b18461cb012be32d095fada384d0">Эта программа может быть 2–3 часа в неделю и легко разделяться по возрасту. Для 7–8 классов — больше практики и творчества, для 9–11 — больше анализа, исследований и проектной работы.</p>
+</section>
+
+<section class="program-section" id="section-02" data-section-index="2">
+<h2 data-source-id="SRC-0005" data-source-sha256="2cb7df0e243c7b18331d6269a37eddd5a0a9f196d28be1ae7e64eed70055badb">2. «Проектирование AI-ассистентов»</h2>
+<p data-source-id="SRC-0006" data-source-sha256="32d4e397e22c7d37b8f2091c950dc8fd65d9d611b02e6a9da709daa9ecb2e341">Это уже более сильная и специализированная программа, я бы давал её примерно с 8–9 класса. Здесь основной предмет — проектирование логики интеллектуального помощника.</p>
+<p data-source-id="SRC-0007" data-source-sha256="3454c628a32a36bd44c2324a8800cd6f2e42c6f4de46d637a1914e1f7e6ef741">Ученик сначала выбирает реальную задачу: например, помощник по подготовке к предмету, помощник для школьного проекта, профориентационный консультант, помощник по подготовке мероприятий, исследовательский ассистент. Затем учится описывать пользователя, задачу, ограничения, входные данные, роль ассистента, правила работы, формат ответа и критерии качества. После этого создаёт инструкцию для ассистента, тестирует его на разных сценариях, ищет ошибки и улучшает.</p>
+<p data-source-id="SRC-0008" data-source-sha256="7bd9d42451bfbf5d044e020bd037a83191ce929dd426ee60385fde620143a7eb">По сути, дети проходят очень понятный цикл: задача → требования → логика → прототип → тестирование → улучшение → защита проекта. Это даёт им одновременно навыки работы с ИИ, системное мышление, умение формулировать требования и оценивать качество результата.</p>
+<p data-source-id="SRC-0009" data-source-sha256="dddb6e1baf3b10a40e9df08f1130e25327b7e2fcdbd7d83705787b0470a642d0">Финальный продукт здесь должен быть осязаемым: каждый ученик или команда защищает своего AI-ассистента и показывает, какую проблему он решает, где ошибается и как контролируется его работа.</p>
+</section>
+
+<section class="program-section" id="section-03" data-section-index="3">
+<h2 data-source-id="SRC-0010" data-source-sha256="f8cc5782daffda0c797bcaaf6535b4f6e1101c48f8bddd7ad65fcd42c645b014">3. «Цифровой контент и нейросети»</h2>
+<p data-source-id="SRC-0011" data-source-sha256="d7a030a736be292b5c39fd8520b958f15795d52e1bbda80681352b68dd98f751">Это более творческая программа, потенциально хорошо зайдёт детям, которым неинтересна «информатика» в классическом виде. Цель — научить собирать полноценный цифровой продукт, используя современные AI-инструменты.</p>
+<p data-source-id="SRC-0012" data-source-sha256="a153ad597e9f0691775843483797a8f39d4f78eb183dd60a3011485727e7a6f6">Можно проходить цикл: идея → сценарий → текст → визуальная концепция → изображения → озвучка → видео → презентация → публикация/защита. Темы проектов могут быть школьными: ролик о школе, медиапроект о Североуральске|Калье, цифровая выставка, социальная реклама, история семьи, локальный туристический проект, презентация научной работы.</p>
+<p data-source-id="SRC-0013" data-source-sha256="8cdc52c334b566afb8012c280f4549f3473827a20e0cb5ec945e4f94e939d489">Здесь важно не превращать курс в «генерируем картинки». Надо учить именно производственному процессу: поставить задачу, выбрать формат, собрать материалы, сделать несколько версий, проверить качество, отредактировать и довести до результата.</p>
+<p data-source-id="SRC-0014" data-source-sha256="809c8260cb61b6215a408d9e51ecc56f459cbc6bb2174e5d58ce9b8d229dfada">Можно давать 2 часа в неделю для 6–9 классов и более сложную версию для старших.</p>
+</section>
+
+<section class="program-section" id="section-04" data-section-index="4">
+<h2 data-source-id="SRC-0015" data-source-sha256="ccc3703afa1ea0821ea1838bcefd96c95a96b6cf5adbaa9a87f0524f008cc038">4. «Цифровая проектная лаборатория»</h2>
+<p data-source-id="SRC-0016" data-source-sha256="3ea8fb28b1d2e9e62670974c1e3c8b9b0b87a85a3cb4ca2c01d83e0fef49741b">Это, на мой взгляд, потенциально самая сильная программа для «Точки роста». Она не привязана к одному инструменту и может стать постоянным проектным центром школы.</p>
+<p data-source-id="SRC-0017" data-source-sha256="a90d42652e7f7d76080114183ef7e2c49872988c1f4ab3b9fc7870d09d1bc243">Дети работают командами над реальными задачами. Например: придумать цифровой сервис для школы, исследовать проблему города, сделать проект по экологии, создать цифровой маршрут по Североуральску, разработать информационный продукт для младших классов, придумать школьный медиаформат, создать прототип образовательного помощника.</p>
+<p data-source-id="SRC-0018" data-source-sha256="5d09fd14e0688a7fe406a6be334642be8f3f3d07e159ccb07a671273d34a645b">Структура постоянная: выбрать проблему, исследовать контекст, собрать данные, сформулировать задачу, распределить роли, придумать решение, сделать прототип, протестировать, получить обратную связь, доработать и защитить.</p>
+<p data-source-id="SRC-0019" data-source-sha256="09dd9c3934caf44abf83e946b081ebd8559f3dba451d8c06d592b434f0597c79">ИИ здесь используется как один из инструментов: анализ, генерация идей, тексты, визуализация, подготовка презентаций, структурирование информации. Если появляются 3D-печать, электроника или другое оборудование «Точки роста», они тоже встраиваются в проект.</p>
+<p data-source-id="SRC-0020" data-source-sha256="432483788c86622e9c84042d827b042acbb92fb699bdb0b5ef31050991b1b491">Главный плюс — это не «курс на один год», а среда, которую можно развивать ежегодно.</p>
+</section>
+
+<section class="program-section" id="section-05" data-section-index="5">
+<h2 data-source-id="SRC-0021" data-source-sha256="7036ced0f3d5f6b4e7d331b793740de72f0df9b89acb60f921357a9aef23ad59">5. «3D-моделирование и 3D-печать»</h2>
+<p data-source-id="SRC-0022" data-source-sha256="950ec3b23ce2509a3ba8019e71f607fe82e3490e7b0b866eb4f1413d1ef4f6c5">Тема хорошая и очень логично ложится в инфраструктуру школы.</p>
+<p data-source-id="SRC-0023" data-source-sha256="83f46e2468acecd73d20a21c4615656671d9d4a793bf6908f8122eeae2172b76">Начинать можно с простого: что такое 3D-модель, как объект переводится в цифровую форму, базовые принципы моделирования, подготовка модели к печати, что такое слайсер, материалы, настройки печати, типовые ошибки. Затем — простые изделия: брелок, табличка, держатель, деталь для школьного проекта. Потом можно переходить к более сложным проектам.</p>
+<p data-source-id="SRC-0024" data-source-sha256="e1fb2995ddce0125ef3a8bd989f281192e66c3fa9e125a304db2929ce464ae80">Особенно интересно связать это с проектной лабораторией: ребёнок не просто печатает случайную фигурку, а создаёт физический прототип для конкретной задачи.</p>
+<p data-source-id="SRC-0025" data-source-sha256="3b8b40a4f97dc1d99358ce1dad3246c02a29d7260bdcf66473ec66ce490f3c2c">Но ... только после того, как станет понятно, какие именно у школы принтеры, какое ПО используется и т.д.</p>
+</section>
+
+<section class="program-section" id="section-06" data-section-index="6">
+<h2 data-source-id="SRC-0026" data-source-sha256="72220138cfd70b3794924dfb2e84b797a6bd704d73fef2afe2ec824fbdea8e8b">Как собрать из этого 36 часов</h2>
+<p data-source-id="SRC-0027" data-source-sha256="a62799493dc88c99b8e6ca382c6b4110b8189e6b15a127e5c8b9af761c7a8d38">3–4 сильных курса мможно запустить параллельно для нескольких групп.</p>
+<p data-source-id="SRC-0028" data-source-sha256="4dba2918244e048b4acd418b3db02c82e802722fb4600ad86fca488d244c3660">Например:</p>
+<ul><li data-source-id="SRC-0029" data-source-sha256="0ad7d1dc913b1c7df1b2208d27adad2cb42b61a2d12db46adfc857aa1a9f461f">ИИ и нейросети — 3 группы × 3 часа = 9 часов;</li>
+<li data-source-id="SRC-0030" data-source-sha256="61e08c060d697b9085ca8e3030d176310e7eecf88e813f7724330245edcc4085">AI-ассистенты — 2 группы × 3 часа = 6 часов;</li>
+<li data-source-id="SRC-0031" data-source-sha256="3c6a9a8d481fdefe3dd09d3021c72b23b6187801e6593216146b9df9833b4667">цифровой контент — 3 группы × 2 часа = 6 часов;</li>
+<li data-source-id="SRC-0032" data-source-sha256="061fb7bd60887f804336c4314dd6f595602e4015e40c937a9eea5da96085c379">проектная лаборатория — 3 группы × 3 часа = 9 часов;</li>
+<li data-source-id="SRC-0033" data-source-sha256="7015af665a94abcf26401b3d7aba789e5697317217438dc9d974dabd304ef8cb">3D/технический модуль — 2 группы × 3 часа = 6 часов либо интегрировать 3D-моделирование и 3D-печать в «Цифровую проектную лабораторию» как один из инструментов для создания физических прототипов.</li></ul>
+<p data-source-id="SRC-0034" data-source-sha256="c3a7c650141bddd9792f86f217ec9da76bb74fc259b7f80e86850cf88a0749c1">Итого — 36 часов.</p>
+<p data-source-id="SRC-0035" data-source-sha256="106b05727141f50dc9880b8b2c09d4e5640206af637be3f59ea258e2dd2a08d9">Если смотреть по приоритету, я бы ставил так: №1 — ИИ и нейросети; №2 — проектная лаборатория; №3 — AI-ассистенты; №4 — цифровой контент; №5 — 3D-печать как дополнительное направление после знакомства с оборудованием.</p>
+</section>
+  </main>
+</body>
+</html>
