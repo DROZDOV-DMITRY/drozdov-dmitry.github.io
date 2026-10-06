@@ -10,6 +10,9 @@
 <link rel="icon" type="image/png" href="assets/home/favicon.png">
 <link rel="apple-touch-icon" href="assets/home/app-icon.png">
 <link rel="stylesheet" href="assets/home/home.css">
+<link rel="stylesheet" href="/school-ai-courses/assets/visual-system.css">
+<script defer src="/school-ai-courses/assets/snow-trail.js"></script>
+<script defer src="/school-ai-courses/assets/nav.js"></script>
 </head>
 <body class="home-page">
 <main class="home-scene">
@@ -31,26 +34,26 @@
 
     <div class="home-layout">
       <aside class="home-character" aria-label="Гном-проводник">
-        <img src="assets/home/home-gnome.webp" alt="Сказочный зимний гном — проводник курса ИИ" width="560" height="747" decoding="async">
+        <picture><source media="(max-width:900px)" srcset="/school-ai-courses/assets/ui/empty.svg"><img src="assets/home/home-gnome.webp" alt="Сказочный зимний гном — проводник курса ИИ" width="560" height="747" decoding="async"></picture>
         <div class="home-scene-brand"><img src="assets/home/logo-ai.webp" alt="" width="1254" height="1254" decoding="async"><span>КУРС ИИ</span></div>
       </aside>
 
       <h1 class="sr-only">КУРС ИИ · Школа №14</h1>
       <section class="home-directions" aria-label="Направления курса">
         <a class="home-card card-games" href="tracks/games/">
-          <img src="assets/home/games.webp" alt="" aria-hidden="true" width="420" height="420" decoding="async">
+          <picture><source media="(max-width:900px)" srcset="/school-ai-courses/assets/ui/empty.svg"><img src="assets/home/games.webp" alt="" aria-hidden="true" width="420" height="420" decoding="async"></picture><svg class="s14-mobile-art" xmlns="http://www.w3.org/2000/svg" viewBox="330 100 72 135" aria-hidden="true" focusable="false"><image href="/school-ai-courses/assets/home/games.webp" width="420" height="420"/></svg>
           <div><h2>Игры</h2><p>Сделай свою игру</p></div><span class="home-arrow">→</span>
         </a>
         <a class="home-card card-web" href="tracks/web/">
-          <img src="assets/home/web.webp" alt="" aria-hidden="true" width="420" height="420" decoding="async">
+          <picture><source media="(max-width:900px)" srcset="/school-ai-courses/assets/ui/empty.svg"><img src="assets/home/web.webp" alt="" aria-hidden="true" width="420" height="420" decoding="async"></picture><svg class="s14-mobile-art" xmlns="http://www.w3.org/2000/svg" viewBox="255 75 132 65" aria-hidden="true" focusable="false"><image href="/school-ai-courses/assets/home/web.webp" width="420" height="420"/></svg>
           <div><h2>Сайты</h2><p>Сделай и выложи</p></div><span class="home-arrow">→</span>
         </a>
         <a class="home-card card-blog" href="tracks/video/">
-          <img src="assets/home/blog.webp" alt="" aria-hidden="true" width="420" height="420" decoding="async">
+          <picture><source media="(max-width:900px)" srcset="/school-ai-courses/assets/ui/empty.svg"><img src="assets/home/blog.webp" alt="" aria-hidden="true" width="420" height="420" decoding="async"></picture><svg class="s14-mobile-art" xmlns="http://www.w3.org/2000/svg" viewBox="42 80 98 64" aria-hidden="true" focusable="false"><image href="/school-ai-courses/assets/home/blog.webp" width="420" height="420"/></svg>
           <div><h2>Блогинг</h2><p>Создай контент</p></div><span class="home-arrow">→</span>
         </a>
         <a class="home-card card-computer" href="computer/">
-          <img src="assets/home/computer.webp" alt="" aria-hidden="true" width="420" height="420" decoding="async">
+          <picture><source media="(max-width:900px)" srcset="/school-ai-courses/assets/ui/empty.svg"><img src="assets/home/computer.webp" alt="" aria-hidden="true" width="420" height="420" decoding="async"></picture><svg class="s14-mobile-art" xmlns="http://www.w3.org/2000/svg" viewBox="232 286 165 100" aria-hidden="true" focusable="false"><image href="/school-ai-courses/assets/home/computer.webp" width="420" height="420"/></svg>
           <div><h2>Компьютер</h2><p>Если не получается</p></div><span class="home-arrow">→</span>
         </a>
         <a class="home-card card-3d" href="tracks/3d/">
@@ -70,12 +73,12 @@
           <div><h2 id="schedule-title">Расписание</h2></div>
         </div>
         <div class="home-days">
-          <article><b>Пн</b><strong>14:30–19:20</strong><span>КУРС ИИ</span></article>
-          <article><b>Вт</b><strong>15:00–18:10</strong><span>КУРС ИИ</span></article>
-          <article><b>Ср</b><strong>15:00–18:10</strong><span>КУРС ИИ</span></article>
-          <article><b>Чт</b><strong>15:00–18:10</strong><span>КУРС ИИ</span></article>
-          <article><b>Пт</b><strong>14:30–19:20</strong><span>КУРС ИИ</span></article>
-          <article><b>Сб</b><strong>10:00–14:50</strong><span>КУРС ИИ</span></article>
+          <article><b>Пн</b><strong>14:30–19:20</strong><span>Компьютер и сайты</span></article>
+          <article><b>Вт</b><strong>15:00–18:10</strong><span>Компьютер и игры</span></article>
+          <article><b>Ср</b><strong>15:00–18:10</strong><span>Компьютеры и блогинг</span></article>
+          <article><b>Чт</b><strong>15:00–18:10</strong><span>Игры и сайты</span></article>
+          <article><b>Пт</b><strong>14:30–19:20</strong><span>Компьютер и игры</span></article>
+          <article><b>Сб</b><strong>10:00–14:50</strong><span>Блогинг и 3D-печать</span></article>
         </div>
       </section>
     </div>
