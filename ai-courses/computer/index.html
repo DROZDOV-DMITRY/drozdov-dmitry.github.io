@@ -1,0 +1,93 @@
+<!doctype html><html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fffdf8"><title>Компьютер · Курс ИИ</title>
+<link rel="stylesheet" href="../assets/s14-v2.css">
+<script defer src="../assets/alice-helper.js"></script><script defer src="/ai-courses/assets/nav.js"></script>
+</head><body class="has-alice theme-computer">
+<header class="topbar"><div class="wrap inner"><a class="brand" href="../"><b>КУРС ИИ</b> · Компьютер</a><nav class="topnav"><a href="../">Главная</a></nav></div></header>
+<main>
+<section class="student-hero"><div class="wrap"><h1>Что не получается?</h1><p>Выбери место → Дальше — один шаг</p></div></section>
+
+<section class="section light"><div class="wrap help-shell">
+<div class="choice-row" id="categories">
+<button class="choice-btn" data-cat="browser"><span>🌐</span>Браузер</button>
+<button class="choice-btn" data-cat="files"><span>📁</span>Файлы</button>
+<button class="choice-btn" data-cat="login"><span>🔐</span>Аккаунт</button>
+<button class="choice-btn" data-cat="keys"><span>⌨️</span>Клавиатура</button>
+</div>
+<div class="subchoices" id="subchoices" aria-live="polite"></div>
+<article class="answer" id="answer" aria-live="polite">
+<h3 id="answerTitle"></h3><p id="stepText" style="font-size:1.18rem;font-weight:850"></p><div class="answer-action" id="answerAction"></div>
+<div class="keyboard-shot" id="keyboardShot" hidden><img src="https://rudiskont.ru/upload/iblock/d41/aeef8vn0aueukibmlx1v0ocu5v98lb5n.jpg" alt="Клавиатура DEXP" loading="lazy"><div id="markers"></div></div>
+<div class="actions"><button class="action" id="nextStep" type="button">Дальше →</button><button class="action secondary" id="backToTopics" type="button">К выбору</button></div>
+<p class="micro-note" id="progress"></p>
+</article>
+</div></section>
+
+<section class="section soft"><div class="wrap"><h2 class="action-title">Ещё</h2>
+<div class="quick-links">
+<a href="../skills/input/"><span>🎙 Говорить вместо печати</span><span>→</span></a>
+<a href="../hotkeys/"><span>⌨️ Горячие клавиши</span><span>→</span></a>
+<a href="../tools/yandex-mail/"><span>✉️ Завести почту</span><span>→</span></a>
+<a href="https://yandex.ru/games/app/slepaia-pechat-trenazher-239603"><span>⚡ Учиться печатать</span><span>↗</span></a>
+</div></div></section>
+
+<section class="section light"><div class="wrap"><div class="safety">Пароль и код подтверждения никому не отправляй.</div></div></section>
+</main>
+<button class="alice-fab" type="button" data-alice-helper>✦ Спросить Алису</button>
+
+<script>
+(() => {
+ const kb={WIN:[31,68,"Win"],SHIFT:[21,60,"Shift"],S:[34,58,"S"],E:[35,51,"E"],CTRL:[19,68,"Ctrl"],C:[39,63,"C"],V:[43,63,"V"],ALT:[37,68,"Alt"],TAB:[20,49,"Tab"],H:[54,58,"H"]};
+ const data={
+  browser:{items:[
+   {id:"new-tab",t:"Новая вкладка",s:[{x:"Нажми Ctrl + T.",k:["CTRL"]},{x:"Введи адрес сверху → Enter."}]},
+   {id:"next-tab",t:"Другая вкладка",s:[{x:"Нажми Ctrl + Tab.",k:["CTRL","TAB"]}]},
+   {id:"back",t:"Вернуться назад",s:[{x:"Нажми ← слева сверху."}]}
+  ]},
+  files:{items:[
+   {id:"save-html",t:"Сохранить index.html",s:[
+    {x:"На Рабочем столе наведи мышь на пустое место."},
+    {x:"Нажми правую кнопку мыши."},
+    {x:"Нажми «Создать» → «Папку»."},
+    {x:"Напиши имя папки и нажми Enter."},
+    {x:"Нажми клавишу Win.",k:["WIN"]},
+    {x:"Напечатай: Блокнот."},
+    {x:"Нажми Enter — откроется Блокнот."},
+    {x:"Вставь код: Ctrl + V.",k:["CTRL","V"]},
+    {x:"Сверху нажми «Файл» → «Сохранить как»."},
+    {x:"Открой свою папку на Рабочем столе."},
+    {x:"В поле имени напиши: index.html"},
+    {x:"В «Тип файла» выбери «Все файлы»."},
+    {x:"Нажми «Сохранить»."},
+    {x:"Открой папку и дважды нажми index.html."}
+   ]},
+   {id:"folder",t:"Создать папку",s:[{x:"Нажми Win + E.",k:["WIN","E"]},{x:"Открой «Рабочий стол»."},{x:"Правая кнопка → Создать → Папку."}]},
+   {id:"downloads",t:"Найти скачанное",s:[{x:"Нажми Win + E.",k:["WIN","E"]},{x:"Слева открой «Загрузки»."}]},
+   {id:"upload",t:"Загрузить файл",s:[{x:"Нажми «Загрузить», «Прикрепить» или +."},{x:"Выбери файл → Открыть."}]}
+  ]},
+  login:{items:[
+   {id:"forgot",t:"Не помню пароль",s:[{x:"Нажми «Не помню пароль»."},{x:"Следуй восстановлению аккаунта."}]},
+   {id:"code",t:"Не пришёл код",s:[{x:"Обнови «Входящие»."},{x:"Проверь «Спам»."}]},
+   {id:"mail",t:"Нет почты",s:[{x:"Нажми «Завести почту»."}],action:{href:"../tools/yandex-mail/",label:"Завести почту →"}}
+  ]},
+  keys:{items:[
+   {id:"copy",t:"Копировать / вставить",s:[{x:"Копировать: Ctrl + C.",k:["CTRL","C"]},{x:"Вставить: Ctrl + V.",k:["CTRL","V"]}]},
+   {id:"screenshot",t:"Скрин → в ИИ",s:[{x:"Нажми Win + Shift + S.",k:["WIN","SHIFT","S"]},{x:"Выдели нужное место."},{x:"Вернись в чат."},{x:"Нажми Ctrl + V.",k:["CTRL","V"]},{x:"Напиши: «Что здесь нажать?»"}]},
+   {id:"window",t:"Другое окно",s:[{x:"Нажми Alt + Tab.",k:["ALT","TAB"]}]},{id:"voice-input",t:"Говорить вместо печати",s:[{x:"Нажми Win + H.",k:["WIN","H"]},{x:"Разреши микрофон, если Edge спросит."},{x:"Говори. Потом проверь текст."}]}
+  ]}
+ };
+ const subs=document.getElementById("subchoices"),ans=document.getElementById("answer"),title=document.getElementById("answerTitle"),txt=document.getElementById("stepText"),shot=document.getElementById("keyboardShot"),markers=document.getElementById("markers"),next=document.getElementById("nextStep"),progress=document.getElementById("progress"),answerAction=document.getElementById("answerAction");
+ let current=null,step=0,currentCat=null;
+ function mark(keys=[]){markers.innerHTML="";shot.hidden=!keys.length;keys.forEach(n=>{const p=kb[n];if(!p)return;const m=document.createElement("span");m.className="key-marker";m.style.left=p[0]+"%";m.style.top=p[1]+"%";m.dataset.label=p[2];markers.appendChild(m)})}
+ function render(){const s=current.s[step];txt.textContent=s.x;mark(s.k||[]);progress.textContent=(step+1)+" / "+current.s.length;next.textContent=step===current.s.length-1?"Готово ✓":"Дальше →";answerAction.innerHTML=(current.action&&step===current.s.length-1)?`<a class="action" href="${current.action.href}">${current.action.label}</a>`:""}
+ function openItem(cat,item){currentCat=cat;current=item;step=0;title.textContent=current.t;ans.classList.add("show");render();ans.scrollIntoView({behavior:"smooth",block:"center"})}
+ function openCat(cat){const d=data[cat];subs.innerHTML=d.items.map((it,i)=>'<button class="subchoice" type="button" data-i="'+i+'">'+it.t+'</button>').join("");subs.classList.add("show");ans.classList.remove("show");subs.querySelectorAll("[data-i]").forEach(x=>x.addEventListener("click",()=>openItem(cat,d.items[+x.dataset.i])));}
+ document.querySelectorAll("[data-cat]").forEach(b=>b.addEventListener("click",()=>{openCat(b.dataset.cat);subs.scrollIntoView({behavior:"smooth",block:"center"})}));
+ next.addEventListener("click",()=>{if(step<current.s.length-1){step++;render()}else{ans.classList.remove("show");subs.scrollIntoView({behavior:"smooth",block:"center"})}});
+ document.getElementById("backToTopics").addEventListener("click",()=>{ans.classList.remove("show");subs.scrollIntoView({behavior:"smooth",block:"center"})});
+ const wanted=new URLSearchParams(location.search).get("help");
+ if(wanted){for(const [cat,d] of Object.entries(data)){const item=d.items.find(x=>x.id===wanted);if(item){openCat(cat);openItem(cat,item);break}}}
+})();
+</script>
+</body></html>
