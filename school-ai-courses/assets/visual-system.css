@@ -21,3 +21,6 @@ body.s14-student{margin:0;background:linear-gradient(180deg,#eff5ffde,#f5f2fbe8)
 @media(min-width:1600px){.home-character>picture>img{max-height:800px}}
 
 .s14-student .nav-big,.s14-student .nav-back{background:linear-gradient(135deg,#fff3d7,#f9dfab)!important;color:#101c38!important}.s14-student .nav-home{background:linear-gradient(135deg,#ffe3a8,#efa93a)!important}
+
+/* Keep the fixed AI-chat control clear of the last schedule row on desktop. */
+@media(min-width:901px){body.home-page .home-schedule{margin-bottom:92px}}
