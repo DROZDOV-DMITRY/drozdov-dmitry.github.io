@@ -23,6 +23,6 @@
     }
   });
   const q=new URLSearchParams(location.search).get("filter");
-  const start=document.querySelector(`[data-tool-filter="${q||"chat"}"]`)||document.querySelector("[data-tool-filter]");
+  const start=document.querySelector(`[data-tool-filter="${q||"text"}"]`)||document.querySelector("[data-tool-filter]");
   start?.click();
 })();
