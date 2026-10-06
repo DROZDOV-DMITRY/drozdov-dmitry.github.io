@@ -1,0 +1,44 @@
+<!doctype html><html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#fffdf8">
+<title>Горячие клавиши · Курс ИИ</title><link rel="stylesheet" href="../assets/s14-v2.css"><script defer src="/ai-courses/assets/nav.js"></script>
+</head><body class="theme-computer">
+<header class="topbar"><div class="wrap inner"><a class="brand" href="../computer/"><b>КУРС ИИ</b> · Клавиши</a></div></header>
+<main>
+<section class="student-hero"><div class="wrap"><h1>Горячие клавиши</h1><p>Сначала 6 → Потом сложнее</p></div></section>
+<section class="section light"><div class="wrap">
+<div class="hotkey-grid" id="hotkeys">
+<div class="hotkey" data-level="1"><div class="combo">Ctrl + C</div><p>Копировать</p></div>
+<div class="hotkey" data-level="1"><div class="combo">Ctrl + V</div><p>Вставить</p></div>
+<div class="hotkey" data-level="1"><div class="combo">Ctrl + A</div><p>Выделить всё</p></div>
+<div class="hotkey" data-level="1"><div class="combo">Alt + Tab</div><p>Другое окно</p></div>
+<div class="hotkey" data-level="1"><div class="combo">Ctrl + Tab</div><p>Другая вкладка</p></div>
+<div class="hotkey" data-level="1"><div class="combo">Win + Shift + S</div><p>Скриншот</p></div>
+
+<div class="hotkey" data-level="2" hidden><div class="combo">Ctrl + Z</div><p>Отменить</p></div>
+<div class="hotkey" data-level="2" hidden><div class="combo">Ctrl + Y</div><p>Вернуть</p></div>
+<div class="hotkey" data-level="2" hidden><div class="combo">Ctrl + S</div><p>Сохранить</p></div>
+<div class="hotkey" data-level="2" hidden><div class="combo">Ctrl + F</div><p>Найти на странице</p></div>
+<div class="hotkey" data-level="2" hidden><div class="combo">Ctrl + T</div><p>Новая вкладка</p></div>
+<div class="hotkey" data-level="2" hidden><div class="combo">Ctrl + W</div><p>Закрыть вкладку</p></div>
+
+<div class="hotkey" data-level="3" hidden><div class="combo">Win + E</div><p>Проводник</p></div>
+<div class="hotkey" data-level="3" hidden><div class="combo">Win + D</div><p>Рабочий стол</p></div>
+<div class="hotkey" data-level="3" hidden><div class="combo">F2</div><p>Переименовать файл</p></div>
+<div class="hotkey" data-level="3" hidden><div class="combo">Alt + F4</div><p>Закрыть окно</p></div>
+<div class="hotkey" data-level="3" hidden><div class="combo">Ctrl + Shift + Esc</div><p>Диспетчер задач</p></div>
+<div class="hotkey" data-level="3" hidden><div class="combo">Win + L</div><p>Заблокировать ПК</p></div>
+
+<div class="hotkey" data-level="4" hidden><div class="combo">Ctrl + Shift + N</div><p>Новая папка</p></div>
+<div class="hotkey" data-level="4" hidden><div class="combo">Ctrl + L</div><p>Адресная строка</p></div>
+<div class="hotkey" data-level="4" hidden><div class="combo">Ctrl + Shift + T</div><p>Вернуть вкладку</p></div>
+<div class="hotkey" data-level="4" hidden><div class="combo">Win + V</div><p>История буфера</p></div>
+<div class="hotkey" data-level="4" hidden><div class="combo">Shift + Enter</div><p>Новая строка в чате</p></div>
+<div class="hotkey" data-level="4" hidden><div class="combo">Ctrl + Shift + S</div><p>Сохранить как</p></div>
+</div>
+<div class="reveal-more"><button type="button" id="moreKeys">Ещё 6 ↓</button></div>
+</div></section>
+</main>
+<script>
+(()=>{let level=1;const btn=document.getElementById("moreKeys");btn.addEventListener("click",()=>{level++;document.querySelectorAll('[data-level="'+level+'"]').forEach(x=>x.hidden=false);if(level>=4)btn.hidden=true;else btn.textContent="Ещё 6 ↓";});})();
+</script>
+</body></html>
