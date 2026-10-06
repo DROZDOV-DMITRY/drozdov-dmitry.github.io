@@ -30,7 +30,46 @@
     return b;
   }
   if (home) {
-    document.querySelector('.home-links')?.appendChild(chatButton('s14QuickChatTop'));
+    const homeNav = document.querySelector('.home-nav');
+    const homeLinks = document.querySelector('.home-links');
+    if (homeLinks) {
+      homeLinks.id = 'homeMainMenu';
+      homeLinks.appendChild(chatButton('s14QuickChatTop'));
+    }
+    if (homeNav && homeLinks) {
+      const toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'home-menu-toggle';
+      toggle.setAttribute('aria-controls', 'homeMainMenu');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Открыть меню');
+      toggle.innerHTML = '<span></span><span></span><span></span>';
+      const brand = homeNav.querySelector('.home-brand');
+      brand?.after(toggle);
+
+      const closeMenu = () => {
+        homeNav.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Открыть меню');
+      };
+      const openMenu = () => {
+        homeNav.classList.add('menu-open');
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-label', 'Закрыть меню');
+      };
+      toggle.addEventListener('click', () => {
+        homeNav.classList.contains('menu-open') ? closeMenu() : openMenu();
+      });
+      homeNav.addEventListener('click', e => {
+        if (e.target.closest('.home-links a, .home-max')) closeMenu();
+      });
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeMenu();
+      });
+      matchMedia('(min-width: 901px)').addEventListener?.('change', e => {
+        if (e.matches) closeMenu();
+      });
+    }
   } else {
     const header = document.querySelector('.topbar .inner');
     const holder = document.createElement('nav');
