@@ -10,46 +10,183 @@
 
 <section class="section light"><div class="wrap">
 <div class="tool-filters">
-<button class="tool-filter-v2" data-tool-filter="chat">Чат</button>
+<button class="tool-filter-v2" data-tool-filter="text">Текст</button>
 <button class="tool-filter-v2" data-tool-filter="search">Найти</button>
+<button class="tool-filter-v2" data-tool-filter="ideas">Идеи</button>
 <button class="tool-filter-v2" data-tool-filter="media">Картинки</button>
 <button class="tool-filter-v2" data-tool-filter="video">Видео</button>
 <button class="tool-filter-v2" data-tool-filter="edit">Правка</button>
 <button class="tool-filter-v2" data-tool-filter="code">Код</button>
+<button class="tool-filter-v2" data-tool-filter="aggregate">Агрегаторы</button>
 </div>
 
 <div class="tool-grid-v2">
-<a class="tool-card-v2" data-tool-cats="chat media" href="https://alice.yandex.ru/"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=alice.yandex.ru&sz=64" alt=""><h3>Алиса AI</h3><p>Чат, тексты, картинки</p><div class="badges"><span class="badge ok">часть функций без входа</span></div><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="chat" href="https://duck.ai/"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=duck.ai&sz=64" alt=""><h3>Duck.ai</h3><p>Чат с несколькими моделями</p><div class="badges"><span class="badge ok">без аккаунта</span></div><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="chat code media" href="https://giga.chat/"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=giga.chat&sz=64" alt=""><h3>GigaChat</h3><p>Чат, код, картинки</p><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="chat code" href="https://chat.deepseek.com/"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=chat.deepseek.com&sz=64" alt=""><h3>DeepSeek</h3><p>Чат и код</p><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="chat code" href="https://chat.z.ai/"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=chat.z.ai&sz=64" alt=""><h3>Z.ai / GLM</h3><p>Чат и код</p><div class="badges"><span class="badge warn">вход может понадобиться</span></div><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="chat code media" href="https://chat.qwen.ai/"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=chat.qwen.ai&sz=64" alt=""><h3>Qwen Chat</h3><p>Чат, код, картинки</p><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="chat code" href="https://deepai.org/chat"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=deepai.org&sz=64" alt=""><h3>DeepAI Chat</h3><p>Чат, файлы, поиск</p><div class="badges"><span class="badge ok">без аккаунта · лимит</span></div><span class="go">Открыть ↗</span></a>
 
-<a class="tool-card-v2" data-tool-cats="search" href="https://www.perplexity.ai/"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=64" alt=""><h3>Perplexity</h3><p>Ответ + источники</p><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="search chat" href="https://deepai.org/chat"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=deepai.org&sz=64" alt=""><h3>DeepAI Chat</h3><p>Можно включить поиск</p><span class="go">Открыть ↗</span></a>
+<article class="tool-card-v2" data-tool-cats="text aggregate">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=duck.ai&sz=64" alt=""><h3>Duck.ai</h3>
+<p>Несколько моделей в одном окне</p><div class="badges"><span class="badge ok">без аккаунта</span></div>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://duck.ai/">Открыть ↗</a></div>
+</article>
 
-<a class="tool-card-v2" data-tool-cats="media" href="https://firefly.adobe.com/generate/image"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=64" alt=""><h3>Firefly · Картинка</h3><p>Текст → изображение</p><span class="mode">прямой генератор</span><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="media" href="https://www.krea.ai/image"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=krea.ai&sz=64" alt=""><h3>Krea · Image</h3><p>Генерация изображений</p><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="media edit" href="https://www.krea.ai/realtime"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=krea.ai&sz=64" alt=""><h3>Krea · Realtime</h3><p>Пишешь или рисуешь — кадр меняется сразу</p><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="media" href="https://www.vidu.com/create/text2image"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=vidu.com&sz=64" alt=""><h3>Vidu · Text → Image</h3><p>Текст → картинка</p><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="media edit" href="https://www.vidu.com/create/reference2image"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=vidu.com&sz=64" alt=""><h3>Vidu · Reference → Image</h3><p>Референсы → новая картинка</p><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="media" href="https://deepai.org/machine-learning-model/text2img"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=deepai.org&sz=64" alt=""><h3>DeepAI · Image</h3><p>Текст → картинка</p><div class="badges"><span class="badge ok">базовый режим без регистрации</span></div><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="media" href="https://www.recraft.ai/ai-image-generator"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=recraft.ai&sz=64" alt=""><h3>Recraft</h3><p>Картинки и дизайн</p><span class="go">Открыть ↗</span></a>
+<article class="tool-card-v2" data-tool-cats="text code">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=chat.z.ai&sz=64" alt=""><h3>Z.ai / GLM</h3>
+<p>Тексты и код</p><div class="badges"><span class="badge warn">вход может понадобиться</span></div>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://chat.z.ai/">Открыть ↗</a></div>
+</article>
 
-<a class="tool-card-v2" data-tool-cats="video" href="https://firefly.adobe.com/generate/video"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=64" alt=""><h3>Firefly · Video</h3><p>Текст / кадр → видео</p><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="video" href="https://www.krea.ai/video"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=krea.ai&sz=64" alt=""><h3>Krea · Video</h3><p>Видео-модели</p><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="video" href="https://www.vidu.com/create/text2video"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=vidu.com&sz=64" alt=""><h3>Vidu · Text → Video</h3><p>Текст → видео</p><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="video" href="https://www.vidu.com/create/img2video"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=vidu.com&sz=64" alt=""><h3>Vidu · Image → Video</h3><p>Картинка → видео</p><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="video" href="https://www.vidu.com/create/character2video"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=vidu.com&sz=64" alt=""><h3>Vidu · Character → Video</h3><p>Персонаж → видео</p><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="video" href="https://deepai.org/video"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=deepai.org&sz=64" alt=""><h3>DeepAI · Video</h3><p>Текст / картинка → видео</p><div class="badges"><span class="badge warn">Pro</span></div><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="video" href="https://pixverse.ai/"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=pixverse.ai&sz=64" alt=""><h3>PixVerse</h3><p>Текст / картинка → видео</p><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="video media" href="https://arena.ai/"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=arena.ai&sz=64" alt=""><h3>Arena</h3><p>Сравнить модели</p><span class="go">Открыть ↗</span></a>
+<article class="tool-card-v2" data-tool-cats="text code media">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=chat.qwen.ai&sz=64" alt=""><h3>Qwen</h3>
+<p>Тексты, код и изображения</p>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://chat.qwen.ai/">Открыть ↗</a></div>
+</article>
 
-<a class="tool-card-v2" data-tool-cats="edit media" href="https://firefly.adobe.com/image"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=64" alt=""><h3>Firefly · Image</h3><p>Работа с изображением</p><span class="go">Открыть ↗</span></a>
-<a class="tool-card-v2" data-tool-cats="edit media" href="https://deepai.org/machine-learning-model/image-editor"><img class="tool-logo" src="https://www.google.com/s2/favicons?domain=deepai.org&sz=64" alt=""><h3>DeepAI · Photo Editor</h3><p>Загрузить → описать правку</p><span class="go">Открыть ↗</span></a>
+<article class="tool-card-v2" data-tool-cats="text search media video edit code">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=deepai.org&sz=64" alt=""><h3>DeepAI</h3>
+<p>Один сервис — несколько режимов</p><div class="badges"><span class="badge ok">есть режимы без аккаунта</span></div>
+<div class="tool-actions-v2">
+<a class="tool-action-v2" href="https://deepai.org/chat">Текст</a>
+<a class="tool-action-v2" href="https://deepai.org/machine-learning-model/text2img">Изображение</a>
+<a class="tool-action-v2" href="https://deepai.org/machine-learning-model/image-editor">Правка</a>
+<a class="tool-action-v2" href="https://deepai.org/video">Видео</a>
 </div>
-<p class="micro-note">Один сервис может быть в нескольких разделах — ссылка ведёт сразу к нужному режиму.</p>
+</article>
+
+<article class="tool-card-v2" data-tool-cats="search text">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=64" alt=""><h3>Perplexity</h3>
+<p>Поиск с источниками</p>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://www.perplexity.ai/">Найти ↗</a></div>
+</article>
+
+<article class="tool-card-v2" data-tool-cats="ideas media video edit">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=64" alt=""><h3>Firefly</h3>
+<p>Идеи, изображения, видео и правка</p>
+<div class="tool-actions-v2">
+<a class="tool-action-v2" href="https://www.adobe.com/products/firefly/features/boards.html">Доска идей</a>
+<a class="tool-action-v2" href="https://firefly.adobe.com/generate/image">Текст → изображение</a>
+<a class="tool-action-v2" href="https://firefly.adobe.com/image">Правка изображения</a>
+<a class="tool-action-v2" href="https://firefly.adobe.com/generate/video">Видео</a>
+</div>
+</article>
+
+<article class="tool-card-v2" data-tool-cats="ideas media video edit">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=krea.ai&sz=64" alt=""><h3>Krea</h3>
+<p>Визуальные идеи, генерация и работа в реальном времени</p>
+<div class="tool-actions-v2">
+<a class="tool-action-v2" href="https://www.krea.ai/image">Текст → изображение</a>
+<a class="tool-action-v2" href="https://www.krea.ai/realtime">В реальном времени</a>
+<a class="tool-action-v2" href="https://www.krea.ai/video">Видео</a>
+</div>
+</article>
+
+<article class="tool-card-v2" data-tool-cats="ideas">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=canva.com&sz=64" alt=""><h3>Canva</h3>
+<p>Мозговой штурм, moodboard и доски идей</p><div class="badges"><span class="badge warn">проверить доступ в школе</span></div>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://www.canva.com/online-whiteboard/">Доска идей ↗</a></div>
+</article>
+
+<article class="tool-card-v2" data-tool-cats="media video edit">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=vidu.com&sz=64" alt=""><h3>Vidu</h3>
+<p>Изображения и видео из текста, кадров и референсов</p>
+<div class="tool-actions-v2">
+<a class="tool-action-v2" href="https://www.vidu.com/create/text2image">Текст → изображение</a>
+<a class="tool-action-v2" href="https://www.vidu.com/create/reference2image">Референсы → изображение</a>
+<a class="tool-action-v2" href="https://www.vidu.com/create/text2video">Текст → видео</a>
+<a class="tool-action-v2" href="https://www.vidu.com/create/img2video">Изображение → видео</a>
+<a class="tool-action-v2" href="https://www.vidu.com/create/character2video">Персонаж → видео</a>
+</div>
+</article>
+
+<article class="tool-card-v2" data-tool-cats="media">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=recraft.ai&sz=64" alt=""><h3>Recraft</h3>
+<p>Изображения и дизайн</p>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://www.recraft.ai/ai-image-generator">Создать изображение ↗</a></div>
+</article>
+
+<article class="tool-card-v2" data-tool-cats="video">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=pixverse.ai&sz=64" alt=""><h3>PixVerse</h3>
+<p>Видео из текста и изображений</p>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://pixverse.ai/">Создать видео ↗</a></div>
+</article>
+
+<article class="tool-card-v2" data-tool-cats="aggregate">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=arena.ai&sz=64" alt=""><h3>Arena</h3>
+<p>Сравнение моделей на одном запросе</p><div class="badges"><span class="badge warn">18+ · преподавателю</span></div>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://arena.ai/">Сравнить ↗</a></div>
+</article>
+
+<article class="tool-card-v2" data-tool-cats="aggregate search">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=humaneval.org&sz=64" alt=""><h3>HumanEval.org</h3>
+<p>Независимые сравнения моделей</p><div class="badges"><span class="badge warn">проверить доступ</span></div>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://humaneval.org/">Сравнить ↗</a></div>
+</article>
+
+<article class="tool-card-v2" data-tool-cats="aggregate code">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=openrouter.ai&sz=64" alt=""><h3>OpenRouter</h3>
+<p>Каталог моделей и единый API</p><div class="badges"><span class="badge warn">старшим · проверить доступ</span></div>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://openrouter.ai/">Открыть ↗</a></div>
+</article>
+
+<article class="tool-card-v2" data-tool-cats="aggregate code">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=requesty.ai&sz=64" alt=""><h3>Requesty</h3>
+<p>Gateway к нескольким моделям</p><div class="badges"><span class="badge warn">старшим · проверить доступ</span></div>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://www.requesty.ai/models/free">Открыть ↗</a></div>
+</article>
+
+<article class="tool-card-v2" data-tool-cats="aggregate code">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=kilo.ai&sz=64" alt=""><h3>Kilo</h3>
+<p>Модели и coding-среда</p><div class="badges"><span class="badge warn">старшим · проверить доступ</span></div>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://kilo.ai/models">Открыть ↗</a></div>
+</article>
+
+<article class="tool-card-v2" data-tool-cats="aggregate code">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=aihubmix.com&sz=64" alt=""><h3>AIHubMix</h3>
+<p>Много моделей через один API</p><div class="badges"><span class="badge warn">проверить доступ</span></div>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://aihubmix.com/models/free">Открыть ↗</a></div>
+</article>
+
+<article class="tool-card-v2" data-tool-cats="aggregate media">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=roboflow.com&sz=64" alt=""><h3>Roboflow</h3>
+<p>Сравнение vision-моделей</p><div class="badges"><span class="badge warn">проверить доступ</span></div>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://playground.roboflow.com/">Открыть ↗</a></div>
+</article>
+
+<article class="tool-card-v2" data-tool-cats="aggregate text media">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=poe.com&sz=64" alt=""><h3>Poe</h3>
+<p>Каталог моделей и ботов</p><div class="badges"><span class="badge warn">проверить доступ</span></div>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://poe.com/explore">Открыть ↗</a></div>
+</article>
+
+<article class="tool-card-v2" data-tool-cats="aggregate text code">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=huggingface.co&sz=64" alt=""><h3>Hugging Face</h3>
+<p>Открытые модели и inference-провайдеры</p><div class="badges"><span class="badge warn">проверить доступ</span></div>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://huggingface.co/chat/">Открыть ↗</a></div>
+</article>
+
+<article class="tool-card-v2" data-tool-cats="aggregate text code media">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=arctic.qpon&sz=64" alt=""><h3>Arctic Playground</h3>
+<p>Несколько моделей рядом для сравнения</p><div class="badges"><span class="badge warn">проверить доступ</span></div>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://www.arctic.qpon/playground">Сравнить ↗</a></div>
+</article>
+
+<article class="tool-card-v2 tool-card-deprioritized" data-tool-cats="text code">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=chat.deepseek.com&sz=64" alt=""><h3>DeepSeek</h3>
+<p>Тексты и код</p><div class="badges"><span class="badge warn">в школе сейчас не работает</span></div>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://chat.deepseek.com/">Попробовать ↗</a></div>
+</article>
+
+<article class="tool-card-v2 tool-card-deprioritized" data-tool-cats="text media">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=ya.ru&sz=64" alt=""><h3>Алиса</h3>
+<p>Тексты и изображения</p><div class="badges"><span class="badge warn">в школе блокирует ЕСПД</span></div>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://ya.ru/alice">Открыть ↗</a></div>
+</article>
+
+<article class="tool-card-v2 tool-card-deprioritized" data-tool-cats="text code media">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=giga.chat&sz=64" alt=""><h3>GigaChat</h3>
+<p>Тексты, код и изображения</p>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://giga.chat/">Открыть ↗</a></div>
+</article>
+
+</div>
+<p class="micro-note">Один сервис — одна плашка. Режимы выбираются цветными кнопками внутри.</p>
 </div></section>
 </main></body></html>
