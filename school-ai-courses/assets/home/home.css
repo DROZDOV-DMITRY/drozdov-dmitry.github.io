@@ -8,3 +8,6 @@
 @media(max-width:370px){.home-max{font-size:12px;padding:12px 8px}.home-brand b{font-size:19px}.home-brand-icon{width:36px;height:36px}.home-card h2{font-size:21px}.home-card{min-height:211px;padding-left:10px;padding-right:10px}.home-scene-brand{left:136px;font-size:16px;gap:4px}.home-scene-brand img{width:72px;height:72px}}
 @media(max-width:600px){.card-tools h2{font-size:clamp(18px,5vw,23px)}}
 @media(max-width:370px){.home-directions{grid-template-columns:1fr}.home-card{min-height:180px;padding:36px 52px 28px 140px;display:flex;align-items:center}.home-card img{top:20px;width:120px;height:130px}.home-card h2,.card-tools h2{font-size:25px}.home-card div{padding-right:0}.home-card p{padding-right:0;min-height:0}.home-arrow{right:14px;bottom:15px}.card-tools{display:block;padding:132px 15px 20px;min-height:205px}.card-tools img{top:0;left:0;width:100%;height:122px}.home-dev{font-size:11px}.card-3d{padding-top:56px}}
+
+/* Desktop: lift the gnome so the full character is visible in the first viewport. */
+@media(min-width:901px){.home-character>picture{transform:translateY(-56px)}}
