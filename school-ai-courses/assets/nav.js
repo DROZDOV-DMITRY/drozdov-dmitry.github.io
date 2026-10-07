@@ -220,7 +220,11 @@
         closeAiMenu();
         returnFocus?.focus();
       } else if (home) {
-        document.querySelector('.home-nav')?.classList.remove('menu-open');
+        const homeNav = document.querySelector('.home-nav');
+        const homeToggle = document.querySelector('.home-menu-toggle');
+        homeNav?.classList.remove('menu-open');
+        homeToggle?.setAttribute('aria-expanded', 'false');
+        homeToggle?.setAttribute('aria-label', 'Открыть меню');
       }
     }
   });
