@@ -40,6 +40,7 @@
 .loop{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 .loop>div{padding:12px;border-radius:16px;background:#fff;border:1px solid #d6deeb;text-align:center;font-weight:850}
 .challenge{padding:17px;border-radius:20px;background:#eef8f1;border:1px solid #bedfc9}
+.safe-scenario{padding:14px 16px;border-radius:16px;background:#eef4ff;border:1px solid #cddaf0;margin:10px 0 12px}
 .micro{font-size:.9rem;color:#56627a}
 @media(max-width:900px){.l4-grid{grid-template-columns:1fr}.progressbox{position:static}.loop{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.badgood{grid-template-columns:1fr}.l4-card,.l4-fast{padding:17px}}
@@ -59,7 +60,7 @@
 <article class="l4-fast">
 <span class="status-badge">Мне это легко · экспресс-проверка ≈ 3 минуты</span>
 <h2>Сформулируй запрос без шаблона</h2>
-<p><b>Ситуация:</b> у тебя Windows, в Microsoft Edge сайт видит камеру, но не слышит микрофон. Ты уже обновил страницу — ничего не изменилось.</p>
+<p><b>Ситуация:</b> у тебя ноутбук с Windows, в Microsoft Edge сайт видит камеру, но не слышит микрофон. Ты уже обновил страницу — ничего не изменилось.</p>
 <textarea id="fastPrompt" class="fast-area" placeholder="Напиши запрос к ИИ одним сообщением"></textarea>
 <div class="actions"><button id="checkFast" type="button">Проверить запрос</button><a class="secondary" href="#normalRoute">Не уверен → обычный урок</a></div>
 <div id="fastStatus" class="status">Проверка ещё не выполнена.</div>
@@ -70,7 +71,13 @@
   <div class="checkitem" data-fast-check="symptom"><span class="checkdot">○</span><span>описан наблюдаемый симптом</span></div>
   <div class="checkitem" data-fast-check="action"><span class="checkdot">○</span><span>есть просьба дать одно следующее действие</span></div>
 </div>
-<div class="actions"><a href="#fastChallenge" id="fastPass" hidden>Все четыре элемента есть → FAST CHALLENGE</a></div>
+<div id="fastFollowup" hidden>
+  <div class="l4-task"><b>Вторая часть экспресс-проверки.</b> Представь, что ИИ ответил: «Проверь, разрешён ли микрофон для этого сайта». Ты проверил: разрешение уже включено, но сайт всё равно не слышит микрофон. Напиши, что отправишь ИИ дальше.</div>
+  <textarea id="fastResultText" class="fast-area" placeholder="Сообщи результат действия и попроси следующий один шаг"></textarea>
+  <div class="actions"><button id="checkFastResult" type="button">Проверить продолжение</button></div>
+  <div id="fastResultStatus" class="status">Вторая часть ещё не выполнена.</div>
+</div>
+<div class="actions"><a href="#fastChallenge" id="fastPass" hidden>Полный цикл получился → FAST CHALLENGE</a></div>
 </article>
 </div></section>
 
@@ -80,7 +87,7 @@
 <h2>1. Плохой запрос и рабочий запрос</h2>
 <div class="badgood">
   <div class="bad"><strong>Не помогает</strong><p>«У меня не работает. Что делать?»</p><p class="micro">ИИ не знает устройство, программу и симптом.</p></div>
-  <div class="good"><strong>Помогает</strong><p>«У меня Windows, Microsoft Edge. Сайт не видит микрофон, после обновления страницы ничего не изменилось. Дай одно безопасное следующее действие.»</p></div>
+  <div class="good"><strong>Помогает</strong><p>«У меня ноутбук с Windows, Microsoft Edge. Сайт не видит микрофон, после обновления страницы ничего не изменилось. Дай одно безопасное следующее действие.»</p></div>
 </div>
 <div class="l4-task"><b>Сделай:</b> в Блокноте перепиши плохой запрос так, чтобы в нём появились все четыре элемента: устройство, программа, симптом, один следующий шаг.<br><span class="l4-time">0:00–7:00</span></div>
 <button class="done" data-step="1" type="button">○ Сделано</button>
@@ -89,12 +96,14 @@
 <article class="l4-card" style="margin-top:18px">
 <h2>2. Собери запрос из фактов</h2>
 <p>Не начинай с догадки «сломался драйвер». Сначала опиши то, что реально видишь.</p>
+<div class="safe-scenario"><b>Ситуация:</b> ноутбук с Windows; Microsoft Edge; сайт открывается; камера работает; микрофон на странице недоступен; обновление страницы не помогло.</div>
 <div class="builder">
-<label>Устройство / система<input id="device" value="Windows" autocomplete="off"></label>
-<label>Программа<input id="program" value="Microsoft Edge" autocomplete="off"></label>
-<label>Что наблюдаешь<textarea id="symptom">Сайт открывается, камера работает, но микрофон на странице недоступен.</textarea></label>
-<label>Что уже попробовал<input id="tried" value="Обновил страницу — не помогло." autocomplete="off"></label>
-<label>Что просишь у ИИ<input id="request" value="Предложи одно безопасное следующее действие." autocomplete="off"></label>
+<label>Устройство<input id="device" placeholder="например: ноутбук" autocomplete="off"></label>
+<label>Система<input id="system" placeholder="например: Windows" autocomplete="off"></label>
+<label>Программа<input id="program" placeholder="например: Microsoft Edge" autocomplete="off"></label>
+<label>Что наблюдаешь<textarea id="symptom" placeholder="только наблюдаемый симптом, без догадки о причине"></textarea></label>
+<label>Что уже попробовал<input id="tried" placeholder="одно уже выполненное действие и его результат" autocomplete="off"></label>
+<label>Что просишь у ИИ<input id="request" placeholder="попроси одно безопасное следующее действие" autocomplete="off"></label>
 <div class="actions"><button id="buildPrompt" type="button">Собрать запрос</button></div>
 <div id="promptPreview" class="prompt-preview">Нажми «Собрать запрос».</div>
 </div>
@@ -105,9 +114,9 @@
 <article class="l4-card" style="margin-top:18px">
 <h2>3. Спроси один из доступных ИИ</h2>
 <p>Открой меню <b>«ИИ-чат»</b> в шапке или справа внизу и выбери сервис. Вставь собранный запрос.</p>
-<div class="actions"><button id="launchAi" type="button">Открыть меню «ИИ-чат»</button><button id="copyPrompt" class="secondary" type="button">Скопировать мой запрос</button></div>
+<div class="actions"><button id="copyPrompt" type="button">1. Скопировать мой запрос</button><button id="launchAi" class="secondary" type="button">2. Открыть меню «ИИ-чат»</button></div>
 <p class="micro">Сайт не выбирает модель за тебя. Задача урока — научиться давать достаточный контекст любому подходящему ИИ. Если совет не совпадает с тем, что ты видишь на экране, используй навык L03: сделай безопасный скриншот нужной области и приложи его, если выбранный сервис принимает изображения.</p>
-<div class="l4-task"><b>Важно:</b> не выполняй длинную цепочку автоматически. Возьми только первое безопасное действие, выполни его и вернись на эту страницу.<br><span class="l4-time">15:00–23:00</span></div>
+<div class="l4-task"><b>Важно:</b> не выполняй длинную цепочку автоматически. Возьми только первое безопасное действие, выполни его и вернись на эту страницу. Если ИИ просит пароль/код, предлагает удалить данные, отключить защиту или сделать непонятное рискованное действие — не выполняй это; остановись и обратись к преподавателю.<br><span class="l4-time">15:00–23:00</span></div>
 <button class="done" data-step="3" type="button">○ Получил одно действие</button>
 </article>
 
@@ -128,9 +137,9 @@
 <article class="l4-card" style="margin-top:18px">
 <h2>5. Финальная задача — без формы и шаблона</h2>
 <div class="challenge">
-<p><b>Новая ситуация:</b> в Windows ты хочешь найти настройку «Ночной свет», но не знаешь, где она находится. Не проси преподавателя.</p>
+<p><b>Выбери одну незнакомую задачу:</b> найти «Ночной свет», найти выбор устройства вывода звука или найти историю буфера обмена. Если первую задачу ты уже умеешь решать — возьми другую.</p>
 <p>Самостоятельно:</p>
-<p>1. сначала попробуй найти настройку сам через поиск Windows;<br>2. если за 30 секунд не нашёл — сформулируй запрос к выбранному ИИ;<br>3. попроси одно действие;<br>4. выполни его;<br>5. сообщи ИИ, что увидел;<br>6. найди нужную настройку, но не обязан менять её значение.</p>
+<p>1. попробуй решить выбранную задачу сам в течение 30 секунд;<br>2. затем обязательно сформулируй запрос к выбранному ИИ: устройство + система + программа/область + наблюдаемый результат первой попытки;<br>3. попроси одно действие;<br>4. выполни его;<br>5. сообщи ИИ, что увидел;<br>6. доведи задачу до нужного экрана, но не меняй настройку, если это не требуется.</p>
 </div>
 <p>Доказательство освоения: ты дошёл до нужной настройки без пошаговой инструкции преподавателя и можешь показать историю «вопрос → действие → результат».</p>
 <span class="l4-time">30:00–40:00</span>
@@ -168,8 +177,8 @@
   "environment":["WINDOWS","BROWSER","AI_LAUNCHER_V1"],
   "target_atoms":["AI-001","AI-002","AI-005","AI-006"],
   "reinforcement_atoms":["AI-003","AI-008","KEY-011","KEY-005"],
-  "fast_gate":{"duration_minutes":3,"mode":"PERFORMANCE_NO_TEMPLATE","on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
-  "ai_policy":{"required_pattern":["DEVICE_AND_PROGRAM","OBSERVED_SYMPTOM","ONE_CONCRETE_QUESTION","REPORT_RESULT"],"do_not":["START_WITH_UNPROVEN_CAUSE","REQUEST_LONG_SEQUENCE_FIRST"]},
+  "fast_gate":{"duration_minutes":3,"mode":"PERFORMANCE_NO_TEMPLATE","checks":["AI-001","AI-002","AI-005","AI-006"],"on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
+  "ai_policy":{"required_pattern":["PHYSICAL_DEVICE","SYSTEM","PROGRAM_OR_AREA","OBSERVED_SYMPTOM","ONE_CONCRETE_QUESTION","REPORT_RESULT"],"do_not":["START_WITH_UNPROVEN_CAUSE","REQUEST_LONG_SEQUENCE_FIRST","SHARE_SECRET","EXECUTE_RISKY_OR_DESTRUCTIVE_ACTION_WITHOUT_HUMAN_CHECK"]},
   "expected_evidence":"Solve a simple unfamiliar UI problem using one AI interaction loop before asking the teacher: context -> one action -> execution -> result report.",
   "mentor_status":"FUTURE_SITE_RUNTIME_NOT_REQUIRED_FOR_THIS_LESSON",
   "status":"INTEGRATION_DEV_CANDIDATE_NOT_PUBLISHED"
@@ -188,7 +197,7 @@
  document.getElementById('checkFast')?.addEventListener('click',()=>{
    const q=(fast.value||'').toLowerCase();
    const checks={
-     device:/windows|ноутбук|компьютер|пк/.test(q),
+     device:/ноутбук|компьютер|пк|desktop|laptop/.test(q),
      program:/edge|браузер/.test(q),
      symptom:/микрофон/.test(q)&&(/не слыш|не вид|недоступ|не работ/.test(q)),
      action:/одн/.test(q)&&(/действ|шаг|наж/.test(q))
@@ -197,6 +206,17 @@
    const ok=Object.values(checks).every(Boolean);
    fastStatus.className='status '+(ok?'ok':'warn');
    fastStatus.textContent=ok?'Все четыре обязательных элемента найдены.':'Чего-то не хватает. Добавь устройство/программу, наблюдаемый симптом и просьбу дать одно действие.';
+   document.getElementById('fastFollowup').hidden=!ok;
+   fastPass.hidden=true;
+ });
+ document.getElementById('checkFastResult')?.addEventListener('click',()=>{
+   const q=(document.getElementById('fastResultText').value||'').trim().toLowerCase();
+   const reported=/разреш|включ|провер/.test(q)&&(/остал|не измен|не слыш|не помог|проблем/.test(q));
+   const asksNext=/следующ|дальше|что проверить|что сделать|один шаг|одно действие/.test(q);
+   const ok=reported&&asksNext;
+   const box=document.getElementById('fastResultStatus');
+   box.className='status '+(ok?'ok':'warn');
+   box.textContent=ok?'Есть результат действия и запрос на следующий один шаг.':'Сообщи, что разрешение уже включено, проблема осталась, и попроси следующий один шаг.';
    fastPass.hidden=!ok;
  });
 
@@ -204,6 +224,7 @@
  document.getElementById('buildPrompt')?.addEventListener('click',()=>{
    const parts=[
      document.getElementById('device').value.trim(),
+     document.getElementById('system').value.trim(),
      document.getElementById('program').value.trim(),
      document.getElementById('symptom').value.trim(),
      document.getElementById('tried').value.trim(),
@@ -216,6 +237,7 @@
 
  document.getElementById('copyPrompt')?.addEventListener('click',async e=>{
    if(!builtPrompt)document.getElementById('buildPrompt')?.click();
+   if(!builtPrompt){e.currentTarget.textContent='Сначала заполни поля';return}
    try{await navigator.clipboard.writeText(builtPrompt);e.currentTarget.textContent='Скопировано ✓'}catch(_){e.currentTarget.textContent='Выдели текст вручную'}
  });
 
