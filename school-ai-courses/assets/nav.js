@@ -1,5 +1,6 @@
 (() => {
   const ROOT = '/school-ai-courses/';
+  const FEEDBACK_URL = 'https://max.ru/u/f9LHodD0cOIPo6kMsyqken8jVFD1_YWdgh0iZZy6woohI4gWOB110cJMMVQ';
   const path = location.pathname.replace(/index\.html$/, '');
   const home = path === ROOT;
   function normalizeLinks(scope = document) {
@@ -20,6 +21,14 @@
     if (w) { try { w.focus(); } catch (_) {} }
     else window.open('https://duck.ai/', '_blank', 'noopener');
   }
+  function feedbackLink(className = '') {
+    const a = document.createElement('a');
+    a.href = FEEDBACK_URL;
+    a.className = className;
+    a.textContent = 'Связь';
+    a.setAttribute('aria-label', 'Обратная связь через MAX');
+    return a;
+  }
   function chatButton(id, floating = false) {
     const b = document.createElement('button');
     b.type = 'button'; b.id = id;
@@ -34,6 +43,7 @@
     const homeLinks = document.querySelector('.home-links');
     if (homeLinks) {
       homeLinks.id = 'homeMainMenu';
+      homeLinks.appendChild(feedbackLink('s14-feedback'));
       homeLinks.appendChild(chatButton('s14QuickChatTop'));
     }
     if (homeNav && homeLinks) {
@@ -83,6 +93,7 @@
       } catch (_) {}
       location.href = ROOT;
     });
+    holder.appendChild(feedbackLink('nav-big nav-feedback'));
     holder.appendChild(chatButton('s14QuickChatTop'));
     if (header) header.appendChild(holder); else document.body.prepend(holder);
   }
