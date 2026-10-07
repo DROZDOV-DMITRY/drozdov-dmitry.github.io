@@ -1,3 +1,41 @@
+/* === S14 TYPOGRAPHY · local fonts from project Drive === */
+@font-face{
+  font-family:"S14 Display";
+  src:url("/school-ai-courses/assets/fonts/Oswald.ttf") format("truetype");
+  font-style:normal;
+  font-weight:200 700;
+  font-display:swap;
+}
+@font-face{
+  font-family:"S14 UI";
+  src:url("/school-ai-courses/assets/fonts/InterTight-VariableFont_wght.ttf") format("truetype");
+  font-style:normal;
+  font-weight:100 900;
+  font-display:swap;
+}
+html,body,button,input,textarea,select{
+  font-family:"S14 UI","Segoe UI",Arial,sans-serif!important;
+  font-optical-sizing:auto;
+}
+.home-brand b,
+.home-scene-brand,
+.home-card h2,
+.home-schedule h2,
+.s14-student .brand b,
+.s14-student .student-hero h1,
+.s14-student .action-title{
+  font-family:"S14 Display","Arial Narrow","Segoe UI",sans-serif!important;
+  font-weight:700!important;
+}
+.home-brand b{
+  letter-spacing:.035em!important;
+  line-height:.95!important;
+}
+.s14-student .brand b{letter-spacing:.025em!important}
+.home-card h2,
+.s14-student .student-hero h1,
+.s14-student .action-title{letter-spacing:.005em!important}
+
 /* Shared visual system derived from the published winter homepage. */
 :root{--s14-ink:#101c38;--s14-radius:26px;--s14-shadow:0 12px 28px #26335b25}
 .s14-top-chat,.s14-chat-floating{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid #b9dcf7;background:linear-gradient(135deg,#e4faff,#badbff);color:#101c38;min-height:48px;padding:9px 14px;border-radius:18px;font:750 15px/1.1 "Segoe UI",Arial,sans-serif;cursor:pointer;text-decoration:none;white-space:nowrap}.s14-top-chat img,.s14-chat-floating img{width:32px;height:32px;object-fit:contain}.s14-chat-floating{position:fixed;z-index:90;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));background:linear-gradient(135deg,#fff1c2,#baddff);box-shadow:0 8px 24px #102a6250;padding:10px 18px;border:2px solid #ffffffd9;border-radius:22px;min-height:56px}.s14-chat-floating:focus-visible,.s14-top-chat:focus-visible{outline:3px solid #173767;outline-offset:3px}.s14-top-chat:hover,.s14-chat-floating:hover{filter:brightness(1.05)}
