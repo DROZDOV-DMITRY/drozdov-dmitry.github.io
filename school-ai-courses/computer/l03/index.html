@@ -24,7 +24,7 @@
 .plus{font-size:1.5rem;font-weight:950}
 .fake-desktop{display:grid;grid-template-columns:1.45fr .85fr;gap:12px;padding:14px;border-radius:20px;background:linear-gradient(135deg,#dce7f7,#edf3fb);border:1px solid #c1cede}
 .fake-error,.fake-secret{border-radius:16px;padding:16px;box-shadow:0 10px 24px #21355218}
-.fake-error{background:#fff;border:2px solid #d5ddea}
+.fake-error{background:#fff;border:3px solid #2f6fd0;box-shadow:inset 7px 0 0 #2f6fd0}
 .fake-error strong{display:block;font-size:1.12rem;margin-bottom:8px}.fake-error code{font-weight:900}
 .fake-secret{background:#ff2f86;color:#fff;border:2px solid #bd0f58}
 .fake-secret small{display:block;opacity:.92}.fake-secret b{font-size:1.25rem}
@@ -133,14 +133,16 @@
 <div class="safe-note">
 1. выбери, что именно должно попасть в кадр;<br>
 2. сделай снимок только нужной области;<br>
-3. вставь его в проверочную область;<br>
+3. вставь его ниже;<br>
 4. одним предложением объясни ИИ, что произошло;<br>
 5. не показывай переписку и код.
 </div>
+<div id="fastChallengePaste" class="paste-zone" contenteditable="true" tabindex="0">Вставь сюда снимок для FAST CHALLENGE</div>
+<div id="fastChallengeResult" class="check-result">Проверка ещё не выполнена.</div>
 <button class="done" data-fast="1" type="button">○ FAST CHALLENGE выполнен</button>
 </article>
 
-<div class="actions"><a class="secondary" href="../">← Компьютер</a><a href="../l02/">← L02</a><a href="../l04/">L04 →</a></div>
+<div class="actions"><a class="secondary" href="../">← Компьютер</a><a href="../l02/">← L02</a></div>
 </div>
 
 <aside class="progressbox">
@@ -199,16 +201,24 @@
        const scale=Math.min(1,700/img.width);canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));
        ctx.drawImage(img,0,0,canvas.width,canvas.height);
        const data=ctx.getImageData(0,0,canvas.width,canvas.height).data;
-       let magenta=0,total=data.length/4;
-       for(let i=0;i<data.length;i+=4){const r=data[i],g=data[i+1],b=data[i+2];if(r>205&&g<135&&b>120&&r>g*1.5)magenta++;}
-       const ratio=magenta/total;
-       if(ratio>0.002){
+       let magenta=0,targetBlue=0,total=data.length/4;
+       for(let i=0;i<data.length;i+=4){
+         const r=data[i],g=data[i+1],b=data[i+2];
+         if(r>205&&g<135&&b>120&&r>g*1.5)magenta++;
+         if(r<90&&g>75&&g<155&&b>150&&b>r*2)targetBlue++;
+       }
+       const secretRatio=magenta/total,targetRatio=targetBlue/total;
+       if(secretRatio>0.002){
          result.className='check-result warn';
          result.textContent='Похоже, в кадр попал ярко-розовый блок с учебным секретом. Сделай снимок уже и вставь заново.';
          if(pass)pass.hidden=true;
+       }else if(targetRatio<0.001){
+         result.className='check-result warn';
+         result.textContent='Учебный секрет не найден, но тренажёр не видит синюю рамку окна ошибки. Возможно, ты снял не тот участок или слишком мало.';
+         if(pass)pass.hidden=true;
        }else{
          result.className='check-result ok';
-         result.textContent='Розовый учебный секрет не обнаружен. Теперь проверь снимок глазами: видна ли сама проблема и нет ли других лишних данных?';
+         result.textContent='Похоже, нужное окно в кадре, а розовый учебный секрет не попал. Теперь проверь снимок глазами: нет ли других лишних данных?';
          if(pass)pass.hidden=false;
        }
        URL.revokeObjectURL(url);
@@ -219,6 +229,7 @@
  installPaste('fastPaste','fastResult','fastPassLink');
  installPaste('practicePaste','practiceResult');
  installPaste('finalPaste','finalResult');
+ installPaste('fastChallengePaste','fastChallengeResult');
 
  const open=document.getElementById('openAi'),prompt=document.getElementById('aiPrompt');
  open?.addEventListener('click',async()=>{
