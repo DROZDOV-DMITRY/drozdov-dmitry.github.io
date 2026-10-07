@@ -115,7 +115,7 @@
 <h2>3. Не ищи окно мышкой — переключайся</h2>
 <p>Когда открыто несколько программ, используй <b>Alt + Tab</b>. Держи Alt и нажимай Tab, пока не выберешь нужное окно.</p>
 <div class="l01-visual"><div class="keyboard-demo"><span class="keycap">Alt</span><span class="plus">+</span><span class="keycap">Tab ↹</span></div></div>
-<div class="l01-task"><strong>Мини-игра</strong>Попроси соседа или преподавателя назвать последовательность из трёх окон, например: «Edge → Блокнот → Калькулятор». Переключись в таком порядке, не закрывая программы.<span class="l01-time">17:00–25:00</span></div>
+<div class="l01-task"><strong>Мини-игра</strong>Нажми «Дай последовательность», затем переключись между окнами именно в указанном порядке, не закрывая программы.<div class="l01-actions"><button id="sequenceBtn" type="button">Дай последовательность</button><strong id="sequenceText" style="align-self:center">Edge → Блокнот → Калькулятор</strong></div><span class="l01-time">17:00–25:00</span></div>
 <button class="l01-done" data-step="3" type="button">○ Сделано</button>
 </article>
 
@@ -149,13 +149,13 @@
 <article class="l01-card" id="fastChallenge" style="margin-top:18px">
 <h2>FAST CHALLENGE · перенеси навык</h2>
 <div class="fast-challenge">
-<p><b>Без инструкции:</b> открой <b>Проводник</b>, <b>Paint</b> и <b>Microsoft Edge</b>. Сделай Edge активным, затем переключись в Проводник, потом в Paint. После этого «потеряй» Edge за другими окнами и верни его без повторного запуска.</p>
+<p><b>Без инструкции:</b> открой <b>Проводник</b>, <b>Блокнот</b> и <b>Microsoft Edge</b>. Сделай Edge активным, затем переключись в Проводник, потом в Блокнот. После этого «потеряй» Edge за другими окнами и верни его без повторного запуска.</p>
 <p>Если справился — можешь не проходить объясняющие части L01. Покажи результат преподавателю и переходи к следующему уроку.</p>
 </div>
-<button class="l01-done" data-step="fast" type="button">○ FAST CHALLENGE выполнен</button>
+<button class="l01-done" data-fast="1" type="button">○ FAST CHALLENGE выполнен</button>
 </article>
 
-<div class="l01-actions" style="margin-top:18px"><a class="secondary" href="../">← Компьютер</a><a href="../d0/">D0 · диагностика</a></div>
+<div class="l01-actions" style="margin-top:18px"><a class="secondary" href="../">← Компьютер</a><a href="../d0/">D0 · диагностика</a><a href="../l02/">L02 →</a></div>
 </div>
 
 <aside class="progressbox">
@@ -191,7 +191,8 @@
 <script>
 (() => {
  const key='s14:l01:progress:v1';
- const buttons=[...document.querySelectorAll('[data-step]:not([data-step="fast"])')];
+ const buttons=[...document.querySelectorAll('[data-step]')];
+ const fastButton=document.querySelector('[data-fast]');
  let done=new Set();
  try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
  const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
@@ -201,6 +202,11 @@
    text.textContent=done.size+' из '+buttons.length+' этапов';
  }
  buttons.forEach(b=>b.addEventListener('click',()=>{done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
+ if(fastButton){fastButton.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'FAST CHALLENGE выполнен';});}
+ const sequences=[['Edge','Блокнот','Калькулятор'],['Калькулятор','Edge','Блокнот'],['Блокнот','Калькулятор','Edge']];
+ let seqIndex=0;
+ const seqBtn=document.getElementById('sequenceBtn'),seqText=document.getElementById('sequenceText');
+ seqBtn?.addEventListener('click',()=>{seqIndex=(seqIndex+1)%sequences.length;seqText.textContent=sequences[seqIndex].join(' → ');});
  render();
 
  const copy=document.getElementById('copyAi'),prompt=document.getElementById('aiPrompt');
