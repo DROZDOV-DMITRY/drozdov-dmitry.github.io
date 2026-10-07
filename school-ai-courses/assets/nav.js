@@ -132,8 +132,8 @@
     const a = document.createElement('a');
     a.href = FEEDBACK_URL;
     a.className = className;
-    a.textContent = 'Связь';
-    a.setAttribute('aria-label', 'Обратная связь через MAX');
+    a.textContent = 'Помощь';
+    a.setAttribute('aria-label', 'Помощь через MAX');
     return a;
   }
 
@@ -158,8 +158,8 @@
     const homeLinks = document.querySelector('.home-links');
     if (homeLinks) {
       homeLinks.id = 'homeMainMenu';
-      homeLinks.appendChild(feedbackLink('s14-feedback'));
       homeLinks.appendChild(chatButton('s14QuickChatTop'));
+      homeLinks.appendChild(feedbackLink('s14-feedback'));
     }
     if (homeNav && homeLinks) {
       const toggle = document.createElement('button');
