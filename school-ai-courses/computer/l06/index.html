@@ -34,7 +34,7 @@
 .evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .extension-note{padding:15px 17px;border-radius:18px;background:#fff7dc;border:1px solid #ead49b}
 .actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.actions a,.actions button{min-height:44px;padding:9px 13px;border:0;border-radius:14px;background:linear-gradient(135deg,#166dd5,#2654b0);color:#fff;font-weight:900;text-decoration:none;cursor:pointer}.actions .secondary{background:linear-gradient(135deg,#fff1d0,#f8dca6);color:#101c38}
-.done{margin-top:12px;min-height:44px;padding:9px 13px;border:1px solid #c7d4e8;border-radius:14px;background:#fff;color:#101c38;font-weight:850;cursor:pointer}.done.is-done{background:#dff4e8;border-color:#a8d5bb}
+.done{margin-top:12px;min-height:44px;padding:9px 13px;border:1px solid #c7d4e8;border-radius:14px;background:#fff;color:#101c38;font-weight:850;cursor:pointer}.done.is-done{background:#dff4e8;border-color:#a8d5bb}.done:disabled{opacity:.5;cursor:not-allowed}
 .progressbox{position:sticky;top:106px;padding:18px;border-radius:24px;background:#fff;border:1px solid #fff;box-shadow:var(--s14-shadow)}
 .progressbar{height:12px;border-radius:999px;background:#e5ebf4;overflow:hidden;margin:10px 0}.progressbar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#4aa87a,#2673ce)}
 .challenge{padding:17px;border-radius:20px;background:#eef8f1;border:1px solid #bedfc9}.micro{font-size:.9rem;color:#56627a}
@@ -64,12 +64,15 @@
 <div class="choice" id="fastQuiz">
   <button type="button" data-fast-answer="copy">После копирования файл должен быть и в старой, и в новой папке</button>
   <button type="button" data-fast-answer="move">После переноса файл должен исчезнуть из старой папки и появиться в новой</button>
+  <button type="button" data-fast-answer="rename">Если виден <code>.txt</code>, при переименовании смысловой части имени <code>.txt</code> должно остаться</button>
 </div>
+<p><b>Evidence:</b> после обеих операций покажи три состояния: исходную папку, папку с копией и папку с перенесённым файлом.</p>
 <div class="evidence-grid">
-  <div><div id="fastCopyPaste" class="paste-zone" contenteditable="true" tabindex="0">Вставь скриншот результата копирования</div><div id="fastCopyStatus" class="status">Нет evidence.</div></div>
-  <div><div id="fastMovePaste" class="paste-zone" contenteditable="true" tabindex="0">Вставь скриншот результата переноса</div><div id="fastMoveStatus" class="status">Нет evidence.</div></div>
+  <div><div id="fastSourcePaste" class="paste-zone" contenteditable="true" tabindex="0">1. Исходная папка: A остался, B исчез</div><div id="fastSourceStatus" class="status">Нет evidence.</div></div>
+  <div><div id="fastCopyPaste" class="paste-zone" contenteditable="true" tabindex="0">2. Папка с переименованной копией A</div><div id="fastCopyStatus" class="status">Нет evidence.</div></div>
+  <div><div id="fastMovePaste" class="paste-zone" contenteditable="true" tabindex="0">3. Папка с переименованным B</div><div id="fastMoveStatus" class="status">Нет evidence.</div></div>
 </div>
-<div id="fastStatus" class="status">Нужны оба правильных утверждения и два снимка результата.</div>
+<div id="fastStatus" class="status">Нужны три правильных утверждения и три снимка состояния папок.</div>
 <div class="actions"><a id="fastPass" href="#fastChallenge" hidden>Понимаю результат → FAST CHALLENGE</a><a class="secondary" href="#normalRoute">Нет двух файлов → обычный урок</a></div>
 <p class="micro">Сайт не читает файловую систему и не распознаёт имена на снимке. Скриншоты — evidence для самопроверки, а не автоматическая аттестация.</p>
 </article>
@@ -78,9 +81,10 @@
 <section class="section light" id="normalRoute"><div class="wrap l6-grid"><div>
 
 <article class="l6-card">
-<h2>1. Разминка + подготовь два безопасных файла</h2>
+<h2>1. Разминка + проверь учебные файлы</h2>
 <p>4–6 минут печати: открой Блокнот и без копирования набери две короткие строки о сегодняшнем уроке. Следи за точностью, а не за рекордом скорости.</p>
-<div class="l6-task"><b>Подготовка среды, не новый оцениваемый навык:</b> если в папке <b>Курс ИИ — L05 → Входящие</b> нет двух безопасных учебных файлов, создай в Блокноте два простых текстовых файла: <code>Файл-A.txt</code> и <code>Файл-B.txt</code>. Если Windows скрывает расширение, не пытайся добавлять или удалять его вручную.</div>
+<div class="l6-task"><b>Предусловие среды, не навык L06:</b> в <b>Курс ИИ — L05 → Входящие</b> должны лежать два подготовленных безопасных учебных файла: <code>Файл-A.txt</code> и <code>Файл-B.txt</code>. Если их нет, это не ошибка ученика и не часть оценки L06: преподаватель выдаёт два подготовленных файла до продолжения урока. Здесь не вводим отдельный навык «Сохранить как».</div>
+<div class="extension-note"><b>Короткая проверка FILE-007:</b> щёлкни один раз по <code>Файл-A</code>. Если выделился ровно один объект — продолжай. Если выделение само по себе не получается, сделай короткую ремедиацию выбора одного файла; это пока только <code>CANDIDATE_PREREQUISITE</code>.</div>
 <span class="l6-time">0:00–7:00</span>
 <button class="done" data-step="1" type="button">○ Два файла готовы</button>
 </article>
@@ -124,7 +128,7 @@
 <b>Имя и расширение — не одно и то же.</b><br>
 Если видишь <code>Файл-A.txt</code>, то <code>Файл-A</code> — имя, а <code>.txt</code> — расширение. Переименуй только смысловую часть имени. Если расширение скрыто, просто не пытайся дописывать новое.
 </div>
-<p>В «Практика» переименуй копию A в <b>Копия-L06</b>. В «Готово» переименуй перенесённый B в <b>Перенесено-L06</b>. Используй любой знакомый способ переименования.</p>
+<p>В «Практика» переименуй копию A в <b>Копия-L06</b>. В «Готово» переименуй перенесённый B в <b>Перенесено-L06</b>. Минимальный способ: выдели файл → нажми <b>F2</b> → измени имя → Enter. Если расширение видно, не меняй часть после последней точки.</p>
 <div class="choice" id="renameQuiz">
   <button type="button" data-rename-answer="ok"><code>Копия-L06.txt</code> — расширение сохранено</button>
   <button type="button" data-rename-answer="wrong"><code>Копия-L06.jpg</code> — это просто новое красивое имя текстового файла</button>
@@ -139,17 +143,21 @@
 <article class="l6-card" style="margin-top:18px">
 <h2>5. Финальная задача — по требованию, без пошаговой инструкции</h2>
 <div class="challenge">
-<p>Используй два новых безопасных файла или повтори упражнение с новыми именами.</p>
-<p><b>Требование:</b> один файл должен <b>остаться в исходной папке</b> и получить копию в «Практика». Второй файл должен <b>исчезнуть из исходной папки</b> и оказаться в «Готово». В новых местах переименуй оба, сохранив расширение.</p>
-<p>После выполнения ответь себе: <b>почему у первого осталось два экземпляра, а у второго — один?</b></p>
+<p>Используй уже получившиеся файлы — новые создавать не нужно.</p>
+<p>1. Исходный <b>Файл-A</b> из «Входящие» скопируй в «Готово» и переименуй копию в <b>Финал-копия</b>.<br>
+2. <b>Копия-L06</b> из «Практика» перемести в «Готово» и переименуй в <b>Финал-перенос</b>.<br>
+3. Расширения не меняй.</p>
+<p>После выполнения объясни: <b>почему Файл-A остался во «Входящие», а Копия-L06 исчезла из «Практика»?</b></p>
 </div>
+<p><b>Evidence:</b> покажи три папки после выполнения.</p>
 <div class="evidence-grid">
-  <div><div id="finalCopyPaste" class="paste-zone" contenteditable="true" tabindex="0">Скриншот папки с копией</div><div id="finalCopyStatus" class="status">Нет evidence.</div></div>
-  <div><div id="finalMovePaste" class="paste-zone" contenteditable="true" tabindex="0">Скриншот папки с перенесённым файлом</div><div id="finalMoveStatus" class="status">Нет evidence.</div></div>
+  <div><div id="finalSourcePaste" class="paste-zone" contenteditable="true" tabindex="0">1. «Входящие»: исходный Файл-A остался</div><div id="finalSourceStatus" class="status">Нет evidence.</div></div>
+  <div><div id="finalPracticePaste" class="paste-zone" contenteditable="true" tabindex="0">2. «Практика»: Копия-L06 исчезла</div><div id="finalPracticeStatus" class="status">Нет evidence.</div></div>
+  <div><div id="finalReadyPaste" class="paste-zone" contenteditable="true" tabindex="0">3. «Готово»: Финал-копия и Финал-перенос</div><div id="finalReadyStatus" class="status">Нет evidence.</div></div>
 </div>
-<div id="finalStatus" class="status">Для evidence нужны оба снимка.</div>
+<div id="finalStatus" class="status">Для evidence нужны три снимка.</div>
 <span class="l6-time">30:00–40:00</span>
-<button class="done" data-step="5" type="button">○ Урок завершён</button>
+<button class="done" id="finalDone" data-step="5" type="button" disabled>○ Урок завершён</button>
 </article>
 
 <article class="l6-card" id="fastChallenge" style="margin-top:18px">
@@ -182,11 +190,12 @@
   "environment":["WINDOWS","FILE_EXPLORER","BROWSER","AI_LAUNCHER_V1"],
   "target_atoms":["FILE-005","FILE-010","FILE-011"],
   "reinforcement_atoms":["FILE-001","FILE-002","FILE-003","FILE-004","KEY-004","KEY-005","AI-001","AI-002","AI-005","AI-006"],
-  "candidate_prerequisites":[{"id":"FILE-007","status":"CANDIDATE_PREREQUISITE","reason":"The learner must select a single file before copy, move, or rename; remediate if selection itself blocks the task."}],
-  "setup_not_assessed":"Creating two harmless text files in Notepad is environment setup only and is not evidence of L06 mastery.",
-  "fast_gate":{"duration_minutes":4,"mode":"PERFORMANCE_REAL_FILE_SYSTEM_NO_AI","checks":["COPY_FILE","SOURCE_REMAINS","MOVE_FILE","SOURCE_REMOVED","RENAME_PRESERVE_EXTENSION","SCREENSHOT_EVIDENCE"],"on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
+  "candidate_prerequisites":[{"id":"FILE-007","status":"CANDIDATE_PREREQUISITE","reason":"The learner must select a single file before copy, move, or rename; remediate only if selection itself blocks the task.","diagnostic_task":"Click one prepared sample file once. If exactly one object becomes selected, FILE-007 does not block L06."}],
+  "environment_precondition":"Two harmless prepared text files named File-A.txt and File-B.txt are available in the L05 Incoming folder before instruction; teacher supplies them if absent.",
+  "setup_not_assessed":"Preparing or saving the sample files is not evidence of L06 mastery and must not become a hidden Save As lesson.",
+  "fast_gate":{"duration_minutes":4,"mode":"PERFORMANCE_REAL_FILE_SYSTEM_NO_AI","checks":["COPY_FILE","SOURCE_REMAINS","MOVE_FILE","SOURCE_REMOVED","RENAME_PRESERVE_EXTENSION","THREE_LOCATION_SCREENSHOT_EVIDENCE"],"on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
   "ai_policy":{"first_attempt":"SELF_OR_RECALL","allowed_after_stuck":["ONE_ACTION"],"do_not":["GIVE_FULL_SEQUENCE_IMMEDIATELY"]},
-  "expected_evidence":"Copy one file so source remains, move another so source disappears, rename both without changing the extension, and explain the different outcomes.",
+  "expected_evidence":"Show the source folder plus both destination folders after copy/move/rename, then explain why the copied source remains while the moved source disappears.",
   "status":"DEV_BRANCH_CANDIDATE_NOT_PUBLISHED"
 }
 </script>
@@ -199,18 +208,19 @@
  buttons.forEach(b=>b.addEventListener('click',()=>{done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
  fastButton?.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'FAST CHALLENGE выполнен'});render();
 
- let fastCopyConcept=false,fastMoveConcept=false,fastCopyEvidence=false,fastMoveEvidence=false;
+ let fastCopyConcept=false,fastMoveConcept=false,fastRenameConcept=false,fastSourceEvidence=false,fastCopyEvidence=false,fastMoveEvidence=false;
  function updateFast(){
-   const ok=fastCopyConcept&&fastMoveConcept&&fastCopyEvidence&&fastMoveEvidence;
+   const ok=fastCopyConcept&&fastMoveConcept&&fastRenameConcept&&fastSourceEvidence&&fastCopyEvidence&&fastMoveEvidence;
    const box=document.getElementById('fastStatus'),pass=document.getElementById('fastPass');
    pass.hidden=!ok;
    box.className='status '+(ok?'ok':'');
-   box.textContent=ok?'Есть оба результата и понимание разницы. Проверь снимки глазами и переходи к FAST CHALLENGE.':'Нужны оба правильных утверждения и два снимка результата.';
+   box.textContent=ok?'Есть три состояния папок и понимание copy / move / rename. Проверь снимки глазами и переходи к FAST CHALLENGE.':'Нужны три правильных утверждения и три снимка состояния папок.';
  }
  document.querySelectorAll('[data-fast-answer]').forEach(btn=>btn.addEventListener('click',()=>{
    btn.classList.add('ok');
    if(btn.dataset.fastAnswer==='copy')fastCopyConcept=true;
    if(btn.dataset.fastAnswer==='move')fastMoveConcept=true;
+   if(btn.dataset.fastAnswer==='rename')fastRenameConcept=true;
    updateFast();
  }));
 
@@ -248,12 +258,21 @@
      img.src=url;
    });
  }
+ installImage('fastSourcePaste','fastSourceStatus',()=>{fastSourceEvidence=true;updateFast()});
  installImage('fastCopyPaste','fastCopyStatus',()=>{fastCopyEvidence=true;updateFast()});
  installImage('fastMovePaste','fastMoveStatus',()=>{fastMoveEvidence=true;updateFast()});
- let finalCopy=false,finalMove=false;
- function updateFinal(){const box=document.getElementById('finalStatus');if(finalCopy&&finalMove){box.className='status ok';box.textContent='Оба снимка вставлены. Проверь глазами место, имя и расширение каждого файла.'}}
- installImage('finalCopyPaste','finalCopyStatus',()=>{finalCopy=true;updateFinal()});
- installImage('finalMovePaste','finalMoveStatus',()=>{finalMove=true;updateFinal()});
+ let finalSource=false,finalPractice=false,finalReady=false;
+ function updateFinal(){
+   const box=document.getElementById('finalStatus'),done=document.getElementById('finalDone');
+   if(finalSource&&finalPractice&&finalReady){
+     box.className='status ok';
+     box.textContent='Три снимка вставлены. Проверь глазами: исходник A остался, перемещённый файл исчез из старой папки, оба результата в «Готово» переименованы без смены расширения.';
+     done.disabled=false;
+   }
+ }
+ installImage('finalSourcePaste','finalSourceStatus',()=>{finalSource=true;updateFinal()});
+ installImage('finalPracticePaste','finalPracticeStatus',()=>{finalPractice=true;updateFinal()});
+ installImage('finalReadyPaste','finalReadyStatus',()=>{finalReady=true;updateFinal()});
 })();
 </script>
 </body>
