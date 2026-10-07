@@ -125,3 +125,6 @@ body.s14-student{margin:0;background:linear-gradient(180deg,#eff5ffde,#f5f2fbe8)
 @media(max-width:430px){
   .home-nav.menu-open .home-links{grid-template-columns:1fr}
 }
+
+/* Homepage brand: keep logo only in the header. */
+.home-page .home-scene-brand{display:none!important}
