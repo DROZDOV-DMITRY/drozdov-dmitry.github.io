@@ -128,3 +128,84 @@ body.s14-student{margin:0;background:linear-gradient(180deg,#eff5ffde,#f5f2fbe8)
 
 /* Homepage brand: keep logo only in the header. */
 .home-page .home-scene-brand{display:none!important}
+
+
+/* AI launcher v1: one trigger, multiple external AI services. */
+.s14-ai-menu{
+  position:fixed;
+  z-index:10020;
+  display:grid;
+  gap:7px;
+  padding:9px;
+  border:1px solid #d9e3f0;
+  border-radius:20px;
+  background:#fffffff8;
+  box-shadow:0 18px 48px #17254a2d,0 4px 14px #17254a18;
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+.s14-ai-menu::after{
+  content:"";
+  position:absolute;
+  width:12px;
+  height:12px;
+  right:24px;
+  top:-7px;
+  transform:rotate(45deg);
+  background:#fff;
+  border-left:1px solid #d9e3f0;
+  border-top:1px solid #d9e3f0;
+}
+.s14-ai-menu.is-floating::after{
+  top:auto;
+  bottom:-7px;
+  transform:rotate(225deg);
+}
+.s14-ai-menu-item{
+  width:100%;
+  min-height:62px;
+  display:grid;
+  grid-template-columns:42px minmax(0,1fr) 20px;
+  align-items:center;
+  gap:10px;
+  padding:9px 10px;
+  border:1px solid #e1e8f2;
+  border-radius:15px;
+  background:#fff;
+  color:#101c38;
+  text-align:left;
+  cursor:pointer;
+  box-shadow:none;
+}
+.s14-ai-menu-item:hover,.s14-ai-menu-item:focus-visible{
+  border-color:#9fb8dd;
+  background:#f7fbff;
+  transform:translateY(-1px);
+}
+.s14-ai-menu-item:focus-visible{
+  outline:3px solid #173767;
+  outline-offset:2px;
+}
+.s14-ai-service-mark{
+  width:40px;
+  height:40px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  color:#fff;
+  font:950 18px/1 "Segoe UI",Arial,sans-serif;
+}
+.s14-ai-duck .s14-ai-service-mark{background:linear-gradient(135deg,#e66a31,#f3a23c)}
+.s14-ai-zai .s14-ai-service-mark{background:linear-gradient(135deg,#5d48db,#8f75ff)}
+.s14-ai-arena .s14-ai-service-mark{background:linear-gradient(135deg,#173767,#3186c9)}
+.s14-ai-service-copy{display:grid;gap:2px;min-width:0}
+.s14-ai-service-copy strong{font-size:15px;line-height:1.15}
+.s14-ai-service-copy small{font-size:12px;line-height:1.2;color:#62708a;font-weight:700}
+.s14-ai-service-arrow{font-size:18px;color:#62708a}
+@media(max-width:600px){
+  .s14-ai-menu{max-width:calc(100vw - 20px)}
+  .s14-ai-menu-item{min-height:58px}
+}
+@media(prefers-reduced-motion:reduce){
+  .s14-ai-menu-item:hover,.s14-ai-menu-item:focus-visible{transform:none}
+}
