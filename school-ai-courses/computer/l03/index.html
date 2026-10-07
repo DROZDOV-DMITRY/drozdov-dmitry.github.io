@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fffdf8">
 <title>L03 · Скриншот — доказательство проблемы · Курс ИИ</title>
-<meta name="description" content="Урок 3: безопасный скриншот нужной области, вставка изображения и защита секретов перед отправкой в ИИ.">
+<meta name="description" content="Урок 3: безопасный скриншот нужной области, вставка изображения и защита секретных данных.">
 <link rel="canonical" href="https://drozdov-dmitry.github.io/school-ai-courses/computer/l03/">
 <link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
 <link rel="stylesheet" href="/school-ai-courses/assets/s14-v2.css">
@@ -13,6 +13,7 @@
 <script defer src="/school-ai-courses/assets/nav.js"></script>
 <script defer src="/school-ai-courses/assets/snow-trail.js"></script>
 <style>
+.s14-top-chat,.s14-chat-floating{display:none!important}
 .l3-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:18px;align-items:start}
 .l3-card,.l3-fast{padding:22px;border-radius:26px;border:1px solid #ffffffe8;box-shadow:var(--s14-shadow)}
 .l3-card{background:linear-gradient(135deg,#fffaf1,#eef6ff)}.l3-fast{background:linear-gradient(135deg,#fff2c8,#e2f1ff)}
@@ -22,27 +23,27 @@
 .keys{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;border-radius:22px;background:#dfe8f5}
 .keycap{min-width:78px;min-height:58px;padding:11px;border-radius:14px;border:1px solid #aeb8c6;border-bottom:5px solid #929eae;background:#fff;display:grid;place-items:center;font-size:1.12rem;font-weight:950}
 .plus{font-size:1.5rem;font-weight:950}
-.fake-desktop{display:grid;grid-template-columns:1.45fr .85fr;gap:12px;padding:14px;border-radius:20px;background:linear-gradient(135deg,#dce7f7,#edf3fb);border:1px solid #c1cede}
-.fake-error,.fake-secret{border-radius:16px;padding:16px;box-shadow:0 10px 24px #21355218}
-.fake-error{background:#fff;border:3px solid #2f6fd0;box-shadow:inset 7px 0 0 #2f6fd0}
-.fake-error strong{display:block;font-size:1.12rem;margin-bottom:8px}.fake-error code{font-weight:900}
-.fake-secret{background:#ff2f86;color:#fff;border:2px solid #bd0f58}
-.fake-secret small{display:block;opacity:.92}.fake-secret b{font-size:1.25rem}
+.fake-desktop,.mock-three{display:grid;gap:12px;padding:14px;border-radius:20px;background:#dfe8f5;border:1px solid #c1cede}
+.fake-desktop{grid-template-columns:1.45fr .85fr}.mock-three{grid-template-columns:1.15fr .9fr .9fr}
+.fake-error,.mock-pane{border-radius:16px;padding:16px;background:#fff;border:2px solid #cbd5e2}
+.fake-error,.mock-pane.problem{border:3px solid #2f6fd0;box-shadow:inset 7px 0 0 #2f6fd0}
+.fake-secret,.mock-pane.secret{border-radius:16px;padding:16px;background:#ff2f86;color:#fff;border:2px solid #bd0f58}
+.mock-pane.chat{background:#f7f8fb}
 .paste-zone{min-height:120px;margin-top:12px;border:2px dashed #91a7c6;border-radius:18px;background:#fff;padding:14px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:850;outline:none;overflow:hidden}
-.paste-zone:focus{border-color:#2a6dcc;box-shadow:0 0 0 4px #2a6dcc18}
-.paste-zone img{max-width:100%;max-height:300px;border-radius:12px}
+.paste-zone:focus{border-color:#2a6dcc;box-shadow:0 0 0 4px #2a6dcc18}.paste-zone img{max-width:100%;max-height:300px;border-radius:12px}
 .check-result{margin-top:10px;padding:11px 13px;border-radius:14px;background:#eef3fb;font-weight:850}
 .check-result.ok{background:#e5f5eb;color:#195c39}.check-result.warn{background:#fff0f4;color:#8b2149}
+.safe-note{padding:16px 17px;border-radius:18px;background:#eef8f1;border:1px solid #bedfc9}
+.mentor-sim{padding:17px;border-radius:20px;background:linear-gradient(135deg,#f1eaff,#e6f5ff);border:1px solid #d6cfee}
+.mentor-sim textarea,.fast-prompt{width:100%;min-height:86px;border:1px solid #c8d4e6;border-radius:14px;padding:12px;font:700 .96rem/1.45 "S14 UI","Segoe UI",Arial,sans-serif;background:#fff;box-sizing:border-box;margin-top:10px}
+.mentor-reply{margin-top:10px;padding:14px;border-radius:16px;background:#fff;border:1px solid #cfd9ea;display:none}.mentor-reply.show{display:block}
 .actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.actions a,.actions button{min-height:44px;padding:9px 13px;border:0;border-radius:14px;background:linear-gradient(135deg,#166dd5,#2654b0);color:#fff;font-weight:900;text-decoration:none;cursor:pointer}.actions .secondary{background:linear-gradient(135deg,#fff1d0,#f8dca6);color:#101c38}
 .done{margin-top:12px;min-height:44px;padding:9px 13px;border:1px solid #c7d4e8;border-radius:14px;background:#fff;color:#101c38;font-weight:850;cursor:pointer}.done.is-done{background:#dff4e8;border-color:#a8d5bb}
 .progressbox{position:sticky;top:106px;padding:18px;border-radius:24px;background:#fff;border:1px solid #fff;box-shadow:var(--s14-shadow)}
 .progressbar{height:12px;border-radius:999px;background:#e5ebf4;overflow:hidden;margin:10px 0}.progressbar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#4aa87a,#2673ce)}
-.safe-note{padding:16px 17px;border-radius:18px;background:#eef8f1;border:1px solid #bedfc9}
-.ai-box{padding:17px;border-radius:20px;background:linear-gradient(135deg,#f1eaff,#e6f5ff);border:1px solid #d6cfee}
-.ai-box textarea{width:100%;min-height:92px;border:1px solid #c8d4e6;border-radius:14px;padding:12px;font:700 .96rem/1.45 "S14 UI","Segoe UI",Arial,sans-serif;background:#fff}
 .micro{font-size:.9rem;color:#56627a}
 @media(max-width:900px){.l3-grid{grid-template-columns:1fr}.progressbox{position:static}}
-@media(max-width:650px){.fake-desktop{grid-template-columns:1fr}.l3-card,.l3-fast{padding:17px}}
+@media(max-width:650px){.fake-desktop,.mock-three{grid-template-columns:1fr}.l3-card,.l3-fast{padding:17px}}
 </style>
 </head>
 <body class="s14-student theme-computer">
@@ -51,64 +52,66 @@
 <section class="student-hero"><div class="wrap">
 <span class="status-badge">Урок 3 · 40 минут</span>
 <h1>Скриншот — доказательство проблемы</h1>
-<p>Показывай ИИ ровно то, что нужно для помощи: нужную область экрана — без паролей, кодов и лишних личных данных.</p>
+<p>Показывай ровно то, что нужно для помощи: нужную область экрана — без секретных и лишних личных данных.</p>
 </div></section>
 
 <section class="section light"><div class="wrap">
 <article class="l3-fast">
 <span class="status-badge">Мне это легко · экспресс-проверка ≈ 3 минуты</span>
 <h2>Сделай безопасный скриншот без подсказок</h2>
-<p>Ниже учебный экран. Сними <b>только белое окно ошибки</b> и вставь снимок в проверочную область. Розовый блок «учебный секрет» в кадр попадать не должен.</p>
+<p>Сними <b>только белое окно ошибки</b> и вставь снимок ниже. Розовый учебный блок в кадр попадать не должен.</p>
 <div class="fake-desktop">
-  <div class="fake-error"><strong>Не удалось открыть файл</strong><div>Приложение сообщает: <code>ERR_FILE_17</code></div><p class="micro">Это безопасная учебная ошибка.</p></div>
-  <div class="fake-secret"><small>УЧЕБНЫЙ СЕКРЕТ · НЕ ОТПРАВЛЯТЬ</small><b>Код: 482913</b><div>Пароль: MARS-2026</div></div>
+  <div class="fake-error"><strong>Не удалось открыть файл</strong><p>Приложение сообщает: <code>ERR_FILE_DEMO</code></p></div>
+  <div class="fake-secret"><strong>УЧЕБНЫЙ СЕКРЕТ</strong><p>Этот блок нельзя отправлять.</p></div>
 </div>
 <div id="fastPaste" class="paste-zone" contenteditable="true" tabindex="0">Щёлкни сюда и нажми Ctrl+V</div>
 <div id="fastResult" class="check-result">Проверка ещё не выполнена.</div>
 <div class="actions"><a href="#fastChallenge" id="fastPassLink" hidden>Снимок безопасный → FAST CHALLENGE</a><a class="secondary" href="#normalRoute">Не получилось → обычный урок</a></div>
-<p class="micro-note">Тренажёр приблизительно проверяет наличие ярко-розового учебного блока. Окончательная проверка всегда глазами.</p>
+<p class="micro">Автопроверка приблизительная. Перед отправкой изображения всегда проверяй его глазами.</p>
 </article>
 </div></section>
 
 <section class="section light" id="normalRoute"><div class="wrap l3-grid"><div>
-
 <article class="l3-card">
 <h2>1. Разминка: коротко описать проблему</h2>
-<p>Открой Блокнот и за 4 минуты набери три строки:</p>
-<div class="safe-note"><b>Устройство:</b> Windows<br><b>Проблема:</b> файл не открывается<br><b>Что вижу:</b> ERR_FILE_17</div>
-<div class="l3-task">Старайся не смотреть на клавиатуру постоянно. Здесь важна точность формулировки, а не скорость любой ценой.<br><span class="l3-time">0:00–5:00</span></div>
+<p>Открой Блокнот и набери: устройство, проблема, что видно на экране.</p>
+<div class="safe-note"><b>Устройство:</b> Windows<br><b>Проблема:</b> файл не открывается<br><b>Что вижу:</b> ERR_FILE_DEMO</div>
+<span class="l3-time">0:00–5:00</span>
 <button class="done" data-step="1" type="button">○ Сделано</button>
 </article>
 
 <article class="l3-card" style="margin-top:18px">
 <h2>2. Захвати только нужную область</h2>
 <div class="keys"><span class="keycap">Win</span><span class="plus">+</span><span class="keycap">Shift</span><span class="plus">+</span><span class="keycap">S</span></div>
-<p>После сочетания экран затемнится, и можно выделить прямоугольником только нужную область. Снимок попадёт в буфер обмена.</p>
-<div class="l3-task"><b>Сделай:</b> на учебном экране ниже сними только белое окно ошибки. Не снимай весь экран.<br><span class="l3-time">5:00–13:00</span></div>
+<p>Выдели прямоугольником только нужную область. Снимок попадёт в буфер обмена.</p>
 <div class="fake-desktop">
-  <div class="fake-error"><strong>Сеть подключена, но сайт не отвечает</strong><div>Сообщение: <code>ERR_NET_DEMO</code></div><p class="micro">Нужно показать только эту проблему.</p></div>
-  <div class="fake-secret"><small>УЧЕБНЫЙ СЕКРЕТ · НЕ ОТПРАВЛЯТЬ</small><b>Код: 731204</b><div>Пароль: DEMO-ONLY</div></div>
+  <div class="fake-error"><strong>Сайт не отвечает</strong><p><code>ERR_NET_DEMO</code></p></div>
+  <div class="fake-secret"><strong>УЧЕБНЫЙ СЕКРЕТ</strong><p>Этот блок нельзя отправлять.</p></div>
 </div>
+<span class="l3-time">5:00–13:00</span>
 <button class="done" data-step="2" type="button">○ Скриншот сделан</button>
 </article>
 
 <article class="l3-card" style="margin-top:18px">
 <h2>3. Вставь и проверь до отправки</h2>
-<p>Щёлкни в область ниже и нажми <b>Ctrl+V</b>. Мы специально проверяем снимок локально на этой странице — он никуда не загружается.</p>
+<p>Щёлкни ниже и нажми <b>Ctrl+V</b>. Проверка выполняется локально в браузере.</p>
 <div id="practicePaste" class="paste-zone" contenteditable="true" tabindex="0">Вставь сюда скриншот</div>
 <div id="practiceResult" class="check-result">Проверка ещё не выполнена.</div>
-<div class="safe-note" style="margin-top:12px"><b>Перед отправкой спроси себя:</b> в кадре нет пароля? одноразового кода? QR для входа? номера карты? лишней переписки? других личных данных?</div>
+<div class="safe-note" style="margin-top:12px"><b>Перед отправкой:</b> проблема видна? лишние окна не попали? секретных данных нет?</div>
 <span class="l3-time">13:00–21:00</span>
 <button class="done" data-step="3" type="button">○ Проверено</button>
 </article>
 
 <article class="l3-card" style="margin-top:18px">
-<h2>4. Передай проблему ИИ</h2>
-<div class="ai-box">
-<p>Только после проверки скриншота открой ИИ-чат. Вставь безопасный снимок и добавь короткий текст:</p>
-<textarea id="aiPrompt" readonly>У меня Windows. На скриншоте учебная ошибка. Посмотри только на то, что видно на снимке, и предложи одно безопасное следующее действие. Не давай длинную инструкцию сразу.</textarea>
-<div class="actions"><button id="openAi" type="button">Скопировать текст и открыть ИИ-чат</button></div>
-<p class="micro-note">Сейчас сайт открывает внешний ИИ-чат. Если он не принимает изображения, это ограничение среды, а не провал навыка. Встроенный Наставник сайта будет отдельной реализацией.</p>
+<h2>4. Потренируй передачу проблемы Наставнику</h2>
+<div class="mentor-sim">
+<p><b>Учебный тренажёр.</b> Изображение никуда не отправляется. Он имитирует будущий встроенный Наставник сайта.</p>
+<div id="mentorPaste" class="paste-zone" contenteditable="true" tabindex="0">1. Вставь сюда безопасный скриншот</div>
+<div id="mentorPasteResult" class="check-result">Снимок ещё не проверен.</div>
+<textarea id="mentorPrompt" placeholder="2. Устройство + что произошло + просьба дать одно следующее действие"></textarea>
+<div class="actions"><button id="mentorAsk" type="button">Спросить учебного Наставника</button></div>
+<div id="mentorReply" class="mentor-reply"></div>
+<p class="micro">Это не настоящий AI-runtime. Реальная загрузка изображения в ИИ будет проверяться после появления разрешённого ученического Наставника.</p>
 </div>
 <span class="l3-time">21:00–29:00</span>
 <button class="done" data-step="4" type="button">○ Сделано</button>
@@ -116,42 +119,39 @@
 
 <article class="l3-card" style="margin-top:18px">
 <h2>5. Финальная задача — без пошаговой инструкции</h2>
-<p>Ниже новая ситуация. Сам реши, что именно нужно показать ИИ.</p>
 <div class="fake-desktop">
-  <div class="fake-error"><strong>Микрофон недоступен</strong><div>Браузер пишет: <code>MIC_PERMISSION_DENIED</code></div><p class="micro">Нужна помощь только с этой проблемой.</p></div>
-  <div class="fake-secret"><small>УЧЕБНЫЙ СЕКРЕТ · НЕ ОТПРАВЛЯТЬ</small><b>Код: 995011</b><div>Recovery: DEMO-KEY</div></div>
+  <div class="fake-error"><strong>Микрофон недоступен</strong><p><code>MIC_PERMISSION_DEMO</code></p></div>
+  <div class="fake-secret"><strong>УЧЕБНЫЙ СЕКРЕТ</strong><p>Этот блок нельзя отправлять.</p></div>
 </div>
 <div id="finalPaste" class="paste-zone" contenteditable="true" tabindex="0">Вставь сюда финальный скриншот</div>
 <div id="finalResult" class="check-result">Проверка ещё не выполнена.</div>
-<div class="l3-task"><b>Условия:</b> в снимке должна быть видна проблема, но не учебный секрет. После безопасной проверки сформулируй ИИ одним предложением, что нужно сделать дальше.<br><span class="l3-time">29:00–40:00</span></div>
+<div class="l3-task"><b>Условия:</b> проблема видна, секретный блок не виден. После проверки сформулируй одним предложением вопрос будущему Наставнику.<br><span class="l3-time">29:00–40:00</span></div>
 <button class="done" data-step="5" type="button">○ Урок завершён</button>
 </article>
 
 <article class="l3-card" id="fastChallenge" style="margin-top:18px">
 <h2>FAST CHALLENGE · передай минимум достаточного</h2>
-<p>Представь, что на экране одновременно открыты три окна: браузер с ошибкой, MAX с личной перепиской и окно входа с кодом подтверждения. За 5 минут:</p>
-<div class="safe-note">
-1. выбери, что именно должно попасть в кадр;<br>
-2. сделай снимок только нужной области;<br>
-3. вставь его ниже;<br>
-4. одним предложением объясни ИИ, что произошло;<br>
-5. не показывай переписку и код.
+<p>На учебном рабочем столе одновременно три окна. Сними только то, что действительно нужно для диагностики.</p>
+<div class="mock-three">
+  <div class="mock-pane problem"><strong>Браузер</strong><p>Страница не открылась.</p><code>ERR_CONNECTION_DEMO</code></div>
+  <div class="mock-pane chat"><strong>MAX · учебный макет</strong><p>Личная переписка не нужна для диагностики.</p></div>
+  <div class="mock-pane secret"><strong>Вход</strong><p>Секретный блок нельзя отправлять.</p></div>
 </div>
-<div id="fastChallengePaste" class="paste-zone" contenteditable="true" tabindex="0">Вставь сюда снимок для FAST CHALLENGE</div>
+<div id="fastChallengePaste" class="paste-zone" contenteditable="true" tabindex="0">Вставь сюда снимок</div>
 <div id="fastChallengeResult" class="check-result">Проверка ещё не выполнена.</div>
+<textarea id="fastChallengePrompt" class="fast-prompt" placeholder="Одним предложением: что спросишь у Наставника?"></textarea>
 <button class="done" data-fast="1" type="button">○ FAST CHALLENGE выполнен</button>
 </article>
 
 <div class="actions"><a class="secondary" href="../">← Компьютер</a><a href="../l02/">← L02</a></div>
 </div>
-
 <aside class="progressbox">
 <strong>Твой прогресс</strong><div class="progressbar"><span id="progressFill"></span></div><div id="progressText">0 из 5 этапов</div>
-<p class="micro-note">Отметки сохраняются только в этом браузере.</p>
+<p class="micro">Отметки сохраняются только в этом браузере.</p>
 <hr style="border:0;border-top:1px solid #e3e8f0;margin:14px 0">
 <strong>Сегодня тренируем</strong>
-<p><code>KEY-011</code> скриншот области<br><code>AI-003</code> показать проблему<br><code>AI-004</code> вставить скриншот в ИИ<br><code>AI-008</code> не передавать пароль/код</p>
-<p class="micro-note">Повтор: <code>KEY-005</code> вставка.</p>
+<p><code>KEY-011</code> скриншот области<br><code>AI-003</code> показать проблему<br><code>AI-008</code> не передавать секреты</p>
+<p class="micro"><code>AI-004</code> пока тренируется в локальном симуляторе и не считается подтверждённым.</p>
 </aside>
 </div></section>
 </main>
@@ -160,81 +160,51 @@
 {
   "lesson_id":"L03",
   "title":"Скриншот — доказательство проблемы",
-  "environment":["WINDOWS","BROWSER","AI_CHAT"],
-  "target_atoms":["KEY-011","AI-003","AI-004","AI-008"],
+  "environment":["WINDOWS","BROWSER","LOCAL_MENTOR_SIMULATOR"],
+  "target_atoms":["KEY-011","AI-003","AI-008"],
+  "simulated_not_mastered_atoms":["AI-004"],
   "prerequisites":["KEY-005"],
   "explicit_dependency_chain":["KEY-011","KEY-005","AI-004"],
   "fast_gate":{"duration_minutes":3,"mode":"PERFORMANCE_NO_AI","on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
-  "ai_policy":{
-    "first_attempt":"NO_AI",
-    "allowed_after_attempt":["ONE_ACTION","SCREENSHOT_DIAGNOSTIC"],
-    "do_not":["REQUEST_SECRET","GIVE_FULL_SEQUENCE_IMMEDIATELY"]
-  },
-  "expected_evidence":"Capture only the relevant problem region, paste it, verify that no password/code/private secret is visible, then send or present it safely.",
-  "mutable_ui_fact":"Win+Shift+S opens the Snipping Tool overlay on current Windows 10/11; verify if Windows behavior changes.",
-  "status":"DEV_BRANCH_CANDIDATE_NOT_PUBLISHED"
+  "ai_policy":{"first_attempt":"NO_AI","do_not":["REQUEST_SECRET","GIVE_FULL_SEQUENCE_IMMEDIATELY"]},
+  "expected_evidence":"Capture only the relevant problem region, paste it locally, verify that no secret or irrelevant data is visible, and formulate the accompanying request.",
+  "runtime_constraint":"AI-004 is simulation-only until an authorized student AI runtime that accepts image input is available.",
+  "status":"DEV_BRANCH_CANDIDATE_AFTER_REPAIR"
 }
 </script>
 <script>
 (() => {
- const key='s14:l03:progress:v1';
- const buttons=[...document.querySelectorAll('[data-step]')];
- const fastButton=document.querySelector('[data-fast]');
- let done=new Set(); try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
+ const key='s14:l03:progress:v1',buttons=[...document.querySelectorAll('[data-step]')],fastButton=document.querySelector('[data-fast]');
+ let done=new Set();try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
  const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
  function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':b.dataset.step==='2'?'Скриншот сделан':b.dataset.step==='3'?'Проверено':'Сделано')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
  buttons.forEach(b=>b.addEventListener('click',()=>{done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
- fastButton?.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'FAST CHALLENGE выполнен'});
- render();
+ fastButton?.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'FAST CHALLENGE выполнен'});render();
 
  function installPaste(zoneId,resultId,passLinkId){
-   const zone=document.getElementById(zoneId),result=document.getElementById(resultId),pass=document.getElementById(passLinkId);
-   if(!zone||!result)return;
-   zone.addEventListener('paste',e=>{
-     const item=[...e.clipboardData.items].find(x=>x.type.startsWith('image/'));
-     if(!item){result.className='check-result warn';result.textContent='В буфере нет изображения. Сначала сделай скриншот, затем нажми Ctrl+V.';return;}
-     e.preventDefault();
-     const file=item.getAsFile(),url=URL.createObjectURL(file),img=new Image();
-     img.onload=()=>{
-       zone.innerHTML='';zone.appendChild(img);
-       const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d',{willReadFrequently:true});
-       const scale=Math.min(1,700/img.width);canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));
-       ctx.drawImage(img,0,0,canvas.width,canvas.height);
-       const data=ctx.getImageData(0,0,canvas.width,canvas.height).data;
-       let magenta=0,targetBlue=0,total=data.length/4;
-       for(let i=0;i<data.length;i+=4){
-         const r=data[i],g=data[i+1],b=data[i+2];
-         if(r>205&&g<135&&b>120&&r>g*1.5)magenta++;
-         if(r<90&&g>75&&g<155&&b>150&&b>r*2)targetBlue++;
-       }
-       const secretRatio=magenta/total,targetRatio=targetBlue/total;
-       if(secretRatio>0.002){
-         result.className='check-result warn';
-         result.textContent='Похоже, в кадр попал ярко-розовый блок с учебным секретом. Сделай снимок уже и вставь заново.';
-         if(pass)pass.hidden=true;
-       }else if(targetRatio<0.001){
-         result.className='check-result warn';
-         result.textContent='Учебный секрет не найден, но тренажёр не видит синюю рамку окна ошибки. Возможно, ты снял не тот участок или слишком мало.';
-         if(pass)pass.hidden=true;
-       }else{
-         result.className='check-result ok';
-         result.textContent='Похоже, нужное окно в кадре, а розовый учебный секрет не попал. Теперь проверь снимок глазами: нет ли других лишних данных?';
-         if(pass)pass.hidden=false;
-       }
-       URL.revokeObjectURL(url);
-     };
-     img.src=url;
-   });
+  const zone=document.getElementById(zoneId),result=document.getElementById(resultId),pass=document.getElementById(passLinkId);if(!zone||!result)return;
+  zone.addEventListener('paste',e=>{
+   const item=[...e.clipboardData.items].find(x=>x.type.startsWith('image/'));
+   if(!item){result.className='check-result warn';result.textContent='В буфере нет изображения.';return}
+   e.preventDefault();const file=item.getAsFile(),url=URL.createObjectURL(file),img=new Image();
+   img.onload=()=>{zone.innerHTML='';zone.appendChild(img);const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d',{willReadFrequently:true}),scale=Math.min(1,700/img.width);
+    canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    const data=ctx.getImageData(0,0,canvas.width,canvas.height).data;let magenta=0,blue=0,total=data.length/4;
+    for(let i=0;i<data.length;i+=4){const r=data[i],g=data[i+1],b=data[i+2];if(r>205&&g<135&&b>120&&r>g*1.5)magenta++;if(r<90&&g>75&&g<155&&b>150&&b>r*2)blue++}
+    if(magenta/total>0.002){result.className='check-result warn';result.textContent='В кадр попал розовый учебный секрет. Сделай снимок уже.';if(pass)pass.hidden=true}
+    else if(blue/total<0.001){result.className='check-result warn';result.textContent='Тренажёр не видит синюю рамку окна проблемы. Проверь, тот ли участок снят.';if(pass)pass.hidden=true}
+    else{result.className='check-result ok';result.textContent='Нужная область похожа на верную, розовый секрет не обнаружен. Проверь кадр глазами.';if(pass)pass.hidden=false}
+    URL.revokeObjectURL(url)
+   };img.src=url
+  })
  }
- installPaste('fastPaste','fastResult','fastPassLink');
- installPaste('practicePaste','practiceResult');
- installPaste('finalPaste','finalResult');
- installPaste('fastChallengePaste','fastChallengeResult');
+ installPaste('fastPaste','fastResult','fastPassLink');installPaste('practicePaste','practiceResult');installPaste('finalPaste','finalResult');installPaste('mentorPaste','mentorPasteResult');installPaste('fastChallengePaste','fastChallengeResult');
 
- const open=document.getElementById('openAi'),prompt=document.getElementById('aiPrompt');
- open?.addEventListener('click',async()=>{
-   try{await navigator.clipboard.writeText(prompt.value);open.textContent='Текст скопирован · открываю ИИ-чат'}catch(_){open.textContent='Скопируй текст вручную'}
-   const chat=document.getElementById('s14QuickChat')||document.getElementById('s14QuickChatTop');chat?.click();
+ const ask=document.getElementById('mentorAsk'),prompt=document.getElementById('mentorPrompt'),reply=document.getElementById('mentorReply');
+ ask?.addEventListener('click',()=>{const q=(prompt.value||'').trim(),hasImage=document.querySelector('#mentorPaste img');reply.className='mentor-reply show';
+  if(!hasImage){reply.textContent='Сначала вставь безопасный скриншот.';return}
+  if(q.length<25){reply.textContent='Добавь контекст: устройство, что произошло и чего ты хочешь.';return}
+  reply.innerHTML='<b>Учебный Наставник:</b> Первое безопасное действие: проверь, повторяется ли проблема после повторного открытия нужного окна. Затем сообщи, что изменилось.'
  });
 })();
 </script>
