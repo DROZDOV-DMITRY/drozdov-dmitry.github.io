@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fffdf8">
+<title>L04 · Как спросить Наставника так, чтобы он помог · Курс ИИ</title>
+<meta name="description" content="Урок 4: как описать проблему ИИ, назвать устройство и программу, попросить одно действие и сообщить результат.">
+<link rel="canonical" href="https://drozdov-dmitry.github.io/school-ai-courses/computer/l04/">
+<link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
+<link rel="stylesheet" href="/school-ai-courses/assets/s14-v2.css">
+<link rel="stylesheet" href="/school-ai-courses/assets/visual-system.css">
+<script defer src="/school-ai-courses/assets/nav.js"></script>
+<script defer src="/school-ai-courses/assets/snow-trail.js"></script>
+<style>
+.l4-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:18px;align-items:start}
+.l4-card,.l4-fast{padding:22px;border-radius:26px;border:1px solid #ffffffe8;box-shadow:var(--s14-shadow)}
+.l4-card{background:linear-gradient(135deg,#fffaf1,#eef6ff)}.l4-fast{background:linear-gradient(135deg,#fff2c8,#e2f1ff)}
+.l4-card h2,.l4-fast h2{margin-top:0}
+.l4-time{display:inline-flex;margin-top:8px;padding:5px 9px;border-radius:999px;background:#e9efff;font-size:.76rem;font-weight:900}
+.l4-task{padding:16px 17px;border-radius:18px;background:#fff;border:1px solid #dce5f3;margin-top:12px}
+.badgood{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bad,.good{padding:16px;border-radius:18px;border:1px solid #d6deeb;background:#fff}
+.bad{border-color:#efcad4;background:#fff4f6}.good{border-color:#b9ddc7;background:#eff9f3}
+.builder{display:grid;gap:10px;padding:16px;border-radius:20px;background:#fff;border:1px solid #d6deeb}
+.builder label{display:grid;gap:6px;font-weight:850}
+.builder input,.builder textarea,.fast-area,.result-area{width:100%;box-sizing:border-box;border:1px solid #c3d0e2;border-radius:14px;padding:11px 12px;font:700 .96rem/1.45 "S14 UI","Segoe UI",Arial,sans-serif;background:#fff;color:#101c38}
+.builder textarea,.fast-area,.result-area{min-height:96px;resize:vertical}
+.prompt-preview{padding:14px;border-radius:16px;background:#eef4ff;border:1px solid #cddaf0;white-space:pre-wrap;font-weight:800}
+.checklist{display:grid;gap:8px;margin-top:10px}
+.checkitem{display:flex;gap:9px;align-items:flex-start;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid #d8e0ec}
+.checkdot{flex:0 0 22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#dfe7f2;font-weight:950}
+.checkitem.ok .checkdot{background:#cdebd8;color:#175b38}
+.status{margin-top:10px;padding:12px 14px;border-radius:15px;background:#eef3fb;font-weight:850}
+.status.ok{background:#e5f5eb;color:#195c39}.status.warn{background:#fff0f4;color:#8b2149}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.actions a,.actions button{min-height:44px;padding:9px 13px;border:0;border-radius:14px;background:linear-gradient(135deg,#166dd5,#2654b0);color:#fff;font-weight:900;text-decoration:none;cursor:pointer}.actions .secondary{background:linear-gradient(135deg,#fff1d0,#f8dca6);color:#101c38}
+.done{margin-top:12px;min-height:44px;padding:9px 13px;border:1px solid #c7d4e8;border-radius:14px;background:#fff;color:#101c38;font-weight:850;cursor:pointer}.done.is-done{background:#dff4e8;border-color:#a8d5bb}
+.progressbox{position:sticky;top:106px;padding:18px;border-radius:24px;background:#fff;border:1px solid #fff;box-shadow:var(--s14-shadow)}
+.progressbar{height:12px;border-radius:999px;background:#e5ebf4;overflow:hidden;margin:10px 0}.progressbar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#4aa87a,#2673ce)}
+.loop{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.loop>div{padding:12px;border-radius:16px;background:#fff;border:1px solid #d6deeb;text-align:center;font-weight:850}
+.challenge{padding:17px;border-radius:20px;background:#eef8f1;border:1px solid #bedfc9}
+.micro{font-size:.9rem;color:#56627a}
+@media(max-width:900px){.l4-grid{grid-template-columns:1fr}.progressbox{position:static}.loop{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.badgood{grid-template-columns:1fr}.l4-card,.l4-fast{padding:17px}}
+</style>
+</head>
+<body class="s14-student theme-computer">
+<header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · L04</span></a></div></header>
+<main>
+<section class="student-hero"><div class="wrap">
+<span class="status-badge">Урок 4 · 40 минут</span>
+<h1>Как спросить Наставника так, чтобы он помог</h1>
+<p>Хороший запрос — это не длинный текст. Нужно быстро назвать устройство, программу, наблюдаемый симптом и попросить одно конкретное следующее действие.</p>
+</div></section>
+
+<section class="section light"><div class="wrap">
+<article class="l4-fast">
+<span class="status-badge">Мне это легко · экспресс-проверка ≈ 3 минуты</span>
+<h2>Сформулируй запрос без шаблона</h2>
+<p><b>Ситуация:</b> у тебя Windows, в Microsoft Edge сайт видит камеру, но не слышит микрофон. Ты уже обновил страницу — ничего не изменилось.</p>
+<textarea id="fastPrompt" class="fast-area" placeholder="Напиши запрос к ИИ одним сообщением"></textarea>
+<div class="actions"><button id="checkFast" type="button">Проверить запрос</button><a class="secondary" href="#normalRoute">Не уверен → обычный урок</a></div>
+<div id="fastStatus" class="status">Проверка ещё не выполнена.</div>
+<div class="checklist">
+  <div class="checkitem" data-fast-check="device"><span class="checkdot">○</span><span>названо устройство / система</span></div>
+  <div class="checkitem" data-fast-check="program"><span class="checkdot">○</span><span>названа программа</span></div>
+  <div class="checkitem" data-fast-check="symptom"><span class="checkdot">○</span><span>описан наблюдаемый симптом</span></div>
+  <div class="checkitem" data-fast-check="action"><span class="checkdot">○</span><span>есть просьба дать одно следующее действие</span></div>
+</div>
+<div class="actions"><a href="#fastChallenge" id="fastPass" hidden>Все четыре элемента есть → FAST CHALLENGE</a></div>
+</article>
+</div></section>
+
+<section class="section light" id="normalRoute"><div class="wrap l4-grid"><div>
+
+<article class="l4-card">
+<h2>1. Плохой запрос и рабочий запрос</h2>
+<div class="badgood">
+  <div class="bad"><strong>Не помогает</strong><p>«У меня не работает. Что делать?»</p><p class="micro">ИИ не знает устройство, программу и симптом.</p></div>
+  <div class="good"><strong>Помогает</strong><p>«У меня Windows, Microsoft Edge. Сайт не видит микрофон, после обновления страницы ничего не изменилось. Дай одно безопасное следующее действие.»</p></div>
+</div>
+<div class="l4-task"><b>Сделай:</b> в Блокноте перепиши плохой запрос так, чтобы в нём появились все четыре элемента: устройство, программа, симптом, один следующий шаг.<br><span class="l4-time">0:00–7:00</span></div>
+<button class="done" data-step="1" type="button">○ Сделано</button>
+</article>
+
+<article class="l4-card" style="margin-top:18px">
+<h2>2. Собери запрос из фактов</h2>
+<p>Не начинай с догадки «сломался драйвер». Сначала опиши то, что реально видишь.</p>
+<div class="builder">
+<label>Устройство / система<input id="device" value="Windows" autocomplete="off"></label>
+<label>Программа<input id="program" value="Microsoft Edge" autocomplete="off"></label>
+<label>Что наблюдаешь<textarea id="symptom">Сайт открывается, камера работает, но микрофон на странице недоступен.</textarea></label>
+<label>Что уже попробовал<input id="tried" value="Обновил страницу — не помогло." autocomplete="off"></label>
+<label>Что просишь у ИИ<input id="request" value="Предложи одно безопасное следующее действие." autocomplete="off"></label>
+<div class="actions"><button id="buildPrompt" type="button">Собрать запрос</button></div>
+<div id="promptPreview" class="prompt-preview">Нажми «Собрать запрос».</div>
+</div>
+<span class="l4-time">7:00–15:00</span>
+<button class="done" data-step="2" type="button">○ Сделано</button>
+</article>
+
+<article class="l4-card" style="margin-top:18px">
+<h2>3. Спроси один из доступных ИИ</h2>
+<p>Открой меню <b>«ИИ-чат»</b> в шапке или справа внизу и выбери сервис. Вставь собранный запрос.</p>
+<div class="actions"><button id="launchAi" type="button">Открыть меню «ИИ-чат»</button><button id="copyPrompt" class="secondary" type="button">Скопировать мой запрос</button></div>
+<p class="micro">Сайт не выбирает модель за тебя. Задача урока — научиться давать достаточный контекст любому подходящему ИИ.</p>
+<div class="l4-task"><b>Важно:</b> не выполняй длинную цепочку автоматически. Возьми только первое безопасное действие, выполни его и вернись на эту страницу.<br><span class="l4-time">15:00–23:00</span></div>
+<button class="done" data-step="3" type="button">○ Получил одно действие</button>
+</article>
+
+<article class="l4-card" style="margin-top:18px">
+<h2>4. Сообщи результат действия</h2>
+<div class="loop">
+  <div>1. Спросил</div><div>2. Получил один шаг</div><div>3. Выполнил</div><div>4. Сообщил результат</div>
+</div>
+<p>ИИ не видит, что случилось после его совета. Эту информацию должен вернуть ты.</p>
+<textarea id="resultText" class="result-area" placeholder="Например: Открыл разрешения сайта. Микрофон уже стоял «Разрешить», проблема не исчезла. Что проверить следующим одним шагом?"></textarea>
+<div class="actions"><button id="checkResult" type="button">Проверить сообщение</button></div>
+<div id="resultStatus" class="status">Проверка ещё не выполнена.</div>
+<span class="l4-time">23:00–30:00</span>
+<button class="done" data-step="4" type="button">○ Результат сообщён</button>
+</article>
+
+<article class="l4-card" style="margin-top:18px">
+<h2>5. Финальная задача — без формы и шаблона</h2>
+<div class="challenge">
+<p><b>Новая ситуация:</b> в Windows ты хочешь найти настройку «Ночной свет», но не знаешь, где она находится. Не проси преподавателя.</p>
+<p>Самостоятельно:</p>
+<p>1. сформулируй запрос к выбранному ИИ;<br>2. попроси одно действие;<br>3. выполни его;<br>4. сообщи ИИ, что увидел;<br>5. найди нужную настройку, но не обязан менять её значение.</p>
+</div>
+<p>Доказательство освоения: ты дошёл до нужной настройки без пошаговой инструкции преподавателя и можешь показать историю «вопрос → действие → результат».</p>
+<span class="l4-time">30:00–40:00</span>
+<button class="done" data-step="5" type="button">○ Урок завершён</button>
+</article>
+
+<article class="l4-card" id="fastChallenge" style="margin-top:18px">
+<h2>FAST CHALLENGE · реши новую проблему через цикл</h2>
+<div class="challenge">
+<p><b>Ситуация:</b> в Windows звук есть, но он идёт не в те наушники/колонки. Сам выбери ИИ через меню сайта и реши задачу по правилу:</p>
+<p><b>контекст → один вопрос → одно действие → проверка → сообщение результата</b>.</p>
+<p>Не используй преподавателя как первый источник инструкции.</p>
+</div>
+<button class="done" data-fast="1" type="button">○ FAST CHALLENGE выполнен</button>
+</article>
+
+<div class="actions"><a class="secondary" href="../">← Компьютер</a><a href="../l03/">← L03</a></div>
+</div>
+
+<aside class="progressbox">
+<strong>Твой прогресс</strong><div class="progressbar"><span id="progressFill"></span></div><div id="progressText">0 из 5 этапов</div>
+<p class="micro">Отметки сохраняются только в этом браузере.</p>
+<hr style="border:0;border-top:1px solid #e3e8f0;margin:14px 0">
+<strong>Сегодня тренируем</strong>
+<p><code>AI-001</code> сформулировать проблему<br><code>AI-002</code> назвать устройство и программу<br><code>AI-005</code> спросить «что здесь нажать»<br><code>AI-006</code> сообщить результат действия</p>
+<p class="micro">Повтор: безопасный скриншот и неразглашение секретов из L03.</p>
+</aside>
+</div></section>
+</main>
+
+<script type="application/json" id="lessonAiContext">
+{
+  "lesson_id":"L04",
+  "title":"Как спросить Наставника так, чтобы он помог",
+  "environment":["WINDOWS","BROWSER","AI_LAUNCHER_V1"],
+  "target_atoms":["AI-001","AI-002","AI-005","AI-006"],
+  "reinforcement_atoms":["AI-003","AI-008","KEY-011","KEY-005"],
+  "fast_gate":{"duration_minutes":3,"mode":"PERFORMANCE_NO_TEMPLATE","on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
+  "ai_policy":{"required_pattern":["DEVICE_AND_PROGRAM","OBSERVED_SYMPTOM","ONE_CONCRETE_QUESTION","REPORT_RESULT"],"do_not":["START_WITH_UNPROVEN_CAUSE","REQUEST_LONG_SEQUENCE_FIRST"]},
+  "expected_evidence":"Solve a simple unfamiliar UI problem using one AI interaction loop before asking the teacher: context -> one action -> execution -> result report.",
+  "mentor_status":"FUTURE_SITE_RUNTIME_NOT_REQUIRED_FOR_THIS_LESSON",
+  "status":"INTEGRATION_DEV_CANDIDATE_NOT_PUBLISHED"
+}
+</script>
+<script>
+(() => {
+ const key='s14:l04:progress:v1',buttons=[...document.querySelectorAll('[data-step]')],fastButton=document.querySelector('[data-fast]');
+ let done=new Set();try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
+ const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
+ function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':b.dataset.step==='3'?'Получил одно действие':b.dataset.step==='4'?'Результат сообщён':'Сделано')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
+ buttons.forEach(b=>b.addEventListener('click',()=>{done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
+ fastButton?.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'FAST CHALLENGE выполнен'});render();
+
+ const fast=document.getElementById('fastPrompt'),fastStatus=document.getElementById('fastStatus'),fastPass=document.getElementById('fastPass');
+ document.getElementById('checkFast')?.addEventListener('click',()=>{
+   const q=(fast.value||'').toLowerCase();
+   const checks={
+     device:/windows|ноутбук|компьютер|пк/.test(q),
+     program:/edge|браузер/.test(q),
+     symptom:/микрофон/.test(q)&&(/не слыш|не вид|недоступ|не работ/.test(q)),
+     action:/одн/.test(q)&&(/действ|шаг|наж/.test(q))
+   };
+   document.querySelectorAll('[data-fast-check]').forEach(el=>{const ok=checks[el.dataset.fastCheck];el.classList.toggle('ok',ok);el.querySelector('.checkdot').textContent=ok?'✓':'○'});
+   const ok=Object.values(checks).every(Boolean);
+   fastStatus.className='status '+(ok?'ok':'warn');
+   fastStatus.textContent=ok?'Все четыре обязательных элемента найдены.':'Чего-то не хватает. Добавь устройство/программу, наблюдаемый симптом и просьбу дать одно действие.';
+   fastPass.hidden=!ok;
+ });
+
+ let builtPrompt='';
+ document.getElementById('buildPrompt')?.addEventListener('click',()=>{
+   const parts=[
+     document.getElementById('device').value.trim(),
+     document.getElementById('program').value.trim(),
+     document.getElementById('symptom').value.trim(),
+     document.getElementById('tried').value.trim(),
+     document.getElementById('request').value.trim()
+   ].filter(Boolean);
+   builtPrompt=parts.join('. ').replace(/\.\./g,'.');
+   if(builtPrompt&&!/[.!?]$/.test(builtPrompt))builtPrompt+='.';
+   document.getElementById('promptPreview').textContent=builtPrompt||'Заполни поля.';
+ });
+
+ document.getElementById('copyPrompt')?.addEventListener('click',async e=>{
+   if(!builtPrompt)document.getElementById('buildPrompt')?.click();
+   try{await navigator.clipboard.writeText(builtPrompt);e.currentTarget.textContent='Скопировано ✓'}catch(_){e.currentTarget.textContent='Выдели текст вручную'}
+ });
+
+ document.getElementById('launchAi')?.addEventListener('click',()=>{
+   const trigger=document.getElementById('s14QuickChatTop')||document.getElementById('s14QuickChat');
+   trigger?.click();
+ });
+
+ document.getElementById('checkResult')?.addEventListener('click',()=>{
+   const q=(document.getElementById('resultText').value||'').trim().toLowerCase();
+   const hasObserved=q.length>=35&&(/получ|увид|появ|остал|измен|не измен|работ|не работ/.test(q));
+   const asksNext=/следующ|ещё|дальше|что проверить|что сделать/.test(q);
+   const box=document.getElementById('resultStatus');
+   const ok=hasObserved&&asksNext;
+   box.className='status '+(ok?'ok':'warn');
+   box.textContent=ok?'Есть результат действия и запрос на следующий шаг.':'Напиши, что именно произошло после действия, и попроси следующий один шаг.';
+ });
+})();
+</script>
+</body>
+</html>
