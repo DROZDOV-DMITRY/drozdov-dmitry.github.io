@@ -214,3 +214,15 @@ body.s14-student{margin:0;background:linear-gradient(180deg,#eff5ffde,#f5f2fbe8)
 /* Short feedback entry in the global course navigation. */
 .home-links .s14-feedback{background:linear-gradient(135deg,#e4f8e9,#bfe8cf);border-color:#b8dcc6}
 .s14-student .nav-feedback{background:linear-gradient(135deg,#e4f8e9,#bfe8cf)!important;border-color:#b8dcc6!important}
+
+/* Highlight Help action in navigation. */
+.home-links .s14-feedback,
+.s14-student .nav-feedback{
+  background:linear-gradient(135deg,#ff7a5c,#d73568)!important;
+  border-color:#cf315f!important;
+  color:#fff!important;
+  box-shadow:0 6px 16px #b6255940!important;
+  font-weight:850!important;
+}
+.home-links .s14-feedback:hover,
+.s14-student .nav-feedback:hover{filter:brightness(1.06)!important}
