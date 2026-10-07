@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fffdf8">
+<title>D0 · Тест печати · Курс ИИ</title>
+<link rel="canonical" href="https://drozdov-dmitry.github.io/school-ai-courses/computer/d0/typing/">
+<link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
+<link rel="stylesheet" href="/school-ai-courses/assets/s14-v2.css">
+<link rel="stylesheet" href="/school-ai-courses/assets/visual-system.css">
+<script defer src="/school-ai-courses/assets/nav.js"></script>
+<style>
+.typing-shell{max-width:980px;margin:auto}
+.typing-source{padding:20px;border-radius:22px;background:#fff;border:1px solid #fff;box-shadow:var(--s14-shadow);font-size:1.08rem;line-height:1.55;user-select:none}
+.typing-panel{margin-top:14px;padding:20px;border-radius:22px;background:linear-gradient(135deg,#fff9e9,#e8f4ff);border:1px solid #fff;box-shadow:var(--s14-shadow)}
+.typing-panel textarea{width:100%;min-height:190px;resize:vertical;border:2px solid #c9d5e7;border-radius:16px;padding:14px;font:650 1.05rem/1.5 "S14 UI","Segoe UI",Arial,sans-serif;background:#fff;color:#101c38}
+.typing-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+#timer{font-size:2rem;font-weight:950}
+#result{margin-top:14px;font-size:1.15rem;font-weight:850}
+.typing-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+.typing-actions button,.typing-actions a{min-height:46px;padding:10px 16px;border:0;border-radius:15px;background:linear-gradient(135deg,#166dd5,#2654b0);color:#fff;font-weight:900;text-decoration:none;cursor:pointer}
+.typing-actions .secondary{background:linear-gradient(135deg,#fff1d0,#f8dca6);color:#101c38}
+</style>
+</head>
+<body class="s14-student theme-computer">
+<header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · Печать</span></a></div></header>
+<main>
+<section class="student-hero"><div class="wrap"><h1>2 минуты печати</h1><p>Печатай точно. Исправлять ошибки можно.</p></div></section>
+<section class="section light"><div class="wrap typing-shell">
+<div class="typing-source" id="source">Компьютер становится полезным инструментом только тогда, когда человек умеет быстро выполнять обычные действия и не боится незнакомых ситуаций. Важно не просто помнить расположение кнопок, а понимать общий принцип работы. Файл можно найти, окно можно переключить, настройку можно открыть через поиск, а непонятную ошибку можно спокойно описать помощнику и проверить предложенное решение. Во время работы полезно давать файлам понятные имена, хранить материалы в папках и не оставлять всё в одной куче на рабочем столе. Если нужно перенести текст или фотографию с телефона на компьютер, лучше выбрать подходящий способ передачи, а затем убедиться, что файл действительно сохранился там, где его легко найти. Хорошая цифровая привычка состоит из небольших действий: сохранить результат, проверить его, закрыть лишнее окно, не передавать пароль посторонним и не нажимать на подозрительную ссылку только потому, что она выглядит знакомо.</div>
+<div class="typing-panel">
+<div class="typing-head"><strong>Осталось</strong><span id="timer">02:00</span></div>
+<textarea id="input" disabled spellcheck="false" autocomplete="off" placeholder="Нажми «Старт» и печатай здесь…"></textarea>
+<div class="typing-actions"><button id="start" type="button">Старт</button><button id="copy" type="button" class="secondary" hidden>Скопировать результат</button><a class="secondary" href="../">← Вернуться к D0</a></div>
+<div id="result" aria-live="polite"></div>
+<p class="micro-note">CPM — введённые символы в минуту. Точность — доля символов, совпавших с эталоном в набранном фрагменте.</p>
+</div>
+</div></section>
+</main>
+<script>
+(() => {
+ const src=document.getElementById('source').innerText;
+ const inp=document.getElementById('input'),timer=document.getElementById('timer'),result=document.getElementById('result'),btn=document.getElementById('start'),copy=document.getElementById('copy');
+ let interval=null,startTime=0,last='';
+ function finish(){
+   clearInterval(interval); inp.disabled=true;
+   const typed=inp.value; let correct=0; const n=Math.min(typed.length,src.length);
+   for(let i=0;i<n;i++) if(typed[i]===src[i]) correct++;
+   const errors=typed.length-correct;
+   const accuracy=typed.length?correct/typed.length*100:0;
+   const cpm=Math.round(typed.length/2);
+   last='D0 typing: '+cpm+' CPM; accuracy '+accuracy.toFixed(1)+'%; chars '+typed.length+'; errors '+errors;
+   result.textContent='Результат: '+cpm+' CPM · точность '+accuracy.toFixed(1)+'% · символов '+typed.length+' · несовпадений '+errors;
+   copy.hidden=false; btn.textContent='Повторить'; btn.disabled=false;
+ }
+ btn.addEventListener('click',()=>{
+   inp.value=''; result.textContent=''; copy.hidden=true; inp.disabled=false; inp.focus(); btn.disabled=true; timer.textContent='02:00'; startTime=Date.now();
+   interval=setInterval(()=>{
+     const elapsed=Math.floor((Date.now()-startTime)/1000),left=Math.max(0,120-elapsed);
+     timer.textContent=String(Math.floor(left/60)).padStart(2,'0')+':'+String(left%60).padStart(2,'0');
+     if(left<=0) finish();
+   },250);
+ });
+ copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(last);copy.textContent='Скопировано ✓'}catch(_){copy.textContent='Не удалось скопировать'}});
+})();
+</script>
+</body>
+</html>
