@@ -48,6 +48,9 @@
 .l01-actions button,.l01-actions a{min-height:44px;padding:9px 13px;border:0;border-radius:14px;background:linear-gradient(135deg,#166dd5,#2654b0);color:#fff;font-weight:900;text-decoration:none;cursor:pointer}
 .l01-actions .secondary{background:linear-gradient(135deg,#fff1d0,#f8dca6);color:#101c38}
 .l01-evidence{padding:18px;border-radius:22px;background:#eef8f1;border:1px solid #bedfc9}
+.fast-gate{padding:22px;border-radius:26px;background:linear-gradient(135deg,#fff2c8,#e2f1ff);border:1px solid #fff;box-shadow:var(--s14-shadow);margin-bottom:18px}
+.fast-gate h2{margin:0 0 7px}.fast-gate ol{margin:10px 0 0;padding-left:22px}.fast-gate li{margin:5px 0}
+.fast-challenge{padding:18px;border-radius:22px;background:linear-gradient(135deg,#e8f7ee,#e9efff);border:1px solid #bfd8cb}
 .l01-note{font-size:.9rem;color:#536078}
 @media(max-width:900px){.l01-grid{grid-template-columns:1fr}.progressbox{position:static}}
 @media(max-width:620px){.window-stage{grid-template-columns:1fr}.l01-card{padding:17px}.keycap{min-width:72px}}
@@ -64,7 +67,22 @@
 <div class="l01-meta"><span class="l01-chip">Windows</span><span class="l01-chip">4 новых навыка</span><span class="l01-chip">почти всё — практика</span></div>
 </div></div></section>
 
-<section class="section light"><div class="wrap l01-grid">
+<section class="section light"><div class="wrap">
+<article class="fast-gate">
+<span class="status-badge">Мне это легко · экспресс-проверка ≈ 3 минуты</span>
+<h2>Уже умеешь? Не трать урок на повторение</h2>
+<p>Без ИИ, подсказок и инструкции преподавателя:</p>
+<ol>
+<li>открой через Windows <b>Параметры</b>, <b>Калькулятор</b> и <b>Блокнот</b>;</li>
+<li>переключись <b>Блокнот → Параметры → Калькулятор → Блокнот</b>;</li>
+<li>закрой <b>только Калькулятор</b>.</li>
+</ol>
+<div class="l01-actions"><a href="#fastChallenge">Получилось полностью → сразу к вызову</a><a class="secondary" href="#normalRoute">Не уверен → пройти обычный урок</a></div>
+<p class="micro-note">Если не получилось — это нормально. Просто переходи к уроку; штрафа и оценки за экспресс-проверку нет.</p>
+</article>
+</div></section>
+
+<section class="section light" id="normalRoute"><div class="wrap l01-grid">
 <div>
 
 <article class="l01-card">
@@ -128,6 +146,15 @@
 <button class="l01-done" data-step="5" type="button">○ Урок завершён</button>
 </article>
 
+<article class="l01-card" id="fastChallenge" style="margin-top:18px">
+<h2>FAST CHALLENGE · перенеси навык</h2>
+<div class="fast-challenge">
+<p><b>Без инструкции:</b> открой <b>Проводник</b>, <b>Paint</b> и <b>Microsoft Edge</b>. Сделай Edge активным, затем переключись в Проводник, потом в Paint. После этого «потеряй» Edge за другими окнами и верни его без повторного запуска.</p>
+<p>Если справился — можешь не проходить объясняющие части L01. Покажи результат преподавателю и переходи к следующему уроку.</p>
+</div>
+<button class="l01-done" data-step="fast" type="button">○ FAST CHALLENGE выполнен</button>
+</article>
+
 <div class="l01-actions" style="margin-top:18px"><a class="secondary" href="../">← Компьютер</a><a href="../d0/">D0 · диагностика</a></div>
 </div>
 
@@ -150,6 +177,7 @@
   "environment":["WINDOWS"],
   "target_atoms":["PC-006","PC-007","WIN-003","WIN-005"],
   "diagnostic_gate":"D0",
+  "fast_gate":{"duration_minutes":3,"mode":"PERFORMANCE_NO_AI","on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
   "goal":"Find and launch applications, switch among open windows, identify the active window, close only the requested application.",
   "ai_policy":{
     "first_attempt":"NO_AI",
@@ -163,7 +191,7 @@
 <script>
 (() => {
  const key='s14:l01:progress:v1';
- const buttons=[...document.querySelectorAll('[data-step]')];
+ const buttons=[...document.querySelectorAll('[data-step]:not([data-step="fast"])')];
  let done=new Set();
  try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
  const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
@@ -178,7 +206,7 @@
  const copy=document.getElementById('copyAi'),prompt=document.getElementById('aiPrompt');
  copy.addEventListener('click',async()=>{
    try{await navigator.clipboard.writeText(prompt.value);copy.textContent='Скопировано · открываю ИИ-чат'}catch(_){copy.textContent='Скопируй текст вручную'}
-   document.getElementById('s14QuickChat')?.click() || document.getElementById('s14QuickChatTop')?.click();
+   const chat=document.getElementById('s14QuickChat') || document.getElementById('s14QuickChatTop'); chat?.click();
  });
 })();
 </script>
