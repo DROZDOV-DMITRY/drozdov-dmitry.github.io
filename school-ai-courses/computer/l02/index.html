@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fffdf8">
+<title>L02 · Копировать быстрее, чем перепечатывать · Курс ИИ</title>
+<meta name="description" content="Урок 2: раскладка, копирование, вставка и отмена действий в Windows.">
+<link rel="canonical" href="https://drozdov-dmitry.github.io/school-ai-courses/computer/l02/">
+<link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
+<link rel="stylesheet" href="/school-ai-courses/assets/s14-v2.css">
+<link rel="stylesheet" href="/school-ai-courses/assets/visual-system.css">
+<script defer src="/school-ai-courses/assets/nav.js"></script>
+<script defer src="/school-ai-courses/assets/snow-trail.js"></script>
+<style>
+.l2-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:18px;align-items:start}
+.l2-card,.l2-fast{padding:22px;border-radius:26px;border:1px solid #ffffffe8;box-shadow:var(--s14-shadow)}
+.l2-card{background:linear-gradient(135deg,#fffaf1,#eef6ff)}.l2-fast{background:linear-gradient(135deg,#fff2c8,#e2f1ff)}
+.l2-card h2,.l2-fast h2{margin-top:0}.l2-task{padding:16px 17px;border-radius:18px;background:#fff;border:1px solid #dce5f3;margin-top:12px}
+.l2-time{display:inline-flex;margin-top:8px;padding:5px 9px;border-radius:999px;background:#e9efff;font-size:.76rem;font-weight:900}
+.kb-row{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:18px;border-radius:22px;background:#dfe8f5}
+.keycap{min-width:78px;min-height:58px;padding:11px;border-radius:14px;border:1px solid #aeb8c6;border-bottom:5px solid #929eae;background:#fff;display:grid;place-items:center;font-size:1.2rem;font-weight:950}
+.plus{font-size:1.5rem;font-weight:950}.source-box{padding:15px;border-radius:16px;background:#fff;border:1px dashed #8ba2c2;font-weight:800;user-select:text}
+.progressbox{position:sticky;top:106px;padding:18px;border-radius:24px;background:#fff;border:1px solid #fff;box-shadow:var(--s14-shadow)}
+.progressbar{height:12px;border-radius:999px;background:#e5ebf4;overflow:hidden;margin:10px 0}.progressbar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#4aa87a,#2673ce)}
+.done{margin-top:12px;min-height:44px;padding:9px 13px;border:1px solid #c7d4e8;border-radius:14px;background:#fff;color:#101c38;font-weight:850;cursor:pointer}.done.is-done{background:#dff4e8;border-color:#a8d5bb}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.actions a,.actions button{min-height:44px;padding:9px 13px;border:0;border-radius:14px;background:linear-gradient(135deg,#166dd5,#2654b0);color:#fff;font-weight:900;text-decoration:none;cursor:pointer}.actions .secondary{background:linear-gradient(135deg,#fff1d0,#f8dca6);color:#101c38}
+.challenge{padding:18px;border-radius:20px;background:#eef8f1;border:1px solid #bedfc9}
+@media(max-width:900px){.l2-grid{grid-template-columns:1fr}.progressbox{position:static}}
+</style>
+</head>
+<body class="s14-student theme-computer">
+<header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · L02</span></a></div></header>
+<main>
+<section class="student-hero"><div class="wrap">
+<span class="status-badge">Урок 2 · 40 минут</span>
+<h1>Копировать быстрее, чем перепечатывать</h1>
+<p>Сегодня ты научишься переносить текст без ошибок, быстро менять RU/EN и отменять неудачное действие.</p>
+</div></section>
+
+<section class="section light"><div class="wrap">
+<article class="l2-fast">
+<span class="status-badge">Мне это легко · экспресс-проверка ≈ 3 минуты</span>
+<h2>Собери результат без подсказок</h2>
+<p>Открой Блокнот. Скопируй из страницы строку ниже, вставь её в Блокнот <b>два раза</b>, затем отмени вторую вставку. В конце допиши <b>AI-2026</b>, переключив раскладку самостоятельно.</p>
+<div class="source-box">Школа №14 · Курс ИИ · компьютерная грамотность</div>
+<div class="actions"><a href="#fastChallenge">Получилось полностью → к FAST CHALLENGE</a><a class="secondary" href="#normalRoute">Не уверен → обычный урок</a></div>
+<p class="micro-note">Не получилось — просто переходи к уроку. Это не оценка.</p>
+</article>
+</div></section>
+
+<section class="section light" id="normalRoute"><div class="wrap l2-grid"><div>
+<article class="l2-card">
+<h2>1. Разминка клавиатуры</h2>
+<p>Сначала 4 минуты печати: точность важнее гонки. Набери в Блокноте три строки ниже, меняя RU/EN там, где нужно.</p>
+<div class="source-box">Сегодня я работаю быстро.<br>AI помогает, но действие выполняю я.<br>Windows + MAX + ИИ</div>
+<div class="l2-task"><b>Задача:</b> найди удобный способ смены раскладки на своём компьютере и используй его каждый раз, когда требуется RU/EN. Не трать время на поиск букв мышкой.<br><span class="l2-time">0:00–7:00</span></div>
+<button class="done" data-step="1">○ Сделано</button>
+</article>
+
+<article class="l2-card" style="margin-top:18px">
+<h2>2. Ctrl+C и Ctrl+V: текст не нужно перепечатывать</h2>
+<div class="kb-row"><span class="keycap">Ctrl</span><span class="plus">+</span><span class="keycap">C</span><span style="font-weight:950">→</span><span class="keycap">Ctrl</span><span class="plus">+</span><span class="keycap">V</span></div>
+<p>Выдели только строку ниже. <b>Ctrl+C</b> кладёт копию в буфер обмена. Перейди в Блокнот через <b>Alt+Tab</b> и вставь <b>Ctrl+V</b>.</p>
+<div class="source-box">Не перепечатывай то, что можно скопировать точно.</div>
+<div class="l2-task"><b>Практика:</b> вставь эту строку три раза. Затем вернись на сайт и скопируй только слова <b>скопировать точно</b>.<br><span class="l2-time">7:00–17:00</span></div>
+<button class="done" data-step="2">○ Сделано</button>
+</article>
+
+<article class="l2-card" style="margin-top:18px">
+<h2>3. Ошибся? Не исправляй всё вручную</h2>
+<div class="kb-row"><span class="keycap">Ctrl</span><span class="plus">+</span><span class="keycap">Z</span></div>
+<p><b>Ctrl+Z</b> отменяет последнее действие во многих программах.</p>
+<div class="l2-task"><b>Эксперимент:</b> в Блокноте случайно вставь одну строку ещё раз. Не удаляй её мышкой и Backspace. Отмени действие сочетанием клавиш. Затем снова вставь нужный текст.<br><span class="l2-time">17:00–24:00</span></div>
+<button class="done" data-step="3">○ Сделано</button>
+</article>
+
+<article class="l2-card" style="margin-top:18px">
+<h2>4. Рабочая связка: браузер ↔ Блокнот</h2>
+<p>Теперь объедини навыки L01 и L02: не закрывай окна, переключайся через Alt+Tab, копируй только нужные фрагменты.</p>
+<div class="source-box">Имя файла: PRACTICE-02.txt<br>Статус: ГОТОВО<br>Метка: AI-2026</div>
+<div class="l2-task"><b>Собери в Блокноте:</b><br>PRACTICE-02.txt<br>ГОТОВО<br>AI-2026<br><br>Первые две строки получи копированием со страницы, последнюю набери сам с правильной раскладкой. Если вставил лишнее — Ctrl+Z.<br><span class="l2-time">24:00–31:00</span></div>
+<button class="done" data-step="4">○ Сделано</button>
+</article>
+
+<article class="l2-card" style="margin-top:18px">
+<h2>5. Финальная задача — без подсказки по клавишам</h2>
+<div class="challenge">
+<p>Создай в Блокноте такой результат:</p>
+<p><b>КУРС ИИ<br>school14<br>Копирование экономит время.</b></p>
+<p>Условия: строку «Копирование экономит время.» возьми со страницы копированием; school14 набери в английской раскладке; сделай одну намеренную лишнюю вставку и отмени её; переключайся между сайтом и Блокнотом, не закрывая окна.</p>
+</div>
+<span class="l2-time">31:00–40:00</span>
+<button class="done" data-step="5">○ Урок завершён</button>
+</article>
+
+<article class="l2-card" id="fastChallenge" style="margin-top:18px">
+<h2>FAST CHALLENGE · используй навык в новой задаче</h2>
+<div class="challenge">
+<p>Открой новый пустой Блокнот и за 5 минут собери заметку из трёх фрагментов, найденных на этой странице: название урока, фразу «Не перепечатывай то, что можно скопировать точно.» и метку AI-2026.</p>
+<p>Условия: не использовать меню «Копировать/Вставить», только клавиатуру; одну ошибку специально сделать и отменить; порядок фрагментов выбрать самому.</p>
+</div>
+<button class="done" data-fast="1">○ FAST CHALLENGE выполнен</button>
+</article>
+
+<div class="actions"><a class="secondary" href="../">← Компьютер</a><a href="../l01/">← L01</a></div>
+</div>
+
+<aside class="progressbox">
+<strong>Твой прогресс</strong><div class="progressbar"><span id="progressFill"></span></div><div id="progressText">0 из 5 этапов</div>
+<p class="micro-note">Отметки сохраняются только в этом браузере.</p>
+<hr style="border:0;border-top:1px solid #e3e8f0;margin:14px 0">
+<strong>Сегодня тренируем</strong>
+<p><code>KEY-001</code> RU/EN<br><code>KEY-004</code> копировать<br><code>KEY-005</code> вставлять<br><code>KEY-007</code> отменять<br><br>Повтор: <code>WIN-003</code>, <code>WIN-005</code>.</p>
+</aside>
+</div></section>
+</main>
+
+<script type="application/json" id="lessonAiContext">
+{
+  "lesson_id":"L02",
+  "title":"Копировать быстрее, чем перепечатывать",
+  "environment":["WINDOWS","BROWSER","NOTEPAD"],
+  "target_atoms":["KEY-001","KEY-004","KEY-005","KEY-007"],
+  "reinforcement_atoms":["WIN-003","WIN-005"],
+  "prerequisites":["WIN-003","WIN-005"],
+  "fast_gate":{"duration_minutes":3,"mode":"PERFORMANCE_NO_AI","on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
+  "ai_policy":{"first_attempt":"NO_AI","allowed_after_attempt":["QUESTION","CONCEPT_HINT","ONE_ACTION"],"do_not":["GIVE_FULL_SEQUENCE_IMMEDIATELY","DO_TASK_FOR_STUDENT"]},
+  "expected_evidence":"Assemble a mixed-language three-line note using copy/paste, layout switching and undo without menu hunting.",
+  "status":"DEV_BRANCH_CANDIDATE_NOT_PUBLISHED"
+}
+</script>
+<script>
+(() => {
+ const key='s14:l02:progress:v1',buttons=[...document.querySelectorAll('[data-step]')];
+ let done=new Set(); try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
+ const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
+ function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':'Сделано')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
+ buttons.forEach(b=>b.addEventListener('click',()=>{done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));render();
+})();
+</script>
+</body>
+</html>
