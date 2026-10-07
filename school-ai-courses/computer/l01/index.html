@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fffdf8">
+<title>L01 · Компьютер слушается меня · Курс ИИ</title>
+<meta name="description" content="Урок 1: поиск и запуск программ в Windows, переключение окон и понимание активного окна.">
+<link rel="canonical" href="https://drozdov-dmitry.github.io/school-ai-courses/computer/l01/">
+<link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
+<link rel="stylesheet" href="/school-ai-courses/assets/s14-v2.css">
+<link rel="stylesheet" href="/school-ai-courses/assets/visual-system.css">
+<script defer src="/school-ai-courses/assets/nav.js"></script>
+<script defer src="/school-ai-courses/assets/snow-trail.js"></script>
+<style>
+.l01-lead{max-width:830px}
+.l01-meta{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 0}
+.l01-chip{display:inline-flex;padding:7px 10px;border-radius:999px;background:#edf4ff;color:#274a79;font-size:.8rem;font-weight:900}
+.l01-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:18px;align-items:start}
+.l01-card{padding:22px;border-radius:26px;border:1px solid #ffffffe8;background:linear-gradient(135deg,#fffaf1,#eef6ff);box-shadow:var(--s14-shadow)}
+.l01-card h2,.l01-card h3{margin-top:0}
+.l01-task{margin:12px 0 0;padding:16px 17px;border-radius:18px;background:#fff;border:1px solid #dce5f3}
+.l01-task strong{display:block;margin-bottom:5px}
+.l01-time{display:inline-flex;margin-top:8px;padding:5px 9px;border-radius:999px;background:#e9efff;font-size:.76rem;font-weight:900}
+.l01-done{margin-top:12px;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:9px 13px;border:1px solid #c7d4e8;border-radius:14px;background:#fff;color:#101c38;font-weight:850;cursor:pointer}
+.l01-done.is-done{background:#dff4e8;border-color:#a8d5bb}
+.l01-visual{padding:18px;border-radius:24px;background:#dfe8f5;border:1px solid #c5d2e5;box-shadow:inset 0 1px 0 #fff}
+.win-search{border-radius:18px;background:#f7f9fc;border:1px solid #bfc9d7;overflow:hidden;box-shadow:0 16px 32px #25334d20}
+.win-search-top{padding:12px;background:#edf1f7;border-bottom:1px solid #ccd5e2}
+.win-search-input{padding:12px 14px;border-radius:13px;background:#fff;border:2px solid #3977d3;font-weight:800}
+.win-search-result{display:flex;align-items:center;gap:12px;padding:16px}
+.app-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#80b9ff,#246fd0);display:grid;place-items:center;color:#fff;font-size:1.35rem;font-weight:950}
+.window-stage{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mock-window{min-height:155px;border-radius:16px;border:2px solid #aeb9c9;background:#fff;overflow:hidden;opacity:.72}
+.mock-window.active{border-color:#235fc6;box-shadow:0 0 0 3px #235fc622;opacity:1}
+.mock-title{display:flex;align-items:center;justify-content:space-between;padding:9px 11px;background:#e9eef5;font-weight:850}
+.mock-window.active .mock-title{background:#dbeaff}
+.mock-body{padding:16px;color:#46536a}
+.keyboard-demo{display:flex;align-items:center;justify-content:center;gap:10px;min-height:130px}
+.keycap{min-width:84px;min-height:64px;padding:12px;border-radius:14px;border:1px solid #aeb8c6;border-bottom:5px solid #929eae;background:#fff;display:grid;place-items:center;font-size:1.35rem;font-weight:950;box-shadow:0 8px 16px #26344d18}
+.plus{font-size:1.6rem;font-weight:950}
+.progressbox{position:sticky;top:106px;padding:18px;border-radius:24px;background:#fff;border:1px solid #fff;box-shadow:var(--s14-shadow)}
+.progressbar{height:12px;border-radius:999px;background:#e5ebf4;overflow:hidden;margin:10px 0}
+.progressbar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#4aa87a,#2673ce);transition:width .2s ease}
+.l01-ai{padding:18px;border-radius:22px;background:linear-gradient(135deg,#f1eaff,#e6f5ff);border:1px solid #d6cfee}
+.l01-ai textarea{width:100%;min-height:110px;border:1px solid #c9d4e5;border-radius:14px;padding:12px;font:700 .96rem/1.45 "S14 UI","Segoe UI",Arial,sans-serif;resize:vertical;background:#fff}
+.l01-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}
+.l01-actions button,.l01-actions a{min-height:44px;padding:9px 13px;border:0;border-radius:14px;background:linear-gradient(135deg,#166dd5,#2654b0);color:#fff;font-weight:900;text-decoration:none;cursor:pointer}
+.l01-actions .secondary{background:linear-gradient(135deg,#fff1d0,#f8dca6);color:#101c38}
+.l01-evidence{padding:18px;border-radius:22px;background:#eef8f1;border:1px solid #bedfc9}
+.l01-note{font-size:.9rem;color:#536078}
+@media(max-width:900px){.l01-grid{grid-template-columns:1fr}.progressbox{position:static}}
+@media(max-width:620px){.window-stage{grid-template-columns:1fr}.l01-card{padding:17px}.keycap{min-width:72px}}
+</style>
+</head>
+<body class="s14-student theme-computer">
+<header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · L01</span></a></div></header>
+
+<main>
+<section class="student-hero"><div class="wrap"><div class="l01-lead">
+<span class="status-badge">Урок 1 · 40 минут</span>
+<h1>Компьютер слушается меня</h1>
+<p>После урока ты сможешь быстро найти и открыть нужную программу, переключаться между окнами и всегда понимать, где сейчас работаешь.</p>
+<div class="l01-meta"><span class="l01-chip">Windows</span><span class="l01-chip">4 новых навыка</span><span class="l01-chip">почти всё — практика</span></div>
+</div></div></section>
+
+<section class="section light"><div class="wrap l01-grid">
+<div>
+
+<article class="l01-card">
+<h2>1. Найди программу, даже если ярлыка нет</h2>
+<p>Не ищи глазами по всему Рабочему столу. В Windows проще назвать то, что тебе нужно.</p>
+<div class="l01-visual" aria-label="Схема поиска Windows">
+  <div class="win-search">
+    <div class="win-search-top"><div class="win-search-input">🔎 Блокнот</div></div>
+    <div class="win-search-result"><div class="app-icon">N</div><div><strong>Блокнот</strong><br><span class="l01-note">Приложение · открыть</span></div></div>
+  </div>
+</div>
+<div class="l01-task"><strong>Сделай сам</strong>Нажми клавишу <b>Win</b> или открой «Пуск», начни печатать <b>Блокнот</b> и открой найденное приложение. Затем тем же способом открой <b>Калькулятор</b> и <b>Microsoft Edge</b>.<span class="l01-time">0:00–10:00</span></div>
+<button class="l01-done" data-step="1" type="button">○ Сделано</button>
+</article>
+
+<article class="l01-card" style="margin-top:18px">
+<h2>2. Какое окно сейчас главное?</h2>
+<p><b>Активное окно</b> — то, которое сейчас принимает твои действия: печать, горячие клавиши и команды.</p>
+<div class="l01-visual">
+<div class="window-stage">
+  <div class="mock-window"><div class="mock-title"><span>Калькулятор</span><span>— □ ×</span></div><div class="mock-body">Окно открыто, но сейчас не активно.</div></div>
+  <div class="mock-window active"><div class="mock-title"><span>Блокнот</span><span>— □ ×</span></div><div class="mock-body"><b>Активно.</b><br>Если печатать сейчас, текст попадёт сюда.</div></div>
+</div>
+</div>
+<div class="l01-task"><strong>Проверка</strong>Щёлкни по Блокноту и напечатай своё имя. Потом щёлкни по Калькулятору и нажми цифру 7. Посмотри, куда попало каждое действие.<span class="l01-time">10:00–17:00</span></div>
+<button class="l01-done" data-step="2" type="button">○ Сделано</button>
+</article>
+
+<article class="l01-card" style="margin-top:18px">
+<h2>3. Не ищи окно мышкой — переключайся</h2>
+<p>Когда открыто несколько программ, используй <b>Alt + Tab</b>. Держи Alt и нажимай Tab, пока не выберешь нужное окно.</p>
+<div class="l01-visual"><div class="keyboard-demo"><span class="keycap">Alt</span><span class="plus">+</span><span class="keycap">Tab ↹</span></div></div>
+<div class="l01-task"><strong>Мини-игра</strong>Попроси соседа или преподавателя назвать последовательность из трёх окон, например: «Edge → Блокнот → Калькулятор». Переключись в таком порядке, не закрывая программы.<span class="l01-time">17:00–25:00</span></div>
+<button class="l01-done" data-step="3" type="button">○ Сделано</button>
+</article>
+
+<article class="l01-card" style="margin-top:18px">
+<h2>4. Окно «пропало»</h2>
+<p>Сначала попробуй найти его сам: посмотри на панель задач и вспомни <b>Alt + Tab</b>. Только если не получилось — подключай ИИ.</p>
+<div class="l01-ai">
+<strong>Запрос для ИИ, если застрял</strong>
+<textarea id="aiPrompt" readonly>У меня Windows. На уроке L01 я открыл несколько программ и потерял одно окно. Не давай мне весь ответ сразу. Сначала задай один короткий вопрос или предложи одно безопасное действие, чтобы я сам нашёл окно.</textarea>
+<div class="l01-actions"><button id="copyAi" type="button">Скопировать вопрос и открыть ИИ-чат</button></div>
+<p class="micro-note">Это пока обычный ИИ-чат с подготовленным запросом. Автоматическая передача контекста урока в Наставника будет отдельной реализацией.</p>
+</div>
+<span class="l01-time">25:00–31:00</span>
+<button class="l01-done" data-step="4" type="button">○ Сделано</button>
+</article>
+
+<article class="l01-card" style="margin-top:18px">
+<h2>5. Финальная задача — без пошаговой инструкции</h2>
+<div class="l01-evidence">
+<strong>Доказательство, что навык освоен</strong>
+<p>1. Закрой все три учебных приложения.</p>
+<p>2. Самостоятельно открой через поиск <b>Параметры</b>, <b>Калькулятор</b> и <b>Блокнот</b>.</p>
+<p>3. Переключись: <b>Блокнот → Параметры → Калькулятор → Блокнот</b>.</p>
+<p>4. Закрой <b>только Калькулятор</b>. Два остальных окна должны остаться открыты.</p>
+<p>Преподаватель не подсказывает маршрут. Если ты выполнил всё самостоятельно — это уже не просто «знаю кнопку», а <b>могу решить задачу</b>.</p>
+</div>
+<span class="l01-time">31:00–40:00</span>
+<button class="l01-done" data-step="5" type="button">○ Урок завершён</button>
+</article>
+
+<div class="l01-actions" style="margin-top:18px"><a class="secondary" href="../">← Компьютер</a><a href="../d0/">D0 · диагностика</a></div>
+</div>
+
+<aside class="progressbox">
+<strong>Твой прогресс</strong>
+<div class="progressbar"><span id="progressFill"></span></div>
+<div id="progressText">0 из 5 этапов</div>
+<p class="micro-note">Отметки сохраняются только в этом браузере. Аккаунт не нужен.</p>
+<hr style="border:0;border-top:1px solid #e3e8f0;margin:14px 0">
+<strong>Сегодня тренируем</strong>
+<p class="l01-note"><code>PC-006</code> найти программу через поиск<br><code>PC-007</code> запустить и закрыть приложение<br><code>WIN-003</code> переключаться между окнами<br><code>WIN-005</code> понимать активное окно</p>
+</aside>
+</div></section>
+</main>
+
+<script type="application/json" id="lessonAiContext">
+{
+  "lesson_id":"L01",
+  "title":"Компьютер слушается меня",
+  "environment":["WINDOWS"],
+  "target_atoms":["PC-006","PC-007","WIN-003","WIN-005"],
+  "diagnostic_gate":"D0",
+  "goal":"Find and launch applications, switch among open windows, identify the active window, close only the requested application.",
+  "ai_policy":{
+    "first_attempt":"NO_AI",
+    "allowed_after_attempt":["QUESTION","CONCEPT_HINT","ONE_ACTION"],
+    "do_not":["GIVE_FULL_SEQUENCE_IMMEDIATELY","DO_TASK_FOR_STUDENT"]
+  },
+  "expected_evidence":"Repeat the sequence with a different set of applications without click-by-click instruction.",
+  "status":"EMBEDDED_CONTEXT_ONLY_NOT_YET_WIRED_TO_CHAT"
+}
+</script>
+<script>
+(() => {
+ const key='s14:l01:progress:v1';
+ const buttons=[...document.querySelectorAll('[data-step]')];
+ let done=new Set();
+ try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
+ const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
+ function render(){
+   buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':'Сделано')});
+   fill.style.width=(done.size/buttons.length*100)+'%';
+   text.textContent=done.size+' из '+buttons.length+' этапов';
+ }
+ buttons.forEach(b=>b.addEventListener('click',()=>{done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
+ render();
+
+ const copy=document.getElementById('copyAi'),prompt=document.getElementById('aiPrompt');
+ copy.addEventListener('click',async()=>{
+   try{await navigator.clipboard.writeText(prompt.value);copy.textContent='Скопировано · открываю ИИ-чат'}catch(_){copy.textContent='Скопируй текст вручную'}
+   document.getElementById('s14QuickChat')?.click() || document.getElementById('s14QuickChatTop')?.click();
+ });
+})();
+</script>
+</body>
+</html>
