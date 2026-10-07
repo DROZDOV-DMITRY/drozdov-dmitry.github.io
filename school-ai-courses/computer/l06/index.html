@@ -191,7 +191,7 @@
   "target_atoms":["FILE-005","FILE-010","FILE-011"],
   "reinforcement_atoms":["FILE-001","FILE-002","FILE-003","FILE-004","KEY-004","KEY-005","AI-001","AI-002","AI-005","AI-006"],
   "candidate_prerequisites":[{"id":"FILE-007","status":"CANDIDATE_PREREQUISITE","reason":"The learner must select a single file before copy, move, or rename; remediate only if selection itself blocks the task.","diagnostic_task":"Click one prepared sample file once. If exactly one object becomes selected, FILE-007 does not block L06."}],
-  "environment_precondition":"Two harmless prepared text files named File-A.txt and File-B.txt are available in the L05 Incoming folder before instruction; teacher supplies them if absent.",
+  "environment_precondition":"Two harmless prepared text files named Файл-A.txt and Файл-B.txt are available in Курс ИИ — L05 / Входящие before instruction; teacher supplies them if absent.",
   "setup_not_assessed":"Preparing or saving the sample files is not evidence of L06 mastery and must not become a hidden Save As lesson.",
   "fast_gate":{"duration_minutes":4,"mode":"PERFORMANCE_REAL_FILE_SYSTEM_NO_AI","checks":["COPY_FILE","SOURCE_REMAINS","MOVE_FILE","SOURCE_REMOVED","RENAME_PRESERVE_EXTENSION","THREE_LOCATION_SCREENSHOT_EVIDENCE"],"on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
   "ai_policy":{"first_attempt":"SELF_OR_RECALL","allowed_after_stuck":["ONE_ACTION"],"do_not":["GIVE_FULL_SEQUENCE_IMMEDIATELY"]},
