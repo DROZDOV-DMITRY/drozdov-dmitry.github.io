@@ -48,9 +48,10 @@
 <div class="choice">
 <button type="button" data-fast-answer="browser">Список загрузок браузера помогает найти недавнюю загрузку</button>
 <button type="button" data-fast-answer="file">В Проводнике я работаю с реальным файлом и его местом хранения</button>
+<button type="button" data-fast-answer="type">Тип файла надёжнее определять по системной информации, а не только по иконке</button>
 <button type="button" data-fast-answer="wrong">Если загрузка видна в браузере, искать файл в Проводнике уже бессмысленно</button>
 </div>
-<div id="fastStatus" class="status">Нужны два правильных утверждения и три снимка.</div>
+<div id="fastStatus" class="status">Нужны три правильных утверждения и три снимка.</div>
 <div class="actions"><a id="fastPass" href="#fastChallenge" hidden>Маршруты понятны → FAST CHALLENGE</a><a class="secondary" href="#normalRoute">Нужна практика → обычный урок</a></div>
 <p class="micro">Сайт проверяет только наличие вставленных изображений; имя, место и тип проверяются глазами.</p>
 </article></div></section>
@@ -59,11 +60,11 @@
 <article class="l8-card"><h2>1. Разминка + скачай учебный файл</h2>
 <p>4–6 минут печати: набери без копирования фразу «Я знаю, где искать скачанный файл: сначала браузер, потом Проводник». Следи за точностью.</p>
 <div class="download-box"><p>Если L08-START.txt уже скачан во время FAST_GATE, используй эту копию. Иначе:</p><div class="actions"><button id="normalDownload" type="button">Скачать L08-START.txt</button></div></div>
-<p class="micro">Браузер может сохранить файл автоматически или спросить место. Не запоминай «магическую папку»: определяй фактическое место сохранения.</p>
+<p class="micro">Браузер может сохранить файл автоматически или спросить место. Не запоминай «магическую папку»: определяй фактическое место сохранения. Если браузер блокирует или помечает файл как опасный, <b>не отключай защиту и не обходи предупреждение</b> — остановись и сообщи преподавателю.</p>
 <span class="l8-time">0:00–8:00</span><button class="done" data-step="1" type="button">○ Файл скачан</button></article>
 
 <article class="l8-card" style="margin-top:18px"><h2>2. Маршрут №1: найди загрузку в браузере</h2>
-<p>Открой список загрузок своего браузера и найди L08-START.txt. Расположение кнопки зависит от браузера и версии интерфейса — оценивается результат, а не конкретная иконка.</p>
+<p>Открой список загрузок своего браузера и найди L08-START.txt. На Windows в актуальных Yandex Browser и Microsoft Edge это можно сделать сочетанием <b>Ctrl+J</b>. В другом браузере используй пункт <b>Загрузки / Downloads</b> в меню. Точная кнопка может отличаться — оценивается результат.</p>
 <div class="l8-task"><b>Проверь:</b> имя совпадает с L08-START.txt. Если браузер показывает путь или команду открытия расположения файла, запомни это для следующего шага.<br><span class="l8-time">8:00–14:00</span></div>
 <button class="done" data-step="2" type="button">○ Нашёл в браузере</button></article>
 
@@ -75,7 +76,8 @@
 <button class="done" data-step="3" type="button">○ Нашёл в Проводнике</button></article>
 
 <article class="l8-card" style="margin-top:18px"><h2>4. Определи тип файла, не угадывая по иконке</h2>
-<p>Минимальный способ: выдели L08-START.txt → открой «Свойства / Properties» → найди строку «Тип файла / Type of file».</p>
+<p>Минимальный способ: выдели L08-START.txt → <b>правый клик → Свойства / Properties</b> → найди строку «Тип файла / Type of file».</p>
+<p class="micro">Правый клик здесь — вспомогательное действие для получения evidence; отдельное освоение контекстного меню не оценивается в L08.</p>
 <div class="choice" id="typeQuiz"><button type="button" data-type-answer="ok">Тип беру из системной информации о файле</button><button type="button" data-type-answer="wrong">Цвет иконки надёжнее свойств</button></div>
 <div id="typeStatus" class="status">Для L08 достаточно назвать тип так, как его показывает Windows.</div>
 <p class="micro">Видимое расширение может быть подсказкой, но FILE-018 здесь не является условием прохождения.</p>
@@ -93,7 +95,14 @@
 
 <article class="l8-card" id="fastChallenge" style="margin-top:18px"><h2>FAST CHALLENGE · новый тип файла</h2>
 <div class="challenge"><p>Скачай L08-TRANSFER.csv. Без ИИ найди его сначала через браузер, затем в Проводнике и определи тип через системную информацию. Объясни, почему «загрузка видна в браузере» и «я знаю, где файл хранится» — не одно и то же.</p></div>
-<div class="actions"><button id="fastTransferDownload" type="button">Скачать L08-TRANSFER.csv</button></div><button class="done" data-fast="1" type="button">○ FAST CHALLENGE выполнен</button></article>
+<div class="actions"><button id="fastTransferDownload" type="button">Скачать L08-TRANSFER.csv</button></div>
+<div class="evidence-grid">
+<div><div id="fastChallengeBrowserPaste" class="paste-zone" contenteditable="true" tabindex="0">1. L08-TRANSFER.csv в загрузках браузера</div><div id="fastChallengeBrowserStatus" class="status">Нет evidence.</div></div>
+<div><div id="fastChallengeExplorerPaste" class="paste-zone" contenteditable="true" tabindex="0">2. L08-TRANSFER.csv найден в Проводнике</div><div id="fastChallengeExplorerStatus" class="status">Нет evidence.</div></div>
+<div><div id="fastChallengeTypePaste" class="paste-zone" contenteditable="true" tabindex="0">3. Системный тип L08-TRANSFER.csv</div><div id="fastChallengeTypeStatus" class="status">Нет evidence.</div></div>
+</div>
+<div id="fastChallengeStatus" class="status">Для FAST CHALLENGE нужны три снимка.</div>
+<button class="done" id="fastChallengeDone" data-fast="1" type="button" disabled>○ FAST CHALLENGE выполнен</button></article>
 
 <div class="actions"><a class="secondary" href="../">← Компьютер</a><a href="../l07/">← L07</a></div></div>
 <aside class="progressbox"><strong>Твой прогресс</strong><div class="progressbar"><span id="progressFill"></span></div><div id="progressText">0 из 5 этапов</div><p class="micro">Отметки сохраняются только в этом браузере.</p><hr style="border:0;border-top:1px solid #e3e8f0;margin:14px 0"><strong>Сегодня тренируем</strong><p><code>WEB-005</code> скачать файл<br><code>WEB-007</code> найти загрузку через браузер<br><code>FILE-016</code> найти скачанный файл<br><code>FILE-017</code> определить тип файла</p><p class="micro">Явные зависимости: WEB-005 → FILE-016 и FILE-001 + FILE-002 → FILE-016.</p></aside>
@@ -111,11 +120,13 @@
     {"for":"FILE-016","requires":["FILE-001","FILE-002"],"basis":"HIGH_CONFIDENCE_CHAIN"}
   ],
   "download_fixture":{"mechanism":"CLIENT_SIDE_BLOB","start_filename":"L08-START.txt","transfer_filename":"L08-TRANSFER.csv","contains_personal_data":false},
-  "fast_gate":{"duration_minutes":4,"mode":"PERFORMANCE_REAL_DOWNLOAD_NO_AI","checks":["DOWNLOAD_FILE","FIND_IN_BROWSER_DOWNLOADS","FIND_IN_FILE_EXPLORER","IDENTIFY_FILE_TYPE","THREE_SCREENSHOT_EVIDENCE"],"on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
+  "fast_gate":{"duration_minutes":4,"mode":"PERFORMANCE_REAL_DOWNLOAD_NO_AI","checks":["DOWNLOAD_FILE","FIND_IN_BROWSER_DOWNLOADS","FIND_IN_FILE_EXPLORER","IDENTIFY_FILE_TYPE_FROM_SYSTEM_INFO","THREE_SCREENSHOT_EVIDENCE"],"on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
   "ai_policy":{"first_attempt":"SELF_OR_RECALL","allowed_after_stuck":["ONE_ACTION"],"do_not":["ASSUME_DEFAULT_DOWNLOAD_FOLDER_WITHOUT_EVIDENCE","GIVE_FULL_SEQUENCE_IMMEDIATELY"]},
+  "support_actions_not_assessed":["RIGHT_CLICK_OPEN_PROPERTIES"],
+  "safety_constraints":["DO_NOT_DISABLE_BROWSER_DOWNLOAD_PROTECTION","DO_NOT_BYPASS_DANGEROUS_FILE_WARNING"],
   "expected_evidence":"For a second file, show the browser download record, the real file location in File Explorer, and system-provided file type information.",
   "mutable_ui_note":"Browser download controls and exact File Explorer command placement vary by browser and Windows version; assess the result, not a frozen icon path.",
-  "current_fact_evidence_checked_2026_10_07":["Microsoft Support: Downloads is a known Windows folder available in File Explorer.","Microsoft Support: File Explorer can search from a chosen folder/location.","Microsoft Support: File Explorer can show file name extensions, but FILE-018 is not required for L08."],
+  "current_fact_evidence_checked_2026_10_07":["Microsoft Support: Downloads is a known Windows folder available in File Explorer.","Microsoft Support: File Explorer can search from a chosen folder/location.","Yandex Browser Support: Ctrl+J opens the downloads list on Windows.","Microsoft Edge Support: Ctrl+J opens Downloads.","Microsoft Support: File Explorer can show file name extensions, but FILE-018 is not required for L08."],
   "status":"DEV_BRANCH_CANDIDATE_NOT_PUBLISHED"
 }
 </script>
@@ -132,21 +143,21 @@
    const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');
    a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
  }
- const downloadStart=()=>downloadFixture('L08-START.txt','L08 START\\r\\nУчебный файл для урока L08.\\r\\nКонтрольная фраза: СЕВЕР-17\\r\\nЛичных данных нет.\\r\\n','text/plain;charset=utf-8');
- const downloadTransfer=()=>downloadFixture('L08-TRANSFER.csv','item,value\\r\\nlesson,L08\\r\\ncode,ORBITA-42\\r\\nnote,Учебный CSV без личных данных\\r\\n','text/csv;charset=utf-8');
+ const downloadStart=()=>downloadFixture('L08-START.txt','L08 START\r\nУчебный файл для урока L08.\r\nКонтрольная фраза: СЕВЕР-17\r\nЛичных данных нет.\r\n','text/plain;charset=utf-8');
+ const downloadTransfer=()=>downloadFixture('L08-TRANSFER.csv','item,value\r\nlesson,L08\r\ncode,ORBITA-42\r\nnote,Учебный CSV без личных данных\r\n','text/csv;charset=utf-8');
  document.getElementById('fastDownload')?.addEventListener('click',downloadStart);
  document.getElementById('normalDownload')?.addEventListener('click',downloadStart);
  document.getElementById('transferDownload')?.addEventListener('click',downloadTransfer);
  document.getElementById('fastTransferDownload')?.addEventListener('click',downloadTransfer);
 
- let fastBrowser=false,fastFile=false,fastBrowserEv=false,fastExplorerEv=false,fastTypeEv=false;
+ let fastBrowser=false,fastFile=false,fastTypeConcept=false,fastBrowserEv=false,fastExplorerEv=false,fastTypeEv=false;
  function updateFast(){
-   const ok=fastBrowser&&fastFile&&fastBrowserEv&&fastExplorerEv&&fastTypeEv;
-   const box=document.getElementById('fastStatus'),pass=document.getElementById('fastPass');pass.hidden=!ok;box.className='status '+(ok?'ok':'');box.textContent=ok?'Три снимка вставлены, различие маршрутов понято. Проверь содержимое глазами.':'Нужны два правильных утверждения и три снимка.';
+   const ok=fastBrowser&&fastFile&&fastTypeConcept&&fastBrowserEv&&fastExplorerEv&&fastTypeEv;
+   const box=document.getElementById('fastStatus'),pass=document.getElementById('fastPass');pass.hidden=!ok;box.className='status '+(ok?'ok':'');box.textContent=ok?'Три снимка вставлены, маршруты и способ определения типа поняты. Проверь содержимое глазами.':'Нужны три правильных утверждения и три снимка.';
  }
  document.querySelectorAll('[data-fast-answer]').forEach(btn=>btn.addEventListener('click',()=>{
    const kind=btn.dataset.fastAnswer;if(kind==='wrong'){const s=document.getElementById('fastStatus');s.className='status warn';s.textContent='Нет: браузер показывает загрузку, но FILE-016 требует найти реальный файл.';return}
-   btn.classList.add('ok');if(kind==='browser')fastBrowser=true;if(kind==='file')fastFile=true;updateFast();
+   btn.classList.add('ok');if(kind==='browser')fastBrowser=true;if(kind==='file')fastFile=true;if(kind==='type')fastTypeConcept=true;updateFast();
  }));
  document.querySelectorAll('#typeQuiz [data-type-answer]').forEach(btn=>btn.addEventListener('click',()=>{
    const ok=btn.dataset.typeAnswer==='ok';document.querySelectorAll('#typeQuiz button').forEach(x=>x.classList.remove('ok'));if(ok)btn.classList.add('ok');const s=document.getElementById('typeStatus');s.className='status '+(ok?'ok':'warn');s.textContent=ok?'Верно: тип берём из системной информации.':'Нет: иконка сама по себе не доказывает тип.';
@@ -166,6 +177,15 @@
  installImage('finalBrowserPaste','finalBrowserStatus',()=>{finalBrowser=true;updateFinal()});
  installImage('finalExplorerPaste','finalExplorerStatus',()=>{finalExplorer=true;updateFinal()});
  installImage('finalTypePaste','finalTypeStatus',()=>{finalType=true;updateFinal()});
+
+ let fcBrowser=false,fcExplorer=false,fcType=false;
+ function updateFastChallenge(){
+   const s=document.getElementById('fastChallengeStatus'),b=document.getElementById('fastChallengeDone');
+   if(fcBrowser&&fcExplorer&&fcType){s.className='status ok';s.textContent='Три снимка вставлены. Проверь глазами имя, место и системный тип L08-TRANSFER.csv.';b.disabled=false}
+ }
+ installImage('fastChallengeBrowserPaste','fastChallengeBrowserStatus',()=>{fcBrowser=true;updateFastChallenge()});
+ installImage('fastChallengeExplorerPaste','fastChallengeExplorerStatus',()=>{fcExplorer=true;updateFastChallenge()});
+ installImage('fastChallengeTypePaste','fastChallengeTypeStatus',()=>{fcType=true;updateFastChallenge()});
 })();
 </script>
 </body>
