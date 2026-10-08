@@ -67,11 +67,19 @@
 
 <article class="l10-card">
 <h2>1. Проверь среду — без скрытой регистрации</h2>
-<p>4 минуты печати на ПК: набери фразу «Файл должен не просто отправиться, а дойти до места, где я могу его использовать».</p>
+<p><b>L10 typing checkpoint:</b> это контрольная точка после D0. Никакого проходного CPM нет. Нажми «Старт», 2 минуты перепечатывай образец максимально точно; результат нужен для сравнения с твоим собственным D0, а не с другими учениками.</p>
+<div class="l10-task">
+<div id="typingReference">Файл должен не просто отправиться, а дойти до места, где я могу его найти, проверить и использовать. Я работаю аккуратно: сначала понимаю задачу, потом выполняю действие и проверяю результат.</div>
+<div class="actions"><button id="typingStart" type="button">Старт 2 минуты</button><button id="typingFinish" class="secondary" type="button" disabled>Зафиксировать результат</button></div>
+<textarea id="typingInput" style="width:100%;min-height:100px;margin-top:10px;border:2px solid #98aac4;border-radius:16px;padding:12px" disabled placeholder="После «Старт» печатай образец здесь"></textarea>
+<div id="typingStatus" class="status">Checkpoint ещё не начат.</div>
+</div>
 <div class="envbox">
 <b>До урока преподаватель готовит на телефоне два безопасных учебных файла:</b><br>
 <span class="filetag">L10-METEOR.txt</span> — внутри строка <code>METEOR-51</code><br>
 <span class="filetag">L10-ORBIT.txt</span> — внутри строка <code>ORBIT-74</code>.
+<div class="actions"><button id="teacherMeteor" type="button">Преподавателю: создать L10-METEOR.txt</button><button id="teacherOrbit" class="secondary" type="button">Создать L10-ORBIT.txt</button></div>
+<p class="micro">Эти кнопки создают exact fixture на текущем устройстве. Доставка fixture на смартфоны выполняется преподавателем до занятия и не считается навыком ученика L10.</p>
 </div>
 <div class="l10-task"><b>Проверь:</b> тот же профиль MAX активен на телефоне и ПК/вебе, чат «Учебный L10» доступен на обоих устройствах, оба файла видны на смартфоне.<br><span class="l10-time">0:00–7:00</span></div>
 <div class="envbox warnbox"><b>Если файла или dual-device MAX нет:</b> это <code>ENV_BLOCKED</code>, а не слабый навык. Не создавай новый аккаунт и не проси у ученика пароль/SMS-код.</div>
@@ -80,8 +88,8 @@
 
 <article class="l10-card" style="margin-top:18px">
 <h2>2. Отправь файл с телефона через MAX</h2>
-<p>На смартфоне открой «Учебный L10» и добавь <span class="filetag">L10-METEOR.txt</span> как вложение. В MAX возможность отправлять фото и другие файлы есть на мобильных устройствах и в вебе; точное расположение кнопки вложений — изменяемая часть интерфейса.</p>
-<div class="l10-task"><b>Перед отправкой:</b> проверь имя файла. Не выбирай личный документ «примерно похожего» названия. Если MAX просит доступ к файлам устройства, разрешай только в рамках подготовленной учебной среды и настроек, которые преподаватель заранее считает допустимыми.<br><span class="l10-time">7:00–14:00</span></div>
+<p>На смартфоне открой «Учебный L10». Рядом с полем сообщения открой <b>добавление вложения</b> → выбери вариант файла/документа → выбери <span class="filetag">L10-METEOR.txt</span> → проверь имя → отправь. Названия и расположение кнопок могут меняться; стабильный результат — отправлен именно подготовленный файл.</p>
+<div class="l10-task"><b>Перед отправкой:</b> проверь имя файла. Не выбирай личный документ «примерно похожего» названия. Если MAX или система неожиданно требуют изменить разрешение доступа к файлам, <b>не меняй разрешения сам</b>: остановись и сообщи преподавателю. Это <code>ENV_BLOCKED_FILE_ACCESS_PERMISSION</code>, а не часть навыка MAX-003.<br><span class="l10-time">7:00–14:00</span></div>
 <button class="done" data-step="2" type="button">○ Файл отправлен с телефона</button>
 </article>
 
@@ -96,12 +104,12 @@
 
 <article class="l10-card" style="margin-top:18px">
 <h2>4. Выбери полученный файл в форме сайта</h2>
-<p>Это учебная поверхность для навыка <code>WEB-006</code>. Нажми кнопку и выбери именно тот <span class="filetag">L10-METEOR.txt</span>, который получил через MAX.</p>
+<p>Это локальная учебная поверхность, которая <b>вводит механику WEB-006</b>: открыть browser file-picker и выбрать правильный файл. Нажми кнопку и выбери именно тот <span class="filetag">L10-METEOR.txt</span>, который получил через MAX.</p>
 <div class="uploadbox">
 <label class="file-button">Выбрать файл для сайта<input id="practiceUpload" type="file" accept=".txt,text/plain"></label>
 <div id="practiceUploadStatus" class="status">Файл ещё не выбран.</div>
 </div>
-<p class="micro"><b>Важно:</b> эта страница читает учебный файл локально в браузере и не отправляет его на сервер. Мы тренируем реальный browser file-picker и выбор правильного файла; серверная отправка данных здесь не реализована и не изображается как выполненная.</p>
+<p class="micro"><b>Важно:</b> эта страница читает учебный файл локально в браузере и не отправляет его на сервер. Поэтому <code>WEB-006</code> здесь <b>PRACTICED_LOCAL_PICKER_NOT_MASTERED</b>: навык будет закрыт только на реальной upload-поверхности, когда она будет доступна.</p>
 <span class="l10-time">22:00–30:00</span>
 <button class="done" id="practiceDone" data-step="4" type="button" disabled>○ Правильный файл выбран</button>
 </article>
@@ -153,8 +161,8 @@
 <p class="micro">Отметки сохраняются только в этом браузере.</p>
 <hr style="border:0;border-top:1px solid #e3e8f0;margin:14px 0">
 <strong>Сегодня тренируем</strong>
-<p><code>MAX-003</code> передать файл телефон→ПК<br><code>XFER-002</code> передать файл телефон→ПК через MAX<br><code>XFER-004</code> найти полученный через MAX файл на ПК<br><code>WEB-006</code> загрузить файл на сайт</p>
-<p class="micro">Явная зависимость: <code>MAX-001 → XFER-002</code>. Для WEB-006 используется локальная учебная file-picker поверхность; серверная передача не заявляется.</p>
+<p><code>MAX-003</code> передать файл телефон→ПК<br><code>XFER-002</code> передать файл телефон→ПК через MAX<br><code>XFER-004</code> найти полученный через MAX файл на ПК<br><code>WEB-006</code> выбрать файл в upload-поверхности — пока только локальная практика</p>
+<p class="micro">Явная зависимость: <code>MAX-001 → XFER-002</code>. <code>WEB-006</code> не считается освоенным до реальной серверной upload-поверхности.</p>
 </aside>
 </div></section>
 </main>
@@ -164,23 +172,26 @@
   "lesson_id":"L10",
   "title":"Файл путешествует: телефон → ПК → сайт",
   "environment":["SMARTPHONE","WINDOWS_PC_OR_WEB","MAX_EXISTING_SESSION","FILE_EXPLORER","BROWSER","LOCAL_UPLOAD_SURFACE","AI_LAUNCHER_V1"],
-  "target_atoms":["MAX-003","XFER-002","XFER-004","WEB-006"],
+  "target_atoms":["MAX-003","XFER-002","XFER-004"],
+  "introduced_atoms":["WEB-006"],
+  "simulated_not_mastered_atoms":["WEB-006"],
   "reinforcement_atoms":["MAX-001","FILE-001","FILE-002","FILE-014","FILE-016","FILE-017","WEB-005","AI-001","AI-002","AI-005","AI-006"],
   "explicit_prerequisites":[{"for":"XFER-002","requires":["MAX-001"],"basis":"HIGH_CONFIDENCE_CHAIN"}],
   "prerequisite_basis":"Basic FILE/WEB file-finding and browser interaction from L05-L08 are reused. No additional exact atom-level prerequisite for XFER-004 or WEB-006 is claimed as canonical.",
-  "environment_precondition":"A lawful existing MAX profile is active on smartphone and PC/web, the same harmless chat Учебный L10 is available on both, and teacher-prepared harmless files L10-METEOR.txt and L10-ORBIT.txt exist on the smartphone before instruction. Account creation, login, recovery and fixture preparation are outside lesson scope.",
+  "environment_precondition":"A lawful existing MAX profile is active on smartphone and PC/web, the same harmless chat Учебный L10 is available on both, and exact teacher-prepared harmless files L10-METEOR.txt and L10-ORBIT.txt exist on the smartphone before instruction. Account creation, login, recovery, fixture distribution and permission changes are outside lesson scope.",
   "training_files":[{"name":"L10-METEOR.txt","marker":"METEOR-51"},{"name":"L10-ORBIT.txt","marker":"ORBIT-74"}],
-  "upload_surface":{"mechanism":"BROWSER_FILE_INPUT_LOCAL_READ","server_transfer":false,"mastery_note":"WEB-006 browser file selection mechanics are practiced; this page does not claim remote server persistence."},
+  "upload_surface":{"mechanism":"BROWSER_FILE_INPUT_LOCAL_READ","server_transfer":false,"mastery_status":"PRACTICED_LOCAL_PICKER_NOT_MASTERED","mastery_note":"WEB-006 browser file selection mechanics are practiced; full WEB-006 mastery requires a real server-backed upload surface and is not claimed here."},
   "fast_gate":{"duration_minutes":5,"mode":"PERFORMANCE_PHONE_FILE_TO_PC_NO_AI","checks":["SEND_FILE_FROM_PHONE_IN_MAX","RECEIVE_FILE_ON_PC","FIND_RECEIVED_FILE_IN_EXPLORER","SELECT_CORRECT_FILE_IN_WEB_FILE_PICKER","FILE_CONTENT_MARKER"],"on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
   "evidence_provenance":{"machine_verified":["SELECT_CORRECT_FILE_IN_WEB_FILE_PICKER","FILE_CONTENT_MARKER"],"observation_required":["SEND_FILE_FROM_PHONE_IN_MAX","RECEIVE_FILE_ON_PC","FIND_RECEIVED_FILE_IN_EXPLORER"]},
-  "safety_constraints":["USE_ONLY_TEACHER_PREPARED_HARMLESS_FILES","NO_PASSWORD_SMS_CODE_OR_2FA_SECRET","DO_NOT_UPLOAD_PERSONAL_FILES","DO_NOT_CREATE_OR_RECOVER_ACCOUNT_DURING_LESSON"],
+  "environment_blockers":["NO_EXISTING_MAX_DUAL_DEVICE_SESSION","MISSING_EXACT_TRAINING_FIXTURE","FILE_ACCESS_PERMISSION_CHANGE_REQUIRED"],
+  "safety_constraints":["USE_ONLY_TEACHER_PREPARED_HARMLESS_FILES","NO_PASSWORD_SMS_CODE_OR_2FA_SECRET","DO_NOT_UPLOAD_PERSONAL_FILES","DO_NOT_CREATE_OR_RECOVER_ACCOUNT_DURING_LESSON","DO_NOT_CHANGE_FILE_ACCESS_PERMISSION_AS_STUDENT_TASK"],
   "ai_policy":{"first_attempt":"SELF_OR_RECALL","allowed_after_stuck":["ONE_ACTION"],"do_not":["ASK_FOR_PASSWORD_OR_LOGIN_CODE","ASSUME_SAVE_LOCATION_WITHOUT_EVIDENCE","GIVE_FULL_SEQUENCE_IMMEDIATELY"]},
-  "expected_evidence":"Independently move a second harmless file from smartphone through MAX to PC, find the received local file, select it in a browser file-picker, and explain the four file states.",
+  "expected_evidence":"Independently move a second harmless file from smartphone through MAX to PC, find the received local file, select it in a browser file-picker, and explain the four file states. This closes MAX-003/XFER-002/XFER-004; WEB-006 remains local-practice-only until a real server upload surface exists.",
   "current_fact_evidence_checked_2026_10_08":[
     "MAX Help: MAX supports sending photos and other files in chats on mobile and web.",
-    "MAX Help: MAX supports files up to 4 GB.",
     "MAX Help: the same MAX profile can be active on several devices and chats synchronize between devices."
   ],
+  "typing_checkpoint":{"checkpoint":"L10","duration_seconds":120,"metrics":["CPM","approx_accuracy"],"pass_threshold":null},
   "status":"DEV_BRANCH_CANDIDATE_NOT_PUBLISHED"
 }
 </script>
@@ -192,6 +203,29 @@
  function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':b.dataset.step==='1'?'Среда готова':b.dataset.step==='2'?'Файл отправлен с телефона':b.dataset.step==='3'?'Файл найден на ПК':'Правильный файл выбран')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
  buttons.forEach(b=>b.addEventListener('click',()=>{if(b.disabled)return;done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
  fastButton?.addEventListener('click',()=>{if(fastButton.disabled)return;const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'FAST CHALLENGE выполнен'});render();
+
+ function downloadFixture(name,marker){
+   const blob=new Blob(['L10 TRAINING FILE\r\n'+marker+'\r\nNo personal data.\r\n'],{type:'text/plain;charset=utf-8'});
+   const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
+ }
+ document.getElementById('teacherMeteor')?.addEventListener('click',()=>downloadFixture('L10-METEOR.txt','METEOR-51'));
+ document.getElementById('teacherOrbit')?.addEventListener('click',()=>downloadFixture('L10-ORBIT.txt','ORBIT-74'));
+
+ const typingReference=document.getElementById('typingReference')?.textContent?.trim()||'';
+ let typingStartedAt=0,typingTimer=null;
+ document.getElementById('typingStart')?.addEventListener('click',()=>{
+   typingStartedAt=Date.now();const input=document.getElementById('typingInput'),finish=document.getElementById('typingFinish'),status=document.getElementById('typingStatus');
+   input.disabled=false;input.value='';input.focus();finish.disabled=false;status.className='status';status.textContent='Checkpoint идёт: печатай образец. Максимум 2 минуты.';
+   clearTimeout(typingTimer);typingTimer=setTimeout(()=>{finish.click()},120000);
+ });
+ document.getElementById('typingFinish')?.addEventListener('click',()=>{
+   if(!typingStartedAt)return;clearTimeout(typingTimer);
+   const input=document.getElementById('typingInput'),finish=document.getElementById('typingFinish'),status=document.getElementById('typingStatus');
+   const elapsed=Math.max(1,(Date.now()-typingStartedAt)/60000),typed=input.value;
+   let errors=0;for(let i=0;i<typed.length;i++){if(typed[i]!==typingReference[i%typingReference.length])errors++}
+   const cpm=Math.round(typed.length/elapsed),accuracy=typed.length?Math.max(0,Math.round((1-errors/typed.length)*100)):0;
+   input.disabled=true;finish.disabled=true;typingStartedAt=0;status.className='status ok';status.textContent='L10 checkpoint: '+cpm+' зн./мин, приблизительная точность '+accuracy+'%. Это запись динамики, не проходной балл.';
+ });
 
  async function inspectFile(inputId,statusId,expectedName,marker){
    const input=document.getElementById(inputId),status=document.getElementById(statusId),file=input.files?.[0];
