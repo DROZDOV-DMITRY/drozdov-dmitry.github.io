@@ -13,7 +13,7 @@
 <script defer src="/school-ai-courses/assets/nav.js"></script>
 <script defer src="/school-ai-courses/assets/snow-trail.js"></script>
 <style>
-.l01-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:18px;align-items:start}
+.l01-grid{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(250px,1fr);gap:18px;align-items:start}
 .l01-card,.fast-gate{padding:22px;border-radius:26px;border:1px solid #ffffffe8;box-shadow:var(--s14-shadow)}
 .l01-card{background:linear-gradient(135deg,#fffaf1,#eef6ff)}.fast-gate{background:linear-gradient(135deg,#fff2c8,#e2f1ff)}
 .l01-card h2,.l01-card h3,.fast-gate h2{margin-top:0}
@@ -22,16 +22,17 @@
 .l01-time{display:inline-flex;margin-top:8px;padding:5px 9px;border-radius:999px;background:#e9efff;font-size:.76rem;font-weight:900}
 .l01-done{margin-top:12px;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:9px 13px;border:1px solid #c7d4e8;border-radius:14px;background:#fff;color:#101c38;font-weight:850;cursor:pointer}.l01-done.is-done{background:#dff4e8;border-color:#a8d5bb}
 .actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.actions button,.actions a{min-height:44px;padding:9px 13px;border:0;border-radius:14px;background:linear-gradient(135deg,#166dd5,#2654b0);color:#fff;font-weight:900;text-decoration:none;cursor:pointer}.actions .secondary{background:linear-gradient(135deg,#fff1d0,#f8dca6);color:#101c38}
-.progressbox{position:sticky;top:106px;padding:18px;border-radius:24px;background:#fff;border:1px solid #fff;box-shadow:var(--s14-shadow)}.progressbar{height:12px;border-radius:999px;background:#e5ebf4;overflow:hidden;margin:10px 0}.progressbar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#4aa87a,#2673ce);transition:width .2s ease}
+.progressbox{position:sticky;top:106px;padding:16px;border-radius:22px;background:#fff;border:1px solid #fff;box-shadow:var(--s14-shadow)}.progressbar{height:11px;border-radius:999px;background:#e5ebf4;overflow:hidden;margin:9px 0}.progressbar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#4aa87a,#2673ce);transition:width .2s ease}
 .micro{font-size:.9rem;color:#56627a}
 .math-hero{padding:18px;border-radius:22px;background:linear-gradient(135deg,#101c38,#203b6d);color:#fff}
 .math-problem{font-size:clamp(2rem,6vw,4rem);font-weight:950;letter-spacing:-.04em;margin:6px 0 8px}
-.reveal{display:none;margin-top:12px;padding:16px;border-radius:18px;background:#fff;color:#101c38;border:1px solid #cbd8ec}.reveal.show{display:block}.math-step{display:grid;grid-template-columns:36px 1fr;gap:10px;margin:8px 0;align-items:start}.math-step b{width:32px;height:32px;border-radius:10px;background:#e7efff;display:grid;place-items:center}
+.reveal{display:none;margin-top:12px;padding:18px;border-radius:18px;background:#fff;color:#101c38;border:1px solid #cbd8ec}.reveal.show{display:block}.math-step{display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;margin:12px 0;align-items:start;font-size:1.05rem;line-height:1.5}.math-step>strong{width:36px;height:36px;border-radius:11px;background:#e7efff;display:grid;place-items:center;font-size:1.05rem}.math-step code{font-size:.95em;white-space:nowrap}
 .illustration{margin-top:14px;padding:16px;border-radius:22px;background:#e7edf6;border:1px solid #cbd5e3}
 .desktop-mock{position:relative;min-height:210px;border-radius:18px;background:linear-gradient(160deg,#163b6c,#3e76b7);padding:18px;color:#fff;overflow:hidden}.desktop-icons{display:grid;grid-template-columns:repeat(2,86px);gap:18px}.desktop-icon{display:grid;justify-items:center;gap:5px;font-size:.82rem;text-align:center}.desktop-icon .ico{width:52px;height:46px;border-radius:8px;background:#ffd04d;position:relative}.desktop-icon .ico:before{content:"";position:absolute;left:0;top:0;width:22px;height:8px;border-radius:6px 6px 0 0;background:#f2ba24}.search-tip{position:absolute;left:18px;right:18px;bottom:14px;padding:11px 13px;border-radius:13px;background:#ffffffed;color:#243653;font-weight:850}
 .save-mock,.explorer-mock,.bin-mock,.max-mock{border-radius:18px;background:#fff;border:1px solid #bec9d9;overflow:hidden;box-shadow:0 12px 28px #25334d1c}.mock-bar{padding:10px 12px;background:#edf1f7;border-bottom:1px solid #cad4e0;font-weight:850}.mock-body{padding:14px}.folder-path{padding:10px 12px;border-radius:12px;background:#f4f7fb;border:1px solid #cad5e4;font-family:ui-monospace,Consolas,monospace}.field{margin-top:10px;padding:11px 12px;border:2px solid #3374d0;border-radius:11px;background:#fff}.search-box{padding:10px 12px;border-radius:11px;border:2px solid #3374d0;background:#fff;display:flex;justify-content:space-between;gap:10px}.result-row{display:flex;align-items:center;gap:10px;padding:12px 3px}.mini-folder{width:32px;height:25px;border-radius:5px;background:#ffd04d;position:relative;flex:0 0 auto}.mini-folder:before{content:"";position:absolute;left:0;top:-5px;width:14px;height:7px;background:#efb827;border-radius:4px 4px 0 0}.trash{width:62px;height:70px;margin:auto;border:4px solid #77859a;border-top:0;border-radius:0 0 12px 12px;position:relative}.trash:before{content:"";position:absolute;left:-8px;right:-8px;top:-14px;height:8px;border-radius:8px;background:#77859a}.file-chip{display:inline-flex;padding:8px 10px;border-radius:11px;background:#eef4ff;border:1px solid #cbd8ec;font-weight:900}.max-row{display:flex;align-items:center;gap:12px;padding:12px;border-radius:14px;background:#f5f8fc}.max-logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#ff506e,#ff8b4e);display:grid;place-items:center;color:#fff;font-weight:950}
 .route{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}.route span{padding:7px 10px;border-radius:999px;background:#eef4ff;border:1px solid #cbd8ec;font-weight:850}.route b{color:#335f9d}
 .checklist{display:grid;gap:8px}.checklist label{display:flex;gap:9px;align-items:flex-start;padding:10px 12px;border-radius:13px;background:#fff;border:1px solid #d5deea;font-weight:750}
+.hotkey-wrap{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px}.hotkey{display:inline-flex;align-items:center;gap:5px;padding:6px 8px;border-radius:13px;background:#f4f7fb;border:1px solid #cdd7e5}.key{min-width:44px;height:38px;padding:0 9px;border-radius:9px;border:1px solid #aeb9c8;border-bottom:4px solid #8997aa;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:950;color:#18243a;box-shadow:0 4px 8px #26344d12}.key.win{min-width:74px;gap:7px}.winlogo{width:18px;height:18px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;transform:skewY(-4deg)}.winlogo i{display:block;background:#1f69c6}.hk-plus{font-weight:950;color:#506079}
 @media(max-width:900px){.l01-grid{grid-template-columns:1fr}.progressbox{position:static}}
 @media(max-width:620px){.l01-card,.fast-gate{padding:17px}.desktop-mock{min-height:240px}}
 </style>
@@ -66,13 +67,15 @@
 <div>Не открывай Калькулятор сразу.</div>
 <div class="actions"><button id="revealMath" type="button">Показать хитрый способ</button></div>
 <div id="mathReveal" class="reveal" aria-live="polite">
-<div class="math-step"><b>1</b><div><strong>99 — это почти 100.</strong><br>Сначала считаем <code>47 × 100 = 4700</code>.</div></div>
-<div class="math-step"><b>2</b><div>Теперь надо вычесть <code>47</code>. Но <b>50 вычитать проще</b>:<br><code>4700 − 50 = 4650</code>.</div></div>
-<div class="math-step"><b>3</b><div>Мы вычли не 47, а 50 — то есть <b>лишние 3</b>. Возвращаем их:<br><code>4650 + 3 = 4653</code>.</div></div>
-<div class="math-step"><b>4</b><div><strong>Ответ: 4653.</strong> Теперь Калькулятор нужен не для размышления, а для проверки.</div></div>
+<div class="math-step"><strong>1</strong><div><b>99 — это почти 100.</b><br>Сначала считаем <code>47 × 100 = 4700</code>.</div></div>
+<div class="math-step"><strong>2</strong><div>Теперь надо вычесть 47. Но вычесть <b>50 проще</b>:<br><code>4700 − 50 = 4650</code>.</div></div>
+<div class="math-step"><strong>3</strong><div>Мы вычли 50, хотя нужно было вычесть 47. Значит, вычли <b>на 3 больше</b>. Возвращаем эти 3:<br><code>4650 + 3 = 4653</code>.</div></div>
+<div class="math-step"><strong>4</strong><div><b>Ответ: 4653.</b> Теперь проверим себя Калькулятором.</div></div>
 </div>
 </div>
-<div class="l01-task"><strong>Твоя попытка:</strong> посчитай в уме <code>68 × 99</code> тем же способом. Только после этого нажми клавишу Windows, напечатай «Калькулятор», открой программу и проверь результат.</div>
+<div class="l01-task"><strong>Твоя попытка:</strong> посчитай в уме <code>68 × 99</code> тем же способом. Затем открой Калькулятор через поиск Windows и проверь результат.
+<div class="hotkey-wrap"><span>Клавиша Windows:</span><span class="hotkey"><span class="key win"><span class="winlogo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Win</span></span><span class="micro">обычно в нижнем ряду слева, между Ctrl и Alt.</span></div>
+</div>
 <div class="illustration">
 <div class="save-mock"><div class="mock-bar">Поиск Windows</div><div class="mock-body"><div class="search-box"><span>Калькулятор</span><span>⌕</span></div><div class="result-row"><div class="max-logo" style="background:linear-gradient(135deg,#64a9ff,#2864bd)">=</div><div><b>Калькулятор</b><br><span class="micro">Приложение</span></div></div></div></div>
 </div>
@@ -87,7 +90,7 @@
 <div class="illustration">
 <div class="desktop-mock">
 <div class="desktop-icons"><div class="desktop-icon"><div class="ico"></div><span>Дмитрий</span></div></div>
-<div class="search-tip">Смысл: папка создаётся учеником сейчас. Никакой заранее подготовленной «Курс ИИ → L01» нет.</div>
+
 </div>
 </div>
 <span class="l01-time">7:00–12:00</span>
@@ -98,13 +101,14 @@
 <h2>3. Напиши абракадабру и просто сохрани</h2>
 <p>Через поиск Windows открой <b>Блокнот</b>. Напиши:</p>
 <div class="callout"><b>Абракадабра. Синий ёжик едет на лифте на Луну.</b></div>
-<p>Теперь нажми <b>Сохранить</b> или <code>Ctrl+S</code>. Документ новый, поэтому Блокнот сам спросит, куда его сохранить. Выбери свою папку на Рабочем столе. В имени файла напиши просто <b>Проба</b> и нажми «Сохранить».</p>
-<div class="envbox"><b>Расширение не дописываем.</b> В обычной настройке Windows расширения часто скрыты, и для этого урока они вообще не нужны. В имени пишем только <b>Проба</b>.</div>
+<p>Сохрани документ.</p>
+<div class="hotkey-wrap"><span>Можно мышкой: <b>Файл → Сохранить</b></span><span>или</span><span class="hotkey"><span class="key">Ctrl</span><span class="hk-plus">+</span><span class="key">S</span></span></div>
+<p>При первом сохранении выбери на Рабочем столе папку со своим именем. В поле имени файла напиши <b>Проба</b> и нажми «Сохранить».</p>
 <div class="illustration">
 <div class="save-mock"><div class="mock-bar">Сохранение нового файла</div><div class="mock-body">
-<div class="folder-path">Рабочий стол → <b>Дмитрий</b></div>
+<div class="folder-path">Рабочий стол → <b>/папка с твоим именем/</b></div>
 <div class="field"><b>Имя файла:</b> Проба</div>
-<p class="micro">Первое сохранение нового документа само открывает выбор места и имени.</p>
+
 </div></div>
 </div>
 <span class="l01-time">12:00–19:00</span>
@@ -113,71 +117,73 @@
 
 <article class="l01-card" style="margin-top:18px">
 <h2>4. Найди свою папку не глазами</h2>
-<p>Закрой Блокнот и не ищи папку перебором значков на Рабочем столе.</p>
-<div class="l01-task"><strong>Другой способ:</strong> открой Проводник <code>Win+E</code> → выбери <b>Рабочий стол</b> → в поле поиска напечатай имя своей папки. Открой найденную папку и убедись, что внутри лежит <b>Проба</b>.</div>
+<p>Закрой Блокнот. Теперь найди папку через поиск в Проводнике.</p>
+<div class="hotkey-wrap"><span>Открой Проводник:</span><span class="hotkey"><span class="key win"><span class="winlogo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Win</span><span class="hk-plus">+</span><span class="key">E</span></span></div>
+<div class="l01-task"><strong>Дальше:</strong> выбери <b>Рабочий стол</b> → в поле поиска напечатай имя своей папки → открой найденную папку → проверь, что внутри есть <b>Проба</b>.</div>
 <div class="illustration">
 <div class="explorer-mock"><div class="mock-bar">Проводник · Рабочий стол</div><div class="mock-body">
-<div class="search-box"><span>Поиск: Дмитрий</span><span>⌕</span></div>
-<div class="result-row"><div class="mini-folder"></div><div><b>Дмитрий</b><br><span class="micro">Папка на Рабочем столе</span></div></div>
+<div class="search-box"><span>Поиск: твоё имя</span><span>⌕</span></div>
+<div class="result-row"><div class="mini-folder"></div><div><b>/папка с твоим именем/</b><br><span class="micro">Папка на Рабочем столе</span></div></div>
 </div></div>
 </div>
-<p class="micro">Это не новый экзамен на сочетание <code>Win+E</code>. Здесь оно просто помогает быстро открыть Проводник и познакомиться с поиском.</p>
+
 <span class="l01-time">19:00–25:00</span>
 <button class="l01-done" data-step="4" type="button">○ Папка найдена поиском</button>
 </article>
 
 <article class="l01-card" style="margin-top:18px">
-<h2>5. Удали «Проба» и проверь Корзину</h2>
-<p>В своей папке выбери только файл <b>Проба</b> и удали его обычным способом. Затем открой Корзину и найди там именно <b>Проба</b>.</p>
-<div class="envbox warnbox"><b>Перед окончательным удалением:</b> преподавателю видно имя выбранного файла. Только учебный <b>Проба</b>. Не использовать <code>Shift+Delete</code>, не очищать всю Корзину.</div>
-<div class="illustration">
-<div class="bin-mock"><div class="mock-bar">Корзина</div><div class="mock-body" style="text-align:center">
-<div class="trash"></div><p><span class="file-chip">Проба</span></p>
-<p class="micro">Сначала увидел правильный учебный файл → потом удалил его из Корзины окончательно.</p>
-</div></div>
-</div>
-<div class="l01-task"><strong>Проверка понимания:</strong> после обычного удаления файл исчез из твоей папки, но ещё существует в Корзине. После удаления из Корзины учебный файл исчезает окончательно.</div>
-<span class="l01-time">25:00–31:00</span>
-<button class="l01-done" data-step="5" type="button">○ «Проба» удалён окончательно</button>
+<h2>5. Удали «Проба» и найди его в Корзине</h2>
+<p>В своей папке выбери файл <b>Проба</b> и удали его обычным способом.</p>
+<p>Открой <b>Корзину</b> на Рабочем столе и найди там <b>Проба</b>.</p>
+<div class="l01-task"><strong>Проверка:</strong> «Проба» исчез из твоей папки и появился в Корзине.</div>
+<span class="l01-time">25:00–29:00</span>
+<button class="l01-done" data-step="5" type="button">○ «Проба» найден в Корзине</button>
 </article>
 
 <article class="l01-card" style="margin-top:18px">
-<h2>6. Финал: создай результат и отправь его себе через MAX</h2>
+<h2>6. Удали «Проба» из Корзины окончательно</h2>
+<p>В Корзине выбери <b>Проба</b> → нажми команду <b>Удалить</b> → подтверди окончательное удаление.</p>
+<div class="l01-task"><strong>Проверь:</strong> после подтверждения файла <b>Проба</b> больше нет в Корзине.</div>
+<span class="l01-time">29:00–32:00</span>
+<button class="l01-done" data-step="6" type="button">○ «Проба» удалён из Корзины</button>
+</article>
+
+<article class="l01-card" style="margin-top:18px">
+<h2>7. Финал: создай файл и отправь его себе через MAX</h2>
 <p>Снова открой Блокнот и напиши любую новую абракадабру. Сохрани в своей папке файл под именем <b>Финиш</b>.</p>
 <div class="route"><span>твоя папка</span><b>→</b><span>Финиш</span><b>→</b><span>MAX</span><b>→</b><span>проверка</span><b>→</b><span>удалить папку</span></div>
-<p>Теперь открой MAX кнопкой сайта, перейди в свой чат / «Избранное», прикрепи <b>Финиш</b> и отправь себе. Убедись, что файл появился в MAX. Только после этого удали свою папку с Рабочего стола обычным способом.</p>
+<p>Открой MAX кнопкой сайта. В MAX открой «Избранное», прикрепи <b>Финиш</b> и отправь. Убедись, что файл появился в чате. После этого удали свою папку с Рабочего стола обычным способом.</p>
 <div class="illustration">
 <div class="max-mock"><div class="mock-bar">MAX</div><div class="mock-body">
-<div class="max-row"><div class="max-logo">M</div><div><b>Себе / Избранное</b><br><span class="micro">Прикреплён файл: Финиш</span></div></div>
+<div class="max-row"><div class="max-logo">M</div><div><b>Избранное</b><br><span class="micro">Файл: Финиш</span></div></div>
 </div></div>
 </div>
 <div class="actions"><button id="openMax" type="button">Открыть MAX</button></div>
 <div class="checklist" style="margin-top:12px">
 <label><input id="finalSaved" type="checkbox"> «Финиш» сохранён в моей папке.</label>
 <label><input id="finalSent" type="checkbox"> Я вижу «Финиш» в MAX после отправки.</label>
-<label><input id="finalDeleted" type="checkbox"> Только после проверки MAX я удалил свою папку с Рабочего стола обычным способом.</label>
+<label><input id="finalDeleted" type="checkbox"> После проверки MAX я удалил свою папку с Рабочего стола.</label>
 </div>
 <div id="finalStatus" class="l01-task">Отметь все три пункта.</div>
-<span class="l01-time">31:00–40:00</span>
-<button class="l01-done" id="finalDone" data-step="6" type="button" disabled>○ Урок завершён</button>
+<span class="l01-time">32:00–40:00</span>
+<button class="l01-done" id="finalDone" data-step="7" type="button" disabled>○ Урок завершён</button>
 </article>
 
 <article class="l01-card" id="fastChallenge" style="margin-top:18px">
 <h2>FAST CHALLENGE</h2>
 <p>Создай новую папку с другим названием, например <b>Тест-L01</b>. В ней создай файл <b>Секретный-ёж</b> с одной строкой абракадабры. Закрой всё. Найди папку поиском в Проводнике, отправь файл себе через MAX, проверь получение и удали папку. Без подсказок и без ИИ.</p>
-<div class="envbox"><b>Важно:</b> «Секретный-ёж» — только название учебного файла. Никаких настоящих секретов, паролей или личных документов.</div>
+
 </article>
 
 <div class="actions"><a class="secondary" href="../">← Компьютер</a><a href="../l02/">L02 →</a></div>
 </div>
 
 <aside class="progressbox">
-<strong>Твой прогресс</strong><div class="progressbar"><span id="progressFill"></span></div><div id="progressText">0 из 6 этапов</div>
+<strong>Твой прогресс</strong><div class="progressbar"><span id="progressFill"></span></div><div id="progressText">0 из 7 этапов</div>
 <p class="micro">Отметки сохраняются только в этом браузере.</p>
 <hr style="border:0;border-top:1px solid #e3e8f0;margin:14px 0">
-<strong>Что ты реально тренируешь</strong>
-<p>Найти программу через поиск Windows; создать свою папку; сохранить новый текстовый файл в нужное место; найти папку и файл поиском; понять Корзину; передать итоговый файл через MAX.</p>
-<p class="micro">Не требуем видеть расширение файла. Не используем заранее подготовленную папку.</p>
+<strong>Сегодня</strong>
+<p>Калькулятор → своя папка → Блокнот → поиск → Корзина → MAX.</p>
 </aside>
 </div></section>
 </main>
@@ -192,15 +198,16 @@
   "not_targeted":["WIN-005"],
   "safety_constraints":["ONLY_DELETE_EXACT_TRAINING_FILE_PROBA","NO_SHIFT_DELETE","DO_NOT_EMPTY_WHOLE_RECYCLE_BIN","SEND_ONLY_HARMLESS_TRAINING_FILE_TO_MAX","DELETE_DESKTOP_FOLDER_ONLY_AFTER_MAX_RECEIPT_CHECK"],
   "teacher_observation":["PERMANENT_DELETE_EXACT_FILE","MAX_FILE_RECEIVED","FINAL_FOLDER_DELETED_AFTER_MAX_CHECK"],
-  "status":"APPROVED_DESIGN_IMPLEMENTATION"
+  "status":"FIELD_REPAIR_2026_10_08"
 }
 </script>
 <script>
 (() => {
-  const key='s14:l01:progress:v2',buttons=[...document.querySelectorAll('[data-step]')];
+  const key='s14:l01:progress:v3',buttons=[...document.querySelectorAll('[data-step]')];
   let done=new Set();try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
   const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
-  function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='1'?'Посчитал и проверил':b.dataset.step==='2'?'Папка создана':b.dataset.step==='3'?'«Проба» сохранён':b.dataset.step==='4'?'Папка найдена поиском':b.dataset.step==='5'?'«Проба» удалён окончательно':'Урок завершён')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
+  const labels={'1':'Посчитал и проверил','2':'Папка создана','3':'«Проба» сохранён','4':'Папка найдена поиском','5':'«Проба» найден в Корзине','6':'«Проба» удалён из Корзины','7':'Урок завершён'};
+  function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(labels[b.dataset.step]||'Готово')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
   buttons.forEach(b=>b.addEventListener('click',()=>{if(b.disabled)return;done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
   render();
 
@@ -218,7 +225,7 @@
   function updateFinal(){
     const ok=['finalSaved','finalSent','finalDeleted'].every(id=>document.getElementById(id)?.checked);
     const s=document.getElementById('finalStatus'),b=document.getElementById('finalDone');
-    b.disabled=!ok;s.textContent=ok?'Цепочка завершена: файл сохранён → отправлен → проверен в MAX → папка удалена.':'Отметь все три пункта.';
+    b.disabled=!ok;s.textContent=ok?'Готово: файл сохранён, отправлен в MAX, папка удалена.':'Отметь все три пункта.';
     s.className='l01-task'+(ok?' envbox':'');
   }
   ['finalSaved','finalSent','finalDeleted'].forEach(id=>document.getElementById(id)?.addEventListener('change',updateFinal));
