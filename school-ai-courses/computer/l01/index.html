@@ -33,6 +33,21 @@
 .route{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}.route span{padding:7px 10px;border-radius:999px;background:#eef4ff;border:1px solid #cbd8ec;font-weight:850}.route b{color:#335f9d}
 .checklist{display:grid;gap:8px}.checklist label{display:flex;gap:9px;align-items:flex-start;padding:10px 12px;border-radius:13px;background:#fff;border:1px solid #d5deea;font-weight:750}
 .hotkey-wrap{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px}.hotkey{display:inline-flex;align-items:center;gap:5px;padding:6px 8px;border-radius:13px;background:#f4f7fb;border:1px solid #cdd7e5}.key{min-width:44px;height:38px;padding:0 9px;border-radius:9px;border:1px solid #aeb9c8;border-bottom:4px solid #8997aa;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:950;color:#18243a;box-shadow:0 4px 8px #26344d12}.key.win{min-width:74px;gap:7px}.winlogo{width:18px;height:18px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;transform:skewY(-4deg)}.winlogo i{display:block;background:#1f69c6}.hk-plus{font-weight:950;color:#506079}
+.input-basics{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.input-card{padding:17px;border-radius:22px;background:#fff;border:1px solid #d6dfeb;box-shadow:0 10px 24px #26344d12}
+.input-card h3{margin:0 0 8px}.input-card svg{display:block;width:100%;height:auto;max-height:240px;margin:8px auto 10px}
+.input-card ul{margin:8px 0 0;padding-left:20px}.input-card li{margin:5px 0}
+.dessert{margin-top:18px;padding:24px;border-radius:28px;background:linear-gradient(135deg,#fff3c8,#f3e9ff 48%,#e8f8ff);border:1px solid #fff;box-shadow:var(--s14-shadow)}
+.dessert h2{margin:0 0 6px}.dessert-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}
+.dessert-card{padding:17px;border-radius:20px;background:#fff;border:1px solid #d8e1ed}
+.dessert-card h3{margin:0 0 8px}.dessert-badge{display:inline-flex;padding:5px 9px;border-radius:999px;background:#1c315d;color:#fff;font-size:.75rem;font-weight:900;margin-bottom:9px}
+.phone-visual{height:150px;border-radius:22px;background:#16233f;padding:10px;margin:12px auto;width:min(170px,100%);box-shadow:inset 0 0 0 2px #42516d}
+.phone-screen{height:100%;border-radius:15px;background:linear-gradient(180deg,#f8fbff,#e8effa);padding:11px;color:#1b2943;overflow:hidden}
+.battery-row{display:flex;align-items:center;gap:8px;margin:7px 0}.battery-bar{height:11px;border-radius:999px;background:#d7dfeb;flex:1;overflow:hidden}.battery-bar i{display:block;height:100%;background:#4c82d3}
+.scan-note{padding:12px;border-radius:14px;background:#fff7d8;border:1px dashed #d8ad38;font:800 .88rem/1.45 ui-monospace,Consolas,monospace}
+.privacy-dot{width:12px;height:12px;border-radius:50%;display:inline-block;background:#27a86b;margin-right:6px}.platform{margin-top:10px;padding-top:10px;border-top:1px solid #e4e9f1}.platform b{display:inline-block;margin-bottom:4px}
+.dessert-unlock{font-weight:900;color:#694b00}
+@media(max-width:1000px){.dessert-grid{grid-template-columns:1fr}.input-basics{grid-template-columns:1fr}}
 @media(max-width:900px){.l01-grid{grid-template-columns:1fr}.progressbox{position:static}}
 @media(max-width:620px){.l01-card,.fast-gate{padding:17px}.desktop-mock{min-height:240px}}
 </style>
@@ -58,6 +73,52 @@
 </div></section>
 
 <section class="section light" id="normalRoute"><div class="wrap l01-grid"><div>
+
+<div class="input-basics">
+<article class="input-card">
+<h3>Мышь: держи легко, не зажимай</h3>
+<svg viewBox="0 0 420 235" role="img" aria-label="Как держать компьютерную мышь">
+  <rect x="115" y="28" width="190" height="180" rx="85" fill="#eef3f9" stroke="#60718c" stroke-width="4"/>
+  <line x1="210" y1="30" x2="210" y2="103" stroke="#60718c" stroke-width="3"/>
+  <rect x="198" y="58" width="24" height="42" rx="10" fill="#9bb8df" stroke="#4d6688" stroke-width="2"/>
+  <ellipse cx="165" cy="62" rx="26" ry="42" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
+  <ellipse cx="255" cy="62" rx="26" ry="42" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
+  <text x="54" y="48" font-size="18" font-weight="800" fill="#243653">указательный</text>
+  <line x1="130" y1="52" x2="145" y2="58" stroke="#243653" stroke-width="2"/>
+  <text x="290" y="48" font-size="18" font-weight="800" fill="#243653">средний</text>
+  <line x1="286" y1="52" x2="273" y2="58" stroke="#243653" stroke-width="2"/>
+  <text x="151" y="225" font-size="17" font-weight="800" fill="#243653">ладонь лежит свободно</text>
+</svg>
+<ul><li>Указательный палец — левая кнопка.</li><li>Средний — правая кнопка.</li><li>Колесо крути средним или указательным пальцем.</li></ul>
+</article>
+
+<article class="input-card">
+<h3>Тачпад: четыре жеста, которые реально экономят время</h3>
+<svg viewBox="0 0 420 235" role="img" aria-label="Жесты тачпада Windows">
+  <rect x="45" y="28" width="330" height="178" rx="18" fill="#eef3f9" stroke="#60718c" stroke-width="4"/>
+  <circle cx="110" cy="92" r="15" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
+  <text x="76" y="145" font-size="16" font-weight="800" fill="#243653">1 палец</text>
+  <text x="70" y="167" font-size="14" fill="#4c5b72">курсор / клик</text>
+
+  <circle cx="205" cy="82" r="14" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
+  <circle cx="235" cy="82" r="14" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
+  <path d="M220 107 L220 145" stroke="#2f70c8" stroke-width="5"/><path d="M210 137 L220 150 L230 137" fill="none" stroke="#2f70c8" stroke-width="5"/>
+  <text x="182" y="178" font-size="14" font-weight="800" fill="#243653">2 пальца: прокрутка</text>
+
+  <circle cx="310" cy="70" r="12" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
+  <circle cx="338" cy="70" r="12" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
+  <text x="286" y="112" font-size="14" font-weight="800" fill="#243653">тап двумя</text>
+  <text x="292" y="131" font-size="14" fill="#4c5b72">правый клик</text>
+
+  <circle cx="300" cy="160" r="10" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
+  <circle cx="325" cy="160" r="10" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
+  <circle cx="350" cy="160" r="10" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
+  <path d="M325 148 L325 120" stroke="#2f70c8" stroke-width="4"/><path d="M316 128 L325 117 L334 128" fill="none" stroke="#2f70c8" stroke-width="4"/>
+  <text x="272" y="197" font-size="14" font-weight="800" fill="#243653">3 вверх: все окна*</text>
+</svg>
+<ul><li>Два пальца вверх/вниз — прокрутка.</li><li>Два пальца вместе — правый клик.</li><li>Свести/развести два пальца — масштаб.</li><li>Три пальца вверх — показать окна, если тачпад поддерживает жест.</li></ul>
+</article>
+</div>
 
 <article class="l01-card">
 <h2>1. Сначала голова, потом Калькулятор</h2>
@@ -89,7 +150,7 @@
 <div class="l01-task"><strong>Способ:</strong> правый клик по свободному месту Рабочего стола → создать папку → ввести имя → Enter.</div>
 <div class="illustration">
 <div class="desktop-mock">
-<div class="desktop-icons"><div class="desktop-icon"><div class="ico"></div><span>Дмитрий</span></div></div>
+<div class="desktop-icons"><div class="desktop-icon"><div class="ico"></div><span>твоё имя</span></div></div>
 
 </div>
 </div>
@@ -169,6 +230,52 @@
 <button class="l01-done" id="finalDone" data-step="7" type="button" disabled>○ Урок завершён</button>
 </article>
 
+<article id="smartDessert" class="dessert" hidden>
+<div class="dessert-unlock">🍰 ДЕСЕРТ РАЗБЛОКИРОВАН</div>
+<h2>Три смартфон-фишки после 7/7</h2>
+<p>Основной урок закончен. Теперь три вещи, которыми можно реально удивить себя на своём телефоне.</p>
+
+<div class="dessert-grid">
+<section class="dessert-card">
+<span class="dessert-badge">1 · БАТАРЕЙНЫЙ ДЕТЕКТИВ</span>
+<h3>Кто сегодня съел твой заряд?</h3>
+<div class="phone-visual"><div class="phone-screen">
+<div class="battery-row"><b>Видео</b><span class="battery-bar"><i style="width:78%"></i></span><b>31%</b></div>
+<div class="battery-row"><b>Игры</b><span class="battery-bar"><i style="width:52%"></i></span><b>21%</b></div>
+<div class="battery-row"><b>MAX</b><span class="battery-bar"><i style="width:20%"></i></span><b>8%</b></div>
+</div></div>
+<p><b>Задание:</b> сначала угадай приложение №1 по расходу батареи. Потом проверь себя.</p>
+<div class="platform"><b>iPhone</b><br>Настройки → Аккумулятор → посмотреть расход по приложениям. Потом открой «Состояние аккумулятора / зарядка» и посмотри, включена ли оптимизированная зарядка.</div>
+<div class="platform"><b>Android</b><br>Настройки → Аккумулятор → расход батареи по приложениям. Если телефон показывает «Состояние аккумулятора» или «Оптимизация зарядки» — открой и посмотри.</div>
+<p class="micro">При зарядке главное — совместимое зарядное устройство и отсутствие сильного перегрева. Умную/адаптивную зарядку без причины не отключаем.</p>
+</section>
+
+<section class="dessert-card">
+<span class="dessert-badge">2 · КАМЕРА ЧИТАЕТ ТЕКСТ</span>
+<h3>Не перепечатывай — укради текст камерой</h3>
+<div class="scan-note">СИНИЙ-ЁЖ-47<br>18:35<br>ул. Лунная, 12</div>
+<p><b>Задание:</b> наведи камеру на этот блок и попробуй скопировать строку <b>СИНИЙ-ЁЖ-47</b>, не набирая её руками.</p>
+<div class="platform"><b>iPhone</b><br>Камера / Фото → Live Text → выделить текст → Копировать.</div>
+<div class="platform"><b>Android</b><br>Фото / Камера → Google Lens → Текст → выделить → Копировать.</div>
+<p class="micro">Android: пробуем как есть, без VPN. Если Lens на этой сети не открывается — просто пропускаем эту фишку и отмечаем, что сервис недоступен.</p>
+</section>
+
+<section class="dessert-card">
+<span class="dessert-badge">3 · ДЕТЕКТИВ ПРИВАТНОСТИ</span>
+<h3><span class="privacy-dot"></span>Кто трогал камеру или микрофон?</h3>
+<div class="phone-visual"><div class="phone-screen">
+<b>Доступ к датчикам</b>
+<p>Камера · 14:26</p>
+<p>Микрофон · 13:48</p>
+<p>Местоположение · 12:03</p>
+</div></div>
+<p><b>Задание:</b> найди одно приложение, которое недавно обращалось к камере или микрофону. Ответь себе: <b>это было ожидаемо?</b></p>
+<div class="platform"><b>Android 12+</b><br>Настройки → Конфиденциальность / Безопасность → Панель конфиденциальности → Камера или Микрофон.</div>
+<div class="platform"><b>iPhone</b><br>Настройки → Конфиденциальность и безопасность → Отчёт о конфиденциальности приложений. Если отчёт выключен — включи его: история начнёт собираться с этого момента.</div>
+</section>
+</div>
+</article>
+
 <article class="l01-card" id="fastChallenge" style="margin-top:18px">
 <h2>FAST CHALLENGE</h2>
 <p>Создай новую папку с другим названием, например <b>Тест-L01</b>. В ней создай файл <b>Секретный-ёж</b> с одной строкой абракадабры. Закрой всё. Найди папку поиском в Проводнике, отправь файл себе через MAX, проверь получение и удали папку. Без подсказок и без ИИ.</p>
@@ -198,16 +305,18 @@
   "not_targeted":["WIN-005"],
   "safety_constraints":["ONLY_DELETE_EXACT_TRAINING_FILE_PROBA","NO_SHIFT_DELETE","DO_NOT_EMPTY_WHOLE_RECYCLE_BIN","SEND_ONLY_HARMLESS_TRAINING_FILE_TO_MAX","DELETE_DESKTOP_FOLDER_ONLY_AFTER_MAX_RECEIPT_CHECK"],
   "teacher_observation":["PERMANENT_DELETE_EXACT_FILE","MAX_FILE_RECEIVED","FINAL_FOLDER_DELETED_AFTER_MAX_CHECK"],
-  "status":"FIELD_REPAIR_2026_10_08"
+  "enrichment_topics":["MOUSE_GRIP_AND_BUTTONS","TOUCHPAD_GESTURES","SMARTPHONE_BATTERY_USAGE_AND_CHARGING","IPHONE_LIVE_TEXT_OR_ANDROID_GOOGLE_LENS","SMARTPHONE_PRIVACY_ACCESS_HISTORY"],
+  "dessert_unlock":"ALL_7_MAIN_STEPS_COMPLETE",
+  "status":"FIELD_REPAIR_PLUS_DESSERT_2026_10_08"
 }
 </script>
 <script>
 (() => {
-  const key='s14:l01:progress:v3',buttons=[...document.querySelectorAll('[data-step]')];
+  const key='s14:l01:progress:v4',buttons=[...document.querySelectorAll('[data-step]')];
   let done=new Set();try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
-  const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
+  const fill=document.getElementById('progressFill'),text=document.getElementById('progressText'),dessert=document.getElementById('smartDessert');
   const labels={'1':'Посчитал и проверил','2':'Папка создана','3':'«Проба» сохранён','4':'Папка найдена поиском','5':'«Проба» найден в Корзине','6':'«Проба» удалён из Корзины','7':'Урок завершён'};
-  function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(labels[b.dataset.step]||'Готово')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
+  function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(labels[b.dataset.step]||'Готово')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов';if(dessert)dessert.hidden=done.size<buttons.length}
   buttons.forEach(b=>b.addEventListener('click',()=>{if(b.disabled)return;done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
   render();
 
