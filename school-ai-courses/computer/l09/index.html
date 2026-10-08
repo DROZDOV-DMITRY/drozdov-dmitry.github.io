@@ -56,7 +56,7 @@
 </div>
 <div id="fastStatus" class="status">Нужны переданный текст и две проверки.</div>
 <div class="actions"><a id="fastPass" href="#fastChallenge" hidden>Маршрут выполнен → FAST CHALLENGE</a><a class="secondary" href="#normalRoute">Нужна практика → обычный урок</a></div>
-<p class="micro">Страница может проверить ключевые слова в полученном тексте, но не может технически доказать способ ввода на телефоне. Голосовой ввод подтверждается наблюдением преподавателя или честной самопроверкой.</p>
+<p class="micro"><b>Что реально проверяет сайт:</b> текст дошёл на ПК через MAX. <b>Что сайт не может доказать:</b> что на телефоне использовался именно голосовой ввод. Для MAX-012 нужен наблюдаемый факт преподавателя или честная самопроверка; автоматический PASS сайта сам по себе не является доказательством MAX-012.</p>
 </article>
 </div></section>
 
@@ -73,8 +73,9 @@
 <article class="l9-card" style="margin-top:18px">
 <h2>2. Скажи — потом проверь глазами</h2>
 <div class="phrase">Я передаю короткий учебный текст с телефона на компьютер через MAX.</div>
-<p>На смартфоне открой поле сообщения в «Учебный L09». Используй доступный системный голосовой ввод клавиатуры: на Android с Gboard — кнопку микрофона клавиатуры; на iPhone — Dictation. Точная иконка и доступность зависят от клавиатуры, языка и настроек.</p>
-<div class="l9-task"><b>Важно:</b> сначала продиктуй фразу, затем <b>прочитай результат до отправки</b>. Исправь распознанное слово вручную, если смысл исказился. Голосовой ввод — средство ускорения, а не причина отправлять непроверенный текст.<br><span class="l9-time">7:00–15:00</span></div>
+<p>На смартфоне открой поле сообщения в «Учебный L09». <b>Android/Gboard:</b> коснись поля ввода → на клавиатуре нажми микрофон → после сигнала говори. <b>iPhone:</b> коснись поля ввода → нажми кнопку Dictation на экранной клавиатуре → говори. Точная иконка и доступность зависят от клавиатуры, языка и настроек.</p>
+<div class="l9-task"><b>Важно:</b> диктуй только учебную фразу — никаких паролей, кодов входа или личных данных. Затем <b>прочитай результат до отправки</b>. Исправь распознанное слово вручную, если смысл исказился. Голосовой ввод — средство ускорения, а не причина отправлять непроверенный текст.<br><span class="l9-time">7:00–15:00</span></div>
+<p class="micro">Если после собственной проверки ты всё ещё не понимаешь, как исправить искажённое слово, ИИ можно попросить помочь только с безопасным учебным текстом и только после твоей попытки.</p>
 <div class="envbox warnbox"><b>Если микрофона/Dictation нет или язык не поддерживается:</b> не подменяй MAX-012 обычной печатью и не ставь PASS. Продолжить остальные части урока можно, но MAX-012 получает <code>ENV_BLOCKED_VOICE_INPUT</code>.</div>
 <button class="done" data-step="2" type="button">○ Голосовой текст проверен</button>
 </article>
@@ -129,9 +130,10 @@
 <p>После переноса объясни одной фразой: что сделал смартфон, что сделал MAX и что сделал компьютер.</p>
 </div>
 <textarea id="fcTransfer" class="transfer-box" placeholder="Вставь текст, скопированный из MAX на ПК"></textarea>
+<textarea id="fcExplain" class="transfer-box" placeholder="Одной фразой: что сделал смартфон, что сделал MAX и что сделал компьютер"></textarea>
 <div class="checks"><label><input id="fcVoice" type="checkbox"> Голосовой ввод использован и текст проверен до отправки.</label></div>
 <div class="actions"><button id="checkFc" type="button">Проверить FAST CHALLENGE</button></div>
-<div id="fcStatus" class="status">Нужен перенесённый текст и подтверждение голосового ввода.</div>
+<div id="fcStatus" class="status">Нужны перенесённый текст, объяснение цепочки и подтверждение голосового ввода.</div>
 <button class="done" id="fcDone" data-fast="1" type="button" disabled>○ FAST CHALLENGE выполнен</button>
 </article>
 
@@ -164,7 +166,8 @@
     "status":"MUTABLE_PLATFORM_UI"
   },
   "fast_gate":{"duration_minutes":4,"mode":"PERFORMANCE_PHONE_TO_PC_NO_AI","checks":["VOICE_TEXT_INPUT","REVIEW_TRANSCRIPTION_BEFORE_SEND","MAX_SAME_CHAT_PHONE_PC","PHONE_TO_PC_TEXT_TRANSFER","PASTE_RECEIVED_TEXT"],"on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
-  "evidence_limits":"Website can verify pasted transfer text but cannot technically prove that smartphone voice input was used; MAX-012 requires teacher observation or learner attestation.",
+  "evidence_provenance":{"machine_verified":["MAX-002","XFER-001"],"supported_by_successful_cross_device_sync":["MAX-001"],"observation_required":["MAX-012"]},
+  "evidence_limits":"Website can verify pasted transfer text but cannot technically prove that smartphone voice input was used; MAX-012 requires teacher observation or learner attestation and must not be treated as machine-verified.",
   "environment_blockers":["NO_EXISTING_MAX_DUAL_DEVICE_SESSION","VOICE_INPUT_UNAVAILABLE_OR_UNSUPPORTED"],
   "safety_constraints":["NO_LOGIN_OR_ACCOUNT_CREATION_DURING_LESSON","DO_NOT_SHARE_PASSWORD_SMS_CODE_OR_2FA_SECRET","USE_ONLY_HARMLESS_TRAINING_TEXT"],
   "ai_policy":{"first_attempt":"SELF_OR_RECALL","allowed_after_stuck":["ONE_ACTION"],"do_not":["ASK_FOR_PASSWORD_OR_LOGIN_CODE","GIVE_FULL_SEQUENCE_IMMEDIATELY"]},
@@ -189,9 +192,10 @@
 
  const norm=s=>(s||'').toLocaleLowerCase('ru-RU').replace(/[ё]/g,'е').replace(/[^a-zа-я0-9]+/gi,' ').trim();
  function hasWords(value,words){const n=norm(value);return words.every(w=>n.includes(norm(w)))}
+ function hasGroups(value,groups){const n=norm(value);return groups.every(group=>group.some(w=>n.includes(norm(w))))}
 
  function updateFast(){
-   const textOk=hasWords(document.getElementById('fastTransfer').value,['max','телефон','компьютер','47']);
+   const textOk=hasGroups(document.getElementById('fastTransfer').value,[['max','макс'],['телефон'],['компьютер','пк'],['47']]);
    const ok=textOk&&document.getElementById('fastVoice').checked&&document.getElementById('fastChecked').checked;
    const s=document.getElementById('fastStatus'),p=document.getElementById('fastPass');
    p.hidden=!ok;s.className='status '+(ok?'ok':'');
@@ -200,23 +204,24 @@
  ['fastTransfer','fastVoice','fastChecked'].forEach(id=>document.getElementById(id)?.addEventListener(id==='fastTransfer'?'input':'change',updateFast));
 
  document.getElementById('checkPractice')?.addEventListener('click',()=>{
-   const ok=hasWords(document.getElementById('practiceTransfer').value,['телефон','компьютер','max']);
+   const ok=hasGroups(document.getElementById('practiceTransfer').value,[['телефон'],['компьютер','пк'],['max','макс']]);
    const s=document.getElementById('practiceStatus'),b=document.getElementById('practiceDone');
    s.className='status '+(ok?'ok':'warn');s.textContent=ok?'Ключевые слова дошли с телефона на ПК. Проверь глазами всю фразу.':'Не вижу ключевые слова «телефон», «компьютер» и «MAX». Скопируй именно сообщение из MAX на ПК.';b.disabled=!ok;
  });
 
  document.getElementById('checkFinal')?.addEventListener('click',()=>{
-   const textOk=hasWords(document.getElementById('finalTransfer').value,['завтра','компьютере','82']);
+   const textOk=hasGroups(document.getElementById('finalTransfer').value,[['завтра'],['компьютер','компьютере','пк'],['82']]);
    const ok=textOk&&document.getElementById('finalVoice').checked&&document.getElementById('finalChecked').checked;
    const s=document.getElementById('finalStatus'),b=document.getElementById('finalDone');
    s.className='status '+(ok?'ok':'warn');s.textContent=ok?'Финальный перенос подтверждён. Проверь глазами полный смысл фразы.':'Нужен корректный перенесённый текст, голосовой ввод и проверка распознавания до отправки.';b.disabled=!ok;
  });
 
  document.getElementById('checkFc')?.addEventListener('click',()=>{
-   const textOk=hasWords(document.getElementById('fcTransfer').value,['рабочая','устройстве','63']);
-   const ok=textOk&&document.getElementById('fcVoice').checked;
+   const textOk=hasGroups(document.getElementById('fcTransfer').value,[['рабочая'],['устройство','устройстве'],['63']]);
+   const explainOk=hasGroups(document.getElementById('fcExplain').value,[['телефон','смартфон'],['max','макс'],['компьютер','пк'],['текст','сообщение']]);
+   const ok=textOk&&explainOk&&document.getElementById('fcVoice').checked;
    const s=document.getElementById('fcStatus'),b=document.getElementById('fcDone');
-   s.className='status '+(ok?'ok':'warn');s.textContent=ok?'FAST CHALLENGE: текст получен на ПК. Теперь устно объясни роли смартфона, MAX и компьютера.':'Нужен перенесённый текст с меткой 63 и подтверждение голосового ввода.';b.disabled=!ok;
+   s.className='status '+(ok?'ok':'warn');s.textContent=ok?'FAST CHALLENGE: перенос и объяснение цепочки подтверждены. Голосовой ввод остаётся наблюдаемым, а не machine-verified evidence.':'Нужны перенесённый текст с меткой 63, объяснение ролей смартфона / MAX / компьютера и подтверждение голосового ввода.';b.disabled=!ok;
  });
 
  document.getElementById('copyAiPrompt')?.addEventListener('click',async e=>{const q=document.getElementById('aiPromptText')?.textContent?.trim()||'';try{await navigator.clipboard.writeText(q);e.currentTarget.textContent='Скопировано ✓'}catch(_){e.currentTarget.textContent='Скопируй вопрос вручную'}});
