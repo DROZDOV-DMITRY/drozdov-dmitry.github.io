@@ -40,7 +40,7 @@
 <section class="student-hero"><div class="wrap d0-shell">
 <span class="status-badge">Стартовая диагностика · 40 минут</span>
 <h1>Покажи, как ты работаешь</h1>
-<p>Это не контрольная и не оценка. Здесь важно увидеть, что ты уже умеешь сейчас.</p>
+<p><b>Это не контрольная.</b></p>
 </div></section>
 
 <section class="section light"><div class="wrap d0-shell">
@@ -87,7 +87,11 @@
 <div class="d0-step-top"><span class="d0-step-num">3</span><span>≈ 7 минут</span></div>
 <h2>Папка и файлы</h2>
 <p>На Рабочем столе создай папку со своим именем.</p>
-<p>Возьми учебные материалы, которые дал преподаватель. Помести в свою папку нужный текст и картинку. Текст переименуй в <b>Памятка</b>. Картинку удали, затем верни её из Корзины.</p>
+<p>Скачай с этой страницы два учебных файла: текст и картинку. Помести оба файла в свою папку. Текст переименуй в <b>Памятка</b>. Картинку удали, затем верни её из Корзины.</p>
+<div class="d0-actions">
+<a href="/school-ai-courses/computer/d0/files/Учебный_текст.txt" download="Учебный_текст.txt">Скачать текст</a>
+<a href="/school-ai-courses/assets/home/computer.webp" download="Картинка.webp">Скачать картинку</a>
+</div>
 <div class="d0-taskbox"><b>В конце в твоей папке должны быть:</b><br>переименованный текст <b>Памятка</b> и восстановленная картинка.</div>
 <div class="d0-actions d0-result-actions">
 <button type="button" data-result="done">Готово</button>
@@ -166,7 +170,7 @@
 </script>
 <script>
 (() => {
-  const key='s14:d0:run:v2';
+  const key='s14:d0:run:v3';
   const intro=document.getElementById('d0Intro');
   const run=document.getElementById('d0Run');
   const final=document.getElementById('d0Final');
@@ -175,8 +179,18 @@
   const progressFill=document.getElementById('d0ProgressFill');
   const history=document.getElementById('d0History');
   let state={started:false,current:1,results:{}};
-  try{state={...state,...JSON.parse(localStorage.getItem(key)||'{}')}}catch(_){}
-  if(state.current<1||state.current>8)state.current=1;
+  const params=new URLSearchParams(location.search);
+  const forceRestart=params.get('restart')==='1';
+  if(forceRestart){
+    try{localStorage.removeItem(key)}catch(_){}
+    params.delete('restart');
+    const qs=params.toString();
+    history.replaceState(null,'',location.pathname+(qs?'?'+qs:'')+location.hash);
+  }else{
+    try{state={...state,...JSON.parse(localStorage.getItem(key)||'{}')}}catch(_){}
+  }
+  if(!Number.isInteger(state.current)||state.current<1||state.current>8)state.current=1;
+  if(!state.results||typeof state.results!=='object')state.results={};
 
   function save(){localStorage.setItem(key,JSON.stringify(state))}
   function setAiVisible(visible){
@@ -218,9 +232,12 @@
 
   document.querySelectorAll('.d0-result-actions button[data-result]').forEach(btn=>{
     btn.addEventListener('click',()=>{
-      const stage=Number(btn.closest('.d0-stage').dataset.stage);
+      const card=btn.closest('.d0-stage[data-stage]');
+      const stage=Number(card?.dataset.stage);
+      if(!Number.isInteger(stage)||stage<1||stage>7)return;
+      if(stage!==state.current)return;
       state.results[stage]=btn.dataset.result;
-      state.current=Math.min(8,stage+1);
+      state.current=stage===7?8:stage+1;
       save(); render();
       document.querySelector('.student-hero')?.scrollIntoView({behavior:'smooth'});
     });
