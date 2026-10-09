@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fffdf8">
-<title>Урок 9 · Потерял, удалил, нашёл · Курс ИИ</title>
-<meta name="description" content="Урок 9: найти файл по имени, отсортировать файлы, безопасно удалить учебный файл и восстановить его из Корзины.">
+<title>Урок 8 · Потерял, удалил, нашёл · Курс ИИ</title>
+<meta name="description" content="Урок 8: найти файл по имени, отсортировать файлы, безопасно удалить учебный файл и восстановить его из Корзины.">
 <link rel="canonical" href="https://drozdov-dmitry.github.io/school-ai-courses/computer/l08/">
 <link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
 <link rel="stylesheet" href="/school-ai-courses/assets/s14-v2.css">
@@ -39,10 +39,10 @@
 </style>
 </head>
 <body class="s14-student theme-computer">
-<header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · Урок 9</span></a></div></header>
+<header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · Урок 8</span></a></div></header>
 <main>
 <section class="student-hero"><div class="wrap">
-<span class="status-badge">Урок 9 · 40 минут</span>
+<span class="status-badge">Урок 8 · 40 минут</span>
 <h1>Потерял, удалил, нашёл</h1>
 <p>Файл может «пропасть» просто потому, что папка большая, порядок изменился или ты удалил учебный файл. Сегодня тренируем три способа вернуть контроль: поиск по имени, сортировку и восстановление из Корзины.</p>
 </div></section>
@@ -51,17 +51,17 @@
 <article class="l7-fast">
 <span class="status-badge">Мне это легко · экспресс-проверка ≈ 4 минуты</span>
 <h2>Найди, удали и восстанови без подсказок</h2>
-<p>Работай только в подготовленной локальной папке <b>Урок 9-Лаб</b> и только с учебными файлами.</p>
+<p>Работай только в подготовленной локальной папке <b>Урок 8-Лаб</b> и только с учебными файлами.</p>
 <div class="l7-task">
-1. Найди <code>Маяк-Урок 9.txt</code> по имени.<br>
+1. Найди <code>Маяк-Урок 8.txt</code> по имени.<br>
 2. Отсортируй содержимое папки по имени.<br>
-3. Удали <code>Вернуть-Урок 9.txt</code> обычным удалением, не используя Shift+Delete.<br>
+3. Удали <code>Вернуть-Урок 8.txt</code> обычным удалением, не используя Shift+Delete.<br>
 4. Открой Корзину, восстанови этот файл и проверь, что он вернулся в исходную папку.
 </div>
 <div class="evidence-grid">
-  <div><div id="fastSearchPaste" class="paste-zone" contenteditable="true" tabindex="0">1. Поиск: найден Маяк-Урок 9.txt</div><div id="fastSearchStatus" class="status">Нет evidence.</div></div>
-  <div><div id="fastSortPaste" class="paste-zone" contenteditable="true" tabindex="0">2. Урок 9-Лаб отсортирована по имени</div><div id="fastSortStatus" class="status">Нет evidence.</div></div>
-  <div><div id="fastBinPaste" class="paste-zone" contenteditable="true" tabindex="0">3. Корзина: Вернуть-Урок 9.txt перед восстановлением</div><div id="fastBinStatus" class="status">Нет evidence.</div></div>
+  <div><div id="fastSearchPaste" class="paste-zone" contenteditable="true" tabindex="0">1. Поиск: найден Маяк-Урок 8.txt</div><div id="fastSearchStatus" class="status">Нет evidence.</div></div>
+  <div><div id="fastSortPaste" class="paste-zone" contenteditable="true" tabindex="0">2. Урок 8-Лаб отсортирована по имени</div><div id="fastSortStatus" class="status">Нет evidence.</div></div>
+  <div><div id="fastBinPaste" class="paste-zone" contenteditable="true" tabindex="0">3. Корзина: Вернуть-Урок 8.txt перед восстановлением</div><div id="fastBinStatus" class="status">Нет evidence.</div></div>
   <div><div id="fastRestorePaste" class="paste-zone" contenteditable="true" tabindex="0">4. Исходная папка после восстановления</div><div id="fastRestoreStatus" class="status">Нет evidence.</div></div>
 </div>
 <div class="choice" id="fastQuiz">
@@ -80,7 +80,7 @@
 <article class="l7-card">
 <h2>1. Разминка + проверь учебную среду</h2>
 <p>4–6 минут печати: в Блокноте набери короткое объяснение разницы между «найти», «отсортировать» и «восстановить». Главное — точность.</p>
-<div class="l7-task"><b>Environment precondition:</b> преподаватель заранее создаёт локальную папку <b>Урок 9-Лаб</b> на внутреннем диске и кладёт туда безопасные учебные файлы: <code>Альфа-Урок 9.txt</code>, <code>Бета-Урок 9.txt</code>, <code>Маяк-Урок 9.txt</code>, <code>Черновик-Урок 9.txt</code>, <code>Вернуть-Урок 9.txt</code>, <code>Финал-Урок 9.txt</code>. Перед занятием преподаватель один раз проверяет на этом ПК: обычное удаление маленького тестового .txt из Урок 9-Лаб действительно отправляет его в Корзину, а «Восстановить» возвращает в исходную папку. Если это не так, delete/restore-практику на этом устройстве не запускаем.</div>
+<div class="l7-task"><b>Environment precondition:</b> преподаватель заранее создаёт локальную папку <b>Урок 8-Лаб</b> на внутреннем диске и кладёт туда безопасные учебные файлы: <code>Альфа-Урок 8.txt</code>, <code>Бета-Урок 8.txt</code>, <code>Маяк-Урок 8.txt</code>, <code>Черновик-Урок 8.txt</code>, <code>Вернуть-Урок 8.txt</code>, <code>Финал-Урок 8.txt</code>. Перед занятием преподаватель один раз проверяет на этом ПК: обычное удаление маленького тестового .txt из Урок 8-Лаб действительно отправляет его в Корзину, а «Восстановить» возвращает в исходную папку. Если это не так, delete/restore-практику на этом устройстве не запускаем.</div>
 <p class="micro">Не используй личные документы, облачные папки, сетевые диски или флешки: в этом уроке нам нужен предсказуемый локальный сценарий с Корзиной.</p>
 <span class="l7-time">0:00–7:00</span>
 <button class="done" data-step="1" type="button">○ Среда готова</button>
@@ -90,13 +90,13 @@
 <h2>2. Потерял файл — ищи по имени</h2>
 <p>Если имя известно, не листай папки наугад. Открой нужную область Проводника и используй поиск по имени.</p>
 <div class="lab">
-  <div class="fileline">Альфа-Урок 9.txt</div>
-  <div class="fileline">Бета-Урок 9.txt</div>
-  <div class="fileline">Маяк-Урок 9.txt</div>
-  <div class="fileline">Черновик-Урок 9.txt</div>
-  <div class="fileline">Вернуть-Урок 9.txt</div>
+  <div class="fileline">Альфа-Урок 8.txt</div>
+  <div class="fileline">Бета-Урок 8.txt</div>
+  <div class="fileline">Маяк-Урок 8.txt</div>
+  <div class="fileline">Черновик-Урок 8.txt</div>
+  <div class="fileline">Вернуть-Урок 8.txt</div>
 </div>
-<div class="l7-task"><b>Сделай:</b> находясь в <b>Урок 9-Лаб</b>, щёлкни поле поиска Проводника, введи <code>Маяк-Урок 9.txt</code> и дождись результата. После результата вернись в исходную папку.<br><span class="l7-time">7:00–14:00</span></div>
+<div class="l7-task"><b>Сделай:</b> находясь в <b>Урок 8-Лаб</b>, щёлкни поле поиска Проводника, введи <code>Маяк-Урок 8.txt</code> и дождись результата. После результата вернись в исходную папку.<br><span class="l7-time">7:00–14:00</span></div>
 <p class="micro">Высокоуверенная зависимость из карты: <code> +  → </code>. То есть поиск опирается на умение открыть Проводник и понимать, в какой области ты ищешь.</p>
 <button class="done" data-step="2" type="button">○ Файл найден по имени</button>
 </article>
@@ -108,7 +108,7 @@
   <button type="button" data-sort-answer="wrong">После сортировки по имени файлы переезжают в новую папку</button>
   <button type="button" data-sort-answer="ok">После сортировки меняется порядок показа, а местоположение файлов остаётся прежним</button>
 </div>
-<div id="sortStatus" class="status">Сначала отсортируй Урок 9-Лаб по имени любым доступным способом.</div>
+<div id="sortStatus" class="status">Сначала отсортируй Урок 8-Лаб по имени любым доступным способом.</div>
 <div class="l7-task"><b>Практика:</b> в Проводнике открой команду <b>Сортировка / Sort</b> и выбери <b>Имя / Name</b>. Затем найди, какой учебный файл стоит первым по алфавиту. Точное расположение команды зависит от версии интерфейса; оценивается результат.<br><span class="l7-time">14:00–20:00</span></div>
 <button class="done" data-step="3" type="button">○ Отсортировал по имени</button>
 </article>
@@ -116,13 +116,13 @@
 <article class="l7-card" style="margin-top:18px">
 <h2>4. Удалил учебный файл — восстанови его</h2>
 <div class="rule">
-  <div class="safe"><strong>РАБОТАЕМ</strong><p>Только <code>Вернуть-Урок 9.txt</code> из локальной учебной папки. Обычное Delete / команда «Удалить».</p></div>
+  <div class="safe"><strong>РАБОТАЕМ</strong><p>Только <code>Вернуть-Урок 8.txt</code> из локальной учебной папки. Обычное Delete / команда «Удалить».</p></div>
   <div class="danger"><strong>НЕ ДЕЛАЕМ</strong><p>Shift+Delete, очистку Корзины, удаление личных файлов, облачных или сетевых данных.</p></div>
 </div>
-<p>Выдели <code>Вернуть-Урок 9.txt</code> и удали обычным способом. Убедись, что файл исчез из <b>Урок 9-Лаб</b>. Затем открой Корзину, найди этот файл, выбери <b>Восстановить</b> и проверь, что он снова появился в <b>Урок 9-Лаб</b>.</p>
+<p>Выдели <code>Вернуть-Урок 8.txt</code> и удали обычным способом. Убедись, что файл исчез из <b>Урок 8-Лаб</b>. Затем открой Корзину, найди этот файл, выбери <b>Восстановить</b> и проверь, что он снова появился в <b>Урок 8-Лаб</b>.</p>
 <div class="l7-task"><b>Проверь смысл:</b> восстановление — это не создание новой копии. Мы возвращаем удалённый учебный файл в исходное место.<br><span class="l7-time">20:00–30:00</span></div>
 <div class="actions"><button id="copyAiPrompt" type="button">Застрял → 1. Скопировать вопрос</button><button id="openAi" class="secondary" type="button">2. Открыть «ИИ-чат»</button></div>
-<div id="aiPromptText" class="l7-task">У меня Windows и локальная учебная папка. Я удалил только файл «Вернуть-Урок 9.txt» обычным удалением и хочу безопасно восстановить его из Корзины. Дай одно следующее действие.</div>
+<div id="aiPromptText" class="l7-task">У меня Windows и локальная учебная папка. Я удалил только файл «Вернуть-Урок 8.txt» обычным удалением и хочу безопасно восстановить его из Корзины. Дай одно следующее действие.</div>
 <button class="done" data-step="4" type="button">○ Учебный файл восстановлен</button>
 </article>
 
@@ -130,18 +130,18 @@
 <h2>5. Финальная задача — верни контроль без пошаговой инструкции</h2>
 <div class="challenge">
 <p><b>Новая вариация:</b> теперь работай не с теми же целями, что в тренировке.</p>
-<p>1. Найди по имени <code>Черновик-Урок 9.txt</code>.<br>
-2. Покажи <b>Урок 9-Лаб</b> в порядке по имени.<br>
-3. Обычным удалением отправь только <code>Финал-Урок 9.txt</code> в Корзину.<br>
+<p>1. Найди по имени <code>Черновик-Урок 8.txt</code>.<br>
+2. Покажи <b>Урок 8-Лаб</b> в порядке по имени.<br>
+3. Обычным удалением отправь только <code>Финал-Урок 8.txt</code> в Корзину.<br>
 4. Убедись, что он находится в Корзине, затем восстанови его.<br>
-5. Проверь, что <code>Финал-Урок 9.txt</code> снова находится в <b>Урок 9-Лаб</b>.</p>
+5. Проверь, что <code>Финал-Урок 8.txt</code> снова находится в <b>Урок 8-Лаб</b>.</p>
 <p>Не используй учителя как первый источник инструкции. Если застрял после собственной попытки — можно запросить у ИИ только один безопасный следующий шаг.</p>
 </div>
 <div class="evidence-grid">
-  <div><div id="finalSearchPaste" class="paste-zone" contenteditable="true" tabindex="0">1. Результат поиска Черновик-Урок 9.txt</div><div id="finalSearchStatus" class="status">Нет evidence.</div></div>
-  <div><div id="finalSortPaste" class="paste-zone" contenteditable="true" tabindex="0">2. Урок 9-Лаб отсортирована по имени</div><div id="finalSortStatus" class="status">Нет evidence.</div></div>
-  <div><div id="finalBinPaste" class="paste-zone" contenteditable="true" tabindex="0">3. Корзина: Финал-Урок 9.txt перед восстановлением</div><div id="finalBinStatus" class="status">Нет evidence.</div></div>
-  <div><div id="finalRestorePaste" class="paste-zone" contenteditable="true" tabindex="0">4. Финал-Урок 9.txt снова в Урок 9-Лаб</div><div id="finalRestoreStatus" class="status">Нет evidence.</div></div>
+  <div><div id="finalSearchPaste" class="paste-zone" contenteditable="true" tabindex="0">1. Результат поиска Черновик-Урок 8.txt</div><div id="finalSearchStatus" class="status">Нет evidence.</div></div>
+  <div><div id="finalSortPaste" class="paste-zone" contenteditable="true" tabindex="0">2. Урок 8-Лаб отсортирована по имени</div><div id="finalSortStatus" class="status">Нет evidence.</div></div>
+  <div><div id="finalBinPaste" class="paste-zone" contenteditable="true" tabindex="0">3. Корзина: Финал-Урок 8.txt перед восстановлением</div><div id="finalBinStatus" class="status">Нет evidence.</div></div>
+  <div><div id="finalRestorePaste" class="paste-zone" contenteditable="true" tabindex="0">4. Финал-Урок 8.txt снова в Урок 8-Лаб</div><div id="finalRestoreStatus" class="status">Нет evidence.</div></div>
 </div>
 <div id="finalStatus" class="status">Для завершения нужны четыре снимка.</div>
 <span class="l7-time">30:00–40:00</span>
@@ -151,7 +151,7 @@
 <article class="l7-card" id="fastChallenge" style="margin-top:18px">
 <h2>Дополнительное испытание · восстанови порядок после «аварии»</h2>
 <div class="challenge">
-<p>Преподаватель выбирает другой безопасный учебный файл в <b>Урок 9-Лаб</b>: меняет порядок показа, называет файл для поиска и один disposable-файл для обычного удаления.</p>
+<p>Преподаватель выбирает другой безопасный учебный файл в <b>Урок 8-Лаб</b>: меняет порядок показа, называет файл для поиска и один disposable-файл для обычного удаления.</p>
 <p>Самостоятельно найди нужный файл, отсортируй папку по имени, удали только указанный disposable-файл, восстанови его из Корзины и покажи его финальное место.</p>
 </div>
 <button class="done" data-fast="1" type="button">○ Дополнительное испытание выполнен</button>
