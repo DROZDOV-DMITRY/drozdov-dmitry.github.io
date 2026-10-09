@@ -42,6 +42,9 @@
 .challenge{padding:17px;border-radius:20px;background:#eef8f1;border:1px solid #bedfc9}
 .safe-scenario{padding:14px 16px;border-radius:16px;background:#eef4ff;border:1px solid #cddaf0;margin:10px 0 12px}
 .micro{font-size:.9rem;color:#56627a}
+.task-headline{display:block}.task-main{display:block;font-size:1em;font-weight:950;line-height:1.08}.task-sub{display:block;font-size:.65em;line-height:1.22;font-weight:800;color:#5d6c84;margin-top:6px}
+.phone-bonus{margin-top:18px;padding:22px;border-radius:26px;background:linear-gradient(135deg,#fff3c8,#f3e9ff 48%,#e8f8ff);border:1px solid #fff;box-shadow:var(--s14-shadow)}.phone-bonus h2{margin:0 0 6px}.phone-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}.phone-card{padding:17px;border-radius:20px;background:#fff;border:1px solid #d8e1ed}.phone-card h3{margin:0 0 8px}.phone-badge{display:inline-flex;padding:5px 9px;border-radius:999px;background:#1c315d;color:#fff;font-size:.75rem;font-weight:900;margin-bottom:9px}.phone-card p{margin:.45rem 0;line-height:1.45}
+@media(max-width:1000px){.phone-grid{grid-template-columns:1fr}}
 @media(max-width:900px){.l4-grid{grid-template-columns:1fr}.progressbox{position:static}.loop{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.badgood{grid-template-columns:1fr}.l4-card,.l4-fast{padding:17px}}
 </style>
@@ -53,7 +56,7 @@
 <span class="status-badge">Урок 4 · 40 минут</span>
 <h1>Как спросить Наставника так, чтобы он помог</h1>
 <p>Хороший запрос — это не длинный текст. Нужно быстро назвать устройство, программу, наблюдаемый симптом и попросить одно конкретное следующее действие.</p>
-<p class="micro"><b>Важно:</b> встроенный Наставник сайта ещё не реализован. Сейчас этот же навык тренируем через любой ИИ из меню «ИИ-чат»; архитектура урока не зависит от конкретного провайдера.</p>
+<p class="micro"><b>Важно:</b> пока отдельного Наставника на сайте нет, используй любой доступный ИИ из меню «ИИ-чат».</p>
 </div></section>
 
 <section class="section light"><div class="wrap">
@@ -77,14 +80,14 @@
   <div class="actions"><button id="checkFastResult" type="button">Проверить продолжение</button></div>
   <div id="fastResultStatus" class="status">Вторая часть ещё не выполнена.</div>
 </div>
-<div class="actions"><a href="#fastChallenge" id="fastPass" hidden>Полный цикл получился → FAST CHALLENGE</a></div>
+<div class="actions"><a href="#fastChallenge" id="fastPass" hidden>Полный цикл получился → дополнительное испытание</a></div>
 </article>
 </div></section>
 
 <section class="section light" id="normalRoute"><div class="wrap l4-grid"><div>
 
 <article class="l4-card">
-<h2>1. Плохой запрос и рабочий запрос</h2>
+<h2><span class="task-headline"><span class="task-main">1. Плохой и рабочий запрос</span><span class="task-sub">сравни, чего не хватает для нормальной помощи</span></span></h2>
 <div class="badgood">
   <div class="bad"><strong>Не помогает</strong><p>«У меня не работает. Что делать?»</p><p class="micro">ИИ не знает устройство, программу и симптом.</p></div>
   <div class="good"><strong>Помогает</strong><p>«У меня ноутбук с Windows, Microsoft Edge. Сайт не видит микрофон, после обновления страницы ничего не изменилось. Дай одно безопасное следующее действие.»</p></div>
@@ -94,7 +97,7 @@
 </article>
 
 <article class="l4-card" style="margin-top:18px">
-<h2>2. Собери запрос из фактов</h2>
+<h2><span class="task-headline"><span class="task-main">2. Собери запрос из фактов</span><span class="task-sub">не угадывай причину — опиши то, что видишь</span></span></h2>
 <p>Не начинай с догадки «сломался драйвер». Сначала опиши то, что реально видишь.</p>
 <div class="safe-scenario"><b>Ситуация:</b> ноутбук с Windows; Microsoft Edge; сайт открывается; камера работает; микрофон на странице недоступен; обновление страницы не помогло.</div>
 <div class="builder">
@@ -112,7 +115,7 @@
 </article>
 
 <article class="l4-card" style="margin-top:18px">
-<h2>3. Спроси один из доступных ИИ</h2>
+<h2><span class="task-headline"><span class="task-main">3. Спроси ИИ</span><span class="task-sub">контекст → один конкретный следующий шаг</span></span></h2>
 <p>Открой меню <b>«ИИ-чат»</b> в шапке или справа внизу и выбери сервис. Вставь собранный запрос.</p>
 <div class="actions"><button id="copyPrompt" type="button">1. Скопировать мой запрос</button><button id="launchAi" class="secondary" type="button">2. Открыть меню «ИИ-чат»</button></div>
 <p class="micro">Сайт не выбирает модель за тебя. Задача урока — научиться давать достаточный контекст любому подходящему ИИ. Если совет не совпадает с тем, что ты видишь на экране, используй навык L03: сделай безопасный скриншот нужной области и приложи его, если выбранный сервис принимает изображения.</p>
@@ -121,7 +124,7 @@
 </article>
 
 <article class="l4-card" style="margin-top:18px">
-<h2>4. Сообщи результат действия</h2>
+<h2><span class="task-headline"><span class="task-main">4. Сообщи результат</span><span class="task-sub">ИИ должен узнать, что произошло после его совета</span></span></h2>
 <div class="loop">
   <div>1. Спросил</div><div>2. Получил один шаг</div><div>3. Выполнил</div><div>4. Сообщил результат</div>
 </div>
@@ -135,7 +138,7 @@
 </article>
 
 <article class="l4-card" style="margin-top:18px">
-<h2>5. Финальная задача — без формы и шаблона</h2>
+<h2><span class="task-headline"><span class="task-main">5. Финальная задача</span><span class="task-sub">без формы и готового шаблона</span></span></h2>
 <div class="challenge">
 <p><b>Выбери одну незнакомую задачу:</b> найти «Ночной свет», найти выбор устройства вывода звука или найти историю буфера обмена. Если первую задачу ты уже умеешь решать — возьми другую.</p>
 <p>Самостоятельно:</p>
@@ -147,13 +150,37 @@
 </article>
 
 <article class="l4-card" id="fastChallenge" style="margin-top:18px">
-<h2>FAST CHALLENGE · реши новую проблему через цикл</h2>
+<h2><span class="task-headline"><span class="task-main">Дополнительное испытание</span><span class="task-sub">реши новую проблему через цикл</span></span></h2>
 <div class="challenge">
 <p><b>Ситуация:</b> в Windows звук есть, но он идёт не в те наушники/колонки. Сам выбери ИИ через меню сайта и реши задачу по правилу:</p>
 <p><b>контекст → один вопрос → одно действие → проверка → сообщение результата</b>.</p>
 <p>Не используй преподавателя как первый источник инструкции.</p>
 </div>
-<button class="done" data-fast="1" type="button">○ FAST CHALLENGE выполнен</button>
+<button class="done" data-fast="1" type="button">○ Дополнительное испытание выполнено</button>
+</article>
+
+<article class="phone-bonus" id="phoneBonus" hidden>
+<span class="status-badge">Смартфон · бонус после урока</span>
+<h2><span class="task-headline"><span class="task-main">Три новые фишки</span><span class="task-sub">быстрее находить ответ и работать сразу в двух местах</span></span></h2>
+<div class="phone-grid">
+<section class="phone-card">
+<span class="phone-badge">Android · поиск</span>
+<h3>Обведи то, что видишь на экране</h3>
+<p><b>Circle to Search:</b> на поддерживаемом телефоне вызови поиск по экрану и обведи предмет, картинку или фразу. Не нужно делать скриншот и отдельно описывать объект словами.</p>
+<p class="micro">Если функция на телефоне недоступна — пропусти.</p>
+</section>
+<section class="phone-card">
+<span class="phone-badge">Android · два окна</span>
+<h3>Инструкция сверху, настройки снизу</h3>
+<p><b>Попробуй:</b> открой браузер и Настройки в режиме разделённого экрана. Оставь инструкцию видимой и выполняй шаги во втором приложении без постоянного переключения.</p>
+<p class="micro">На разных оболочках запуск разделённого экрана выглядит по-разному.</p>
+</section>
+<section class="phone-card">
+<span class="phone-badge">Android · Live Caption</span>
+<h3>Телефон пишет субтитры к звуку</h3>
+<p><b>Попробуй:</b> включи видео или голосовое и найди <b>Live Caption / Автоматические субтитры</b>. На поддерживаемых устройствах речь превращается в текст прямо на экране.</p>
+</section>
+</div>
 </article>
 
 <div class="actions"><a class="secondary" href="../">← Компьютер</a><a href="../l03/">← L03</a><a href="../l05/">L05 →</a></div>
@@ -164,8 +191,7 @@
 <p class="micro">Отметки сохраняются только в этом браузере.</p>
 <hr style="border:0;border-top:1px solid #e3e8f0;margin:14px 0">
 <strong>Сегодня тренируем</strong>
-<p><code>AI-001</code> сформулировать проблему<br><code>AI-002</code> назвать устройство и программу<br><code>AI-005</code> спросить «что здесь нажать»<br><code>AI-006</code> сообщить результат действия</p>
-<p class="micro">Повтор: безопасный скриншот и неразглашение секретов из L03.</p>
+<p>• понятно описывать проблему<br>• называть устройство и программу<br>• просить одно конкретное действие<br>• сообщать, что произошло после действия</p><p class="micro">Повторяем безопасный скриншот и правило: никаких паролей, кодов и лишних личных данных.</p>
 </aside>
 </div></section>
 </main>
@@ -181,17 +207,17 @@
   "ai_policy":{"required_pattern":["PHYSICAL_DEVICE","SYSTEM","PROGRAM_OR_AREA","OBSERVED_SYMPTOM","ONE_CONCRETE_QUESTION","REPORT_RESULT"],"do_not":["START_WITH_UNPROVEN_CAUSE","REQUEST_LONG_SEQUENCE_FIRST","SHARE_SECRET","EXECUTE_RISKY_OR_DESTRUCTIVE_ACTION_WITHOUT_HUMAN_CHECK"]},
   "expected_evidence":"Solve a simple unfamiliar UI problem using one AI interaction loop before asking the teacher: context -> one action -> execution -> result report.",
   "mentor_status":"FUTURE_SITE_RUNTIME_NOT_REQUIRED_FOR_THIS_LESSON",
-  "status":"INTEGRATION_DEV_CANDIDATE_NOT_PUBLISHED"
+  "status":"PUBLISHED_CURRENT_2026_10_09"
 }
 </script>
 <script>
 (() => {
  const key='s14:l04:progress:v1',buttons=[...document.querySelectorAll('[data-step]')],fastButton=document.querySelector('[data-fast]');
  let done=new Set();try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
- const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
- function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':b.dataset.step==='3'?'Получил одно действие':b.dataset.step==='4'?'Результат сообщён':'Сделано')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
+ const fill=document.getElementById('progressFill'),text=document.getElementById('progressText'),phoneBonus=document.getElementById('phoneBonus');
+ function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':b.dataset.step==='3'?'Получил одно действие':b.dataset.step==='4'?'Результат сообщён':'Сделано')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов';if(phoneBonus)phoneBonus.hidden=done.size<buttons.length}
  buttons.forEach(b=>b.addEventListener('click',()=>{done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
- fastButton?.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'FAST CHALLENGE выполнен'});render();
+ fastButton?.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'Дополнительное испытание выполнено'});render();
 
  const fast=document.getElementById('fastPrompt'),fastStatus=document.getElementById('fastStatus'),fastPass=document.getElementById('fastPass');
  document.getElementById('checkFast')?.addEventListener('click',()=>{
