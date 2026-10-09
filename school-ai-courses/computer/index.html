@@ -7,19 +7,62 @@
 <script defer src="/school-ai-courses/assets/snow-trail.js"></script>
 <link rel="canonical" href="https://drozdov-dmitry.github.io/school-ai-courses/computer/">
 <link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
+<style>
+.test-card{
+  position:relative;
+  overflow:hidden;
+  border:2px solid #f29a3f !important;
+  background:linear-gradient(135deg,#fff0d2,#ffe0a6 52%,#fff8e9) !important;
+  box-shadow:0 16px 34px rgba(211,113,30,.20) !important;
+  transform-origin:center;
+  animation:testCardPulse 2.8s ease-in-out infinite;
+}
+.test-card::after{
+  content:"";
+  position:absolute;
+  inset:-40% -70%;
+  background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.72) 48%,transparent 58%);
+  transform:translateX(-55%);
+  animation:testCardShine 3.2s ease-in-out infinite;
+  pointer-events:none;
+}
+.test-card>*{position:relative;z-index:1}
+.test-card .status-badge{
+  background:#17254a;
+  color:#fff;
+}
+.test-card h3{
+  font-size:clamp(1.6rem,3vw,2.2rem);
+  letter-spacing:.04em;
+}
+.test-card .go{
+  font-weight:950;
+}
+@keyframes testCardPulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.018)}
+}
+@keyframes testCardShine{
+  0%,55%{transform:translateX(-55%)}
+  78%,100%{transform:translateX(55%)}
+}
+@media (prefers-reduced-motion: reduce){
+  .test-card,.test-card::after{animation:none}
+}
+</style>
 </head><body class="has-alice theme-computer s14-student">
 <header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · Компьютер</span></a><nav class="topnav"><a href="../">Главная</a></nav></div></header>
 <main>
-<section class="student-hero"><div class="wrap"><h1>Что не получается?</h1><p>Выбери место → Дальше — один шаг</p><svg class="s14-topic-visual" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" viewBox="232 286 165 100" aria-hidden="true" focusable="false"><image href="/school-ai-courses/assets/home/computer.webp" width="420" height="420"/></svg></div></section>
+<section class="student-hero"><div class="wrap"><h1>Компьютер · учебник</h1><p>Начни с ТЕСТА, затем переходи к урокам по порядку.</p><svg class="s14-topic-visual" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" viewBox="232 286 165 100" aria-hidden="true" focusable="false"><image href="/school-ai-courses/assets/home/computer.webp" width="420" height="420"/></svg></div></section>
 
 <section class="section light"><div class="wrap">
 <h2 class="action-title">Учебник</h2>
 <div class="lesson-cards">
-<a class="big-card" href="/school-ai-courses/computer/d0/?v=20261009-2&restart=1">
-  <span class="status-badge">Старт · 40 минут</span>
-  <h3>Покажи, как ты работаешь</h3>
-  <p>Практическая диагностика без оценок: компьютер, файлы, печать, смартфон + MAX и работа с ИИ.</p>
-  <span class="go">Начать диагностику →</span>
+<a class="big-card test-card" href="/school-ai-courses/computer/d0/?v=20261009-2&restart=1">
+  <span class="status-badge">Начни отсюда · 40 минут</span>
+  <h3>ТЕСТ</h3>
+  <p>Короткая практическая проверка без оценок: покажи, как ты работаешь с компьютером, файлами, смартфоном, MAX и ИИ.</p>
+  <span class="go">Пройти тест →</span>
 </a>
 <a class="big-card" href="l01/">
   <span class="status-badge">Урок 1 · 40 минут</span>
