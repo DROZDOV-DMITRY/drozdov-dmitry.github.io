@@ -56,7 +56,7 @@
 </div>
 <div id="fastStatus" class="status">Нужны переданный текст и две проверки.</div>
 <div class="actions"><a id="fastPass" href="#fastChallenge" hidden>Маршрут выполнен → Дополнительное испытание</a><a class="secondary" href="#normalRoute">Нужна практика → обычный урок</a></div>
-<p class="micro"><b>Что реально проверяет сайт:</b> текст дошёл на ПК через MAX. <b>Что сайт не может доказать:</b> что на телефоне использовался именно голосовой ввод. Для MAX-012 нужен наблюдаемый факт преподавателя или честная самопроверка; автоматический PASS сайта сам по себе не является доказательством MAX-012.</p>
+<p class="micro">Сайт может проверить, что нужный текст дошёл на ПК. Голосовой ввод подтверждаешь сам: сначала продиктуй текст на телефоне, потом обязательно прочитай его перед отправкой.</p>
 </article>
 </div></section>
 
@@ -64,9 +64,9 @@
 <article class="l9-card">
 <h2>1. Проверь среду — без регистрации на уроке</h2>
 <p>4 минуты печати на ПК: набери без копирования «Телефон создаёт текст, MAX переносит его, компьютер продолжает работу».</p>
-<div class="envbox"><b>Precondition:</b> MAX уже доступен на смартфоне и на ПК/вебе под одним профилем, обе сессии активны, чат «Учебный Урок 10» доступен на обоих устройствах.</div>
+<div class="envbox"><b>Перед началом:</b> MAX открыт на смартфоне и на ПК под одним профилем, а один и тот же учебный чат доступен на обоих устройствах.</div>
 <div class="l9-task"><b>Проверка:</b> открой «Учебный Урок 10» сначала на телефоне, затем на ПК. Убедись, что это один и тот же чат. Никаких паролей, SMS-кодов, QR-кодов или входа «за ученика» в этом уроке нет.<br><span class="l9-time">0:00–7:00</span></div>
-<div class="envbox warnbox"><b>Если precondition не выполнен:</b> это <code>ENV_BLOCKED</code>, а не «не умею». Установку/вход не превращаем в скрытый Урок 10; преподаватель решает доступ отдельно.</div>
+<div class="envbox warnbox"><b>Если MAX не открыт на одном из устройств:</b> остановись и скажи преподавателю. Установка и вход в аккаунт не являются заданием этого урока.</div>
 <button class="done" data-step="1" type="button">○ Обе сессии готовы</button>
 </article>
 
@@ -76,7 +76,7 @@
 <p>На смартфоне открой поле сообщения в «Учебный Урок 10». <b>Android/Gboard:</b> коснись поля ввода → на клавиатуре нажми микрофон → после сигнала говори. <b>iPhone:</b> коснись поля ввода → нажми кнопку Dictation на экранной клавиатуре → говори. Точная иконка и доступность зависят от клавиатуры, языка и настроек.</p>
 <div class="l9-task"><b>Важно:</b> диктуй только учебную фразу — никаких паролей, кодов входа или личных данных. Затем <b>прочитай результат до отправки</b>. Исправь распознанное слово вручную, если смысл исказился. Голосовой ввод — средство ускорения, а не причина отправлять непроверенный текст.<br><span class="l9-time">7:00–15:00</span></div>
 <p class="micro">Если после собственной проверки ты всё ещё не понимаешь, как исправить искажённое слово, ИИ можно попросить помочь только с безопасным учебным текстом и только после твоей попытки.</p>
-<div class="envbox warnbox"><b>Если микрофона/Dictation нет или язык не поддерживается:</b> не подменяй MAX-012 обычной печатью и не ставь PASS. Продолжить остальные части урока можно, но MAX-012 получает <code>ENV_BLOCKED_VOICE_INPUT</code>.</div>
+<div class="envbox warnbox"><b>Если голосовой ввод не работает:</b> скажи преподавателю и пропусти только голосовую часть. Остальные действия с MAX можно продолжить.</div>
 <button class="done" data-step="2" type="button">○ Голосовой текст проверен</button>
 </article>
 
@@ -88,7 +88,7 @@
 <div class="device"><strong>ПК</strong>то же сообщение</div>
 </div>
 <p>Отправь проверенный текст с телефона. На ПК открой «Учебный Урок 10» и дождись этого же сообщения. Если оно не появилось сразу, сначала убедись, что открыт тот же профиль и тот же чат; не создавай новый аккаунт.</p>
-<div class="l9-task"><b>Evidence:</b> сравни начало и конец сообщения на телефоне и ПК. Смысл и текст должны совпадать.<br><span class="l9-time">15:00–23:00</span></div>
+<div class="l9-task"><b>Проверка:</b> сравни начало и конец сообщения на телефоне и ПК. Смысл и текст должны совпадать.<br><span class="l9-time">15:00–23:00</span></div>
 <div class="actions"><button id="copyAiPrompt" type="button">Застрял → 1. Скопировать вопрос</button><button id="openAi" class="secondary" type="button">2. Открыть «ИИ-чат»</button></div>
 <div id="aiPromptText" class="l9-task">У меня MAX уже открыт на телефоне и ПК под одним профилем. Сообщение, отправленное с телефона, не вижу на ПК. Я проверил, что чат тот же. Дай одно безопасное действие для проверки, не проси пароль или код входа.</div>
 <button class="done" data-step="3" type="button">○ Сообщение появилось на ПК</button>
@@ -96,7 +96,7 @@
 
 <article class="l9-card" style="margin-top:18px">
 <h2>4. Забери текст из MAX в рабочее поле</h2>
-<p>На ПК выдели текст сообщения в MAX, скопируй его и вставь в поле ниже. Это уже знакомый clipboard-навык; новый результат — текст прошёл путь от голоса на телефоне до рабочего поля на ПК.</p>
+<p>На ПК выдели текст сообщения в MAX, скопируй его и вставь в поле ниже. Копирование и вставка тебе уже знакомы; здесь важно провести один и тот же текст от телефона до рабочего поля на ПК.</p>
 <textarea id="practiceTransfer" class="transfer-box" placeholder="Вставь текст из MAX на ПК"></textarea>
 <div class="actions"><button id="checkPractice" type="button">Проверить перенос</button></div>
 <div id="practiceStatus" class="status">Пока не проверено.</div>
@@ -119,6 +119,7 @@
 </div>
 <div class="actions"><button id="checkFinal" type="button">Проверить финальный перенос</button></div>
 <div id="finalStatus" class="status">Для завершения нужен корректный перенос и две проверки.</div>
+<div class="l9-task"><b>Прибери за собой:</b> закрой временные окна урока на компьютере. На Рабочем столе после этого урока не должно появиться новых файлов или папок.</div>
 <span class="l9-time">30:00–40:00</span>
 <button class="done" id="finalDone" data-step="5" type="button" disabled>○ Урок завершён</button>
 </article>
@@ -134,7 +135,7 @@
 <div class="checks"><label><input id="fcVoice" type="checkbox"> Голосовой ввод использован и текст проверен до отправки.</label></div>
 <div class="actions"><button id="checkFc" type="button">Проверить Дополнительное испытание</button></div>
 <div id="fcStatus" class="status">Нужны перенесённый текст, объяснение цепочки и подтверждение голосового ввода.</div>
-<button class="done" id="fcDone" data-fast="1" type="button" disabled>○ Дополнительное испытание выполнен</button>
+<p><b>После проверки закрой временные окна урока.</b></p><button class="done" id="fcDone" data-fast="1" type="button" disabled>○ Дополнительное испытание выполнено</button>
 </article>
 
 <div class="actions"><a class="secondary" href="../">← Компьютер</a><a href="../l09/">← Урок 9</a></div></div>
@@ -144,8 +145,8 @@
 <p class="micro">Отметки сохраняются только в этом браузере.</p>
 <hr style="border:0;border-top:1px solid #e3e8f0;margin:14px 0">
 <strong>Сегодня тренируем</strong>
-<p><code>MAX-001</code> одновременно использовать MAX на телефоне и ПК<br><code>MAX-002</code> передать себе текст телефон→ПК<br><code>MAX-012</code> использовать голосовой набор текста<br><code>XFER-001</code> передать текст телефон→ПК через MAX</p>
-<p class="micro">Явная зависимость: <code>MAX-001 → XFER-001</code>. Вход/регистрация не являются частью Урок 10.</p>
+<p>• использовать MAX на телефоне и ПК<br>• вводить короткий текст голосом<br>• проверять распознавание до отправки<br>• получать на ПК сообщение с телефона<br>• копировать полученный текст в рабочее поле</p>
+<p class="micro">Вход и регистрация в MAX не являются частью урока.</p>
 </aside>
 </div></section>
 </main>
@@ -155,7 +156,7 @@
   "lesson_id":"L10",
   "title":"Телефон говорит — компьютер получает",
   "environment":["SMARTPHONE","WINDOWS_PC_OR_WEB","MAX_EXISTING_SESSION","BROWSER","AI_LAUNCHER_V1"],
-  "target_atoms":["MAX-001","MAX-002","MAX-012","XFER-001"],
+  "target_atoms":["MAX-001","MAX-002","голосовой ввод","XFER-001"],
   "reinforcement_atoms":["KEY-004","KEY-005","AI-001","AI-002","AI-005","AI-006"],
   "explicit_prerequisites":[{"for":"XFER-001","requires":["MAX-001"],"basis":"HIGH_CONFIDENCE_CHAIN"}],
   "environment_precondition":"A lawful existing MAX profile is already active on both the learner smartphone and PC/web, and the same harmless teacher-designated chat Учебный L09 is available on both. Account creation, installation, login, QR scanning, SMS codes and recovery are out of lesson scope.",
@@ -165,8 +166,8 @@
     "status":"REPO_CURRENT_2026_10_09"
   },
   "fast_gate":{"duration_minutes":4,"mode":"PERFORMANCE_PHONE_TO_PC_NO_AI","checks":["VOICE_TEXT_INPUT","REVIEW_TRANSCRIPTION_BEFORE_SEND","MAX_SAME_CHAT_PHONE_PC","PHONE_TO_PC_TEXT_TRANSFER","PASTE_RECEIVED_TEXT"],"on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
-  "evidence_provenance":{"machine_verified":["MAX-002","XFER-001"],"supported_by_successful_cross_device_sync":["MAX-001"],"observation_required":["MAX-012"]},
-  "evidence_limits":"Website can verify pasted transfer text but cannot technically prove that smartphone voice input was used; MAX-012 requires teacher observation or learner attestation and must not be treated as machine-verified.",
+  "evidence_provenance":{"machine_verified":["MAX-002","XFER-001"],"supported_by_successful_cross_device_sync":["MAX-001"],"observation_required":["голосовой ввод"]},
+  "evidence_limits":"Website can verify pasted transfer text but cannot technically prove that smartphone voice input was used; голосовой ввод requires teacher observation or learner attestation and must not be treated as machine-verified.",
   "environment_blockers":["NO_EXISTING_MAX_DUAL_DEVICE_SESSION","VOICE_INPUT_UNAVAILABLE_OR_UNSUPPORTED"],
   "safety_constraints":["NO_LOGIN_OR_ACCOUNT_CREATION_DURING_LESSON","DO_NOT_SHARE_PASSWORD_SMS_CODE_OR_2FA_SECRET","USE_ONLY_HARMLESS_TRAINING_TEXT"],
   "ai_policy":{"first_attempt":"SELF_OR_RECALL","allowed_after_stuck":["ONE_ACTION"],"do_not":["ASK_FOR_PASSWORD_OR_LOGIN_CODE","GIVE_FULL_SEQUENCE_IMMEDIATELY"]},
@@ -182,12 +183,12 @@
 </script>
 <script>
 (() => {
- const key='s14:l10:progress:v1',buttons=[...document.querySelectorAll('[data-step]')],fastButton=document.querySelector('[data-fast]');
+ const key='s14:l10:progress:v2',buttons=[...document.querySelectorAll('[data-step]')],fastButton=document.querySelector('[data-fast]');
  let done=new Set();try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
  const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
  function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':b.dataset.step==='1'?'Обе сессии готовы':b.dataset.step==='2'?'Голосовой текст проверен':b.dataset.step==='3'?'Сообщение появилось на ПК':'Текст перенесён')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
  buttons.forEach(b=>b.addEventListener('click',()=>{if(b.disabled)return;done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
- fastButton?.addEventListener('click',()=>{if(fastButton.disabled)return;const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'FAST CHALLENGE выполнен'});render();
+ fastButton?.addEventListener('click',()=>{if(fastButton.disabled)return;const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'дополнительное испытание выполнен'});render();
 
  const norm=s=>(s||'').toLocaleLowerCase('ru-RU').replace(/[ё]/g,'е').replace(/[^a-zа-я0-9]+/gi,' ').trim();
  function hasWords(value,words){const n=norm(value);return words.every(w=>n.includes(norm(w)))}
@@ -198,7 +199,7 @@
    const ok=textOk&&document.getElementById('fastVoice').checked&&document.getElementById('fastChecked').checked;
    const s=document.getElementById('fastStatus'),p=document.getElementById('fastPass');
    p.hidden=!ok;s.className='status '+(ok?'ok':'');
-   s.textContent=ok?'Текст дошёл на ПК, распознавание было проверено. Переходи к FAST CHALLENGE.':'Нужны переданный текст и две проверки.';
+   s.textContent=ok?'Текст дошёл на ПК, распознавание было проверено. Переходи к дополнительное испытание.':'Нужны переданный текст и две проверки.';
  }
  ['fastTransfer','fastVoice','fastChecked'].forEach(id=>document.getElementById(id)?.addEventListener(id==='fastTransfer'?'input':'change',updateFast));
 
@@ -220,7 +221,7 @@
    const explainOk=hasGroups(document.getElementById('fcExplain').value,[['телефон','смартфон'],['max','макс'],['компьютер','пк'],['текст','сообщение']]);
    const ok=textOk&&explainOk&&document.getElementById('fcVoice').checked;
    const s=document.getElementById('fcStatus'),b=document.getElementById('fcDone');
-   s.className='status '+(ok?'ok':'warn');s.textContent=ok?'FAST CHALLENGE: перенос и объяснение цепочки подтверждены. Голосовой ввод остаётся наблюдаемым, а не machine-verified evidence.':'Нужны перенесённый текст с меткой 63, объяснение ролей смартфона / MAX / компьютера и подтверждение голосового ввода.';b.disabled=!ok;
+   s.className='status '+(ok?'ok':'warn');s.textContent=ok?'дополнительное испытание: перенос и объяснение цепочки подтверждены. Голосовой ввод остаётся наблюдаемым, а не автоматической проверкой.':'Нужны перенесённый текст с меткой 63, объяснение ролей смартфона / MAX / компьютера и подтверждение голосового ввода.';b.disabled=!ok;
  });
 
  document.getElementById('copyAiPrompt')?.addEventListener('click',async e=>{const q=document.getElementById('aiPromptText')?.textContent?.trim()||'';try{await navigator.clipboard.writeText(q);e.currentTarget.textContent='Скопировано ✓'}catch(_){e.currentTarget.textContent='Скопируй вопрос вручную'}});
