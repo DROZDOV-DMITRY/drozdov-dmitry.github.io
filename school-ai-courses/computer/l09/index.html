@@ -116,20 +116,20 @@
   "lesson_id":"L09",
   "title":"Скачал — теперь найди",
   "environment":["WINDOWS","BROWSER","FILE_EXPLORER","AI_LAUNCHER_V1"],
-  "target_atoms":["WEB-005","WEB-007","скачанный файл","FILE-017"],
+  "target_atoms":["WEB-005","WEB-007","FILE-016","FILE-017"],
   "reinforcement_atoms":["FILE-001","FILE-002","FILE-014","KEY-011","KEY-005","AI-001","AI-002","AI-005","AI-006"],
   "explicit_prerequisites":[
-    {"for":"скачанный файл","requires":["WEB-005"],"basis":"HIGH_CONFIDENCE_CHAIN"},
-    {"for":"скачанный файл","requires":["FILE-001","FILE-002"],"basis":"HIGH_CONFIDENCE_CHAIN"}
+    {"for":"FILE-016","requires":["WEB-005"],"basis":"HIGH_CONFIDENCE_CHAIN"},
+    {"for":"FILE-016","requires":["FILE-001","FILE-002"],"basis":"HIGH_CONFIDENCE_CHAIN"}
   ],
   "download_fixture":{"mechanism":"CLIENT_SIDE_BLOB","start_filename":"Старт-загрузка.txt","transfer_filename":"Таблица-загрузка.csv","contains_personal_data":false},
   "fast_gate":{"duration_minutes":4,"mode":"PERFORMANCE_REAL_DOWNLOAD_NO_AI","checks":["DOWNLOAD_FILE","FIND_IN_BROWSER_DOWNLOADS","FIND_IN_FILE_EXPLORER","IDENTIFY_FILE_TYPE_FROM_SYSTEM_INFO","THREE_SCREENSHOT_EVIDENCE"],"on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
   "ai_policy":{"first_attempt":"SELF_OR_RECALL","allowed_after_stuck":["ONE_ACTION"],"do_not":["ASSUME_DEFAULT_DOWNLOAD_FOLDER_WITHOUT_EVIDENCE","GIVE_FULL_SEQUENCE_IMMEDIATELY"]},
   "support_actions_not_assessed":["RIGHT_CLICK_OPEN_PROPERTIES"],
   "safety_constraints":["DO_NOT_DISABLE_BROWSER_DOWNLOAD_PROTECTION","DO_NOT_BYPASS_DANGEROUS_FILE_WARNING"],
-  "expected_снимок":"For a second file, show the browser download record, the real file location in File Explorer, and system-provided file type information.",
+  "expected_evidence":"For a second file, show the browser download record, the real file location in File Explorer, and system-provided file type information.",
   "mutable_ui_note":"Browser download controls and exact File Explorer command placement vary by browser and Windows version; assess the result, not a frozen icon path.",
-  "current_fact_снимок_checked_2026_10_07":["Microsoft Support: Downloads is a known Windows folder available in File Explorer.","Microsoft Support: File Explorer can search from a chosen folder/location.","Yandex Browser Support: Ctrl+J opens the downloads list on Windows.","Microsoft Edge Support: Ctrl+J opens Downloads.","Microsoft Support: File Explorer can show file name extensions, but FILE-018 is not required for L08."],
+  "current_fact_evidence_checked_2026_10_07":["Microsoft Support: Downloads is a known Windows folder available in File Explorer.","Microsoft Support: File Explorer can search from a chosen folder/location.","Yandex Browser Support: Ctrl+J opens the downloads list on Windows.","Microsoft Edge Support: Ctrl+J opens Downloads.","Microsoft Support: File Explorer can show file name extensions, but FILE-018 is not required for L09."],
   "status":"REPO_CURRENT_2026_10_09"
 }
 </script>
@@ -159,7 +159,7 @@
    const box=document.getElementById('fastStatus'),pass=document.getElementById('fastPass');pass.hidden=!ok;box.className='status '+(ok?'ok':'');box.textContent=ok?'Три снимка вставлены, маршруты и способ определения типа поняты. Проверь содержимое глазами.':'Нужны три правильных утверждения и три снимка.';
  }
  document.querySelectorAll('[data-fast-answer]').forEach(btn=>btn.addEventListener('click',()=>{
-   const kind=btn.dataset.fastAnswer;if(kind==='wrong'){const s=document.getElementById('fastStatus');s.className='status warn';s.textContent='Нет: браузер показывает загрузку, но скачанный файл требует найти реальный файл.';return}
+   const kind=btn.dataset.fastAnswer;if(kind==='wrong'){const s=document.getElementById('fastStatus');s.className='status warn';s.textContent='Нет: браузер показывает загрузку, но задача требует найти реальный файл в Проводнике.';return}
    btn.classList.add('ok');if(kind==='browser')fastBrowser=true;if(kind==='file')fastFile=true;if(kind==='type')fastTypeConcept=true;updateFast();
  }));
  document.querySelectorAll('#typeQuiz [data-type-answer]').forEach(btn=>btn.addEventListener('click',()=>{
