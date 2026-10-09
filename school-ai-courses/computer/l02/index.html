@@ -30,6 +30,8 @@
 .ctrl-board{margin-top:14px;padding:18px;border-radius:22px;background:#eef3fb;border:1px solid #cfdaea}.ctrl-board svg{display:block;width:100%;height:auto}.ctrl-note{margin-top:10px;font-size:.95rem;color:#43516a}
 .timer-wrap{display:grid;grid-template-columns:minmax(160px,220px) minmax(0,1fr);gap:18px;align-items:center;margin-top:14px}.gnome-coach{position:relative;border-radius:22px;background:linear-gradient(180deg,#edf6ff,#e3efff);min-height:245px;overflow:hidden;border:1px solid #d5e3f6;display:grid;place-items:end center;padding:12px}.gnome-coach img{max-width:92%;max-height:230px;object-fit:contain;filter:drop-shadow(0 8px 24px rgba(20,37,70,.18))}.coach-badge{position:absolute;left:12px;top:12px;padding:7px 11px;border-radius:999px;background:#17254a;color:#fff;font-size:.82rem;font-weight:900}
 .timer-box{padding:16px 17px;border-radius:18px;background:#fff;border:1px solid #dce5f3}.stopwatch-face{display:grid;place-items:center;min-height:150px;border-radius:22px;background:linear-gradient(135deg,#17254a,#2957ab);color:#fff;border:1px solid #365ea9;box-shadow:inset 0 0 0 2px rgba(255,255,255,.08);text-align:center}.stopwatch-face small{display:block;font-size:.92rem;opacity:.88;letter-spacing:.03em}.stopwatch-time{font-size:clamp(2.2rem,6vw,4rem);font-weight:950;line-height:1;margin:8px 0}.stopwatch-status{font-size:.95rem;opacity:.92}.timer-buttons{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.timer-buttons button{min-height:44px;padding:9px 13px;border:0;border-radius:14px;background:linear-gradient(135deg,#166dd5,#2654b0);color:#fff;font-weight:900;cursor:pointer}.timer-buttons .secondary{background:linear-gradient(135deg,#fff1d0,#f8dca6);color:#101c38}.timer-buttons .ghost{background:#fff;color:#17254a;border:1px solid #c7d4e8}
+.phone-bonus{margin-top:18px;padding:22px;border-radius:26px;background:linear-gradient(135deg,#fff3c8,#f3e9ff 48%,#e8f8ff);border:1px solid #fff;box-shadow:var(--s14-shadow)}.phone-bonus h2{margin:0 0 6px}.phone-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}.phone-card{padding:17px;border-radius:20px;background:#fff;border:1px solid #d8e1ed}.phone-card h3{margin:0 0 8px}.phone-badge{display:inline-flex;padding:5px 9px;border-radius:999px;background:#1c315d;color:#fff;font-size:.75rem;font-weight:900;margin-bottom:9px}.phone-card p{margin:.45rem 0;line-height:1.45}
+@media(max-width:1000px){.phone-grid{grid-template-columns:1fr}}
 @media(max-width:900px){.l2-grid{grid-template-columns:1fr}.progressbox{position:static}.timer-wrap{grid-template-columns:1fr}}
 </style>
 </head>
@@ -130,6 +132,30 @@
 <button class="done" data-fast="1" type="button">○ Дополнительное испытание выполнено</button>
 </article>
 
+<article class="phone-bonus" id="phoneBonus" hidden>
+<span class="status-badge">Смартфон · бонус после урока</span>
+<h2><span class="task-headline"><span class="task-main">Три новые фишки</span><span class="task-sub">никаких повторов из прошлого урока</span></span></h2>
+<div class="phone-grid">
+<section class="phone-card">
+<span class="phone-badge">iPhone · курсор</span>
+<h3>Пробел превращается в тачпад</h3>
+<p><b>Попробуй:</b> открой заметку, напиши короткую фразу, затем зажми <b>Пробел</b> на клавиатуре. Не отпуская палец, двигай его влево и вправо — курсор можно поставить точно между буквами.</p>
+</section>
+<section class="phone-card">
+<span class="phone-badge">Android · буфер обмена</span>
+<h3>Верни то, что копировал раньше</h3>
+<p><b>Попробуй:</b> скопируй по очереди две разные фразы. Открой клавиатуру Gboard → <b>Буфер обмена</b> и вставь не последнюю, а предыдущую фразу.</p>
+<p class="micro-note">Если в клавиатуре нет кнопки буфера обмена — просто пропусти эту фишку.</p>
+</section>
+<section class="phone-card">
+<span class="phone-badge">iPhone / Android · сокращения</span>
+<h3>Три буквы → целая фраза</h3>
+<p><b>Попробуй:</b> создай сокращение, например <b>ш14</b> → <b>Школа №14, Калья</b>. После этого набери только <b>ш14</b> и посмотри, предложит ли телефон готовую фразу.</p>
+<p class="micro-note">На iPhone это «Замена текста». На Android путь зависит от клавиатуры; в Gboard используется личный словарь и ярлык.</p>
+</section>
+</div>
+</article>
+
 <div class="actions"><a class="secondary" href="../">← Компьютер</a><a class="secondary" href="../l01/">← L01</a><a href="../l03/">L03 →</a></div>
 </div>
 
@@ -161,8 +187,8 @@
 (() => {
  const key='s14:l02:progress:v1',buttons=[...document.querySelectorAll('[data-step]')],fastButton=document.querySelector('[data-fast]');
  let done=new Set(); try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
- const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
- function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':'Сделано')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
+ const fill=document.getElementById('progressFill'),text=document.getElementById('progressText'),phoneBonus=document.getElementById('phoneBonus');
+ function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':'Сделано')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов';if(phoneBonus)phoneBonus.hidden=done.size<buttons.length}
  buttons.forEach(b=>b.addEventListener('click',()=>{done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
  if(fastButton){fastButton.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'Дополнительное испытание выполнено';});}
  render();
