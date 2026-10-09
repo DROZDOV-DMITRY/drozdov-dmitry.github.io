@@ -177,7 +177,7 @@
   const stages=[...document.querySelectorAll('.d0-stage[data-stage]')];
   const progressText=document.getElementById('d0ProgressText');
   const progressFill=document.getElementById('d0ProgressFill');
-  const history=document.getElementById('d0History');
+  const historyEl=document.getElementById('d0History');
   let state={started:false,current:1,results:{}};
   const params=new URLSearchParams(location.search);
   const forceRestart=params.get('restart')==='1';
@@ -185,7 +185,7 @@
     try{localStorage.removeItem(key)}catch(_){}
     params.delete('restart');
     const qs=params.toString();
-    history.replaceState(null,'',location.pathname+(qs?'?'+qs:'')+location.hash);
+    window.history.replaceState(null,'',location.pathname+(qs?'?'+qs:'')+location.hash);
   }else{
     try{state={...state,...JSON.parse(localStorage.getItem(key)||'{}')}}catch(_){}
   }
@@ -220,7 +220,7 @@
     }
     const done=Object.values(state.results).filter(v=>v==='done').length;
     const notdone=Object.values(state.results).filter(v=>v==='notdone').length;
-    history.textContent=completed?('готово: '+done+' · не получилось: '+notdone):'';
+    historyEl.textContent=completed?('готово: '+done+' · не получилось: '+notdone):'';
     setAiVisible(current>=6);
     if(current===8)window.scrollTo({top:0,behavior:'smooth'});
   }
