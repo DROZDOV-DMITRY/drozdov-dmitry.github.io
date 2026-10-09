@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fffdf8">
-<title>L08 · Скачал — теперь найди · Курс ИИ</title>
-<meta name="description" content="Скачать файл, найти его через браузер и Проводник Windows и определить тип файла.">
+<title>Урок 9 · Потерял, удалил, нашёл · Курс ИИ</title>
+<meta name="description" content="Урок 9: найти файл по имени, отсортировать файлы, безопасно удалить учебный файл и восстановить его из Корзины.">
 <link rel="canonical" href="https://drozdov-dmitry.github.io/school-ai-courses/computer/l08/">
 <link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
 <link rel="stylesheet" href="/school-ai-courses/assets/s14-v2.css">
@@ -13,121 +13,179 @@
 <script defer src="/school-ai-courses/assets/nav.js"></script>
 <script defer src="/school-ai-courses/assets/snow-trail.js"></script>
 <style>
-.l8-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:18px;align-items:start}
-.l8-card,.l8-fast{padding:22px;border-radius:26px;border:1px solid #ffffffe8;box-shadow:var(--s14-shadow)}
-.l8-card{background:linear-gradient(135deg,#fffaf1,#eef6ff)}.l8-fast{background:linear-gradient(135deg,#fff2c8,#e2f1ff)}
-.l8-time{display:inline-flex;margin-top:8px;padding:5px 9px;border-radius:999px;background:#e9efff;font-size:.76rem;font-weight:900}
-.l8-task,.download-box{padding:16px 17px;border-radius:18px;background:#fff;border:1px solid #dce5f3;margin-top:12px}
-.download-box{background:#eef8f1;border-color:#bedfc9}
+.l7-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:18px;align-items:start}
+.l7-card,.l7-fast{padding:22px;border-radius:26px;border:1px solid #ffffffe8;box-shadow:var(--s14-shadow)}
+.l7-card{background:linear-gradient(135deg,#fffaf1,#eef6ff)}.l7-fast{background:linear-gradient(135deg,#fff2c8,#e2f1ff)}
+.l7-card h2,.l7-fast h2{margin-top:0}
+.l7-time{display:inline-flex;margin-top:8px;padding:5px 9px;border-radius:999px;background:#e9efff;font-size:.76rem;font-weight:900}
+.l7-task{padding:16px 17px;border-radius:18px;background:#fff;border:1px solid #dce5f3;margin-top:12px}
+.lab{display:grid;gap:8px;padding:15px;border-radius:18px;background:#f6f9fd;border:1px solid #ccd8e8}
+.fileline{display:flex;gap:8px;align-items:center;padding:9px 11px;border-radius:12px;background:#fff;border:1px solid #d6dfeb;font-family:ui-monospace,Consolas,monospace;font-weight:800}
+.fileline::before{content:"📄"}
+.rule{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.rule>div{padding:15px;border-radius:18px;background:#fff;border:1px solid #d6deeb}
+.rule .safe{background:#eff9f3;border-color:#acd6bb}.rule .danger{background:#fff0f4;border-color:#efc4d0}
 .choice{display:grid;gap:8px;margin-top:10px}.choice button{min-height:46px;border:1px solid #cbd7e8;border-radius:14px;background:#fff;color:#101c38;font-weight:850;cursor:pointer;text-align:left;padding:10px 12px}.choice button.ok{background:#e5f5eb;border-color:#a9d2b9}
 .status{margin-top:10px;padding:12px 14px;border-radius:15px;background:#eef3fb;font-weight:850}.status.ok{background:#e5f5eb;color:#195c39}.status.warn{background:#fff0f4;color:#8b2149}
 .paste-zone{min-height:110px;margin-top:10px;border:2px dashed #91a7c6;border-radius:18px;background:#fff;padding:12px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:850;outline:none;overflow:hidden}.paste-zone img{max-width:100%;max-height:300px;border-radius:12px}
-.evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.actions a,.actions button{min-height:44px;padding:9px 13px;border:0;border-radius:14px;background:linear-gradient(135deg,#166dd5,#2654b0);color:#fff;font-weight:900;text-decoration:none;cursor:pointer}.actions .secondary{background:linear-gradient(135deg,#fff1d0,#f8dca6);color:#101c38}
+.evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.actions a,.actions button{min-height:44px;padding:9px 13px;border:0;border-radius:14px;background:linear-gradient(135deg,#166dd5,#2654b0);color:#fff;font-weight:900;text-decoration:none;cursor:pointer}.actions .secondary{background:linear-gradient(135deg,#fff1d0,#f8dca6);color:#101c38}
 .done{margin-top:12px;min-height:44px;padding:9px 13px;border:1px solid #c7d4e8;border-radius:14px;background:#fff;color:#101c38;font-weight:850;cursor:pointer}.done.is-done{background:#dff4e8;border-color:#a8d5bb}.done:disabled{opacity:.5;cursor:not-allowed}
-.progressbox{position:sticky;top:106px;padding:18px;border-radius:24px;background:#fff;border:1px solid #fff;box-shadow:var(--s14-shadow)}.progressbar{height:12px;border-radius:999px;background:#e5ebf4;overflow:hidden;margin:10px 0}.progressbar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#4aa87a,#2673ce)}
+.progressbox{position:sticky;top:106px;padding:18px;border-radius:24px;background:#fff;border:1px solid #fff;box-shadow:var(--s14-shadow)}
+.progressbar{height:12px;border-radius:999px;background:#e5ebf4;overflow:hidden;margin:10px 0}.progressbar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#4aa87a,#2673ce)}
 .challenge{padding:17px;border-radius:20px;background:#eef8f1;border:1px solid #bedfc9}.micro{font-size:.9rem;color:#56627a}
-@media(max-width:900px){.l8-grid{grid-template-columns:1fr}.progressbox{position:static}.evidence-grid{grid-template-columns:1fr}}
-@media(max-width:640px){.l8-card,.l8-fast{padding:17px}}
+@media(max-width:900px){.l7-grid{grid-template-columns:1fr}.progressbox{position:static}.evidence-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.l7-card,.l7-fast{padding:17px}.rule{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="s14-student theme-computer">
-<header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · L08</span></a></div></header>
+<header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · Урок 9</span></a></div></header>
 <main>
-<section class="student-hero"><div class="wrap"><span class="status-badge">Урок 8 · 40 минут</span><h1>Скачал — теперь найди</h1><p>Скачать файл — только половина задачи. Нужно найти его в браузере, затем как настоящий файл в Проводнике и определить его тип.</p></div></section>
+<section class="student-hero"><div class="wrap">
+<span class="status-badge">Урок 9 · 40 минут</span>
+<h1>Потерял, удалил, нашёл</h1>
+<p>Файл может «пропасть» просто потому, что папка большая, порядок изменился или ты удалил учебный файл. Сегодня тренируем три способа вернуть контроль: поиск по имени, сортировку и восстановление из Корзины.</p>
+</div></section>
 
-<section class="section light"><div class="wrap"><article class="l8-fast">
-<span class="status-badge">Мне это легко · FAST_GATE ≈ 4 минуты</span>
-<h2>Скачай и найди двумя маршрутами</h2>
-<div class="download-box"><p>Нажми один раз: страница создаст безопасный учебный файл без личных данных.</p><div class="actions"><button id="fastDownload" type="button">Скачать L08-START.txt</button></div></div>
-<p>Без ИИ: найди L08-START.txt в списке загрузок браузера, затем в Проводнике. Если браузер сохранил не в стандартную папку «Загрузки», используй фактическое место. После этого открой свойства файла и определи его тип.</p>
+<section class="section light"><div class="wrap">
+<article class="l7-fast">
+<span class="status-badge">Мне это легко · экспресс-проверка ≈ 4 минуты</span>
+<h2>Найди, удали и восстанови без подсказок</h2>
+<p>Работай только в подготовленной локальной папке <b>Урок 9-Лаб</b> и только с учебными файлами.</p>
+<div class="l7-task">
+1. Найди <code>Маяк-Урок 9.txt</code> по имени.<br>
+2. Отсортируй содержимое папки по имени.<br>
+3. Удали <code>Вернуть-Урок 9.txt</code> обычным удалением, не используя Shift+Delete.<br>
+4. Открой Корзину, восстанови этот файл и проверь, что он вернулся в исходную папку.
+</div>
 <div class="evidence-grid">
-<div><div id="fastBrowserPaste" class="paste-zone" contenteditable="true" tabindex="0">1. Браузер: L08-START.txt среди загрузок</div><div id="fastBrowserStatus" class="status">Нет evidence.</div></div>
-<div><div id="fastExplorerPaste" class="paste-zone" contenteditable="true" tabindex="0">2. Проводник: найден скачанный файл</div><div id="fastExplorerStatus" class="status">Нет evidence.</div></div>
-<div><div id="fastTypePaste" class="paste-zone" contenteditable="true" tabindex="0">3. Свойства: системный тип файла</div><div id="fastTypeStatus" class="status">Нет evidence.</div></div>
+  <div><div id="fastSearchPaste" class="paste-zone" contenteditable="true" tabindex="0">1. Поиск: найден Маяк-Урок 9.txt</div><div id="fastSearchStatus" class="status">Нет evidence.</div></div>
+  <div><div id="fastSortPaste" class="paste-zone" contenteditable="true" tabindex="0">2. Урок 9-Лаб отсортирована по имени</div><div id="fastSortStatus" class="status">Нет evidence.</div></div>
+  <div><div id="fastBinPaste" class="paste-zone" contenteditable="true" tabindex="0">3. Корзина: Вернуть-Урок 9.txt перед восстановлением</div><div id="fastBinStatus" class="status">Нет evidence.</div></div>
+  <div><div id="fastRestorePaste" class="paste-zone" contenteditable="true" tabindex="0">4. Исходная папка после восстановления</div><div id="fastRestoreStatus" class="status">Нет evidence.</div></div>
 </div>
-<div class="choice">
-<button type="button" data-fast-answer="browser">Список загрузок браузера помогает найти недавнюю загрузку</button>
-<button type="button" data-fast-answer="file">В Проводнике я работаю с реальным файлом и его местом хранения</button>
-<button type="button" data-fast-answer="type">Тип файла надёжнее определять по системной информации, а не только по иконке</button>
-<button type="button" data-fast-answer="wrong">Если загрузка видна в браузере, искать файл в Проводнике уже бессмысленно</button>
+<div class="choice" id="fastQuiz">
+  <button type="button" data-fast-answer="sort">Сортировка меняет только порядок показа</button>
+  <button type="button" data-fast-answer="restore">Восстановление возвращает этот учебный файл в исходное место</button>
+  <button type="button" data-fast-answer="wrong">Сортировка по имени переносит файлы в новую папку</button>
 </div>
-<div id="fastStatus" class="status">Нужны три правильных утверждения и три снимка.</div>
-<div class="actions"><a id="fastPass" href="#fastChallenge" hidden>Маршруты понятны → FAST CHALLENGE</a><a class="secondary" href="#normalRoute">Нужна практика → обычный урок</a></div>
-<p class="micro">Сайт проверяет только наличие вставленных изображений; имя, место и тип проверяются глазами.</p>
-</article></div></section>
+<div id="fastStatus" class="status">Нужны два правильных утверждения и четыре снимка.</div>
+<div class="actions"><a id="fastPass" href="#fastChallenge" hidden>Все действия доказаны → Дополнительное испытание</a><a class="secondary" href="#normalRoute">Нужна практика → обычный урок</a></div>
+<p class="micro">Сайт не читает твою файловую систему. Снимки используются как evidence для проверки глазами, а не как автоматическая аттестация.</p>
+</article>
+</div></section>
 
-<section class="section light" id="normalRoute"><div class="wrap l8-grid"><div>
-<article class="l8-card"><h2>1. Разминка + скачай учебный файл</h2>
-<p>4–6 минут печати: набери без копирования фразу «Я знаю, где искать скачанный файл: сначала браузер, потом Проводник». Следи за точностью.</p>
-<div class="download-box"><p>Если L08-START.txt уже скачан во время FAST_GATE, используй эту копию. Иначе:</p><div class="actions"><button id="normalDownload" type="button">Скачать L08-START.txt</button></div></div>
-<p class="micro">Браузер может сохранить файл автоматически или спросить место. Не запоминай «магическую папку»: определяй фактическое место сохранения. Если браузер блокирует или помечает файл как опасный, <b>не отключай защиту и не обходи предупреждение</b> — остановись и сообщи преподавателю.</p>
-<span class="l8-time">0:00–8:00</span><button class="done" data-step="1" type="button">○ Файл скачан</button></article>
+<section class="section light" id="normalRoute"><div class="wrap l7-grid"><div>
 
-<article class="l8-card" style="margin-top:18px"><h2>2. Маршрут №1: найди загрузку в браузере</h2>
-<p>Открой список загрузок своего браузера и найди L08-START.txt. На Windows в актуальных Yandex Browser и Microsoft Edge это можно сделать сочетанием <b>Ctrl+J</b>. В другом браузере используй пункт <b>Загрузки / Downloads</b> в меню. Точная кнопка может отличаться — оценивается результат.</p>
-<div class="l8-task"><b>Проверь:</b> имя совпадает с L08-START.txt. Если браузер показывает путь или команду открытия расположения файла, запомни это для следующего шага.<br><span class="l8-time">8:00–14:00</span></div>
-<button class="done" data-step="2" type="button">○ Нашёл в браузере</button></article>
+<article class="l7-card">
+<h2>1. Разминка + проверь учебную среду</h2>
+<p>4–6 минут печати: в Блокноте набери короткое объяснение разницы между «найти», «отсортировать» и «восстановить». Главное — точность.</p>
+<div class="l7-task"><b>Environment precondition:</b> преподаватель заранее создаёт локальную папку <b>Урок 9-Лаб</b> на внутреннем диске и кладёт туда безопасные учебные файлы: <code>Альфа-Урок 9.txt</code>, <code>Бета-Урок 9.txt</code>, <code>Маяк-Урок 9.txt</code>, <code>Черновик-Урок 9.txt</code>, <code>Вернуть-Урок 9.txt</code>, <code>Финал-Урок 9.txt</code>. Перед занятием преподаватель один раз проверяет на этом ПК: обычное удаление маленького тестового .txt из Урок 9-Лаб действительно отправляет его в Корзину, а «Восстановить» возвращает в исходную папку. Если это не так, delete/restore-практику на этом устройстве не запускаем.</div>
+<p class="micro">Не используй личные документы, облачные папки, сетевые диски или флешки: в этом уроке нам нужен предсказуемый локальный сценарий с Корзиной.</p>
+<span class="l7-time">0:00–7:00</span>
+<button class="done" data-step="1" type="button">○ Среда готова</button>
+</article>
 
-<article class="l8-card" style="margin-top:18px"><h2>3. Маршрут №2: найди тот же файл в Проводнике</h2>
-<p>Открой Проводник. Если браузер использовал стандартную папку, начни с «Загрузки / Downloads». Если ты выбрал другое место — открой именно его. Найди L08-START.txt.</p>
-<div class="l8-task"><b>Если список большой:</b> находясь в предполагаемой папке, используй уже знакомый поиск по имени L08-START.txt.<br><span class="l8-time">14:00–22:00</span></div>
+<article class="l7-card" style="margin-top:18px">
+<h2>2. Потерял файл — ищи по имени</h2>
+<p>Если имя известно, не листай папки наугад. Открой нужную область Проводника и используй поиск по имени.</p>
+<div class="lab">
+  <div class="fileline">Альфа-Урок 9.txt</div>
+  <div class="fileline">Бета-Урок 9.txt</div>
+  <div class="fileline">Маяк-Урок 9.txt</div>
+  <div class="fileline">Черновик-Урок 9.txt</div>
+  <div class="fileline">Вернуть-Урок 9.txt</div>
+</div>
+<div class="l7-task"><b>Сделай:</b> находясь в <b>Урок 9-Лаб</b>, щёлкни поле поиска Проводника, введи <code>Маяк-Урок 9.txt</code> и дождись результата. После результата вернись в исходную папку.<br><span class="l7-time">7:00–14:00</span></div>
+<p class="micro">Высокоуверенная зависимость из карты: <code> +  → </code>. То есть поиск опирается на умение открыть Проводник и понимать, в какой области ты ищешь.</p>
+<button class="done" data-step="2" type="button">○ Файл найден по имени</button>
+</article>
+
+<article class="l7-card" style="margin-top:18px">
+<h2>3. Файл не потерян — просто порядок неудобный</h2>
+<p>Сортировка не переносит файлы. Она только меняет порядок, в котором они показаны.</p>
+<div class="choice" id="sortQuiz">
+  <button type="button" data-sort-answer="wrong">После сортировки по имени файлы переезжают в новую папку</button>
+  <button type="button" data-sort-answer="ok">После сортировки меняется порядок показа, а местоположение файлов остаётся прежним</button>
+</div>
+<div id="sortStatus" class="status">Сначала отсортируй Урок 9-Лаб по имени любым доступным способом.</div>
+<div class="l7-task"><b>Практика:</b> в Проводнике открой команду <b>Сортировка / Sort</b> и выбери <b>Имя / Name</b>. Затем найди, какой учебный файл стоит первым по алфавиту. Точное расположение команды зависит от версии интерфейса; оценивается результат.<br><span class="l7-time">14:00–20:00</span></div>
+<button class="done" data-step="3" type="button">○ Отсортировал по имени</button>
+</article>
+
+<article class="l7-card" style="margin-top:18px">
+<h2>4. Удалил учебный файл — восстанови его</h2>
+<div class="rule">
+  <div class="safe"><strong>РАБОТАЕМ</strong><p>Только <code>Вернуть-Урок 9.txt</code> из локальной учебной папки. Обычное Delete / команда «Удалить».</p></div>
+  <div class="danger"><strong>НЕ ДЕЛАЕМ</strong><p>Shift+Delete, очистку Корзины, удаление личных файлов, облачных или сетевых данных.</p></div>
+</div>
+<p>Выдели <code>Вернуть-Урок 9.txt</code> и удали обычным способом. Убедись, что файл исчез из <b>Урок 9-Лаб</b>. Затем открой Корзину, найди этот файл, выбери <b>Восстановить</b> и проверь, что он снова появился в <b>Урок 9-Лаб</b>.</p>
+<div class="l7-task"><b>Проверь смысл:</b> восстановление — это не создание новой копии. Мы возвращаем удалённый учебный файл в исходное место.<br><span class="l7-time">20:00–30:00</span></div>
 <div class="actions"><button id="copyAiPrompt" type="button">Застрял → 1. Скопировать вопрос</button><button id="openAi" class="secondary" type="button">2. Открыть «ИИ-чат»</button></div>
-<div id="aiPromptText" class="l8-task">У меня Windows. В браузере я вижу загрузку «L08-START.txt», но не могу найти этот файл в Проводнике. Дай одно безопасное действие, чтобы определить его фактическое место хранения.</div>
-<button class="done" data-step="3" type="button">○ Нашёл в Проводнике</button></article>
+<div id="aiPromptText" class="l7-task">У меня Windows и локальная учебная папка. Я удалил только файл «Вернуть-Урок 9.txt» обычным удалением и хочу безопасно восстановить его из Корзины. Дай одно следующее действие.</div>
+<button class="done" data-step="4" type="button">○ Учебный файл восстановлен</button>
+</article>
 
-<article class="l8-card" style="margin-top:18px"><h2>4. Определи тип файла, не угадывая по иконке</h2>
-<p>Минимальный способ: выдели L08-START.txt → <b>правый клик → Свойства / Properties</b> → найди строку «Тип файла / Type of file».</p>
-<p class="micro">Правый клик здесь — вспомогательное действие для получения evidence; отдельное освоение контекстного меню не оценивается в L08.</p>
-<div class="choice" id="typeQuiz"><button type="button" data-type-answer="ok">Тип беру из системной информации о файле</button><button type="button" data-type-answer="wrong">Цвет иконки надёжнее свойств</button></div>
-<div id="typeStatus" class="status">Для L08 достаточно назвать тип так, как его показывает Windows.</div>
-<p class="micro">Видимое расширение может быть подсказкой, но FILE-018 здесь не является условием прохождения.</p>
-<span class="l8-time">22:00–30:00</span><button class="done" data-step="4" type="button">○ Тип определён</button></article>
-
-<article class="l8-card" style="margin-top:18px"><h2>5. Финальная задача — другой файл, без пошаговой инструкции</h2>
-<div class="challenge"><p>Скачай L08-TRANSFER.csv. Затем самостоятельно найди его среди загрузок браузера, найди как файл в Проводнике, определи его тип по системной информации и покажи три evidence-снимка.</p><p>Если браузер сохранил файл не в «Загрузки», это не ошибка: найди реальное место.</p></div>
-<div class="actions"><button id="transferDownload" type="button">Скачать L08-TRANSFER.csv</button></div>
-<div class="evidence-grid">
-<div><div id="finalBrowserPaste" class="paste-zone" contenteditable="true" tabindex="0">1. L08-TRANSFER.csv в загрузках браузера</div><div id="finalBrowserStatus" class="status">Нет evidence.</div></div>
-<div><div id="finalExplorerPaste" class="paste-zone" contenteditable="true" tabindex="0">2. L08-TRANSFER.csv найден в Проводнике</div><div id="finalExplorerStatus" class="status">Нет evidence.</div></div>
-<div><div id="finalTypePaste" class="paste-zone" contenteditable="true" tabindex="0">3. Системная информация о типе</div><div id="finalTypeStatus" class="status">Нет evidence.</div></div>
+<article class="l7-card" style="margin-top:18px">
+<h2>5. Финальная задача — верни контроль без пошаговой инструкции</h2>
+<div class="challenge">
+<p><b>Новая вариация:</b> теперь работай не с теми же целями, что в тренировке.</p>
+<p>1. Найди по имени <code>Черновик-Урок 9.txt</code>.<br>
+2. Покажи <b>Урок 9-Лаб</b> в порядке по имени.<br>
+3. Обычным удалением отправь только <code>Финал-Урок 9.txt</code> в Корзину.<br>
+4. Убедись, что он находится в Корзине, затем восстанови его.<br>
+5. Проверь, что <code>Финал-Урок 9.txt</code> снова находится в <b>Урок 9-Лаб</b>.</p>
+<p>Не используй учителя как первый источник инструкции. Если застрял после собственной попытки — можно запросить у ИИ только один безопасный следующий шаг.</p>
 </div>
-<div id="finalStatus" class="status">Для завершения нужны три снимка.</div><span class="l8-time">30:00–40:00</span><button class="done" id="finalDone" data-step="5" type="button" disabled>○ Урок завершён</button></article>
-
-<article class="l8-card" id="fastChallenge" style="margin-top:18px"><h2>FAST CHALLENGE · новый тип файла</h2>
-<div class="challenge"><p>Скачай L08-TRANSFER.csv. Без ИИ найди его сначала через браузер, затем в Проводнике и определи тип через системную информацию. Объясни, почему «загрузка видна в браузере» и «я знаю, где файл хранится» — не одно и то же.</p></div>
-<div class="actions"><button id="fastTransferDownload" type="button">Скачать L08-TRANSFER.csv</button></div>
 <div class="evidence-grid">
-<div><div id="fastChallengeBrowserPaste" class="paste-zone" contenteditable="true" tabindex="0">1. L08-TRANSFER.csv в загрузках браузера</div><div id="fastChallengeBrowserStatus" class="status">Нет evidence.</div></div>
-<div><div id="fastChallengeExplorerPaste" class="paste-zone" contenteditable="true" tabindex="0">2. L08-TRANSFER.csv найден в Проводнике</div><div id="fastChallengeExplorerStatus" class="status">Нет evidence.</div></div>
-<div><div id="fastChallengeTypePaste" class="paste-zone" contenteditable="true" tabindex="0">3. Системный тип L08-TRANSFER.csv</div><div id="fastChallengeTypeStatus" class="status">Нет evidence.</div></div>
+  <div><div id="finalSearchPaste" class="paste-zone" contenteditable="true" tabindex="0">1. Результат поиска Черновик-Урок 9.txt</div><div id="finalSearchStatus" class="status">Нет evidence.</div></div>
+  <div><div id="finalSortPaste" class="paste-zone" contenteditable="true" tabindex="0">2. Урок 9-Лаб отсортирована по имени</div><div id="finalSortStatus" class="status">Нет evidence.</div></div>
+  <div><div id="finalBinPaste" class="paste-zone" contenteditable="true" tabindex="0">3. Корзина: Финал-Урок 9.txt перед восстановлением</div><div id="finalBinStatus" class="status">Нет evidence.</div></div>
+  <div><div id="finalRestorePaste" class="paste-zone" contenteditable="true" tabindex="0">4. Финал-Урок 9.txt снова в Урок 9-Лаб</div><div id="finalRestoreStatus" class="status">Нет evidence.</div></div>
 </div>
-<div id="fastChallengeStatus" class="status">Для FAST CHALLENGE нужны три снимка.</div>
-<button class="done" id="fastChallengeDone" data-fast="1" type="button" disabled>○ FAST CHALLENGE выполнен</button></article>
+<div id="finalStatus" class="status">Для завершения нужны четыре снимка.</div>
+<span class="l7-time">30:00–40:00</span>
+<button class="done" id="finalDone" data-step="5" type="button" disabled>○ Урок завершён</button>
+</article>
 
-<div class="actions"><a class="secondary" href="../">← Компьютер</a><a href="../l07/">← L07</a><a href="../l09/">L09 →</a></div></div>
-<aside class="progressbox"><strong>Твой прогресс</strong><div class="progressbar"><span id="progressFill"></span></div><div id="progressText">0 из 5 этапов</div><p class="micro">Отметки сохраняются только в этом браузере.</p><hr style="border:0;border-top:1px solid #e3e8f0;margin:14px 0"><strong>Сегодня тренируем</strong><p><code>WEB-005</code> скачать файл<br><code>WEB-007</code> найти загрузку через браузер<br><code>FILE-016</code> найти скачанный файл<br><code>FILE-017</code> определить тип файла</p><p class="micro">Явные зависимости: WEB-005 → FILE-016 и FILE-001 + FILE-002 → FILE-016.</p></aside>
-</div></section></main>
+<article class="l7-card" id="fastChallenge" style="margin-top:18px">
+<h2>Дополнительное испытание · восстанови порядок после «аварии»</h2>
+<div class="challenge">
+<p>Преподаватель выбирает другой безопасный учебный файл в <b>Урок 9-Лаб</b>: меняет порядок показа, называет файл для поиска и один disposable-файл для обычного удаления.</p>
+<p>Самостоятельно найди нужный файл, отсортируй папку по имени, удали только указанный disposable-файл, восстанови его из Корзины и покажи его финальное место.</p>
+</div>
+<button class="done" data-fast="1" type="button">○ Дополнительное испытание выполнен</button>
+</article>
+
+<div class="actions"><a class="secondary" href="../">← Компьютер</a><a href="../l07/">← Урок 7</a><a href="../l09/">Урок 9 →</a></div></div>
+
+<aside class="progressbox">
+<strong>Твой прогресс</strong><div class="progressbar"><span id="progressFill"></span></div><div id="progressText">0 из 5 этапов</div>
+<p class="micro">Отметки сохраняются только в этом браузере.</p>
+<hr style="border:0;border-top:1px solid #e3e8f0;margin:14px 0">
+<strong>Сегодня тренируем</strong>
+<p>удалить файл<br>восстановить из Корзины<br>найти файл по имени<br>сортировать файлы</p>
+<p class="micro">Только локальные учебные файлы. Если не уверен, что файл безопасно удалять — не удаляй.</p>
+</aside>
+</div></section>
+</main>
 
 <script type="application/json" id="lessonAiContext">
 {
   "lesson_id":"L08",
-  "title":"Скачал — теперь найди",
-  "environment":["WINDOWS","BROWSER","FILE_EXPLORER","AI_LAUNCHER_V1"],
-  "target_atoms":["WEB-005","WEB-007","FILE-016","FILE-017"],
-  "reinforcement_atoms":["FILE-001","FILE-002","FILE-014","KEY-011","KEY-005","AI-001","AI-002","AI-005","AI-006"],
-  "explicit_prerequisites":[
-    {"for":"FILE-016","requires":["WEB-005"],"basis":"HIGH_CONFIDENCE_CHAIN"},
-    {"for":"FILE-016","requires":["FILE-001","FILE-002"],"basis":"HIGH_CONFIDENCE_CHAIN"}
-  ],
-  "download_fixture":{"mechanism":"CLIENT_SIDE_BLOB","start_filename":"L08-START.txt","transfer_filename":"L08-TRANSFER.csv","contains_personal_data":false},
-  "fast_gate":{"duration_minutes":4,"mode":"PERFORMANCE_REAL_DOWNLOAD_NO_AI","checks":["DOWNLOAD_FILE","FIND_IN_BROWSER_DOWNLOADS","FIND_IN_FILE_EXPLORER","IDENTIFY_FILE_TYPE_FROM_SYSTEM_INFO","THREE_SCREENSHOT_EVIDENCE"],"on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
-  "ai_policy":{"first_attempt":"SELF_OR_RECALL","allowed_after_stuck":["ONE_ACTION"],"do_not":["ASSUME_DEFAULT_DOWNLOAD_FOLDER_WITHOUT_EVIDENCE","GIVE_FULL_SEQUENCE_IMMEDIATELY"]},
-  "support_actions_not_assessed":["RIGHT_CLICK_OPEN_PROPERTIES"],
-  "safety_constraints":["DO_NOT_DISABLE_BROWSER_DOWNLOAD_PROTECTION","DO_NOT_BYPASS_DANGEROUS_FILE_WARNING"],
-  "expected_evidence":"For a second file, show the browser download record, the real file location in File Explorer, and system-provided file type information.",
-  "mutable_ui_note":"Browser download controls and exact File Explorer command placement vary by browser and Windows version; assess the result, not a frozen icon path.",
-  "current_fact_evidence_checked_2026_10_07":["Microsoft Support: Downloads is a known Windows folder available in File Explorer.","Microsoft Support: File Explorer can search from a chosen folder/location.","Yandex Browser Support: Ctrl+J opens the downloads list on Windows.","Microsoft Edge Support: Ctrl+J opens Downloads.","Microsoft Support: File Explorer can show file name extensions, but FILE-018 is not required for L08."],
-  "status":"DEV_BRANCH_CANDIDATE_NOT_PUBLISHED"
+  "title":"Потерял, удалил, нашёл",
+  "environment":["WINDOWS","FILE_EXPLORER","LOCAL_DISK","RECYCLE_BIN","BROWSER","AI_LAUNCHER_V1"],
+  "target_atoms":["FILE-012","FILE-013","FILE-014","FILE-021"],
+  "reinforcement_atoms":["FILE-001","FILE-002","FILE-005","FILE-007","KEY-011","KEY-005","AI-001","AI-002","AI-005","AI-006"],
+  "explicit_prerequisites":[{"for":"FILE-014","requires":["FILE-001","FILE-002"],"basis":"HIGH_CONFIDENCE_CHAIN"}],
+  "candidate_prerequisites":[{"id":"FILE-007","status":"REPO_CURRENT_2026_10_09","reason":"Delete/restore practice requires selecting exactly one prepared sample file.","diagnostic_task":"Click Вернуть-L07.txt once. If exactly one item becomes selected, FILE-007 does not block the lesson."}],
+  "environment_precondition":"Teacher provides local L07-Лаб on an internal drive with harmless prepared sample files including Вернуть-L07.txt and Финал-L07.txt, and preflights on that PC that ordinary deletion of a small test .txt enters Windows Recycle Bin and Restore returns it to the original folder. If preflight fails, delete/restore practice is blocked.",
+  "fast_gate":{"duration_minutes":4,"mode":"PERFORMANCE_LOCAL_FILES_NO_AI","checks":["SEARCH_BY_NAME","SORT_BY_NAME","SAFE_DELETE_TO_RECYCLE_BIN","RESTORE_FROM_RECYCLE_BIN","FOUR_STATE_SCREENSHOT_EVIDENCE"],"on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
+  "safety_constraints":["DELETE_ONLY_MARKED_SAMPLE_FILE","NO_SHIFT_DELETE","NO_EMPTY_RECYCLE_BIN","NO_PERSONAL_OR_CLOUD_OR_NETWORK_DELETE"],
+  "ai_policy":{"first_attempt":"SELF_OR_RECALL","allowed_after_stuck":["ONE_ACTION"],"do_not":["GIVE_FULL_RECOVERY_SEQUENCE_IMMEDIATELY","AUTHORIZE_DELETION_OF_UNVERIFIED_FILE"]},
+  "expected_evidence":"On a transfer variation, find a different named file, show name-sorted order, show a different marked sample file in Recycle Bin before restore, restore it, and show the final location.",
+  "current_fact_evidence_checked_2026_10_07":["Microsoft Support: File Explorer search can search from a selected folder/location.","Microsoft Support: File Explorer supports sorting by criteria such as Name.","Microsoft Support: deleting a file from a hard disk normally moves it to Recycle Bin; lesson therefore uses a device preflight before any deletion practice.","Microsoft Support: selecting an item in Recycle Bin and choosing Restore returns it to the original folder."],
+  "status":"REPO_CURRENT_2026_10_09"
 }
 </script>
 <script>
@@ -135,57 +193,72 @@
  const key='s14:l08:progress:v1',buttons=[...document.querySelectorAll('[data-step]')],fastButton=document.querySelector('[data-fast]');
  let done=new Set();try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
  const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
- function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':b.dataset.step==='1'?'Файл скачан':b.dataset.step==='2'?'Нашёл в браузере':b.dataset.step==='3'?'Нашёл в Проводнике':'Тип определён')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
+ function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':b.dataset.step==='1'?'Среда готова':b.dataset.step==='2'?'Файл найден по имени':b.dataset.step==='3'?'Отсортировал по имени':'Учебный файл восстановлен')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
  buttons.forEach(b=>b.addEventListener('click',()=>{if(b.disabled)return;done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
  fastButton?.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'FAST CHALLENGE выполнен'});render();
 
- function downloadFixture(filename,content,type){
-   const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');
-   a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
- }
- const downloadStart=()=>downloadFixture('L08-START.txt','L08 START\r\nУчебный файл для урока L08.\r\nКонтрольная фраза: СЕВЕР-17\r\nЛичных данных нет.\r\n','text/plain;charset=utf-8');
- const downloadTransfer=()=>downloadFixture('L08-TRANSFER.csv','item,value\r\nlesson,L08\r\ncode,ORBITA-42\r\nnote,Учебный CSV без личных данных\r\n','text/csv;charset=utf-8');
- document.getElementById('fastDownload')?.addEventListener('click',downloadStart);
- document.getElementById('normalDownload')?.addEventListener('click',downloadStart);
- document.getElementById('transferDownload')?.addEventListener('click',downloadTransfer);
- document.getElementById('fastTransferDownload')?.addEventListener('click',downloadTransfer);
-
- let fastBrowser=false,fastFile=false,fastTypeConcept=false,fastBrowserEv=false,fastExplorerEv=false,fastTypeEv=false;
+ let fastSort=false,fastRestore=false,fastSearchEvidence=false,fastSortEvidence=false,fastBinEvidence=false,fastRestoreEvidence=false;
  function updateFast(){
-   const ok=fastBrowser&&fastFile&&fastTypeConcept&&fastBrowserEv&&fastExplorerEv&&fastTypeEv;
-   const box=document.getElementById('fastStatus'),pass=document.getElementById('fastPass');pass.hidden=!ok;box.className='status '+(ok?'ok':'');box.textContent=ok?'Три снимка вставлены, маршруты и способ определения типа поняты. Проверь содержимое глазами.':'Нужны три правильных утверждения и три снимка.';
+   const ok=fastSort&&fastRestore&&fastSearchEvidence&&fastSortEvidence&&fastBinEvidence&&fastRestoreEvidence;
+   const box=document.getElementById('fastStatus'),pass=document.getElementById('fastPass');
+   pass.hidden=!ok;box.className='status '+(ok?'ok':'');
+   box.textContent=ok?'Поиск, сортировка, Корзина и восстановление подтверждены. Проверь снимки глазами.':'Нужны два правильных утверждения и четыре снимка.';
  }
  document.querySelectorAll('[data-fast-answer]').forEach(btn=>btn.addEventListener('click',()=>{
-   const kind=btn.dataset.fastAnswer;if(kind==='wrong'){const s=document.getElementById('fastStatus');s.className='status warn';s.textContent='Нет: браузер показывает загрузку, но FILE-016 требует найти реальный файл.';return}
-   btn.classList.add('ok');if(kind==='browser')fastBrowser=true;if(kind==='file')fastFile=true;if(kind==='type')fastTypeConcept=true;updateFast();
+   const kind=btn.dataset.fastAnswer;
+   if(kind==='wrong'){
+     btn.classList.remove('ok');
+     document.getElementById('fastStatus').className='status warn';
+     document.getElementById('fastStatus').textContent='Нет: сортировка меняет порядок отображения, а не местоположение файлов.';
+     return;
+   }
+   btn.classList.add('ok');
+   if(kind==='sort')fastSort=true;
+   if(kind==='restore')fastRestore=true;
+   updateFast();
  }));
- document.querySelectorAll('#typeQuiz [data-type-answer]').forEach(btn=>btn.addEventListener('click',()=>{
-   const ok=btn.dataset.typeAnswer==='ok';document.querySelectorAll('#typeQuiz button').forEach(x=>x.classList.remove('ok'));if(ok)btn.classList.add('ok');const s=document.getElementById('typeStatus');s.className='status '+(ok?'ok':'warn');s.textContent=ok?'Верно: тип берём из системной информации.':'Нет: иконка сама по себе не доказывает тип.';
+
+ document.querySelectorAll('#sortQuiz [data-sort-answer]').forEach(btn=>btn.addEventListener('click',()=>{
+   const ok=btn.dataset.sortAnswer==='ok';
+   document.querySelectorAll('#sortQuiz button').forEach(x=>x.classList.remove('ok'));
+   if(ok)btn.classList.add('ok');
+   const box=document.getElementById('sortStatus');box.className='status '+(ok?'ok':'warn');
+   box.textContent=ok?'Верно: сортировка меняет порядок отображения, а не папку хранения.':'Нет: сортировка не переносит файлы.';
  }));
- document.getElementById('copyAiPrompt')?.addEventListener('click',async e=>{const q=document.getElementById('aiPromptText')?.textContent?.trim()||'';try{await navigator.clipboard.writeText(q);e.currentTarget.textContent='Скопировано ✓'}catch(_){e.currentTarget.textContent='Скопируй вопрос вручную'}});
- document.getElementById('openAi')?.addEventListener('click',()=>{(document.getElementById('s14QuickChatTop')||document.getElementById('s14QuickChat'))?.click()});
+
+ document.getElementById('copyAiPrompt')?.addEventListener('click',async e=>{
+   const q=document.getElementById('aiPromptText')?.textContent?.trim()||'';
+   try{await navigator.clipboard.writeText(q);e.currentTarget.textContent='Скопировано ✓'}catch(_){e.currentTarget.textContent='Скопируй вопрос вручную'}
+ });
+ document.getElementById('openAi')?.addEventListener('click',()=>{
+   (document.getElementById('s14QuickChatTop')||document.getElementById('s14QuickChat'))?.click();
+ });
 
  function installImage(zoneId,statusId,onReady){
    const zone=document.getElementById(zoneId),status=document.getElementById(statusId);
-   zone?.addEventListener('paste',e=>{const item=[...e.clipboardData.items].find(x=>x.type.startsWith('image/'));if(!item){status.className='status warn';status.textContent='В буфере нет изображения.';return}e.preventDefault();const file=item.getAsFile(),url=URL.createObjectURL(file),img=new Image();img.onload=()=>{zone.innerHTML='';zone.appendChild(img);status.className='status ok';status.textContent='Снимок вставлен. Проверь имя, место или тип глазами.';URL.revokeObjectURL(url);onReady?.()};img.src=url});
+   zone?.addEventListener('paste',e=>{
+     const item=[...e.clipboardData.items].find(x=>x.type.startsWith('image/'));
+     if(!item){status.className='status warn';status.textContent='В буфере нет изображения.';return}
+     e.preventDefault();
+     const file=item.getAsFile(),url=URL.createObjectURL(file),img=new Image();
+     img.onload=()=>{zone.innerHTML='';zone.appendChild(img);status.className='status ok';status.textContent='Снимок вставлен. Проверь нужный файл и место глазами.';URL.revokeObjectURL(url);onReady?.()};
+     img.src=url;
+   });
  }
- installImage('fastBrowserPaste','fastBrowserStatus',()=>{fastBrowserEv=true;updateFast()});
- installImage('fastExplorerPaste','fastExplorerStatus',()=>{fastExplorerEv=true;updateFast()});
- installImage('fastTypePaste','fastTypeStatus',()=>{fastTypeEv=true;updateFast()});
- let finalBrowser=false,finalExplorer=false,finalType=false;
- function updateFinal(){const s=document.getElementById('finalStatus'),b=document.getElementById('finalDone');if(finalBrowser&&finalExplorer&&finalType){s.className='status ok';s.textContent='Три снимка вставлены. Проверь глазами, что везде речь именно о L08-TRANSFER.csv.';b.disabled=false}}
- installImage('finalBrowserPaste','finalBrowserStatus',()=>{finalBrowser=true;updateFinal()});
- installImage('finalExplorerPaste','finalExplorerStatus',()=>{finalExplorer=true;updateFinal()});
- installImage('finalTypePaste','finalTypeStatus',()=>{finalType=true;updateFinal()});
+ installImage('fastSearchPaste','fastSearchStatus',()=>{fastSearchEvidence=true;updateFast()});
+ installImage('fastSortPaste','fastSortStatus',()=>{fastSortEvidence=true;updateFast()});
+ installImage('fastBinPaste','fastBinStatus',()=>{fastBinEvidence=true;updateFast()});
+ installImage('fastRestorePaste','fastRestoreStatus',()=>{fastRestoreEvidence=true;updateFast()});
 
- let fcBrowser=false,fcExplorer=false,fcType=false;
- function updateFastChallenge(){
-   const s=document.getElementById('fastChallengeStatus'),b=document.getElementById('fastChallengeDone');
-   if(fcBrowser&&fcExplorer&&fcType){s.className='status ok';s.textContent='Три снимка вставлены. Проверь глазами имя, место и системный тип L08-TRANSFER.csv.';b.disabled=false}
+ let finalSearch=false,finalSort=false,finalBin=false,finalRestore=false;
+ function updateFinal(){
+   const box=document.getElementById('finalStatus'),doneBtn=document.getElementById('finalDone');
+   if(finalSearch&&finalSort&&finalBin&&finalRestore){box.className='status ok';box.textContent='Четыре снимка вставлены. Проверь глазами: поиск верный, порядок по имени виден, Финал-L07 был в Корзине и после восстановления снова находится в L07-Лаб.';doneBtn.disabled=false}
  }
- installImage('fastChallengeBrowserPaste','fastChallengeBrowserStatus',()=>{fcBrowser=true;updateFastChallenge()});
- installImage('fastChallengeExplorerPaste','fastChallengeExplorerStatus',()=>{fcExplorer=true;updateFastChallenge()});
- installImage('fastChallengeTypePaste','fastChallengeTypeStatus',()=>{fcType=true;updateFastChallenge()});
+ installImage('finalSearchPaste','finalSearchStatus',()=>{finalSearch=true;updateFinal()});
+ installImage('finalSortPaste','finalSortStatus',()=>{finalSort=true;updateFinal()});
+ installImage('finalBinPaste','finalBinStatus',()=>{finalBin=true;updateFinal()});
+ installImage('finalRestorePaste','finalRestoreStatus',()=>{finalRestore=true;updateFinal()});
 })();
 </script>
 </body>
