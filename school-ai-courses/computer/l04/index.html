@@ -56,14 +56,14 @@
 <span class="status-badge">Урок 4 · 40 минут</span>
 <h1>Как спросить ИИ так, чтобы он помог</h1>
 <p>Хороший запрос — это не длинный текст. Нужно быстро назвать устройство, программу, наблюдаемый симптом и попросить одно конкретное следующее действие.</p>
-<p class="micro"><b>Важно:</b> пока отдельного ИИ на сайте нет, используй любой доступный ИИ из меню «ИИ-чат».</p>
+<p class="micro"><b>Используй любой доступный ИИ из меню «ИИ-чат».</b></p>
 </div></section>
 
 <section class="section light"><div class="wrap">
 <article class="l4-fast">
 <span class="status-badge">Мне это легко · экспресс-проверка ≈ 3 минуты</span>
 <h2>Сформулируй запрос без шаблона</h2>
-<p><b>Ситуация:</b> у тебя ноутбук с Windows, в Microsoft Edge сайт видит камеру, но не слышит микрофон. Ты уже обновил страницу — ничего не изменилось.</p>
+<p><b>Ситуация:</b> у тебя ноутбук с Windows, в броузер Edge сайт видит камеру, но не слышит микрофон. Ты уже обновил страницу — ничего не изменилось.</p>
 <textarea id="fastPrompt" class="fast-area" placeholder="Напиши запрос к ИИ одним сообщением"></textarea>
 <div class="actions"><button id="checkFast" type="button">Проверить запрос</button><a class="secondary" href="#normalRoute">Не уверен → обычный урок</a></div>
 <div id="fastStatus" class="status">Проверка ещё не выполнена.</div>
@@ -90,7 +90,7 @@
 <h2><span class="task-headline"><span class="task-main">1. Плохой и рабочий запрос</span><span class="task-sub">сравни, чего не хватает для реальной помощи</span></span></h2>
 <div class="badgood">
   <div class="bad"><strong>Не помогает</strong><p>«У меня не работает. Что делать?»</p><p class="micro">ИИ не знает устройство, программу и симптом.</p></div>
-  <div class="good"><strong>Помогает</strong><p>«У меня ноутбук с Windows, Microsoft Edge. Сайт не видит микрофон, после обновления страницы ничего не изменилось. Дай одно безопасное следующее действие.»</p></div>
+  <div class="good"><strong>Помогает</strong><p>«У меня ноутбук с Windows, броузер Edge. Сайт не видит микрофон, после обновления страницы ничего не изменилось. Дай одно безопасное следующее действие.»</p></div>
 </div>
 <div class="l4-task"><b>Сделай:</b> в Блокноте перепиши плохой запрос так, чтобы в нём появились все четыре элемента: устройство, программа, симптом, один следующий шаг.<br><span class="l4-time">0:00–7:00</span></div>
 <button class="done" data-step="1" type="button">○ Сделано</button>
@@ -99,11 +99,11 @@
 <article class="l4-card" style="margin-top:18px">
 <h2><span class="task-headline"><span class="task-main">2. Собери запрос из фактов</span><span class="task-sub">не угадывай причину — опиши то, что видишь</span></span></h2>
 <p>Не начинай с догадки «сломался драйвер». Сначала опиши то, что реально видишь.</p>
-<div class="safe-scenario"><b>Ситуация:</b> ноутбук с Windows; Microsoft Edge; сайт открывается; камера работает; микрофон на странице недоступен; обновление страницы не помогло.</div>
+<div class="safe-scenario"><b>Ситуация:</b> ноутбук с Windows; броузер Edge; сайт открывается; камера работает; микрофон на странице недоступен; обновление страницы не помогло.</div>
 <div class="builder">
 <label>Устройство<input id="device" placeholder="например: ноутбук" autocomplete="off"></label>
 <label>Система<input id="system" placeholder="например: Windows" autocomplete="off"></label>
-<label>Программа<input id="program" placeholder="например: Microsoft Edge" autocomplete="off"></label>
+<label>Программа<input id="program" placeholder="например: броузер Edge" autocomplete="off"></label>
 <label>Что наблюдаешь<textarea id="symptom" placeholder="только наблюдаемый симптом, без догадки о причине"></textarea></label>
 <label>Что уже попробовал<input id="tried" placeholder="одно уже выполненное действие и его результат" autocomplete="off"></label>
 <label>Что просишь у ИИ<input id="request" placeholder="попроси одно безопасное следующее действие" autocomplete="off"></label>
@@ -164,21 +164,19 @@
 <h2><span class="task-headline"><span class="task-main">Три новые фишки</span><span class="task-sub">быстрее находить ответ и работать сразу в двух местах</span></span></h2>
 <div class="phone-grid">
 <section class="phone-card">
-<span class="phone-badge">Android · поиск</span>
-<h3>Обведи то, что видишь на экране</h3>
-<p><b>Circle to Search:</b> на поддерживаемом телефоне вызови поиск по экрану и обведи предмет, картинку или фразу. Не нужно делать скриншот и отдельно описывать объект словами.</p>
-<p class="micro">Если функция на телефоне недоступна — пропусти.</p>
+<span class="phone-badge">Android 10+ · Wi-Fi</span>
+<h3>Поделись Wi-Fi через QR-код</h3>
+<p><b>Попробуй:</b> Настройки → Сеть и интернет → Интернет → выбери подключённую сеть → <b>Поделиться</b>. Телефон покажет QR-код для подключения другого устройства.</p>
 </section>
 <section class="phone-card">
-<span class="phone-badge">Android · два окна</span>
-<h3>Инструкция сверху, настройки снизу</h3>
-<p><b>Попробуй:</b> открой браузер и Настройки в режиме разделённого экрана. Оставь инструкцию видимой и выполняй шаги во втором приложении без постоянного переключения.</p>
-<p class="micro">На разных оболочках запуск разделённого экрана выглядит по-разному.</p>
+<span class="phone-badge">Android 10+ · экран</span>
+<h3>Переключи весь телефон в тёмную тему</h3>
+<p><b>Попробуй:</b> Настройки → Экран → <b>Тёмная тема</b>. Сравни, как изменились системные экраны и приложения, которые используют системную тему.</p>
 </section>
 <section class="phone-card">
-<span class="phone-badge">Android · Live Caption</span>
-<h3>Телефон пишет субтитры к звуку</h3>
-<p><b>Попробуй:</b> включи видео или голосовое и найди <b>Live Caption / Автоматические субтитры</b>. На поддерживаемых устройствах речь превращается в текст прямо на экране.</p>
+<span class="phone-badge">iPhone · камера</span>
+<h3>Сканируй QR-код обычной камерой</h3>
+<p><b>Попробуй:</b> открой Камеру, наведи её на QR-код и нажми появившуюся ссылку. Отдельное приложение-сканер не нужно.</p>
 </section>
 </div>
 </article>
