@@ -44,7 +44,7 @@
 <h2>Собери результат без подсказок</h2>
 <p>Открой Блокнот. Скопируй из страницы строку ниже, вставь её в Блокнот <b>два раза</b>, затем отмени вторую вставку. В конце допиши <b>AI-2026</b>, переключив раскладку самостоятельно.</p>
 <div class="source-box">Школа №14 · Курс ИИ · компьютерная грамотность</div>
-<div class="actions"><a href="#fastChallenge">Получилось полностью → к FAST CHALLENGE</a><a class="secondary" href="#normalRoute">Не уверен → обычный урок</a></div>
+<div class="actions"><a href="#fastChallenge">Получилось полностью → дополнительное испытание</a><a class="secondary" href="#normalRoute">Не уверен → обычный урок</a></div>
 <p class="micro-note">Не получилось — просто переходи к уроку. Это не оценка.</p>
 </article>
 </div></section>
@@ -79,7 +79,7 @@
 <h2>4. Рабочая связка: браузер ↔ Блокнот</h2>
 <p>Теперь объедини навыки L01 и L02: не закрывай окна, переключайся через Alt+Tab, копируй только нужные фрагменты.</p>
 <div class="source-box">Имя файла: PRACTICE-02.txt<br>Статус: ГОТОВО<br>Метка: AI-2026</div>
-<div class="l2-task"><b>Собери в Блокноте:</b><br>PRACTICE-02.txt<br>ГОТОВО<br>AI-2026<br><br>Первые две строки получи копированием со страницы, последнюю набери сам с правильной раскладкой. Если вставил лишнее — Ctrl+Z.<br><span class="l2-time">24:00–31:00</span></div>
+<div class="l2-task"><b>Собери в Блокноте:</b><br>PRACTICE-02.txt<br>ГОТОВО<br>AI-2026<br><br>Скопируй со страницы только значения <b>PRACTICE-02.txt</b> и <b>ГОТОВО</b> — без слов «Имя файла:» и «Статус:». Последнюю строку набери сам с правильной раскладкой. Если вставил лишнее — Ctrl+Z.<br><span class="l2-time">24:00–31:00</span></div>
 <button class="done" data-step="4" type="button">○ Сделано</button>
 </article>
 
@@ -95,15 +95,15 @@
 </article>
 
 <article class="l2-card" id="fastChallenge" style="margin-top:18px">
-<h2>FAST CHALLENGE · используй навык в новой задаче</h2>
+<h2>Дополнительное испытание · используй навык в новой задаче</h2>
 <div class="challenge">
 <p>Открой новый пустой Блокнот и за 5 минут собери заметку из трёх фрагментов, найденных на этой странице: название урока, фразу «Не перепечатывай то, что можно скопировать точно.» и метку AI-2026.</p>
 <p>Условия: не использовать меню «Копировать/Вставить», только клавиатуру; одну ошибку специально сделать и отменить; порядок фрагментов выбрать самому.</p>
 </div>
-<button class="done" data-fast="1" type="button">○ FAST CHALLENGE выполнен</button>
+<button class="done" data-fast="1" type="button">○ Дополнительное испытание выполнено</button>
 </article>
 
-<div class="actions"><a class="secondary" href="../">← Компьютер</a><a href="../l01/">← L01</a></div>
+<div class="actions"><a class="secondary" href="../">← Компьютер</a><a class="secondary" href="../l01/">← L01</a><a href="../l03/">L03 →</a></div>
 </div>
 
 <aside class="progressbox">
@@ -127,7 +127,7 @@
   "fast_gate":{"duration_minutes":3,"mode":"PERFORMANCE_NO_AI","on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
   "ai_policy":{"first_attempt":"NO_AI","allowed_after_attempt":["QUESTION","CONCEPT_HINT","ONE_ACTION"],"do_not":["GIVE_FULL_SEQUENCE_IMMEDIATELY","DO_TASK_FOR_STUDENT"]},
   "expected_evidence":"Assemble a mixed-language three-line note using copy/paste, layout switching and undo without menu hunting.",
-  "status":"DEV_BRANCH_CANDIDATE_NOT_PUBLISHED"
+  "status":"PUBLISHED_CURRENT_2026_10_09"
 }
 </script>
 <script>
@@ -137,7 +137,7 @@
  const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
  function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':'Сделано')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
  buttons.forEach(b=>b.addEventListener('click',()=>{done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
- if(fastButton){fastButton.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'FAST CHALLENGE выполнен';});}
+ if(fastButton){fastButton.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'Дополнительное испытание выполнено';});}
  render();
 })();
 </script>
