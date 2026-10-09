@@ -41,6 +41,9 @@
 .progressbox{position:sticky;top:106px;padding:18px;border-radius:24px;background:#fff;border:1px solid #fff;box-shadow:var(--s14-shadow)}
 .progressbar{height:12px;border-radius:999px;background:#e5ebf4;overflow:hidden;margin:10px 0}.progressbar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#4aa87a,#2673ce)}
 .micro{font-size:.9rem;color:#56627a}
+.task-headline{display:block}.task-main{display:block;font-size:1em;font-weight:950;line-height:1.08}.task-sub{display:block;font-size:.65em;line-height:1.22;font-weight:800;color:#5d6c84;margin-top:6px}
+.phone-bonus{margin-top:18px;padding:22px;border-radius:26px;background:linear-gradient(135deg,#fff3c8,#f3e9ff 48%,#e8f8ff);border:1px solid #fff;box-shadow:var(--s14-shadow)}.phone-bonus h2{margin:0 0 6px}.phone-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}.phone-card{padding:17px;border-radius:20px;background:#fff;border:1px solid #d8e1ed}.phone-card h3{margin:0 0 8px}.phone-badge{display:inline-flex;padding:5px 9px;border-radius:999px;background:#1c315d;color:#fff;font-size:.75rem;font-weight:900;margin-bottom:9px}.phone-card p{margin:.45rem 0;line-height:1.45}
+@media(max-width:1000px){.phone-grid{grid-template-columns:1fr}}
 @media(max-width:900px){.l3-grid{grid-template-columns:1fr}.progressbox{position:static}}
 @media(max-width:650px){.fake-desktop,.mock-three{grid-template-columns:1fr}.l3-card,.l3-fast{padding:17px}}
 </style>
@@ -65,14 +68,14 @@
 </div>
 <div id="fastPaste" class="paste-zone" contenteditable="true" tabindex="0">Щёлкни сюда и нажми Ctrl+V</div>
 <div id="fastResult" class="check-result">Проверка ещё не выполнена.</div>
-<div class="actions"><a href="#fastChallenge" id="fastPassLink" hidden>Снимок безопасный → FAST CHALLENGE</a><a class="secondary" href="#normalRoute">Не получилось → обычный урок</a></div>
+<div class="actions"><a href="#fastChallenge" id="fastPassLink" hidden>Снимок безопасный → дополнительное испытание</a><a class="secondary" href="#normalRoute">Не получилось → обычный урок</a></div>
 <p class="micro">Автопроверка приблизительная. Перед отправкой изображения всегда проверяй его глазами.</p>
 </article>
 </div></section>
 
 <section class="section light" id="normalRoute"><div class="wrap l3-grid"><div>
 <article class="l3-card">
-<h2>1. Разминка: коротко описать проблему</h2>
+<h2><span class="task-headline"><span class="task-main">1. Коротко опиши проблему</span><span class="task-sub">только то, что действительно помогает разобраться</span></span></h2>
 <p>Открой Блокнот и набери: устройство, проблема, что видно на экране.</p>
 <div class="safe-note"><b>Устройство:</b> Windows<br><b>Проблема:</b> файл не открывается<br><b>Что вижу:</b> ERR_FILE_DEMO</div>
 <span class="l3-time">0:00–5:00</span>
@@ -80,7 +83,7 @@
 </article>
 
 <article class="l3-card" style="margin-top:18px">
-<h2>2. Захвати только нужную область</h2>
+<h2><span class="task-headline"><span class="task-main">2. Захвати нужную область</span><span class="task-sub">не тащи в снимок весь экран</span></span></h2>
 <div class="keys"><span class="keycap">Win</span><span class="plus">+</span><span class="keycap">Shift</span><span class="plus">+</span><span class="keycap">S</span></div>
 <p>Выдели прямоугольником только нужную область. Снимок попадёт в буфер обмена.</p>
 <div class="fake-desktop">
@@ -92,7 +95,7 @@
 </article>
 
 <article class="l3-card" style="margin-top:18px">
-<h2>3. Вставь и проверь до отправки</h2>
+<h2><span class="task-headline"><span class="task-main">3. Вставь и проверь</span><span class="task-sub">сначала посмотри сам, потом отправляй</span></span></h2>
 <p>Щёлкни ниже и нажми <b>Ctrl+V</b>. Проверка выполняется локально в браузере.</p>
 <div id="practicePaste" class="paste-zone" contenteditable="true" tabindex="0">Вставь сюда скриншот</div>
 <div id="practiceResult" class="check-result">Проверка ещё не выполнена.</div>
@@ -102,7 +105,7 @@
 </article>
 
 <article class="l3-card" style="margin-top:18px">
-<h2>4. Потренируй передачу проблемы Наставнику</h2>
+<h2><span class="task-headline"><span class="task-main">4. Передай проблему Наставнику</span><span class="task-sub">скриншот + короткое понятное описание</span></span></h2>
 <div class="mentor-sim">
 <p><b>Учебный тренажёр.</b> Изображение никуда не отправляется. Он имитирует будущий встроенный Наставник сайта.</p>
 <div id="mentorPaste" class="paste-zone" contenteditable="true" tabindex="0">1. Вставь сюда безопасный скриншот</div>
@@ -110,14 +113,14 @@
 <textarea id="mentorPrompt" placeholder="2. Устройство + что произошло + просьба дать одно следующее действие"></textarea>
 <div class="actions"><button id="mentorAsk" type="button">Спросить учебного Наставника</button></div>
 <div id="mentorReply" class="mentor-reply"></div>
-<p class="micro">Это не настоящий AI-runtime. Реальная загрузка изображения в ИИ будет проверяться после появления разрешённого ученического Наставника.</p>
+<p class="micro">Это учебная имитация. Здесь ничего не отправляется во внешний сервис.</p>
 </div>
 <span class="l3-time">21:00–29:00</span>
 <button class="done" data-step="4" type="button">○ Сделано</button>
 </article>
 
 <article class="l3-card" style="margin-top:18px">
-<h2>5. Финальная задача — без пошаговой инструкции</h2>
+<h2><span class="task-headline"><span class="task-main">5. Финальная задача</span><span class="task-sub">без пошаговой инструкции</span></span></h2>
 <div class="fake-desktop">
   <div class="fake-error"><strong>Микрофон недоступен</strong><p><code>MIC_PERMISSION_DEMO</code></p></div>
   <div class="fake-secret"><strong>УЧЕБНЫЙ СЕКРЕТ</strong><p>Этот блок нельзя отправлять.</p></div>
@@ -129,7 +132,7 @@
 </article>
 
 <article class="l3-card" id="fastChallenge" style="margin-top:18px">
-<h2>FAST CHALLENGE · передай минимум достаточного</h2>
+<h2><span class="task-headline"><span class="task-main">Дополнительное испытание</span><span class="task-sub">передай минимум достаточного</span></span></h2>
 <p>На учебном рабочем столе одновременно три окна. Сними только то, что действительно нужно для диагностики.</p>
 <div class="mock-three">
   <div class="mock-pane problem"><strong>Браузер</strong><p>Страница не открылась.</p><code>ERR_CONNECTION_DEMO</code></div>
@@ -139,7 +142,30 @@
 <div id="fastChallengePaste" class="paste-zone" contenteditable="true" tabindex="0">Вставь сюда снимок</div>
 <div id="fastChallengeResult" class="check-result">Проверка ещё не выполнена.</div>
 <textarea id="fastChallengePrompt" class="fast-prompt" placeholder="Одним предложением: что спросишь у Наставника?"></textarea>
-<button class="done" data-fast="1" type="button">○ FAST CHALLENGE выполнен</button>
+<button class="done" data-fast="1" type="button">○ Дополнительное испытание выполнено</button>
+</article>
+
+<article class="phone-bonus" id="phoneBonus" hidden>
+<span class="status-badge">Смартфон · бонус после урока</span>
+<h2><span class="task-headline"><span class="task-main">Три новые фишки</span><span class="task-sub">скриншоты, документы и приватность</span></span></h2>
+<div class="phone-grid">
+<section class="phone-card">
+<span class="phone-badge">iPhone · Back Tap</span>
+<h3>Скриншот постукиванием по спинке</h3>
+<p><b>Попробуй:</b> Настройки → Универсальный доступ → Касание → Касание задней панели. Назначь двойному или тройному касанию <b>«Снимок экрана»</b>, если функция доступна на твоём iPhone.</p>
+</section>
+<section class="phone-card">
+<span class="phone-badge">Android · приватность</span>
+<h3>Дай телефон — но только с одним приложением</h3>
+<p><b>Попробуй:</b> найди в настройках <b>«Закрепление приложения»</b> или <b>«Закрепление экрана»</b>. После включения можно временно оставить человеку доступ только к одному открытому приложению.</p>
+<p class="micro">Название и путь зависят от модели телефона.</p>
+</section>
+<section class="phone-card">
+<span class="phone-badge">iPhone / Android · документы</span>
+<h3>Сделай не фото листа, а аккуратный скан</h3>
+<p><b>Попробуй:</b> открой встроенный сканер документов в Заметках, Файлах или другом системном приложении. Телефон сам найдёт края листа, выровняет перспективу и обрежет лишнее.</p>
+</section>
+</div>
 </article>
 
 <div class="actions"><a class="secondary" href="../">← Компьютер</a><a href="../l02/">← L02</a><a href="../l04/">L04 →</a></div>
@@ -149,8 +175,7 @@
 <p class="micro">Отметки сохраняются только в этом браузере.</p>
 <hr style="border:0;border-top:1px solid #e3e8f0;margin:14px 0">
 <strong>Сегодня тренируем</strong>
-<p><code>KEY-011</code> скриншот области<br><code>AI-003</code> показать проблему<br><code>AI-008</code> не передавать секреты</p>
-<p class="micro"><code>AI-004</code> пока тренируется в локальном симуляторе и не считается подтверждённым.</p>
+<p>• снимать только нужную часть экрана<br>• показывать проблему понятно<br>• не отправлять секретные и лишние личные данные</p><p class="micro">Перед отправкой всегда проверяй снимок глазами.</p>
 </aside>
 </div></section>
 </main>
@@ -168,17 +193,17 @@
   "ai_policy":{"first_attempt":"NO_AI","do_not":["REQUEST_SECRET","GIVE_FULL_SEQUENCE_IMMEDIATELY"]},
   "expected_evidence":"Capture only the relevant problem region, paste it locally, verify that no secret or irrelevant data is visible, and formulate the accompanying request.",
   "runtime_constraint":"AI-004 is simulation-only until an authorized student AI runtime that accepts image input is available.",
-  "status":"DEV_BRANCH_CANDIDATE_AFTER_REPAIR"
+  "status":"PUBLISHED_CURRENT_2026_10_09"
 }
 </script>
 <script>
 (() => {
  const key='s14:l03:progress:v1',buttons=[...document.querySelectorAll('[data-step]')],fastButton=document.querySelector('[data-fast]');
  let done=new Set();try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
- const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
- function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':b.dataset.step==='2'?'Скриншот сделан':b.dataset.step==='3'?'Проверено':'Сделано')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
+ const fill=document.getElementById('progressFill'),text=document.getElementById('progressText'),phoneBonus=document.getElementById('phoneBonus');
+ function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':b.dataset.step==='2'?'Скриншот сделан':b.dataset.step==='3'?'Проверено':'Сделано')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов';if(phoneBonus)phoneBonus.hidden=done.size<buttons.length}
  buttons.forEach(b=>b.addEventListener('click',()=>{done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
- fastButton?.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'FAST CHALLENGE выполнен'});render();
+ fastButton?.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'Дополнительное испытание выполнено'});render();
 
  function installPaste(zoneId,resultId,passLinkId){
   const zone=document.getElementById(zoneId),result=document.getElementById(resultId),pass=document.getElementById(passLinkId);if(!zone||!result)return;
