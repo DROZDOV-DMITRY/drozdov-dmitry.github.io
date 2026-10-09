@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fffdf8">
-<title>Урок 8 · Потерял, удалил, нашёл · Курс ИИ</title>
-<meta name="description" content="Урок 8: найти файл по имени, отсортировать файлы, безопасно удалить учебный файл и восстановить его из Корзины.">
+<title>Урок 8 · Потерял файл? Найди. Удалил? Верни. · Курс ИИ</title>
+<meta name="description" content="Урок 8: самостоятельно создать учебные файлы на Рабочем столе, найти файл по имени, отсортировать, восстановить из Корзины, сохранить результат в MAX и убрать за собой.">
 <link rel="canonical" href="https://drozdov-dmitry.github.io/school-ai-courses/computer/l08/">
 <link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
 <link rel="stylesheet" href="/school-ai-courses/assets/s14-v2.css">
@@ -43,222 +43,176 @@
 <main>
 <section class="student-hero"><div class="wrap">
 <span class="status-badge">Урок 8 · 40 минут</span>
-<h1>Потерял, удалил, нашёл</h1>
-<p>Файл может «пропасть» просто потому, что папка большая, порядок изменился или ты удалил учебный файл. Сегодня тренируем три способа вернуть контроль: поиск по имени, сортировку и восстановление из Корзины.</p>
+<h1>Потерял файл? Найди. Удалил? Верни.</h1>
+<p>Сегодня ты сам создашь безопасные учебные файлы, найдёшь нужный по имени, наведёшь порядок сортировкой, вернёшь удалённый файл из Корзины и в конце полностью уберёшь за собой.</p>
 </div></section>
 
 <section class="section light"><div class="wrap">
 <article class="l7-fast">
 <span class="status-badge">Мне это легко · экспресс-проверка ≈ 4 минуты</span>
-<h2>Найди, удали и восстанови без подсказок</h2>
-<p>Работай только в подготовленной локальной папке <b>Урок 8-Лаб</b> и только с учебными файлами.</p>
-<div class="l7-task">
-1. Найди <code>Маяк-Урок 8.txt</code> по имени.<br>
-2. Отсортируй содержимое папки по имени.<br>
-3. Удали <code>Вернуть-Урок 8.txt</code> обычным удалением, не используя Shift+Delete.<br>
-4. Открой Корзину, восстанови этот файл и проверь, что он вернулся в исходную папку.
+<h2>Что произойдёт?</h2>
+<p>Ответь на три коротких вопроса.</p>
+<div class="choice" data-fast-question="search">
+<button type="button" data-fast-option="search" data-correct="1">Если знаешь имя файла, поиск помогает найти его быстрее</button>
+<button type="button" data-fast-option="search">Поиск переносит файл в новую папку</button>
 </div>
-<div class="evidence-grid">
-  <div><div id="fastSearchPaste" class="paste-zone" contenteditable="true" tabindex="0">1. Поиск: найден Маяк-Урок 8.txt</div><div id="fastSearchStatus" class="status">Нет evidence.</div></div>
-  <div><div id="fastSortPaste" class="paste-zone" contenteditable="true" tabindex="0">2. Урок 8-Лаб отсортирована по имени</div><div id="fastSortStatus" class="status">Нет evidence.</div></div>
-  <div><div id="fastBinPaste" class="paste-zone" contenteditable="true" tabindex="0">3. Корзина: Вернуть-Урок 8.txt перед восстановлением</div><div id="fastBinStatus" class="status">Нет evidence.</div></div>
-  <div><div id="fastRestorePaste" class="paste-zone" contenteditable="true" tabindex="0">4. Исходная папка после восстановления</div><div id="fastRestoreStatus" class="status">Нет evidence.</div></div>
+<div class="choice" data-fast-question="sort">
+<button type="button" data-fast-option="sort" data-correct="1">Сортировка меняет порядок показа файлов</button>
+<button type="button" data-fast-option="sort">Сортировка переносит файлы по новым папкам</button>
 </div>
-<div class="choice" id="fastQuiz">
-  <button type="button" data-fast-answer="sort">Сортировка меняет только порядок показа</button>
-  <button type="button" data-fast-answer="restore">Восстановление возвращает этот учебный файл в исходное место</button>
-  <button type="button" data-fast-answer="wrong">Сортировка по имени переносит файлы в новую папку</button>
+<div class="choice" data-fast-question="restore">
+<button type="button" data-fast-option="restore" data-correct="1">«Восстановить» возвращает удалённый файл из Корзины</button>
+<button type="button" data-fast-option="restore">«Восстановить» создаёт новый пустой файл</button>
 </div>
-<div id="fastStatus" class="status">Нужны два правильных утверждения и четыре снимка.</div>
-<div class="actions"><a id="fastPass" href="#fastChallenge" hidden>Все действия доказаны → Дополнительное испытание</a><a class="secondary" href="#normalRoute">Нужна практика → обычный урок</a></div>
-<p class="micro">Сайт не читает твою файловую систему. Снимки используются как evidence для проверки глазами, а не как автоматическая аттестация.</p>
+<div id="fastStatus" class="status">Ответь правильно на все три вопроса.</div>
+<div class="actions"><a id="fastPass" href="#fastChallenge" hidden>Всё понятно → дополнительное испытание</a><a class="secondary" href="#normalRoute">Нужна практика → обычный урок</a></div>
 </article>
 </div></section>
 
 <section class="section light" id="normalRoute"><div class="wrap l7-grid"><div>
 
 <article class="l7-card">
-<h2>1. Разминка + проверь учебную среду</h2>
-<p>4–6 минут печати: в Блокноте набери короткое объяснение разницы между «найти», «отсортировать» и «восстановить». Главное — точность.</p>
-<div class="l7-task"><b>Environment precondition:</b> преподаватель заранее создаёт локальную папку <b>Урок 8-Лаб</b> на внутреннем диске и кладёт туда безопасные учебные файлы: <code>Альфа-Урок 8.txt</code>, <code>Бета-Урок 8.txt</code>, <code>Маяк-Урок 8.txt</code>, <code>Черновик-Урок 8.txt</code>, <code>Вернуть-Урок 8.txt</code>, <code>Финал-Урок 8.txt</code>. Перед занятием преподаватель один раз проверяет на этом ПК: обычное удаление маленького тестового .txt из Урок 8-Лаб действительно отправляет его в Корзину, а «Восстановить» возвращает в исходную папку. Если это не так, delete/restore-практику на этом устройстве не запускаем.</div>
-<p class="micro">Не используй личные документы, облачные папки, сетевые диски или флешки: в этом уроке нам нужен предсказуемый локальный сценарий с Корзиной.</p>
-<span class="l7-time">0:00–7:00</span>
-<button class="done" data-step="1" type="button">○ Среда готова</button>
-</article>
-
-<article class="l7-card" style="margin-top:18px">
-<h2>2. Потерял файл — ищи по имени</h2>
-<p>Если имя известно, не листай папки наугад. Открой нужную область Проводника и используй поиск по имени.</p>
+<h2>1. Создай всё сам</h2>
+<p>На Рабочем столе создай папку <b>«Поиск и Корзина»</b>.</p>
+<p>Открой Блокнот. Напиши слово <b>МАЯК</b> и сохрани файл в эту папку под именем <b>Маяк</b>. Затем сделай три копии файла и переименуй их: <b>Черновик</b>, <b>Вернуть</b>, <b>Финиш</b>.</p>
 <div class="lab">
-  <div class="fileline">Альфа-Урок 8.txt</div>
-  <div class="fileline">Бета-Урок 8.txt</div>
-  <div class="fileline">Маяк-Урок 8.txt</div>
-  <div class="fileline">Черновик-Урок 8.txt</div>
-  <div class="fileline">Вернуть-Урок 8.txt</div>
+<div class="fileline">Маяк</div>
+<div class="fileline">Черновик</div>
+<div class="fileline">Вернуть</div>
+<div class="fileline">Финиш</div>
 </div>
-<div class="l7-task"><b>Сделай:</b> находясь в <b>Урок 8-Лаб</b>, щёлкни поле поиска Проводника, введи <code>Маяк-Урок 8.txt</code> и дождись результата. После результата вернись в исходную папку.<br><span class="l7-time">7:00–14:00</span></div>
-<p class="micro">Высокоуверенная зависимость из карты: <code> +  → </code>. То есть поиск опирается на умение открыть Проводник и понимать, в какой области ты ищешь.</p>
-<button class="done" data-step="2" type="button">○ Файл найден по имени</button>
+<div class="l7-task"><b>Проверка:</b> все четыре файла созданы тобой и лежат только в папке «Поиск и Корзина» на Рабочем столе.</div>
+<span class="l7-time">0:00–10:00</span>
+<button class="done" data-step="1" type="button">○ Папка и файлы созданы</button>
 </article>
 
 <article class="l7-card" style="margin-top:18px">
-<h2>3. Файл не потерян — просто порядок неудобный</h2>
-<p>Сортировка не переносит файлы. Она только меняет порядок, в котором они показаны.</p>
+<h2>2. Не листай — найди по имени</h2>
+<p>Закрой папку «Поиск и Корзина». Открой Проводник и выбери <b>Рабочий стол</b>. В поле поиска введи <b>Маяк</b>.</p>
+<div class="l7-task"><b>Проверь:</b> результат поиска должен вести к файлу «Маяк» внутри созданной тобой папки «Поиск и Корзина». После проверки вернись в эту папку.</div>
+<span class="l7-time">10:00–17:00</span>
+<button class="done" data-step="2" type="button">○ Маяк найден поиском</button>
+</article>
+
+<article class="l7-card" style="margin-top:18px">
+<h2>3. Наведи порядок</h2>
+<p>В папке «Поиск и Корзина» отсортируй файлы <b>по имени</b>.</p>
 <div class="choice" id="sortQuiz">
-  <button type="button" data-sort-answer="wrong">После сортировки по имени файлы переезжают в новую папку</button>
-  <button type="button" data-sort-answer="ok">После сортировки меняется порядок показа, а местоположение файлов остаётся прежним</button>
+<button type="button" data-sort-answer="ok">Файлы остались в той же папке, изменился только порядок</button>
+<button type="button" data-sort-answer="wrong">Windows перенесла каждый файл в другую папку</button>
 </div>
-<div id="sortStatus" class="status">Сначала отсортируй Урок 8-Лаб по имени любым доступным способом.</div>
-<div class="l7-task"><b>Практика:</b> в Проводнике открой команду <b>Сортировка / Sort</b> и выбери <b>Имя / Name</b>. Затем найди, какой учебный файл стоит первым по алфавиту. Точное расположение команды зависит от версии интерфейса; оценивается результат.<br><span class="l7-time">14:00–20:00</span></div>
-<button class="done" data-step="3" type="button">○ Отсортировал по имени</button>
+<div id="sortStatus" class="status">Сначала отсортируй файлы, потом выбери правильный ответ.</div>
+<div class="l7-task"><b>Проверь глазами:</b> «Вернуть», «Маяк», «Финиш» и «Черновик» всё ещё находятся внутри одной папки «Поиск и Корзина».</div>
+<span class="l7-time">17:00–23:00</span>
+<button class="done" data-step="3" type="button">○ Файлы отсортированы</button>
 </article>
 
 <article class="l7-card" style="margin-top:18px">
-<h2>4. Удалил учебный файл — восстанови его</h2>
-<div class="rule">
-  <div class="safe"><strong>РАБОТАЕМ</strong><p>Только <code>Вернуть-Урок 8.txt</code> из локальной учебной папки. Обычное Delete / команда «Удалить».</p></div>
-  <div class="danger"><strong>НЕ ДЕЛАЕМ</strong><p>Shift+Delete, очистку Корзины, удаление личных файлов, облачных или сетевых данных.</p></div>
-</div>
-<p>Выдели <code>Вернуть-Урок 8.txt</code> и удали обычным способом. Убедись, что файл исчез из <b>Урок 8-Лаб</b>. Затем открой Корзину, найди этот файл, выбери <b>Восстановить</b> и проверь, что он снова появился в <b>Урок 8-Лаб</b>.</p>
-<div class="l7-task"><b>Проверь смысл:</b> восстановление — это не создание новой копии. Мы возвращаем удалённый учебный файл в исходное место.<br><span class="l7-time">20:00–30:00</span></div>
+<h2>4. Удали и верни</h2>
+<p>В папке «Поиск и Корзина» выдели файл <b>Вернуть</b> и удали его обычным способом.</p>
+<p>Открой Корзину на Рабочем столе. Найди <b>Вернуть</b> → нажми <b>Восстановить</b> → снова открой «Поиск и Корзина» и убедись, что файл вернулся.</p>
+<div class="l7-task"><b>Важно:</b> не используй Shift+Delete и не очищай всю Корзину. В этом задании удаляем только созданный тобой учебный файл «Вернуть».</div>
 <div class="actions"><button id="copyAiPrompt" type="button">Застрял → 1. Скопировать вопрос</button><button id="openAi" class="secondary" type="button">2. Открыть «ИИ-чат»</button></div>
-<div id="aiPromptText" class="l7-task">У меня Windows и локальная учебная папка. Я удалил только файл «Вернуть-Урок 8.txt» обычным удалением и хочу безопасно восстановить его из Корзины. Дай одно следующее действие.</div>
-<button class="done" data-step="4" type="button">○ Учебный файл восстановлен</button>
+<div id="aiPromptText" class="l7-task">Я в Windows удалил обычным способом свой учебный файл «Вернуть» из папки на Рабочем столе. Хочу вернуть его из Корзины. Дай одно следующее безопасное действие.</div>
+<span class="l7-time">23:00–31:00</span>
+<button class="done" data-step="4" type="button">○ Вернуть снова в папке</button>
 </article>
 
 <article class="l7-card" style="margin-top:18px">
-<h2>5. Финальная задача — верни контроль без пошаговой инструкции</h2>
+<h2>5. Финал: найди, верни и убери всё</h2>
 <div class="challenge">
-<p><b>Новая вариация:</b> теперь работай не с теми же целями, что в тренировке.</p>
-<p>1. Найди по имени <code>Черновик-Урок 8.txt</code>.<br>
-2. Покажи <b>Урок 8-Лаб</b> в порядке по имени.<br>
-3. Обычным удалением отправь только <code>Финал-Урок 8.txt</code> в Корзину.<br>
-4. Убедись, что он находится в Корзине, затем восстанови его.<br>
-5. Проверь, что <code>Финал-Урок 8.txt</code> снова находится в <b>Урок 8-Лаб</b>.</p>
-<p>Не используй учителя как первый источник инструкции. Если застрял после собственной попытки — можно запросить у ИИ только один безопасный следующий шаг.</p>
+<p>Без пошаговой подсказки:</p>
+<p>1. Через поиск на Рабочем столе найди файл <b>Финиш</b>.<br>
+2. Удали его обычным способом.<br>
+3. Найди «Финиш» в Корзине и восстанови.<br>
+4. Открой «Поиск и Корзина» и проверь, что внутри снова четыре файла.<br>
+5. Сделай <b>один скриншот</b>, на котором видно итоговое содержимое папки.</p>
 </div>
-<div class="evidence-grid">
-  <div><div id="finalSearchPaste" class="paste-zone" contenteditable="true" tabindex="0">1. Результат поиска Черновик-Урок 8.txt</div><div id="finalSearchStatus" class="status">Нет evidence.</div></div>
-  <div><div id="finalSortPaste" class="paste-zone" contenteditable="true" tabindex="0">2. Урок 8-Лаб отсортирована по имени</div><div id="finalSortStatus" class="status">Нет evidence.</div></div>
-  <div><div id="finalBinPaste" class="paste-zone" contenteditable="true" tabindex="0">3. Корзина: Финал-Урок 8.txt перед восстановлением</div><div id="finalBinStatus" class="status">Нет evidence.</div></div>
-  <div><div id="finalRestorePaste" class="paste-zone" contenteditable="true" tabindex="0">4. Финал-Урок 8.txt снова в Урок 8-Лаб</div><div id="finalRestoreStatus" class="status">Нет evidence.</div></div>
+<div id="finalPaste" class="paste-zone" contenteditable="true" tabindex="0">Вставь сюда итоговый скриншот через Ctrl+V</div>
+<div id="finalPasteStatus" class="status">Скриншот ещё не вставлен.</div>
+<div class="l7-task"><b>Сохрани результат:</b> отправь этот же скриншот себе в MAX и убедись, что он появился в чате.</div>
+<div class="l7-task">
+<label><input id="finalMax" type="checkbox"> Я вижу итоговый скриншот в MAX.</label><br><br>
+<label><input id="finalCleanup" type="checkbox"> Я удалил с Рабочего стола папку «Поиск и Корзина» целиком.</label>
 </div>
-<div id="finalStatus" class="status">Для завершения нужны четыре снимка.</div>
-<span class="l7-time">30:00–40:00</span>
+<div id="finalStatus" class="status">Нужен скриншот, сохранение в MAX и чистый Рабочий стол.</div>
+<span class="l7-time">31:00–40:00</span>
 <button class="done" id="finalDone" data-step="5" type="button" disabled>○ Урок завершён</button>
 </article>
 
 <article class="l7-card" id="fastChallenge" style="margin-top:18px">
-<h2>Дополнительное испытание · восстанови порядок после «аварии»</h2>
+<h2>Дополнительное испытание</h2>
 <div class="challenge">
-<p>Преподаватель выбирает другой безопасный учебный файл в <b>Урок 8-Лаб</b>: меняет порядок показа, называет файл для поиска и один disposable-файл для обычного удаления.</p>
-<p>Самостоятельно найди нужный файл, отсортируй папку по имени, удали только указанный disposable-файл, восстанови его из Корзины и покажи его финальное место.</p>
+<p>На Рабочем столе сам создай папку <b>«Авария»</b>. В ней создай три простых учебных файла: <b>Один</b>, <b>Два</b>, <b>Три</b>.</p>
+<p>Найди «Два» через поиск, отсортируй файлы по имени, удали «Три», восстанови его из Корзины и снова проверь, что в папке три файла.</p>
+<p><b>После проверки удали папку «Авария» целиком.</b></p>
 </div>
-<button class="done" data-fast="1" type="button">○ Дополнительное испытание выполнен</button>
+<label><input id="fastCleanup" type="checkbox"> Папка «Авария» удалена после проверки.</label><br>
+<button class="done" id="fastChallengeDone" data-fast="1" type="button" disabled>○ Дополнительное испытание выполнено</button>
 </article>
 
-<div class="actions"><a class="secondary" href="../">← Компьютер</a><a href="../l07/">← Урок 7</a><a href="../l09/">Урок 9 →</a></div></div>
+<div class="actions"><a class="secondary" href="../">← Компьютер</a><a href="../l07/">← Урок 7</a><a href="../l09/">Урок 9 →</a></div>
+</div>
 
 <aside class="progressbox">
 <strong>Твой прогресс</strong><div class="progressbar"><span id="progressFill"></span></div><div id="progressText">0 из 5 этапов</div>
 <p class="micro">Отметки сохраняются только в этом браузере.</p>
 <hr style="border:0;border-top:1px solid #e3e8f0;margin:14px 0">
 <strong>Сегодня тренируем</strong>
-<p>удалить файл<br>восстановить из Корзины<br>найти файл по имени<br>сортировать файлы</p>
-<p class="micro">Только локальные учебные файлы. Если не уверен, что файл безопасно удалять — не удаляй.</p>
+<p>• самостоятельно создавать учебные файлы<br>• искать файл по имени<br>• сортировать файлы<br>• восстанавливать свой файл из Корзины<br>• сохранять результат в MAX<br>• удалять учебную папку после проверки</p>
 </aside>
+
 </div></section>
 </main>
 
 <script type="application/json" id="lessonAiContext">
 {
   "lesson_id":"L08",
-  "title":"Потерял, удалил, нашёл",
-  "environment":["WINDOWS","FILE_EXPLORER","LOCAL_DISK","RECYCLE_BIN","BROWSER","AI_LAUNCHER_V1"],
+  "title":"Потерял файл? Найди. Удалил? Верни.",
+  "environment":["WINDOWS","DESKTOP","FILE_EXPLORER","NOTEPAD","RECYCLE_BIN","MAX","AI_LAUNCHER_V1"],
   "target_atoms":["FILE-012","FILE-013","FILE-014","FILE-021"],
-  "reinforcement_atoms":["FILE-001","FILE-002","FILE-005","FILE-007","KEY-011","KEY-005","AI-001","AI-002","AI-005","AI-006"],
-  "explicit_prerequisites":[{"for":"FILE-014","requires":["FILE-001","FILE-002"],"basis":"HIGH_CONFIDENCE_CHAIN"}],
-  "candidate_prerequisites":[{"id":"FILE-007","status":"REPO_CURRENT_2026_10_09","reason":"Delete/restore practice requires selecting exactly one prepared sample file.","diagnostic_task":"Click Вернуть-L07.txt once. If exactly one item becomes selected, FILE-007 does not block the lesson."}],
-  "environment_precondition":"Teacher provides local L07-Лаб on an internal drive with harmless prepared sample files including Вернуть-L07.txt and Финал-L07.txt, and preflights on that PC that ordinary deletion of a small test .txt enters Windows Recycle Bin and Restore returns it to the original folder. If preflight fails, delete/restore practice is blocked.",
-  "fast_gate":{"duration_minutes":4,"mode":"PERFORMANCE_LOCAL_FILES_NO_AI","checks":["SEARCH_BY_NAME","SORT_BY_NAME","SAFE_DELETE_TO_RECYCLE_BIN","RESTORE_FROM_RECYCLE_BIN","FOUR_STATE_SCREENSHOT_EVIDENCE"],"on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
-  "safety_constraints":["DELETE_ONLY_MARKED_SAMPLE_FILE","NO_SHIFT_DELETE","NO_EMPTY_RECYCLE_BIN","NO_PERSONAL_OR_CLOUD_OR_NETWORK_DELETE"],
-  "ai_policy":{"first_attempt":"SELF_OR_RECALL","allowed_after_stuck":["ONE_ACTION"],"do_not":["GIVE_FULL_RECOVERY_SEQUENCE_IMMEDIATELY","AUTHORIZE_DELETION_OF_UNVERIFIED_FILE"]},
-  "expected_evidence":"On a transfer variation, find a different named file, show name-sorted order, show a different marked sample file in Recycle Bin before restore, restore it, and show the final location.",
-  "current_fact_evidence_checked_2026_10_07":["Microsoft Support: File Explorer search can search from a selected folder/location.","Microsoft Support: File Explorer supports sorting by criteria such as Name.","Microsoft Support: deleting a file from a hard disk normally moves it to Recycle Bin; lesson therefore uses a device preflight before any deletion practice.","Microsoft Support: selecting an item in Recycle Bin and choosing Restore returns it to the original folder."],
+  "workspace_contract":{"start":"EMPTY_OF_LESSON_ARTIFACTS","learner_creates":"Desktop/Поиск и Корзина plus four harmless training files","preserve":"final screenshot to learner MAX","cleanup":"delete Desktop/Поиск и Корзина after MAX receipt","end":"DESKTOP_CLEAN_OF_LESSON_ARTIFACTS"},
+  "safety_constraints":["DELETE_ONLY_LEARNER_CREATED_TRAINING_FILE","NO_SHIFT_DELETE","NO_EMPTY_RECYCLE_BIN","NO_PERSONAL_FILE_DELETE"],
+  "ai_policy":{"first_attempt":"SELF_OR_RECALL","allowed_after_stuck":["ONE_ACTION"]},
+  "expected_evidence":"Learner-created folder and files, successful name search and sort, delete/restore of learner-created files, final screenshot received in MAX, training folder deleted.",
   "status":"REPO_CURRENT_2026_10_09"
 }
 </script>
 <script>
 (() => {
- const key='s14:l08:progress:v2',buttons=[...document.querySelectorAll('[data-step]')],fastButton=document.querySelector('[data-fast]');
+ const key='s14:l08:progress:v3',buttons=[...document.querySelectorAll('[data-step]')],fastButton=document.querySelector('[data-fast]');
  let done=new Set();try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
  const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
- function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':b.dataset.step==='1'?'Среда готова':b.dataset.step==='2'?'Файл найден по имени':b.dataset.step==='3'?'Отсортировал по имени':'Учебный файл восстановлен')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
- buttons.forEach(b=>b.addEventListener('click',()=>{if(b.disabled)return;done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
- fastButton?.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'FAST CHALLENGE выполнен'});render();
+ const labels={'1':'Папка и файлы созданы','2':'Маяк найден поиском','3':'Файлы отсортированы','4':'Вернуть снова в папке','5':'Урок завершён'};
+ function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(labels[b.dataset.step]||'Сделано')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
+ buttons.forEach(b=>b.addEventListener('click',()=>{if(b.disabled)return;done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));render();
 
- let fastSort=false,fastRestore=false,fastSearchEvidence=false,fastSortEvidence=false,fastBinEvidence=false,fastRestoreEvidence=false;
- function updateFast(){
-   const ok=fastSort&&fastRestore&&fastSearchEvidence&&fastSortEvidence&&fastBinEvidence&&fastRestoreEvidence;
-   const box=document.getElementById('fastStatus'),pass=document.getElementById('fastPass');
-   pass.hidden=!ok;box.className='status '+(ok?'ok':'');
-   box.textContent=ok?'Поиск, сортировка, Корзина и восстановление подтверждены. Проверь снимки глазами.':'Нужны два правильных утверждения и четыре снимка.';
- }
- document.querySelectorAll('[data-fast-answer]').forEach(btn=>btn.addEventListener('click',()=>{
-   const kind=btn.dataset.fastAnswer;
-   if(kind==='wrong'){
-     btn.classList.remove('ok');
-     document.getElementById('fastStatus').className='status warn';
-     document.getElementById('fastStatus').textContent='Нет: сортировка меняет порядок отображения, а не местоположение файлов.';
-     return;
-   }
-   btn.classList.add('ok');
-   if(kind==='sort')fastSort=true;
-   if(kind==='restore')fastRestore=true;
-   updateFast();
+ const fastDone=new Set();
+ document.querySelectorAll('[data-fast-option]').forEach(btn=>btn.addEventListener('click',()=>{
+   const q=btn.dataset.fastOption,group=document.querySelector('[data-fast-question="'+q+'"]'),box=document.getElementById('fastStatus'),pass=document.getElementById('fastPass');
+   group.querySelectorAll('button').forEach(x=>x.classList.remove('ok'));
+   if(btn.dataset.correct==='1'){btn.classList.add('ok');fastDone.add(q);box.className='status '+(fastDone.size===3?'ok':'');box.textContent=fastDone.size===3?'Готово: все три ответа правильные.':'Верно. Осталось вопросов: '+(3-fastDone.size)+'.'}
+   else{fastDone.delete(q);box.className='status warn';box.textContent=q==='search'?'Поиск помогает найти, но не переносит файл.':q==='sort'?'Сортировка меняет только порядок показа.':'Восстановление возвращает удалённый файл из Корзины.'}
+   pass.hidden=fastDone.size!==3;
  }));
 
  document.querySelectorAll('#sortQuiz [data-sort-answer]').forEach(btn=>btn.addEventListener('click',()=>{
-   const ok=btn.dataset.sortAnswer==='ok';
-   document.querySelectorAll('#sortQuiz button').forEach(x=>x.classList.remove('ok'));
-   if(ok)btn.classList.add('ok');
-   const box=document.getElementById('sortStatus');box.className='status '+(ok?'ok':'warn');
-   box.textContent=ok?'Верно: сортировка меняет порядок отображения, а не папку хранения.':'Нет: сортировка не переносит файлы.';
+   const ok=btn.dataset.sortAnswer==='ok';document.querySelectorAll('#sortQuiz button').forEach(x=>x.classList.remove('ok'));if(ok)btn.classList.add('ok');
+   const box=document.getElementById('sortStatus');box.className='status '+(ok?'ok':'warn');box.textContent=ok?'Верно: место хранения не изменилось.':'Нет: сортировка не переносит файлы в другие папки.';
  }));
 
- document.getElementById('copyAiPrompt')?.addEventListener('click',async e=>{
-   const q=document.getElementById('aiPromptText')?.textContent?.trim()||'';
-   try{await navigator.clipboard.writeText(q);e.currentTarget.textContent='Скопировано ✓'}catch(_){e.currentTarget.textContent='Скопируй вопрос вручную'}
- });
- document.getElementById('openAi')?.addEventListener('click',()=>{
-   (document.getElementById('s14QuickChatTop')||document.getElementById('s14QuickChat'))?.click();
- });
+ document.getElementById('copyAiPrompt')?.addEventListener('click',async e=>{const q=document.getElementById('aiPromptText')?.textContent?.trim()||'';try{await navigator.clipboard.writeText(q);e.currentTarget.textContent='Скопировано ✓'}catch(_){e.currentTarget.textContent='Скопируй вопрос вручную'}});
+ document.getElementById('openAi')?.addEventListener('click',()=>{(document.getElementById('s14QuickChatTop')||document.getElementById('s14QuickChat'))?.click()});
 
- function installImage(zoneId,statusId,onReady){
-   const zone=document.getElementById(zoneId),status=document.getElementById(statusId);
-   zone?.addEventListener('paste',e=>{
-     const item=[...e.clipboardData.items].find(x=>x.type.startsWith('image/'));
-     if(!item){status.className='status warn';status.textContent='В буфере нет изображения.';return}
-     e.preventDefault();
-     const file=item.getAsFile(),url=URL.createObjectURL(file),img=new Image();
-     img.onload=()=>{zone.innerHTML='';zone.appendChild(img);status.className='status ok';status.textContent='Снимок вставлен. Проверь нужный файл и место глазами.';URL.revokeObjectURL(url);onReady?.()};
-     img.src=url;
-   });
- }
- installImage('fastSearchPaste','fastSearchStatus',()=>{fastSearchEvidence=true;updateFast()});
- installImage('fastSortPaste','fastSortStatus',()=>{fastSortEvidence=true;updateFast()});
- installImage('fastBinPaste','fastBinStatus',()=>{fastBinEvidence=true;updateFast()});
- installImage('fastRestorePaste','fastRestoreStatus',()=>{fastRestoreEvidence=true;updateFast()});
+ let finalImage=false;
+ const zone=document.getElementById('finalPaste'),zoneStatus=document.getElementById('finalPasteStatus');
+ zone?.addEventListener('paste',e=>{const item=[...e.clipboardData.items].find(x=>x.type.startsWith('image/'));if(!item){zoneStatus.className='status warn';zoneStatus.textContent='В буфере нет изображения.';return}e.preventDefault();const file=item.getAsFile(),url=URL.createObjectURL(file),img=new Image();img.onload=()=>{zone.innerHTML='';zone.appendChild(img);zoneStatus.className='status ok';zoneStatus.textContent='Скриншот вставлен. Теперь сохрани его в MAX и убери папку.';URL.revokeObjectURL(url);finalImage=true;updateFinal()};img.src=url});
+ function updateFinal(){const ok=finalImage&&document.getElementById('finalMax').checked&&document.getElementById('finalCleanup').checked,box=document.getElementById('finalStatus'),btn=document.getElementById('finalDone');btn.disabled=!ok;box.className='status '+(ok?'ok':'');box.textContent=ok?'Готово: результат сохранён в MAX, учебная папка удалена. Можно завершать урок.':'Нужен скриншот, сохранение в MAX и чистый Рабочий стол.'}
+ ['finalMax','finalCleanup'].forEach(id=>document.getElementById(id)?.addEventListener('change',updateFinal));
 
- let finalSearch=false,finalSort=false,finalBin=false,finalRestore=false;
- function updateFinal(){
-   const box=document.getElementById('finalStatus'),doneBtn=document.getElementById('finalDone');
-   if(finalSearch&&finalSort&&finalBin&&finalRestore){box.className='status ok';box.textContent='Четыре снимка вставлены. Проверь глазами: поиск верный, порядок по имени виден, Финал-L07 был в Корзине и после восстановления снова находится в L07-Лаб.';doneBtn.disabled=false}
- }
- installImage('finalSearchPaste','finalSearchStatus',()=>{finalSearch=true;updateFinal()});
- installImage('finalSortPaste','finalSortStatus',()=>{finalSort=true;updateFinal()});
- installImage('finalBinPaste','finalBinStatus',()=>{finalBin=true;updateFinal()});
- installImage('finalRestorePaste','finalRestoreStatus',()=>{finalRestore=true;updateFinal()});
+ const fastCleanup=document.getElementById('fastCleanup'),fastDoneBtn=document.getElementById('fastChallengeDone');
+ fastCleanup?.addEventListener('change',()=>{fastDoneBtn.disabled=!fastCleanup.checked});
+ fastButton?.addEventListener('click',()=>{if(fastButton.disabled)return;const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'Дополнительное испытание выполнено'});
 })();
 </script>
 </body>
