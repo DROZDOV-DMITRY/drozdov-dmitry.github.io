@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fffdf8">
-<title>D0 · Стартовая диагностика · Курс ИИ</title>
-<meta name="description" content="40-минутная практическая диагностика цифровых навыков: Windows, файлы, печать, смартфон, MAX и ИИ.">
+<title>Старт · Покажи, как ты работаешь · Курс ИИ</title>
+<meta name="description" content="Стартовая практическая диагностика: компьютер, файлы, смартфон, MAX и помощь ИИ.">
 <link rel="canonical" href="https://drozdov-dmitry.github.io/school-ai-courses/computer/d0/">
 <link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
 <link rel="stylesheet" href="/school-ai-courses/assets/s14-v2.css">
@@ -13,66 +13,228 @@
 <script defer src="/school-ai-courses/assets/nav.js"></script>
 <script defer src="/school-ai-courses/assets/snow-trail.js"></script>
 <style>
-.d0-lead{max-width:900px;font-size:1.08rem;font-weight:720;color:#44516d}
-.d0-rules{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.d0-rule,.d0-task{padding:20px;border:1px solid #ffffffe8;border-radius:24px;box-shadow:var(--s14-shadow);background:#fff}
-.d0-rule strong{display:block;font-size:1.06rem;margin-bottom:5px}
-.d0-task{margin-bottom:12px;background:linear-gradient(135deg,#fffaf1,#eef6ff)}
-.d0-task-head{display:flex;gap:12px;align-items:flex-start}
-.d0-num{flex:0 0 42px;height:42px;border-radius:14px;display:grid;place-items:center;background:#17254a;color:#fff;font-weight:950}
-.d0-task h3{margin:0 0 5px;font-size:1.45rem}
-.d0-task p{margin:4px 0;color:#39455e}
-.d0-time{display:inline-flex;margin-top:8px;padding:5px 9px;border-radius:999px;background:#e9efff;font-size:.78rem;font-weight:900}
-.d0-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
-.d0-actions a,.d0-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 15px;border:0;border-radius:15px;background:linear-gradient(135deg,#166dd5,#2654b0);color:#fff;font-weight:900;text-decoration:none;cursor:pointer}
-.d0-actions .secondary{background:linear-gradient(135deg,#fff1d0,#f8dca6);color:#101c38}
-.d0-stop{padding:17px 19px;border-radius:20px;background:#fff0f3;border:1px solid #f0c9d3;font-weight:800}
-@media(max-width:900px){.d0-rules{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:620px){.d0-rules{grid-template-columns:1fr}.d0-task{padding:16px}.d0-task h3{font-size:1.22rem}}
+.d0-shell{max-width:1080px;margin:0 auto}
+.d0-intro{padding:22px;border-radius:26px;background:linear-gradient(135deg,#fff2c8,#e5f2ff);border:1px solid #fff;box-shadow:var(--s14-shadow)}
+.d0-intro h2{margin-top:0}.d0-intro p{margin:.45rem 0;color:#33415d;font-weight:720}
+.d0-stage{margin-top:18px;padding:24px;border-radius:28px;background:linear-gradient(135deg,#fffaf1,#eef6ff);border:1px solid #fff;box-shadow:var(--s14-shadow)}
+.d0-stage[hidden]{display:none!important}.d0-step-top{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.d0-step-num{display:inline-grid;place-items:center;min-width:50px;height:42px;padding:0 12px;border-radius:14px;background:#17254a;color:#fff;font-weight:950}
+.d0-progress{font-weight:900;color:#41516f}.d0-progressbar{height:10px;border-radius:999px;background:#e2e8f1;overflow:hidden;margin:12px 0 18px}.d0-progressbar span{display:block;height:100%;width:0;background:linear-gradient(90deg,#4a9f77,#2f71c6);transition:width .2s ease}
+.d0-stage h2{font-size:clamp(1.7rem,4vw,2.7rem);margin:0 0 8px}.d0-stage p{font-size:1.05rem;line-height:1.55;color:#35425c}
+.d0-taskbox{margin-top:14px;padding:18px;border-radius:20px;background:#fff;border:1px solid #d7e0ec}
+.d0-target{display:grid;place-items:center;min-height:150px;margin-top:14px;padding:18px;border-radius:22px;background:#142546;color:#fff;text-align:center}
+.d0-target strong{font-size:clamp(1.8rem,5vw,3.3rem);letter-spacing:.04em}
+.d0-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.d0-actions button,.d0-actions a{min-height:48px;padding:11px 16px;border:0;border-radius:15px;background:linear-gradient(135deg,#166dd5,#2654b0);color:#fff;font-weight:900;text-decoration:none;cursor:pointer}.d0-actions .secondary{background:#fff;color:#17254a;border:1px solid #c7d3e4}.d0-actions .notdone{background:linear-gradient(135deg,#fff1d0,#f2d69f);color:#17254a}
+.d0-note{margin-top:12px;font-size:.92rem;color:#58667e}.d0-final{padding:30px;border-radius:28px;background:linear-gradient(135deg,#e5f5ec,#eef5ff);text-align:center;border:1px solid #fff;box-shadow:var(--s14-shadow)}.d0-final h2{font-size:clamp(2rem,5vw,3.5rem);margin:.2rem 0}
+.d0-ai-stage{background:linear-gradient(135deg,#f2ecff,#e9f7ff)}
+.d0-ai-stage .d0-taskbox{border-color:#ccbff0}
+#d0AiOpen{background:linear-gradient(135deg,#7147c7,#3c6fd1)}
+.d0-history{margin-top:16px;font-size:.9rem;color:#657188}
+@media(max-width:620px){.d0-stage,.d0-intro{padding:17px}.d0-actions{display:grid}.d0-actions button,.d0-actions a{width:100%}}
 </style>
 </head>
 <body class="s14-student theme-computer">
-<header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · D0</span></a></div></header>
-<main>
-<section class="student-hero"><div class="wrap"><div style="max-width:900px">
-<span class="status-badge">Стартовая диагностика</span>
-<h1>Что ты уже умеешь?</h1>
-<p>40 минут · без оценок · сначала без подсказок</p>
-</div></div></section>
+<header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · Старт</span></a></div></header>
 
-<section class="section light"><div class="wrap">
-<h2 class="action-title">Правила</h2>
-<div class="d0-rules">
-<div class="d0-rule"><strong>Сначала сам</strong><span>В заданиях 1–5 не используй ИИ и не проси маршрут решения.</span></div>
-<div class="d0-rule"><strong>Не знаешь — остановись</strong><span>Подними руку. Это не ошибка: преподаватель просто отметит результат.</span></div>
-<div class="d0-rule"><strong>Секреты не нужны</strong><span>Никаких реальных паролей, кодов подтверждения и платёжных данных.</span></div>
-<div class="d0-rule"><strong>С задания 6 — ИИ</strong><span>Там отдельно проверяем, умеешь ли ты получать помощь и действовать самому.</span></div>
+<main>
+<section class="student-hero"><div class="wrap d0-shell">
+<span class="status-badge">Стартовая диагностика · 40 минут</span>
+<h1>Покажи, как ты работаешь</h1>
+<p>Это не контрольная и не оценка. Здесь важно увидеть, что ты уже умеешь сейчас.</p>
+</div></section>
+
+<section class="section light"><div class="wrap d0-shell">
+<article class="d0-intro" id="d0Intro">
+<h2>Перед началом</h2>
+<p>Выполняй задания по порядку.</p>
+<p>До задания «ИИ» подсказок нет.</p>
+<p>Не знаешь, что делать — не мучайся: нажми <b>«Не получилось»</b> и переходи дальше.</p>
+<p>Настоящие пароли, коды и личные данные нигде не нужны.</p>
+<div class="d0-actions"><button id="d0Start" type="button">Начать</button></div>
+</article>
+
+<div id="d0Run" hidden>
+<div class="d0-step-top">
+<div class="d0-progress" id="d0ProgressText">1 из 7</div>
+<div class="d0-history" id="d0History"></div>
+</div>
+<div class="d0-progressbar"><span id="d0ProgressFill"></span></div>
+
+<article class="d0-stage" data-stage="1">
+<div class="d0-step-top"><span class="d0-step-num">1</span><span>≈ 4 минуты</span></div>
+<h2>Печать</h2>
+<p>Открой короткий тест и две минуты печатай текст максимально точно. Ошибки исправлять можно.</p>
+<div class="d0-taskbox"><b>После теста вернись сюда.</b> На экране останется только нейтральный результат: сколько символов ты успел набрать и сколько ошибок осталось.</div>
+<div class="d0-actions"><a href="typing/">Открыть тест печати</a></div>
+<div class="d0-actions d0-result-actions">
+<button type="button" data-result="done">Готово</button>
+<button type="button" class="notdone" data-result="notdone">Не получилось</button>
+</div>
+</article>
+
+<article class="d0-stage" data-stage="2" hidden>
+<div class="d0-step-top"><span class="d0-step-num">2</span><span>≈ 4 минуты</span></div>
+<h2>Собери рабочее место</h2>
+<p>Открой <b>Проводник</b> и <b>Блокнот</b>. Сделай так, чтобы можно было работать и с файлами, и с текстом, не закрывая программы.</p>
+<div class="d0-taskbox"><b>Готовый результат:</b> обе программы открыты, и ты можешь быстро перейти от одной к другой.</div>
+<div class="d0-actions d0-result-actions">
+<button type="button" data-result="done">Готово</button>
+<button type="button" class="notdone" data-result="notdone">Не получилось</button>
+</div>
+</article>
+
+<article class="d0-stage" data-stage="3" hidden>
+<div class="d0-step-top"><span class="d0-step-num">3</span><span>≈ 7 минут</span></div>
+<h2>Папка и файлы</h2>
+<p>На Рабочем столе создай папку со своим именем.</p>
+<p>Возьми учебные материалы, которые дал преподаватель. Помести в свою папку нужный текст и картинку. Текст переименуй в <b>Памятка</b>. Картинку удали, затем верни её из Корзины.</p>
+<div class="d0-taskbox"><b>В конце в твоей папке должны быть:</b><br>переименованный текст <b>Памятка</b> и восстановленная картинка.</div>
+<div class="d0-actions d0-result-actions">
+<button type="button" data-result="done">Готово</button>
+<button type="button" class="notdone" data-result="notdone">Не получилось</button>
+</div>
+</article>
+
+<article class="d0-stage" data-stage="4" hidden>
+<div class="d0-step-top"><span class="d0-step-num">4</span><span>≈ 5 минут</span></div>
+<h2>Скачал — теперь найди</h2>
+<p>Нажми <b>«Скачать файл»</b>. После скачивания самостоятельно найди этот файл на компьютере, открой его и положи копию в свою папку.</p>
+<div class="d0-actions"><a href="files/D0_DOWNLOAD_TARGET_v1.pdf" download>Скачать файл</a></div>
+<div class="d0-actions d0-result-actions">
+<button type="button" data-result="done">Готово</button>
+<button type="button" class="notdone" data-result="notdone">Не получилось</button>
+</div>
+</article>
+
+<article class="d0-stage" data-stage="5" hidden>
+<div class="d0-step-top"><span class="d0-step-num">5</span><span>≈ 6 минут</span></div>
+<h2>Телефон ↔ компьютер</h2>
+<p>Сфотографируй на смартфон карточку ниже.</p>
+<div class="d0-target"><strong>СИНИЙ ЁЖ · 47 · КАЛЬЯ</strong></div>
+<p>В MAX голосом набери <b>«Фото готово»</b>, приложи фотографию и отправь себе.</p>
+<p>На компьютере открой MAX, найди это сообщение, сохрани фотографию в свою рабочую папку.</p>
+<p class="d0-note">Если MAX или интернет не работает, позови преподавателя.</p>
+<div class="d0-actions d0-result-actions">
+<button type="button" data-result="done">Готово</button>
+<button type="button" class="notdone" data-result="notdone">Не получилось</button>
+</div>
+</article>
+
+<article class="d0-stage d0-ai-stage" data-stage="6" hidden>
+<div class="d0-step-top"><span class="d0-step-num">6</span><span>≈ 7 минут</span></div>
+<h2>Теперь разрешён ИИ</h2>
+<p><b>Узнай, сколько свободного места осталось на системном диске компьютера.</b></p>
+<p>Можно использовать ИИ. Добейся результата.</p>
+<div class="d0-actions"><button id="d0AiOpen" type="button">Открыть ИИ-чат</button></div>
+<div class="d0-actions d0-result-actions">
+<button type="button" data-result="done">Готово</button>
+<button type="button" class="notdone" data-result="notdone">Не получилось</button>
+</div>
+</article>
+
+<article class="d0-stage" data-stage="7" hidden>
+<div class="d0-step-top"><span class="d0-step-num">7</span><span>≈ 4 минуты</span></div>
+<h2>Финал</h2>
+<p>Сделай снимок <b>только той части экрана</b>, где виден ответ о свободном месте.</p>
+<p>Сохрани снимок в свою рабочую папку. Способ выбери сам.</p>
+<div class="d0-actions d0-result-actions">
+<button type="button" data-result="done">Готово</button>
+<button type="button" class="notdone" data-result="notdone">Не получилось</button>
+</div>
+</article>
+
+<article class="d0-final" id="d0Final" hidden>
+<span class="status-badge">Диагностика завершена</span>
+<h2>Готово</h2>
+<p>Покажи свою папку преподавателю.</p>
+<div class="d0-actions" style="justify-content:center"><a class="secondary" href="../">← Компьютер</a></div>
+</article>
 </div>
 </div></section>
-
-<section class="section soft"><div class="wrap">
-<h2 class="action-title">Задания</h2>
-
-<article class="d0-task"><div class="d0-task-head"><div class="d0-num">1</div><div><h3>Печать</h3><p>Две минуты перепечатывай текст максимально точно. Исправлять ошибки можно.</p><span class="d0-time">≈ 4 минуты</span></div></div>
-<div class="d0-actions"><a href="typing/">Открыть тест печати →</a></div></article>
-
-<article class="d0-task"><div class="d0-task-head"><div class="d0-num">2</div><div><h3>Windows</h3><p>Через поиск Windows открой <b>Блокнот</b> и <b>Калькулятор</b>. Сделай так, чтобы можно было быстро переключаться между ними. Покажи преподавателю.</p><span class="d0-time">≈ 4 минуты</span></div></div></article>
-
-<article class="d0-task"><div class="d0-task-head"><div class="d0-num">3</div><div><h3>Файлы</h3><p>Создай папку <b>D0_ТВОЁ_ИМЯ</b>. Скопируй туда учебный текст и картинку. Переименуй текст в <b>Моя_памятка.txt</b>. Удали картинку и восстанови её из Корзины.</p><p class="micro-note">Обычно преподаватель заранее раздаёт файлы. Если попросил скачать — используй пакет ниже.</p><span class="d0-time">≈ 7 минут</span></div></div>
-<div class="d0-actions"><a href="files/D0_TEST_FILES_v1.zip" download>Скачать учебные файлы (.zip)</a></div></article>
-
-<article class="d0-task"><div class="d0-task-head"><div class="d0-num">4</div><div><h3>Скачал — теперь найди</h3><p>Нажми кнопку, скачай PDF. Затем <b>самостоятельно</b> найди его на компьютере и открой. ИИ пока не используй.</p><span class="d0-time">≈ 5 минут</span></div></div>
-<div class="d0-actions"><a href="files/D0_DOWNLOAD_TARGET_v1.pdf" download>Скачать контрольный PDF</a><a class="secondary" href="files/D0_DOWNLOAD_TARGET_v1.pdf" target="_blank" rel="noopener">Открыть PDF</a></div></article>
-
-<article class="d0-task"><div class="d0-task-head"><div class="d0-num">5</div><div><h3>Смартфон + MAX</h3><p>На смартфоне голосом набери в MAX: <b>«D0: голосовой набор работает»</b>. Отправь себе в «Избранное», открой тот же чат на ПК. Затем отправь со смартфона безопасный тестовый файл или скриншот, сохрани его на ПК и найди.</p><p class="micro-note">Если MAX технически недоступен — ничего не устанавливай без команды преподавателя.</p><span class="d0-time">≈ 5 минут</span></div></div></article>
-
-<article class="d0-task"><div class="d0-task-head"><div class="d0-num">6</div><div><h3>Теперь ИИ разрешён</h3><p>Узнай, сколько свободного места осталось на диске C:. Если не знаешь как — открой <b>ИИ-чат</b> в шапке или справа внизу. Напиши, что у тебя Windows, назови цель и попроси давать <b>по одному действию</b>. После каждого шага сообщай, что получилось.</p><span class="d0-time">≈ 6 минут</span></div></div></article>
-
-<article class="d0-task"><div class="d0-task-head"><div class="d0-num">7</div><div><h3>Финальная задача</h3><p>Сделай скриншот <b>только той части экрана</b>, где видно свободное место диска C:. Сохрани или вставь его туда, куда скажет преподаватель. Способ выбери сам.</p><span class="d0-time">≈ 4 минуты</span></div></div></article>
-
-<div class="d0-stop">Готово? Ничего дополнительно не «улучшай». Покажи преподавателю результат и дождись следующей команды.</div>
-<div class="d0-actions" style="margin-top:18px"><a class="secondary" href="../">← Компьютер</a></div>
-</div></section>
 </main>
+
+<script type="application/json" id="d0Context">
+{
+  "diagnostic_id":"D0",
+  "status":"APPROVED_REDESIGN_IMPLEMENTATION",
+  "baseline_without_ai":["D01_TYPING","D02_WORKSPACE","D03_FILES","D04_DOWNLOAD_FIND","D05_CROSS_DEVICE"],
+  "ai_leverage":["D06_AI_HELP"],
+  "integrated":["D07_SCREENSHOT_SAVE"],
+  "student_visible_scoring":false,
+  "environment_block_is_not_failure":true
+}
+</script>
+<script>
+(() => {
+  const key='s14:d0:run:v2';
+  const intro=document.getElementById('d0Intro');
+  const run=document.getElementById('d0Run');
+  const final=document.getElementById('d0Final');
+  const stages=[...document.querySelectorAll('.d0-stage[data-stage]')];
+  const progressText=document.getElementById('d0ProgressText');
+  const progressFill=document.getElementById('d0ProgressFill');
+  const history=document.getElementById('d0History');
+  let state={started:false,current:1,results:{}};
+  try{state={...state,...JSON.parse(localStorage.getItem(key)||'{}')}}catch(_){}
+  if(state.current<1||state.current>8)state.current=1;
+
+  function save(){localStorage.setItem(key,JSON.stringify(state))}
+  function setAiVisible(visible){
+    const apply=()=>{
+      const top=document.getElementById('s14QuickChatTop');
+      const floating=document.getElementById('s14QuickChat');
+      [top,floating].forEach(el=>{if(el)el.style.display=visible?'':'none'});
+      if(!visible)document.querySelectorAll('.s14-ai-menu').forEach(el=>el.remove());
+    };
+    apply();
+    setTimeout(apply,0);
+    setTimeout(apply,100);
+  }
+  function render(){
+    intro.hidden=state.started;
+    run.hidden=!state.started;
+    const current=state.current;
+    stages.forEach(s=>s.hidden=Number(s.dataset.stage)!==current);
+    final.hidden=current!==8;
+    const completed=Object.keys(state.results).length;
+    if(current<=7){
+      progressText.textContent=current+' из 7';
+      progressFill.style.width=((current-1)/7*100)+'%';
+    }else{
+      progressText.textContent='7 из 7';
+      progressFill.style.width='100%';
+    }
+    const done=Object.values(state.results).filter(v=>v==='done').length;
+    const notdone=Object.values(state.results).filter(v=>v==='notdone').length;
+    history.textContent=completed?('готово: '+done+' · не получилось: '+notdone):'';
+    setAiVisible(current>=6);
+    if(current===8)window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  document.getElementById('d0Start').addEventListener('click',()=>{
+    state={started:true,current:1,results:{}};
+    save(); render();
+  });
+
+  document.querySelectorAll('.d0-result-actions button[data-result]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const stage=Number(btn.closest('.d0-stage').dataset.stage);
+      state.results[stage]=btn.dataset.result;
+      state.current=Math.min(8,stage+1);
+      save(); render();
+      document.querySelector('.student-hero')?.scrollIntoView({behavior:'smooth'});
+    });
+  });
+
+  document.getElementById('d0AiOpen')?.addEventListener('click',()=>{
+    const top=document.getElementById('s14QuickChatTop');
+    const floating=document.getElementById('s14QuickChat');
+    (top||floating)?.click();
+  });
+
+  window.addEventListener('DOMContentLoaded',render);
+  render();
+})();
+</script>
 </body>
 </html>
