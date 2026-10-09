@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fffdf8">
-<title>L05 · Папки: у каждого файла должно быть место · Курс ИИ</title>
-<meta name="description" content="Урок 5: открыть Проводник, понять иерархию папок, создать папки и вложенную структуру для курса.">
+<title>Урок 5 · Настрой размер окон под задачу · Курс ИИ</title>
+<meta name="description" content="Урок 5: размер, положение и закрепление окон приложений и Проводника в Windows.">
 <link rel="canonical" href="https://drozdov-dmitry.github.io/school-ai-courses/computer/l05/">
 <link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
 <link rel="stylesheet" href="/school-ai-courses/assets/s14-v2.css">
@@ -17,127 +17,152 @@
 .l5-card,.l5-fast{padding:22px;border-radius:26px;border:1px solid #ffffffe8;box-shadow:var(--s14-shadow)}
 .l5-card{background:linear-gradient(135deg,#fffaf1,#eef6ff)}.l5-fast{background:linear-gradient(135deg,#fff2c8,#e2f1ff)}
 .l5-card h2,.l5-fast h2{margin-top:0}
+.task-headline{display:block}.task-main{display:block;font-size:1em;font-weight:950;line-height:1.08}.task-sub{display:block;font-size:.65em;line-height:1.22;font-weight:800;color:#5d6c84;margin-top:6px}
 .l5-time{display:inline-flex;margin-top:8px;padding:5px 9px;border-radius:999px;background:#e9efff;font-size:.76rem;font-weight:900}
-.l5-task{padding:16px 17px;border-radius:18px;background:#fff;border:1px solid #dce5f3;margin-top:12px}
-.folder-tree{padding:18px;border-radius:20px;background:#f6f9fd;border:1px solid #ccd8e8;font:800 .98rem/1.8 "S14 UI","Segoe UI",Arial,sans-serif}
-.folder-tree ul{list-style:none;margin:0;padding-left:22px}.folder-tree>ul{padding-left:0}
-.folder-tree li{position:relative}.folder-tree li::before{content:"📁";margin-right:8px}
-.pathbar{margin-top:10px;padding:11px 13px;border-radius:13px;background:#fff;border:1px solid #cfd9e7;font-family:ui-monospace,Consolas,monospace;overflow-wrap:anywhere}
+.l5-task,.challenge,.safe-note{padding:16px 17px;border-radius:18px;background:#fff;border:1px solid #dce5f3;margin-top:12px}
+.challenge{background:#eef8f1;border-color:#bedfc9}.safe-note{background:#f7fbff}
 .keys{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:16px;border-radius:20px;background:#dfe8f5}
 .keycap{min-width:72px;min-height:54px;padding:9px 11px;border-radius:13px;border:1px solid #aeb8c6;border-bottom:5px solid #929eae;background:#fff;display:grid;place-items:center;font-weight:950}
 .plus{font-size:1.4rem;font-weight:950}
-.choice{display:grid;gap:8px;margin-top:10px}.choice button{min-height:46px;border:1px solid #cbd7e8;border-radius:14px;background:#fff;color:#101c38;font-weight:850;cursor:pointer;text-align:left;padding:10px 12px}.choice button.ok{background:#e5f5eb;border-color:#a9d2b9}
-.status{margin-top:10px;padding:12px 14px;border-radius:15px;background:#eef3fb;font-weight:850}.status.ok{background:#e5f5eb;color:#195c39}.status.warn{background:#fff0f4;color:#8b2149}
-.paste-zone{min-height:115px;margin-top:12px;border:2px dashed #91a7c6;border-radius:18px;background:#fff;padding:14px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:850;outline:none;overflow:hidden}.paste-zone img{max-width:100%;max-height:320px;border-radius:12px}
-.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.actions a,.actions button{min-height:44px;padding:9px 13px;border:0;border-radius:14px;background:linear-gradient(135deg,#166dd5,#2654b0);color:#fff;font-weight:900;text-decoration:none;cursor:pointer}.actions .secondary{background:linear-gradient(135deg,#fff1d0,#f8dca6);color:#101c38}
+.window-demo{margin-top:14px;padding:16px;border-radius:22px;background:#dfe8f5;border:1px solid #c2cfdf}
+.demo-screen{position:relative;min-height:255px;border-radius:18px;background:linear-gradient(155deg,#163b6c,#4a79b6);overflow:hidden;padding:14px}
+.demo-window{position:absolute;border-radius:14px;background:#fff;border:2px solid #c6d2e2;box-shadow:0 10px 24px #10213f33;overflow:hidden}
+.demo-window .bar{height:35px;padding:8px 10px;background:#edf2f8;border-bottom:1px solid #cad5e4;font-size:.82rem;font-weight:900;color:#283852}
+.demo-window .body{padding:12px;color:#34445f;font-size:.9rem}
+.demo-left{left:14px;top:14px;width:55%;height:225px}.demo-right{right:14px;top:38px;width:36%;height:190px}
+.demo-half-a{left:14px;top:14px;width:calc(50% - 18px);height:225px}.demo-half-b{right:14px;top:14px;width:calc(50% - 18px);height:225px}
+.resize-corner{position:absolute;right:2px;bottom:2px;width:26px;height:26px;border-right:5px solid #ff9b38;border-bottom:5px solid #ff9b38;border-radius:0 0 8px 0}
+.window-controls{display:flex;gap:6px;float:right}.window-controls i{display:block;width:12px;height:12px;border-radius:50%;background:#bec9d8}.window-controls i:last-child{background:#f29a9a}
 .done{margin-top:12px;min-height:44px;padding:9px 13px;border:1px solid #c7d4e8;border-radius:14px;background:#fff;color:#101c38;font-weight:850;cursor:pointer}.done.is-done{background:#dff4e8;border-color:#a8d5bb}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.actions a,.actions button{min-height:44px;padding:9px 13px;border:0;border-radius:14px;background:linear-gradient(135deg,#166dd5,#2654b0);color:#fff;font-weight:900;text-decoration:none;cursor:pointer}.actions .secondary{background:linear-gradient(135deg,#fff1d0,#f8dca6);color:#101c38}
 .progressbox{position:sticky;top:106px;padding:18px;border-radius:24px;background:#fff;border:1px solid #fff;box-shadow:var(--s14-shadow)}
 .progressbar{height:12px;border-radius:999px;background:#e5ebf4;overflow:hidden;margin:10px 0}.progressbar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#4aa87a,#2673ce)}
-.challenge{padding:17px;border-radius:20px;background:#eef8f1;border:1px solid #bedfc9}
 .micro{font-size:.9rem;color:#56627a}
-@media(max-width:900px){.l5-grid{grid-template-columns:1fr}.progressbox{position:static}}
-@media(max-width:620px){.l5-card,.l5-fast{padding:17px}.folder-tree{font-size:.9rem}}
+.timer-wrap{display:grid;grid-template-columns:minmax(160px,220px) minmax(0,1fr);gap:18px;align-items:center;margin-top:14px}
+.gnome-coach{border-radius:22px;background:linear-gradient(180deg,#fff0dd,#ffe0b6);min-height:245px;overflow:hidden;border:1px solid #f1c68e;display:grid;place-items:end center;padding:12px}
+.gnome-coach img{max-width:92%;max-height:230px;object-fit:contain;filter:drop-shadow(0 8px 24px rgba(20,37,70,.18))}
+.timer-box{padding:16px 17px;border-radius:18px;background:#fff;border:1px solid #ecd1ad}
+.stopwatch-face{display:grid;place-items:center;min-height:150px;border-radius:22px;background:linear-gradient(140deg,#ffdabd,#ffb061);color:#101c38;border:1px solid #efa257;box-shadow:inset 0 0 0 2px rgba(255,255,255,.22);text-align:center}
+.stopwatch-face small{display:block;font-size:.92rem;opacity:.82;letter-spacing:.03em}.stopwatch-time{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:950;line-height:1;margin:8px 0}.stopwatch-status{font-size:.95rem}
+.timer-buttons{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.timer-buttons button{min-height:44px;padding:9px 13px;border:0;border-radius:14px;background:linear-gradient(135deg,#e8832d,#f3aa45);color:#101c38;font-weight:900;cursor:pointer}.timer-buttons .secondary{background:#fff1d0}.timer-buttons .ghost{background:#fff;border:1px solid #d8c5ae}
+.phone-bonus{margin-top:18px;padding:22px;border-radius:26px;background:linear-gradient(135deg,#fff3c8,#f3e9ff 48%,#e8f8ff);border:1px solid #fff;box-shadow:var(--s14-shadow)}
+.phone-bonus h2{margin:0 0 6px}.phone-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}.phone-card{padding:17px;border-radius:20px;background:#fff;border:1px solid #d8e1ed}.phone-card h3{margin:0 0 8px}.phone-badge{display:inline-flex;padding:5px 9px;border-radius:999px;background:#1c315d;color:#fff;font-size:.75rem;font-weight:900;margin-bottom:9px}.phone-card p{margin:.45rem 0;line-height:1.45}
+@media(max-width:1000px){.phone-grid{grid-template-columns:1fr}}
+@media(max-width:900px){.l5-grid{grid-template-columns:1fr}.progressbox{position:static}.timer-wrap{grid-template-columns:1fr}}
+@media(max-width:620px){.l5-card,.l5-fast{padding:17px}.demo-screen{min-height:330px}.demo-left,.demo-right,.demo-half-a,.demo-half-b{position:relative;left:auto;right:auto;top:auto;width:100%;height:140px;margin-bottom:12px}}
 </style>
 </head>
 <body class="s14-student theme-computer">
-<header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · L05</span></a></div></header>
+<header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · Урок 5</span></a></div></header>
 <main>
 <section class="student-hero"><div class="wrap">
 <span class="status-badge">Урок 5 · 40 минут</span>
-<h1>Папки: у каждого файла должно быть место</h1>
-<p>Сегодня ты построишь рабочее место для курса: не свалку файлов, а понятную иерархию, в которой можно быстро понять, что где лежит.</p>
+<h1>Настрой размер окон под задачу</h1>
+<p>Окно приложения или папки не обязано занимать весь экран. Сегодня ты научишься сам задавать его размер и положение, чтобы несколько программ удобно работали рядом.</p>
 </div></section>
 
 <section class="section light"><div class="wrap">
 <article class="l5-fast">
 <span class="status-badge">Мне это легко · экспресс-проверка ≈ 3 минуты</span>
-<h2>Создай структуру без подсказок</h2>
-<p>Открой Проводник. В удобном учебном месте создай папку <b>Экспресс</b>, а внутри неё две папки: <b>Черновики</b> и <b>Готово</b>.</p>
-<div class="folder-tree"><ul><li>Экспресс<ul><li>Черновики</li><li>Готово</li></ul></li></ul></div>
-<div class="choice">
-  <button type="button" data-fast-parent="wrong">Родитель папки «Готово» — «Черновики»</button>
-  <button type="button" data-fast-parent="ok">Родитель папки «Готово» — «Экспресс»</button>
-  <button type="button" data-fast-parent="wrong">«Готово» и «Экспресс» находятся на одном уровне</button>
-</div>
-<div id="fastStatus" class="status">Создай папки и выбери правильное утверждение.</div>
-<div id="fastEvidencePaste" class="paste-zone" contenteditable="true" tabindex="0">Вставь сюда скриншот Проводника, где видна созданная структура</div>
-<div id="fastEvidenceStatus" class="status">Скриншот структуры ещё не вставлен.</div>
-<div class="actions"><a id="fastPass" href="#fastChallenge" hidden>Структура создана и понятна → FAST CHALLENGE</a><a class="secondary" href="#normalRoute">Не уверен → обычный урок</a></div>
-<p class="micro">Страница проверяет только наличие изображения и ответ про иерархию. Названия и расположение папок на скриншоте ты проверяешь глазами.</p>
+<h2><span class="task-headline"><span class="task-main">Собери рабочее место без подсказок</span><span class="task-sub">два окна рядом и оба пригодны для работы</span></span></h2>
+<p>Открой <b>Проводник</b> и <b>Блокнот</b>. Сделай так, чтобы оба окна были полностью видны одновременно, ни одно не занимало весь экран и в каждом оставалось достаточно места для работы.</p>
+<div class="window-demo"><div class="demo-screen">
+<div class="demo-window demo-half-a"><div class="bar">Проводник <span class="window-controls"><i></i><i></i><i></i></span></div><div class="body">Файлы и папки видны.</div></div>
+<div class="demo-window demo-half-b"><div class="bar">Блокнот <span class="window-controls"><i></i><i></i><i></i></span></div><div class="body">Можно печатать текст.</div></div>
+</div></div>
+<div class="actions"><a href="#fastChallenge">Получилось полностью → дополнительное испытание</a><a class="secondary" href="#normalRoute">Есть пробел → обычный урок</a></div>
 </article>
 </div></section>
 
 <section class="section light" id="normalRoute"><div class="wrap l5-grid"><div>
 
 <article class="l5-card">
-<h2>1. Открой Проводник и посмотри, где ты находишься</h2>
-<div class="keys"><span class="keycap">Win</span><span class="plus">+</span><span class="keycap">E</span></div>
-<p><b>Win + E</b> открывает Проводник. Сразу посмотри на текущую папку и путь к ней: перед созданием папки нужно понимать, <b>где именно</b> она появится.</p>
-<div class="pathbar">Этот компьютер › Документы</div>
-<div class="l5-task"><b>Сделай:</b> открой Проводник и выбери одно учебное место, где можно безопасно создавать папки. Не работай в системных папках Windows.<br><span class="l5-time">0:00–7:00</span></div>
+<h2><span class="task-headline"><span class="task-main">1. Развернуть, вернуть, свернуть, закрыть</span><span class="task-sub">четыре разных действия с одним окном</span></span></h2>
+<p>Открой Проводник. В правом верхнем углу окна найди кнопки управления.</p>
+<div class="l5-task"><b>Сделай по порядку:</b><br>1. разверни Проводник на весь экран;<br>2. верни обычный размер;<br>3. сверни окно;<br>4. верни его с панели задач.<br><br><b>Не закрывай Проводник:</b> закрыть и свернуть — не одно и то же.</div>
+<span class="l5-time">0:00–6:00</span>
 <button class="done" data-step="1" type="button">○ Сделано</button>
 </article>
 
 <article class="l5-card" style="margin-top:18px">
-<h2>2. Родитель, ребёнок и один уровень</h2>
-<p>Папки образуют дерево. Папка внутри другой папки — <b>вложенная</b>. Две папки внутри одного родителя находятся на одном уровне.</p>
-<div class="folder-tree"><ul><li>Курс ИИ<ul><li>Практика</li><li>Входящие</li><li>Готово</li></ul></li></ul></div>
-<div class="choice" id="hierarchyQuiz">
-  <button type="button" data-answer="wrong">«Практика» находится внутри «Готово»</button>
-  <button type="button" data-answer="ok">«Практика», «Входящие» и «Готово» — соседи внутри «Курс ИИ — L05»</button>
-  <button type="button" data-answer="wrong">«Курс ИИ» находится внутри «Практика»</button>
-</div>
-<div id="hierarchyStatus" class="status">Выбери утверждение, которое соответствует дереву.</div>
-<span class="l5-time">7:00–13:00</span>
-<button class="done" data-step="2" type="button">○ Понял иерархию</button>
+<h2><span class="task-headline"><span class="task-main">2. Задай размер мышкой</span><span class="task-sub">тяни за край или угол окна</span></span></h2>
+<p>Верни Проводник в обычный оконный режим. Подведи курсор к границе окна. Когда курсор изменится, зажми левую кнопку мыши и потяни.</p>
+<div class="window-demo"><div class="demo-screen">
+<div class="demo-window demo-left"><div class="bar">Проводник <span class="window-controls"><i></i><i></i><i></i></span></div><div class="body">Попробуй сделать окно высоким и узким, затем низким и широким.<div class="resize-corner"></div></div></div>
+</div></div>
+<div class="l5-task"><b>Попробуй три формы:</b> высокое узкое окно → широкое низкое → примерно квадратное. Размер меняй именно за границу или угол окна.</div>
+<span class="l5-time">6:00–14:00</span>
+<button class="done" data-step="2" type="button">○ Размер меняется</button>
 </article>
 
 <article class="l5-card" style="margin-top:18px">
-<h2>3. Создай рабочую папку курса</h2>
-<p>В выбранном учебном месте создай папку <b>Курс ИИ — L05</b>. Затем открой её и создай внутри три папки: <b>Практика</b>, <b>Входящие</b>, <b>Готово</b>. Если такая папка уже есть после предыдущей попытки, добавь к имени номер, например <b>Курс ИИ — L05-2</b>.</p>
-<div class="keys"><span class="keycap">Ctrl</span><span class="plus">+</span><span class="keycap">Shift</span><span class="plus">+</span><span class="keycap">N</span></div>
-<p class="micro">В Проводнике <b>Ctrl + Shift + N</b> создаёт новую папку. Можно использовать и кнопку создания папки в интерфейсе — цель урока не в запоминании сочетания.</p>
-<div class="l5-task"><b>Проверь себя:</b> если ты открыл «Практика», то «Входящие» и «Готово» не должны лежать внутри неё. Они должны быть рядом, внутри «Курс ИИ — L05».<br><span class="l5-time">13:00–23:00</span></div>
-<button class="done" data-step="3" type="button">○ Структура создана</button>
+<h2><span class="task-headline"><span class="task-main">3. Передвинь окно</span><span class="task-sub">возьми его за верхнюю панель</span></span></h2>
+<p>Открой ещё и Блокнот. Возьми окно за верхнюю часть, где находится его название, и перетащи в другое место.</p>
+<div class="l5-task"><b>Собери экран:</b> Проводник поставь слева, Блокнот справа. Затем поменяй их местами. После этого сделай одно окно шире другого.</div>
+<span class="l5-time">14:00–21:00</span>
+<button class="done" data-step="3" type="button">○ Окна расставлены</button>
 </article>
 
 <article class="l5-card" style="margin-top:18px">
-<h2>4. Если потерялся — сначала определи текущую папку</h2>
-<p>Типичная ошибка — создавать новую папку не там, где планировал. Не кликай дальше наугад.</p>
+<h2><span class="task-headline"><span class="task-main">4. Раздели экран быстро</span><span class="task-sub">Windows может закрепить окна за тебя</span></span></h2>
+<p>Перетащи окно к левому краю экрана и отпусти. Затем выбери второе окно для свободной половины.</p>
+<div class="keys"><span class="keycap">Win</span><span class="plus">+</span><span class="keycap">←</span><span style="font-weight:950">или</span><span class="keycap">Win</span><span class="plus">+</span><span class="keycap">→</span></div>
+<div class="safe-note"><b>Сравни два способа:</b> ручное изменение размера мышкой и быстрое закрепление окна. Оба нужны: первый даёт точный размер, второй быстро делит экран.</div>
+<span class="l5-time">21:00–29:00</span>
+<button class="done" data-step="4" type="button">○ Закрепление работает</button>
+</article>
+
+<article class="l5-card" style="margin-top:18px">
+<h2><span class="task-headline"><span class="task-main">5. Финальная задача</span><span class="task-sub">собери удобное рабочее место из трёх окон</span></span></h2>
 <div class="challenge">
-<p><b>Алгоритм:</b> остановись → посмотри путь → назови текущую папку → назови её родителя → только потом создавай следующую папку.</p>
+<p>Открой одновременно:</p>
+<p><b>этот сайт · Проводник · Блокнот</b></p>
+<p>Расположи окна так, чтобы:</p>
+<p>1. текст задания можно было читать;<br>2. в Проводнике были видны файлы;<br>3. в Блокноте можно было печатать;<br>4. ни одно окно не закрывало остальные полностью.</p>
+<p><b>Нельзя:</b> просто разворачивать одно окно на весь экран и постоянно переключаться.</p>
 </div>
-<div class="l5-task"><b>Практика:</b> открой по очереди «Практика», «Входящие» и «Готово». Каждый раз вслух или про себя ответь: «Где я сейчас? Кто родитель этой папки?»<br><span class="l5-time">23:00–29:00</span></div>
-<div class="actions"><button id="copyAiPrompt" type="button">1. Скопировать вопрос</button><button id="openAi" class="secondary" type="button">2. Открыть меню «ИИ-чат»</button></div>
-<div id="aiPromptText" class="pathbar">У меня Windows, Проводник. Я хотел создать папку внутри «Курс ИИ — L05», но не уверен, где сейчас нахожусь. Дай одно действие, чтобы определить текущую папку.</div>
-<p class="micro">Сначала попробуй определить путь сам. ИИ подключается только после этого и даёт один следующий шаг, а не всю последовательность.</p>
-<button class="done" data-step="4" type="button">○ Проверил текущую папку</button>
-</article>
-
-<article class="l5-card" style="margin-top:18px">
-<h2>5. Финальная задача — новая структура по смыслу</h2>
-<div class="challenge">
-<p><b>Без пошаговой инструкции</b> создай новую папку <b>Проект</b>. Внутри неё должны лежать три соседние папки:</p>
-<p><b>Материалы · Черновики · Готово</b></p>
-<p>Открой папку «Готово», затем сделай скриншот Проводника так, чтобы было видно дерево или путь и было понятно, что «Готово» находится внутри «Проект».</p>
-</div>
-<div id="evidencePaste" class="paste-zone" contenteditable="true" tabindex="0">Вставь сюда скриншот результата через Ctrl+V</div>
-<div id="evidenceStatus" class="status">Скриншот ещё не вставлен.</div>
-<p class="micro">Снимок хранится только в этой странице и никуда не отправляется. Автопроверка не читает названия папок — содержимое проверяешь глазами.</p>
 <span class="l5-time">29:00–40:00</span>
 <button class="done" data-step="5" type="button">○ Урок завершён</button>
 </article>
 
 <article class="l5-card" id="fastChallenge" style="margin-top:18px">
-<h2>FAST CHALLENGE · спроектируй структуру сам</h2>
+<h2><span class="task-headline"><span class="task-main">Дополнительное испытание</span><span class="task-sub">три окна за одну минуту</span></span></h2>
 <div class="challenge">
-<p>Тебе нужно организовать материалы для мероприятия. Создай папку <b>Мероприятие</b> и внутри неё минимум три понятные папки по своему выбору. Названия должны объяснять назначение без открытия файлов.</p>
-<p>После этого покажи структуру через дерево/путь Проводника и объясни, почему выбрал именно такую иерархию.</p>
+<p>Закрой Проводник и Блокнот. Затем открой их заново и за <b>60 секунд</b> расположи вместе с браузером так, чтобы всеми тремя окнами можно было пользоваться.</p>
 </div>
-<button class="done" data-fast="1" type="button">○ FAST CHALLENGE выполнен</button>
+<div class="timer-wrap">
+<div class="gnome-coach"><img src="/school-ai-courses/assets/home/home-gnome.webp" alt="Гном курса ИИ с большим секундомером"></div>
+<div class="timer-box">
+<div class="stopwatch-face"><div><small>Секундомер испытания</small><div class="stopwatch-time" id="challengeTimer">01:00</div><div class="stopwatch-status" id="challengeTimerStatus">Нажми «Включить таймер» — и начинай.</div></div></div>
+<div class="timer-buttons"><button type="button" id="challengeTimerStart">Включить таймер 1:00</button><button type="button" class="secondary" id="challengeTimerPause">Пауза</button><button type="button" class="ghost" id="challengeTimerReset">Сброс</button></div>
+</div>
+</div>
+<button class="done" data-fast="1" type="button">○ Дополнительное испытание выполнено</button>
 </article>
 
-<div class="actions"><a class="secondary" href="../">← Компьютер</a><a href="../l04/">← L04</a><a href="../l06/">L06 →</a></div>
+<article class="phone-bonus" id="phoneBonus" hidden>
+<span class="status-badge">Смартфон · бонус после урока</span>
+<h2><span class="task-headline"><span class="task-main">Три новые фишки</span><span class="task-sub">размер, пространство и удобство экрана</span></span></h2>
+<div class="phone-grid">
+<section class="phone-card">
+<span class="phone-badge">iPhone · Рулетка</span>
+<h3>Телефон как строительный уровень</h3>
+<p><b>Попробуй:</b> открой приложение <b>Рулетка</b> → <b>Уровень</b>. Положи iPhone на парту или приложи к вертикальной поверхности. Ноль градусов и зелёный экран означают ровное положение.</p>
+</section>
+<section class="phone-card">
+<span class="phone-badge">iPhone · Safari</span>
+<h3>Преврати сайт в значок приложения</h3>
+<p><b>Попробуй:</b> открой сайт в Safari → Поделиться → <b>На экран «Домой»</b> → включи <b>Открывать как веб-приложение</b> → Добавить.</p>
+</section>
+<section class="phone-card">
+<span class="phone-badge">Android 13+ · экран</span>
+<h3>Измени размер всего интерфейса</h3>
+<p><b>Попробуй:</b> открой Настройки и через поиск настроек найди <b>Размер экрана</b>. Передвинь ползунок и посмотри, как меняются кнопки, меню и количество информации на экране. Затем верни удобный размер.</p>
+</section>
+</div>
+</article>
+
+<div class="actions"><a class="secondary" href="../">← Компьютер</a><a href="../l04/">← Урок 4</a><a href="../l06/">Урок 6 →</a></div>
 </div>
 
 <aside class="progressbox">
@@ -145,8 +170,7 @@
 <p class="micro">Отметки сохраняются только в этом браузере.</p>
 <hr style="border:0;border-top:1px solid #e3e8f0;margin:14px 0">
 <strong>Сегодня тренируем</strong>
-<p><code>FILE-001</code> открыть Проводник<br><code>FILE-002</code> понимать иерархию папок<br><code>FILE-003</code> создать папку<br><code>FILE-004</code> создать вложенные папки</p>
-<p class="micro">Повтор: L03 — скриншот; L04 — один вопрос к ИИ, если застрял.</p>
+<p>• разворачивать и возвращать окно<br>• менять размер мышкой<br>• передвигать окно<br>• закреплять окна по краям<br>• собирать рабочее место из нескольких программ</p>
 </aside>
 </div></section>
 </main>
@@ -154,79 +178,44 @@
 <script type="application/json" id="lessonAiContext">
 {
   "lesson_id":"L05",
-  "title":"Папки: у каждого файла должно быть место",
-  "environment":["WINDOWS","FILE_EXPLORER","BROWSER","AI_LAUNCHER_V1"],
-  "target_atoms":["FILE-001","FILE-002","FILE-003","FILE-004"],
-  "reinforcement_atoms":["KEY-011","KEY-005","AI-001","AI-002","AI-005","AI-006"],
-  "prerequisite_basis":"Basic PC/WIN/KEY operation from D0/L01/L02; no additional exact atom-level prerequisite is claimed.",
-  "fast_gate":{"duration_minutes":3,"mode":"PERFORMANCE_REAL_FILE_SYSTEM","checks":["OPEN_EXPLORER","CREATE_FOLDER","CREATE_NESTED_FOLDER","IDENTIFY_PARENT","SCREENSHOT_EVIDENCE"],"on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
-  "ai_policy":{"first_attempt":"SELF_OR_RECALL","allowed_after_stuck":["ONE_ACTION"],"do_not":["GIVE_FULL_FOLDER_SEQUENCE_IMMEDIATELY"]},
-  "expected_evidence":"Create an equivalent multi-folder workspace from a verbal requirement, then show the final hierarchy/path as screenshot evidence without step-by-step instruction.",
-  "mutable_ui_fact":"Win+E opens File Explorer and Ctrl+Shift+N creates a new folder in File Explorer on current Windows 10/11.",
-  "status":"DEV_BRANCH_CANDIDATE_NOT_PUBLISHED"
+  "title":"Настрой размер окон под задачу",
+  "environment":["WINDOWS","BROWSER","FILE_EXPLORER","NOTEPAD"],
+  "learning_goals":["WINDOW_STATES","MANUAL_RESIZE","MOVE_WINDOW","SNAP_WINDOWS","MULTI_WINDOW_WORKSPACE"],
+  "smartphone_bonus_unlock":"ALL_5_MAIN_STEPS_COMPLETE",
+  "status":"PUBLISHED_CURRENT_2026_10_09"
 }
 </script>
 <script>
 (() => {
- const key='s14:l05:progress:v1',buttons=[...document.querySelectorAll('[data-step]')],fastButton=document.querySelector('[data-fast]');
+ const key='s14:l05:progress:v2',buttons=[...document.querySelectorAll('[data-step]')],fastButton=document.querySelector('[data-fast]');
  let done=new Set();try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
- const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
- function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':b.dataset.step==='2'?'Понял иерархию':b.dataset.step==='3'?'Структура создана':b.dataset.step==='4'?'Проверил текущую папку':'Сделано')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
- buttons.forEach(b=>b.addEventListener('click',()=>{done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
- fastButton?.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'FAST CHALLENGE выполнен'});render();
-
- let fastParentOk=false,fastEvidenceOk=false;
- function updateFastGate(){
-   const pass=document.getElementById('fastPass'),status=document.getElementById('fastStatus');
-   pass.hidden=!(fastParentOk&&fastEvidenceOk);
-   if(fastParentOk&&fastEvidenceOk){status.className='status ok';status.textContent='Иерархия понята, скриншот структуры вставлен. Проверь его глазами и переходи к FAST CHALLENGE.'}
-   else if(fastParentOk){status.className='status';status.textContent='Иерархия понята. Теперь вставь скриншот реально созданной структуры.'}
+ const fill=document.getElementById('progressFill'),text=document.getElementById('progressText'),phoneBonus=document.getElementById('phoneBonus');
+ const labels={'1':'Сделано','2':'Размер меняется','3':'Окна расставлены','4':'Закрепление работает','5':'Урок завершён'};
+ function render(){
+   buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(labels[b.dataset.step]||'Сделано')});
+   fill.style.width=(done.size/buttons.length*100)+'%';
+   text.textContent=done.size+' из '+buttons.length+' этапов';
+   if(phoneBonus)phoneBonus.hidden=done.size<buttons.length;
  }
- document.querySelectorAll('[data-fast-parent]').forEach(btn=>btn.addEventListener('click',()=>{
-   const ok=btn.dataset.fastParent==='ok';
-   document.querySelectorAll('[data-fast-parent]').forEach(x=>x.classList.remove('ok'));
-   if(ok)btn.classList.add('ok');
-   fastParentOk=ok;
-   const status=document.getElementById('fastStatus');
-   status.className='status '+(ok?'':'warn');
-   status.textContent=ok?'Иерархия понята. Теперь вставь скриншот реально созданной структуры.':'Нет. Посмотри, какая папка содержит «Готово» непосредственно.';
-   updateFastGate();
+ buttons.forEach(b=>b.addEventListener('click',()=>{
+   done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);
+   localStorage.setItem(key,JSON.stringify([...done]));
+   render();
  }));
+ if(fastButton)fastButton.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'Дополнительное испытание выполнено'});
+ render();
 
- document.querySelectorAll('#hierarchyQuiz [data-answer]').forEach(btn=>btn.addEventListener('click',()=>{
-   const ok=btn.dataset.answer==='ok';
-   document.querySelectorAll('#hierarchyQuiz [data-answer]').forEach(x=>x.classList.remove('ok'));
-   if(ok)btn.classList.add('ok');
-   const status=document.getElementById('hierarchyStatus');
-   status.className='status '+(ok?'ok':'warn');
-   status.textContent=ok?'Верно: три папки находятся на одном уровне внутри «Курс ИИ — L05».':'Сверься с деревом: какая папка находится непосредственно внутри какой?';
- }));
-
- document.getElementById('copyAiPrompt')?.addEventListener('click',async e=>{
-   const q=document.getElementById('aiPromptText')?.textContent?.trim()||'';
-   try{await navigator.clipboard.writeText(q);e.currentTarget.textContent='Скопировано ✓'}catch(_){e.currentTarget.textContent='Скопируй вопрос вручную'}
- });
- document.getElementById('openAi')?.addEventListener('click',()=>{
-   (document.getElementById('s14QuickChatTop')||document.getElementById('s14QuickChat'))?.click();
- });
-
- function installImageEvidence(zoneId,statusId,onReady){
-   const zone=document.getElementById(zoneId),status=document.getElementById(statusId);
-   zone?.addEventListener('paste',e=>{
-     const item=[...e.clipboardData.items].find(x=>x.type.startsWith('image/'));
-     if(!item){status.className='status warn';status.textContent='В буфере нет изображения. Сначала сделай скриншот Проводника.';return}
-     e.preventDefault();
-     const file=item.getAsFile(),url=URL.createObjectURL(file),img=new Image();
-     img.onload=()=>{
-       zone.innerHTML='';zone.appendChild(img);status.className='status ok';
-       status.textContent='Скриншот вставлен. Проверь глазами, что видны нужные папки и их расположение.';
-       URL.revokeObjectURL(url);onReady?.();
-     };
-     img.src=url;
-   });
- }
- installImageEvidence('fastEvidencePaste','fastEvidenceStatus',()=>{fastEvidenceOk=true;updateFastGate()});
- installImageEvidence('evidencePaste','evidenceStatus');
+ let timerValue=60,timerId=null;
+ const timerEl=document.getElementById('challengeTimer'),timerStatus=document.getElementById('challengeTimerStatus');
+ function drawTimer(){const m=String(Math.floor(timerValue/60)).padStart(2,'0'),s=String(timerValue%60).padStart(2,'0');timerEl.textContent=m+':'+s}
+ function stopTimer(){if(timerId){clearInterval(timerId);timerId=null}}
+ function startTimer(){if(timerId||timerValue<=0)return;timerStatus.textContent='Время пошло.';timerId=setInterval(()=>{timerValue=Math.max(0,timerValue-1);drawTimer();if(timerValue===0){stopTimer();timerStatus.textContent='Время вышло.'}},1000)}
+ function pauseTimer(){if(!timerId)return;stopTimer();timerStatus.textContent='Пауза. Можно продолжить.'}
+ function resetTimer(){stopTimer();timerValue=60;drawTimer();timerStatus.textContent='Нажми «Включить таймер» — и начинай.'}
+ document.getElementById('challengeTimerStart')?.addEventListener('click',startTimer);
+ document.getElementById('challengeTimerPause')?.addEventListener('click',pauseTimer);
+ document.getElementById('challengeTimerReset')?.addEventListener('click',resetTimer);
+ drawTimer();
 })();
 </script>
 </body>
