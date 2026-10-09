@@ -169,8 +169,9 @@
 <p>В конце объясни своими словами: <b>почему «Альфа» остался в «Исходники», а «Копия-Альфа» исчез из «Копии»?</b></p>
 </div>
 <div class="l6-task"><b>Финальная проверка:</b> открой по очереди «Исходники», «Копии» и «Готово». Состояние папок должно подтверждать твой ответ.</div>
+<div class="safe-note"><b>Прибери за собой:</b> отправь себе в MAX из папки «Готово» файлы <b>Финал-копия</b> и <b>Финал-перенос</b>. Убедись, что оба файла появились в MAX. После этого удали с Рабочего стола всю папку <b>«Тренировка с файлами»</b>.</div>
 <span class="l6-time">30:00–40:00</span>
-<button class="done" data-step="5" type="button">○ Урок завершён</button>
+<button class="done" data-step="5" type="button">○ Результат сохранён, папка удалена</button>
 </article>
 
 <article class="l6-card" id="fastChallenge" style="margin-top:18px">
@@ -178,7 +179,7 @@
 <div class="challenge">
 <p>На Рабочем столе создай папку <b>Быстрая тренировка</b>. Внутри неё создай две папки: <b>Папка 1</b> и <b>Папка 2</b>.</p>
 <p>Открой Блокнот, напиши слово <b>ТЕСТ</b> и сохрани файл в «Быстрая тренировка» под именем <b>Тест</b>.</p>
-<p>За три минуты: скопируй «Тест» в «Папка 1», затем перемести эту копию в «Папка 2» и там переименуй. До каждого действия скажи, где файл окажется после операции.</p>
+<p>За три минуты: скопируй «Тест» в «Папка 1», затем перемести эту копию в «Папка 2» и там переименуй. До каждого действия скажи, где файл окажется после операции.</p><p><b>После проверки удали с Рабочего стола папку «Быстрая тренировка» целиком.</b></p>
 </div>
 <div class="timer-wrap">
 <div class="gnome-coach"><img src="/school-ai-courses/assets/home/home-gnome.webp" alt="Гном курса ИИ с большим секундомером"></div>
@@ -240,7 +241,7 @@
  const key='s14:l06:progress:v2',buttons=[...document.querySelectorAll('[data-step]')],fastButton=document.querySelector('[data-fast]');
  let done=new Set();try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
  const fill=document.getElementById('progressFill'),text=document.getElementById('progressText'),phoneBonus=document.getElementById('phoneBonus');
- const labels={'1':'Всё создано','2':'Копия создана','3':'Файл перенесён','4':'Файлы переименованы','5':'Урок завершён'};
+ const labels={'1':'Всё создано','2':'Копия создана','3':'Файл перенесён','4':'Файлы переименованы','5':'Результат сохранён, папка удалена'};
  function render(){
   buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(labels[b.dataset.step]||'Сделано')});
   fill.style.width=(done.size/buttons.length*100)+'%';
