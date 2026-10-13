@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Родительское собрание 4В класса — школа № 14, п. Калья</title>
+  <meta name="description" content="Краткие итоги родительского собрания 4В класса: вопросы, решения, поручения и открытые темы." />
+  <meta name="keywords" content="родительское собрание, 4В класс, школа 14, Калья, ВПР, безопасность, выпускной" />
+
+  <style>
+    :root{
+      --bg: #0b0f17;
+      --panel: rgba(255,255,255,0.06);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --line: rgba(255,255,255,0.12);
+      --accent: #7dd3fc;
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --radius: 18px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    html[data-theme="light"]{
+      --bg: #f7f8fb;
+      --panel: rgba(10,15,25,0.05);
+      --text: rgba(10,15,25,0.92);
+      --muted: rgba(10,15,25,0.65);
+      --line: rgba(10,15,25,0.12);
+      --accent: #2563eb;
+      --shadow: 0 12px 30px rgba(10,15,25,0.10);
+    }
+
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: var(--sans);
+      background: radial-gradient(1200px 800px at 20% 0%, rgba(125,211,252,0.10), transparent 45%),
+                  radial-gradient(900px 700px at 100% 0%, rgba(37,99,235,0.10), transparent 50%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 22px 14px 60px;
+    }
+
+    header{
+      display:flex;
+      gap: 14px;
+      flex-direction: column;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .topbar{
+      display:flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    h1{
+      font-size: 20px;
+      margin: 0;
+      letter-spacing: 0.2px;
+    }
+
+    .meta{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    @media (min-width: 680px){
+      .meta{ grid-template-columns: 1fr 1fr; }
+    }
+
+    .chip{
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+    }
+    html[data-theme="light"] .chip{ background: rgba(255,255,255,0.65); }
+
+    .k{ font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+    .v{ font-size: 14px; }
+
+    .btn{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 14px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    html[data-theme="light"] .btn{ background: rgba(255,255,255,0.75); }
+
+    main{
+      margin-top: 14px;
+      display:flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    section{
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    h2{
+      margin: 0 0 10px 0;
+      font-size: 16px;
+    }
+
+    ul{ margin: 8px 0 0 18px; }
+    li{ margin: 6px 0; }
+
+    .muted{ color: var(--muted); }
+    .mono{ font-family: var(--mono); }
+
+    details{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.02);
+    }
+    html[data-theme="light"] details{ background: rgba(255,255,255,0.65); }
+    summary{
+      cursor:pointer;
+      font-weight: 700;
+    }
+
+    footer{
+      margin-top: 16px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="topbar">
+        <h1>Родительское собрание 4В класса — школа № 14, п. Калья</h1>
+        <button class="btn" id="themeBtn" type="button" aria-label="Toggle theme">🌓 Тема</button>
+      </div>
+
+      <div class="meta">
+        <div class="chip">
+          <div class="k">Дата</div>
+          <div class="v">13 октября 2026 года</div>
+        </div>
+        <div class="chip">
+          <div class="k">Проект</div>
+          <div class="v">4В класс, школа № 14, п. Калья</div>
+        </div>
+        <div class="chip">
+          <div class="k">Участники</div>
+          <div class="v">не указано</div>
+        </div>
+        <div class="chip">
+          <div class="k">Источник</div>
+          <div class="v">Текстовая расшифровка собрания</div>
+        </div>
+        <div class="chip">
+          <div class="k">Теги</div>
+          <div class="v">ВПР, успеваемость, безопасность, школьная форма, выпускной</div>
+        </div>
+        <div class="chip">
+          <div class="k">Версия отчёта</div>
+          <div class="v mono">1.1</div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+      <section>
+        <h2>Ключевые выводы</h2>
+        <ul>
+  <li>Основные учебные затруднения: спешка, невнимательное чтение заданий и недостаточное понимание прочитанного. Скорость чтения улучшилась.</li>
+  <li>В апреле ожидаются ВПР. По сообщению учителя, русский язык и математика обязательны; третий предмет пока неизвестен.</li>
+  <li>Обсуждены безопасность детей, конфликты в классе, школьная форма, состояние мебели и организация выпускного.</li>
+</ul>
+      </section>
+
+      <section>
+        <h2>Решения и договорённости</h2>
+        <ul>
+  <li>Подготовку к ВПР начать ближе к Новому году и усилить после него; до объявления третьего предмета готовиться по всем возможным вариантам.</li>
+  <li>Весь класс должен пройти математическую олимпиаду. Данные для входа учитель уже направила.</li>
+  <li>14 октября провести компьютерную проверку функциональной грамотности в течение учебного дня; результаты на оценки не влияют.</li>
+  <li>По разъяснению учителя, основная форма для девочек — платье и фартук. Классические брюки допускаются лишь в разовых исключительных случаях.</li>
+  <li>Выпускное мероприятие в мае проводится в школе, в школьной форме. Дополнительное празднование — по решению родителей.</li>
+  <li>Задания по работе с текстом на каникулах будут предложены без обязательного выполнения.</li>
+</ul>
+      </section>
+
+      <section>
+        <h2>Задачи и домашние задания</h2>
+        <ul>
+  <li>— Обсудить с детьми опасность вдыхания газа, поездок на питбайках и передачи банковских карт посторонним</li>
+  <li>— Повторить правила безопасности дома без взрослых, на дороге и на улице</li>
+  <li>— Обсудить недопустимость насмешек, провокаций, ударов и порчи чужих вещей</li>
+  <li>— Контролировать точное выполнение учебных инструкций; по возможности выполнять тренировочные задания ВПР и упражнения с текстом</li>
+  <li>— Пройти математическую олимпиаду; для получения отметки за участие направить учителю фото подтверждения</li>
+  <li>— Предоставить пачку бумаги для распечатки материалов к ВПР</li>
+  <li>— Сообщить Ф. И. О. бабушки, желающей посетить школьную встречу 16 октября</li>
+  <li>— Подготовить пачку салфеток и угощение для встречи с бабушками</li>
+  <li>— Проверить доступ к заданиям в «Моей школе» и универсальной библиотеке, выполнить направленное задание по чтению; при сбоях обновить приложение</li>
+  <li>— Подготовить к февральскому смотру песни и строя белые рубашки и туфли, для девочек также юбки и чёрные бабочки</li>
+</ul>
+      </section>
+
+      <section>
+        <h2>Темы и контекст</h2>
+        <ul>
+  <li><strong>Состояние мебели.</strong> Родители сообщили о повреждении одежды из-за стульев и парт. Решение о замене мебели и сроки не определены.</li>
+  <li><strong>Выпускной альбом.</strong> Вариант альбома, фотограф и порядок оплаты не согласованы; обсуждение продолжается.</li>
+  <li><strong>Совместные поездки.</strong> Рассматривались кино и другие варианты отдыха. Место, дата и бюджет не выбраны; для поездки нужен сопровождающий родитель.</li>
+  <li><strong>Электронные сервисы.</strong> «Моя школа» и универсальная библиотека работают с техническими сбоями; учитель не видит часть выполненных заданий.</li>
+</ul>
+      </section>
+
+      <section>
+        <h2>Дополнительные детали</h2>
+        <details>
+          <summary>Открыть подробности</summary>
+          <div class="muted" style="margin-top:10px">
+<ul>
+  <li><strong>Ближайшие проверки.</strong> 14 октября — диктант по русскому языку; в течение недели — работы по математике, произведениям Пушкина и технике чтения.</li>
+  <li><strong>Регламент ВПР.</strong> Учитель указала 45 минут с учётом инструктажа; третий предмет может стать известен за 3–7 дней до проверки.</li>
+  <li><strong>Чтение.</strong> Назван ориентир 120 слов к концу четвёртого класса. Сейчас, по оценке учителя, пересказать текст после первого прочтения может примерно половина класса.</li>
+  <li><strong>Каникулы.</strong> Возвращение в школу предварительно планируется 5-го числа; месяц в записи не назван.</li>
+  <li><strong>Олимпиада.</strong> Учитель обещала отметку за подтверждённое участие и дополнительную пятёрку призёрам и победителям после получения результатов.</li>
+</ul>
+          </div>
+        </details>
+      </section>
+
+    </main>
+</div>
+
+  <script>
+    (function(){
+      const root = document.documentElement;
+      const btn = document.getElementById("themeBtn");
+      const key = "summary_theme";
+
+      function apply(theme){
+        root.setAttribute("data-theme", theme);
+        try { localStorage.setItem(key, theme); } catch(e){}
+      }
+
+      let saved = "light";
+      try { saved = localStorage.getItem(key) || "light"; } catch(e){}
+      apply(saved);
+
+      btn.addEventListener("click", function(){
+        const cur = root.getAttribute("data-theme") || "light";
+        apply(cur === "light" ? "dark" : "light");
+      });
+    })();
+  </script>
+</body>
+</html>
