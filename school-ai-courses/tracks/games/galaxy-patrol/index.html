@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fff1e1"><title>Галактический патруль · Курс ИИ · Школа №14</title>
+<link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
+<link rel="stylesheet" href="/school-ai-courses/assets/s14-v2.css">
+<link rel="stylesheet" href="/school-ai-courses/assets/visual-system.css">
+<link rel="stylesheet" href="/school-ai-courses/tracks/games/workshop.css">
+<script defer src="/school-ai-courses/assets/nav.js"></script>
+<script defer src="/school-ai-courses/assets/snow-trail.js"></script>
+<script defer src="/school-ai-courses/tracks/games/workshop.js"></script>
+</head><body class="theme-games s14-student">
+<header class="topbar"><div class="wrap inner"><a class="brand" href="/school-ai-courses/"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt=""><span><b>КУРС ИИ</b> · Игры</span></a></div></header>
+<main>
+<section class="student-hero"><div class="wrap"><h1>Галактический патруль</h1><p>Полёт, лазеры, противники и волны атак.</p><img class="s14-topic-visual" src="/school-ai-courses/assets/home/games.webp" width="420" height="420" alt="" decoding="async"></div></section>
+<section class="section"><div class="gw-wrap">
+<a class="gw-back" href="/school-ai-courses/tracks/games/">← К выбору игр</a>
+<p class="gw-mission"><strong>Игра для 7–8 класса.</strong> Ты — пилот патрульного корабля. Уничтожай дронов, избегай астероидов и выдержи три волны атак в ярком космическом бою.</p>
+<div class="gw-mini-plan"><span>1 · Подготовь файл</span><span>2 · Попроси ИИ</span><span>3 · Вставь код</span><span>4 · Проверь игру</span><span>5 · Улучши</span></div>
+<div class="gw-steps" style="margin-top:20px">
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">1</span><h2>Сначала приготовь папку и пустой файл</h2></div>
+<ol>
+<li>На рабочем столе Windows нажми <strong>правой кнопкой мыши → Создать → Папку</strong>. Назови её как хочешь, например <code>Галактический патруль</code>.</li>
+<li>Открой папку. Нажми <strong>правой кнопкой → Создать → Текстовый документ</strong>.</li>
+<li>Назови текстовый файл <code>galaxy-patrol.txt</code>. Открой его двойным щелчком в <strong>Блокноте</strong>.</li>
+<li>Оставь пустой Блокнот открытым. Пока это обычный <code>.txt</code>-файл. <strong>Теперь переходи к ИИ.</strong></li>
+</ol>
+</article>
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">2</span><h2>Попроси ИИ создать игру</h2></div>
+<p><strong>Это твой запрос.</strong> Прочитай его и при желании добавь свой замысел. Можешь придумать форму звездолёта, цвет лазеров или название галактики.</p>
+<label class="gw-label" for="gw-prompt">Запрос к ИИ — можно редактировать</label>
+<textarea id="gw-prompt" class="gw-edit" rows="16" spellcheck="true">Создай динамическую аркадную 2D-игру «Галактический патруль» — качественный космический шутер с видом сверху. Игрок управляет звездолётом, летает в пределах поля, стреляет лазером, уклоняется от астероидов и уничтожает вражеских дронов.
+
+УПРАВЛЕНИЕ:
+— WASD или четыре стрелки — полёт по полю.
+— Пробел — выстрел, допускается удерживание с ограниченной частотой стрельбы.
+— Корабль не должен выходить за границы игрового поля.
+— Клавиши управления указаны на стартовом экране.
+
+МЕХАНИКА И СЛОЖНОСТЬ:
+1. Запускай бой кнопкой «Начать». Сгенерируй ТРИ последовательные волны. В каждой несколько вражеских дронов, летящих сверху, и астероиды-препятствия.
+2. Дроны движутся по простым понятным траекториям и могут стрелять редкими снарядами. Следующая волна немного быстрее и плотнее предыдущей.
+3. Лазеры игрока летят вверх; попадание по дрону уничтожает его и добавляет очки. При столкновении корабля с астероидом, дроном или вражеским снарядом теряется здоровье.
+4. Начальное здоровье — 3 единицы. После попадания нужна короткая неуязвимость с миганием, чтобы одна коллизия не отнимала сразу всё здоровье.
+5. Показывай здоровье, очки, номер волны и количество оставшихся противников. Проходи в следующую волну, когда уничтожены все дроны текущей.
+6. Победа — после третьей волны. Поражение — при нулевом здоровье. Оба исхода сопровождаются экраном результата и кнопкой «Играть снова».
+7. Реализуй удаление снарядов и удалённых объектов за пределами поля, чтобы игра не начинала тормозить. Используй requestAnimationFrame и delta time; ограничивай слишком большие dt после переключения вкладок.
+8. Корабль может одновременно двигаться и стрелять.
+
+ВИЗУАЛЬНОЕ КАЧЕСТВО:
+— Используй HTML Canvas 2D и профессионально выглядящую, но выполнимую процедурную графику без готовых картинок.
+— Нарисуй узнаваемый космический истребитель: корпус, крылья, кабина, двигатели, сопла и движущееся свечение выхлопа. Противники — дроны с отдельным силуэтом, астероиды — многоугольные камни с текстурными деталями.
+— Космос: глубокие сине-фиолетовые оттенки, звёзды разных размеров, медленный параллакс-фон и туманность.
+— Лазер — с яркой сердцевиной и свечением; попадания — вспышка, короткий взрыв из частиц, небольшая отдача. Делай эффекты умеренными, чтобы текст и корабль были видны.
+— Добавь лаконичный игровой HUD с красивыми индикаторами и русскими подписями. Игровое поле вписывается в окно, без горизонтальной прокрутки.
+
+ТЕХНИКА:
+Создай ОДИН полностью самостоятельный файл galaxy-patrol.html с HTML, CSS, JavaScript и Canvas-рисунками внутри. Запуск через локальный файл в Microsoft Edge. Не используй внешние библиотеки, сети, ресурсы, изображения или дополнительные файлы. Код должен сразу запускаться, без недописанных функций, заглушек или ошибок в консоли. Верни ВЕСЬ готовый код одним HTML-блоком без пропусков.</textarea>
+<div class="gw-actions"><button type="button" class="gw-button" data-copy-editor="gw-prompt">Скопировать запрос к ИИ</button><span class="gw-copy-status" role="status" aria-live="polite"></span></div>
+<p>Нажми <strong>«Скопировать»</strong>, открой кнопку <strong>«ИИ-чат»</strong> вверху страницы или справа внизу, выбери ИИ-сервис, вставь запрос (<strong>Ctrl+V</strong>) и отправь его.</p>
+<p class="gw-service-note"><strong>Не закрывай этот диалог с ИИ.</strong> Здесь сохраняется твой первый запрос и полученный код. Если игра потребует исправлений, ИИ сможет учитывать предыдущую версию и твои изменения.</p>
+</article>
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">3</span><h2>Преврати текстовый файл в игру</h2></div>
+<ol>
+<li>Подожди, пока ИИ закончит ответ. Скопируй <strong>весь HTML-код целиком</strong>, от <code>&lt;!doctype html&gt;</code> до <code>&lt;/html&gt;</code>, без строк с тремя обратными кавычками.</li>
+<li>Вернись к Блокноту с файлом <code>galaxy-patrol.txt</code>. Вставь код через <strong>Ctrl+V</strong>, сохрани через <strong>Ctrl+S</strong> и закрой Блокнот.</li>
+<li>В папке включи показ расширений: <strong>Windows 11: Просмотреть → Показать → Расширения имён файлов</strong>; <strong>Windows 10: Вид → Расширения имён файлов</strong>.</li>
+<li>Переименуй <code>galaxy-patrol.txt</code> в <code>galaxy-patrol.html</code> и подтверди изменение расширения. Проверь, что имя файла не заканчивается на <code>.html.txt</code>.</li>
+</ol>
+</article>
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">4</span><h2>Запусти в Microsoft Edge и проверь</h2></div>
+<p>Найди <code>galaxy-patrol.html</code> в папке. Нажми на него <strong>правой кнопкой мыши → Открыть с помощью → Microsoft Edge</strong>. Если Edge не виден, выбери «Выбрать другое приложение».</p>
+<p>Поиграй и проверь три вещи:</p>
+<div class="gw-checks"><label><input type="checkbox"><span>Корабль одновременно двигается и стреляет; не выходит за границы поля.</span></label><label><input type="checkbox"><span>Попадания уменьшают здоровье только один раз за короткий промежуток; очки начисляются за уничтоженных дронов.</span></label><label><input type="checkbox"><span>Волны сменяются по очереди, игра заканчивается победой или поражением; перезапуск сбрасывает состояние.</span></label></div>
+<p>Если браузер показывает код вместо игры, проверь расширение файла. Если управление, физика или правила работают неправильно, запиши конкретную ошибку на следующем шаге.</p>
+</article>
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">5</span><h2>Исправь ошибку или улучши игру</h2></div>
+<p>Запиши, что именно не получилось или что хочешь поменять. Вернись в диалог с ИИ, в котором создавал игру.</p>
+<label class="gw-label" for="gw-issue">Какую ошибку нашёл или что изменишь?</label>
+<textarea id="gw-issue" class="gw-edit" rows="4" placeholder="Например: корабль теряет сразу все жизни при одном столкновении. Добавь короткую неуязвимость после попадания."></textarea>
+<div class="gw-actions"><button type="button" class="gw-button" data-fix-prompt data-file="galaxy-patrol.html">Скопировать запрос на исправление</button><span class="gw-copy-status" role="status" aria-live="polite"></span></div>
+<ol>
+<li>Отправь запрос <strong>в тот же диалог с ИИ</strong>.</li>
+<li>Получив полный обновлённый код, нажми правой кнопкой на <code>galaxy-patrol.html</code> → <strong>Открыть с помощью → Блокнот</strong>.</li>
+<li>Нажми <strong>Ctrl+A</strong>, вставь новый код через <strong>Ctrl+V</strong>, сохрани через <strong>Ctrl+S</strong>.</li>
+<li>В Microsoft Edge обнови страницу через <strong>Ctrl+F5</strong>. Снова проверь игру.</li>
+</ol>
+<p>Повторяй цикл. Перед крупной переделкой можешь сохранить работающую версию под именем <code>galaxy-patrol-v1.html</code>.</p>
+</article></div>
+<div class="gw-note gw-outro"><strong>Готово!</strong> Покажи, что исправил или улучшил и чем новая версия отличается от первой.<div class="gw-actions"><a class="gw-button gw-button-muted" href="/school-ai-courses/tracks/games/">← Выбрать следующую игру</a></div></div>
+</div></section></main></body></html>
