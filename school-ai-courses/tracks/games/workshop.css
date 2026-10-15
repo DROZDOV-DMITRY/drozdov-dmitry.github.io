@@ -47,3 +47,17 @@
 .gw-outro{margin:24px 0 45px}
 @media(max-width:900px){.gw-tile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.gw-wrap{width:calc(100% - 20px)}.gw-tile-grid{grid-template-columns:1fr;gap:13px}.gw-tile{min-height:255px}.gw-emoji{font-size:68px;height:90px;justify-content:flex-start}.gw-tile h2{font-size:37px}.gw-step{border-radius:21px;padding:18px}.gw-step-title{align-items:flex-start}.gw-count{flex-basis:38px;width:38px;height:38px}.gw-step h2{font-size:26px}.gw-actions .gw-button{width:100%}.gw-edit{font-size:16px}.gw-mini-plan span{font-size:12px}}
+
+/* Карточки динамических игр */
+.gw-level-heading{margin-top:38px}
+.gw-tile.gw-dynamic{color:#fff!important;border-color:#a8b6e9aa;min-height:360px;text-shadow:0 1px 1px #11183335}
+.gw-tile.gw-dynamic h2,.gw-tile.gw-dynamic p,.gw-tile.gw-dynamic small{color:#fff!important}
+.gw-dynamic-parkour{background:linear-gradient(135deg,#6748b7 0%,#29214f 95%)}
+.gw-dynamic-space{background:linear-gradient(135deg,#1a5dba 0%,#141c59 95%)}
+.gw-dynamic-mecha{background:linear-gradient(135deg,#196784 0%,#153346 95%)}
+.gw-dynamic .gw-art{display:block;width:100%;height:140px;margin:14px 0 11px;overflow:hidden;border-radius:18px;box-shadow:0 8px 18px #11172e55}
+.gw-dynamic .gw-art svg{display:block;width:100%;height:100%;object-fit:cover}
+.gw-dynamic .gw-next{color:#112247;text-shadow:none}
+.gw-dynamic h2{font-size:clamp(28px,2.6vw,38px)}
+.gw-dynamic p{max-width:40ch}
+@media(max-width:600px){.gw-level-heading{margin-top:28px}.gw-tile.gw-dynamic{min-height:315px}.gw-dynamic .gw-art{margin:8px 0 8px;height:126px}.gw-dynamic h2{font-size:34px}}
