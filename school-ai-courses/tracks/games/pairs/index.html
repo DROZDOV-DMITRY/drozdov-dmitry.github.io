@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fff1e1"><title>Найди пару · Курс ИИ · Школа №14</title>
+<link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
+<link rel="stylesheet" href="/school-ai-courses/assets/s14-v2.css">
+<link rel="stylesheet" href="/school-ai-courses/assets/visual-system.css">
+<link rel="stylesheet" href="/school-ai-courses/tracks/games/workshop.css">
+<script defer src="/school-ai-courses/assets/nav.js"></script>
+<script defer src="/school-ai-courses/assets/snow-trail.js"></script>
+<script defer src="/school-ai-courses/tracks/games/workshop.js"></script>
+</head>
+<body class="theme-games s14-student">
+<header class="topbar"><div class="wrap inner"><a class="brand" href="/school-ai-courses/"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt=""><span><b>КУРС ИИ</b> · Игры</span></a></div></header>
+<main>
+<section class="student-hero"><div class="wrap"><h1>Найди пару</h1><p>Двенадцать карточек, шесть пар и настоящая проверка игровой логики.</p><img class="s14-topic-visual" src="/school-ai-courses/assets/home/games.webp" width="420" height="420" alt="" decoding="async"></div></section>
+<section class="section"><div class="gw-wrap">
+<a class="gw-back" href="/school-ai-courses/tracks/games/">← К выбору игр</a>
+<p class="gw-mission"><strong>Игра 03 · 4–6 классы.</strong> На экране 12 закрытых карточек с забавными питомцами. За ход открываются две. Нужно найти все шесть пар за как можно меньше ходов.</p>
+<div class="gw-mini-plan"><span>1 · Подготовь файл</span><span>2 · Попроси ИИ</span><span>3 · Вставь код</span><span>4 · Проверь в Edge</span><span>5 · Улучши</span></div>
+<div class="gw-steps" style="margin-top:20px">
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">1</span><h2>Сначала приготовь папку и пустой файл</h2></div>
+<ol>
+<li>На рабочем столе Windows нажми <strong>правой кнопкой мыши → Создать → Папку</strong>. Назови её как хочешь, например <code>Найди пару</code>.</li>
+<li>Открой папку. Нажми <strong>правой кнопкой → Создать → Текстовый документ</strong>.</li>
+<li>Назови текстовый файл <code>pary.txt</code>. Открой его двойным щелчком в <strong>Блокноте</strong>.</li>
+<li>Оставь пустой Блокнот открытым. Пока это обычный <code>.txt</code>-файл. <strong>Только теперь переходи к ИИ.</strong></li>
+</ol>
+<p>Если пункт «Текстовый документ» отсутствует, сообщи преподавателю.</p>
+</article>
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">2</span><h2>Попроси ИИ создать игру</h2></div>
+<p><strong>Это твой запрос.</strong> Прочитай его и по желанию добавь своё изменение. Можешь заменить питомцев на игровые предметы, роботов или любимые цвета.</p>
+<label class="gw-label" for="gw-prompt">Запрос к ИИ — можно редактировать</label>
+<textarea id="gw-prompt" class="gw-edit" rows="12" spellcheck="true">Создай браузерную игру на память «Найди пару» с забавными питомцами для школьников 4–6 классов. Дизайн яркий, дружелюбный, похожий на современную мини-игру. Игрок должен находить одинаковые картинки.
+
+Требования к правилам и интерфейсу:
+1. Игровое поле состоит из 12 карточек: сетка 4 столбца по 3 ряда на компьютере. Это ровно 6 пар.
+2. На лицевой стороне пар — шесть разных питомцев в виде эмодзи. У каждой пары одинаковый питомец. На обороте у всех одинаковая рубашка с вопросительным знаком.
+3. Перед каждой новой игрой перемешивай все 12 карточек случайным образом.
+4. Игрок нажимает на карточку и открывает её. Можно открыть только две карточки за один ход.
+5. Если изображения совпали, обе карточки остаются открытыми и больше не участвуют в ходе.
+6. Если изображения отличаются, покажи их примерно 1 секунду, затем закрой. Пока идёт ожидание, нельзя открыть третью карточку.
+7. Нельзя дважды нажать на одну и ту же карточку и засчитать это как пару. Уже найденные пары нельзя открывать снова.
+8. Каждый выбор двух разных закрытых карточек считается одним ходом. Отображай число ходов и количество найденных пар.
+9. Когда найдены все 6 пар, покажи поздравление и итоговое число ходов.
+10. Добавь кнопку «Начать заново»: она сбрасывает счётчики, закрывает и заново перемешивает карточки. Добавь короткие русские правила над полем.
+
+Внешний вид: крупные карточки, приятные цвета, небольшая анимация открытия, удобное нажатие мышкой. На узких экранах поле должно помещаться по ширине.
+
+Технические требования: один автономный файл pary.html, включающий полный HTML, CSS и JavaScript. Игра должна работать локально в Microsoft Edge без сети, внешних библиотек, сторонних картинок и установки программ. Выдай полный код одним блоком HTML без пропусков. Не заменяй части кода многоточиями.</textarea>
+<div class="gw-actions"><button type="button" class="gw-button" data-copy-editor="gw-prompt">Скопировать запрос к ИИ</button><span class="gw-copy-status" role="status" aria-live="polite"></span></div>
+<p>Нажми <strong>«Скопировать»</strong>, открой кнопку <strong>«ИИ-чат»</strong> вверху страницы или справа внизу, выбери разрешённый преподавателем сервис и вставь запрос (<strong>Ctrl+V</strong>). Отправь его.</p>
+<p class="gw-service-note">Не создавай личный аккаунт без разрешения преподавателя. Для исправлений возвращайся в тот же разговор с ИИ.</p>
+</article>
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">3</span><h2>Преврати текстовый файл в игру</h2></div>
+<ol>
+<li>Подожди, пока ИИ закончит ответ. Скопируй <strong>весь HTML-код целиком</strong>, от <code>&lt;!doctype html&gt;</code> до <code>&lt;/html&gt;</code>, без строк с тремя обратными кавычками.</li>
+<li>Вернись к открытому Блокноту с файлом <code>pary.txt</code>. Вставь код сочетанием <strong>Ctrl+V</strong>, сохрани через <strong>Ctrl+S</strong> и закрой Блокнот.</li>
+<li>В папке включи показ расширений: <strong>Windows 11: Просмотреть → Показать → Расширения имён файлов</strong>; <strong>Windows 10: Вид → Расширения имён файлов</strong>.</li>
+<li>Переименуй <code>pary.txt</code> в <code>pary.html</code> и подтверди изменение расширения. Проверь, что имя <strong>не</strong> заканчивается на <code>.html.txt</code>.</li>
+</ol>
+<p><strong>Важно:</strong> код должен оставаться в твоём собственном файле. Сайт за тебя его не создаёт.</p>
+</article>
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">4</span><h2>Запусти в Microsoft Edge и проверь</h2></div>
+<p>Найди <code>pary.html</code> в папке. Нажми на него <strong>правой кнопкой мыши → Открыть с помощью → Microsoft Edge</strong>. Если Edge не виден, выбери «Выбрать другое приложение».</p>
+<p>Поиграй и проверь три вещи:</p>
+<div class="gw-checks"><label><input type="checkbox"><span>Перед игрой все 12 карточек закрыты; после перезапуска они перемешиваются.</span></label><label><input type="checkbox"><span>При несовпадении две карточки закрываются и нельзя открыть третью раньше времени.</span></label><label><input type="checkbox"><span>Совпавшие пары остаются открытыми; после шести пар показывается победа и счёт ходов.</span></label></div>
+<p>Если браузер показывает текст кода вместо игры, проверь расширение файла. Если игра ведёт себя странно, опиши конкретную ошибку на следующем шаге.</p>
+</article>
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">5</span><h2>Исправь ошибку или улучши игру</h2></div>
+<p>Не закрывай прежний диалог с ИИ. Запиши, что именно не получилось или что хочешь поменять. <strong>Не нужно начинать новый чат.</strong></p>
+<label class="gw-label" for="gw-issue">Какую ошибку нашёл или что изменишь?</label>
+<textarea id="gw-issue" class="gw-edit" rows="4" placeholder="Например: пока две разные карточки закрываются, можно открыть третью. Исправь блокировку ходов."></textarea>
+<div class="gw-actions"><button type="button" class="gw-button" data-fix-prompt data-file="pary.html">Скопировать запрос на исправление</button><span class="gw-copy-status" role="status" aria-live="polite"></span></div>
+<ol>
+<li>Отправь скопированный запрос <strong>в тот же диалог с ИИ</strong>.</li>
+<li>Получив новый полный код, нажми правой кнопкой на <code>pary.html</code> → <strong>Открыть с помощью → Блокнот</strong>.</li>
+<li>Нажми <strong>Ctrl+A</strong>, вставь новый код <strong>Ctrl+V</strong>, сохрани <strong>Ctrl+S</strong>.</li>
+<li>В Microsoft Edge обнови страницу через <strong>Ctrl+F5</strong>. Снова проверь игру.</li>
+</ol>
+<p>Повторяй цикл столько раз, сколько нужно. Если прежняя версия работала, перед крупным изменением сохрани её копию, например <code>pary-v1.html</code>.</p>
+</article>
+</div>
+<div class="gw-note gw-outro"><strong>Готово!</strong> Ты создал игру, запустил её из собственного файла и проверил результат. Объясни преподавателю одну ошибку или улучшение, которое удалось сделать. <div class="gw-actions"><a class="gw-button gw-button-muted" href="/school-ai-courses/tracks/games/">← Выбрать следующую игру</a></div></div>
+</div></section></main></body></html>
