@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fff1e1"><title>Неон-паркур: Побег из мегаполиса · Курс ИИ · Школа №14</title>
+<link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
+<link rel="stylesheet" href="/school-ai-courses/assets/s14-v2.css">
+<link rel="stylesheet" href="/school-ai-courses/assets/visual-system.css">
+<link rel="stylesheet" href="/school-ai-courses/tracks/games/workshop.css">
+<script defer src="/school-ai-courses/assets/nav.js"></script>
+<script defer src="/school-ai-courses/assets/snow-trail.js"></script>
+<script defer src="/school-ai-courses/tracks/games/workshop.js"></script>
+</head><body class="theme-games s14-student">
+<header class="topbar"><div class="wrap inner"><a class="brand" href="/school-ai-courses/"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt=""><span><b>КУРС ИИ</b> · Игры</span></a></div></header>
+<main>
+<section class="student-hero"><div class="wrap"><h1>Неон-паркур: Побег из мегаполиса</h1><p>Бег, прыжки, физика и неоновый город.</p><img class="s14-topic-visual" src="/school-ai-courses/assets/home/games.webp" width="420" height="420" alt="" decoding="async"></div></section>
+<section class="section"><div class="gw-wrap">
+<a class="gw-back" href="/school-ai-courses/tracks/games/">← К выбору игр</a>
+<p class="gw-mission"><strong>Игра для 7–8 класса.</strong> Ты — бегун на крышах неонового города. Перепрыгивай пропасти, уворачивайся от препятствий и собирай энергетические кристаллы, чтобы достичь портала на другой стороне уровня.</p>
+<div class="gw-mini-plan"><span>1 · Подготовь файл</span><span>2 · Попроси ИИ</span><span>3 · Вставь код</span><span>4 · Проверь игру</span><span>5 · Улучши</span></div>
+<div class="gw-steps" style="margin-top:20px">
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">1</span><h2>Сначала приготовь папку и пустой файл</h2></div>
+<ol>
+<li>На рабочем столе Windows нажми <strong>правой кнопкой мыши → Создать → Папку</strong>. Назови её как хочешь, например <code>Неон-паркур</code>.</li>
+<li>Открой папку. Нажми <strong>правой кнопкой → Создать → Текстовый документ</strong>.</li>
+<li>Назови текстовый файл <code>neon-parkour.txt</code>. Открой его двойным щелчком в <strong>Блокноте</strong>.</li>
+<li>Оставь пустой Блокнот открытым. Пока это обычный <code>.txt</code>-файл. <strong>Теперь переходи к ИИ.</strong></li>
+</ol>
+</article>
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">2</span><h2>Попроси ИИ создать игру</h2></div>
+<p><strong>Это твой запрос.</strong> Прочитай его и при желании добавь свой замысел. Выбери цвет костюма героя, погоду или название мегаполиса.</p>
+<label class="gw-label" for="gw-prompt">Запрос к ИИ — можно редактировать</label>
+<textarea id="gw-prompt" class="gw-edit" rows="16" spellcheck="true">Создай ПОЛНОСТЬЮ РАБОТАЮЩУЮ браузерную 2D-игру «Неон-паркур: Побег из мегаполиса» с видом сбоку. Это динамический платформер, где герой бегает и прыгает между крышами футуристического города.
+
+УПРАВЛЕНИЕ:
+— A / D и стрелки влево / вправо — бег.
+— Пробел или стрелка вверх — прыжок; прыжок только с опоры, без бесконечного полёта.
+— R — начать уровень заново.
+— На экране должна быть понятная подсказка по клавишам.
+
+ИГРОВАЯ МЕХАНИКА:
+1. Создай один законченный проходимый уровень с началом и финишным светящимся порталом. Уровень шире экрана; камера плавно следует за героем.
+2. На уровне есть несколько крыш разной высоты, безопасные для прыжка промежутки, 8–12 собираемых кристаллов и хотя бы два неподвижных препятствия. Расставь платформы так, чтобы уровень можно было пройти обычными прыжками.
+3. Реализуй гравитацию, вертикальную скорость, инерцию движения, приземление на платформы и столкновения. Герой не должен проходить сквозь стены или проваливаться через крыши.
+4. При падении в пропасть верни героя на старт или на последнюю достигнутую контрольную точку, сохранив понятный счётчик падений.
+5. Показывай количество собранных кристаллов, падения и прогресс до финиша.
+6. Экран «Начать игру», понятный финал при достижении портала и кнопка «Играть снова».
+7. Обновляй движение через requestAnimationFrame и время между кадрами, чтобы скорость игры существенно не менялась на разных компьютерах.
+
+ГРАФИКА — ОЧЕНЬ ВАЖНО:
+— Рисуй игровое пространство через HTML Canvas 2D, а интерфейс можно сделать HTML/CSS.
+— Герой — нарисованный персонаж с головой, костюмом, ногами и несколькими кадрами движения: бег, прыжок, приземление. Не используй простой одноцветный квадрат вместо героя.
+— Фон: ночной мегаполис, два-три параллакс-слоя домов, светящиеся окна, вывески, луна, лёгкий туман.
+— Крыши: объёмные платформы с подсветкой краёв. Кристаллы мерцают. Прыжок сопровождается кратким световым следом; сбор — частицами.
+— Сделай цельную аккуратную палитру: тёмный синий, фиолетовый, бирюзовый, янтарные акценты. Хорошие пропорции и читаемые контуры.
+— Canvas корректно масштабируется под размер окна; управление в первую очередь рассчитано на клавиатуру.
+
+ТЕХНИКА:
+Весь HTML, CSS, JavaScript, рисунки и анимации должны быть ВНУТРИ ОДНОГО файла neon-parkour.html. Он открывается локально в Microsoft Edge без интернета, библиотек, ссылок на картинки, загрузки шрифтов, сборки и других файлов. Сначала обеспечь надёжную механику и достижимый финиш, затем визуальные эффекты. Покажи ПОЛНЫЙ ГОТОВЫЙ КОД одним блоком HTML, без троеточий, сокращений и пропущенных функций.</textarea>
+<div class="gw-actions"><button type="button" class="gw-button" data-copy-editor="gw-prompt">Скопировать запрос к ИИ</button><span class="gw-copy-status" role="status" aria-live="polite"></span></div>
+<p>Нажми <strong>«Скопировать»</strong>, открой кнопку <strong>«ИИ-чат»</strong> вверху страницы или справа внизу, выбери ИИ-сервис, вставь запрос (<strong>Ctrl+V</strong>) и отправь его.</p>
+<p class="gw-service-note"><strong>Не закрывай этот диалог с ИИ.</strong> Здесь сохраняется твой первый запрос и полученный код. Если игра потребует исправлений, ИИ сможет учитывать предыдущую версию и твои изменения.</p>
+</article>
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">3</span><h2>Преврати текстовый файл в игру</h2></div>
+<ol>
+<li>Подожди, пока ИИ закончит ответ. Скопируй <strong>весь HTML-код целиком</strong>, от <code>&lt;!doctype html&gt;</code> до <code>&lt;/html&gt;</code>, без строк с тремя обратными кавычками.</li>
+<li>Вернись к Блокноту с файлом <code>neon-parkour.txt</code>. Вставь код через <strong>Ctrl+V</strong>, сохрани через <strong>Ctrl+S</strong> и закрой Блокнот.</li>
+<li>В папке включи показ расширений: <strong>Windows 11: Просмотреть → Показать → Расширения имён файлов</strong>; <strong>Windows 10: Вид → Расширения имён файлов</strong>.</li>
+<li>Переименуй <code>neon-parkour.txt</code> в <code>neon-parkour.html</code> и подтверди изменение расширения. Проверь, что имя файла не заканчивается на <code>.html.txt</code>.</li>
+</ol>
+</article>
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">4</span><h2>Запусти в Microsoft Edge и проверь</h2></div>
+<p>Найди <code>neon-parkour.html</code> в папке. Нажми на него <strong>правой кнопкой мыши → Открыть с помощью → Microsoft Edge</strong>. Если Edge не виден, выбери «Выбрать другое приложение».</p>
+<p>Поиграй и проверь три вещи:</p>
+<div class="gw-checks"><label><input type="checkbox"><span>A/D и стрелки управляют бегом; пробел прыгает только с платформы.</span></label><label><input type="checkbox"><span>Можно перепрыгнуть пропасти, подобрать кристаллы и дойти до портала.</span></label><label><input type="checkbox"><span>При падении игра восстанавливается; после финиша доступен новый запуск.</span></label></div>
+<p>Если браузер показывает код вместо игры, проверь расширение файла. Если управление, физика или правила работают неправильно, запиши конкретную ошибку на следующем шаге.</p>
+</article>
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">5</span><h2>Исправь ошибку или улучши игру</h2></div>
+<p>Запиши, что именно не получилось или что хочешь поменять. Вернись в диалог с ИИ, в котором создавал игру.</p>
+<label class="gw-label" for="gw-issue">Какую ошибку нашёл или что изменишь?</label>
+<textarea id="gw-issue" class="gw-edit" rows="4" placeholder="Например: герой проваливается сквозь крышу или не допрыгивает до следующей платформы. Исправь физику и расстояние."></textarea>
+<div class="gw-actions"><button type="button" class="gw-button" data-fix-prompt data-file="neon-parkour.html">Скопировать запрос на исправление</button><span class="gw-copy-status" role="status" aria-live="polite"></span></div>
+<ol>
+<li>Отправь запрос <strong>в тот же диалог с ИИ</strong>.</li>
+<li>Получив полный обновлённый код, нажми правой кнопкой на <code>neon-parkour.html</code> → <strong>Открыть с помощью → Блокнот</strong>.</li>
+<li>Нажми <strong>Ctrl+A</strong>, вставь новый код через <strong>Ctrl+V</strong>, сохрани через <strong>Ctrl+S</strong>.</li>
+<li>В Microsoft Edge обнови страницу через <strong>Ctrl+F5</strong>. Снова проверь игру.</li>
+</ol>
+<p>Повторяй цикл. Перед крупной переделкой можешь сохранить работающую версию под именем <code>neon-parkour-v1.html</code>.</p>
+</article></div>
+<div class="gw-note gw-outro"><strong>Готово!</strong> Покажи, что исправил или улучшил и чем новая версия отличается от первой.<div class="gw-actions"><a class="gw-button gw-button-muted" href="/school-ai-courses/tracks/games/">← Выбрать следующую игру</a></div></div>
+</div></section></main></body></html>
