@@ -61,3 +61,9 @@
 .gw-dynamic h2{font-size:clamp(28px,2.6vw,38px)}
 .gw-dynamic p{max-width:40ch}
 @media(max-width:600px){.gw-level-heading{margin-top:28px}.gw-tile.gw-dynamic{min-height:315px}.gw-dynamic .gw-art{margin:8px 0 8px;height:126px}.gw-dynamic h2{font-size:34px}}
+
+/* Игры 7–9: гонка и две стратегии, без разделительных заголовков */
+.gw-last-set{margin-top:22px}
+.gw-dynamic-race{background:linear-gradient(135deg,#ba483b 0%,#4c203b 100%)}
+.gw-dynamic-tower{background:linear-gradient(135deg,#347c81 0%,#1d324e 100%)}
+.gw-dynamic-colony{background:linear-gradient(135deg,#a85f39 0%,#482c3a 100%)}
