@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fff1e1"><title>Турбо-трасса: Ночной заезд · Курс ИИ · Школа №14</title>
+<link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
+<link rel="stylesheet" href="/school-ai-courses/assets/s14-v2.css">
+<link rel="stylesheet" href="/school-ai-courses/assets/visual-system.css">
+<link rel="stylesheet" href="/school-ai-courses/tracks/games/workshop.css">
+<script defer src="/school-ai-courses/assets/nav.js"></script>
+<script defer src="/school-ai-courses/assets/snow-trail.js"></script>
+<script defer src="/school-ai-courses/tracks/games/workshop.js"></script>
+</head><body class="theme-games s14-student">
+<header class="topbar"><div class="wrap inner"><a class="brand" href="/school-ai-courses/"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt=""><span><b>КУРС ИИ</b> · Игры</span></a></div></header>
+<main>
+<section class="student-hero"><div class="wrap"><h1>Турбо-трасса: Ночной заезд</h1><p>Три круга, соперники и скоростные повороты.</p><img class="s14-topic-visual" src="/school-ai-courses/assets/home/games.webp" width="420" height="420" alt="" decoding="async"></div></section>
+<section class="section"><div class="gw-wrap">
+<a class="gw-back" href="/school-ai-courses/tracks/games/">← К выбору игр</a>
+<p class="gw-mission"><strong>Игра для 7–8 класса.</strong> Ты водитель спортивного автомобиля. Разгоняйся, тормози перед поворотами, обгоняй соперников и постарайся первым пройти три круга.</p>
+<div class="gw-mini-plan"><span>1 · Подготовь файл</span><span>2 · Попроси ИИ</span><span>3 · Вставь код</span><span>4 · Проверь игру</span><span>5 · Улучши</span></div>
+<div class="gw-steps" style="margin-top:20px">
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">1</span><h2>Сначала приготовь папку и пустой файл</h2></div>
+<ol>
+<li>На рабочем столе Windows нажми <strong>правой кнопкой мыши → Создать → Папку</strong>. Назови её как хочешь, например <code>Турбо-трасса</code>.</li>
+<li>Открой папку. Нажми <strong>правой кнопкой → Создать → Текстовый документ</strong>.</li>
+<li>Назови текстовый файл <code>turbo-race.txt</code>. Открой его двойным щелчком в <strong>Блокноте</strong>.</li>
+<li>Оставь пустой Блокнот открытым. Пока это <code>.txt</code>-файл. <strong>Теперь переходи к ИИ.</strong></li>
+</ol></article>
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">2</span><h2>Попроси ИИ создать игру</h2></div>
+<p><strong>Это твой запрос.</strong> Прочитай его, при желании добавь свой замысел. Можешь выбрать цвет машины, название команды или дизайн трассы.</p>
+<label class="gw-label" for="gw-prompt">Запрос к ИИ — можно редактировать</label>
+<textarea id="gw-prompt" class="gw-edit" rows="17" spellcheck="true">Создай хорошо прорисованную ДИНАМИЧЕСКУЮ 2D-игру «Турбо-трасса: Ночной заезд». Это гоночная аркада с видом сверху, несколькими автомобилями и замкнутой гоночной трассой. Игрок должен пройти 3 полных круга быстрее противников.
+
+УПРАВЛЕНИЕ И ДВИЖЕНИЕ:
+1. Стрелка вверх / W — газ; стрелка вниз / S — тормоз и задний ход на малой скорости; стрелки влево/вправо или A/D — поворот руля.
+2. Автомобиль ускоряется постепенно, имеет максимальную скорость, плавный поворот, трение и умеренный занос. При отпускании газа замедляется постепенно. На траве и обочине скорость заметно падает.
+3. Столкновение с бортиками трассы замедляет автомобиль, но не блокирует игру. Управление должно оставаться предсказуемым.
+4. Камера показывает всю трассу целиком, чтобы игрок видел следующий поворот. Используй HTML Canvas 2D с корректным масштабом при изменении размера окна.
+
+ТРАССА И ПРАВИЛА:
+5. Построй одну красивую замкнутую трассу: две длинные прямые и несколько плавных поворотов, как гоночный стадион; достаточная ширина для обгонов. Нарисуй старт/финиш, бордюры и контрольные отметки.
+6. На старте рядом с игроком стоят ТРИ автомобиля-соперника. Для них реализуй простой и стабильный искусственный интеллект: они едут по контрольным точкам трассы с небольшой разницей скоростей; на поворотах притормаживают. Важно, чтобы машины реально ехали по трассе, а не просто телепортировались.
+7. Гонка состоит из 3 кругов. Засчитывай круг только после последовательного прохождения контрольных точек по маршруту и пересечения финиша в правильном направлении, чтобы нельзя было накручивать счёт движением туда-сюда у старта.
+8. Показывай место игрока среди четырёх машин, текущий круг (1/3, 2/3, 3/3), скорость, время гонки. После трёх кругов показывай результат и кнопку «Новая гонка».
+9. Сделай отсчёт перед стартом 3–2–1–ПОЕХАЛИ! На экране старта укажи клавиши. R — перезапуск; управление должно работать без прокрутки страницы стрелками.
+10. Расстановка и движение соперников должны быть такими, чтобы гонку можно было закончить: без циклических зависаний, ложного засчитывания кругов, вылетов за игровое поле.
+
+ВНЕШНИЙ ВИД — ОБЯЗАТЕЛЬНО:
+— Тщательно нарисованная асфальтовая трасса с белыми полосами, красно-белыми бордюрами, трибунами, прожекторами и неоновой подсветкой.
+— Машины узнаваемой формы: кузов, лобовое и заднее стекло, колёса, фары и задние фонари; у игрока яркая окраска, у соперников три отличающиеся расцветки. Не используй простые прямоугольники без деталей.
+— Ночная атмосфера, световые акценты, мягкие тени, немного следов шин и искр при контакте с ограждением.
+— Крупный читаемый интерфейс, русский текст, приятное оформление стартового и финального экрана.
+
+ТЕХНИКА:
+ВЕСЬ проект в одном самостоятельном файле turbo-race.html: HTML, CSS, JavaScript, Canvas-рисунки. Открывается локально в Microsoft Edge без подключения к сети, внешних библиотек, шрифтов, аудио и изображений. Цикл анимации через requestAnimationFrame и delta time с ограничением слишком больших интервалов. Сначала добейся НАДЁЖНОГО управления, корректного подсчёта кругов и проходимого трека; затем добавь визуальные эффекты. Если ответ становится слишком длинным, упрости только декор, сохрани основные механики. Пришли ПОЛНЫЙ КОД одним HTML-блоком от &lt;!doctype html&gt; до &lt;/html&gt;, без пропущенных функций.</textarea>
+<div class="gw-actions"><button type="button" class="gw-button" data-copy-editor="gw-prompt">Скопировать запрос к ИИ</button><span class="gw-copy-status" role="status" aria-live="polite"></span></div>
+<p>Нажми <strong>«Скопировать»</strong>, открой кнопку <strong>«ИИ-чат»</strong> вверху страницы или справа внизу, выбери ИИ-сервис, вставь запрос через <strong>Ctrl+V</strong> и отправь его.</p>
+<p class="gw-service-note"><strong>Не закрывай этот диалог с ИИ.</strong> Он сохраняет твой запрос и полученный код. При исправлении ИИ сможет учитывать предыдущую версию и внесённые изменения.</p>
+</article>
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">3</span><h2>Преврати текстовый файл в игру</h2></div>
+<ol>
+<li>Подожди, пока ИИ закончит ответ. Скопируй <strong>весь HTML-код целиком</strong>, от <code>&lt;!doctype html&gt;</code> до <code>&lt;/html&gt;</code>, без строк с тремя обратными кавычками.</li>
+<li>Вернись к Блокноту с файлом <code>turbo-race.txt</code>. Вставь код через <strong>Ctrl+V</strong>, сохрани через <strong>Ctrl+S</strong> и закрой Блокнот.</li>
+<li>В папке включи показ расширений: <strong>Windows 11: Просмотреть → Показать → Расширения имён файлов</strong>; <strong>Windows 10: Вид → Расширения имён файлов</strong>.</li>
+<li>Переименуй <code>turbo-race.txt</code> в <code>turbo-race.html</code> и подтверди изменение расширения. Проверь, что имя файла не заканчивается на <code>.html.txt</code>.</li>
+</ol>
+</article>
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">4</span><h2>Запусти в Microsoft Edge и проверь</h2></div>
+<p>Найди <code>turbo-race.html</code> в папке. Нажми на него <strong>правой кнопкой мыши → Открыть с помощью → Microsoft Edge</strong>. Если Edge не виден, выбери «Выбрать другое приложение».</p>
+<p>Поиграй и проверь три вещи:</p>
+<div class="gw-checks"><label><input type="checkbox"><span>Машина разгоняется, тормозит и поворачивает; на траве замедляется.</span></label><label><input type="checkbox"><span>Три соперника двигаются по трассе, а круги засчитываются только при проезде всего маршрута.</span></label><label><input type="checkbox"><span>После трёх кругов показываются место и время; «Новая гонка» возвращает всех на старт.</span></label></div>
+<p>Если браузер показывает код вместо игры, проверь расширение файла. Если управление, правила или графика работают неправильно, запиши конкретную ошибку.</p>
+</article>
+<article class="gw-step">
+<div class="gw-step-title"><span class="gw-count">5</span><h2>Исправь ошибку или улучши игру</h2></div>
+<p>Опиши обнаруженную ошибку или желаемое улучшение. Вернись в диалог с ИИ, в котором создавал игру.</p>
+<label class="gw-label" for="gw-issue">Какую ошибку нашёл или что изменишь?</label>
+<textarea id="gw-issue" class="gw-edit" rows="4" placeholder="Например: круг прибавляется, если пересечь стартовую черту туда-сюда; соперники выезжают за пределы трассы. Исправь обе ошибки."></textarea>
+<div class="gw-actions"><button type="button" class="gw-button" data-fix-prompt data-file="turbo-race.html">Скопировать запрос на исправление</button><span class="gw-copy-status" role="status" aria-live="polite"></span></div>
+<ol>
+<li>Отправь скопированный запрос <strong>в тот же диалог с ИИ</strong>.</li>
+<li>Получив полный обновлённый код, нажми правой кнопкой на <code>turbo-race.html</code> → <strong>Открыть с помощью → Блокнот</strong>.</li>
+<li>Нажми <strong>Ctrl+A</strong>, вставь новый код через <strong>Ctrl+V</strong>, сохрани через <strong>Ctrl+S</strong>.</li>
+<li>В Microsoft Edge обнови страницу через <strong>Ctrl+F5</strong>. Снова проверь игру.</li>
+</ol>
+<p>Перед большим изменением можешь сохранить предыдущую версию под именем <code>turbo-race-v1.html</code>.</p>
+</article></div>
+<div class="gw-note gw-outro"><strong>Готово!</strong> Покажи первоначальную и улучшенную версии игры и объясни, какие ошибки удалось исправить.<div class="gw-actions"><a class="gw-button gw-button-muted" href="/school-ai-courses/tracks/games/">← Выбрать следующую игру</a></div></div>
+</div></section></main></body></html>
