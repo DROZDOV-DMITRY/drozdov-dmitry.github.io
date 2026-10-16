@@ -1,51 +1,107 @@
-<!doctype html><html lang="ru"><head>
+<!doctype html>
+<html lang="ru"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#FFF0F6"><title>Опубликовать сайт · Курс ИИ</title>
-<link rel="stylesheet" href="../../../assets/s14-v2.css"><script defer src="../../../assets/student-ui.js"></script><script defer src="../../../assets/alice-helper.js"></script>
-<script defer src="/school-ai-courses/assets/nav.js"></script>
-<link rel="stylesheet" href="/school-ai-courses/assets/visual-system.css">
-<script defer src="/school-ai-courses/assets/snow-trail.js"></script>
+<meta name="theme-color" content="#e7efff"><title>Публикация сайта · GitHub-Навигатор · Школа №14</title>
+<meta name="description" content="Пошаговая публикация HTML-сайта на GitHub Pages с ИИ-проводником.">
 <link rel="canonical" href="https://drozdov-dmitry.github.io/school-ai-courses/tracks/web/publish/">
 <link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
-</head><body class="theme-web s14-student">
-<header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>Сайты</b> · Публикация</span></a></div></header>
+<link rel="stylesheet" href="/school-ai-courses/assets/s14-v2.css">
+<link rel="stylesheet" href="/school-ai-courses/assets/visual-system.css">
+<link rel="stylesheet" href="publish.css">
+<script defer src="/school-ai-courses/assets/nav.js"></script>
+<script defer src="/school-ai-courses/assets/snow-trail.js"></script>
+<script defer src="publish.js"></script>
+</head>
+<body class="theme-web s14-student">
+<header class="topbar"><div class="wrap inner"><a class="brand" href="/school-ai-courses/tracks/web/"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt=""><span><b>КУРС ИИ</b> · Сайты</span></a><a class="gp-header-link" href="/school-ai-courses/tracks/web/">← Создать сайт</a></div></header>
 <main>
-<section class="student-hero"><div class="wrap"><h1>Опубликуй сайт</h1><p>ИИ ведёт по одному шагу</p><svg class="s14-topic-visual" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" viewBox="255 75 132 65" aria-hidden="true" focusable="false"><image href="/school-ai-courses/assets/home/web.webp" width="420" height="420"/></svg></div></section>
-
-<section class="section light"><div class="wrap">
-<div class="agent-box">
-<h3>Сначала открой ИИ</h3>
-<p>Лучше отдельный чат только для публикации.</p>
-<div class="actions"><button class="copy-action" data-copy="Ты мой проводник по публикации сайта на GitHub Pages. Я новичок. Веди меня строго ПО ОДНОМУ действию. После каждого действия жди от меня «готово» или скриншот. По скриншоту говори только, куда нажать дальше, используя слова, которые реально видны на моём экране. Не давай весь путь сразу. Цель: если нужно — зарегистрироваться на GitHub; создать публичный repository; загрузить index.html и другие файлы сайта; включить GitHub Pages из ветки main и корня проекта; получить рабочую ссылку; проверить её на смартфоне. Никогда не проси пароль, код подтверждения, токен или секрет. Если экран отличается — попроси скриншот.">Скопировать запрос-проводник</button></div><div class="ai-row">
-<a class="ai-pick deepai" href="https://deepai.org/chat" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=deepai.org&sz=64" alt="">DeepAI</a>
-<a class="ai-pick duck" href="https://duck.ai/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=duck.ai&sz=64" alt="">Duck.ai</a>
-<a class="ai-pick zai" href="https://chat.z.ai/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=chat.z.ai&sz=64" alt="">Z.ai</a>
-<button class="ai-pick alice" type="button" data-alice-helper data-alice-mode="plain">✦ Алиса</button>
-<a class="ai-pick deepseek" href="https://chat.deepseek.com/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=64" alt="">DeepSeek</a>
-<a class="ai-pick more" href="../../../tools/?filter=chat">Ещё →</a>
-</div>
-</div>
+<section class="gp-hero"><div class="gp-wrap">
+<div class="gp-hero-text"><span class="gp-kicker">Мастерская публикации</span><h1>Опубликуй свой сайт</h1><p>Твой помощник — <strong>GitHub-Навигатор</strong>. Он сверит актуальный интерфейс, объяснит английские кнопки и будет вести тебя по одному действию до рабочей ссылки.</p>
+<div class="gp-hero-acts"><a class="gp-button gp-button-light" href="#gp-start">Начать публикацию ↓</a><a class="gp-button gp-button-ghost" href="/school-ai-courses/tracks/web/">Вернуться к созданию</a></div></div>
+<div class="gp-hero-art" aria-hidden="true"><div class="gp-browser"><div class="gp-dots"><i></i><i></i><i></i><span>github.com</span></div><div class="gp-browser-body"><div class="gp-code">&lt;html&gt;<br><span>&nbsp; &lt;h1&gt;Мой сайт&lt;/h1&gt;</span><br>&lt;/html&gt;</div><div class="gp-live">✓</div></div></div><div class="gp-orbit"></div></div>
 </div></section>
+<div class="gp-wrap gp-content">
+<section class="gp-intro" aria-label="Перед стартом">
+<h2>Перед началом</h2>
+<p>Подготовь папку со своим сайтом и файл <code>index.html</code>. Для регистрации и подтверждений понадобится доступ к электронной почте. Если аккаунт GitHub уже есть, регистрироваться заново не нужно.</p>
+<div class="gp-essentials"><span><strong>1.</strong> Файл сайта</span><span><strong>2.</strong> Доступ к почте</span><span><strong>3.</strong> Браузер Windows</span></div>
+</section>
+<section class="gp-agent" id="gp-start" aria-labelledby="gp-agent-title">
+<div class="gp-agent-heading"><div class="gp-agent-symbol">✦</div><div><span class="gp-kicker">ИИ-проводник</span><h2 id="gp-agent-title">Запусти GitHub-Навигатор</h2></div></div>
+<p>Скопируй роль проводника в ИИ-чат. Дальше выполняй по одному действию и отвечай ему «готово» или присылай скриншот. <strong>Продолжай в одном диалоге до публикации.</strong></p>
+<div class="gp-agree"><span>Проводник сначала сверяет свежую документацию GitHub для Windows и не использует устаревшие кнопки вслепую.</span></div>
+<label for="gp-role" class="gp-label">Инструкция для ИИ — можно читать и редактировать</label>
+<textarea id="gp-role" class="gp-editor" spellcheck="true" rows="11">Ты — «GitHub-Навигатор», ИИ-проводник ученика по публикации его первого сайта. Ученик работает в Windows через обычный браузер (чаще Microsoft Edge). GitHub может быть на английском. Ученик не знает Git, программирование, репозитории и Pages.
 
-<section class="section soft"><div class="wrap">
-<h2 class="action-title">Если застрял</h2>
-<div class="prompt-grid">
-<button class="prompt-card" data-copy="Я на шаге регистрации GitHub. Веди меня по одному действию. Если нужно — попроси скриншот. Не проси пароль или код."><h3>👤 Аккаунт</h3><p>Регистрация или вход</p></button>
-<button class="prompt-card" data-copy="Я на GitHub и хочу создать repository для своего сайта. Веди меня по одному действию. Если экран отличается — попроси скриншот."><h3>📦 Repository</h3><p>Создать проект</p></button>
-<button class="prompt-card" data-copy="Мне нужно загрузить index.html и файлы сайта в GitHub repository. Веди меня по одному действию и попроси скриншот, если не видишь мой экран."><h3>📄 Файлы</h3><p>Загрузить сайт</p></button>
-<button class="prompt-card" data-copy="Мне нужно включить GitHub Pages для этого repository. Веди меня по одному действию до рабочей ссылки. Если нужно — попроси скриншот."><h3>🌐 Pages</h3><p>Включить публикацию</p></button>
-<button class="prompt-card" data-copy="У меня появилась ссылка GitHub Pages. Помоги проверить, что сайт действительно работает и что открыть на смартфоне. Давай по одному действию."><h3>🔗 Ссылка</h3><p>Проверить сайт</p></button>
-<button class="prompt-card" data-copy="Помоги проверить мой сайт на смартфоне. Давай короткий чек: текст, кнопки, прокрутка, картинки. По одному пункту."><h3>📱 Смартфон</h3><p>Проверить экран</p></button>
-</div>
-<div class="actions">
-<a class="action secondary" href="https://github.com/signup" target="_blank" rel="noopener">GitHub · регистрация ↗</a>
-<a class="action secondary" href="https://github.com/new" target="_blank" rel="noopener">GitHub · новый repository ↗</a>
-<a class="action secondary" href="../../../computer/?help=screenshot">Как отправить скрин в ИИ</a>
-<a class="action secondary" href="../../../tools/yandex-mail/">Нет почты?</a>
-</div>
-</div></section>
+ЦЕЛЬ: довести ученика от локального файла index.html до работающей публичной ссылки на GitHub Pages, проверить, что открывается именно его сайт, а не страницу ошибки или README.
 
-<section class="section light"><div class="wrap">
-<div class="safety"><b>На скриншоте есть пароль, код или личные данные?</b> Не отправляй такой скрин. Закрой или обрежь секретное место.</div>
-</div></section>
+ОБЯЗАТЕЛЬНО: СВЕРЬСЯ С АКТУАЛЬНЫМ ИНТЕРФЕЙСОМ ДО ПЕРВОЙ ИНСТРУКЦИИ.
+1. Сначала воспользуйся доступным веб-поиском/браузером. Открой свежие официальные страницы docs.github.com именно для GitHub.com через браузер на Windows: создание/вход и подтверждение email, создание репозитория, Adding a file to a repository (Windows), Configuring a publishing source for your GitHub Pages site, Creating a GitHub Pages site. Не опирайся на прежние знания, устаревшие скриншоты или интерфейс GitHub Desktop.
+2. Сверь последовательность и названия кнопок (New repository, Add file → Upload files, Settings → Pages, Deploy from a branch, выбор ветки и /(root), Visit site) с актуальными инструкциями; это контрольные ориентиры, а не гарантированные названия на экране ученика.
+3. В одной короткой фразе скажи, что именно удалось проверить и когда. Не утверждай, будто лично видел экран ученика. Если у тебя НЕТ веб-доступа или документация не открылась, скажи: «Не могу сейчас подтвердить актуальный интерфейс по сети; буду ориентироваться по твоему экрану». СРАЗУ попроси скриншот/описание текущего экрана и продолжай без догадок. Не води ученика кругами в поисках старых кнопок.
+4. Если официальный текст и скриншот расходятся, ориентируйся на реально видимые элементы и выясни, на какой странице ученик находится. При двух неудачных попытках на одном действии прекрати повторять его и диагностируй текущий URL, состояние входа и видимые пункты.
+
+СТИЛЬ ВЕДЕНИЯ:
+— Говори кратко, по-русски. Названия видимых пунктов GitHub приводи ТОЧНО на английском, рядом перевод в скобках. Учитывай браузер Windows и диалог выбора локальных файлов в Проводнике.
+— Ровно ОДНО выполнимое действие за сообщение. Формат ответа: «Шаг [номер]. [одно действие]» + «Напиши “готово” или пришли скриншот». Не вываливай все этапы, не запускай параллельные задачи.
+— После «готово» выясняй результат, если он не очевиден; нельзя делать вывод, что сайт опубликован, только из ответа «готово». Сохраняй в контексте этап, уже подтверждённые действия, название репозитория и проблему. Не повторяй выполненные шаги.
+— Если по экрану непонятно, где кнопка, проси скриншот именно этого экрана или попроси переписать видимые надписи. Не выдавай выдуманные инструкции. Не требуй установка Git, Git Bash, GitHub Desktop, терминала или расширений.
+
+МАРШРУТ (ВЫБИРАЙ ВЕТКУ ПО СОСТОЯНИЮ):
+A. Сначала узнай, где лежит index.html, готов ли он и есть ли доступ к собственной почте. Проверь: файл index.html, а не index.html.txt; если картинки отдельные, они лежат вместе с сайтом. Если аккаунт GitHub уже есть и вход выполнен, пропусти регистрацию.
+B. Если нужно, веди по регистрации/входу в GitHub и подтверждению email. Если появляется дополнительная проверка или 2FA, объясни только видимое действие. Никогда не проси отправить тебе пароль, код, токен, резервные коды или доступ к почте.
+C. Помоги создать ОДИН репозиторий для сайта в своём аккаунте (для бесплатной публикации — Public). Предложи простое имя латиницей, а название уточни у ученика. Не создавай дубль, если репозиторий уже существует. Не удаляй и не переименовывай действующие репозитории без необходимости.
+D. Проведи через загрузку index.html и нужных дополнительных файлов через веб-интерфейс браузера в КОРЕНЬ репозитория. Проверь, что файл действительно появился с именем index.html, и изменения сохранены в нужной ветке. Объясни «Commit changes» или аналогичную кнопку по текущему экрану, не по памяти.
+E. Проведи через Settings → Pages и настройку публикации из ветки, где находится index.html, обычно main, и папки /(root), если эти пункты подтверждены. Если GitHub предлагает иной интерфейс, адаптируйся по его экрану. Дождись завершения развёртывания.
+F. Найди реальную ссылку через Pages/Visit site; не придумывай URL. Вместе с учеником открой ссылку и проверь заголовок, блоки, кнопки, картинки; по возможности открой на смартфоне. При 404 сначала проверь Pages, ветку, положение index.html и статус развёртывания. Не создавай новый репозиторий при первой ошибке.
+G. Объясни, как в будущем обновлять index.html в том же репозитории, и предложи сохранить рабочую ссылку.
+
+ПРИВАТНОСТЬ:
+Сайт и файлы в публичном репозитории видны в интернете. Перед загрузкой уточни, что там нет паролей, ключей, адресов, телефонов и чужих персональных данных. На скриншотах скрой email, коды, пароли и другие секреты. Не проси чужие логины.
+
+ПОДТВЕРЖДЕНИЕ РЕЗУЛЬТАТА:
+Успех — только когда опубликованная страница открывается и показывает именно сайт ученика. Если не можешь проверить страницу сам, честно попроси ученика открыть её, описать результат или показать скриншот.
+
+Актуальные официальные источники для перепроверки:
+https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository
+https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository?platform=windows
+https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
+
+НАЧНИ СЕЙЧАС. После проверки свежих источников (или честного сообщения об отсутствии доступа) задай только один первый вопрос, чтобы определить, с какого места начинать.</textarea>
+<div class="gp-actions"><button class="gp-button gp-button-primary" type="button" data-copy="gp-role">1. Скопировать роль ИИ</button><button class="gp-button gp-button-outline" type="button" id="gp-open-ai">2. Выбрать ИИ-чат</button><span class="gp-feedback" role="status" aria-live="polite"></span></div>
+<p class="gp-small">Если выбранный ИИ не умеет открывать интернет, он обязан сообщить об этом и запрашивать подтверждение по твоему экрану. Это предусмотрено ролью.</p>
+</section>
+<section class="gp-route" aria-labelledby="gp-route-title">
+<h2 id="gp-route-title">Как пройдёт публикация</h2>
+<p>Эта схема помогает видеть маршрут. Конкретные кнопки и следующий шаг подсказывает сам ИИ по текущему экрану.</p>
+<div class="gp-roadmap">
+<article class="gp-route-card"><span class="gp-route-num">01</span><div><h3>Подготовка</h3><p>Найдём готовый index.html, папку сайта и доступ к электронной почте.</p></div></article>
+<article class="gp-route-card"><span class="gp-route-num">02</span><div><h3>Вход или регистрация</h3><p>Откроем GitHub, войдём или создадим аккаунт и подтвердим почту.</p></div></article>
+<article class="gp-route-card"><span class="gp-route-num">03</span><div><h3>Репозиторий</h3><p>Создадим один открытый репозиторий с понятным именем.</p></div></article>
+<article class="gp-route-card"><span class="gp-route-num">04</span><div><h3>Загрузка файлов</h3><p>Перенесём index.html и необходимые файлы через браузер Windows.</p></div></article>
+<article class="gp-route-card"><span class="gp-route-num">05</span><div><h3>Включение Pages</h3><p>Выберем источник публикации и проверим настройки.</p></div></article>
+<article class="gp-route-card"><span class="gp-route-num">06</span><div><h3>Ожидание публикации</h3><p>Дождёмся завершения развёртывания, не меняя настройки без причины.</p></div></article>
+<article class="gp-route-card"><span class="gp-route-num">07</span><div><h3>Проверка ссылки</h3><p>Откроем настоящий адрес сайта и проверим содержимое.</p></div></article>
+<article class="gp-route-card"><span class="gp-route-num">08</span><div><h3>Следующая версия</h3><p>Разберём, как обновлять сайт, не создавая новый репозиторий.</p></div></article>
+</div>
+</section>
+<section class="gp-help" aria-labelledby="gp-help-title">
+<div class="gp-help-title"><div><span class="gp-kicker">Если что-то пошло не так</span><h2 id="gp-help-title">Продолжай с того же места</h2></div></div>
+<p>Не начинай заново и не создавай новый репозиторий при первой ошибке. Расскажи проводнику, что видишь на экране.</p>
+<label for="gp-issue" class="gp-label">Что произошло?</label>
+<textarea id="gp-issue" class="gp-editor gp-issue" rows="4" placeholder="Например: открыл Settings, но не вижу Pages. На экране есть General, Access, Security..."></textarea>
+<div class="gp-actions"><button type="button" class="gp-button gp-button-primary" id="gp-copy-help">Скопировать запрос о проблеме</button><span class="gp-feedback" role="status" aria-live="polite"></span></div>
+<p class="gp-small">Вставь запрос <strong>в тот же разговор</strong>. Если есть скриншот, предварительно скрой на нём личную информацию, пароли и коды.</p>
+</section>
+<section class="gp-links" aria-label="Полезные ссылки">
+<h2>Нужные адреса</h2>
+<div class="gp-link-grid">
+<a href="https://github.com/" target="_blank" rel="noopener noreferrer"><strong>GitHub</strong><span>Открыть сайт ↗</span></a>
+<a href="https://github.com/signup" target="_blank" rel="noopener noreferrer"><strong>Регистрация</strong><span>Создать аккаунт ↗</span></a>
+<a href="https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository?platform=windows" target="_blank" rel="noopener noreferrer"><strong>Загрузка файлов</strong><span>Инструкция GitHub для Windows ↗</span></a>
+<a href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site" target="_blank" rel="noopener noreferrer"><strong>GitHub Pages</strong><span>Официальная инструкция ↗</span></a>
+</div>
+</section>
+</div>
 </main></body></html>
