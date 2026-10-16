@@ -1,56 +1,128 @@
-<!doctype html><html lang="ru"><head>
+<!doctype html>
+<html lang="ru"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#FFF0F6"><title>Сайты · Курс ИИ</title>
-<link rel="stylesheet" href="../../assets/s14-v2.css"><script defer src="../../assets/student-ui.js"></script>
-<script defer src="/school-ai-courses/assets/nav.js"></script>
-<link rel="stylesheet" href="/school-ai-courses/assets/visual-system.css">
-<script defer src="/school-ai-courses/assets/snow-trail.js"></script>
+<meta name="theme-color" content="#fff0f6"><title>Сайты · Курс ИИ · Школа №14</title>
+<meta name="description" content="Создай свой первый сайт с ИИ: придумай идею, структуру и стиль, собери HTML и опубликуй на GitHub Pages.">
 <link rel="canonical" href="https://drozdov-dmitry.github.io/school-ai-courses/tracks/web/">
 <link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
-</head><body class="theme-web s14-student">
-<header class="topbar"><div class="wrap inner"><a class="brand" href="../../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · Сайты</span></a></div></header>
+<link rel="stylesheet" href="../../assets/s14-v2.css">
+<link rel="stylesheet" href="/school-ai-courses/assets/visual-system.css">
+<link rel="stylesheet" href="workshop.css">
+<script defer src="/school-ai-courses/assets/nav.js"></script>
+<script defer src="/school-ai-courses/assets/snow-trail.js"></script>
+<script defer src="workshop.js"></script>
+</head>
+<body class="theme-web s14-student">
+<header class="topbar"><div class="wrap inner"><a class="brand" href="../../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt=""><span><b>КУРС ИИ</b> · Сайты</span></a></div></header>
 <main>
-<section class="student-hero"><div class="wrap"><h1>Сделай сайт</h1><p>Идея → файл → ссылка</p><svg class="s14-topic-visual" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" viewBox="255 75 132 65" aria-hidden="true" focusable="false"><image href="/school-ai-courses/assets/home/web.webp" width="420" height="420"/></svg></div></section>
+<section class="student-hero"><div class="wrap"><h1>Создай свой сайт</h1><p>От твоей идеи — к сайту с собственной ссылкой</p><svg class="s14-topic-visual" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" viewBox="255 75 132 65" aria-hidden="true" focusable="false"><image href="/school-ai-courses/assets/home/web.webp" width="420" height="420"/></svg></div></section>
+<div class="sw-wrap">
+<section class="sw-levels" aria-label="Уровни создания сайта">
+<article class="sw-level sw-level-active"><span class="sw-level-icon" aria-hidden="true">◈</span><span class="sw-level-kicker">Уровень 1</span><h2>Мой первый сайт</h2><p>Одна страница. Своя тема, блоки, стиль и публикация в интернете.</p><a class="sw-level-go" href="#web-workshop">Создать сайт ↓</a></article>
+<article class="sw-level sw-level-mid"><span class="sw-level-icon" aria-hidden="true">▦</span><span class="sw-level-kicker">Уровень 2</span><h2>Сайт посложнее</h2><p>Несколько страниц, формы, анимация, свои изображения, точная работа с цветом и шрифтами.</p><button type="button" class="sw-level-go" disabled aria-disabled="true">В разработке</button></article>
+<article class="sw-level sw-level-pro"><span class="sw-level-icon" aria-hidden="true">✧</span><span class="sw-level-kicker">Уровень 3</span><h2>Суперсайт</h2><p>Большой проект: архитектура страниц, навигация, адаптивность, документы и политики публикации.</p><button type="button" class="sw-level-go" disabled aria-disabled="true">В разработке</button></article>
+</section>
+<section id="web-workshop" class="sw-workshop" aria-labelledby="sw-workshop-title">
+<h2 class="sw-workshop-title" id="sw-workshop-title">Мастерская первого сайта</h2>
+<p class="sw-subhead">Пройди шаги по очереди. Тема и оформление будут твоими — ИИ поможет их найти и воплотить.</p>
+<div class="sw-steps">
+<article class="sw-step"><div class="sw-step-header"><span class="sw-number">1</span><h3>Выясни вместе с ИИ, какой сайт хочешь</h3></div>
+<p>Начни с разговора: расскажи ИИ, что тебе нравится. Пусть задаёт вопросы и помогает выбрать идею. <strong>Код пока не нужен.</strong></p>
+<label class="sw-label" for="sw-idea">Запрос к ИИ — можно изменить</label><textarea id="sw-idea" class="sw-editor" rows="8">Ты мой ИИ-наставник по созданию первого сайта. Мне пока НЕ НУЖЕН КОД. Помоги выяснить, какой сайт я действительно хочу сделать, исходя из моих увлечений, идей и того, что мне интересно показать другим.
 
-<section class="section light"><div class="wrap">
-<h2 class="action-title">Выбери сайт</h2>
-<div class="prompt-grid">
-<button class="prompt-card" data-copy="Сделай простой личный сайт обо мне одним файлом index.html. Сначала задай мне 5 очень коротких вопросов: имя или псевдоним, чем я увлекаюсь, что умею, что хочу показать и какой цвет мне нравится. Потом верни полный готовый index.html. HTML, CSS и JavaScript — внутри одного файла. Сайт должен хорошо выглядеть на компьютере и смартфоне."><h3>👤 О себе</h3><p>Ответь на 5 вопросов → получи сайт</p></button>
-<button class="prompt-card" data-copy="Сделай простой сайт про мою любимую игру одним файлом index.html. Сначала спроси название игры, почему она мне нравится, любимого персонажа, 3 факта и что посетитель должен сделать на сайте. Потом верни полный готовый index.html. Сайт должен работать на компьютере и смартфоне."><h3>🎮 Про игру</h3><p>Игра → факты → готовая страница</p></button>
-<button class="prompt-card" data-copy="Сделай простой сайт про моё хобби одним файлом index.html. Сначала спроси какое хобби, почему оно мне нравится, что у меня уже получается, чему я хочу научиться и что показать на сайте. Потом верни полный готовый index.html."><h3>🛹 Про хобби</h3><p>Расскажи о своём увлечении</p></button>
-<button class="prompt-card" data-copy="Сделай простой сайт для нашего класса одним файлом index.html. Сначала спроси номер класса, что мы хотим разместить, какие события показать, какие 3 блока нужны и кто будет пользоваться сайтом. Не добавляй персональные данные учеников без моего указания. Потом верни полный готовый index.html."><h3>🏫 Для класса</h3><p>События и полезная информация</p></button>
-<button class="prompt-card" data-copy="Помоги сделать одну полезную веб-страницу одним файлом index.html. Сначала предложи 3 простые идеи: памятка, калькулятор или небольшой справочник. После моего выбора задай максимум 3 вопроса и верни полный готовый index.html."><h3>🧰 Полезная страница</h3><p>Выбери задачу → сделай инструмент</p></button>
-<button class="prompt-card" data-copy="Помоги придумать маленький сайт. Задай мне только 3 коротких вопроса: для кого сайт, что человек должен увидеть и что он должен сделать. Потом предложи 3 идеи. Код не пиши, пока я не выберу идею."><h3>✨ Своя идея</h3><p>Сначала придумать</p></button>
-</div>
-<p class="micro-note">Нажми вариант — запрос скопируется</p>
-<div class="ai-row">
-<a class="ai-pick deepai" href="https://deepai.org/chat" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=deepai.org&sz=64" alt="">DeepAI</a>
-<a class="ai-pick duck" href="https://duck.ai/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=duck.ai&sz=64" alt="">Duck.ai</a>
-<a class="ai-pick zai" href="https://chat.z.ai/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=chat.z.ai&sz=64" alt="">Z.ai</a>
-<a class="ai-pick qwen" href="https://chat.qwen.ai/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=chat.qwen.ai&sz=64" alt="">Qwen</a>
-<a class="ai-pick more" href="../../tools/?filter=text">Ещё →</a>
-</div>
-</div></section>
+Проведи короткое интервью, задавая только ОДИН вопрос за сообщение. Начни с моих интересов и любимых занятий. Затем выясни, кому я хотел бы показать сайт и что посетитель должен суметь на нём сделать. Если я затрудняюсь, приведи 2–3 разных примера для вдохновения, но не решай за меня.
 
-<section class="section soft"><div class="wrap">
-<h2 class="action-title">Собери</h2>
-<div class="route">
-<article class="stage"><h3>📄 index.html</h3><p>Один файл.</p></article>
-<article class="stage"><h3>🌐 Открой</h3><p>Двойной клик → Edge.</p></article>
-<article class="stage"><h3>✅ Проверь</h3><p>ПК + смартфон.</p></article>
-</div>
-<div class="actions">
-<button class="copy-action" data-copy="Сделай мой сайт одним файлом index.html. HTML, CSS и JavaScript должны быть внутри. Без библиотек и сборки. Сайт должен нормально работать на компьютере и смартфоне. Сначала дай простую рабочую версию.">Скопировать запрос для сайта</button>
-<a class="action secondary" href="../../computer/?help=save-html">Как сохранить index.html</a>
-</div>
-</div></section>
+После моих ответов предложи 3 небольшие идеи для личного одностраничного сайта. Для каждой — название, цель и что увидит посетитель. Попроси меня выбрать идею, объединить варианты или предложить свою. После моего решения коротко сформулируй итоговую идею. Дождись моего «подходит» и только тогда закончи этот этап. Пока не составляй дизайн и не пиши HTML.
 
-<section class="section light"><div class="wrap">
-<h2 class="action-title">Выложи в интернет</h2>
-<div class="agent-box">
-<h3>ИИ проведёт по GitHub шаг за шагом</h3>
-<p>Ты показываешь скриншот. ИИ говорит только следующий шаг.</p>
-<div class="actions"><a class="action" href="publish/">Начать публикацию →</a></div>
+Не спрашивай мои настоящие ФИО, домашний адрес, телефон или личные сведения других людей. Для сайта можно использовать псевдоним.</textarea><div class="sw-controls"><button type="button" class="sw-button" data-copy="sw-idea">Скопировать запрос для поиска идеи</button><span class="sw-status" role="status" aria-live="polite"></span></div>
+<p class="sw-hint">Нажми «ИИ-чат» в верхнем меню или справа внизу, выбери чат, вставь запрос через Ctrl+V. <strong>Сохрани этот диалог:</strong> в нём будут все решения для дальнейших шагов.</p>
+</article>
+<article class="sw-step"><div class="sw-step-header"><span class="sw-number">2</span><h3>Придумай устройство сайта</h3></div>
+<p>После выбора темы реши, какие разделы нужны, что в них разместить и какую кнопку увидит посетитель.</p>
+<label class="sw-label" for="sw-structure">Запрос к ИИ — можно изменить</label><textarea id="sw-structure" class="sw-editor" rows="8">Продолжаем разрабатывать МОЙ сайт по идее, которую мы выбрали в этом диалоге. Помоги мне придумать структуру простого одностраничного сайта.
+
+Предложи:
+1. Запоминающийся заголовок и короткое описание для первого экрана.
+2. Три-четыре раздела в логичном порядке (например, знакомство с темой, интересные факты, карточки и завершение).
+3. Что именно посетитель увидит и сможет сделать в каждом разделе.
+4. Одну заметную кнопку с настоящим действием внутри страницы — например, плавно прокрутить к выбранному разделу.
+5. Краткую схему страницы сверху вниз и вариант текста для каждого блока.
+
+Пиши коротко, понятным языком. Учитывай МОЮ идею и мои пожелания. Задай не более двух уточняющих вопросов, если они нужны. В конце спроси, устраивает ли меня схема, и предложи внести изменения. Код НЕ ПИШИ, пока я не утвержу структуру.</textarea><div class="sw-controls"><button type="button" class="sw-button" data-copy="sw-structure">Скопировать запрос для структуры</button><span class="sw-status" role="status" aria-live="polite"></span></div>
+<p class="sw-hint">Отправь его <strong>в тот же диалог с ИИ</strong>. Согласуй схему страницы, прежде чем переходить к оформлению.</p>
+</article>
+<article class="sw-step"><div class="sw-step-header"><span class="sw-number">3</span><h3>Выбери стиль — быстрый или подробный</h3></div>
+<p>Можно определиться за пару минут или разработать собственную палитру, типографику и композицию.</p>
+<div class="sw-style-switch" role="group" aria-label="Насколько подробно проработать стиль">
+<button type="button" class="sw-style-choice is-selected" data-style="fast" aria-pressed="true">Быстрый стиль</button>
+<button type="button" class="sw-style-choice" data-style="deep" aria-pressed="false">Проработать детально</button>
 </div>
-</div></section>
+<div id="sw-fast-panel" class="sw-style-panel">
+<p class="sw-option-note">Три идеи оформления, затем твой выбор цветов и настроения.</p>
+<label class="sw-label" for="sw-fast">Запрос к ИИ — можно изменить</label><textarea id="sw-fast" class="sw-editor" rows="8">Мы утвердили тему и структуру моего сайта в этом диалоге. Теперь помоги выбрать стиль БЫСТРО — без длинного интервью.
+
+Предложи три разные визуальные концепции, подходящие именно моей теме. Для каждой кратко опиши настроение, 2–3 основных цвета (с HEX-кодами), тип шрифта, кнопки и фон. Дай мне выбрать один вариант или смешать элементы. После выбора сохрани стиль как наши договорённости для следующего шага. Используй системные шрифты, которые работают без загрузок из интернета. Код пока не пиши.</textarea><div class="sw-controls"><button type="button" class="sw-button" data-copy="sw-fast">Скопировать запрос о стиле</button><span class="sw-status" role="status" aria-live="polite"></span></div>
+</div>
+<div id="sw-deep-panel" class="sw-style-panel" hidden>
+<p class="sw-option-note">Два художественных направления, затем точные цвета, шрифты, сетка, карточки и детали.</p>
+<label class="sw-label" for="sw-deep">Запрос к ИИ — можно изменить</label><textarea id="sw-deep" class="sw-editor" rows="8">Мы уже выбрали тему и архитектуру моего сайта в этом диалоге. Теперь поработай со мной как арт-директор и дизайнер. Я хочу подробно спроектировать визуальную систему.
+
+Сначала спроси, какие сайты, игры, фильмы, настроения или художественные стили мне нравятся. Задавай по одному короткому вопросу. Затем предложи ДВА осмысленно разных художественных направления для моей темы и попроси выбрать.
+
+После выбора составь мини-дизайн-систему:
+— палитра: основной цвет, акцент, фон, поверхность карточек, основной и вторичный текст; точные HEX;
+— типографика: заголовки, основной текст, размеры, насыщенность, межстрочный интервал; только доступные системные шрифты;
+— композиция: сетка и отступы, размеры блоков, карточки, кнопки, скругления, тени;
+— декоративные элементы и уместные небольшие анимации;
+— как стиль адаптируется для телефона;
+— какое изображение можно создать с ИИ в будущем и куда оно впишется; для первого сайта предложи альтернативу встроенным SVG или CSS без внешних файлов.
+
+Покажи короткую текстовую спецификацию. Спроси, что мне нравится, а что надо переделать. Сохрани согласованный дизайн в контексте нашей беседы. Не пиши код, пока я не скажу «стиль утверждён».</textarea><div class="sw-controls"><button type="button" class="sw-button" data-copy="sw-deep">Скопировать запрос о дизайне</button><span class="sw-status" role="status" aria-live="polite"></span></div>
+</div>
+<p class="sw-hint">Выбранный стиль тоже согласуй <strong>в том же диалоге</strong>.</p>
+</article>
+<article class="sw-step"><div class="sw-step-header"><span class="sw-number">4</span><h3>Приготовь файл на рабочем столе</h3></div>
+<ol class="sw-list">
+<li>Нажми на рабочем столе Windows правой кнопкой мыши → <strong>Создать → Папку</strong>. Дай папке название своего сайта.</li>
+<li>Внутри папки нажми правой кнопкой → <strong>Создать → Текстовый документ</strong>.</li>
+<li>Назови документ <code>index.txt</code>, открой его в <strong>Блокноте</strong> и оставь пустым. Теперь можно получать HTML-код.</li>
+</ol></article>
+<article class="sw-step"><div class="sw-step-header"><span class="sw-number">5</span><h3>Получай код своего сайта</h3></div>
+<p>Когда идея, структура и стиль согласованы, отправь ИИ последний запрос на разработку HTML.</p>
+<label class="sw-label" for="sw-code">Запрос к ИИ — можно изменить</label><textarea id="sw-code" class="sw-editor" rows="11">Теперь создай ПОЛНЫЙ РАБОТАЮЩИЙ код моего первого одностраничного сайта, учитывая все наши решения В ЭТОМ ДИАЛОГЕ: выбранную мной тему, утверждённую структуру, содержание и согласованный визуальный стиль. Если что-то из согласованного неясно, сначала коротко спроси.
+
+Сделай красивый современный адаптивный лендинг: первый экран с названием и смыслом, 3–4 согласованных раздела, аккуратную навигацию по якорям, читаемые карточки, одну рабочую кнопку, которая плавно ведёт в нужный раздел, и приятные состояния наведения. Все элементы должны работать мышью и клавиатурой. На телефоне всё должно помещаться по ширине.
+
+Технические требования:
+— ОДИН файл с именем index.html, в котором находятся весь HTML, CSS и при необходимости JavaScript;
+— сайт должен запускаться из папки на рабочем столе в Microsoft Edge БЕЗ интернета;
+— не используй внешние шрифты, библиотеки, ссылки на картинки, CDN или загружаемые ресурсы;
+— если для оформления нужен рисунок, создай его кодом как встроенный SVG или CSS-иллюстрацию;
+— тексты на русском языке, по нашей согласованной теме, без выдуманных личных данных;
+— никаких неработающих форм, пустых ссылок, заглушек вместо содержимого;
+— после кода коротко объясни, какие блоки получились и как проверить их.
+
+Пришли ВЕСЬ завершённый код одним блоком HTML, от &lt;!doctype html&gt; до &lt;/html&gt;, без троеточий, сокращений и фразы «остальной код аналогично».</textarea><div class="sw-controls"><button type="button" class="sw-button" data-copy="sw-code">Скопировать запрос на HTML</button><span class="sw-status" role="status" aria-live="polite"></span></div>
+<ol class="sw-list">
+<li>Скопируй ответ ИИ — <strong>весь HTML-код</strong>, от <code>&lt;!doctype html&gt;</code> до <code>&lt;/html&gt;</code>, без строк из трёх обратных кавычек.</li>
+<li>Вставь его в открытый Блокнот (<strong>Ctrl+V</strong>) и сохрани (<strong>Ctrl+S</strong>).</li>
+<li>В Проводнике включи отображение расширений файлов. Переименуй <code>index.txt</code> в <code>index.html</code>, подтверди изменение расширения.</li>
+<li>Нажми на <code>index.html</code> правой кнопкой → <strong>Открыть с помощью → Microsoft Edge</strong>.</li>
+</ol></article>
+<article class="sw-step"><div class="sw-step-header"><span class="sw-number">6</span><h3>Проверь и улучши</h3></div>
+<p>Проверь результат на компьютере. Если есть ошибка или появилась новая идея, попроси ИИ изменить код и сохрани новую версию.</p>
+<div class="sw-checks"><label><input type="checkbox"> Заголовок и разделы соответствуют моей теме.</label><label><input type="checkbox"> Кнопки и переходы по странице работают.</label><label><input type="checkbox"> Текст и оформление хорошо видны при узком окне браузера.</label></div>
+<label class="sw-label" for="sw-issue">Что исправить или улучшить?</label>
+<textarea id="sw-issue" class="sw-editor" rows="4" placeholder="Например: на узком экране карточки налезают друг на друга. Исправь расположение, сохрани цвета и текст."></textarea>
+<div class="sw-controls"><button type="button" class="sw-button" id="sw-copy-fix">Скопировать запрос на исправление</button><span class="sw-status" role="status" aria-live="polite"></span></div>
+<p class="sw-hint">Отправь запрос в прежний диалог → получи полный новый HTML → открой <code>index.html</code> в Блокноте → <strong>Ctrl+A</strong>, <strong>Ctrl+V</strong>, <strong>Ctrl+S</strong> → обнови страницу браузера (<strong>Ctrl+F5</strong>).</p>
+</article>
+<article class="sw-step sw-publish"><div class="sw-step-header"><span class="sw-number">7</span><h3>Зарегистрируй и опубликуй сайт на GitHub</h3></div>
+<p>Когда сайт готов, переходи к публикации. ИИ проведёт тебя от регистрации на GitHub до собственной ссылки на GitHub Pages — по одному действию.</p>
+<div class="sw-controls"><a class="sw-button sw-button-publish" href="publish/">Перейти к регистрации и публикации →</a></div>
+<p class="sw-hint">GitHub допускает самостоятельные аккаунты с 13 лет. Для младших школьников публикацию выполняет взрослый со своего аккаунта.</p>
+</article>
+</div>
+</section>
+</div>
 </main></body></html>
