@@ -50,3 +50,17 @@ button.sw-level-go[disabled]{color:#3e5068;background:#ffffffac;border:1px solid
 .sw-button-publish{background:linear-gradient(135deg,#165fba,#135d84)}
 @media(max-width:900px){.sw-levels{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.sw-wrap{width:calc(100% - 20px)}.sw-levels{grid-template-columns:1fr;gap:12px}.sw-level{min-height:215px}.sw-level h2{font-size:36px}.sw-step{border-radius:20px;padding:18px}.sw-step-header{align-items:flex-start}.sw-number{width:40px;height:40px}.sw-step h3{font-size:27px}.sw-controls .sw-button{width:100%}.sw-style-choice{flex:1}.sw-workshop{scroll-margin-top:20px}}
+
+/* Быстрый вход в мастерскую публикации */
+.sw-top-publish{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(120deg,#195fc4,#3143a7);border:2px solid #fff;color:#fff!important;font-weight:850;text-decoration:none;padding:10px 16px;border-radius:14px;min-height:45px;white-space:nowrap;margin-left:auto;font-size:15px;box-shadow:0 5px 14px #203e8026}
+.sw-top-publish:hover{filter:brightness(1.08)}
+.sw-top-publish:focus-visible,.sw-quick-button:focus-visible,.sw-publish-shortcut a:focus-visible{outline:3px solid #3d82db;outline-offset:3px}
+.sw-quick-publish{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:14px 0 26px;padding:17px 21px;background:linear-gradient(115deg,#e7f2ff,#f8ebff);border:1px solid #cedef4;border-radius:19px;box-shadow:0 7px 19px #172d5e12}
+.sw-quick-publish>div{display:flex;flex-direction:column;gap:4px}
+.sw-quick-publish strong{font:700 25px/1.1 "S14 Display","Arial Narrow",sans-serif;color:#152753}
+.sw-quick-publish span{font-size:15px;color:#415375}
+.sw-quick-button{flex-shrink:0;white-space:nowrap}
+.sw-publish-shortcut{background:#eaf5ff;border:1px solid #c3dff7;border-radius:13px;padding:12px 14px;margin-top:15px!important}
+.sw-publish-shortcut a{color:#1552a3;font-weight:850}
+@media(max-width:950px){.topbar .inner:has(.sw-top-publish){flex-wrap:wrap}.sw-top-publish{margin-left:auto}}
+@media(max-width:640px){.sw-quick-publish{flex-direction:column;align-items:stretch}.sw-quick-button{width:100%}.sw-top-publish{order:2;margin:0 0 5px}.sw-quick-publish strong{font-size:25px}}
