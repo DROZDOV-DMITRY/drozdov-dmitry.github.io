@@ -13,7 +13,7 @@
     }
     const filter=e.target.closest("[data-tool-filter]");
     if(filter){
-      document.querySelectorAll("[data-tool-filter]").forEach(b=>b.classList.toggle("active",b===filter));
+      document.querySelectorAll("[data-tool-filter]").forEach(b=>{const active=b===filter;b.classList.toggle("active",active);b.setAttribute("aria-pressed",active?"true":"false");});
       const cat=filter.dataset.toolFilter;
       document.querySelectorAll("[data-tool-cats]").forEach(card=>{
         const cats=card.dataset.toolCats.split(/\s+/);
