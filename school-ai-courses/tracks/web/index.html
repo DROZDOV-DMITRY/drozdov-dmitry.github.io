@@ -11,6 +11,11 @@
 <script defer src="/school-ai-courses/assets/nav.js"></script>
 <script defer src="/school-ai-courses/assets/snow-trail.js"></script>
 <script defer src="workshop.js"></script>
+<style>
+.sw-help{border:1px solid #b8c9e8;background:#fff;border-radius:12px;margin:8px 0;padding:9px 12px;max-width:75ch}.sw-help summary{font-weight:800;color:#174b96;cursor:pointer}.sw-help[open] summary{margin-bottom:8px}.sw-help p{margin:4px 0;line-height:1.5}.sw-help summary:focus-visible{outline:3px solid #205db6;outline-offset:3px}
+.sw-file-check{border:2px solid #a0c9b1;border-radius:18px;padding:16px;background:#f0faf4}.sw-file-check strong{display:block;margin-bottom:10px}.sw-file-check label{display:block;padding:6px 0}.sw-file-check input{width:19px;height:19px;vertical-align:middle}.sw-file-check a{font-weight:850;color:#124981}.sw-file-check small{color:#38566a;display:block}
+#sw-file-setup,#sw-generate{scroll-margin-top:110px}
+</style>
 </head>
 <body class="theme-web s14-student">
 <header class="topbar"><div class="wrap inner"><a class="brand" href="../../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt=""><span><b>КУРС ИИ</b> · Сайты</span></a><a class="sw-top-publish" href="publish/">Публикация ↗</a></div></header>
@@ -82,13 +87,22 @@
 </div>
 <p class="sw-hint">Выбранный стиль тоже согласуй <strong>в том же диалоге</strong>.</p>
 </article>
-<article class="sw-step"><div class="sw-step-header"><span class="sw-number">4</span><h3>Приготовь файл на рабочем столе</h3></div>
+<article class="sw-step" id="sw-file-setup"><div class="sw-step-header"><span class="sw-number">4</span><h3>Приготовь файл на рабочем столе</h3></div>
+<p><strong>Где ты:</strong> шаг 4 из 7. <strong>Цель:</strong> папка своего сайта с единственным пустым файлом <code>index.txt</code>, открытым в Блокноте. Нужен Windows-компьютер; со смартфона пока можно продумать тему и стиль.</p>
 <ol class="sw-list">
-<li>Нажми на рабочем столе Windows правой кнопкой мыши → <strong>Создать → Папку</strong>. Дай папке название своего сайта.</li>
-<li>Внутри папки нажми правой кнопкой → <strong>Создать → Текстовый документ</strong>.</li>
-<li>Назови документ <code>index.txt</code>, открой его в <strong>Блокноте</strong> и оставь пустым. Теперь можно получать HTML-код.</li>
-</ol></article>
-<article class="sw-step"><div class="sw-step-header"><span class="sw-number">5</span><h3>Получай код своего сайта</h3></div>
+<li><strong>Сначала включи расширения файлов.</strong> Открой Проводник (клавиши Win + E). В Windows 11: «Просмотреть → Показать → Расширения имён файлов»; в Windows 10: «Вид → Расширения имён файлов». <details class="sw-help"><summary>Не знаю, где найти расширения</summary><p>Нажми Win + E. В Проводнике выбери «Вид» или «Просмотреть» и включи «Расширения имён файлов». Теперь названия заканчиваются на <code>.txt</code>, <code>.html</code> и т. д. Вернись к текущему шагу.</p></details></li>
+<li><strong>Создай папку на рабочем столе</strong>: правой кнопкой по пустому месту → «Создать» → «Папку». Дай ей название своего сайта. <details class="sw-help"><summary>Не знаю, как создать папку</summary><p>Нажми Win + D (рабочий стол), затем правой кнопкой мыши на пустом месте → «Создать» → «Папку». Введи название и нажми Enter. Открой папку двойным нажатием.</p></details></li>
+<li><strong>Создай текстовый документ</strong> внутри папки: правая кнопка → «Создать» → «Текстовый документ». Назови <code>index.txt</code> и проверь, что это <strong>не</strong> <code>index.txt.txt</code>. <details class="sw-help"><summary>Не знаю, как создать текстовый файл</summary><p>Открой созданную папку. Нажми правой кнопкой на пустом месте внутри → «Создать» → «Текстовый документ». Переименуй документ в <code>index.txt</code> и нажми Enter.</p></details><details class="sw-help"><summary>Нет пункта «Текстовый документ»</summary><p>Запусти Блокнот через меню «Пуск» → «Файл» → «Сохранить как». Выбери свою папку, тип «Все файлы (*.*)» и имя <code>index.txt</code>. Проверь полное имя в Проводнике.</p></details></li>
+<li>Открой <code>index.txt</code> в <strong>Блокноте</strong> и оставь пока пустым. <details class="sw-help"><summary>Не открывается Блокнот</summary><p>Нажми правой кнопкой на файле → «Открыть с помощью» → «Блокнот». Если его нет, выбери «Выбрать другое приложение».</p></details></li>
+</ol>
+<div class="sw-file-check"><strong>Самопроверка перед обращением к ИИ</strong>
+<label><input type="checkbox"> Папка видна на рабочем столе.</label>
+<label><input type="checkbox"> Файл внутри называется <code>index.txt</code> (без второго <code>.txt</code>).</label>
+<label><input type="checkbox"> В Блокноте открыт пустой файл.</label>
+<p><a href="#sw-generate">Всё готово → к шагу 5 «Получай код»</a></p>
+<small>Эти отметки — твоя самопроверка, сайт не имеет доступа к файлам Windows. Если что-то не получилось, открой нужную подсказку прямо выше.</small>
+</div></article>
+<article class="sw-step" id="sw-generate"><div class="sw-step-header"><span class="sw-number">5</span><h3>Получай код своего сайта</h3></div>
 <p>Когда идея, структура и стиль согласованы, отправь ИИ последний запрос на разработку HTML.</p>
 <label class="sw-label" for="sw-code">Запрос к ИИ — можно изменить</label><textarea id="sw-code" class="sw-editor" rows="11">Теперь создай ПОЛНЫЙ РАБОТАЮЩИЙ код моего первого одностраничного сайта, учитывая все наши решения В ЭТОМ ДИАЛОГЕ: выбранную мной тему, утверждённую структуру, содержание и согласованный визуальный стиль. Если что-то из согласованного неясно, сначала коротко спроси.
 
@@ -107,8 +121,8 @@
 <ol class="sw-list">
 <li>Скопируй ответ ИИ — <strong>весь HTML-код</strong>, от <code>&lt;!doctype html&gt;</code> до <code>&lt;/html&gt;</code>, без строк из трёх обратных кавычек.</li>
 <li>Вставь его в открытый Блокнот (<strong>Ctrl+V</strong>) и сохрани (<strong>Ctrl+S</strong>).</li>
-<li>В Проводнике включи отображение расширений файлов. Переименуй <code>index.txt</code> в <code>index.html</code>, подтверди изменение расширения.</li>
-<li>Нажми на <code>index.html</code> правой кнопкой → <strong>Открыть с помощью → Microsoft Edge</strong>.</li>
+<li>Расширения уже включены на шаге 4. Переименуй <code>index.txt</code> в <code>index.html</code>, подтверди изменение расширения и проверь, что полного имени <code>index.html.txt</code> нет. <details class="sw-help"><summary>Вместо сайта появился текст или не получается переименовать</summary><p>Вернись к Проводнику и проверь включённое отображение расширений. Правильное имя — <code>index.html</code>. Если видишь <code>index.html.txt</code>, удали лишнее окончание <code>.txt</code> через «Переименовать».</p></details></li>
+<li>Нажми на <code>index.html</code> правой кнопкой → <strong>Открыть с помощью → Microsoft Edge</strong>. <details class="sw-help"><summary>Не вижу Edge или открылся Блокнот</summary><p>Нажми правой кнопкой на <code>index.html</code>, выбери «Открыть с помощью» → «Выбрать другое приложение» → Microsoft Edge. Если браузер показывает исходный код, проверь расширение файла.</p></details></li>
 </ol><p class="sw-publish-shortcut">Если сайт уже выглядит так, как ты задумал: <a href="publish/">Публикация с ИИ-проводником →</a></p></article>
 <article class="sw-step"><div class="sw-step-header"><span class="sw-number">6</span><h3>Проверь и улучши</h3></div>
 <p>Проверь результат на компьютере. Если есть ошибка или появилась новая идея, попроси ИИ изменить код и сохрани новую версию.</p>
@@ -116,6 +130,7 @@
 <label class="sw-label" for="sw-issue">Что исправить или улучшить?</label>
 <textarea id="sw-issue" class="sw-editor" rows="4" placeholder="Например: на узком экране карточки налезают друг на друга. Исправь расположение, сохрани цвета и текст."></textarea>
 <div class="sw-controls"><button type="button" class="sw-button" id="sw-copy-fix">Скопировать запрос на исправление</button><span class="sw-status" role="status" aria-live="polite"></span></div>
+<p class="sw-hint"><strong>Точка возврата:</strong> после ответа ИИ вернись на эту страницу к шагу 5, а после исправления — к шагу 6. Не создавай новый проект из-за ошибки.</p>
 <p class="sw-hint">Отправь запрос в прежний диалог → получи полный новый HTML → открой <code>index.html</code> в Блокноте → <strong>Ctrl+A</strong>, <strong>Ctrl+V</strong>, <strong>Ctrl+S</strong> → обнови страницу браузера (<strong>Ctrl+F5</strong>).</p>
 </article>
 <article class="sw-step sw-publish"><div class="sw-step-header"><span class="sw-number">7</span><h3>Зарегистрируй и опубликуй сайт на GitHub</h3></div>
