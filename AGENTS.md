@@ -26,4 +26,4 @@ SCOPE: школьный сайт, все ученические интерфей
 - Публикация/release только при явном разрешении. Если нет актуального доступа к файлам/источникам — помечать `NOT_VERIFIED`, не заменять проверку предположением.
 - Один bounded review → один полный набор дефектов → один ремонт → один контрольный повтор, если нет материального основания расширять.
 
-CATALOG: S14 Wayfinding Gate v1.1 (80 patterns), research package 2026-10-17. This file is a repository-level operating instruction and does not itself modify ChatGPT Project Instructions.
+CATALOG: `school-ai-courses/QA_GATE_80.md` — полный перечень 80 обязательных проверок. Evidence/reference: S14 Wayfinding Gate v1.1, 17.10.2026. Перед регистрацией во внешних сервисах проверять возрастные Terms of Service и применимые разрешения; в GitHub нет аккаунтов для детей младше 13 лет. This repository-level instruction does not itself modify ChatGPT Project Instructions.
