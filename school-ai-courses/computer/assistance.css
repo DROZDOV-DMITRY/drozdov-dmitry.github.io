@@ -1,0 +1,9 @@
+/* S14 Pattern Gate v1.1: supplemental contextual help, visible only in guided routes after independent attempt. */
+.s14-guided-assist{background:#eff7ff;border:2px solid #b2ccee;border-radius:18px;padding:15px 18px;margin:0 0 20px;color:#193655;font-size:15px;line-height:1.5}
+.s14-guided-assist strong{display:block;font-size:17px;margin-bottom:5px}
+.s14-guided-assist p{margin:5px 0}
+.s14-guided-assist details{border:1px solid #bed3ef;border-radius:12px;background:#fff;padding:9px 12px;margin-top:9px}
+.s14-guided-assist summary{font-weight:800;color:#184e92;cursor:pointer}
+.s14-guided-assist summary:focus-visible,.s14-guided-assist a:focus-visible{outline:3px solid #164ba4;outline-offset:3px}
+.s14-guided-assist a{color:#11529a;font-weight:800;display:inline-block;margin:5px 12px 5px 0}
+.s14-guided-assist small{display:block;color:#425777}
