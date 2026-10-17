@@ -67,3 +67,27 @@
 .gw-dynamic-race{background:linear-gradient(135deg,#ba483b 0%,#4c203b 100%)}
 .gw-dynamic-tower{background:linear-gradient(135deg,#347c81 0%,#1d324e 100%)}
 .gw-dynamic-colony{background:linear-gradient(135deg,#a85f39 0%,#482c3a 100%)}
+
+/* S14 Wayfinding Gate v1.1 · common guidance */
+.gw-first-start{display:flex;justify-content:space-between;align-items:center;gap:22px;padding:22px;border-radius:24px;border:2px solid #9eb9ee;background:linear-gradient(115deg,#e9f4ff,#f9eafa);margin:14px 0 25px}
+.gw-first-start h2{font:700 clamp(28px,3vw,38px)/1.12 "S14 Display",Arial,sans-serif;margin:0}
+.gw-first-start p{margin:8px 0;color:#263651}.gw-first-start .gw-button{flex-shrink:0}
+.gw-first-device{font-size:14px}
+.gw-device-note{padding:13px 16px;margin:15px 0;background:#fff4de;border:1px solid #e1c785;border-radius:15px}
+.gw-current-location{font-weight:850;color:#213f79;margin:14px 0 6px}
+.gw-mini-plan .gw-plan-link{background:#fff;text-decoration:none;color:#1b3157;border:1px solid #ccdaeb;border-radius:99px;padding:9px 12px;font-weight:800;font-size:13px}
+.gw-mini-plan .gw-plan-link[aria-current="step"]{background:#173d89;color:#fff;border-color:#173d89}
+.gw-step{scroll-margin-top:112px}.gw-prep-list>li{margin:0 0 18px}
+.gw-help{background:#fff;border:1px solid #abbfd9;border-radius:12px;padding:9px 12px;margin:8px 0}
+.gw-help summary{font-weight:850;color:#19519b;cursor:pointer}
+.gw-help[open] summary{margin-bottom:8px}.gw-help li{font-size:14px}
+.gw-help summary:focus-visible,.gw-plan-link:focus-visible{outline:3px solid #1965c4;outline-offset:3px}
+.gw-checkpoint{border:2px solid #9bbfac;background:#eefaf4;border-radius:16px;margin-top:16px;padding:16px}
+.gw-checkpoint>strong{display:block;margin-bottom:9px}.gw-checkpoint label{display:flex;align-items:start;gap:10px;margin:8px 0}
+.gw-checkpoint input{width:20px;height:20px;accent-color:#116b56;flex-shrink:0}
+.gw-own-choice,.gw-return-note{background:#f0f5ff;border-left:4px solid #5683df;padding:12px 14px;border-radius:8px}
+.gw-return-note a{color:#154996;font-weight:800}
+.gw-handoff{margin:26px 0;padding:20px 23px;background:#f1f6ff;border:2px solid #b0c7eb;border-radius:23px}
+.gw-handoff h2{font:700 clamp(27px,3vw,36px)/1.12 "S14 Display",Arial,sans-serif;margin:0}
+.gw-handoff li{margin:8px 0}.gw-handoff code{overflow-wrap:anywhere}
+@media(max-width:650px){.gw-first-start{flex-direction:column;align-items:stretch;padding:17px}.gw-first-start .gw-button{width:100%}.gw-mini-plan{gap:6px}.gw-mini-plan .gw-plan-link{font-size:12px;padding:8px 9px}.gw-handoff{padding:17px}}
