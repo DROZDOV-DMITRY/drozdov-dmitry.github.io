@@ -11,6 +11,7 @@
 <script defer src="/school-ai-courses/assets/nav.js"></script>
 <script defer src="/school-ai-courses/assets/snow-trail.js"></script>
 <script defer src="publish.js"></script>
+<style>.gp-age-safety{border:2px solid #e3bb6a;border-radius:17px;background:#fff7df;color:#293d53;padding:15px 19px;margin:14px 0 19px}.gp-age-safety>strong{font-size:18px}.gp-age-safety p{margin:9px 0;line-height:1.5}.gp-age-safety details{border:1px solid #e2c791;background:#fff;padding:9px 12px;border-radius:12px;margin-top:9px}.gp-age-safety summary{color:#124e91;font-weight:800;cursor:pointer}.gp-age-safety summary:focus-visible{outline:3px solid #1d5da9;outline-offset:2px}.gp-age-safety a{color:#175597;font-weight:750}</style>
 </head>
 <body class="theme-web s14-student">
 <header class="topbar"><div class="wrap inner"><a class="brand" href="/school-ai-courses/tracks/web/"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt=""><span><b>КУРС ИИ</b> · Сайты</span></a><a class="gp-header-link" href="/school-ai-courses/tracks/web/">← Создать сайт</a></div></header>
@@ -24,6 +25,11 @@
 <section class="gp-intro" aria-label="Перед стартом">
 <h2>Перед началом</h2>
 <p>Подготовь папку со своим сайтом и файл <code>index.html</code>. Для регистрации и подтверждений понадобится доступ к электронной почте. Если аккаунт GitHub уже есть, регистрироваться заново не нужно.</p>
+<aside class="gp-age-safety" aria-label="Безопасная публикация для школьников"><strong>Сначала проверь, можно ли тебе создавать аккаунт.</strong>
+<p>По <a href="https://docs.github.com/en/site-policy/github-terms/github-terms-of-service" target="_blank" rel="noopener noreferrer">условиям GitHub</a>, личный аккаунт разрешён с <strong>13 лет</strong> (в некоторых странах минимальный возраст может быть выше). Для несовершеннолетних также нужны применимые разрешения родителей и правила школы.</p>
+<details><summary>Мне меньше 13 лет или регистрация запрещена — что делать?</summary><p><strong>Не регистрируйся и не пользуйся чужим аккаунтом.</strong> Оставь сайт в локальном файле <code>index.html</code>, открой его в браузере и покажи учителю. Если нужна публикация, попроси учителя организовать отдельно разрешённый способ, без передачи паролей. Можешь продолжать создавать и улучшать сайт без GitHub.</p></details>
+<details><summary>Мне можно создать аккаунт, но я пока не понимаю следующий шаг</summary><p>Не спеши: сначала подготовь <code>index.html</code> и доступ к собственной почте. Затем запусти ИИ-проводника ниже. Он должен вести по одному действию, не запрашивая паролей, кодов и личных данных. Публичный репозиторий и сайт видны всем; перед загрузкой удали персональные сведения.</p></details>
+</aside>
 <div class="gp-essentials"><span><strong>1.</strong> Файл сайта</span><span><strong>2.</strong> Доступ к почте</span><span><strong>3.</strong> Браузер Windows</span></div>
 </section>
 <section class="gp-agent" id="gp-start" aria-labelledby="gp-agent-title">
@@ -31,7 +37,9 @@
 <p>Скопируй роль проводника в ИИ-чат. Дальше выполняй по одному действию и отвечай ему «готово» или присылай скриншот. <strong>Продолжай в одном диалоге до публикации.</strong></p>
 <div class="gp-agree"><span>Проводник сначала сверяет свежую документацию GitHub для Windows и не использует устаревшие кнопки вслепую.</span></div>
 <label for="gp-role" class="gp-label">Инструкция для ИИ — можно читать и редактировать</label>
-<textarea id="gp-role" class="gp-editor" spellcheck="true" rows="11">Ты — «GitHub-Навигатор», ИИ-проводник ученика по публикации его первого сайта. Ученик работает в Windows через обычный браузер (чаще Microsoft Edge). GitHub может быть на английском. Ученик не знает Git, программирование, репозитории и Pages.
+<textarea id="gp-role" class="gp-editor" spellcheck="true" rows="11">ПЕРЕД РЕГИСТРАЦИЕЙ — ОБЯЗАТЕЛЬНЫЙ ДОПУСК: Спроси одним вопросом, может ли ученик по возрастным условиям GitHub (13 лет или более; местные требования могут быть строже), разрешениям родителей и школьным правилам пользоваться собственным аккаунтом. Не проси точную дату рождения или документ. Если возраст меньше допустимого, условия не выполнены или ученик не уверен, НЕ проводи регистрацию, не проси чужую учётную запись, не предлагай обход условий. Перейди к локальному HTML и показу результата учителю. Публикация только через отдельно согласованный взрослый/школьный маршрут. Публичные страницы видны всем, не допускай персональных данных ученика. Текущие условия проверяй по официальному GitHub Terms of Service.
+
+Ты — «GitHub-Навигатор», ИИ-проводник ученика по публикации его первого сайта. Ученик работает в Windows через обычный браузер (чаще Microsoft Edge). GitHub может быть на английском. Ученик не знает Git, программирование, репозитории и Pages.
 
 ЦЕЛЬ: довести ученика от локального файла index.html до работающей публичной ссылки на GitHub Pages, проверить, что открывается именно его сайт, а не страницу ошибки или README.
 
