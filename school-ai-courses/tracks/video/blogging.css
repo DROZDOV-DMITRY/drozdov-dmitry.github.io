@@ -57,3 +57,5 @@ html{scroll-behavior:smooth;scroll-padding-top:130px}
 .role-howto{font-size:14px;line-height:1.5;padding:10px 14px;background:#f1f6ff;border-radius:11px;border:1px solid #c7d7eb;color:#253e64}
 .role-sheet a[href^="#guide-"]{font-weight:750;color:#2256a3}
 @media(max-width:720px){.b1-context-steps{grid-template-columns:1fr}.b1-context-steps article{padding:15px}}
+
+.role-howto{margin:8px 0 15px!important}.role-howto a{font-weight:800;color:#204a91}.role-howto a:focus-visible{outline:3px solid #356bc3;outline-offset:3px}
