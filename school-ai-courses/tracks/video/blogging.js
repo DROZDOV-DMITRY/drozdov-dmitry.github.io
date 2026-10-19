@@ -102,67 +102,58 @@
     const prefix = 'Мои условия: работаю на ' + device + ', монтаж выполняю в ' + app + '. Мой текущий этап: ' + stage + '. Не начинай сначала, если этап уже завершён. Начни с проверки актуального экрана или попроси описание.';
     showRole('montage', prefix);
   });
-  document.querySelectorAll('[data-route]').forEach(btn => btn.addEventListener('click', () => {
-    const phone = btn.dataset.route === 'phone';
-    document.querySelectorAll('[data-route]').forEach(b => {
-      const selected = b === btn;
-      b.classList.toggle('is-active', selected);
-      b.setAttribute('aria-pressed', selected ? 'true' : 'false');
-    });
-    $('route-phone').hidden = !phone;
-    $('route-pc').hidden = phone;
-  }));
-  const cleanCode = (text, pattern, fallback) => pattern.test(text.trim()) ? text.trim() : fallback;
-  $('copy-max').addEventListener('click', function () {
-    const code = cleanCode($('t-project').value, /^[a-zA-Z0-9_-]{1,32}$/, 'PROJECT_ID_НЕ_УКАЗАН');
-    const ep = cleanCode($('t-episode').value, /^[a-zA-Z0-9_-]{1,16}$/, 'EP01');
-    const version = cleanCode($('t-version').value, /^v[0-9]{1,3}$/i, 'v01');
-    const status = $('t-status').value;
-    const message = `Курс ИИ · Блогинг\nКод проекта: ${code}\nНомер выпуска: ${ep}\nВерсия: ${version}\nФайл: ${ep}_${version}.mp4\nТекущий статус: ${$('t-status').selectedOptions[0].textContent}\nПроверено мной: MP4 открывается, начало/конец и звук на месте (подтверди только после фактической проверки).\nПожалуйста, подтвердите получение, скачивание и открытие правильной версии файла.`;
-    copy(message, this);
+  // Мини-мастерская истории: авторская попытка сохраняется только в текущем браузере.
+  const storyFields = () => ({
+    hook: $('story-hook').value.trim(),
+    body: $('story-body').value.trim(),
+    ending: $('story-ending').value.trim()
   });
-  function numberOrUnavailable(id) {
-    const val = $(id).value.trim();
-    if (!val) return 'Нет данных';
-    const n = Number(val);
-    return Number.isSafeInteger(n) && n >= 0 ? String(n) : 'Нет данных';
-  }
-  $('snapshot').addEventListener('click', function () {
-    const measured = $('a-measured').value.trim();
-    if (!measured) {setStatus(this, 'Укажи реальное время замера — оно обязательно для сопоставимой статистики.');$('a-measured').focus();return;}
-    const views = numberOrUnavailable('a-views');
-    const likes = numberOrUnavailable('a-likes');
-    const comments = numberOrUnavailable('a-comments');
-    const shares = numberOrUnavailable('a-shares');
-    const known = [likes,comments,shares].every(x => x !== 'Нет данных') && views !== 'Нет данных' && Number(views)>0;
-    const rate = known ? (((Number(likes)+Number(comments)+Number(shares))/Number(views))*100).toFixed(2) + '% (условная доля реакций, не универсальный рейтинг)' : 'Не рассчитано (нет сопоставимых чисел)';
-    const source = $('a-source').value.trim() || 'Нет данных';
-    const hypothesis = $('a-hypothesis').value.trim() || 'Не указано';
-    const doc = [
-      'Карточка статистики',
-      'Код проекта: ' + cleanCode($('t-project').value, /^[a-zA-Z0-9_-]{1,32}$/, 'Не указано'),
-      'Номер выпуска: ' + cleanCode($('t-episode').value, /^[a-zA-Z0-9_-]{1,16}$/, 'EP01'),
-      'Версия выпуска: ' + cleanCode($('t-version').value, /^v[0-9]{1,3}$/i, 'v01'),
-      'Площадка: ' + $('a-platform').selectedOptions[0].textContent,
-      'Время публикации: не указано',
-      'Время замера: ' + measured,
-      'Период: ' + $('a-window').selectedOptions[0].textContent,
-      'Источник: ' + source,
-      'Просмотры: ' + views, 'Охват: ' + numberOrUnavailable('a-reach'),
-      'Среднее время просмотра: нет данных', 'Удержание: нет данных',
-      'Лайки: ' + likes, 'Комментарии: ' + comments, 'Репосты: ' + shares,
-      'Сохранения: нет данных', 'Полезные действия: нет данных',
-      'Платное продвижение: неизвестно',
-      'Качество данных: ' + $('a-quality').selectedOptions[0].textContent,
-      'Условная доля реакций: ' + rate,
-      'Качество ролика: не описано',
-      'Гипотеза: ' + hypothesis,
-      'Наблюдение: требуется анализ',
-      'Ограничение: один замер не доказывает причину изменений',
-      'Изменение следующего выпуска: согласовать',
-      'Проверка учителя: требуется'
+  const buildStory = () => {
+    const s = storyFields();
+    const result = [
+      'МОЙ ЧЕРНОВИК ВИДЕО',
+      'HOOK / крючок: ' + (s.hook || 'Пока не придумал'),
+      'BODY / основная часть: ' + (s.body || 'Пока не придумал'),
+      'ENDING / концовка: ' + (s.ending || 'Пока не придумал'),
+      'Что снять: вместе с ИИ запланировать 5–8 реальных кадров и проверить свет, звук и безопасность.',
+      'Съёмка и монтаж позднее — на моём смартфоне.'
     ].join('\n');
-    $('snapshot-text').value = doc;
-    setStatus(this, 'Карточка собрана. Скопируй её и передай ИИ-аналитику.');
+    $('story-output').value = result;
+    return s;
+  };
+  $('story-build').addEventListener('click', function () {
+    const s = buildStory();
+    setStatus(this, s.hook && s.body && s.ending
+      ? 'План собран. Скопируй его и сохрани там, где откроешь со смартфона.'
+      : 'Черновик собран с пропусками. Можешь дописать свои идеи или обсудить их с ИИ.');
+  });
+  $('story-ai').addEventListener('click', () => {
+    const s = buildStory();
+    showRole('script',
+      'Мой собственный сценарный черновик (пустые поля означают, что я ещё не решил):\n' +
+      'HOOK: ' + (s.hook || 'пока нет') + '\n' +
+      'BODY: ' + (s.body || 'пока нет') + '\n' +
+      'ENDING: ' + (s.ending || 'пока нет') +
+      '\nПомоги улучшить три части, не подменяя мою идею. Спроси один вопрос, затем дождись ответа.');
+  });
+
+  // Платформенные подсказки: видны только материалы для выбранной площадки.
+  const analyticsGuide = () => {
+    const selected = $('analysis-platform').value;
+    document.querySelectorAll('[data-analysis-guide]').forEach(node => {
+      node.hidden = node.getAttribute('data-analysis-guide') !== selected;
+    });
+  };
+  $('analysis-platform').addEventListener('change', analyticsGuide);
+  analyticsGuide();
+  $('analysis-ai').addEventListener('click', () => {
+    const platform = $('analysis-platform').selectedOptions[0]?.textContent || 'Не указано';
+    const observation = $('analysis-observation').value.trim();
+    const hypothesis = $('analysis-hypothesis').value.trim();
+    showRole('analytics',
+      'Площадка: ' + platform + '\n' +
+      'Что я действительно видел: ' + (observation || 'данных пока нет') + '\n' +
+      'Моя предварительная гипотеза: ' + (hypothesis || 'ещё не сформулирована') + '\n' +
+      'Помоги найти реальные данные в моём приложении, не придумывай их. Потом обсуди со мной одно улучшение следующего ролика. Если не опубликовано — оцени качество HOOK–BODY–ENDING по моему описанию.');
   });
 })();

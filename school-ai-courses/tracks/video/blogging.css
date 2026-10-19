@@ -59,3 +59,33 @@ html{scroll-behavior:smooth;scroll-padding-top:130px}
 @media(max-width:720px){.b1-context-steps{grid-template-columns:1fr}.b1-context-steps article{padding:15px}}
 
 .role-howto{margin:8px 0 15px!important}.role-howto a{font-weight:800;color:#204a91}.role-howto a:focus-visible{outline:3px solid #356bc3;outline-offset:3px}
+
+
+/* Урок: наблюдения → HOOK / BODY / ENDING → съёмка с ИИ → осмысленный анализ. */
+.b1-lesson-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0 19px}
+.b1-lesson-grid article{min-width:0;background:#f1f5ff;border:1px solid #d0dcf4;border-radius:17px;padding:19px}
+.b1-lesson-grid article:nth-child(2){background:#f7f1ff;border-color:#dfd3f5}
+.b1-lesson-grid article:nth-child(3){background:#fff7ed;border-color:#eedecb}
+.b1-lesson-grid h3{font-family:"S14 Display","Segoe UI",sans-serif;font-size:21px;color:#1f3767;line-height:1.2;margin:8px 0 9px}
+.b1-lesson-grid p{color:#3d4c69;font-size:14px;line-height:1.55;margin:0}
+.b1-lesson-num{display:inline-flex;align-items:center;min-height:24px;font-size:12px;font-weight:900;letter-spacing:.06em;color:#3e5bad}
+.b1-example{margin-top:11px!important;border-top:1px solid #d7dcea;padding-top:10px}
+.b1-tip{padding:17px 19px;border-radius:16px;border-left:4px solid #4d70c8;background:#eff4ff;color:#243e6c;font-size:15px;line-height:1.58;margin:13px 0 22px}
+.b1-story-fields{display:grid;grid-template-columns:1fr;gap:14px;margin:18px 0}
+.b1-story-fields label{display:flex;flex-direction:column;gap:7px;font-size:15px;font-weight:850;color:#2d4674}
+.b1-story-fields textarea{width:100%;min-width:0;font-weight:400}
+.b1-story-fields textarea::placeholder{color:#6b7690}
+.b1-learning>h3{font-family:"S14 Display","Segoe UI",sans-serif;font-size:25px;color:#213961;margin-top:22px}
+.b1-phase{margin:24px 0 12px;display:flex;flex-direction:column;gap:5px;background:#eaf0ff;border-left:4px solid #4568bb;padding:13px 17px;border-radius:13px}
+.b1-phase strong{font-weight:900;color:#253f77}
+.b1-phase span{font-size:14px;color:#495a7a}
+.b1-analytics-guides{margin:15px 0 21px}
+.b1-analytics-guides article{background:#f2f6ff;border:1px solid #cbd8ef;border-radius:16px;padding:18px 20px}
+.b1-analytics-guides article[hidden]{display:none!important}
+.b1-analytics-guides h3{font-family:"S14 Display","Segoe UI",sans-serif;font-size:22px;margin:0 0 8px;color:#223b72}
+.b1-analytics-guides p{font-size:15px;line-height:1.57;margin:8px 0;color:#3c4d70}
+.b1-analytics-guides a{font-weight:800;color:#2455a5}
+.b1-learning [id^="story-"],.b1-learning #analysis-platform{max-width:100%}
+.b1-learning a:focus-visible,.b1-learning button:focus-visible{outline:3px solid #1d67d2;outline-offset:3px}
+@media(max-width:800px){.b1-lesson-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:550px){.b1-lesson-grid{grid-template-columns:1fr}.b1-lesson-grid article{padding:16px}.b1-tip{padding:14px}.b1-analytics-guides article{padding:15px}}
