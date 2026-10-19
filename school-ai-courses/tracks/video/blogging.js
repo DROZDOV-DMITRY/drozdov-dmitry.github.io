@@ -36,7 +36,10 @@
     opener = document.activeElement;
     $('role-title').textContent = role.title;
     $('role-description').textContent = role.description;
-    $('role-output').textContent = 'Ожидаемый результат: ' + role.output + '. Если работа уже началась, приложи свой BLOG_PROJECT_BRIEF и SESSION_HANDOFF.';
+    $('role-output').textContent = 'После работы с этим ИИ получится: «' + role.output + '».';
+    $('role-howto').textContent = key === 'interview'
+      ? 'Первый шаг: ответь на вопросы и утверди тему. ИИ составит «Паспорт проекта». Раньше искать его нигде не нужно.'
+      : 'Продолжаешь проект? ИИ может опираться на твой «Паспорт проекта» и «Заметку для продолжения». Если их ещё нет, начни с интервью или расскажи о своей идее.';
     $('role-prompt').value = prefix ? prefix + '\n\n' + role.prompt : role.prompt;
     $('role-feedback').textContent = '';
     dialog.hidden = false;
@@ -65,13 +68,23 @@
     const brief = $('brief').value.trim();
     const handoff = $('handoff').value.trim();
     if (!brief && !handoff) {
-      $('role-feedback').textContent = 'Сначала вставь утверждённое ТЗ или состояние проекта в поля выше.';
+      if(currentRole === 'interview') { copy($('role-prompt').value, this, $('role-prompt')); return; }
+      $('role-feedback').textContent = 'Записей пока нет. Сначала получи «Паспорт проекта» у ИИ-интервьюера или нажми «Скопировать роль» без записей.';
       return;
     }
     const prompt = $('role-prompt').value + '\n\nМОЙ УТВЕРЖДЁННЫЙ КОНТЕКСТ (не меняй без моего решения):\n' +
-      (brief ? '\nBLOG_PROJECT_BRIEF:\n' + brief : '') +
-      (handoff ? '\nSESSION_HANDOFF:\n' + handoff : '');
-    copy(prompt, this).then(ok => { $('role-feedback').textContent = ok ? 'Роль вместе с ТЗ скопирована.' : 'Не удалось скопировать; используй обычное копирование роли и отдельно ТЗ.'; });
+      (brief ? '\nПаспорт проекта:\n' + brief : '') +
+      (handoff ? '\nЗаметка для продолжения:\n' + handoff : '');
+    copy(prompt, this).then(ok => { $('role-feedback').textContent = ok ? 'Роль с твоими записями скопирована.' : 'Не удалось скопировать; скопируй роль и записи отдельно.'; });
+  });
+  dialog.querySelectorAll('[data-role-help-link]').forEach(link=>link.addEventListener('click',e=>{
+    e.preventDefault();const target=link.getAttribute('href');closeRole();
+    if(target){location.hash=target;document.querySelector(target)?.scrollIntoView({block:'start'});}
+  }));
+  $('copy-note-request').addEventListener('click',async function(){
+    const prompt='Составь для меня «Заметку для продолжения» по нашей реальной переписке. Коротко перечисли: 1) что я решил; 2) что действительно сделал; 3) чем помог ИИ; 4) что осталось проверить; 5) одно следующее действие. Не придумывай выполненных шагов. Не включай персональные данные. Я сохраню ответ для нового чата.';
+    const ok=await copy(prompt,this);
+    $('note-copy-status').textContent=ok?'Просьба скопирована. Вставь её в тот же ИИ-чат, затем ответ ИИ — в поле ниже.':'Выдели и скопируй текст из подсказки: «Составь заметку для продолжения: что сделал, что проверить, что дальше».';
   });
   $('role-chat').addEventListener('click', () => {
     const b = $('s14QuickChatTop') || $('s14QuickChat');
@@ -105,14 +118,14 @@
     const ep = cleanCode($('t-episode').value, /^[a-zA-Z0-9_-]{1,16}$/, 'EP01');
     const version = cleanCode($('t-version').value, /^v[0-9]{1,3}$/i, 'v01');
     const status = $('t-status').value;
-    const message = `Курс ИИ · Блогинг\nPROJECT_ID: ${code}\nEPISODE_ID: ${ep}\nVERSION: ${version}\nФайл: ${ep}_${version}.mp4\nСтатус до получения учителем: ${status === 'RECEIVED_VERIFIED' ? 'RECEIVED_VERIFIED (уже подтверждено)' : status}\nПроверено мной: MP4 открывается, начало/конец и звук на месте (подтверди только после фактической проверки).\nПожалуйста, подтвердите получение, скачивание и открытие правильной версии файла.`;
+    const message = `Курс ИИ · Блогинг\nКод проекта: ${code}\nНомер выпуска: ${ep}\nВерсия: ${version}\nФайл: ${ep}_${version}.mp4\nСтатус до получения учителем: ${$('t-status').selectedOptions[0].textContent}\nПроверено мной: MP4 открывается, начало/конец и звук на месте (подтверди только после фактической проверки).\nПожалуйста, подтвердите получение, скачивание и открытие правильной версии файла.`;
     copy(message, this);
   });
   function numberOrUnavailable(id) {
     const val = $(id).value.trim();
-    if (!val) return 'NOT_AVAILABLE';
+    if (!val) return 'Нет данных';
     const n = Number(val);
-    return Number.isSafeInteger(n) && n >= 0 ? String(n) : 'NOT_AVAILABLE';
+    return Number.isSafeInteger(n) && n >= 0 ? String(n) : 'Нет данных';
   }
   $('snapshot').addEventListener('click', function () {
     const measured = $('a-measured').value.trim();
@@ -121,33 +134,33 @@
     const likes = numberOrUnavailable('a-likes');
     const comments = numberOrUnavailable('a-comments');
     const shares = numberOrUnavailable('a-shares');
-    const known = [likes,comments,shares].every(x => x !== 'NOT_AVAILABLE') && views !== 'NOT_AVAILABLE' && Number(views)>0;
-    const rate = known ? (((Number(likes)+Number(comments)+Number(shares))/Number(views))*100).toFixed(2) + '% (условная доля реакций, не универсальный рейтинг)' : 'NOT_CALCULATED (нет сопоставимых исходных чисел)';
-    const source = $('a-source').value.trim() || 'NOT_AVAILABLE';
-    const hypothesis = $('a-hypothesis').value.trim() || 'NOT_SET';
+    const known = [likes,comments,shares].every(x => x !== 'Нет данных') && views !== 'Нет данных' && Number(views)>0;
+    const rate = known ? (((Number(likes)+Number(comments)+Number(shares))/Number(views))*100).toFixed(2) + '% (условная доля реакций, не универсальный рейтинг)' : 'Не рассчитано (нет сопоставимых чисел)';
+    const source = $('a-source').value.trim() || 'Нет данных';
+    const hypothesis = $('a-hypothesis').value.trim() || 'Не указано';
     const doc = [
-      'BLOG_ANALYTICS_SNAPSHOT v1',
-      'PROJECT_ID: ' + cleanCode($('t-project').value, /^[a-zA-Z0-9_-]{1,32}$/, 'NOT_SET'),
-      'EPISODE_ID: ' + cleanCode($('t-episode').value, /^[a-zA-Z0-9_-]{1,16}$/, 'EP01'),
-      'EPISODE_VERSION: ' + cleanCode($('t-version').value, /^v[0-9]{1,3}$/i, 'v01'),
-      'PLATFORM: ' + $('a-platform').value,
-      'POSTED_AT: NOT_PROVIDED',
-      'MEASURED_AT: ' + measured,
-      'WINDOW_LABEL: ' + $('a-window').value,
-      'DATA_SOURCE: ' + source,
-      'VIEWS: ' + views, 'REACH: ' + numberOrUnavailable('a-reach'),
-      'AVG_WATCH_TIME: NOT_AVAILABLE', 'RETENTION_OR_COMPLETION: NOT_AVAILABLE',
-      'LIKES: ' + likes, 'COMMENTS_COUNT: ' + comments, 'SHARES: ' + shares,
-      'SAVES: NOT_AVAILABLE', 'USEFUL_ACTIONS: NOT_AVAILABLE',
-      'PAID_PROMOTION: UNKNOWN',
-      'DATA_QUALITY: ' + $('a-quality').value,
-      'INTERPRETIVE_REACTIONS_SHARE: ' + rate,
-      'CONTENT_QUALITY_NOTE: NOT_RECORDED',
-      'HYPOTHESIS_BEFORE_RELEASE: ' + hypothesis,
-      'OBSERVATION: TO_BE_INTERPRETED',
-      'UNCERTAINTY: single snapshot cannot prove causal effect',
-      'CHANGE_FOR_NEXT_EPISODE: TO_BE_AGREED',
-      'TEACHER_REVIEW: REQUIRED'
+      'Карточка статистики',
+      'Код проекта: ' + cleanCode($('t-project').value, /^[a-zA-Z0-9_-]{1,32}$/, 'Не указано'),
+      'Номер выпуска: ' + cleanCode($('t-episode').value, /^[a-zA-Z0-9_-]{1,16}$/, 'EP01'),
+      'Версия выпуска: ' + cleanCode($('t-version').value, /^v[0-9]{1,3}$/i, 'v01'),
+      'Площадка: ' + $('a-platform').selectedOptions[0].textContent,
+      'Время публикации: не указано',
+      'Время замера: ' + measured,
+      'Период: ' + $('a-window').selectedOptions[0].textContent,
+      'Источник: ' + source,
+      'Просмотры: ' + views, 'Охват: ' + numberOrUnavailable('a-reach'),
+      'Среднее время просмотра: нет данных', 'Удержание: нет данных',
+      'Лайки: ' + likes, 'Комментарии: ' + comments, 'Репосты: ' + shares,
+      'Сохранения: нет данных', 'Полезные действия: нет данных',
+      'Платное продвижение: неизвестно',
+      'Качество данных: ' + $('a-quality').value,
+      'Условная доля реакций: ' + rate,
+      'Качество ролика: не описано',
+      'Гипотеза: ' + hypothesis,
+      'Наблюдение: требуется анализ',
+      'Ограничение: один замер не доказывает причину изменений',
+      'Изменение следующего выпуска: согласовать',
+      'Проверка учителя: требуется'
     ].join('\n');
     $('snapshot-text').value = doc;
     setStatus(this, 'Карточка собрана. Скопируй её и передай ИИ-аналитику.');

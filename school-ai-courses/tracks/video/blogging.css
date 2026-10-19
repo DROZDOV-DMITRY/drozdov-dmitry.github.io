@@ -44,3 +44,16 @@ html{scroll-behavior:smooth;scroll-padding-top:130px}
 .b1-page .brand{display:inline-flex;align-items:center;gap:8px;font-weight:900;font-size:15px;text-decoration:none;color:#1b3666}
 .b1-page .brand b{font-weight:950;color:#3459b8}
 .b1-page .s14-brand-logo{display:block;object-fit:contain}
+
+/* Human-logic gate: concise, in-context guidance for portable project notes */
+.b1-context-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0 24px}
+.b1-context-steps article{min-width:0;padding:17px 19px;background:#eff5ff;border:1px solid #c0d2ef;border-radius:18px}
+.b1-context-steps article:nth-child(2){background:#f5f0ff;border-color:#d4c5ee}
+.b1-context-steps h3{font-family:"S14 Display",Arial,sans-serif;color:#19376a;font-size:23px;margin:5px 0 8px}
+.b1-context-steps p{font-size:14px;line-height:1.52;color:#354c6b;margin:7px 0 10px}
+.b1-context-steps .btn{white-space:normal;margin-top:5px}
+.context-number{font-size:12px;font-weight:950;color:#5d6aaf;letter-spacing:.12em}
+#guide-passport,#guide-note{scroll-margin-top:135px}
+.role-howto{font-size:14px;line-height:1.5;padding:10px 14px;background:#f1f6ff;border-radius:11px;border:1px solid #c7d7eb;color:#253e64}
+.role-sheet a[href^="#guide-"]{font-weight:750;color:#2256a3}
+@media(max-width:720px){.b1-context-steps{grid-template-columns:1fr}.b1-context-steps article{padding:15px}}
