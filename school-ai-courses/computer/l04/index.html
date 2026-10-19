@@ -66,7 +66,7 @@
 <span class="status-badge">Мне это легко · экспресс-проверка ≈ 3 минуты</span>
 <h2>Сформулируй запрос без шаблона</h2>
 <p><b>Ситуация:</b> у тебя ноутбук с Windows, в броузер Edge сайт видит камеру, но не слышит микрофон. Ты уже обновил страницу — ничего не изменилось.</p>
-<textarea id="fastPrompt" class="fast-area" placeholder="Напиши запрос к ИИ одним сообщением"></textarea>
+<textarea id="fastPrompt" class="fast-area" placeholder="Напиши запрос к ИИ одним сообщением" aria-label="Первый самостоятельный запрос к ИИ"></textarea>
 <div class="actions"><button id="checkFast" type="button">Проверить запрос</button><a class="secondary" href="#normalRoute">Не уверен → обычный урок</a></div>
 <div id="fastStatus" class="status">Проверка ещё не выполнена.</div>
 <p class="micro">Автопроверка ищет четыре обязательных элемента по ключевым словам. Она не оценивает качество мысли и не заменяет самопроверку.</p>
@@ -78,7 +78,7 @@
 </div>
 <div id="fastFollowup" hidden>
   <div class="l4-task"><b>Вторая часть экспресс-проверки.</b> Представь, что ИИ ответил: «Проверь, разрешён ли микрофон для этого сайта». Ты проверил: разрешение уже включено, но сайт всё равно не слышит микрофон. Напиши, что отправишь ИИ дальше.</div>
-  <textarea id="fastResultText" class="fast-area" placeholder="Сообщи результат действия и попроси следующий один шаг"></textarea>
+  <textarea id="fastResultText" class="fast-area" placeholder="Сообщи результат действия и попроси следующий один шаг" aria-label="Сообщение о результате после самостоятельной попытки"></textarea>
   <div class="actions"><button id="checkFastResult" type="button">Проверить продолжение</button></div>
   <div id="fastResultStatus" class="status">Вторая часть ещё не выполнена.</div>
 </div>
@@ -112,12 +112,12 @@
 <p>Не начинай с догадки «сломался драйвер». Сначала опиши то, что реально видишь.</p>
 <div class="safe-scenario"><b>Ситуация:</b> ноутбук с Windows; броузер Edge; сайт открывается; камера работает; микрофон на странице недоступен; обновление страницы не помогло.</div>
 <div class="builder">
-<label>Устройство<input id="device" placeholder="например: ноутбук" autocomplete="off"></label>
-<label>Система<input id="system" placeholder="например: Windows" autocomplete="off"></label>
-<label>Программа<input id="program" placeholder="например: броузер Edge" autocomplete="off"></label>
-<label>Что наблюдаешь<textarea id="symptom" placeholder="только наблюдаемый симптом, без догадки о причине"></textarea></label>
-<label>Что уже попробовал<input id="tried" placeholder="одно уже выполненное действие и его результат" autocomplete="off"></label>
-<label>Что просишь у ИИ<input id="request" placeholder="попроси одно безопасное следующее действие" autocomplete="off"></label>
+<label>Устройство<input id="device" placeholder="например: ноутбук" autocomplete="off" aria-label="Тип устройства"></label>
+<label>Система<input id="system" placeholder="например: Windows" autocomplete="off" aria-label="Операционная система"></label>
+<label>Программа<input id="program" placeholder="например: броузер Edge" autocomplete="off" aria-label="Название программы"></label>
+<label>Что наблюдаешь<textarea id="symptom" placeholder="только наблюдаемый симптом, без догадки о причине" aria-label="Наблюдаемый симптом"></textarea></label>
+<label>Что уже попробовал<input id="tried" placeholder="одно уже выполненное действие и его результат" autocomplete="off" aria-label="Что уже пробовал и какой был результат"></label>
+<label>Что просишь у ИИ<input id="request" placeholder="попроси одно безопасное следующее действие" autocomplete="off" aria-label="Какое действие просишь предложить ИИ"></label>
 <div class="actions"><button id="buildPrompt" type="button">Собрать запрос</button></div>
 <div id="promptPreview" class="prompt-preview">Нажми «Собрать запрос».</div>
 </div>
@@ -140,7 +140,7 @@
   <div>1. Спросил</div><div>2. Получил один шаг</div><div>3. Выполнил</div><div>4. Сообщил результат</div>
 </div>
 <p>ИИ не видит, что случилось после его совета. Эту информацию должен вернуть ты.</p>
-<textarea id="resultText" class="result-area" placeholder="Например: Открыл разрешения сайта. Микрофон уже стоял «Разрешить», проблема не исчезла. Что проверить следующим одним шагом?"></textarea>
+<textarea id="resultText" class="result-area" placeholder="Например: Открыл разрешения сайта. Микрофон уже стоял «Разрешить», проблема не исчезла. Что проверить следующим одним шагом?" aria-label="Что получилось после совета ИИ"></textarea>
 <div class="actions"><button id="checkResult" type="button">Проверить сообщение</button></div>
 <div id="resultStatus" class="status">Проверка ещё не выполнена.</div>
 <p class="micro">Это приблизительная проверка структуры сообщения. Главное — фактически сообщить, что изменилось после выполненного действия.</p>

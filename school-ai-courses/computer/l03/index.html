@@ -68,7 +68,7 @@
   <div class="fake-error"><strong>Не удалось открыть файл</strong><p>Приложение сообщает: <code>ERR_FILE_DEMO</code></p></div>
   <div class="fake-secret"><strong>УЧЕБНЫЙ СЕКРЕТ</strong><p>Этот блок нельзя отправлять.</p></div>
 </div>
-<div id="fastPaste" class="paste-zone" contenteditable="true" tabindex="0">Щёлкни сюда и нажми Ctrl+V</div>
+<div id="fastPaste" class="paste-zone" contenteditable="true" tabindex="0" role="textbox" aria-label="Вставить учебный скриншот: fastPaste" aria-multiline="false">Щёлкни сюда и нажми Ctrl+V</div>
 <div id="fastResult" class="check-result">Проверка ещё не выполнена.</div>
 <div class="actions"><a href="#fastChallenge" id="fastPassLink" hidden>Снимок безопасный → дополнительное испытание</a><a class="secondary" href="#normalRoute">Не получилось → обычный урок</a></div>
 <p class="micro">Автопроверка приблизительная. Перед отправкой изображения всегда проверяй его глазами.</p>
@@ -108,7 +108,7 @@
 <article class="l3-card" style="margin-top:18px">
 <h2><span class="task-headline"><span class="task-main">3. Вставь и проверь</span><span class="task-sub">сначала посмотри сам, потом отправляй</span></span></h2>
 <p>Щёлкни ниже и нажми <b>Ctrl+V</b>. Проверка выполняется локально в браузере.</p>
-<div id="practicePaste" class="paste-zone" contenteditable="true" tabindex="0">Вставь сюда скриншот</div>
+<div id="practicePaste" class="paste-zone" contenteditable="true" tabindex="0" role="textbox" aria-label="Вставить учебный скриншот: practicePaste" aria-multiline="false">Вставь сюда скриншот</div>
 <div id="practiceResult" class="check-result">Проверка ещё не выполнена.</div>
 <div class="safe-note" style="margin-top:12px"><b>Перед отправкой:</b> проблема видна? лишние окна не попали? секретных данных нет?</div>
 <span class="l3-time">13:00–21:00</span>
@@ -119,9 +119,9 @@
 <h2><span class="task-headline"><span class="task-main">4. Передай проблему ИИ</span><span class="task-sub">скриншот + короткое понятное описание</span></span></h2>
 <div class="mentor-sim">
 <p><b>Учебный тренажёр.</b> Изображение никуда не отправляется. Он имитирует будущий встроенный ИИ сайта.</p>
-<div id="mentorPaste" class="paste-zone" contenteditable="true" tabindex="0">1. Вставь сюда безопасный скриншот</div>
+<div id="mentorPaste" class="paste-zone" contenteditable="true" tabindex="0" role="textbox" aria-label="Вставить учебный скриншот: mentorPaste" aria-multiline="false">1. Вставь сюда безопасный скриншот</div>
 <div id="mentorPasteResult" class="check-result">Снимок ещё не проверен.</div>
-<textarea id="mentorPrompt" placeholder="2. Устройство + что произошло + просьба дать одно следующее действие"></textarea>
+<textarea id="mentorPrompt" placeholder="2. Устройство + что произошло + просьба дать одно следующее действие" aria-label="Составь запрос к ИИ по наблюдаемой проблеме"></textarea>
 <div class="actions"><button id="mentorAsk" type="button">Спросить ИИ</button></div>
 <div id="mentorReply" class="mentor-reply"></div>
 <p class="micro">Это учебная имитация. Здесь ничего не отправляется во внешний сервис.</p>
@@ -136,7 +136,7 @@
   <div class="fake-error"><strong>Микрофон недоступен</strong><p><code>MIC_PERMISSION_DEMO</code></p></div>
   <div class="fake-secret"><strong>УЧЕБНЫЙ СЕКРЕТ</strong><p>Этот блок нельзя отправлять.</p></div>
 </div>
-<div id="finalPaste" class="paste-zone" contenteditable="true" tabindex="0">Вставь сюда финальный скриншот</div>
+<div id="finalPaste" class="paste-zone" contenteditable="true" tabindex="0" role="textbox" aria-label="Вставить учебный скриншот: finalPaste" aria-multiline="false">Вставь сюда финальный скриншот</div>
 <div id="finalResult" class="check-result">Проверка ещё не выполнена.</div>
 <div class="l3-task"><b>Условия:</b> проблема видна, секретный блок не виден. После проверки сформулируй одним предложением вопрос будущему ИИ.<br><span class="l3-time">29:00–40:00</span></div>
 <button class="done" data-step="5" type="button">○ Урок завершён</button>
@@ -150,9 +150,9 @@
   <div class="mock-pane chat"><strong>MAX · учебный макет</strong><p>Личная переписка не нужна для диагностики.</p></div>
   <div class="mock-pane secret"><strong>Вход</strong><p>Секретный блок нельзя отправлять.</p></div>
 </div>
-<div id="fastChallengePaste" class="paste-zone" contenteditable="true" tabindex="0">Вставь сюда снимок</div>
+<div id="fastChallengePaste" class="paste-zone" contenteditable="true" tabindex="0" role="textbox" aria-label="Вставить учебный скриншот: fastChallengePaste" aria-multiline="false">Вставь сюда снимок</div>
 <div id="fastChallengeResult" class="check-result">Проверка ещё не выполнена.</div>
-<textarea id="fastChallengePrompt" class="fast-prompt" placeholder="Одним предложением: что спросишь у ИИ?"></textarea>
+<textarea id="fastChallengePrompt" class="fast-prompt" placeholder="Одним предложением: что спросишь у ИИ?" aria-label="Самостоятельный запрос к ИИ"></textarea>
 <p><b>После проверки закрой временные окна и удали сохранённый временный скриншот, если создавал его как файл.</b></p><button class="done" data-fast="1" type="button">○ Дополнительное испытание выполнено</button>
 </article>
 

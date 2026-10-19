@@ -51,7 +51,7 @@
 <div class="envbox"><b>До старта:</b> на телефоне и ПК уже открыт один и тот же законный профиль MAX, а преподаватель заранее указал безопасный чат <b>«Учебный Урок 10»</b>. Вход, установка, QR-коды и коды подтверждения в экспресс-проверке не выполняются.</div>
 <div class="phrase" id="fastPhrase">Сегодня MAX связывает мой телефон и компьютер. Код 47.</div>
 <p>На телефоне введи эту фразу <b>голосом</b> в поле сообщения MAX, глазами проверь распознанный текст и исправь ошибку, если она есть. Отправь. На ПК открой тот же чат, скопируй пришедшее сообщение и вставь ниже.</p>
-<textarea id="fastTransfer" class="transfer-box" placeholder="Вставь сюда текст, скопированный из MAX на ПК"></textarea>
+<textarea id="fastTransfer" class="transfer-box" placeholder="Вставь сюда текст, скопированный из MAX на ПК" aria-label="Текст из MAX на компьютере — экспресс-задание"></textarea>
 <div class="checks">
 <label><input id="fastVoice" type="checkbox"> Текст на телефоне появился через голосовой ввод, а не был набран целиком вручную.</label>
 <label><input id="fastChecked" type="checkbox"> Перед отправкой я прочитал распознанный текст и проверил смысл.</label>
@@ -108,7 +108,7 @@
 <article class="l9-card" style="margin-top:18px">
 <h2>4. Забери текст из MAX в рабочее поле</h2>
 <p>На ПК выдели текст сообщения в MAX, скопируй его и вставь в поле ниже. Копирование и вставка тебе уже знакомы; здесь важно провести один и тот же текст от телефона до рабочего поля на ПК.</p>
-<textarea id="practiceTransfer" class="transfer-box" placeholder="Вставь текст из MAX на ПК"></textarea>
+<textarea id="practiceTransfer" class="transfer-box" placeholder="Вставь текст из MAX на ПК" aria-label="Учебный текст из MAX на компьютере"></textarea>
 <div class="actions"><button id="checkPractice" type="button">Проверить перенос</button></div>
 <div id="practiceStatus" class="status">Пока не проверено.</div>
 <p class="micro">Проверка ищет ключевые слова, а не идеальную пунктуацию. Если диктовка исказила смысл — исправь текст на телефоне до отправки и повтори.</p>
@@ -123,7 +123,7 @@
 <div class="phrase" id="finalPhrase">Завтра я продолжу работу на компьютере. Метка 82.</div>
 <p>Используй голосовой ввод, сам проверь распознавание до отправки, найди сообщение на ПК, скопируй его и вставь ниже. Учитель не должен диктовать клики.</p>
 </div>
-<textarea id="finalTransfer" class="transfer-box" placeholder="Вставь финальный текст, скопированный из MAX на ПК"></textarea>
+<textarea id="finalTransfer" class="transfer-box" placeholder="Вставь финальный текст, скопированный из MAX на ПК" aria-label="Итоговый текст из MAX на компьютере"></textarea>
 <div class="checks">
 <label><input id="finalVoice" type="checkbox"> Финальный текст на смартфоне был введён голосом.</label>
 <label><input id="finalChecked" type="checkbox"> Я проверил распознавание до отправки.</label>
@@ -141,8 +141,8 @@
 <p>Без ИИ передай голосом через MAX фразу <b>«Рабочая среда продолжается на другом устройстве. Метка 63.»</b>, получи её на ПК и вставь в поле.</p>
 <p>После переноса объясни одной фразой: что сделал смартфон, что сделал MAX и что сделал компьютер.</p>
 </div>
-<textarea id="fcTransfer" class="transfer-box" placeholder="Вставь текст, скопированный из MAX на ПК"></textarea>
-<textarea id="fcExplain" class="transfer-box" placeholder="Одной фразой: что сделал смартфон, что сделал MAX и что сделал компьютер"></textarea>
+<textarea id="fcTransfer" class="transfer-box" placeholder="Вставь текст, скопированный из MAX на ПК" aria-label="Текст дополнительного задания из MAX"></textarea>
+<textarea id="fcExplain" class="transfer-box" placeholder="Одной фразой: что сделал смартфон, что сделал MAX и что сделал компьютер" aria-label="Объясни путь текста: телефон, MAX, компьютер"></textarea>
 <div class="checks"><label><input id="fcVoice" type="checkbox"> Голосовой ввод использован и текст проверен до отправки.</label></div>
 <div class="actions"><button id="checkFc" type="button">Проверить Дополнительное испытание</button></div>
 <div id="fcStatus" class="status">Нужны перенесённый текст, объяснение цепочки и подтверждение голосового ввода.</div>
