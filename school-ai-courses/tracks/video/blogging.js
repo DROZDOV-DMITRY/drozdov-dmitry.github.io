@@ -100,14 +100,6 @@
     $('route-pc').hidden = phone;
   }));
   const cleanCode = (text, pattern, fallback) => pattern.test(text.trim()) ? text.trim() : fallback;
-  $('copy-max').addEventListener('click', function () {
-    const code = cleanCode($('t-project').value, /^[a-zA-Z0-9_-]{1,32}$/, 'PROJECT_ID_НЕ_УКАЗАН');
-    const ep = cleanCode($('t-episode').value, /^[a-zA-Z0-9_-]{1,16}$/, 'EP01');
-    const version = cleanCode($('t-version').value, /^v[0-9]{1,3}$/i, 'v01');
-    const status = $('t-status').value;
-    const message = `Курс ИИ · Блогинг\nPROJECT_ID: ${code}\nEPISODE_ID: ${ep}\nVERSION: ${version}\nФайл: ${ep}_${version}.mp4\nСтатус до получения учителем: ${status === 'RECEIVED_VERIFIED' ? 'RECEIVED_VERIFIED (уже подтверждено)' : status}\nПроверено мной: MP4 открывается, начало/конец и звук на месте (подтверди только после фактической проверки).\nПожалуйста, подтвердите получение, скачивание и открытие правильной версии файла.`;
-    copy(message, this);
-  });
   function numberOrUnavailable(id) {
     const val = $(id).value.trim();
     if (!val) return 'NOT_AVAILABLE';
