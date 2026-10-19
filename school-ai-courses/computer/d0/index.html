@@ -65,7 +65,7 @@
 <h2>Печать</h2>
 <p>Открой короткий тест и две минуты печатай текст максимально точно. Ошибки исправлять можно.</p>
 <div class="d0-taskbox"><b>После теста вернись сюда.</b> На экране останется только нейтральный результат: сколько символов ты успел набрать и сколько ошибок осталось.</div>
-<div class="d0-actions"><a href="/school-ai-courses/computer/d0/typing/">Открыть тест печати</a></div>
+<div class="d0-actions"><a href="/school-ai-courses/computer/d0/typing/">Открыть тест печати</a></div><p id="d0TypingSummary" role="status">После теста печати здесь появится результат, если браузер разрешает локальное сохранение.</p>
 <div class="d0-actions d0-result-actions">
 <button type="button" data-result="done">Готово</button>
 <button type="button" class="notdone" data-result="notdone">Не получилось</button>
@@ -86,7 +86,7 @@
 <article class="d0-stage" data-stage="3" hidden>
 <div class="d0-step-top"><span class="d0-step-num">3</span><span>≈ 7 минут</span></div>
 <h2>Папка и файлы</h2>
-<p>На Рабочем столе создай папку со своим именем.</p>
+<p>На Рабочем столе создай учебную папку <b>«Практика-D0»</b>. Имя и фамилия не нужны.</p>
 <p>Скачай с этой страницы два учебных файла: текст и картинку. Помести оба файла в свою папку. Текст переименуй в <b>Памятка</b>. Картинку удали, затем верни её из Корзины.</p>
 <div class="d0-actions">
 <a href="/school-ai-courses/computer/d0/files/Учебный_текст.txt" download="Учебный_текст.txt">Скачать текст</a>
@@ -150,8 +150,8 @@
 <article class="d0-final" id="d0Final" hidden>
 <span class="status-badge">Диагностика завершена</span>
 <h2>Готово</h2>
-<p>Покажи свою папку преподавателю.</p>
-<div class="d0-actions" style="justify-content:center"><a class="secondary" href="/school-ai-courses/computer/">← Учебник</a></div>
+<p>Покажи учебную папку преподавателю. «Готово» и «Не получилось» — отметки о попытках, а не автоматическая оценка навыка.</p>
+<div class="d0-actions" style="justify-content:center"><a class="secondary" href="/school-ai-courses/computer/">← Учебник</a><button type="button" class="secondary" id="d0Restart">Начать новую попытку</button></div>
 </article>
 </div>
 </div></section>
@@ -180,19 +180,12 @@
   const historyEl=document.getElementById('d0History');
   let state={started:false,current:1,results:{}};
   const params=new URLSearchParams(location.search);
-  const forceRestart=params.get('restart')==='1';
-  if(forceRestart){
-    try{localStorage.removeItem(key)}catch(_){}
-    params.delete('restart');
-    const qs=params.toString();
-    window.history.replaceState(null,'',location.pathname+(qs?'?'+qs:'')+location.hash);
-  }else{
-    try{state={...state,...JSON.parse(localStorage.getItem(key)||'{}')}}catch(_){}
-  }
+  if(params.has('restart')){params.delete('restart');const qs=params.toString();history.replaceState(null,'',location.pathname+(qs?'?'+qs:'')+location.hash);}
+  try{state={...state,...JSON.parse(localStorage.getItem(key)||'{}')}}catch(_){}
   if(!Number.isInteger(state.current)||state.current<1||state.current>8)state.current=1;
   if(!state.results||typeof state.results!=='object')state.results={};
 
-  function save(){localStorage.setItem(key,JSON.stringify(state))}
+  function save(){try{localStorage.setItem(key,JSON.stringify(state))}catch(_){}}
   function setAiVisible(visible){
     const apply=()=>{
       const top=document.getElementById('s14QuickChatTop');
@@ -208,6 +201,14 @@
     intro.hidden=state.started;
     run.hidden=!state.started;
     const current=state.current;
+    const summary=document.getElementById('d0TypingSummary');
+    if(summary){
+      let typing=null;
+      try{typing=JSON.parse(localStorage.getItem('s14:d0:typing:v2')||'null')}catch(_){}
+      summary.textContent=typing&&Number.isFinite(typing.symbols_per_minute)&&Number.isFinite(typing.errors)
+        ?'Результат печати: '+typing.symbols_per_minute+' символов в минуту; ошибок осталось '+typing.errors+'. Это не оценка.'
+        :'Вернись сюда после печати. Результат появится, если браузер разрешает локальное сохранение.';
+    }
     stages.forEach(s=>s.hidden=Number(s.dataset.stage)!==current);
     final.hidden=current!==8;
     const completed=Object.keys(state.results).length;
@@ -227,6 +228,7 @@
 
   document.getElementById('d0Start').addEventListener('click',()=>{
     state={started:true,current:1,results:{}};
+    try{localStorage.removeItem('s14:d0:typing:v2')}catch(_){}
     save(); render();
   });
 
@@ -243,6 +245,12 @@
     });
   });
 
+  document.getElementById('d0Restart')?.addEventListener('click',()=>{
+    if(!confirm('Начать диагностику заново? Текущие отметки и результат печати будут удалены только из этого браузера.'))return;
+    state={started:false,current:1,results:{}};
+    try{localStorage.removeItem('s14:d0:typing:v2')}catch(_){}
+    save();render();window.scrollTo({top:0,behavior:'smooth'});
+  });
   document.getElementById('d0AiOpen')?.addEventListener('click',()=>{
     const top=document.getElementById('s14QuickChatTop');
     const floating=document.getElementById('s14QuickChat');
