@@ -64,7 +64,7 @@
 
 <section class="section light" id="normalRoute"><div class="wrap l9-grid"><div>
 <aside class="s14-guided-assist" aria-label="Помощь во время обычного маршрута">
-<strong>Не получается? Помощь рядом с заданием.</strong><p>Самостоятельную первую попытку ты уже выполнил. Теперь можно подсмотреть короткую инструкцию про передача текста между телефоном, MAX и ПК, если понадобится.</p>
+<strong>Не получается? Помощь рядом с заданием.</strong><p>Первую самостоятельную попытку ты уже выполнил. При необходимости открой подсказки о передаче текста между телефоном, MAX и ПК.</p>
 <details><summary>Не знаю, как выполнить действие</summary>
 <p>Открой подходящую подсказку в новой вкладке. Вернись сюда, к тому же заданию, после действия.</p>
 <a href="/school-ai-courses/computer/?help=upload" target="_blank" rel="noopener">Прикрепить файл ↗</a>
@@ -210,7 +210,7 @@
    const ok=textOk&&document.getElementById('fastVoice').checked&&document.getElementById('fastChecked').checked;
    const s=document.getElementById('fastStatus'),p=document.getElementById('fastPass');
    p.hidden=!ok;s.className='status '+(ok?'ok':'');
-   s.textContent=ok?'Текст дошёл на ПК, распознавание было проверено. Переходи к дополнительное испытание.':'Нужны переданный текст и две проверки.';
+   s.textContent=ok?'Текст дошёл на ПК, распознавание было проверено. Переходи к дополнительному испытанию.':'Нужны переданный текст и две проверки.';
  }
  ['fastTransfer','fastVoice','fastChecked'].forEach(id=>document.getElementById(id)?.addEventListener(id==='fastTransfer'?'input':'change',updateFast));
 
