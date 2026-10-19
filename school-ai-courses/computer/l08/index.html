@@ -196,7 +196,7 @@
  const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
  const labels={'1':'Папка и файлы созданы','2':'Маяк найден поиском','3':'Файлы отсортированы','4':'Вернуть снова в папке','5':'Урок завершён'};
  function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(labels[b.dataset.step]||'Сделано')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
- buttons.forEach(b=>b.addEventListener('click',()=>{if(b.disabled)return;done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));render();
+ buttons.forEach(b=>b.addEventListener('click',()=>{if(b.disabled)return;done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);try{localStorage.setItem(key,JSON.stringify([...done]))}catch(_){/* browser storage blocked; in-memory progress continues */};render()}));render();
 
  const fastDone=new Set();
  document.querySelectorAll('[data-fast-option]').forEach(btn=>btn.addEventListener('click',()=>{

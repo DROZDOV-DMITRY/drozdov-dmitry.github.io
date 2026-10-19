@@ -210,7 +210,7 @@
  }
  buttons.forEach(b=>b.addEventListener('click',()=>{
    done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);
-   localStorage.setItem(key,JSON.stringify([...done]));
+   try{localStorage.setItem(key,JSON.stringify([...done]))}catch(_){/* browser storage blocked; in-memory progress continues */};
    render();
  }));
  if(fastButton)fastButton.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'Дополнительное испытание выполнено'});

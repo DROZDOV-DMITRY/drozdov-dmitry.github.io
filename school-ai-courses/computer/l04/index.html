@@ -225,7 +225,7 @@
  let done=new Set();try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
  const fill=document.getElementById('progressFill'),text=document.getElementById('progressText'),phoneBonus=document.getElementById('phoneBonus');
  function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Урок завершён':b.dataset.step==='3'?'Получил одно действие':b.dataset.step==='4'?'Результат сообщён':'Сделано')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов';if(phoneBonus)phoneBonus.hidden=done.size<buttons.length}
- buttons.forEach(b=>b.addEventListener('click',()=>{done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
+ buttons.forEach(b=>b.addEventListener('click',()=>{done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);try{localStorage.setItem(key,JSON.stringify([...done]))}catch(_){/* browser storage blocked; in-memory progress continues */};render()}));
  fastButton?.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'Дополнительное испытание выполнено'});render();
 
  const fast=document.getElementById('fastPrompt'),fastStatus=document.getElementById('fastStatus'),fastPass=document.getElementById('fastPass');

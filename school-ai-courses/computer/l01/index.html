@@ -330,7 +330,7 @@
   const fill=document.getElementById('progressFill'),text=document.getElementById('progressText'),dessert=document.getElementById('smartDessert');
   const labels={'1':'Посчитал и проверил','2':'Папка создана','3':'«Проба» сохранён','4':'Папка найдена поиском','5':'«Проба» найден в Корзине','6':'«Проба» удалён из Корзины','7':'Урок завершён'};
   function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(labels[b.dataset.step]||'Готово')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов';if(dessert)dessert.hidden=done.size<buttons.length}
-  buttons.forEach(b=>b.addEventListener('click',()=>{if(b.disabled)return;done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);localStorage.setItem(key,JSON.stringify([...done]));render()}));
+  buttons.forEach(b=>b.addEventListener('click',()=>{if(b.disabled)return;done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);try{localStorage.setItem(key,JSON.stringify([...done]))}catch(_){/* browser storage blocked; in-memory progress continues */};render()}));
   render();
 
   document.getElementById('revealMath')?.addEventListener('click',e=>{
