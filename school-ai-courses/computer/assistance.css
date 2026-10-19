@@ -7,3 +7,10 @@
 .s14-guided-assist summary:focus-visible,.s14-guided-assist a:focus-visible{outline:3px solid #164ba4;outline-offset:3px}
 .s14-guided-assist a{color:#11529a;font-weight:800;display:inline-block;margin:5px 12px 5px 0}
 .s14-guided-assist small{display:block;color:#425777}
+
+/* Common safety information, not a pedagogical hint or baseline solution */
+.s14-safety-section{padding-top:8px!important;padding-bottom:0!important}
+.s14-safety-strip{padding:11px 17px;border:1px solid #c8d6e7;border-left:5px solid #5479b2;border-radius:13px;background:#f5f9ff;color:#213653;line-height:1.45;font-size:14px}
+.s14-safety-strip strong{font-weight:850}
+.s14-safety-strip p{margin:4px 0}
+@media(max-width:600px){.s14-safety-strip{padding:11px 12px;font-size:14px}}

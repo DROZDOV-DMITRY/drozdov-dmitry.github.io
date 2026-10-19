@@ -65,6 +65,7 @@
 <p>Первый урок — не про «где какая кнопка». Ты сразу пройдёшь настоящий рабочий цикл на компьютере: проверишь себя Калькулятором, создашь свою папку, сохранишь файл, найдёшь его поиском, разберёшься с Корзиной и отправишь итог себе через MAX.</p>
 </div></section>
 
+<section class="section s14-safety-section" aria-label="Правила работы с учебными файлами"><div class="wrap"><aside class="s14-safety-strip"><strong>Перед работой:</strong> используй только свои учебные файлы и папки. Не удаляй чужие или нужные материалы, не вводи пароли и личные данные в задания. Если файл надо передать через MAX, сохрани оригинал, пока не убедишься, что копия открывается. <p>Отметка «Сделано» — самопроверка, а не автоматическое подтверждение существования файла.</p></aside></div></section>
 <section class="section light"><div class="wrap">
 <article class="fast-gate">
 <span class="status-badge">Уже всё это умею · быстрый маршрут ≈ 7 минут</span>
@@ -179,7 +180,7 @@
 <p>При первом сохранении выбери на Рабочем столе папку с учебным названием «Практика-01». В поле имени файла напиши <b>Проба</b> и нажми «Сохранить».</p>
 <div class="illustration">
 <div class="save-mock"><div class="mock-bar">Сохранение нового файла</div><div class="mock-body">
-<div class="folder-path">Рабочий стол → <b>/папка с твоим именем/</b></div>
+<div class="folder-path">Рабочий стол → <b>/папка «Практика-01»/</b></div>
 <div class="field"><b>Имя файла:</b> Проба</div>
 
 </div></div>
@@ -196,7 +197,7 @@
 <div class="illustration">
 <div class="explorer-mock"><div class="mock-bar">Проводник · Рабочий стол</div><div class="mock-body">
 <div class="search-box"><span>Поиск: Практика-01</span><span>⌕</span></div>
-<div class="result-row"><div class="mini-folder"></div><div><b>/папка с твоим именем/</b><br><span class="micro">Папка на Рабочем столе</span></div></div>
+<div class="result-row"><div class="mini-folder"></div><div><b>/папка «Практика-01»/</b><br><span class="micro">Папка на Рабочем столе</span></div></div>
 </div></div>
 </div>
 
@@ -338,9 +339,8 @@
   });
 
   document.getElementById('openMax')?.addEventListener('click',()=>{
-    const maxLink=document.querySelector('[aria-label="Помощь через MAX"]');
-    if(maxLink){maxLink.click();return}
-    window.open('https://max.ru/','_blank','noopener');
+    // The assignment requires the student's own Saved Messages, not teacher support.
+    window.open('https://web.max.ru/','_blank','noopener');
   });
 
   function updateFinal(){
