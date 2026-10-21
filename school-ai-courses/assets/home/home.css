@@ -11,3 +11,10 @@
 
 /* Desktop: lift the gnome so the full character is visible in the first viewport. */
 @media(min-width:901px){.home-character>picture{transform:translateY(-56px)}}
+
+/* Schedule badge: opt-in Happ desktop deep link; schedule heading remains unchanged. */
+.home-calendar-happ{cursor:pointer;flex:0 0 40px;transition:transform .15s ease,filter .15s ease}
+.home-calendar-happ:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.home-calendar-happ:active{transform:translateY(0)}
+.home-calendar-happ:focus-visible{outline:3px solid #173767;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.home-calendar-happ{transition:none}.home-calendar-happ:hover{transform:none}}
