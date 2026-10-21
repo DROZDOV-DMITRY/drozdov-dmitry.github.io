@@ -88,7 +88,7 @@
       );
       menu.style.left = left + 'px';
       menu.style.right = 'auto';
-      menu.style.top = Math.min(window.innerHeight - 220, r.bottom + gap) + 'px';
+      menu.style.top = Math.max(pad, Math.min(window.innerHeight - menu.offsetHeight - pad, r.bottom + gap)) + 'px';
     }
   }
 

@@ -137,6 +137,8 @@ body.s14-student{margin:0;background:linear-gradient(180deg,#eff5ffde,#f5f2fbe8)
   display:grid;
   gap:7px;
   padding:9px;
+  max-height:calc(100vh - 20px);
+  overflow-y:auto;
   border:1px solid #d9e3f0;
   border-radius:20px;
   background:#fffffff8;
