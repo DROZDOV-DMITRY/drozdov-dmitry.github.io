@@ -12,6 +12,12 @@
       url: 'https://duck.ai/'
     },
     {
+      id: 'deepseek',
+      name: 'DeepSeek',
+      note: 'чат · тексты и код',
+      url: 'https://chat.deepseek.com/'
+    },
+    {
       id: 'zai',
       name: 'Z.ai',
       note: 'чат · GLM',
@@ -100,7 +106,7 @@
       item.setAttribute('role', 'menuitem');
       item.innerHTML =
         '<span class="s14-ai-service-mark" aria-hidden="true">' +
-          (service.id === 'duck' ? 'D' : service.id === 'zai' ? 'Z' : 'A') +
+          (service.id === 'duck' ? 'D' : service.id === 'deepseek' ? 'DS' : service.id === 'zai' ? 'Z' : 'A') +
         '</span>' +
         '<span class="s14-ai-service-copy"><strong>' + service.name + '</strong><small>' + service.note + '</small></span>' +
         '<span class="s14-ai-service-arrow" aria-hidden="true">↗</span>';

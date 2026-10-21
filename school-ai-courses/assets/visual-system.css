@@ -196,6 +196,7 @@ body.s14-student{margin:0;background:linear-gradient(180deg,#eff5ffde,#f5f2fbe8)
   font:950 18px/1 "Segoe UI",Arial,sans-serif;
 }
 .s14-ai-duck .s14-ai-service-mark{background:linear-gradient(135deg,#e66a31,#f3a23c)}
+.s14-ai-deepseek .s14-ai-service-mark{background:linear-gradient(135deg,#2158bd,#4299ec);font-size:14px}
 .s14-ai-zai .s14-ai-service-mark{background:linear-gradient(135deg,#5d48db,#8f75ff)}
 .s14-ai-arena .s14-ai-service-mark{background:linear-gradient(135deg,#173767,#3186c9)}
 .s14-ai-service-copy{display:grid;gap:2px;min-width:0}
