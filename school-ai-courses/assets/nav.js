@@ -51,11 +51,6 @@
   }
 
   function openAiService(service) {
-    if (service.id === 'deepseek') {
-      // Open in a standard browser tab without popup dimensions or toolbar restrictions.
-      window.open(service.url, '_blank', 'noopener,noreferrer');
-      return;
-    }
     const name = 's14-ai-' + service.id;
     const w = window.open(service.url, name, 'popup=yes,width=560,height=780,resizable=yes,scrollbars=yes');
     if (w) {
@@ -109,8 +104,15 @@
 
     const services = floating ? [...AI_SERVICES].reverse() : AI_SERVICES;
     services.forEach(service => {
-      const item = document.createElement('button');
-      item.type = 'button';
+      const isDeepSeek = service.id === 'deepseek';
+      const item = document.createElement(isDeepSeek ? 'a' : 'button');
+      if (isDeepSeek) {
+        item.href = service.url;
+        item.target = '_blank';
+        item.rel = 'noopener noreferrer';
+      } else {
+        item.type = 'button';
+      }
       item.className = 's14-ai-menu-item s14-ai-' + service.id;
       item.setAttribute('role', 'menuitem');
       item.innerHTML =
@@ -119,10 +121,15 @@
         '</span>' +
         '<span class="s14-ai-service-copy"><strong>' + service.name + '</strong><small>' + service.note + '</small></span>' +
         '<span class="s14-ai-service-arrow" aria-hidden="true">↗</span>';
-      item.addEventListener('click', () => {
-        closeAiMenu();
-        openAiService(service);
-      });
+      if (isDeepSeek) {
+        // Native hyperlink: open a full new browser tab without popup API.
+        item.addEventListener('click', () => window.setTimeout(closeAiMenu, 0));
+      } else {
+        item.addEventListener('click', () => {
+          closeAiMenu();
+          openAiService(service);
+        });
+      }
       menu.appendChild(item);
     });
 
