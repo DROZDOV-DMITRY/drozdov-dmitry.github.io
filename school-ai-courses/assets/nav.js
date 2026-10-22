@@ -39,9 +39,9 @@
           a.removeAttribute('target');
           if (a.getAttribute('rel') === 'noopener') a.removeAttribute('rel');
         } else if (u.protocol === 'https:' && u.hostname === 'chat.deepseek.com') {
-          // A normal, top-level browser navigation is needed for reliable sign-in.
-          a.removeAttribute('target');
-          a.removeAttribute('rel');
+          // Full browser tab instead of a restricted popup; keep sign-in flow intact.
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
         } else if (/^https?:$/.test(u.protocol)) {
           a.target = '_blank';
           a.rel = 'noopener';
@@ -52,8 +52,8 @@
 
   function openAiService(service) {
     if (service.id === 'deepseek') {
-      // Avoid the small popup window: DeepSeek login needs a normal browser tab.
-      window.location.assign(service.url);
+      // Open in a standard browser tab without popup dimensions or toolbar restrictions.
+      window.open(service.url, '_blank', 'noopener,noreferrer');
       return;
     }
     const name = 's14-ai-' + service.id;
