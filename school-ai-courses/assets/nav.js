@@ -38,6 +38,10 @@
         if (u.origin === location.origin && u.pathname.startsWith(ROOT)) {
           a.removeAttribute('target');
           if (a.getAttribute('rel') === 'noopener') a.removeAttribute('rel');
+        } else if (u.protocol === 'https:' && u.hostname === 'chat.deepseek.com') {
+          // A normal, top-level browser navigation is needed for reliable sign-in.
+          a.removeAttribute('target');
+          a.removeAttribute('rel');
         } else if (/^https?:$/.test(u.protocol)) {
           a.target = '_blank';
           a.rel = 'noopener';
@@ -47,6 +51,11 @@
   }
 
   function openAiService(service) {
+    if (service.id === 'deepseek') {
+      // Avoid the small popup window: DeepSeek login needs a normal browser tab.
+      window.location.assign(service.url);
+      return;
+    }
     const name = 's14-ai-' + service.id;
     const w = window.open(service.url, name, 'popup=yes,width=560,height=780,resizable=yes,scrollbars=yes');
     if (w) {
