@@ -129,7 +129,8 @@ function blast(x,y,color,count=9){
 function floatText(x,y,msg,color){texts.push({x,y,msg,color,life:0});if(texts.length>28)texts.shift()}
 function makeMonster(kind){
  const d=ENEMIES[kind],p=routePts[0];
- monsters.push({id:++serial,kind,dist:0,x:p.x,y:p.y,hp:d.hp,max:d.hp,slowTime:0,slowRate:1,rot:rand(0,7),anim:rand(0,7),dead:false});
+ const scaledHp=Math.round(d.hp*(1+.24*(wave-1)));
+ monsters.push({id:++serial,kind,dist:0,x:p.x,y:p.y,hp:scaledHp,max:scaledHp,slowTime:0,slowRate:1,rot:rand(0,7),anim:rand(0,7),dead:false});
 }
 function monsterPosition(e){
  const n=e.dist/S,k=Math.floor(n),t=n-k;
