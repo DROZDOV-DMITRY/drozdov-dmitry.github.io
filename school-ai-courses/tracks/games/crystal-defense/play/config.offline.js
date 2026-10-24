@@ -8,9 +8,10 @@ window.CRYSTAL_OFFLINE_CONFIG = {
     "startHealth": 9,
     "maxWaves": 5,
     "bonusBetweenWaves": 30,
-    "waveEnemyHealthGrowth": 0.29,
-    "waveEnemySpeedGrowth": 0.07,
-    "spawnIntervalMultiplier": 0.84
+    "waveEnemyHealthGrowth": 0.4,
+    "waveEnemySpeedGrowth": 0.095,
+    "spawnIntervalMultiplier": 0.72,
+    "maxTowers": 9
   },
   "towerCosts": {
     "ray": 65,

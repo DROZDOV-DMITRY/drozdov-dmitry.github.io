@@ -3,7 +3,7 @@ const canvas=document.getElementById('field'),c=canvas.getContext('2d',{alpha:fa
 const $=id=>document.getElementById(id);
 if(!c){$('hint').textContent='Браузер не поддерживает Canvas 2D. Попробуй другой браузер.';return}
 const W=990,H=720,S=94,OX=72,OY=31,COLS=9,ROWS=7;
-let TOTAL=5,startingGold=230,startingHealth=12,bonusBase=50,enemyHpGrowth=.29,enemySpeedGrowth=.07,spawnIntervalMultiplier=.84;
+let TOTAL=5,startingGold=230,startingHealth=12,bonusBase=50,enemyHpGrowth=.29,enemySpeedGrowth=.07,spawnIntervalMultiplier=.84,maxTowers=9;
 const sprites={},resourceStatuses=[],effects=[];
 const safeImagePath=x=>typeof x==='string'&&/^assets\/[a-z0-9_./-]+\.(png|webp|jpg|jpeg)$/i.test(x)&&!x.split('/').includes('..')?x:null;
 function numeric(x,fallback,min,max){const v=Number(x);return Number.isFinite(v)?Math.round(clamp(v,min,max)):fallback}
@@ -14,6 +14,7 @@ function readSettings(cfg){
  startingHealth=numeric(g.startHealth,12,1,40);
  TOTAL=numeric(g.maxWaves,5,1,5);
  bonusBase=numeric(g.bonusBetweenWaves,50,0,200);
+ maxTowers=numeric(g.maxTowers,9,5,20);
  enemyHpGrowth=decimal(g.waveEnemyHealthGrowth,.29,0,1);
  enemySpeedGrowth=decimal(g.waveEnemySpeedGrowth,.07,0,.4);
  spawnIntervalMultiplier=decimal(g.spawnIntervalMultiplier,.84,.3,1.6);
@@ -198,6 +199,7 @@ visual.scene();
 function setHint(text,forSeconds=3){toastText=text;toastUntil=clock+forSeconds;$('hint').textContent=text}
 function sync(){
  $('gold').textContent=gold;$('health').textContent=heart;$('wave').textContent=wave+' / '+TOTAL;$('score').textContent=score;
+ $('tower-count').textContent='Башен: '+towers.length+' / '+maxTowers;
  const fight=phase==='battle',ready=phase==='ready';
  $('start').disabled=!ready||wave>=TOTAL;
  $('start').innerHTML=wave===0?'Начать волну <span>→</span>':wave<TOTAL?'Следующая волна <span>→</span>':'Все волны пройдены';
@@ -297,6 +299,7 @@ function buildOn(x,y){
  focusTower=null;
  if(pulseArmed){pulseArmed=false;setHint('Коснись места удара ещё раз.',2);sync();return}
  if(TRACK.has(x+','+y)){setHint('Дорогу перекрывать нельзя — выбери соседнюю клетку.',3);sync();return}
+ if(towers.length>=maxTowers){setHint('Предел '+maxTowers+' башен. Улучши существующую или продай ненужную.',4);sync();return}
  const d=TYPES[selection];if(gold<d.cost){setHint('Не хватает кристаллов: нужно '+d.cost+'.',3);sync();return}
  gold-=d.cost;towers.push({x,y,kind:selection,level:1,cool:0,flash:0});
  const p=mid(x,y);blast(p.x,p.y,d.color,20);setHint(d.name+' построена! ✧ −'+d.cost,1.8);sync();
