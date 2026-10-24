@@ -63,3 +63,12 @@ button{font-family:inherit;cursor:pointer}button:focus-visible,a:focus-visible{o
  .build-panel{padding:12px 15px}
  .build-panel .note{margin:6px 0 0}
 }
+
+/* Asset inspector: verifies real files, not checkmarks entered by the pupil. */
+.resource-inspector{margin:18px 0 5px;border:1px solid #496d88;border-radius:15px;background:linear-gradient(135deg,#162d4b,#122342);color:#d9f5ff}
+.resource-inspector summary{cursor:pointer;padding:13px 17px;font-weight:900;font-size:13px;color:#b2f3df}
+.resource-inspector summary:focus-visible{outline:3px solid #98e9ee;outline-offset:3px}
+.resource-body{padding:0 17px 16px;font-size:12px;line-height:1.55;color:#bad1e5}
+.resource-body p{margin:10px 0}.resource-body code{font-family:Consolas,monospace;color:#ecfaff}.resource-body a{color:#81f4d9}
+.resource-body ul{padding-left:22px;margin:12px 0}.resource-body li{padding:3px 0;overflow-wrap:anywhere}
+.resource-body .asset-ok{color:#88edc9}.resource-body .asset-missing{color:#ffcb91}
