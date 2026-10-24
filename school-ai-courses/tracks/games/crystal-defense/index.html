@@ -21,7 +21,7 @@
 @media(max-width:700px){.cr-showcase{grid-template-columns:1fr;padding:22px}.cr-art{position:absolute;right:-10px;top:6px;font-size:135px;opacity:.15}.cr-play{width:100%}.cr-showcase h2{font-size:32px}}
 @media(prefers-reduced-motion:reduce){.cr-art{animation:none}}
 </style>
-</head><body class="theme-games s14-student">
+<style>.gw-folder-tree{max-width:100%;overflow-x:auto;background:#13244b;color:#e2f6ff;border-radius:15px;padding:17px 20px;font:600 14px/1.58 Consolas,monospace;white-space:pre}.gw-asset-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:16px 0}.gw-asset-links a{display:flex;flex-direction:column;gap:4px;border-radius:14px;border:1px solid #cbdcf3;background:#fff;padding:13px;text-decoration:none;color:#163d7d}.gw-asset-links strong{font-size:15px}.gw-asset-links span{font-size:12px;color:#4c668c}.gw-asset-check{background:#eff8ff;border-left:4px solid #38a7b1;padding:15px;border-radius:12px;font-size:14px;line-height:1.55}@media(max-width:580px){.gw-asset-links{grid-template-columns:1fr}.gw-folder-tree{font-size:12px}}</style></head><body class="theme-games s14-student">
 <header class="topbar"><div class="wrap inner"><a class="brand" href="/school-ai-courses/"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt=""><span><b>КУРС ИИ</b> · Игры</span></a></div></header>
 <main>
 <section class="student-hero"><div class="wrap"><h1>Кристальный рубеж: Защита базы</h1><p>Сначала сыграй — затем создай собственную версию с ИИ.</p><img class="s14-topic-visual" src="/school-ai-courses/assets/home/games.webp" width="420" height="420" alt="" decoding="async"></div></section>
@@ -37,98 +37,97 @@
 
 <p class="gw-mission"><strong>Мастерская для 7–8 класса.</strong> Сначала сыграй в готовый образец, найди интересное решение и придумай своё. Ниже — задания по созданию собственной версии вместе с ИИ.</p>
 <aside class="gw-device-note"><strong>Игра работает на компьютере и смартфоне.</strong> Для создания собственного HTML-файла удобнее ПК и текстовый редактор. <details class="gw-help"><summary>Я сейчас с телефона — что делать?</summary><p>Нажми «Играть прямо сейчас» и познакомься с механикой без скачивания и регистрации. Свой HTML-файл создашь позже на компьютере.</p></details></aside>
-<p class="gw-current-location" aria-live="polite">Ты здесь: шаг 1 из 5 · Подготовь файл</p><div class="gw-mini-plan"><a class="gw-plan-link" href="#gw-step-1" aria-current="step">1 · Подготовь файл</a><a class="gw-plan-link" href="#gw-step-2" >2 · Попроси ИИ</a><a class="gw-plan-link" href="#gw-step-3" >3 · Вставь код</a><a class="gw-plan-link" href="#gw-step-4" >4 · Проверь игру</a><a class="gw-plan-link" href="#gw-step-5" >5 · Улучши</a></div>
+<p class="gw-current-location" aria-live="polite">Ты здесь: шаг 1 из 5 · Подготовь проект</p><div class="gw-mini-plan"><a class="gw-plan-link" href="#gw-step-1" aria-current="step">1 · Проект</a><a class="gw-plan-link" href="#gw-step-2" >2 · Ресурсы</a><a class="gw-plan-link" href="#gw-step-3" >3 · Код по файлам</a><a class="gw-plan-link" href="#gw-step-4" >4 · Проверка</a><a class="gw-plan-link" href="#gw-step-5" >5 · Доработка</a></div>
 <div class="gw-steps" style="margin-top:20px">
 <article class="gw-step" id="gw-step-1" data-workshop-step="1">
-<div class="gw-step-title"><span class="gw-count">1</span><h2>Подготовь папку и файл</h2></div>
-<p><strong>Что должно получиться:</strong> на рабочем столе папка «Кристальный рубеж», внутри — файл <code>crystal-defense.txt</code>, открытый в Блокноте.</p>
-<ol class="gw-prep-list">
-<li><strong>Сначала включи показ расширений.</strong>
-<details class="gw-help"><summary>Не знаю, как показать расширения</summary><ol><li>Открой Проводник сочетанием <kbd>Win</kbd> + <kbd>E</kbd>.</li><li>В Windows 11 выбери «Просмотреть → Показать → Расширения имён файлов». В Windows 10 — «Вид → Расширения имён файлов».</li><li>Убедись, что видны окончания файлов: <code>.txt</code>, <code>.html</code>.</li></ol></details></li>
-<li><strong>Создай папку «Кристальный рубеж».</strong>
-<details class="gw-help"><summary>Не знаю, как создать папку</summary><ol><li>Нажми <kbd>Win</kbd> + <kbd>D</kbd> — откроется рабочий стол.</li><li>Нажми правой кнопкой мыши на пустом месте.</li><li>Выбери «Создать → Папку», назови её «Кристальный рубеж», нажми Enter.</li></ol></details></li>
-<li><strong>Создай <code>crystal-defense.txt</code>.</strong>
-<details class="gw-help"><summary>Не знаю, как создать файл</summary><ol><li>Открой папку двойным щелчком.</li><li>Нажми правой кнопкой на пустом месте → «Создать → Текстовый документ».</li><li>Назови файл <code>crystal-defense.txt</code> и нажми Enter. Проверь полное имя: <code>crystal-defense.txt</code>, а не <code>crystal-defense.txt.txt</code>.</li></ol></details>
-<details class="gw-help"><summary>Нет пункта «Текстовый документ»</summary><ol><li>Через «Пуск» открой Блокнот.</li><li>Выбери «Файл → Сохранить как» и папку «Кристальный рубеж» на рабочем столе.</li><li>Выбери тип «Все файлы (*.*)», введи <code>crystal-defense.txt</code> и сохрани.</li><li>В Проводнике проверь имя и расширение <code>.txt</code>.</li></ol></details></li>
-<li><strong>Открой файл в Блокноте.</strong>
-<details class="gw-help"><summary>Не открывается Блокнот</summary><p>Дважды щёлкни по файлу <code>crystal-defense.txt</code>. Если открылась другая программа, нажми правой кнопкой на файле → «Открыть с помощью» → «Блокнот»; при необходимости выбери «Выбрать другое приложение».</p></details></li>
-</ol>
-<div class="gw-checkpoint" data-checkpoint><strong>Проверь на своём компьютере перед работой с ИИ:</strong>
-<label><input type="checkbox" data-ready-check> <span>Папка «Кристальный рубеж» видна на рабочем столе.</span></label>
-<label><input type="checkbox" data-ready-check> <span>Внутри именно <code>crystal-defense.txt</code>, а не <code>crystal-defense.txt.txt</code>.</span></label>
-<label><input type="checkbox" data-ready-check> <span>Файл пустой и открыт в Блокноте.</span></label>
-<div class="gw-actions"><button class="gw-button" type="button" data-check-ready>Проверил → к шагу 2</button><span class="gw-copy-status" role="status" aria-live="polite"></span></div>
-<p class="gw-service-note">Галочки — только самопроверка. Сайт не видит содержимое компьютера. Если не получается, открой нужную подсказку или обратись к учителю.</p>
-</div></article>
+<div class="gw-step-title"><span class="gw-count">1</span><h2>Сыграй и спланируй собственный проект</h2></div>
+<p><strong>Сначала самостоятельно:</strong> <a href="play/">поиграй в образец</a>. Запиши, какая деталь понравилась и чего не хватает для более интересной игры. Только после своей попытки переходи к подсказкам.</p>
+<p>Создай на рабочем столе папку <code>Кристальный рубеж</code>. В ней должны появиться:</p>
+<pre class="gw-folder-tree">Кристальный рубеж/
+├── index.html
+├── game.css
+├── game.js
+├── game.json
+├── config.offline.js
+└── assets/
+    ├── ASSETS_LICENSES.md
+    └── kenney/
+        ├── flare.png
+        ├── magic.png
+        ├── bush.png
+        └── bush-orange.png</pre>
+<p>Главная страница <code>index.html</code> подключает стили <code>game.css</code>, игровую логику <code>game.js</code> и локальную конфигурацию. На сайте <code>game.js</code> дополнительно читает <code>game.json</code>, а изображения находятся только по путям из <code>assets/</code>.</p>
+<details class="gw-help"><summary>Как создать папки и пустые файлы?</summary><ol><li>Открой Проводник (<kbd>Win</kbd> + <kbd>E</kbd>) и создай свою папку.</li><li>Внутри создай <code>assets</code> → <code>kenney</code>.</li><li>Открой Блокнот и для каждого файла используй «Файл → Сохранить как», тип «Все файлы». Проверь расширения, чтобы не получить <code>index.html.txt</code>.</li><li>Если создание файлов и папок на школьном ПК запрещено, остановись и обратись к учителю — не меняй политики безопасности.</li></ol></details>
+<div class="gw-checkpoint" data-checkpoint><strong>Проверь на своём компьютере:</strong>
+<label><input type="checkbox" data-ready-check> <span>Папка проекта создана, а имена всех файлов и расширения записаны точно.</span></label>
+<label><input type="checkbox" data-ready-check> <span>Внутри создана вложенная папка <code>assets/kenney/</code>.</span></label>
+<label><input type="checkbox" data-ready-check> <span>Я придумал самостоятельное улучшение игры.</span></label>
+<div class="gw-actions"><button class="gw-button" type="button" data-check-ready>Самопроверка → к шагу 2</button><span class="gw-copy-status" role="status" aria-live="polite"></span></div>
+<p class="gw-service-note">Галочки фиксируют самоотчёт, а не проверяют папку на вашем компьютере.</p></div>
+</article>
 <article class="gw-step" id="gw-step-2" data-workshop-step="2">
-<div class="gw-step-title"><span class="gw-count">2</span><h2>Придумай свою версию и попроси ИИ создать её</h2></div>
-<p class="gw-own-choice"><strong>Сначала твоя идея:</strong> <a href="play/">сыграй в образец</a> и придумай собственное улучшение — новую башню, способность или особенность противников. Запиши его сам, до подсказок ИИ.</p>
-<p><strong>Это основа запроса, а не готовый ответ.</strong> Впиши своё изменение и художественный замысел. Не проси нейросеть копировать изображения чужой игры.</p>
-<label class="gw-label" for="gw-prompt">Запрос к ИИ — можно редактировать</label>
-<textarea id="gw-prompt" class="gw-edit" rows="17" spellcheck="true">Создай самостоятельную, действительно увлекательную и красивую браузерную игру Tower Defense «Кристальный рубеж» для моего школьного проекта. Я сначала поиграл в образец и придумал собственную идею:
-
-МОЁ ИЗМЕНЕНИЕ: [впиши уникальную механику, героя или новую башню].
-
-ВИЗУАЛЬНЫЙ СТИЛЬ — ОЧЕНЬ ВАЖНО
-Фантастическая кристальная долина в вечернем освещении: глубокие синие, фиолетовые, бирюзовые тона; узнаваемые башни и противники с собственными силуэтами; объёмная извилистая дорога; светящееся ядро, анимированные выстрелы, взрывы и частицы. Рисуй авторскую графику в Canvas 2D без чужих изображений. Не используй эмодзи и безликие квадраты вместо персонажей. Сохраняй высокую читаемость всего поля, здоровья и подписей.
-
-ИГРОВОЙ ПРОЦЕСС
-1. Пять волн с возрастающей сложностью, минимум три типа врагов, финальный босс. Первая волна должна проходиться при разумном решении.
-2. Три принципиально разные башни: частые точные выстрелы, замедление, урон по площади. Их можно ставить на свободных клетках, улучшать и продавать. Дорогу занимать нельзя.
-3. Валюта корректно тратится и начисляется за уничтоженных врагов. После отражённой волны игрок получает бонус и решает, что строить.
-4. Во время нападения можно применить мощный направленный импульс с реальной перезарядкой. Пауза и скорость ×2 работают.
-5. Враги доходят до ядра и снимают его здоровье. Победа, поражение, повторная игра и обучение управлению реально реализованы.
-6. Любой выстрел, улучшение или касание должны заметно изменять игру. Не рисуй декоративные кнопки без действий.
-
-ПК И СМАРТФОН
-Игровая область автоматически масштабируется без деформации. Поддерживаются мышь, касания экрана, портретная и горизонтальная ориентации смартфона. При пересчёте координат клика используй getBoundingClientRect — это необходимо для точного выбора клетки. На телефоне кнопки крупные, текст читается, ничего не вылезает за ширину экрана и не требует прокрутки по горизонтали. Проверь ширины 360, 390, 768 и 1366 пикселей. Уважай prefers-reduced-motion.
-
-ТЕХНИЧЕСКИЙ РЕЗУЛЬТАТ
-Верни ПОЛНЫЙ код одной самостоятельной страницы crystal-defense.html (HTML + CSS + JS, без обязательных внешних библиотек и сервисов). Canvas должен работать офлайн. Для каждой функции предусмотри проверку: стройка, оплата, урон, волна, способность, улучшение, продажа, проигрыш, победа, перезапуск. Не утверждай, что тесты выполнены, если не запускал их.
-
-После кода кратко объясни, как сохранить файл в Блокноте и открыть браузером.</textarea>
-<div class="gw-actions"><button type="button" class="gw-button" data-copy-editor="gw-prompt">Скопировать запрос к ИИ</button><span class="gw-copy-status" role="status" aria-live="polite"></span></div>
-<p>Нажми <strong>«Скопировать»</strong>, открой кнопку <strong>«ИИ-чат»</strong> вверху страницы или справа внизу, выбери ИИ-сервис, вставь запрос через <strong>Ctrl+V</strong> и отправь его.</p>
-<p class="gw-return-note"><strong>Точка возврата:</strong> после ответа ИИ вернись сюда к <a href="#gw-step-3">шагу 3 «Вставь код»</a>. Эту страницу не закрывай.</p>
-<p class="gw-service-note"><strong>Не закрывай этот диалог с ИИ.</strong> Он сохраняет твой запрос и полученный код. При исправлении ИИ сможет учитывать предыдущую версию и внесённые изменения.</p>
+<div class="gw-step-title"><span class="gw-count">2</span><h2>Выбери реальные изображения и проверь лицензии</h2></div>
+<p>Ищи игровые ресурсы, а не случайные картинки из поиска. Начни с проверенных бесплатных библиотек:</p>
+<div class="gw-asset-links">
+<a href="https://kenney.nl/assets/tower-defense-top-down" target="_blank" rel="noopener noreferrer"><strong>Kenney · Tower Defense</strong><span>Башни, объекты, тайлы · CC0</span></a>
+<a href="https://kenney.nl/assets/particle-pack" target="_blank" rel="noopener noreferrer"><strong>Kenney · Particle Pack</strong><span>Свет, попадания, вспышки · CC0</span></a>
+<a href="https://kenney.nl/assets/background-elements-remastered" target="_blank" rel="noopener noreferrer"><strong>Kenney · Backgrounds</strong><span>Окружение и декорации · CC0</span></a>
+<a href="https://opengameart.org/" target="_blank" rel="noopener noreferrer"><strong>OpenGameArt</strong><span>Проверяй лицензию каждого файла</span></a>
+</div>
+<ol><li>Выбери один художественный стиль. Не смешивай несовместимые пиксельные и реалистичные картинки.</li><li>Скачай ZIP с выбранного ресурса, открой его и скопируй <strong>2–4 отдельные PNG/WebP</strong> в <code>assets/kenney/</code> или собственную подпапку.</li><li>Посмотри фактические <strong>ширину × высоту, тип файла и размер в КБ</strong> через «Свойства → Подробно».</li><li>Запиши автора, ссылку и лицензию в <code>assets/ASSETS_LICENSES.md</code>. Не приписывай CC0 чужому набору автоматически.</li></ol>
+<div class="gw-asset-check"><strong>Ориентиры учебного проекта:</strong> изображение обычно 64–512 пикселей по большей стороне, один файл желательно до 250 КБ, вся графика до 600 КБ. Это рекомендации для быстрой загрузки, а не ограничения браузера. Для персонажей и эффектов важна прозрачность PNG/WebP. Интерфейс должен оставаться читаемым и на экране 360 пикселей.</div>
+<details class="gw-help"><summary>У меня пока нет ресурсов или сеть не работает</summary><p>Скопируй файлы из уже подготовленного проекта с разрешения учителя или пока используй программную графику Canvas. Техническую недоступность сети запиши отдельно; запрещено обходить школьные ограничения.</p></details>
 </article>
 <article class="gw-step" id="gw-step-3" data-workshop-step="3">
-<div class="gw-step-title"><span class="gw-count">3</span><h2>Преврати текстовый файл в игру</h2></div>
-<ol>
-<li>Подожди, пока ИИ закончит ответ. Скопируй <strong>весь HTML-код целиком</strong>, от <code>&lt;!doctype html&gt;</code> до <code>&lt;/html&gt;</code>, без строк с тремя обратными кавычками.</li>
-<li>Вернись к Блокноту с файлом <code>crystal-defense.txt</code>. Вставь код через <strong>Ctrl+V</strong>, сохрани через <strong>Ctrl+S</strong> и закрой Блокнот.</li>
-<li>Показ расширений ты включил на шаге 1. Убедись, что отображается полное имя <code>crystal-defense.txt</code>. Если расширений не видно, вернись к <a href="#gw-step-1">шагу 1</a>.</li>
-<li>Переименуй <code>crystal-defense.txt</code> в <code>crystal-defense.html</code> и подтверди изменение расширения. Проверь, что имя файла не заканчивается на <code>.html.txt</code>.</li>
-</ol>
+<div class="gw-step-title"><span class="gw-count">3</span><h2>Попроси ИИ создавать проект по одному файлу</h2></div>
+<p>Это уже не запрос «напиши 25 тысяч строк за раз». Сначала дай ИИ <strong>архитектуру и своё оригинальное изменение</strong>; затем запрашивай по одному файлу, сохраняя договорённые имена и пути.</p>
+<label class="gw-label" for="gw-prompt">Постановка для ИИ — впиши собственное улучшение</label>
+<textarea id="gw-prompt" class="gw-edit" rows="14">Разрабатываем многофайловую игру Tower Defense «Кристальный рубеж». Это школьная самостоятельная работа. Я уже сыграл в образец и хочу улучшить: [МОЯ ИДЕЯ].
+
+Папка проекта содержит index.html, game.css, game.js, game.json, config.offline.js и assets/ с локальными PNG/WebP. В JSON хранятся стоимость башен, параметры начальной игры и относительные пути к графике. HTML подключает CSS, офлайн-конфигурацию и JS. JavaScript создаёт Canvas-игру и загружает картинки из assets/, а отсутствие картинки не останавливает игру.
+
+Визуальное качество обязательно: цельная палитра, красиво оформленная карта, объёмные кристаллы, узнаваемые противники, анимация попаданий. Не используй эмодзи как главную графику и не копируй чужое оформление.
+
+Игровые правила: 3 вида башен, 5 волн, улучшения/продажа, выбор клетки мышью или касанием, пауза, победа, поражение и новая игра. Компьютер и смартфон, ширины 360, 390, 768 и 1366 пикселей.
+
+ВАЖНО: не генерируй все файлы сразу. Сначала предложи короткую схему связей между файлами и перечень функций, которые вызываются из одного файла в другом. Затем жди моей команды «Создай index.html». После этого создавай ТОЛЬКО тот файл, который я назову. Для каждого файла давай ПОЛНОЕ содержимое и один способ проверки. Не переименовывай существующие пути без отдельного согласования.
+
+При локальном открытии file:// fetch(game.json) может быть заблокирован: предусмотри config.offline.js с теми же параметрами; на сайте по HTTP используй game.json. Не требуй внешних библиотек, Docker, установки Python или API. Запроси конкретные имена файлов в assets/ и используй их в JSON.
+
+После моего подтверждения архитектуры начнём с index.html.</textarea>
+<div class="gw-actions"><button class="gw-button" type="button" data-copy-editor="gw-prompt">Скопировать постановку</button><span class="gw-copy-status" role="status" aria-live="polite"></span></div>
+<p><strong>Очередность ответов ИИ:</strong> <code>index.html</code> → <code>game.css</code> → <code>game.json</code> → <code>config.offline.js</code> → <code>game.js</code>. После каждого ответа сохраняй файл, а не копируй все блоки подряд в один документ. Изображения ИИ не должен выдавать в виде длинного Base64 — их получаем из библиотеки.</p>
+<details class="gw-help"><summary>ИИ отвечает «Продолжить» и код обрывается</summary><p>Напиши: «Остановись. Проверь, что в текущем ответе полный файл, от первой до последней строки. Если он слишком велик, предложи разделить <code>game.js</code> на отдельные согласованные модули без потери интерфейсов». Нельзя склеивать два куска кода наугад. Для школьного запуска без сервера используй обычные подключаемые скрипты, не ES-модули.</p></details>
 </article>
 <article class="gw-step" id="gw-step-4" data-workshop-step="4">
-<div class="gw-step-title"><span class="gw-count">4</span><h2>Запусти и проверь на разных экранах</h2></div>
-<p>Найди <code>crystal-defense.html</code> в папке. Нажми на него <strong>правой кнопкой мыши → Открыть с помощью → Microsoft Edge</strong>. Если Edge не виден, выбери «Выбрать другое приложение».</p>
-<p>Проверь собственную игру на компьютере. Затем открой <a href="play/">образец на смартфоне</a> и сравни удобство. Для своей версии также проверь касания, если доступна передача HTML на телефон:</p>
-<div class="gw-checks"><label><input type="checkbox"><span>Башни строятся только на свободных клетках; кристаллы корректно списываются и зарабатываются.</span></label><label><input type="checkbox"><span>Враги идут по дороге, башни атакуют автоматически, улучшение действительно изменяет характеристики.</span></label><label><input type="checkbox"><span>Пять волн проходят по порядку; игра фиксирует победу, поражение и полностью перезапускается.</span></label><label><input type="checkbox"><span>На смартфоне можно выбрать башню, построить её и запустить волну касанием; нет горизонтальной прокрутки или обрезанных кнопок.</span></label><label><input type="checkbox"><span>На ПК всё видно, при повороте смартфона на карте правильно определяется выбранная клетка.</span></label></div>
-<p>Если браузер показывает код вместо игры, проверь расширение файла. Если управление, правила или графика работают неправильно, запиши конкретную ошибку.</p>
+<div class="gw-step-title"><span class="gw-count">4</span><h2>Запусти проект, проверь графику и два экрана</h2></div>
+<p>Сначала открой <code>index.html</code> двойным щелчком в браузере. Он должен использовать локальную конфигурацию <code>config.offline.js</code>. На опубликованном сайте настройки берутся из <code>game.json</code>.</p>
+<p><strong>Файлы должны лежать вместе, точно в указанной структуре.</strong> Если изображения не найдены, сравни относительные пути и регистр букв. В образце открой раздел «Ресурсы проекта» — он покажет, сколько файлов реально загрузилось.</p>
+<div class="gw-checks">
+<label><input type="checkbox"><span>Игра запускается, интерфейс и изображения видны; нет ошибок отсутствующих файлов.</span></label>
+<label><input type="checkbox"><span>Строительство, валюта, снаряды, улучшения и продажа работают.</span></label>
+<label><input type="checkbox"><span>Пять волн, способности, победа/поражение и повторный запуск действительно проверены.</span></label>
+<label><input type="checkbox"><span>На смартфоне или при ширине 360–390 пикселей можно нажать башню и нужную клетку, нет горизонтальной прокрутки.</span></label>
+<label><input type="checkbox"><span>На большом экране ПК (около 1366 пикселей) поле не растянуто, надписи и кнопки хорошо видны.</span></label>
+</div>
+<p>Если при локальном запуске JSON не загружается — не отключай защиту браузера. Используй <code>config.offline.js</code>, а чтение JSON через <code>fetch</code> проверь на опубликованном сайте или разрешённом локальном сервере.</p>
+<details class="gw-help"><summary>Как подтвердить реальные размеры изображения?</summary><p>В Windows открой свойства PNG → «Подробно» (ширина и высота в пикселях), затем свойства файла → размер в КБ. Сравни с размером игрового объекта: если маленький элемент приходится очень сильно растягивать, найди более крупный спрайт; если крошечный значок весит мегабайты — оптимизируй ресурс.</p></details>
 </article>
 <article class="gw-step" id="gw-step-5" data-workshop-step="5">
-<div class="gw-step-title"><span class="gw-count">5</span><h2>Исправь ошибку или улучши игру</h2></div>
-<p>Опиши обнаруженную ошибку или желаемое улучшение. Вернись в диалог с ИИ, в котором создавал игру.</p>
-<label class="gw-label" for="gw-issue">Какую ошибку нашёл или что изменишь?</label>
-<textarea id="gw-issue" class="gw-edit" rows="4" placeholder="Например: можно построить башню прямо на дороге; после последнего робота волна не завершается. Исправь проверку клетки и окончание волны."></textarea>
-<div class="gw-actions"><button type="button" class="gw-button" data-fix-prompt data-file="crystal-defense.html">Скопировать запрос на исправление</button><span class="gw-copy-status" role="status" aria-live="polite"></span></div>
-<ol>
-<li>Отправь скопированный запрос <strong>в тот же диалог с ИИ</strong>.</li>
-<li>Получив полный обновлённый код, нажми правой кнопкой на <code>crystal-defense.html</code> → <strong>Открыть с помощью → Блокнот</strong>.</li>
-<li>Нажми <strong>Ctrl+A</strong>, вставь новый код через <strong>Ctrl+V</strong>, сохрани через <strong>Ctrl+S</strong>.</li>
-<li>В Microsoft Edge обнови страницу через <strong>Ctrl+F5</strong>. Снова проверь игру.</li>
-</ol>
-<p>Перед большим изменением можешь сохранить предыдущую версию под именем <code>crystal-defense-v1.html</code>.</p>
+<div class="gw-step-title"><span class="gw-count">5</span><h2>Исправь один недостаток и собери новую версию</h2></div>
+<p><strong>Не переписывай сразу всё.</strong> Выбери одну наблюдаемую проблему: неудачный масштаб, плохой контраст, слишком большая картинка, слабый эффект попадания, ошибка пути или промах касания.</p>
+<label class="gw-label" for="gw-issue">Мой найденный дефект или художественное улучшение</label>
+<textarea id="gw-issue" class="gw-edit" rows="4" placeholder="Например: на смартфоне башня закрывает соседние кнопки; фон тяжёлый и загружается медленно."></textarea>
+<p>Попроси ИИ сначала назвать <strong>точный файл</strong>, который нужно изменить, и критерий проверки. Затем получи новую версию только этого файла, сохрани исходную и проверь на обоих экранах.</p>
+<p>Запиши: исходный вид → какое действие выполнено → изменённый результат → ограничения. Хорошая картинка без работающей игровой механики не считается готовым проектом.</p>
 </article></div>
-<section class="gw-handoff" aria-label="Сохранение и передача работы"><h2>Сохрани и отправь свою игру</h2>
-<p>Итоговый файл — <code>crystal-defense.html</code>. Проверь ещё раз, что файл открывается в Microsoft Edge и игра работает.</p>
-<ol><li>Открой <a href="https://web.max.ru/" target="_blank" rel="noopener">MAX</a> и выбери согласованный <strong>чат учителя</strong>, не общую школьную группу.</li>
-<li>Прикрепи именно файл <code>crystal-defense.html</code>, не скриншот и не только название. Не отправляй пароли и лишние персональные данные.</li>
-<li>Дождись завершения отправки и подтверждения учителя, что файл получен. Если MAX не принимает HTML, по согласованию с учителем упакуй его в ZIP и отправь архив.</li>
-<li>На школьном ПК удаляй временную папку <strong>только после подтверждения сохранения копии</strong> и согласно правилам учителя. Не удаляй единственный экземпляр.</li></ol>
-<details class="gw-help"><summary>Не знаю, как передать файл через MAX</summary><p>Открой MAX → согласованный диалог учителя → кнопка прикрепления (обычно «+» или скрепка) → «Файл» → папка «Кристальный рубеж» на рабочем столе → <code>crystal-defense.html</code> → «Отправить». Если интерфейс другой, уточни по экрану у учителя.</p></details>
-<p class="gw-service-note">Если MAX недоступен, сохрани оригинал и сообщи учителю. Сбой передачи не означает, что игра сделана неправильно.</p></section>
+<section class="gw-handoff" aria-label="Сохранение и передача проекта"><h2>Сохрани весь проект, не один HTML-файл</h2>
+<p>Итог — <strong>папка проекта со всеми файлами</strong>: HTML, CSS, JS, JSON, локальные настройки, картинки и сведения об источниках. Если при переносе пропала папка <code>assets</code>, графика исчезнет.</p>
+<ol><li>Проверь, что внутри нет паролей, ключей API или персональных данных.</li>
+<li>На своей копии проекта сделай ZIP всей папки и убедись, что внутри архива есть <code>assets/</code>.</li>
+<li>Передай ZIP преподавателю в согласованный чат MAX или другим утверждённым способом. Если передача не работает — сохрани копию и сообщи об этом отдельно.</li>
+<li>Не удаляй единственный экземпляр до подтверждения приёма и сохранения работы.</li></ol>
+<p>Для примера посмотри <a href="play/">рабочую игру</a>, её <a href="play/README.md">структуру проекта</a> и <a href="play/assets/ASSETS_LICENSES.md">перечень ресурсов</a>. <strong>Не копируй пример вместо собственной попытки.</strong></p>
+</section>
 <div class="gw-note gw-outro"><strong>Готово!</strong> Покажи первоначальную и улучшенную версии игры и объясни, какие ошибки удалось исправить.<div class="gw-actions"><a class="gw-button gw-button-muted" href="/school-ai-courses/tracks/games/">← Выбрать следующую игру</a></div></div>
 </div></section></main></body></html>
