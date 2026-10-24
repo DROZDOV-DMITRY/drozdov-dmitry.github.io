@@ -39,7 +39,11 @@
   function setStep(n){
     if(n<1||n>5)return;
     links.forEach((a,i)=>i===n-1?a.setAttribute('aria-current','step'):a.removeAttribute('aria-current'));
-    if(marker)marker.textContent='Ты здесь: шаг '+n+' из 5 · '+['Подготовь файл','Попроси ИИ','Вставь код','Проверь игру','Улучши'][n-1];
+    if(marker){
+      const defaultNames=['Подготовь файл','Попроси ИИ','Вставь код','Проверь игру','Улучши'];
+      const label=steps[n-1]?.getAttribute('data-workshop-label')||defaultNames[n-1];
+      marker.textContent='Ты здесь: шаг '+n+' из 5 · '+label;
+    }
   }
   if(steps.length===5&&links.length===5){
     links.forEach((a,i)=>a.addEventListener('click',()=>setStep(i+1)));
