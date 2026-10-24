@@ -22,12 +22,6 @@
       name: 'Z.ai',
       note: 'чат · GLM',
       url: 'https://z.ai/chat'
-    },
-    {
-      id: 'arena',
-      name: 'Arena',
-      note: 'сравнение моделей',
-      url: 'https://arena.ai/'
     }
   ];
 
