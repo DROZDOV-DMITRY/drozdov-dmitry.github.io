@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1430">
+<title>Кристальный рубеж · Оборона сияющей долины</title>
+<meta name="description" content="Красочная стратегия: строй кристальные башни, переживи пять атак и защити Сердце долины. Бесплатно, прямо в браузере на ПК и смартфоне.">
+<link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
+<link rel="stylesheet" href="game.css">
+<script defer src="game.js"></script>
+</head><body>
+<header class="sitebar">
+<a class="back" href="../">← В мастерскую игр</a>
+<span class="brand"><span class="brand-gem" aria-hidden="true">◆</span> КРИСТАЛЬНЫЙ РУБЕЖ</span>
+<a class="course-link" href="/school-ai-courses/">Курс ИИ ↗</a>
+</header>
+<main class="game-shell">
+<section class="intro">
+<div class="intro-copy"><div class="eyebrow"><span class="eyeline"></span> ТАКТИЧЕСКАЯ ИГРА · 5 ВОЛН</div>
+<h1>Защити <em>Сердце долины</em></h1>
+<p>В тумане проснулись теневые создания. Возведи световые башни, выбери момент для удара и не дай им погасить последний кристалл.</p></div>
+<div class="orbit" aria-hidden="true"><span class="orbit-o"></span><span class="orbit-gem">✦</span><span class="orbit-star">✧</span></div>
+</section>
+<section class="stage" aria-label="Игровая арена">
+<div class="statbar" role="group" aria-label="Игровые показатели">
+<div class="stat"><span class="stat-label">КРИСТАЛЛЫ</span><strong id="gold" aria-live="polite">230</strong><span class="stat-symbol gold">✧</span></div>
+<div class="stat"><span class="stat-label">СЕРДЦЕ</span><strong id="health" aria-live="polite">12</strong><span class="stat-symbol heart">♥</span></div>
+<div class="stat"><span class="stat-label">ВОЛНА</span><strong id="wave" aria-live="polite">0 / 5</strong><span class="stat-symbol wave">◈</span></div>
+<div class="stat stat-score"><span class="stat-label">ОЧКИ</span><strong id="score">0</strong><span class="stat-symbol">✦</span></div>
+</div>
+<div class="field-wrap">
+<canvas id="field" width="990" height="720" tabindex="0" aria-label="Карта обороны. Выберите башню в нижней панели и нажмите свободную клетку для постройки. Для улучшения нажмите на построенную башню."></canvas>
+<div class="field-vignette" aria-hidden="true"></div>
+<div class="battle-hint" id="hint" role="status" aria-live="polite">Выбери башню внизу и поставь её рядом с дорогой.</div>
+<div class="screen-state" id="screen-state" hidden>
+<div class="state-panel"><div class="state-sigil" id="state-sigil">✦</div>
+<p class="eyebrow" id="state-eyebrow">КОНЕЦ ИГРЫ</p><h2 id="state-title">Долина спасена!</h2>
+<p id="state-copy"></p><button type="button" class="primary" id="restart-overlay">Играть снова ↻</button>
+</div></div>
+</div>
+<div class="controlbar">
+<div class="wave-brief"><span id="phase-dot" class="phase-dot"></span>
+<div><b id="phase-title">Время подготовиться</b><small id="phase-desc">До первой атаки можно построить оборону.</small></div></div>
+<div class="game-actions">
+<button id="pulse" type="button" class="action pulse" disabled><span class="action-ico">✹</span> Импульс <span id="pulse-counter">12 c</span></button>
+<button id="speed" type="button" class="action action-subtle" aria-pressed="false">×1</button>
+<button id="pause" type="button" class="action action-subtle" disabled aria-pressed="false">Ⅱ</button>
+<button id="start" type="button" class="primary">Начать волну <span>→</span></button>
+</div>
+</div>
+</section>
+<section class="bottom-panels">
+<div class="build-panel panel">
+<div class="panel-heading"><div><span class="section-kicker">ТВОЙ АРСЕНАЛ</span><h2>Выбери защиту</h2></div><span class="panel-note">3 вида башен</span></div>
+<div class="tower-grid" role="group" aria-label="Выбор типа башни">
+<button type="button" class="tower selected" data-kind="ray" aria-pressed="true"><span class="tower-art ray">✦</span><span class="tower-description"><b>Луч</b><small>Частые точные удары</small><span class="cost">✧ 65</span></span></button>
+<button type="button" class="tower" data-kind="frost" aria-pressed="false"><span class="tower-art frost">❄</span><span class="tower-description"><b>Иней</b><small>Замедляет врагов</small><span class="cost">✧ 90</span></span></button>
+<button type="button" class="tower" data-kind="nova" aria-pressed="false"><span class="tower-art nova">✺</span><span class="tower-description"><b>Нова</b><small>Поражает группу</small><span class="cost">✧ 120</span></span></button>
+</div>
+<p class="note" id="build-note">Нажми на светлую клетку вне дороги. Башни стреляют сами.</p>
+</div>
+<div class="side-panel panel">
+<div class="panel-heading"><div><span class="section-kicker">ТАКТИЧЕСКИЙ ЦЕНТР</span><h2 id="detail-name">Твоя первая оборона</h2></div><span class="detail-glyph" id="detail-glyph">✧</span></div>
+<p class="detail-text" id="detail-text">За уничтоженных существ получаешь кристаллы. Между волнами выбирай, что построить или улучшить.</p>
+<div class="upgrade-actions">
+<button id="upgrade" type="button" class="upgrade" disabled>Выбери свою башню</button>
+<button id="sell" type="button" class="sell" disabled>Продать</button>
+</div>
+<div class="rules">
+<div><span>01</span> Построй защиту <i>↗</i></div>
+<div><span>02</span> Запусти волну <i>↗</i></div>
+<div><span>03</span> Используй импульс <i>↗</i></div>
+</div>
+</div>
+</section>
+<footer class="foot">
+<div>СТРАТЕГИЯ БЕЗ ЗАГРУЗКИ · МЫШЬ ИЛИ КАСАНИЕ · РАБОТАЕТ БЕЗ ВХОДА</div>
+<div><button type="button" id="restart-small" class="text-link">Новая игра ↻</button> <a href="../#gw-step-2">Создать свою версию с ИИ ↗</a></div>
+</footer>
+</main>
+</body></html>
