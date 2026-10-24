@@ -16,6 +16,13 @@ const ENEMIES={
  brute:{hp:220,speed:52,bounty:44,radius:27,color:'#9a80fe',damage:2},
  boss:{hp:610,speed:44,bounty:120,radius:35,color:'#fd627f',damage:3}
 };
+const NEXT_WAVE_TIPS=[
+ 'Разведчики и первые быстрые существа. Луч хорошо начинает оборону.',
+ 'Появятся тяжёлые панцирные враги: Нова пробивает их лучше Луча.',
+ 'Больше быстрых существ и панцирей. Иней помогает задерживать прорыв.',
+ 'Смешанная атака. Комбинируй массовый урон и контроль скорости.',
+ 'Финальный босс с крепкой бронёй. Подготовь Нову и сохрани импульс.'
+];
 const ROSTER=[
 ['wisp','wisp','wisp','wisp','wisp','runner','wisp','wisp'],
 ['wisp','runner','wisp','runner','wisp','brute','runner','wisp','wisp','runner'],
@@ -102,7 +109,7 @@ function sync(){
  $('pulse-counter').textContent=pulseCd>0?Math.ceil(pulseCd)+' c':fight?'ГОТОВ':'12 c';
  $('phase-dot').classList.toggle('battle',fight);
  $('phase-title').textContent=phase==='victory'?'Победа!':phase==='defeat'?'Сердце погасло':fight?'Держи оборону!':'Время подготовиться';
- $('phase-desc').textContent=phase==='victory'?'Все пять волн отражены.':phase==='defeat'?'Попробуй другую расстановку башен.':fight?(paused?'Пауза. Продолжи битву.':'Противников на поле: '+monsters.filter(e=>!e.dead).length):wave===0?'Построй первые башни и начни атаку.':'Защита пережила волну. Получены бонусные кристаллы.';
+ $('phase-desc').textContent=phase==='victory'?'Все пять волн отражены.':phase==='defeat'?'Попробуй другую расстановку башен.':fight?(paused?'Пауза. Продолжи битву.':'Противников на поле: '+monsters.filter(e=>!e.dead).length):NEXT_WAVE_TIPS[Math.min(wave,TOTAL-1)];
  document.querySelectorAll('[data-kind]').forEach(t=>{const yes=t.dataset.kind===selection;t.classList.toggle('selected',yes);t.setAttribute('aria-pressed',String(yes))});
  if(focusTower){
  const t=focusTower,d=TYPES[t.kind];$('detail-name').textContent=d.name+' · уровень '+t.level;
@@ -142,8 +149,11 @@ function killEnemy(e){
  if(e.dead)return;e.dead=true;const d=ENEMIES[e.kind];gold+=d.bounty;score+=d.bounty*10;kills++;
  floatText(e.x,e.y,'+'+d.bounty,'#ffe09b');blast(e.x,e.y,d.color,e.kind==='boss'?30:12);
 }
-function hurt(e,damage,slow=0){
- if(e.dead)return;e.hp-=damage;
+function hurt(e,damage,slow=0,source=''){
+ if(e.dead)return;
+ if((e.kind==='brute'||e.kind==='boss')&&source==='ray')damage*=.62;
+ if(e.kind==='boss'&&source==='frost'&&slow)slow=Math.max(slow,.7);
+ e.hp-=damage;
  if(slow){e.slowRate=Math.min(e.slowRate,slow);e.slowTime=Math.max(e.slowTime,1.65)}
  if(e.hp<=0)killEnemy(e);
 }
@@ -274,8 +284,8 @@ function simulation(dt){
  if(sh.target.dead){sh.dead=true;continue}
  const t=sh.target,dx=t.x-sh.x,dy=t.y-sh.y,dist=Math.hypot(dx,dy),move=sh.speed*dt;
  if(dist<=move+14){
- sh.dead=true;hurt(t,sh.damage,sh.slow);
- if(sh.splash){for(const other of monsters){if(other!==t&&!other.dead&&sq(t,other)<sh.splash*sh.splash)hurt(other,sh.damage*.57,sh.slow*.5)}}
+ sh.dead=true;hurt(t,sh.damage,sh.slow,sh.kind);
+ if(sh.splash){for(const other of monsters){if(other!==t&&!other.dead&&sq(t,other)<sh.splash*sh.splash)hurt(other,sh.damage*.57,sh.slow*.5,sh.kind)}}
  blast(t.x,t.y,sh.color,sh.kind==='nova'?17:7);
  }else{sh.x+=dx/dist*move;sh.y+=dy/dist*move}
  }
