@@ -48,3 +48,18 @@ button{font-family:inherit;cursor:pointer}button:focus-visible,a:focus-visible{o
 @media(max-width:760px){.game-shell{width:calc(100% - 20px)}.sitebar{padding:10px 14px;min-height:62px}.sitebar .course-link{display:none}.intro{padding:22px 6px;min-height:unset}.intro h1{font-size:clamp(28px,6.6vw,42px)}.intro p{font-size:12px}.orbit{right:2px;top:12px;opacity:.2}.stage{border-radius:19px}.statbar{padding:9px 7px;min-height:64px;gap:0}.stat{padding-left:6px}.stat-label{font-size:8px;letter-spacing:.04em}.stat strong{font-size:clamp(13px,3.7vw,20px)}.stat-symbol{right:5px;top:16px;font-size:17px}.field-vignette{box-shadow:inset 0 0 17px #070d2755}.battle-hint{font-size:10px;bottom:7px;left:7px;padding:5px 9px}.controlbar{flex-direction:column;align-items:stretch;padding:11px;gap:12px}.wave-brief b{font-size:12px}.game-actions{display:grid;grid-template-columns:1.2fr 46px 46px 1.45fr;width:100%;gap:6px}.action,.primary{padding:9px 6px;font-size:11px;min-height:44px}.action.pulse{font-size:10px}.action-ico{font-size:16px}.bottom-panels{gap:10px;margin-top:10px}.panel{padding:15px;border-radius:17px}.tower-grid{gap:6px}.tower{flex-direction:column;align-items:center;text-align:center;gap:4px;min-height:130px;padding:8px 4px}.tower-art{height:42px;font-size:32px}.tower-description{align-items:center}.tower b{font-size:13px}.tower small{font-size:9px}.cost{font-size:12px}.panel-heading{margin-bottom:13px}.panel-heading h2{font-size:17px}.rules{flex-wrap:wrap}.foot{flex-wrap:wrap;justify-content:center;text-align:center;gap:10px;padding:22px 0 35px}.state-panel{padding:17px}.state-sigil{font-size:38px}.state-panel p:not(.eyebrow){font-size:12px}}
 @media(max-width:370px){.stat-score{display:none}.statbar{grid-template-columns:repeat(3,1fr)}.tower small{display:none}.tower{min-height:104px}.tower-art{font-size:29px}.intro h1{font-size:27px}.brand{font-size:11px}.back{font-size:10px!important}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.001ms!important;transition-duration:.001ms!important}}
+
+/* Touch-first toolbar sits directly ABOVE the game map: no scrolling back to build. */
+.mobile-arsenal{display:none}
+@media(max-width:760px){
+ .mobile-arsenal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;padding:9px;background:#0d1e3c;border-bottom:1px solid #54769b80}
+ .mobile-tower{border:1px solid #537393;border-radius:13px;min-width:0;min-height:50px;padding:7px 4px;background:linear-gradient(145deg,#1c3258,#1b2d4c);color:#dceafa;font:800 12px/1.2 Manrope,Arial,sans-serif}
+ .mobile-tower>span{display:inline-block;margin-right:3px;font-size:17px;color:#9bf3ec;vertical-align:-2px}
+ .mobile-tower:nth-child(2)>span{color:#adbeff}.mobile-tower:nth-child(3)>span{color:#ffd095}
+ .mobile-tower b{display:block;font-size:10px;color:#f7d58b;margin-top:3px}
+ .mobile-tower.selected{border:2px solid #71eddc;background:linear-gradient(145deg,#2e6b81,#184a66);box-shadow:0 0 0 2px #58ddce33}
+ .tower-grid{display:none}
+ .build-panel .panel-heading{margin-bottom:6px}
+ .build-panel{padding:12px 15px}
+ .build-panel .note{margin:6px 0 0}
+}
