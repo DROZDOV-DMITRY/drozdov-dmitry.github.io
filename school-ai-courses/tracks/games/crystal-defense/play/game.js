@@ -2,7 +2,50 @@
 const canvas=document.getElementById('field'),c=canvas.getContext('2d',{alpha:false});
 const $=id=>document.getElementById(id);
 if(!c){$('hint').textContent='Браузер не поддерживает Canvas 2D. Попробуй другой браузер.';return}
-const W=990,H=720,S=94,OX=72,OY=31,COLS=9,ROWS=7,TOTAL=5;
+const W=990,H=720,S=94,OX=72,OY=31,COLS=9,ROWS=7;
+let TOTAL=5,startingGold=230,startingHealth=12,bonusBase=50;
+const sprites={},resourceStatuses=[],effects=[];
+const safeImagePath=x=>typeof x==='string'&&/^assets\/[a-z0-9_./-]+\.(png|webp|jpg|jpeg)$/i.test(x)&&!x.split('/').includes('..')?x:null;
+function numeric(x,fallback,min,max){const v=Number(x);return Number.isFinite(v)?Math.round(clamp(v,min,max)):fallback}
+function readSettings(cfg){
+ const g=cfg?.game||{},prices=cfg?.towerCosts||{};
+ startingGold=numeric(g.startGold,230,50,2000);
+ startingHealth=numeric(g.startHealth,12,1,40);
+ TOTAL=numeric(g.maxWaves,5,1,5);
+ bonusBase=numeric(g.bonusBetweenWaves,50,0,200);
+ for(const kind of ['ray','frost','nova'])TYPES[kind].cost=numeric(prices[kind],TYPES[kind].cost,20,500);
+}
+function loadImage(key,source){
+ return new Promise(resolve=>{
+  const path=safeImagePath(source);
+  if(!path){resourceStatuses.push({key,ok:false,path:String(source||'—'),reason:'Неверный путь'});resolve();return}
+  const img=new Image();let done=false;
+  const finish=ok=>{if(done)return;done=true;if(ok)sprites[key]=img;resourceStatuses.push({key,ok,path,reason:ok?'':'Файл не найден или повреждён'});resolve()};
+  img.onload=()=>finish(img.naturalWidth>0&&img.naturalHeight>0);
+  img.onerror=()=>finish(false);img.src=path;
+ });
+}
+async function loadResources(){
+ let config=window.CRYSTAL_OFFLINE_CONFIG||{},mode='config.offline.js',warning='';
+ if(location.protocol!=='file:'){
+  try{
+   const response=await fetch('game.json',{cache:'no-cache'});
+   if(!response.ok)throw Error('HTTP '+response.status);
+   const parsed=await response.json();
+   if(!parsed||typeof parsed!=='object'||!parsed.assets)throw Error('Неверная схема JSON');
+   config=parsed;mode='game.json';
+  }catch(error){warning='Невозможно прочитать game.json: '+error.message}
+ }
+ readSettings(config);
+ const paths=config.assets||{};
+ await Promise.all(['flare','magic','bush','bushOrange'].map(key=>loadImage(key,paths[key])));
+ const count=resourceStatuses.filter(r=>r.ok).length;
+ const status=$('asset-status'),list=$('asset-list'),src=$('config-mode');
+ if(status)status.textContent='Ресурсы проекта · '+count+'/'+resourceStatuses.length+' загружены · '+mode;
+ if(list){list.textContent='';for(const r of resourceStatuses){const li=document.createElement('li');li.className=r.ok?'asset-ok':'asset-missing';li.textContent=(r.ok?'✓ ':'⚠ ')+r.key+' — '+r.path+(r.ok?'':' ('+r.reason+')');list.appendChild(li)}}
+ if(src)src.textContent=(mode==='game.json'?'Онлайн: настройки читаются из game.json.':'Локально: используется config.offline.js.')+(warning?' '+warning:'')+' Для игры двойным щелчком обнови config.offline.js после правки JSON.';
+}
+
 const ROUTE=[[0,3],[1,3],[2,3],[2,2],[2,1],[3,1],[4,1],[4,2],[4,3],[5,3],[6,3],[6,4],[6,5],[7,5],[8,5]];
 const TRACK=new Set(ROUTE.map(q=>q.join(',')));
 const TYPES={
@@ -40,10 +83,10 @@ const bg=document.createElement('canvas');bg.width=W;bg.height=H;
 const b=bg.getContext('2d');
 const stars=Array.from({length:64},(_,i)=>({x:(i*131+45)%W,y:(i*87+19)%H,r:(i%3+1)*.75}));
 const plants=Array.from({length:60},(_,i)=>({x:(i*433+37)%W,y:(i*167+71)%H,size:4+(i%5)*3,rotate:(i*5)%6}));
-let gold=230,heart=12,wave=0,score=0,kills=0,phase='ready',speed=1,paused=false,selection='ray',focusTower=null;
+let gold=startingGold,heart=startingHealth,wave=0,score=0,kills=0,phase='ready',speed=1,paused=false,selection='ray',focusTower=null;
 let towers=[],monsters=[],shots=[],particles=[],texts=[],waveQueue=[],waveTime=0,serial=0,pulseCd=0,pulseArmed=false;
 let hovered=null,keyboardCursor=null,last=0,clock=0,uiClock=0,toastUntil=0,toastText='';
-let waveStartLives=12,wind=0,landFrame=0;
+let waveStartLives=startingHealth,wind=0,landFrame=0;
 const COLOR={ray:'#72f8dc',frost:'#a9c5ff',nova:'#ffcd8d'};
 function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.roundRect?ctx.roundRect(x,y,w,h,r):(ctx.rect(x,y,w,h));}
 function glowCircle(ctx,x,y,r,color,alpha=1){ctx.save();ctx.globalAlpha=alpha;const g=ctx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,color);g.addColorStop(1,'#0000');ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();ctx.restore()}
@@ -80,6 +123,13 @@ function scene(){
    polygon(b,0,-3,p.size*.72,4,Math.PI/4,i%3?'#72d8cf99':'#9db6e899','#d7fbff44');
    b.restore();
  });
+ // Additional original CC0 asset illustrations preserve the established game style.
+ const foliage=[[.7,.65,'bush'],[1.4,5.4,'bushOrange'],[3.55,5.5,'bush'],[6.4,.48,'bushOrange'],[7.8,2.18,'bush'],[8.5,.65,'bushOrange']];
+ for(const [gx,gy,key] of foliage){
+  const img=sprites[key];if(!img)continue;
+  b.save();b.globalAlpha=.42;b.shadowColor='#72d8c2';b.shadowBlur=9;
+  b.drawImage(img,OX+gx*S-37,OY+gy*S-31,75,60);b.restore()
+ }
  const e=routePts[0],z=routePts.at(-1);
  glowCircle(b,e.x,e.y,70,'#ce4d879c',.56);
  glowCircle(b,z.x,z.y,112,'#46e5d9ab',.8);
@@ -129,6 +179,7 @@ function sync(){
 function upgradeCost(t){return Math.round(TYPES[t.kind].cost*.77+(t.level-1)*28)}
 function refund(t){return Math.round((TYPES[t.kind].cost+(t.level-1)*upgradeCost({kind:t.kind,level:1}))*.58)}
 function blast(x,y,color,count=9){
+ if(sprites.flare){effects.push({x,y,life:0,ttl:.46,size:rand(44,78),sprite:'flare'});if(effects.length>60)effects.splice(0,effects.length-60)}
  if(reduce)count=Math.min(3,count);
  for(let i=0;i<count;i++){const a=rand(0,Math.PI*2),spd=rand(40,160);particles.push({x,y,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,ttl:rand(.2,.6),life:0,r:rand(2,5),color})}
  if(particles.length>250)particles.splice(0,particles.length-250);
@@ -171,8 +222,8 @@ function nextWave(){
 function finishWave(){
  if(phase!=='battle')return;
  if(wave===TOTAL){endGame(true);return}
- gold+=50+10*wave;phase='ready';pulseArmed=false;paused=false;score+=100*wave;
- setHint('Волна отражена! Бонус ✧ '+(50+10*wave)+'. Усиль оборону.',5);sync();
+ gold+=bonusBase+10*wave;phase='ready';pulseArmed=false;paused=false;score+=100*wave;
+ setHint('Волна отражена! Бонус ✧ '+(bonusBase+10*wave)+'. Усиль оборону.',5);sync();
 }
 function endGame(win){
  phase=win?'victory':'defeat';paused=false;pulseArmed=false;$('screen-state').hidden=false;
@@ -183,7 +234,7 @@ function endGame(win){
  sync();
 }
 function reset(){
- gold=230;heart=12;wave=0;score=0;kills=0;phase='ready';speed=1;paused=false;selection='ray';focusTower=null;
+ gold=startingGold;heart=startingHealth;wave=0;score=0;kills=0;phase='ready';speed=1;paused=false;selection='ray';focusTower=null;
  towers=[];monsters=[];shots=[];particles=[];texts=[];waveQueue=[];waveTime=0;serial=0;pulseCd=0;pulseArmed=false;clock=0;uiClock=0;last=0;
  $('screen-state').hidden=true;setHint('Выбери башню и поставь её рядом с дорогой.',12);sync();
 }
@@ -204,6 +255,7 @@ function castPulse(x,y){
  const R=125;let count=0;
  for(const e of monsters)if(!e.dead&&sq(e,{x,y})<R*R){hurt(e,130,.52);count++}
  particles.push({pulse:true,x,y,r:0,life:0,ttl:.53,color:'#ffd3f9'});
+ if(sprites.magic)effects.push({x,y,life:0,ttl:.7,size:250,sprite:'magic'});
  blast(x,y,'#ffbbe8',reduce?5:48);pulseCd=13;pulseArmed=false;
  setHint(count?'Импульс! Поражено существ: '+count:'Импульс активирован. В этот раз враги были слишком далеко.',3);
  sync();
@@ -292,6 +344,8 @@ function simulation(dt){
  shots=shots.filter(x=>!x.dead);monsters=monsters.filter(x=>!x.dead);
  if(phase==='battle'&&!waveQueue.length&&!monsters.length)finishWave();
  }
+ for(const fx of effects)fx.life+=dt;
+ for(let i=effects.length-1;i>=0;i--)if(effects[i].life>=effects[i].ttl)effects.splice(i,1);
  for(const p of particles){
  p.life+=dt;if(p.pulse){p.r+=dt*330;continue}
  p.x+=p.vx*dt;p.y+=p.vy*dt;p.vx*=.97;p.vy*=.97
@@ -342,7 +396,13 @@ function draw(dt){
  }
  towers.forEach(drawTower);
  monsters.forEach(drawEnemy);
- c.save();for(const sh of shots){
+ c.save();
+ for(const fx of effects){const img=sprites[fx.sprite];if(!img)continue;c.save();
+  c.globalAlpha=Math.max(0,1-fx.life/fx.ttl)*.72;c.globalCompositeOperation='lighter';
+  const size=fx.size*(1+.38*fx.life/fx.ttl);
+  c.drawImage(img,fx.x-size/2,fx.y-size/2,size,size);c.restore()
+ }
+ for(const sh of shots){
  c.strokeStyle=sh.color;c.lineWidth=sh.kind==='ray'?7:5;c.shadowBlur=20;c.shadowColor=sh.color;
  c.beginPath();c.arc(sh.x,sh.y,sh.kind==='nova'?10:6,0,Math.PI*2);c.fillStyle='#fff';c.fill();
  c.beginPath();c.arc(sh.x,sh.y,sh.kind==='nova'?8:5,0,Math.PI*2);c.fillStyle=sh.color;c.fill();
@@ -363,5 +423,10 @@ function frame(t){
  requestAnimationFrame(frame);
 }
 window.__crystalTest=Object.freeze({snapshot:()=>({gold,heart,wave,score,phase,kills,towers:towers.length,monsters:monsters.length,selection,speed,pulseCd,paused}),route:ROUTE.map(p=>p.slice()),version:'2.0'});
-reset();requestAnimationFrame(frame);
+loadResources().then(()=>{
+ scene();reset();requestAnimationFrame(frame);
+}).catch(error=>{
+ const status=$('asset-status');if(status)status.textContent='Ошибка ресурсов: '+error.message;
+ reset();requestAnimationFrame(frame);
+});
 })();
