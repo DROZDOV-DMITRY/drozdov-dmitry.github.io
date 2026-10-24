@@ -1,10 +1,10 @@
 # Ресурсы игры · лицензии и происхождение
 
-**Все четыре изображения:** Kenney / CC0 1.0 Universal. Авторская атрибуция не обязательна, но сохранена для прозрачности и обучения.
+**Все четыре изображения:** Kenney / Creative Commons Zero (CC0 1.0 Universal). Авторская атрибуция не обязательна, но сохранена для прозрачности и обучения.
 
 Официальные страницы и лицензии:
 - https://kenney.nl/assets/particle-pack — Particle Pack, CC0.
-- https://kenney.nl/assets/background-elements — Background Elements / Remastered; уточняйте источник и лицензию на соответствующей странице.
+- https://kenney.nl/assets/background-elements-remastered — Background Elements Remastered, CC0.
 - https://kenney.nl/support — автор подтверждает CC0 для игровых наборов.
 - https://creativecommons.org/publicdomain/zero/1.0/ — CC0 1.0 Universal.
 
@@ -12,10 +12,10 @@
 
 | Локальный файл | Исходный файл Kenney | Назначение | Размер исходного PNG |
 |---|---|---|---|
-| `kenney/flare.png` | `2d/Particle Pack/PNG (Transparent)/flare_01.png` | Световой след и попадание | ~43 КБ |
-| `kenney/magic.png` | `2d/Particle Pack/PNG (Transparent)/magic_05.png` | Эффект энергетической способности | ~76 КБ |
-| `kenney/bush.png` | `2d/Background Elements Remastered/bush3.png` | Декорация | ~1,5 КБ |
-| `kenney/bush-orange.png` | `2d/Background Elements Remastered/bushOrange3.png` | Декорация | ~1,5 КБ |
+| `kenney/flare.png` | `2d/Particle Pack/PNG (Transparent)/flare_01.png` | Световой след и попадание | 512×512 · 43 КБ |
+| `kenney/magic.png` | `2d/Particle Pack/PNG (Transparent)/magic_05.png` | Эффект энергетической способности | 512×512 · 76 КБ |
+| `kenney/bush.png` | `2d/Background Elements Remastered/bush3.png` | Декорация | 59×52 · 1,5 КБ |
+| `kenney/bush-orange.png` | `2d/Background Elements Remastered/bushOrange3.png` | Декорация | 56×52 · 1,5 КБ |
 
 **Не добавляйте чужие картинки из Google без проверки лицензии.** В OpenGameArt и на itch.io условия различаются от работы к работе. При CC BY запишите автора и ссылку; при неясных условиях ресурс пока не используйте.
 
