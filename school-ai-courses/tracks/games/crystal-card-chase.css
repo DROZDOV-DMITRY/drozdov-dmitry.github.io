@@ -1,0 +1,48 @@
+/* Световая змейка только у карточки «Кристальный рубеж».
+   Рамка SVG повторяет контур карточки; фон и прочие игры не изменяются. */
+.gw-tile.gw-crystal-featured{
+ isolation:isolate;
+ border-color:#96dfd9;
+ box-shadow:0 14px 28px #123c5260,0 0 0 1px #a2fbec4a;
+}
+.gw-crystal-featured .gw-crystal-snake{
+ position:absolute;inset:0;width:100%;height:100%;z-index:5;
+ overflow:visible;border-radius:inherit;pointer-events:none;
+}
+.gw-crystal-featured .gw-crystal-snake rect{
+ fill:none;stroke:url(#gw-crystal-snake-palette);stroke-linecap:round;
+ vector-effect:non-scaling-stroke;stroke-dasharray:8 92;
+ stroke-dashoffset:0;opacity:0;
+ animation:gw-crystal-snake-pass 8s linear infinite;
+}
+.gw-crystal-featured .gw-crystal-snake-halo{stroke-width:8;filter:blur(4px)}
+.gw-crystal-featured .gw-crystal-snake-core{stroke-width:2.7;filter:drop-shadow(0 0 4px #bbfff6)}
+@keyframes gw-crystal-snake-pass{
+ 0%,73%{opacity:0;stroke-dashoffset:0}
+ 75%{opacity:1;stroke-dashoffset:0}
+ 87%{opacity:1;stroke-dashoffset:-100}
+ 91%,100%{opacity:0;stroke-dashoffset:-100}
+}
+@keyframes gw-crystal-snake-hover{
+ from{opacity:1;stroke-dashoffset:0}
+ to{opacity:1;stroke-dashoffset:-100}
+}
+@media (hover:hover) and (pointer:fine){
+ .gw-tile.gw-crystal-featured:is(:hover,:focus-visible){
+   border-color:#c2fff3;
+   box-shadow:0 24px 46px #0d4e6770,0 0 25px #79e7dc66;
+ }
+ .gw-crystal-featured:is(:hover,:focus-visible) .gw-crystal-snake rect{
+   animation:gw-crystal-snake-hover 1.55s linear infinite;opacity:1;
+ }
+}
+@media (hover:none){
+ .gw-crystal-featured .gw-crystal-snake rect{animation-duration:10s}
+}
+@media (prefers-reduced-motion:reduce){
+ .gw-crystal-featured .gw-crystal-snake rect{animation:none!important;opacity:0}
+ .gw-tile.gw-crystal-featured{
+   border-color:#79e8dc;
+   box-shadow:0 14px 28px #15394e61,0 0 0 2px #78e4d565;
+ }
+}
