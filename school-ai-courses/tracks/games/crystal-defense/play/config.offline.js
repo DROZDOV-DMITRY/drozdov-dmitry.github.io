@@ -1,13 +1,16 @@
-/* Используется при открытии index.html двойным щелчком (file://).\n   При публикации / http:// браузер читает game.json.\n   Для одинакового поведения заменяйте объект ниже после изменения game.json. */
+/* Настройки для file://; содержимое идентично game.json. */
 window.CRYSTAL_OFFLINE_CONFIG = {
-  "version": "3.0-pilot",
+  "version": "3.1-balanced",
   "project": "Кристальный рубеж — библиотека ресурсов",
   "notes": "Изменения этого JSON видны на сайте и при запуске через локальный HTTP-сервер. Для запуска файла двойным щелчком используйте также config.offline.js.",
   "game": {
-    "startGold": 230,
-    "startHealth": 12,
+    "startGold": 195,
+    "startHealth": 9,
     "maxWaves": 5,
-    "bonusBetweenWaves": 50
+    "bonusBetweenWaves": 30,
+    "waveEnemyHealthGrowth": 0.29,
+    "waveEnemySpeedGrowth": 0.07,
+    "spawnIntervalMultiplier": 0.84
   },
   "towerCosts": {
     "ray": 65,

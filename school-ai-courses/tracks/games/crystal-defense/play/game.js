@@ -3,16 +3,20 @@ const canvas=document.getElementById('field'),c=canvas.getContext('2d',{alpha:fa
 const $=id=>document.getElementById(id);
 if(!c){$('hint').textContent='Браузер не поддерживает Canvas 2D. Попробуй другой браузер.';return}
 const W=990,H=720,S=94,OX=72,OY=31,COLS=9,ROWS=7;
-let TOTAL=5,startingGold=230,startingHealth=12,bonusBase=50;
+let TOTAL=5,startingGold=230,startingHealth=12,bonusBase=50,enemyHpGrowth=.29,enemySpeedGrowth=.07,spawnIntervalMultiplier=.84;
 const sprites={},resourceStatuses=[],effects=[];
 const safeImagePath=x=>typeof x==='string'&&/^assets\/[a-z0-9_./-]+\.(png|webp|jpg|jpeg)$/i.test(x)&&!x.split('/').includes('..')?x:null;
 function numeric(x,fallback,min,max){const v=Number(x);return Number.isFinite(v)?Math.round(clamp(v,min,max)):fallback}
+function decimal(x,fallback,min,max){const v=Number(x);return Number.isFinite(v)?clamp(v,min,max):fallback}
 function readSettings(cfg){
  const g=cfg?.game||{},prices=cfg?.towerCosts||{};
  startingGold=numeric(g.startGold,230,50,2000);
  startingHealth=numeric(g.startHealth,12,1,40);
  TOTAL=numeric(g.maxWaves,5,1,5);
  bonusBase=numeric(g.bonusBetweenWaves,50,0,200);
+ enemyHpGrowth=decimal(g.waveEnemyHealthGrowth,.29,0,1);
+ enemySpeedGrowth=decimal(g.waveEnemySpeedGrowth,.07,0,.4);
+ spawnIntervalMultiplier=decimal(g.spawnIntervalMultiplier,.84,.3,1.6);
  for(const kind of ['ray','frost','nova'])TYPES[kind].cost=numeric(prices[kind],TYPES[kind].cost,20,500);
 }
 function loadImage(key,source){
@@ -67,11 +71,104 @@ const NEXT_WAVE_TIPS=[
  'Финальный босс с крепкой бронёй. Подготовь Нову и сохрани импульс.'
 ];
 const ROSTER=[
-['wisp','wisp','wisp','wisp','wisp','runner','wisp','wisp'],
-['wisp','runner','wisp','runner','wisp','brute','runner','wisp','wisp','runner'],
-['runner','wisp','brute','wisp','runner','brute','wisp','runner','wisp','runner','wisp'],
-['runner','brute','wisp','runner','brute','wisp','runner','brute','wisp','runner','brute','wisp'],
-['runner','brute','runner','wisp','brute','wisp','runner','brute','runner','boss','brute','runner']
+ [
+  'wisp',
+  'wisp',
+  'wisp',
+  'runner',
+  'wisp',
+  'wisp',
+  'runner',
+  'wisp'
+ ],
+ [
+  'wisp',
+  'runner',
+  'wisp',
+  'runner',
+  'brute',
+  'wisp',
+  'runner',
+  'wisp',
+  'brute',
+  'runner',
+  'wisp',
+  'runner',
+  'wisp',
+  'runner'
+ ],
+ [
+  'runner',
+  'wisp',
+  'brute',
+  'runner',
+  'wisp',
+  'runner',
+  'brute',
+  'runner',
+  'wisp',
+  'brute',
+  'runner',
+  'wisp',
+  'brute',
+  'runner',
+  'wisp',
+  'runner',
+  'wisp',
+  'runner'
+ ],
+ [
+  'runner',
+  'brute',
+  'runner',
+  'wisp',
+  'runner',
+  'brute',
+  'runner',
+  'brute',
+  'wisp',
+  'runner',
+  'brute',
+  'wisp',
+  'runner',
+  'brute',
+  'runner',
+  'wisp',
+  'brute',
+  'runner',
+  'wisp',
+  'brute',
+  'runner',
+  'wisp'
+ ],
+ [
+  'runner',
+  'brute',
+  'runner',
+  'wisp',
+  'brute',
+  'runner',
+  'brute',
+  'wisp',
+  'runner',
+  'brute',
+  'runner',
+  'brute',
+  'wisp',
+  'runner',
+  'boss',
+  'brute',
+  'runner',
+  'brute',
+  'wisp',
+  'runner',
+  'brute',
+  'runner',
+  'brute',
+  'runner',
+  'brute',
+  'runner'
+ ]
 ];
 const mid=(x,y)=>({x:OX+(x+.5)*S,y:OY+(y+.5)*S});
 const routePts=ROUTE.map(q=>mid(...q));
@@ -105,7 +202,9 @@ function sync(){
  $('start').disabled=!ready||wave>=TOTAL;
  $('start').innerHTML=wave===0?'Начать волну <span>→</span>':wave<TOTAL?'Следующая волна <span>→</span>':'Все волны пройдены';
  $('pause').disabled=!fight;$('pause').textContent=paused?'▶':'Ⅱ';$('pause').setAttribute('aria-pressed',String(paused));
- $('speed').textContent='×'+speed;$('speed').setAttribute('aria-pressed',String(speed===2));
+ $('speed').textContent='×'+speed;
+ $('speed').setAttribute('aria-label','Скорость игры ×'+speed+'. Нажмите, чтобы переключить на ×'+(speed===5?1:speed+1));
+ $('speed').title='Скорость игры: ×'+speed+' (нажмите для переключения до ×5)';
  $('pulse').disabled=!fight||paused||pulseCd>0;
  $('pulse').classList.toggle('armed',pulseArmed);
  $('pulse-counter').textContent=pulseCd>0?Math.ceil(pulseCd)+' c':fight?'ГОТОВ':'12 c';
@@ -139,7 +238,7 @@ function blast(x,y,color,count=9){
 function floatText(x,y,msg,color){texts.push({x,y,msg,color,life:0});if(texts.length>28)texts.shift()}
 function makeMonster(kind){
  const d=ENEMIES[kind],p=routePts[0];
- const scaledHp=Math.round(d.hp*(1+.24*(wave-1)));
+ const scaledHp=Math.round(d.hp*(1+enemyHpGrowth*(wave-1)));
  monsters.push({id:++serial,kind,dist:0,x:p.x,y:p.y,hp:scaledHp,max:scaledHp,slowTime:0,slowRate:1,rot:rand(0,7),anim:rand(0,7),dead:false});
 }
 function monsterPosition(e){
@@ -232,7 +331,7 @@ document.querySelectorAll('[data-kind]').forEach(btn=>btn.addEventListener('clic
  setHint('Выбрано: '+TYPES[selection].name+'. Нажми на свободную клетку.',2.5);sync();
 }));
 $('start').addEventListener('click',nextWave);
-$('speed').addEventListener('click',()=>{speed=speed===1?2:1;sync()});
+$('speed').addEventListener('click',()=>{speed=speed===5?1:speed+1;sync()});
 $('pause').addEventListener('click',()=>{if(phase!=='battle')return;paused=!paused;sync()});
 $('pulse').addEventListener('click',()=>{
  if(phase!=='battle'||pulseCd>0||paused)return;
@@ -268,10 +367,10 @@ function simulation(dt){
  clock+=dt;pulseCd=Math.max(0,pulseCd-dt);
  if(phase==='battle'){
  waveTime-=dt;
- if(waveQueue.length&&waveTime<=0){const kind=waveQueue.shift();makeMonster(kind);waveTime=.75*(kind==='brute'?1.65:kind==='boss'?2.7:1)}
+ if(waveQueue.length&&waveTime<=0){const kind=waveQueue.shift();makeMonster(kind);waveTime=spawnIntervalMultiplier*(kind==='brute'?1.35:kind==='boss'?2.2:1)*(1-.065*(wave-1))}
  for(const e of monsters)if(!e.dead){
  if(e.slowTime>0)e.slowTime-=dt;else e.slowRate=1;
- e.dist+=ENEMIES[e.kind].speed*e.slowRate*dt;
+ e.dist+=ENEMIES[e.kind].speed*(1+enemySpeedGrowth*(wave-1))*e.slowRate*dt;
  const p=monsterPosition(e);e.x=p.x;e.y=p.y;
  if(p.arrived){e.dead=true;heart=Math.max(0,heart-ENEMIES[e.kind].damage);blast(e.x,e.y,'#ff8bba',18);floatText(e.x,e.y,'−'+ENEMIES[e.kind].damage,'#ff94a8');if(heart===0){endGame(false);break}}
  }
@@ -309,7 +408,11 @@ function simulation(dt){
 function frame(t){
  if(!last)last=t;
  const dt=Math.min(.05,(t-last)/1000);last=t;
- if(!paused&&phase!=='victory'&&phase!=='defeat')simulation(dt*speed);
+ // Divide accelerated time into bounded ticks, so x5 cannot skip projectiles or collisions.
+ if(!paused&&phase!=='victory'&&phase!=='defeat'){
+   let remaining=dt*speed;
+   while(remaining>0.000001){const step=Math.min(.03,remaining);simulation(step);remaining-=step;if(phase==='victory'||phase==='defeat')break}
+ }
  else if(phase==='victory'||phase==='defeat'){clock+=dt;for(const p of particles)p.life+=dt;particles=particles.filter(p=>p.life<p.ttl)}
  visual.draw(dt);uiClock+=dt;
  if(uiClock>.17){sync();uiClock=0}

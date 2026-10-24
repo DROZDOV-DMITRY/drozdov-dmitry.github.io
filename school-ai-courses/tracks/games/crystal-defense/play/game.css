@@ -72,3 +72,6 @@ button{font-family:inherit;cursor:pointer}button:focus-visible,a:focus-visible{o
 .resource-body p{margin:10px 0}.resource-body code{font-family:Consolas,monospace;color:#ecfaff}.resource-body a{color:#81f4d9}
 .resource-body ul{padding-left:22px;margin:12px 0}.resource-body li{padding:3px 0;overflow-wrap:anywhere}
 .resource-body .asset-ok{color:#88edc9}.resource-body .asset-missing{color:#ffcb91}
+
+/* The full ×1–×5 cycle stays legible on small screens. */
+#speed{font-variant-numeric:tabular-nums;min-width:46px}
