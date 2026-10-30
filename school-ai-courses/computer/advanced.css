@@ -28,3 +28,11 @@
 @media(max-width:850px){.adv-layout{grid-template-columns:1fr}.adv-sidebar .adv-sticky{position:static}}
 @media(max-width:550px){.adv-layout{padding:15px 0 38px}.adv-card{padding:17px;border-radius:17px}.adv-hero{padding:27px 0}.adv-btn{width:100%}}
 @media(prefers-reduced-motion:reduce){.adv-btn{transition:none}}
+
+/* Shared student page system: match the approved homepage palette and cards. */
+.computer-advanced{background:linear-gradient(135deg,#fffaf0,#edf5ff);color:#101c38}
+.adv-hero{background:linear-gradient(115deg,#fff0d2,#e6f3ff 58%,#f2eaff);color:#101c38;border-radius:0 0 28px 28px}
+.adv-hero h1{color:#101c38!important}.adv-hero p{color:#344663}
+.adv-card,.adv-sidebar .adv-sticky{border-radius:26px;box-shadow:var(--s14-shadow);border-color:#ffffff;background:#fff}
+.adv-start{background:linear-gradient(135deg,#fff4dc,#fff)}.adv-final{background:linear-gradient(135deg,#e8f7ee,#fff)}
+.adv-card h2,.adv-sidebar h2{color:#173767}.adv-btn{border-radius:16px;background:linear-gradient(135deg,#176bd1,#294fae)}

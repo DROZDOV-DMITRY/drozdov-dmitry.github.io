@@ -229,3 +229,10 @@ body.s14-student{margin:0;background:linear-gradient(180deg,#eff5ffde,#f5f2fbe8)
 }
 .home-links .s14-feedback:hover,
 .s14-student .nav-feedback:hover{filter:brightness(1.06)!important}
+
+/* Common controls for the computer course */
+.s14-student button,.s14-student .s14-next-link,.s14-student .s14-download-link{transition:filter .12s ease,transform .12s ease}
+.s14-student button:active,.s14-student .s14-next-link:active,.s14-student .s14-download-link:active{transform:translateY(1px)}
+.s14-student button:focus-visible,.s14-student a:focus-visible,.s14-student summary:focus-visible{outline:3px solid #173767;outline-offset:3px}
+.s14-next-link,.s14-download-link{display:inline-flex;align-items:center;min-height:46px;margin:8px 8px 4px 0;padding:10px 15px;border-radius:15px;background:linear-gradient(135deg,#176bd1,#294fae);color:#fff!important;font-weight:850;text-decoration:none}
+@media(prefers-reduced-motion:reduce){.s14-student button,.s14-student a{transition:none}}
