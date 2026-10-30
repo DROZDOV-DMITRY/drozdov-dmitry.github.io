@@ -3,133 +3,80 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#fffdf8">
-<title>Урок 9 · Найди скачанный файл · Курс ИИ</title>
-<meta name="description" content="Скачай файл, найди его в браузере и Проводнике Windows, определи его тип.">
+<meta name="theme-color" content="#fff8ed">
+<title>Урок 9 · Куда пропал файл? · Курс ИИ</title>
+<meta name="description" content="Практика для Windows: скачать файл, найти его в браузере, перенести в папку и посмотреть его тип.">
 <link rel="canonical" href="https://drozdov-dmitry.github.io/school-ai-courses/computer/l09/">
 <link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
 <link rel="stylesheet" href="/school-ai-courses/assets/s14-v2.css">
 <link rel="stylesheet" href="/school-ai-courses/assets/visual-system.css">
 <script defer src="/school-ai-courses/assets/nav.js?v=20261022-deepseek-native-tab"></script>
 <script defer src="/school-ai-courses/assets/snow-trail.js"></script>
-<style>
-.l8-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:18px;align-items:start}
-.l8-card,.l8-fast{padding:22px;border-radius:26px;border:1px solid #ffffffe8;box-shadow:var(--s14-shadow)}
-.l8-card{background:linear-gradient(135deg,#fffaf1,#eef6ff)}.l8-fast{background:linear-gradient(135deg,#fff2c8,#e2f1ff)}
-.l8-time{display:inline-flex;margin-top:8px;padding:5px 9px;border-radius:999px;background:#e9efff;font-size:.76rem;font-weight:900}
-.l8-task,.download-box{padding:16px 17px;border-radius:18px;background:#fff;border:1px solid #dce5f3;margin-top:12px}
-.download-box{background:#eef8f1;border-color:#bedfc9}
-.choice{display:grid;gap:8px;margin-top:10px}.choice button{min-height:46px;border:1px solid #cbd7e8;border-radius:14px;background:#fff;color:#101c38;font-weight:850;cursor:pointer;text-align:left;padding:10px 12px}.choice button.ok{background:#e5f5eb;border-color:#a9d2b9}
-.status{margin-top:10px;padding:12px 14px;border-radius:15px;background:#eef3fb;font-weight:850}.status.ok{background:#e5f5eb;color:#195c39}.status.warn{background:#fff0f4;color:#8b2149}
-.paste-zone{min-height:110px;margin-top:10px;border:2px dashed #91a7c6;border-radius:18px;background:#fff;padding:12px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:850;outline:none;overflow:hidden}.paste-zone img{max-width:100%;max-height:300px;border-radius:12px}
-.снимок-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.actions a,.actions button{min-height:44px;padding:9px 13px;border:0;border-radius:14px;background:linear-gradient(135deg,#166dd5,#2654b0);color:#fff;font-weight:900;text-decoration:none;cursor:pointer}.actions .secondary{background:linear-gradient(135deg,#fff1d0,#f8dca6);color:#101c38}
-.done{margin-top:12px;min-height:44px;padding:9px 13px;border:1px solid #c7d4e8;border-radius:14px;background:#fff;color:#101c38;font-weight:850;cursor:pointer}.done.is-done{background:#dff4e8;border-color:#a8d5bb}.done:disabled{opacity:.5;cursor:not-allowed}
-.progressbox{position:sticky;top:106px;padding:18px;border-radius:24px;background:#fff;border:1px solid #fff;box-shadow:var(--s14-shadow)}.progressbar{height:12px;border-radius:999px;background:#e5ebf4;overflow:hidden;margin:10px 0}.progressbar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#4aa87a,#2673ce)}
-.challenge{padding:17px;border-radius:20px;background:#eef8f1;border:1px solid #bedfc9}.micro{font-size:.9rem;color:#56627a}
-@media(max-width:900px){.l8-grid{grid-template-columns:1fr}.progressbox{position:static}.снимок-grid{grid-template-columns:1fr}}
-@media(max-width:640px){.l8-card,.l8-fast{padding:17px}}
-</style>
 <link rel="stylesheet" href="/school-ai-courses/computer/assistance.css">
+<style>
+:root{--quest-ink:#182344;--quest-muted:#52617d;--quest-blue:#b9e8ff;--quest-lilac:#ded5ff;--quest-yellow:#ffe18d;--quest-pink:#ffc9d8;--quest-green:#bcebcf}
+body.l09-page{background:linear-gradient(180deg,#fff6e9 0,#f3f1ff 44rem,#eaf6ff 100%);color:var(--quest-ink);font-family:"S14 UI","Segoe UI",sans-serif}
+.l09-page .topbar{margin-top:14px}.l09-page .topbar .inner{border:2px solid #fff;background:#ffffffeb;box-shadow:0 10px 30px #44396e18}
+.l09-page .brand span{font-size:16px}.l09-page .student-hero{padding:26px 0 10px!important}
+.l09-hero{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(240px,.88fr);gap:14px;align-items:center;padding:clamp(23px,5vw,54px);border:2px solid #fff;border-radius:36px;background:linear-gradient(120deg,#fff0bc 0,#ffd4e0 48%,#d9e9ff 100%);box-shadow:0 20px 48px #29325a20}
+.l09-hero:before,.l09-hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none}.l09-hero:before{width:210px;height:210px;right:-60px;top:-95px;background:#fff7bd80}.l09-hero:after{width:120px;height:120px;left:44%;bottom:-85px;background:#fff9}
+.l09-hero-copy,.l09-hero-art{position:relative;z-index:1}.l09-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid #fff;border-radius:999px;background:#ffffffbb;font-weight:900;color:#624190}.l09-kicker .spark{font-size:1.2em}.l09-hero h1{margin:18px 0 12px;font:700 clamp(42px,6.5vw,76px)/.98 "S14 Display","Arial Narrow",sans-serif!important;letter-spacing:-.025em!important;color:#202c56!important;text-wrap:balance}.l09-hero p{max-width:620px;margin:0;color:#374361;font-size:clamp(17px,2vw,21px);line-height:1.5}.l09-hero-art{width:min(100%,340px);justify-self:center;filter:drop-shadow(0 14px 12px #51477728)}
+.l09-goal{width:min(calc(100% - 48px),1080px);margin:14px auto 0;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;padding:17px 22px;border:2px solid #fff;border-radius:22px;background:#ffffffcf;box-shadow:0 8px 22px #29325a12}.l09-goal-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,#d7f6e2,#aee3c3);font-size:25px}.l09-goal strong{display:block;font-size:17px}.l09-goal p{margin:3px 0 0;color:var(--quest-muted)}
+.l09-main{width:min(calc(100% - 48px),1080px);margin:28px auto 64px}.l09-section-title{display:flex;align-items:center;gap:12px;margin:32px 0 16px;font:700 clamp(30px,4vw,42px)/1.06 "S14 Display","Arial Narrow",sans-serif;color:#212d53}.l09-section-title .number{display:grid;place-items:center;flex:0 0 43px;width:43px;height:43px;border-radius:15px;background:var(--quest-yellow);font:900 19px "S14 UI",sans-serif;box-shadow:0 4px 0 #d4b456}
+.l09-card{position:relative;padding:clamp(20px,3.5vw,34px);border:2px solid #fff;border-radius:30px;background:#ffffffeb;box-shadow:0 12px 30px #303a6020}.l09-card p{line-height:1.6}.l09-intro{display:grid;grid-template-columns:1fr auto;align-items:center;gap:14px}.l09-sticker{display:grid;place-items:center;width:92px;height:92px;border:3px dashed #e0a944;border-radius:30px;background:#fff3c7;font-size:42px;transform:rotate(5deg)}.l09-callout{padding:13px 16px;border-left:5px solid #8a72dc;border-radius:4px 16px 16px 4px;background:#f2efff;color:#3e4269}
+.l09-step{display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;margin:16px 0;padding:21px;border:2px solid #fff;border-radius:26px;background:#ffffffdc;box-shadow:0 9px 24px #303a6015}.l09-step:nth-of-type(2n){background:linear-gradient(120deg,#ffffffef,#eff9ff)}.l09-step-num{display:grid;place-items:center;width:48px;height:48px;border-radius:17px;background:linear-gradient(145deg,#ffe18d,#ffc467);color:#4b3c1a;font:900 22px "S14 Display",sans-serif;box-shadow:0 4px 0 #d8a84f}.l09-step h3{margin:2px 0 7px;font:700 clamp(22px,3vw,29px)/1.1 "S14 Display","Arial Narrow",sans-serif;color:#202c56}.l09-step p{margin:7px 0;color:#35415f}.l09-step a{font-weight:850;color:#245ca8}.l09-step .download-link{display:inline-flex;align-items:center;gap:10px;margin:10px 0 3px;padding:13px 17px;border:2px solid #fff;border-radius:17px;background:linear-gradient(135deg,#bcebcf,#8ed8b1);box-shadow:0 5px 0 #70b991;color:#153d31;text-decoration:none;font-size:17px}.download-link:hover{filter:brightness(.98);transform:translateY(-1px)}.download-link .download-icon{font-size:23px}
+.l09-illustration{display:block;width:min(100%,690px);height:auto;margin:15px auto 6px;border:2px solid #e3eaf8;border-radius:22px;background:#f4f7ff;box-shadow:0 8px 20px #23365c12}.l09-caption{text-align:center!important;color:#66728c!important;font-size:14px!important;margin:5px auto 11px!important}.l09-note{padding:12px 15px;border-radius:15px;background:#fff4d4;color:#634b18;font-size:15px}.l09-note.blue{background:#e8f4ff;color:#304f7a}
+.l09-keys{display:inline-flex;align-items:center;gap:6px;vertical-align:middle;margin:0 3px}.l09-keys kbd{display:inline-grid;place-items:center;min-width:44px;min-height:42px;padding:5px 10px;border:1px solid #d4d9e5;border-bottom:4px solid #aeb8cc;border-radius:10px;background:linear-gradient(#fff,#eaf0f8);color:#23304e;font:900 18px/1 "S14 UI","Segoe UI",sans-serif;box-shadow:0 2px 0 #dbe2ed}.l09-keys.plus{font-weight:900;color:#67728a}
+.l09-sequence{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:14px 0;padding:17px;border-radius:20px;background:linear-gradient(120deg,#fff5d9,#f5edff)}.l09-sequence .arrow{font-size:24px;color:#7663c5;font-weight:900}.l09-sequence span.label{font-weight:850}
+.l09-help{margin-top:14px;border:1px solid #dbe4f2;border-radius:18px;background:#f8faff;overflow:hidden}.l09-help summary{padding:14px 17px;cursor:pointer;font-weight:900;color:#35538a;list-style:none}.l09-help summary::-webkit-details-marker{display:none}.l09-help summary:after{content:"＋";float:right;color:#725eb8}.l09-help[open] summary:after{content:"−"}.l09-help[open] summary{border-bottom:1px solid #e0e7f2;background:#f0f4ff}.l09-help .help-body{padding:5px 17px 15px;color:#3e4b69}.l09-help .help-body p{margin:10px 0}
+.l09-transfer{background:linear-gradient(135deg,#fff1c7,#ffe0ea 50%,#e8e3ff)}.l09-transfer h3{font:700 29px/1.1 "S14 Display",sans-serif;color:#3c315f}.l09-transfer ol{padding-left:1.35em;line-height:1.8}.l09-finish{display:flex;gap:14px;align-items:flex-start;padding:21px;border:2px solid #fff;border-radius:24px;background:linear-gradient(120deg,#d9f5df,#d6ecff);box-shadow:0 10px 25px #29325a14}.l09-finish-icon{font-size:31px}.l09-finish h3{margin:0 0 5px;font:700 27px "S14 Display",sans-serif}.l09-finish p{margin:0;color:#35445e}.l09-footer-link{display:inline-flex;margin-top:24px;padding:12px 17px;border:1px solid #ecd398;border-radius:16px;background:#fff5dc;color:#344064;font-weight:850;text-decoration:none}.l09-footer-link:hover{background:#ffeab6}.l09-page :is(a,summary):focus-visible{outline:3px solid #294c8c;outline-offset:3px}
+@media(max-width:760px){.l09-hero{grid-template-columns:1fr;text-align:center;border-radius:28px}.l09-hero-art{width:min(74%,270px);max-height:220px}.l09-hero p{margin-inline:auto}.l09-goal,.l09-main{width:min(calc(100% - 28px),1080px)}.l09-goal{padding:13px}.l09-step{grid-template-columns:42px minmax(0,1fr);gap:11px;padding:16px;border-radius:22px}.l09-step-num{width:40px;height:40px;border-radius:14px;font-size:19px}.l09-sticker{width:70px;height:70px;font-size:33px}.l09-illustration{border-radius:16px}}
+@media(max-width:430px){.l09-page .topbar{margin-inline:10px}.l09-page .topbar .inner{padding:10px}.l09-page .brand span{font-size:14px}.l09-page .s14-brand-logo{width:44px;height:44px}.l09-main{width:calc(100% - 22px)}.l09-hero{padding:23px 18px}.l09-hero h1{font-size:44px!important}.l09-step{padding:14px 12px;gap:9px}.l09-step-num{width:34px;height:34px;border-radius:12px;font-size:17px}.l09-step h3{font-size:23px}.l09-goal{grid-template-columns:40px 1fr;gap:10px}.l09-goal-icon{width:40px;height:40px}.l09-keys kbd{min-width:37px;min-height:37px;font-size:16px}.l09-sequence{gap:7px;padding:12px}.l09-sequence .arrow{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.l09-page *, .l09-page *:before,.l09-page *:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
 </head>
-<body class="s14-student theme-computer">
+<body class="s14-student theme-computer l09-page">
 <header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · Урок 9</span></a></div></header>
 <main>
-<section class="student-hero"><div class="wrap"><span class="status-badge">Урок 9 · 40 минут</span><h1>Найди скачанный файл</h1><p>Скачай файл, найди его сначала в браузере, затем в Проводнике и определи тип.</p></div></section>
-<section class="section light"><div class="wrap" style="max-width:980px"><article class="l8-card" style="background:linear-gradient(135deg,#fffaf1,#eef6ff);padding:clamp(18px,4vw,32px);border-radius:26px">
-<h2>Сделай по порядку</h2>
-<ol style="font-size:1.08rem;line-height:1.7;padding-left:1.4em">
-<li>На Рабочем столе создай папку <b>«Тренировка загрузок»</b>.</li>
-<li><a class="s14-download-link" href="files/%D0%A1%D1%82%D0%B0%D1%80%D1%82-%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0.txt" download>Скачай файл Старт-загрузка.txt</a>. После нажатия браузер начнёт загрузку.</li>
-<li>Найди значок загрузок в правом верхнем углу браузера и открой файл. Если значка не видно, нажми <b>Ctrl+J</b> или открой меню «Загрузки».</li>
-<li>В списке загрузок выбери <b>«Показать в папке»</b>. Откроется Проводник с выделенным файлом.</li>
-<li>Перемести файл в папку <b>«Тренировка загрузок»</b> на Рабочем столе. Открой эту папку.</li>
-<li>В этой папке щёлкни по файлу правой кнопкой, выбери <b>«Свойства»</b> и прочитай строку <b>«Тип файла»</b>.</li>
-</ol>
-<details><summary>Не получилось найти файл?</summary><p>Открой загрузки браузера сочетанием Ctrl+J. Найди строку «Старт-загрузка.txt» и нажми «Показать в папке». Если пункта нет, открой папку «Загрузки» в Проводнике и найди файл там.</p></details>
-<details><summary>Не получилось определить тип?</summary><p>Открой свойства файла и прочитай строку «Тип файла». Не угадывай по значку и не меняй расширение.</p></details>
-<p class="d0-taskbox"><b>Результат:</b> файл «Старт-загрузка.txt» лежит в папке «Тренировка загрузок», а его тип ты прочитал в свойствах.</p>
-<a class="s14-next-link" href="../">Вернуться к списку уроков</a>
-</article></div></section></main>
+<section class="student-hero"><div class="wrap"><div class="l09-hero">
+ <div class="l09-hero-copy"><span class="l09-kicker"><span class="spark" aria-hidden="true">✦</span> Миссия: найти пропажу</span><h1>Куда пропал файл?</h1><p>Ты только что скачал файл. Теперь найди его, перенеси в свою папку и узнай, что Windows о нём знает.</p></div>
+ <svg class="l09-hero-art" viewBox="0 0 360 270" role="img" aria-labelledby="heroTitle heroDesc" xmlns="http://www.w3.org/2000/svg"><title id="heroTitle">Файл отправляется в папку</title><desc id="heroDesc">Весёлый бумажный файл спускается из окна загрузки в яркую папку</desc><defs><linearGradient id="folder" x2="0" y2="1"><stop stop-color="#ffd96f"/><stop offset="1" stop-color="#f4a932"/></linearGradient><linearGradient id="page" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#e7f3ff"/></linearGradient></defs><circle cx="180" cy="135" r="116" fill="#fff9"/><path d="M63 98h84l20 19h132a14 14 0 0 1 14 14v91a15 15 0 0 1-15 15H63a15 15 0 0 1-15-15v-110a14 14 0 0 1 15-14Z" fill="url(#folder)" stroke="#fff" stroke-width="8"/><path d="M57 138h255l-21 75a16 16 0 0 1-15 12H72a16 16 0 0 1-15-20Z" fill="#ffbf4d"/><g transform="rotate(-8 188 91)"><rect x="147" y="31" width="83" height="112" rx="13" fill="url(#page)" stroke="#fff" stroke-width="6"/><path d="M166 67h45M166 82h39M166 97h33" stroke="#88a7d4" stroke-width="7" stroke-linecap="round"/><circle cx="187" cy="119" r="11" fill="#8bd1a6"/><path d="m182 119 4 4 7-9" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M254 63v48m-16-15 16 16 16-16" fill="none" stroke="#8368cf" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="m91 66 4 10 10 4-10 4-4 10-4-10-10-4 10-4Zm207 23 3 7 8 3-8 3-3 8-3-8-8-3 8-3Z" fill="#fff"/></svg>
+</div></div></section>
+<div class="l09-goal"><div class="l09-goal-icon" aria-hidden="true">🎯</div><div><strong>Что получится в конце</strong><p>Файл окажется в нужной папке, а ты найдёшь его тип в свойствах Windows.</p></div></div>
+<div class="l09-main">
+<section aria-labelledby="start-title"><h2 class="l09-section-title" id="start-title"><span class="number">1</span>Приготовь место</h2>
+<div class="l09-card l09-intro"><div><p><strong>Представь:</strong> загрузил файл для задания, а он затерялся среди других. Чтобы такого не было, сначала приготовим для него отдельную папку.</p><div class="l09-callout">На Рабочем столе щёлкни правой кнопкой по пустому месту → выбери <b>«Создать» → «Папку»</b> → напиши <b>Тренировка загрузок</b> и нажми Enter. Если такая папка уже есть, используй её.</div></div><div class="l09-sticker" aria-hidden="true">📁</div></div></section>
 
+<section aria-labelledby="practice-title"><h2 class="l09-section-title" id="practice-title"><span class="number">2</span>Найди первый файл</h2>
+<article class="l09-step"><div class="l09-step-num">1</div><div><h3>Скачай учебный файл</h3><p>Нажми на кнопку. Файл <b>Старт-загрузка.txt</b> — обычный учебный текст. В нём нет твоих личных данных.</p><a class="download-link" href="files/%D0%A1%D1%82%D0%B0%D1%80%D1%82-%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0.txt" download><span class="download-icon" aria-hidden="true">⬇</span>Скачать Старт-загрузка.txt</a><p class="l09-note blue">Когда браузер закончит загрузку, не ищи файл наугад. Сейчас откроем список загрузок.</p></div></article>
+
+<article class="l09-step"><div class="l09-step-num">2</div><div><h3>Открой список загрузок</h3><p>Посмотри в правый верхний угол браузера: там может появиться значок загрузок <b>⬇</b>. Нажми на него. Если значка нет, нажми на клавиатуре <span class="l09-keys" role="img" aria-label="Нажми Ctrl, затем J"><kbd>Ctrl</kbd><span class="plus">+</span><kbd>J</kbd></span> — в Microsoft Edge и Яндекс Браузере так открывается список загрузок.</p>
+<svg class="l09-illustration" viewBox="0 0 720 260" role="img" aria-labelledby="keysTitle keysDesc" xmlns="http://www.w3.org/2000/svg"><title id="keysTitle">Как открыть загрузки клавишами Ctrl и J</title><desc id="keysDesc">Слева показаны клавиши Ctrl плюс J, справа пример окна браузера со списком скачанных файлов</desc><defs><linearGradient id="bgKeys" x2="1" y2="1"><stop stop-color="#fff6d9"/><stop offset="1" stop-color="#e8e8ff"/></linearGradient></defs><rect x="8" y="8" width="704" height="244" rx="24" fill="url(#bgKeys)"/><text x="36" y="48" fill="#525e7c" font-family="Arial,sans-serif" font-size="17" font-weight="700">СПОСОБ 1 · КЛАВИАТУРА</text><rect x="42" y="91" width="137" height="72" rx="14" fill="#fff" stroke="#b6bfd1" stroke-width="3"/><path d="M48 149h125" stroke="#8e99ae" stroke-width="8" stroke-linecap="round"/><text x="110" y="135" text-anchor="middle" fill="#253250" font-family="Arial,sans-serif" font-size="26" font-weight="700">Ctrl</text><text x="202" y="139" fill="#7364b4" font-family="Arial,sans-serif" font-size="30" font-weight="700">+</text><rect x="237" y="91" width="78" height="72" rx="14" fill="#fff" stroke="#b6bfd1" stroke-width="3"/><path d="M243 149h66" stroke="#8e99ae" stroke-width="8" stroke-linecap="round"/><text x="276" y="137" text-anchor="middle" fill="#253250" font-family="Arial,sans-serif" font-size="28" font-weight="700">J</text><text x="72" y="199" fill="#596781" font-family="Arial,sans-serif" font-size="15">Нажми сочетание вместе</text><path d="M345 129h48" stroke="#8975d6" stroke-width="5" stroke-linecap="round"/><path d="m383 116 15 13-15 13" fill="none" stroke="#8975d6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><rect x="418" y="39" width="259" height="186" rx="16" fill="#fff" stroke="#cbd7ea" stroke-width="3"/><path d="M418 70h259" stroke="#dce4f0" stroke-width="2"/><circle cx="440" cy="55" r="5" fill="#ff9cae"/><circle cx="457" cy="55" r="5" fill="#ffd26e"/><circle cx="474" cy="55" r="5" fill="#8cd5a8"/><text x="442" y="98" fill="#3d4b68" font-family="Arial,sans-serif" font-size="16" font-weight="700">Загрузки</text><rect x="437" y="111" width="222" height="53" rx="10" fill="#edf7ff"/><path d="M452 128h15v20h-15z" fill="#9bd7b2"/><path d="M455 133h9m-9 5h9" stroke="#fff" stroke-width="2"/><text x="477" y="133" fill="#3f4d69" font-family="Arial,sans-serif" font-size="12" font-weight="700">Старт-загрузка.txt</text><text x="477" y="150" fill="#73809a" font-family="Arial,sans-serif" font-size="11">Загрузка завершена</text><text x="442" y="192" fill="#6958a7" font-family="Arial,sans-serif" font-size="12" font-weight="700">Открой свою загрузку</text></svg>
+<p class="l09-caption">Пример: сочетание клавиш открывает список. Вид браузера на твоём компьютере может немного отличаться.</p>
+<details class="l09-help"><summary>Не сработало сочетание клавиш?</summary><div class="help-body"><p>Открой меню браузера и выбери <b>«Загрузки»</b>. В некоторых версиях браузера значок загрузок появляется рядом с адресной строкой. Нажми на него.</p><p>В другом браузере сочетание может отличаться — тогда ищи пункт <b>«Загрузки»</b> в меню.</p></div></details></div></article>
+
+<article class="l09-step"><div class="l09-step-num">3</div><div><h3>Попроси браузер показать файл</h3><p>Найди в списке <b>Старт-загрузка.txt</b> и нажми <b>«Показать в папке»</b>. Браузер откроет Проводник и подсветит нужный файл.</p>
+<svg class="l09-illustration" viewBox="0 0 720 236" role="img" aria-labelledby="explorerTitle explorerDesc" xmlns="http://www.w3.org/2000/svg"><title id="explorerTitle">Команда «Показать в папке»</title><desc id="explorerDesc">Учебная схема: команда браузера открывает Проводник, где скачанный файл подсвечен</desc><rect x="8" y="8" width="704" height="220" rx="24" fill="#eff8ff"/><rect x="36" y="39" width="265" height="159" rx="16" fill="#fff" stroke="#cbd7ea" stroke-width="3"/><path d="M36 70h265" stroke="#dbe5f2" stroke-width="2"/><text x="57" y="61" fill="#3b4967" font-family="Arial,sans-serif" font-size="15" font-weight="700">ЗАГРУЗКИ В БРАУЗЕРЕ</text><rect x="54" y="87" width="228" height="54" rx="10" fill="#f3f5fb"/><text x="69" y="110" fill="#3d4a66" font-family="Arial,sans-serif" font-size="12" font-weight="700">Старт-загрузка.txt</text><text x="69" y="128" fill="#79849a" font-family="Arial,sans-serif" font-size="11">⋯  Показать в папке</text><path d="M320 119h70" stroke="#806ccd" stroke-width="5" stroke-linecap="round"/><path d="m379 105 16 14-16 14" fill="none" stroke="#806ccd" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><rect x="410" y="39" width="274" height="159" rx="16" fill="#fff" stroke="#cbd7ea" stroke-width="3"/><path d="M410 70h274" stroke="#dbe5f2" stroke-width="2"/><text x="431" y="61" fill="#3b4967" font-family="Arial,sans-serif" font-size="15" font-weight="700">ПРОВОДНИК</text><path d="M430 91h35l8 9h36v16h-79z" fill="#ffd166"/><text x="475" y="108" fill="#485571" font-family="Arial,sans-serif" font-size="12" font-weight="700">Тренировка загрузок</text><rect x="430" y="131" width="234" height="42" rx="8" fill="#dff1ff" stroke="#68a4dc" stroke-width="2"/><path d="M443 140h15v23h-15z" fill="#91d2a7"/><path d="M446 146h9m-9 5h9" stroke="#fff" stroke-width="2"/><text x="468" y="148" fill="#344562" font-family="Arial,sans-serif" font-size="12" font-weight="700">Старт-загрузка.txt</text><text x="468" y="163" fill="#5f7090" font-family="Arial,sans-serif" font-size="10">Файл выделен</text></svg>
+<p class="l09-caption">Это схема, а не снимок твоего экрана: названия могут выглядеть чуть иначе.</p>
+<details class="l09-help"><summary>Не вижу «Показать в папке»</summary><div class="help-body"><p>Открой Проводник Windows: нажми значок жёлтой папки на панели задач. Слева выбери <b>«Загрузки»</b> и найди <b>Старт-загрузка.txt</b>. Если список длинный, щёлкни по нему и начни печатать имя файла.</p></div></details></div></article>
+
+<article class="l09-step"><div class="l09-step-num">4</div><div><h3>Перенеси файл в свою папку</h3><p>Когда файл выделен в Проводнике, нажми <span class="l09-keys" role="img" aria-label="Ctrl плюс X"><kbd>Ctrl</kbd><span class="plus">+</span><kbd>X</kbd></span> — это вырезать. Открой на Рабочем столе папку <b>«Тренировка загрузок»</b> и нажми <span class="l09-keys" role="img" aria-label="Ctrl плюс V"><kbd>Ctrl</kbd><span class="plus">+</span><kbd>V</kbd></span> — это вставить. Файл переместится туда.</p>
+<div class="l09-sequence"><span class="label">Выдели файл</span><span class="l09-keys" role="img" aria-label="Ctrl плюс X"><kbd>Ctrl</kbd><span class="plus">+</span><kbd>X</kbd></span><span class="arrow" aria-hidden="true">→</span><span class="label">Открой папку</span><span class="l09-keys" role="img" aria-label="Ctrl плюс V"><kbd>Ctrl</kbd><span class="plus">+</span><kbd>V</kbd></span></div>
+<p class="l09-note">Если удобнее мышью: щёлкни по файлу правой кнопкой, выбери <b>«Вырезать»</b>. Открой папку, щёлкни по пустому месту правой кнопкой и нажми <b>«Вставить»</b>.</p></div></article>
+
+<article class="l09-step"><div class="l09-step-num">5</div><div><h3>Узнай тип файла</h3><p>В открытой папке щёлкни по файлу правой кнопкой и выбери <b>«Свойства»</b>. Найди строку <b>«Тип файла»</b>. Windows сообщит тип — у нашего файла это текстовый документ.</p><svg class="l09-illustration" viewBox="0 0 720 205" role="img" aria-labelledby="typeTitle typeDesc" xmlns="http://www.w3.org/2000/svg"><title id="typeTitle">Где Windows показывает тип файла</title><desc id="typeDesc">В окне свойств файла выделена строка «Тип файла: Текстовый документ»</desc><rect x="8" y="8" width="704" height="189" rx="24" fill="#f5f0ff"/><rect x="188" y="26" width="344" height="151" rx="17" fill="#fff" stroke="#c9c5df" stroke-width="3"/><path d="M188 62h344" stroke="#e3e0ee" stroke-width="2"/><text x="214" y="51" fill="#3c4562" font-family="Arial,sans-serif" font-size="15" font-weight="700">Свойства: Старт-загрузка.txt</text><text x="215" y="88" fill="#6a748d" font-family="Arial,sans-serif" font-size="13">Имя файла:</text><text x="332" y="88" fill="#34405f" font-family="Arial,sans-serif" font-size="13" font-weight="700">Старт-загрузка.txt</text><rect x="205" y="102" width="309" height="41" rx="9" fill="#dff3e6" stroke="#70bb8b" stroke-width="2"/><text x="218" y="127" fill="#41604a" font-family="Arial,sans-serif" font-size="13">Тип файла:</text><text x="332" y="127" fill="#245d38" font-family="Arial,sans-serif" font-size="14" font-weight="700">Текстовый документ (.txt)</text><circle cx="562" cy="123" r="25" fill="#ffe18d"/><path d="m551 123 8 8 15-18" fill="none" stroke="#4c693c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><text x="559" y="169" text-anchor="middle" fill="#65708a" font-family="Arial,sans-serif" font-size="11">Смотри сюда</text></svg>
+<p class="l09-caption">Значок может меняться, а строка «Тип файла» показывает сведения Windows.</p><details class="l09-help"><summary>Не вижу строку «Тип файла»</summary><div class="help-body"><p>Проверь, что открыл именно <b>«Свойства»</b>, а не просто переименовал файл. На вкладке «Общие» строка обычно находится в верхней части окна. Ничего в свойствах менять не нужно — только прочитай тип и закрой окно.</p></div></details></div></article>
+</section>
+
+<section aria-labelledby="transfer-title"><h2 class="l09-section-title" id="transfer-title"><span class="number">3</span>Теперь попробуй сам</h2>
+<article class="l09-card l09-transfer"><h3>Новая находка!</h3><p>Потренируйся ещё раз — теперь с другим файлом. Подсказки остаются рядом, но порядок действий выбери сам.</p><ol><li><a href="files/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0-%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%BF%D1%8B%D1%82.txt" download><b>Скачай файл Тренировка-следопыт.txt</b></a>.</li><li>Найди его в браузере, а затем в Проводнике.</li><li>Перенеси его в папку <b>«Тренировка загрузок»</b>.</li><li>Открой свойства и прочитай тип.</li></ol><p class="l09-note blue">Получилось? Значит, теперь ты умеешь находить скачанный файл и приводить его в порядок. Если застрял, вернись к картинке нужного шага выше.</p></article>
+</section>
+
+<section aria-label="Результат урока" style="margin-top:22px"><div class="l09-finish"><span class="l09-finish-icon" aria-hidden="true">🏁</span><div><h3>Миссия выполнена</h3><p>Оба файла лежат в папке «Тренировка загрузок», а тип ты узнал по сведениям Windows. Теперь потерянную загрузку ты сможешь найти сам.</p></div></div><a class="l09-footer-link" href="../">← Вернуться к урокам раздела «Компьютер»</a></section>
+</div>
+</main>
 <script type="application/json" id="lessonAiContext">
-{
-  "lesson_id":"L09",
-  "title":"Скачал — теперь найди",
-  "environment":["WINDOWS","BROWSER","FILE_EXPLORER","AI_LAUNCHER_V1"],
-  "target_atoms":["WEB-005","WEB-007","FILE-016","FILE-017"],
-  "reinforcement_atoms":["FILE-001","FILE-002","FILE-014","KEY-011","KEY-005","AI-001","AI-002","AI-005","AI-006"],
-  "explicit_prerequisites":[
-    {"for":"FILE-016","requires":["WEB-005"],"basis":"HIGH_CONFIDENCE_CHAIN"},
-    {"for":"FILE-016","requires":["FILE-001","FILE-002"],"basis":"HIGH_CONFIDENCE_CHAIN"}
-  ],
-  "download_fixture":{"mechanism":"CLIENT_SIDE_BLOB","start_filename":"Старт-загрузка.txt","transfer_filename":"Таблица-загрузка.csv","contains_personal_data":false},
-  "fast_gate":{"duration_minutes":4,"mode":"PERFORMANCE_REAL_DOWNLOAD_NO_AI","checks":["DOWNLOAD_FILE","FIND_IN_BROWSER_DOWNLOADS","FIND_IN_FILE_EXPLORER","IDENTIFY_FILE_TYPE_FROM_SYSTEM_INFO","THREE_SCREENSHOT_EVIDENCE"],"on_pass":"FAST_CHALLENGE","on_fail":"NORMAL_ROUTE"},
-  "ai_policy":{"first_attempt":"SELF_OR_RECALL","allowed_after_stuck":["ONE_ACTION"],"do_not":["ASSUME_DEFAULT_DOWNLOAD_FOLDER_WITHOUT_EVIDENCE","GIVE_FULL_SEQUENCE_IMMEDIATELY"]},
-  "support_actions_not_assessed":["RIGHT_CLICK_OPEN_PROPERTIES"],
-  "safety_constraints":["DO_NOT_DISABLE_BROWSER_DOWNLOAD_PROTECTION","DO_NOT_BYPASS_DANGEROUS_FILE_WARNING"],
-  "expected_evidence":"For a second file, show the browser download record, the real file location in File Explorer, and system-provided file type information.",
-  "mutable_ui_note":"Browser download controls and exact File Explorer command placement vary by browser and Windows version; assess the result, not a frozen icon path.",
-  "current_fact_evidence_checked_2026_10_07":["Microsoft Support: Downloads is a known Windows folder available in File Explorer.","Microsoft Support: File Explorer can search from a chosen folder/location.","Yandex Browser Support: Ctrl+J opens the downloads list on Windows.","Microsoft Edge Support: Ctrl+J opens Downloads.","Microsoft Support: File Explorer can show file name extensions, but FILE-018 is not required for L09."],
-  "status":"REPO_CURRENT_2026_10_09"
-}
-</script>
-<script>
-(() => {
- const key='s14:l09:progress:v3',buttons=[...document.querySelectorAll('[data-step]')],fastButton=document.querySelector('[data-fast]');
- let done=new Set();try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
- const fill=document.getElementById('progressFill'),text=document.getElementById('progressText');
- function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(b.dataset.step==='5'?'Проверил и убрал папку':b.dataset.step==='1'?'Файл скачан':b.dataset.step==='2'?'Нашёл в браузере':b.dataset.step==='3'?'Нашёл в Проводнике':'Тип определён')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов'}
- buttons.forEach(b=>b.addEventListener('click',()=>{if(b.disabled)return;done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);try{localStorage.setItem(key,JSON.stringify([...done]))}catch(_){/* browser storage blocked; in-memory progress continues */};render()}));
- fastButton?.addEventListener('click',()=>{const yes=fastButton.classList.toggle('is-done');fastButton.textContent=(yes?'✓ ':'○ ')+'дополнительное задание выполнено'});render();
-
- function downloadFixture(filename,content,type){
-   const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');
-   a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
- }
- const downloadStart=()=>downloadFixture('Старт-загрузка.txt','СТАРТ ЗАГРУЗКИ\r\nУчебный файл для урока 9.\r\nКонтрольная фраза: СЕВЕР-17\r\nЛичных данных нет.\r\n','text/plain;charset=utf-8');
- const downloadTransfer=()=>downloadFixture('Таблица-загрузка.csv','item,value\r\nlesson,9\r\ncode,ORBITA-42\r\nnote,Учебный CSV без личных данных\r\n','text/csv;charset=utf-8');
- document.getElementById('fastDownload')?.addEventListener('click',downloadStart);
- document.getElementById('normalDownload')?.addEventListener('click',downloadStart);
- document.getElementById('transferDownload')?.addEventListener('click',downloadTransfer);
- document.getElementById('fastTransferDownload')?.addEventListener('click',downloadTransfer);
-
- let fastBrowser=false,fastFile=false,fastTypeConcept=false,fastBrowserEv=false,fastExplorerEv=false,fastTypeEv=false;
- function updateFast(){
-   const ok=fastBrowser&&fastFile&&fastTypeConcept&&fastBrowserEv&&fastExplorerEv&&fastTypeEv;
-   const box=document.getElementById('fastStatus'),pass=document.getElementById('fastPass');pass.hidden=!ok;box.className='status '+(ok?'ok':'');box.textContent=ok?'Три снимка вставлены, маршруты и способ определения типа поняты. Проверь содержимое глазами.':'Выбери три верных утверждения и добавь три снимка экрана.';
- }
- document.querySelectorAll('[data-fast-answer]').forEach(btn=>btn.addEventListener('click',()=>{
-   const kind=btn.dataset.fastAnswer;if(kind==='wrong'){const s=document.getElementById('fastStatus');s.className='status warn';s.textContent='Нет: браузер показывает загрузку, но задача требует найти реальный файл в Проводнике.';return}
-   btn.classList.add('ok');if(kind==='browser')fastBrowser=true;if(kind==='file')fastFile=true;if(kind==='type')fastTypeConcept=true;updateFast();
- }));
- document.querySelectorAll('#typeQuiz [data-type-answer]').forEach(btn=>btn.addEventListener('click',()=>{
-   const ok=btn.dataset.typeAnswer==='ok';document.querySelectorAll('#typeQuiz button').forEach(x=>x.classList.remove('ok'));if(ok)btn.classList.add('ok');const s=document.getElementById('typeStatus');s.className='status '+(ok?'ok':'warn');s.textContent=ok?'Верно: тип берём из системной информации.':'Нет: иконка сама по себе не доказывает тип.';
- }));
- document.getElementById('copyAiPrompt')?.addEventListener('click',async e=>{const q=document.getElementById('aiPromptText')?.textContent?.trim()||'';try{await navigator.clipboard.writeText(q);e.currentTarget.textContent='Скопировано ✓'}catch(_){e.currentTarget.textContent='Скопируй вопрос вручную'}});
- document.getElementById('openAi')?.addEventListener('click',()=>{(document.getElementById('s14QuickChatTop')||document.getElementById('s14QuickChat'))?.click()});
-
- function installImage(zoneId,statusId,onReady){
-   const zone=document.getElementById(zoneId),status=document.getElementById(statusId);
-   zone?.addEventListener('paste',e=>{const item=[...e.clipboardData.items].find(x=>x.type.startsWith('image/'));if(!item){status.className='status warn';status.textContent='В буфере нет изображения.';return}e.preventDefault();const file=item.getAsFile(),url=URL.createObjectURL(file),img=new Image();img.onload=()=>{zone.innerHTML='';zone.appendChild(img);status.className='status ok';status.textContent='Снимок вставлен. Проверь имя, место или тип глазами.';URL.revokeObjectURL(url);onReady?.()};img.src=url});
- }
- installImage('fastBrowserPaste','fastBrowserStatus',()=>{fastBrowserEv=true;updateFast()});
- installImage('fastExplorerPaste','fastExplorerStatus',()=>{fastExplorerEv=true;updateFast()});
- installImage('fastTypePaste','fastTypeStatus',()=>{fastTypeEv=true;updateFast()});
- let finalBrowser=false,finalExplorer=false,finalType=false;
- function updateFinal(){const s=document.getElementById('finalStatus'),b=document.getElementById('finalDone');if(finalBrowser&&finalExplorer&&finalType){s.className='status ok';s.textContent='Три снимка вставлены. Проверь глазами, что везде речь именно о Таблица-загрузка.csv.';b.disabled=false}}
- installImage('finalBrowserPaste','finalBrowserStatus',()=>{finalBrowser=true;updateFinal()});
- installImage('finalExplorerPaste','finalExplorerStatus',()=>{finalExplorer=true;updateFinal()});
- installImage('finalTypePaste','finalTypeStatus',()=>{finalType=true;updateFinal()});
-
- let fcBrowser=false,fcExplorer=false,fcType=false;
- function updateFastChallenge(){
-   const s=document.getElementById('fastChallengeStatus'),b=document.getElementById('fastChallengeDone');
-   if(fcBrowser&&fcExplorer&&fcType){s.className='status ok';s.textContent='Три снимка вставлены. Проверь глазами имя, место и системный тип Таблица-загрузка.csv.';b.disabled=false}
- }
- installImage('fastChallengeBrowserPaste','fastChallengeBrowserStatus',()=>{fcBrowser=true;updateFastChallenge()});
- installImage('fastChallengeExplorerPaste','fastChallengeExplorerStatus',()=>{fcExplorer=true;updateFastChallenge()});
- installImage('fastChallengeTypePaste','fastChallengeTypeStatus',()=>{fcType=true;updateFastChallenge()});
-})();
+{"lesson_id":"L09","title":"Куда пропал файл?","environment":["WINDOWS","BROWSER","FILE_EXPLORER"],"target_atoms":["WEB-005","WEB-007","FILE-016","FILE-017"],"reinforcement_atoms":["FILE-001","FILE-002","FILE-014","KEY-011","KEY-005"],"sequence":["CREATE_OR_REUSE_FOLDER","DOWNLOAD_TEXT_FIXTURE","OPEN_BROWSER_DOWNLOADS_USING_VISIBLE_ICON_OR_CTRL_J","SHOW_IN_FOLDER_OR_USE_FILE_EXPLORER_DOWNLOADS","MOVE_FILE_TO_DESKTOP_FOLDER","READ_FILE_TYPE_IN_PROPERTIES","REPEAT_WITH_SECOND_FIXTURE_WITHOUT_FULL_STEP_BY_STEP_PROMPTING"],"assessment":"Learner completes a second download, locates it in the browser and File Explorer, moves it into the folder, and reads Windows file type information. No screenshots or quiz required.","support_policy":"Provide visual examples beside unfamiliar actions, brief recovery hints in place, and a direct return to the relevant lesson step.","download_fixtures":{"start":"Старт-загрузка.txt","practice":"Тренировка-следопыт.txt","contains_personal_data":false},"safety_constraints":["Do not disable browser download protection.","Do not bypass dangerous-file warnings.","Do not change file properties or extensions; read only."],"mutable_ui_note":"Browser controls and Windows context menus vary by version. Teach the visible downloads control plus Ctrl+J for supported browsers, with the Downloads menu as fallback."}
 </script>
 </body>
 </html>
