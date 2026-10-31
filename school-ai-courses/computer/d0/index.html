@@ -32,8 +32,13 @@
 .d0-history{margin-top:16px;font-size:.9rem;color:#657188}
 @media(max-width:620px){.d0-stage,.d0-intro{padding:17px}.d0-actions{display:grid}.d0-actions button,.d0-actions a{width:100%}}
 </style>
-</head>
-<body class="s14-student theme-computer">
+<style id="s14-illustrated-style">
+body.s14-student.s14-illustrated{background:linear-gradient(180deg,#fff6e9,#f3efff 850px,#eaf7ff);color:#202c50}
+.s14-illustrated :is(h1,h2,h3){font-family:"S14 Display","Arial Narrow",sans-serif!important;line-height:1.12;letter-spacing:.005em}.s14-illustrated h2{font-size:clamp(27px,3.4vw,39px)}.s14-illustrated h3{font-size:25px}.s14-illustrated p,.s14-illustrated li{line-height:1.65}.s14-illustrated :is(article[class$="-card"],.adv-card,.l01-card){border:2px solid #fff;border-radius:28px;background:linear-gradient(125deg,#fffdf7,#f4f5ff);box-shadow:0 12px 30px #303a6018;margin-bottom:20px}.s14-illustrated .student-hero>.wrap{background:linear-gradient(120deg,#fff0bc,#ffd7e3 52%,#dceaff)!important;border-radius:32px!important}.s14-illustrated .student-hero h1{letter-spacing:-.02em!important}.s14-illustrated :is(button,a,summary):focus-visible{outline:3px solid #254d91;outline-offset:4px}.s14-illustrated .done{border:2px solid #a6d6b8;background:#e6f7ec;color:#235b39}.s14-illustrated .done.is-done{background:#a9dfbb;box-shadow:0 0 0 4px #d6f1df}.s14-illustrated details{background:#f5f4ff;border:1px solid #ddd8ef;border-radius:17px;padding:9px 15px;margin-top:14px}.s14-illustrated summary{cursor:pointer;font-weight:850;min-height:42px}.s14-visual{margin:20px 0;padding:14px;border:2px solid #fff;border-radius:25px;background:linear-gradient(120deg,#fff1cc,#f2e8ff,#e3f3ff);box-shadow:0 8px 22px #303a6013;overflow:hidden}.s14-visual svg{display:block;width:100%;height:auto}.s14-visual figcaption{text-align:center;color:#52617e;font-size:15px;line-height:1.5;margin:9px 0 0}.s14-visual-start{width:min(calc(100% - 36px),1080px);margin:10px auto 26px}.s14-visual-key{max-width:700px}.s14-inline-explanation{padding:12px 15px;background:#e8f5ed;border-left:4px solid #69b58a;border-radius:12px}.s14-illustrated .gnome-coach{display:none}.s14-illustrated .timer-wrap{grid-template-columns:1fr}.s14-illustrated .adv-proof{background:#e8f5ee;border-radius:14px}.s14-illustrated .task-sub{display:block;margin-top:8px;font-family:"S14 UI",sans-serif;font-size:17px;font-weight:600;line-height:1.45}
+@media(max-width:600px){.s14-visual{padding:8px;border-radius:18px}.s14-visual figcaption{font-size:14px}.s14-visual-start{width:calc(100% - 24px)}.s14-illustrated .student-hero>.wrap{padding:24px 20px!important}.s14-illustrated .s14-topic-visual{display:none}.s14-illustrated :is(.l01-grid,.l2-grid,.l3-grid,.l4-grid,.l5-grid,.l6-grid,.l7-grid,.l8-grid,.l9-grid){grid-template-columns:1fr!important}}
+@media(prefers-reduced-motion:reduce){.s14-illustrated *{animation:none!important;transition:none!important}}
+</style></head>
+<body class="s14-student theme-computer s14-illustrated">
 <header class="topbar"><div class="wrap inner"><a class="brand" href="/school-ai-courses/computer/"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · Старт</span></a></div></header>
 
 <main>
@@ -43,10 +48,10 @@
 <p><b>Это не контрольная.</b></p>
 </div></section>
 
-<section class="section light"><div class="wrap d0-shell">
+<figure class="s14-visual s14-visual-start"><svg viewbox="0 0 700 202" role="img" aria-label="Попробуй на компьютере → Выполни действие → Посмотри результат" xmlns="http://www.w3.org/2000/svg"><rect x="18" y="20" width="203" height="162" rx="22" fill="#ffe09a" stroke="white" stroke-width="4"></rect><circle cx="119" cy="62" r="23" fill="white"></circle><text x="119" y="69" text-anchor="middle" font-family="Arial" font-size="23" font-weight="700" fill="#7462ac">1</text><text x="119" y="113" text-anchor="middle" fill="#293653" font-family="Arial,sans-serif" font-size="16" font-weight="700">Попробуй на</text><text x="119" y="135" text-anchor="middle" fill="#293653" font-family="Arial,sans-serif" font-size="16" font-weight="700">компьютере</text><rect x="248" y="20" width="203" height="162" rx="22" fill="#d6c7ff" stroke="white" stroke-width="4"></rect><circle cx="349" cy="62" r="23" fill="white"></circle><text x="349" y="69" text-anchor="middle" font-family="Arial" font-size="23" font-weight="700" fill="#7462ac">2</text><text x="349" y="113" text-anchor="middle" fill="#293653" font-family="Arial,sans-serif" font-size="16" font-weight="700">Выполни действие</text><rect x="478" y="20" width="203" height="162" rx="22" fill="#bde6d1" stroke="white" stroke-width="4"></rect><circle cx="579" cy="62" r="23" fill="white"></circle><text x="579" y="69" text-anchor="middle" font-family="Arial" font-size="23" font-weight="700" fill="#7462ac">3</text><text x="579" y="113" text-anchor="middle" fill="#293653" font-family="Arial,sans-serif" font-size="16" font-weight="700">Посмотри результат</text></svg><figcaption>Путь урока: от первого действия к готовому результату.</figcaption></figure><section class="section light"><div class="wrap d0-shell">
 <article class="d0-intro" id="d0Intro">
 <h2>Перед началом</h2>
-<p>Выполняй задания по порядку.</p>
+<figure class="s14-visual" style="max-width:740px;margin:18px auto"><svg viewbox="0 0 400 250" style="max-height:240px" role="img" aria-label="Перед началом — учебная иллюстрация" xmlns="http://www.w3.org/2000/svg"><rect x="49" y="38" width="124" height="171" rx="15" fill="white" stroke="#b0c7e1" stroke-width="4"></rect><path d="M70 76h78m-78 25h78m-78 25h57" stroke="#b0c7e1" stroke-width="9" stroke-linecap="round"></path><path d="M196 125h76m-18-18 20 18-20 18" stroke="#8d76ca" stroke-width="7" fill="none" stroke-linecap="round"></path><path d="M291 87h45l12 15h37v107h-94z" fill="#ffd477" stroke="white" stroke-width="4"></path></svg><figcaption>Перед началом. Схема помогает представить действие; вид программы на твоём компьютере может отличаться.</figcaption></figure><p>Выполняй задания по порядку.</p>
 <p>До задания «ИИ» подсказок нет.</p>
 <p>Не знаешь, что делать — не мучайся: нажми <b>«Не получилось»</b> и переходи дальше.</p>
 <p>Настоящие пароли, коды и личные данные нигде не нужны.</p>
@@ -63,7 +68,7 @@
 <article class="d0-stage" data-stage="1">
 <div class="d0-step-top"><span class="d0-step-num">1</span><span>≈ 4 минуты</span></div>
 <h2>Печать</h2>
-<p>Открой короткий тест и две минуты печатай текст максимально точно. Ошибки исправлять можно.</p>
+<figure class="s14-visual" style="max-width:740px;margin:18px auto"><svg viewbox="0 0 400 250" style="max-height:240px" role="img" aria-label="Печать — учебная иллюстрация" xmlns="http://www.w3.org/2000/svg"><rect x="49" y="38" width="124" height="171" rx="15" fill="white" stroke="#b0c7e1" stroke-width="4"></rect><path d="M70 76h78m-78 25h78m-78 25h57" stroke="#b0c7e1" stroke-width="9" stroke-linecap="round"></path><path d="M196 125h76m-18-18 20 18-20 18" stroke="#8d76ca" stroke-width="7" fill="none" stroke-linecap="round"></path><path d="M291 87h45l12 15h37v107h-94z" fill="#ffd477" stroke="white" stroke-width="4"></path></svg><figcaption>Печать. Схема помогает представить действие; вид программы на твоём компьютере может отличаться.</figcaption></figure><p>Открой короткий тест и две минуты печатай текст максимально точно. Ошибки исправлять можно.</p>
 <div class="d0-taskbox"><b>После теста вернись сюда.</b> На экране останется только нейтральный результат: сколько символов ты успел набрать и сколько ошибок осталось.</div>
 <div class="d0-actions"><a href="/school-ai-courses/computer/d0/typing/">Открыть тест печати</a></div><p id="d0TypingSummary" role="status">После теста печати здесь появится результат, если браузер разрешает локальное сохранение.</p>
 <div class="d0-actions d0-result-actions">
@@ -75,7 +80,7 @@
 <article class="d0-stage" data-stage="2" hidden>
 <div class="d0-step-top"><span class="d0-step-num">2</span><span>≈ 4 минуты</span></div>
 <h2>Собери рабочее место</h2>
-<p>Открой <b>Проводник</b> и <b>Блокнот</b>. Сделай так, чтобы можно было работать и с файлами, и с текстом, не закрывая программы.</p>
+<figure class="s14-visual" style="max-width:740px;margin:18px auto"><svg viewbox="0 0 400 250" style="max-height:240px" role="img" aria-label="Собери рабочее место — учебная иллюстрация" xmlns="http://www.w3.org/2000/svg"><rect x="49" y="38" width="124" height="171" rx="15" fill="white" stroke="#b0c7e1" stroke-width="4"></rect><path d="M70 76h78m-78 25h78m-78 25h57" stroke="#b0c7e1" stroke-width="9" stroke-linecap="round"></path><path d="M196 125h76m-18-18 20 18-20 18" stroke="#8d76ca" stroke-width="7" fill="none" stroke-linecap="round"></path><path d="M291 87h45l12 15h37v107h-94z" fill="#ffd477" stroke="white" stroke-width="4"></path></svg><figcaption>Собери рабочее место. Схема помогает представить действие; вид программы на твоём компьютере может отличаться.</figcaption></figure><p>Открой <b>Проводник</b> и <b>Блокнот</b>. Сделай так, чтобы можно было работать и с файлами, и с текстом, не закрывая программы.</p>
 <div class="d0-taskbox"><b>Готовый результат:</b> обе программы открыты, и ты можешь быстро перейти от одной к другой.</div>
 <div class="d0-actions d0-result-actions">
 <button type="button" data-result="done">Готово</button>
@@ -86,10 +91,10 @@
 <article class="d0-stage" data-stage="3" hidden>
 <div class="d0-step-top"><span class="d0-step-num">3</span><span>≈ 7 минут</span></div>
 <h2>Папка и файлы</h2>
-<p>На Рабочем столе создай учебную папку <b>«Практика-D0»</b>. Имя и фамилия не нужны.</p>
+<figure class="s14-visual" style="max-width:740px;margin:18px auto"><svg viewbox="0 0 400 250" style="max-height:240px" role="img" aria-label="Папка и файлы — учебная иллюстрация" xmlns="http://www.w3.org/2000/svg"><path d="M88 43h104l20 20h101v65H88z" fill="#ffd477" stroke="white" stroke-width="5"></path><path d="M200 132v30m0 0H90m110 0h110" stroke="#9783c8" stroke-width="5"></path><path d="M42 172h48l9 10h47v43H42zM257 172h48l9 10h47v43H257z" fill="#ffd477" stroke="white" stroke-width="4"></path></svg><figcaption>Папка и файлы. Схема помогает представить действие; вид программы на твоём компьютере может отличаться.</figcaption></figure><p>На Рабочем столе создай учебную папку <b>«Практика-D0»</b>. Имя и фамилия не нужны.</p>
 <p>Скачай с этой страницы два учебных файла: текст и картинку. Помести оба файла в свою папку. Текст переименуй в <b>Памятка</b>. Картинку удали, затем верни её из Корзины.</p>
 <div class="d0-actions">
-<a href="/school-ai-courses/computer/d0/files/Учебный_текст.txt" download="Учебный_текст.txt">Скачать текст</a>
+<a href="/school-ai-courses/computer/d0/files/%D0%A3%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9_%D1%82%D0%B5%D0%BA%D1%81%D1%82.txt" download="Учебный_текст.txt">Скачать текст</a>
 <a href="/school-ai-courses/assets/home/computer.webp" download="Картинка.webp">Скачать картинку</a>
 </div>
 <div class="d0-taskbox"><b>В конце в твоей папке должны быть:</b><br>переименованный текст <b>Памятка</b> и восстановленная картинка.</div>
@@ -222,7 +227,7 @@
     if(current===8)window.scrollTo({top:0,behavior:'smooth'});
   }
 
-  document.getElementById('d0Start').addEventListener('click',()=>{
+  document.getElementById('d0Start')?.addEventListener('click',()=>{
     state={started:true,current:1,results:{}};
     try{localStorage.removeItem('s14:d0:typing:v2')}catch(_){}
     save(); render();
