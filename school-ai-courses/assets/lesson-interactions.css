@@ -1,0 +1,15 @@
+/* Shared lesson controls and learning panel. */
+.s14-learning-panel,.adv-sticky{padding:24px!important;border:2px solid #fff!important;border-radius:28px!important;background:linear-gradient(145deg,#fff9de,#eff3ff)!important;box-shadow:0 12px 32px #2b38651a!important;color:#172540}
+.s14-learning-panel{max-width:1080px;margin:20px auto;position:sticky;top:106px}
+.s14-learning-panel h2{font-size:30px}.s14-learning-panel h3{font-size:23px;margin-top:24px}.s14-learning-panel p{line-height:1.6}
+.s14-illustrated .adv-kicker{color:#344369}
+.s14-illustrated :is(.done,.l01-done,[data-step],[data-fast],.progressbar,#progressText,#progressFill){display:none!important}
+.s14-illustrated :is(button,.actions a,.s14-next-link,summary){border-radius:16px!important;box-shadow:0 5px 0 #142d6940,0 9px 18px #263f7120,inset 0 2px 0 #ffffff80!important;position:relative;transition:transform .14s ease,box-shadow .14s ease,filter .14s ease}
+.s14-illustrated :is(button,.actions a,.s14-next-link,summary):focus-visible{outline:3px solid #224c9b;outline-offset:6px}
+@media(hover:hover){.s14-illustrated :is(button,.actions a,.s14-next-link,summary):not(:disabled):hover{transform:translateY(-3px);filter:brightness(1.07);box-shadow:0 8px 0 #142d6935,0 14px 24px #655acb35,inset 0 2px 0 #ffffffa0!important}}
+.s14-illustrated :is(button,.actions a,.s14-next-link,summary):not(:disabled):active,.s14-illustrated .s14-pressed{transform:translateY(4px)!important;box-shadow:0 1px 0 #142d6940,inset 0 2px 5px #192e5520!important}
+.s14-surprise{position:fixed;width:78px;height:68px;pointer-events:none;z-index:9999;will-change:transform,opacity;animation:s14-scamper .65s cubic-bezier(.3,.1,.7,1) forwards}
+.s14-surprise svg{width:100%;height:100%;overflow:visible}
+@keyframes s14-scamper{0%{transform:translate(0,0) rotate(-8deg);opacity:0}12%{opacity:1}55%{transform:translate(calc(var(--run)*.45),-28px) rotate(8deg);opacity:1}100%{transform:translate(var(--run),-45px) rotate(-12deg);opacity:0}}
+@media(max-width:900px){.s14-learning-panel{position:static;margin:18px}.s14-surprise{width:60px}}
+@media(prefers-reduced-motion:reduce){.s14-surprise{display:none}.s14-illustrated :is(button,.actions a,.s14-next-link,summary){transition:none!important;transform:none!important}}

@@ -1,0 +1,726 @@
+{
+  "scope": "L01-L20 controls and sidebar only",
+  "field_test": "NOT_PERFORMED",
+  "patterns": [
+    {
+      "id": "E01",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "E02",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "E03",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "E04",
+      "applicability": "CHANGED_INTERFACE",
+      "evidence": "All 20 source documents; shared lesson-interactions CSS/JS; exact source preserved in current snapshot",
+      "before": "Mixed progress controls and teacher panels; no shared button effect layer",
+      "severity": "UI",
+      "after": "Uniform learning panels; visible metadata removed; check buttons suppressed then removed after initialization; controls retain their original action; decorative SVG uses pointer-events:none, cooldown, reduced motion",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "E05",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "E06",
+      "applicability": "CHANGED_INTERFACE",
+      "evidence": "All 20 source documents; shared lesson-interactions CSS/JS; exact source preserved in current snapshot",
+      "before": "Mixed progress controls and teacher panels; no shared button effect layer",
+      "severity": "UI",
+      "after": "Uniform learning panels; visible metadata removed; check buttons suppressed then removed after initialization; controls retain their original action; decorative SVG uses pointer-events:none, cooldown, reduced motion",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "E07",
+      "applicability": "CHANGED_INTERFACE",
+      "evidence": "All 20 source documents; shared lesson-interactions CSS/JS; exact source preserved in current snapshot",
+      "before": "Mixed progress controls and teacher panels; no shared button effect layer",
+      "severity": "UI",
+      "after": "Uniform learning panels; visible metadata removed; check buttons suppressed then removed after initialization; controls retain their original action; decorative SVG uses pointer-events:none, cooldown, reduced motion",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "L01",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "L02",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "L03",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "L04",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "L05",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "L06",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "L07",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "L08",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "F01",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "F02",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "F03",
+      "applicability": "CHANGED_INTERFACE",
+      "evidence": "All 20 source documents; shared lesson-interactions CSS/JS; exact source preserved in current snapshot",
+      "before": "Mixed progress controls and teacher panels; no shared button effect layer",
+      "severity": "UI",
+      "after": "Uniform learning panels; visible metadata removed; check buttons suppressed then removed after initialization; controls retain their original action; decorative SVG uses pointer-events:none, cooldown, reduced motion",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "F04",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "F05",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "F06",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "F07",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "P01",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "P02",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "P03",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "P04",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "P05",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "P06",
+      "applicability": "CHANGED_INTERFACE",
+      "evidence": "All 20 source documents; shared lesson-interactions CSS/JS; exact source preserved in current snapshot",
+      "before": "Mixed progress controls and teacher panels; no shared button effect layer",
+      "severity": "UI",
+      "after": "Uniform learning panels; visible metadata removed; check buttons suppressed then removed after initialization; controls retain their original action; decorative SVG uses pointer-events:none, cooldown, reduced motion",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "P07",
+      "applicability": "CHANGED_INTERFACE",
+      "evidence": "All 20 source documents; shared lesson-interactions CSS/JS; exact source preserved in current snapshot",
+      "before": "Mixed progress controls and teacher panels; no shared button effect layer",
+      "severity": "UI",
+      "after": "Uniform learning panels; visible metadata removed; check buttons suppressed then removed after initialization; controls retain their original action; decorative SVG uses pointer-events:none, cooldown, reduced motion",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "A01",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "A02",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "A03",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "A04",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "A05",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "A06",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "A07",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "O01",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "O02",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "O03",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "O04",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "O05",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "S01",
+      "applicability": "CHANGED_INTERFACE",
+      "evidence": "All 20 source documents; shared lesson-interactions CSS/JS; exact source preserved in current snapshot",
+      "before": "Mixed progress controls and teacher panels; no shared button effect layer",
+      "severity": "UI",
+      "after": "Uniform learning panels; visible metadata removed; check buttons suppressed then removed after initialization; controls retain their original action; decorative SVG uses pointer-events:none, cooldown, reduced motion",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "S02",
+      "applicability": "CHANGED_INTERFACE",
+      "evidence": "All 20 source documents; shared lesson-interactions CSS/JS; exact source preserved in current snapshot",
+      "before": "Mixed progress controls and teacher panels; no shared button effect layer",
+      "severity": "UI",
+      "after": "Uniform learning panels; visible metadata removed; check buttons suppressed then removed after initialization; controls retain their original action; decorative SVG uses pointer-events:none, cooldown, reduced motion",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "S03",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "S04",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "S05",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "M01",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "M02",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "M03",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "M04",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "M05",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "M06",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "T01",
+      "applicability": "CHANGED_INTERFACE",
+      "evidence": "All 20 source documents; shared lesson-interactions CSS/JS; exact source preserved in current snapshot",
+      "before": "Mixed progress controls and teacher panels; no shared button effect layer",
+      "severity": "UI",
+      "after": "Uniform learning panels; visible metadata removed; check buttons suppressed then removed after initialization; controls retain their original action; decorative SVG uses pointer-events:none, cooldown, reduced motion",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "T02",
+      "applicability": "CHANGED_INTERFACE",
+      "evidence": "All 20 source documents; shared lesson-interactions CSS/JS; exact source preserved in current snapshot",
+      "before": "Mixed progress controls and teacher panels; no shared button effect layer",
+      "severity": "UI",
+      "after": "Uniform learning panels; visible metadata removed; check buttons suppressed then removed after initialization; controls retain their original action; decorative SVG uses pointer-events:none, cooldown, reduced motion",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "T03",
+      "applicability": "CHANGED_INTERFACE",
+      "evidence": "All 20 source documents; shared lesson-interactions CSS/JS; exact source preserved in current snapshot",
+      "before": "Mixed progress controls and teacher panels; no shared button effect layer",
+      "severity": "UI",
+      "after": "Uniform learning panels; visible metadata removed; check buttons suppressed then removed after initialization; controls retain their original action; decorative SVG uses pointer-events:none, cooldown, reduced motion",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "T04",
+      "applicability": "CHANGED_INTERFACE",
+      "evidence": "All 20 source documents; shared lesson-interactions CSS/JS; exact source preserved in current snapshot",
+      "before": "Mixed progress controls and teacher panels; no shared button effect layer",
+      "severity": "UI",
+      "after": "Uniform learning panels; visible metadata removed; check buttons suppressed then removed after initialization; controls retain their original action; decorative SVG uses pointer-events:none, cooldown, reduced motion",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "T05",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "T06",
+      "applicability": "CHANGED_INTERFACE",
+      "evidence": "All 20 source documents; shared lesson-interactions CSS/JS; exact source preserved in current snapshot",
+      "before": "Mixed progress controls and teacher panels; no shared button effect layer",
+      "severity": "UI",
+      "after": "Uniform learning panels; visible metadata removed; check buttons suppressed then removed after initialization; controls retain their original action; decorative SVG uses pointer-events:none, cooldown, reduced motion",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "T07",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "T08",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "K01",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "K02",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "K03",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "K04",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "K05",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "K06",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "K07",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "K08",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "K09",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "K10",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "W01",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "W02",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "W03",
+      "applicability": "CHANGED_INTERFACE",
+      "evidence": "All 20 source documents; shared lesson-interactions CSS/JS; exact source preserved in current snapshot",
+      "before": "Mixed progress controls and teacher panels; no shared button effect layer",
+      "severity": "UI",
+      "after": "Uniform learning panels; visible metadata removed; check buttons suppressed then removed after initialization; controls retain their original action; decorative SVG uses pointer-events:none, cooldown, reduced motion",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "W04",
+      "applicability": "CHANGED_INTERFACE",
+      "evidence": "All 20 source documents; shared lesson-interactions CSS/JS; exact source preserved in current snapshot",
+      "before": "Mixed progress controls and teacher panels; no shared button effect layer",
+      "severity": "UI",
+      "after": "Uniform learning panels; visible metadata removed; check buttons suppressed then removed after initialization; controls retain their original action; decorative SVG uses pointer-events:none, cooldown, reduced motion",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "W05",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "W06",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "W07",
+      "applicability": "CHANGED_INTERFACE",
+      "evidence": "All 20 source documents; shared lesson-interactions CSS/JS; exact source preserved in current snapshot",
+      "before": "Mixed progress controls and teacher panels; no shared button effect layer",
+      "severity": "UI",
+      "after": "Uniform learning panels; visible metadata removed; check buttons suppressed then removed after initialization; controls retain their original action; decorative SVG uses pointer-events:none, cooldown, reduced motion",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "W08",
+      "applicability": "CHANGED_INTERFACE",
+      "evidence": "All 20 source documents; shared lesson-interactions CSS/JS; exact source preserved in current snapshot",
+      "before": "Mixed progress controls and teacher panels; no shared button effect layer",
+      "severity": "UI",
+      "after": "Uniform learning panels; visible metadata removed; check buttons suppressed then removed after initialization; controls retain their original action; decorative SVG uses pointer-events:none, cooldown, reduced motion",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "W09",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    },
+    {
+      "id": "W10",
+      "applicability": "UNCHANGED_LESSON_CONTENT",
+      "evidence": "Existing exercises/prompts preserved; this bounded review does not establish field learning outcomes",
+      "before": "No new finding within this change",
+      "severity": "NONE_IN_DELTA",
+      "after": "NOT_APPLICABLE_TO_DELTA",
+      "disposition": "SOURCE_REVIEW_COMPLETE; LIVE_VISUAL_CHECK_PENDING"
+    }
+  ]
+}
