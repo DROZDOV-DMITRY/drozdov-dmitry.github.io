@@ -52,8 +52,13 @@
 @media(max-width:620px){.l5-card,.l5-fast{padding:17px}.demo-screen{min-height:330px}.demo-left,.demo-right,.demo-half-a,.demo-half-b{position:relative;left:auto;right:auto;top:auto;width:100%;height:140px;margin-bottom:12px}}
 </style>
 <link rel="stylesheet" href="/school-ai-courses/computer/assistance.css">
-</head>
-<body class="s14-student theme-computer">
+<style id="s14-illustrated-style">
+body.s14-student.s14-illustrated{background:linear-gradient(180deg,#fff6e9,#f3efff 850px,#eaf7ff);color:#202c50}
+.s14-illustrated :is(h1,h2,h3){font-family:"S14 Display","Arial Narrow",sans-serif!important;line-height:1.12;letter-spacing:.005em}.s14-illustrated h2{font-size:clamp(27px,3.4vw,39px)}.s14-illustrated h3{font-size:25px}.s14-illustrated p,.s14-illustrated li{line-height:1.65}.s14-illustrated :is(article[class$="-card"],.adv-card,.l01-card){border:2px solid #fff;border-radius:28px;background:linear-gradient(125deg,#fffdf7,#f4f5ff);box-shadow:0 12px 30px #303a6018;margin-bottom:20px}.s14-illustrated .student-hero>.wrap{background:linear-gradient(120deg,#fff0bc,#ffd7e3 52%,#dceaff)!important;border-radius:32px!important}.s14-illustrated .student-hero h1{letter-spacing:-.02em!important}.s14-illustrated :is(button,a,summary):focus-visible{outline:3px solid #254d91;outline-offset:4px}.s14-illustrated .done{border:2px solid #a6d6b8;background:#e6f7ec;color:#235b39}.s14-illustrated .done.is-done{background:#a9dfbb;box-shadow:0 0 0 4px #d6f1df}.s14-illustrated details{background:#f5f4ff;border:1px solid #ddd8ef;border-radius:17px;padding:9px 15px;margin-top:14px}.s14-illustrated summary{cursor:pointer;font-weight:850;min-height:42px}.s14-visual{margin:20px 0;padding:14px;border:2px solid #fff;border-radius:25px;background:linear-gradient(120deg,#fff1cc,#f2e8ff,#e3f3ff);box-shadow:0 8px 22px #303a6013;overflow:hidden}.s14-visual svg{display:block;width:100%;height:auto}.s14-visual figcaption{text-align:center;color:#52617e;font-size:15px;line-height:1.5;margin:9px 0 0}.s14-visual-start{width:min(calc(100% - 36px),1080px);margin:10px auto 26px}.s14-visual-key{max-width:700px}.s14-inline-explanation{padding:12px 15px;background:#e8f5ed;border-left:4px solid #69b58a;border-radius:12px}.s14-illustrated .gnome-coach{display:none}.s14-illustrated .timer-wrap{grid-template-columns:1fr}.s14-illustrated .adv-proof{background:#e8f5ee;border-radius:14px}.s14-illustrated .task-sub{display:block;margin-top:8px;font-family:"S14 UI",sans-serif;font-size:17px;font-weight:600;line-height:1.45}
+@media(max-width:600px){.s14-visual{padding:8px;border-radius:18px}.s14-visual figcaption{font-size:14px}.s14-visual-start{width:calc(100% - 24px)}.s14-illustrated .student-hero>.wrap{padding:24px 20px!important}.s14-illustrated .s14-topic-visual{display:none}.s14-illustrated :is(.l01-grid,.l2-grid,.l3-grid,.l4-grid,.l5-grid,.l6-grid,.l7-grid,.l8-grid,.l9-grid){grid-template-columns:1fr!important}}
+@media(prefers-reduced-motion:reduce){.s14-illustrated *{animation:none!important;transition:none!important}}
+</style></head>
+<body class="s14-student theme-computer s14-illustrated">
 <header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · Урок 5</span></a></div></header>
 <main>
 <section class="student-hero"><div class="wrap">
@@ -62,34 +67,25 @@
 <p>Окно приложения или папки не обязано занимать весь экран. Сегодня ты научишься сам задавать его размер и положение, чтобы несколько программ удобно работали рядом.</p>
 </div></section>
 
-<section class="section s14-safety-section" aria-label="Правила работы с учебными файлами"><div class="wrap"><aside class="s14-safety-strip"><strong>Перед работой:</strong> используй только свои учебные файлы и папки. Не удаляй чужие или нужные материалы, не вводи пароли и личные данные в задания. Если файл надо передать через MAX, сохрани оригинал, пока не убедишься, что копия открывается. <p>Отметка «Сделано» — самопроверка, а не автоматическое подтверждение существования файла.</p></aside></div></section>
+<figure class="s14-visual s14-visual-start"><svg viewbox="0 0 700 202" role="img" aria-label="Открой два окна → Измени их размер → Размести рядом" xmlns="http://www.w3.org/2000/svg"><rect x="18" y="20" width="203" height="162" rx="22" fill="#ffe09a" stroke="white" stroke-width="4"></rect><circle cx="119" cy="62" r="23" fill="white"></circle><text x="119" y="69" text-anchor="middle" font-family="Arial" font-size="23" font-weight="700" fill="#7462ac">1</text><text x="119" y="113" text-anchor="middle" fill="#293653" font-family="Arial,sans-serif" font-size="16" font-weight="700">Открой два окна</text><rect x="248" y="20" width="203" height="162" rx="22" fill="#d6c7ff" stroke="white" stroke-width="4"></rect><circle cx="349" cy="62" r="23" fill="white"></circle><text x="349" y="69" text-anchor="middle" font-family="Arial" font-size="23" font-weight="700" fill="#7462ac">2</text><text x="349" y="113" text-anchor="middle" fill="#293653" font-family="Arial,sans-serif" font-size="16" font-weight="700">Измени их размер</text><rect x="478" y="20" width="203" height="162" rx="22" fill="#bde6d1" stroke="white" stroke-width="4"></rect><circle cx="579" cy="62" r="23" fill="white"></circle><text x="579" y="69" text-anchor="middle" font-family="Arial" font-size="23" font-weight="700" fill="#7462ac">3</text><text x="579" y="113" text-anchor="middle" fill="#293653" font-family="Arial,sans-serif" font-size="16" font-weight="700">Размести рядом</text></svg><figcaption>Путь урока: от первого действия к готовому результату.</figcaption></figure><section class="section s14-safety-section" aria-label="Правила работы с учебными файлами"><div class="wrap"><aside class="s14-safety-strip"><strong>Перед работой:</strong> используй только свои учебные файлы и папки. Не удаляй чужие или нужные материалы, не вводи пароли и личные данные в задания. Если файл надо передать через MAX, сохрани оригинал, пока не убедишься, что копия открывается. <p>После каждого действия посмотри на результат на компьютере.</p></aside></div></section>
 <section class="section light"><div class="wrap">
-<article class="l5-fast">
-<span class="status-badge">Мне это легко · экспресс-проверка ≈ 3 минуты</span>
-<h2><span class="task-headline"><span class="task-main">Собери рабочее место без подсказок</span><span class="task-sub">два окна рядом и оба пригодны для работы</span></span></h2>
-<p>Открой <b>Проводник</b> и <b>Блокнот</b>. Сделай так, чтобы оба окна были полностью видны одновременно, ни одно не занимало весь экран и в каждом оставалось достаточно места для работы.</p>
-<div class="window-demo"><div class="demo-screen">
-<div class="demo-window demo-half-a"><div class="bar">Проводник <span class="window-controls"><i></i><i></i><i></i></span></div><div class="body">Файлы и папки видны.</div></div>
-<div class="demo-window demo-half-b"><div class="bar">Блокнот <span class="window-controls"><i></i><i></i><i></i></span></div><div class="body">Можно печатать текст.</div></div>
-</div></div>
-<div class="actions"><a href="#fastChallenge">Получилось полностью → дополнительное испытание</a><a class="secondary" href="#normalRoute">Есть пробел → обычный урок</a></div>
-</article>
+
 </div></section>
 
 <section class="section light" id="normalRoute"><div class="wrap l5-grid"><div>
 <aside class="s14-guided-assist" aria-label="Помощь во время обычного маршрута">
 <strong>Не получается? Помощь рядом с заданием.</strong><p>Ты уже сделал первую самостоятельную попытку. Если нужна помощь, открой подсказки о переключении окон и возвращении к работе.</p>
 <details><summary>Не знаю, как выполнить действие</summary>
-<p>Открой подходящую подсказку в новой вкладке. Вернись сюда, к этому же шагу, после выполнения действия.</p>
-<a href="/school-ai-courses/computer/?help=window" target="_blank" rel="noopener">Переключить окно ↗</a>
-<a href="/school-ai-courses/computer/?help=back" target="_blank" rel="noopener">Назад в браузере ↗</a>
+<p>Если не получилось, раскрой объяснение здесь и вернись к тому же заданию.</p>
+<details><summary>Переключить окно</summary><p>Вернись к текущему шагу. Выполни одно действие и сравни результат с описанием в задании. Если нужной программы или команды нет, сообщи преподавателю, что видишь на экране.</p></details>
+<details><summary>Назад в браузере</summary><p>Вернись к текущему шагу. Выполни одно действие и сравни результат с описанием в задании. Если нужной программы или команды нет, сообщи преподавателю, что видишь на экране.</p></details>
 <p>Если интерфейс компьютера отличается, сверяй названия с текущим экраном. Не вводи пароли или личные данные в учебные чаты.</p>
 </details><small>Подсказка доступна по запросу. Результат проверяй по настоящему файлу или действию, а не по нажатию кнопки «Готово».</small>
 </aside>
 
 <article class="l5-card">
 <h2><span class="task-headline"><span class="task-main">1. Развернуть, вернуть, свернуть, закрыть</span><span class="task-sub">четыре разных действия с одним окном</span></span></h2>
-<p>Открой Проводник. В правом верхнем углу окна найди кнопки управления.</p>
+<figure class="s14-visual" style="max-width:740px;margin:18px auto"><svg viewbox="0 0 400 250" style="max-height:240px" role="img" aria-label="1. Развернуть, вернуть, свернуть, закрытьчетыре разных действия с одним окном — учебная иллюстрация" xmlns="http://www.w3.org/2000/svg"><rect x="35" y="35" width="330" height="195" rx="17" fill="white" stroke="#a8b5d0" stroke-width="4"></rect><rect x="49" y="65" width="145" height="149" rx="8" fill="#bfe5ff"></rect><rect x="205" y="65" width="145" height="149" rx="8" fill="#dfd1ff"></rect><path d="M64 92h110m-110 23h80m55 25h90m-90 23h110" stroke="white" stroke-width="8" stroke-linecap="round"></path></svg><figcaption>1. Развернуть, вернуть, свернуть, закрытьчетыре разных действия с одним окном. Схема помогает представить действие; вид программы на твоём компьютере может отличаться.</figcaption></figure><p>Открой Проводник. В правом верхнем углу окна найди кнопки управления.</p>
 <div class="l5-task"><b>Сделай по порядку:</b><br>1. разверни Проводник на весь экран;<br>2. верни обычный размер;<br>3. сверни окно;<br>4. верни его с панели задач.<br><br><b>Не закрывай Проводник:</b> закрыть и свернуть — не одно и то же.</div>
 <span class="l5-time">0:00–6:00</span>
 <button class="done" data-step="1" type="button">○ Сделано</button>
@@ -97,7 +93,7 @@
 
 <article class="l5-card" style="margin-top:18px">
 <h2><span class="task-headline"><span class="task-main">2. Задай размер мышкой</span><span class="task-sub">тяни за край или угол окна</span></span></h2>
-<p>Верни Проводник в обычный оконный режим. Подведи курсор к границе окна. Когда курсор изменится, зажми левую кнопку мыши и потяни.</p>
+<figure class="s14-visual" style="max-width:740px;margin:18px auto"><svg viewbox="0 0 400 250" style="max-height:240px" role="img" aria-label="2. Задай размер мышкойтяни за край или угол окна — учебная иллюстрация" xmlns="http://www.w3.org/2000/svg"><rect x="35" y="35" width="330" height="195" rx="17" fill="white" stroke="#a8b5d0" stroke-width="4"></rect><rect x="49" y="65" width="145" height="149" rx="8" fill="#bfe5ff"></rect><rect x="205" y="65" width="145" height="149" rx="8" fill="#dfd1ff"></rect><path d="M64 92h110m-110 23h80m55 25h90m-90 23h110" stroke="white" stroke-width="8" stroke-linecap="round"></path></svg><figcaption>2. Задай размер мышкойтяни за край или угол окна. Схема помогает представить действие; вид программы на твоём компьютере может отличаться.</figcaption></figure><p>Верни Проводник в обычный оконный режим. Подведи курсор к границе окна. Когда курсор изменится, зажми левую кнопку мыши и потяни.</p>
 <div class="window-demo"><div class="demo-screen">
 <div class="demo-window demo-left"><div class="bar">Проводник <span class="window-controls"><i></i><i></i><i></i></span></div><div class="body">Попробуй сделать окно высоким и узким, затем низким и широким.<div class="resize-corner"></div></div></div>
 </div></div>
@@ -108,7 +104,7 @@
 
 <article class="l5-card" style="margin-top:18px">
 <h2><span class="task-headline"><span class="task-main">3. Передвинь окно</span><span class="task-sub">возьми его за верхнюю панель</span></span></h2>
-<p>Открой ещё и Блокнот. Возьми окно за верхнюю часть, где находится его название, и перетащи в другое место.</p>
+<figure class="s14-visual" style="max-width:740px;margin:18px auto"><svg viewbox="0 0 400 250" style="max-height:240px" role="img" aria-label="3. Передвинь окновозьми его за верхнюю панель — учебная иллюстрация" xmlns="http://www.w3.org/2000/svg"><rect x="35" y="35" width="330" height="195" rx="17" fill="white" stroke="#a8b5d0" stroke-width="4"></rect><rect x="49" y="65" width="145" height="149" rx="8" fill="#bfe5ff"></rect><rect x="205" y="65" width="145" height="149" rx="8" fill="#dfd1ff"></rect><path d="M64 92h110m-110 23h80m55 25h90m-90 23h110" stroke="white" stroke-width="8" stroke-linecap="round"></path></svg><figcaption>3. Передвинь окновозьми его за верхнюю панель. Схема помогает представить действие; вид программы на твоём компьютере может отличаться.</figcaption></figure><p>Открой ещё и Блокнот. Возьми окно за верхнюю часть, где находится его название, и перетащи в другое место.</p>
 <div class="l5-task"><b>Собери экран:</b> Проводник поставь слева, Блокнот справа. Затем поменяй их местами. После этого сделай одно окно шире другого.</div>
 <span class="l5-time">14:00–21:00</span>
 <button class="done" data-step="3" type="button">○ Окна расставлены</button>
@@ -116,7 +112,7 @@
 
 <article class="l5-card" style="margin-top:18px">
 <h2><span class="task-headline"><span class="task-main">4. Раздели экран быстро</span><span class="task-sub">Windows может закрепить окна за тебя</span></span></h2>
-<p>Перетащи окно к левому краю экрана и отпусти. Затем выбери второе окно для свободной половины.</p>
+<figure class="s14-visual" style="max-width:740px;margin:18px auto"><svg viewbox="0 0 400 250" style="max-height:240px" role="img" aria-label="4. Раздели экран быстроWindows может закрепить окна за тебя — учебная иллюстрация" xmlns="http://www.w3.org/2000/svg"><rect x="35" y="35" width="330" height="195" rx="17" fill="white" stroke="#a8b5d0" stroke-width="4"></rect><rect x="49" y="65" width="145" height="149" rx="8" fill="#bfe5ff"></rect><rect x="205" y="65" width="145" height="149" rx="8" fill="#dfd1ff"></rect><path d="M64 92h110m-110 23h80m55 25h90m-90 23h110" stroke="white" stroke-width="8" stroke-linecap="round"></path></svg><figcaption>4. Раздели экран быстроWindows может закрепить окна за тебя. Схема помогает представить действие; вид программы на твоём компьютере может отличаться.</figcaption></figure><p>Перетащи окно к левому краю экрана и отпусти. Затем выбери второе окно для свободной половины.</p>
 <div class="keys"><span class="keycap">Win</span><span class="plus">+</span><span class="keycap">←</span><span style="font-weight:950">или</span><span class="keycap">Win</span><span class="plus">+</span><span class="keycap">→</span></div>
 <div class="safe-note"><b>Сравни два способа:</b> ручное изменение размера мышкой и быстрое закрепление окна. Оба нужны: первый даёт точный размер, второй быстро делит экран.</div>
 <span class="l5-time">21:00–29:00</span>
@@ -142,7 +138,7 @@
 <p>Закрой Проводник и Блокнот. Затем открой их заново и за <b>60 секунд</b> расположи вместе с браузером так, чтобы всеми тремя окнами можно было пользоваться.</p>
 </div>
 <div class="timer-wrap">
-<div class="gnome-coach"><img src="/school-ai-courses/assets/home/home-gnome.webp" alt="Гном курса ИИ с большим секундомером"></div>
+
 <div class="timer-box">
 <div class="stopwatch-face"><div><small>Секундомер испытания</small><div class="stopwatch-time" id="challengeTimer">01:00</div><div class="stopwatch-status" id="challengeTimerStatus">Нажми «Включить таймер» — и начинай.</div></div></div>
 <div class="timer-buttons"><button type="button" id="challengeTimerStart">Включить таймер 1:00</button><button type="button" class="secondary" id="challengeTimerPause">Пауза</button><button type="button" class="ghost" id="challengeTimerReset">Сброс</button></div>
@@ -184,8 +180,8 @@
  const labels={'1':'Сделано','2':'Размер меняется','3':'Окна расставлены','4':'Закрепление работает','5':'Урок завершён'};
  function render(){
    buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(labels[b.dataset.step]||'Сделано')});
-   fill.style.width=(done.size/buttons.length*100)+'%';
-   text.textContent=done.size+' из '+buttons.length+' этапов';
+   if(fill)fill.style.width=(done.size/buttons.length*100)+'%';
+   if(text)text.textContent=done.size+' из '+buttons.length+' этапов';
    if(phoneBonus)phoneBonus.hidden=done.size<buttons.length;
  }
  buttons.forEach(b=>b.addEventListener('click',()=>{
