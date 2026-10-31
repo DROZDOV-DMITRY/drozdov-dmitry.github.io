@@ -54,8 +54,13 @@
 @media(max-width:620px){.l01-card,.fast-gate{padding:17px}.desktop-mock{min-height:240px}}
 </style>
 <link rel="stylesheet" href="/school-ai-courses/computer/assistance.css">
-</head>
-<body class="s14-student theme-computer">
+<style id="s14-illustrated-style">
+body.s14-student.s14-illustrated{background:linear-gradient(180deg,#fff6e9,#f3efff 850px,#eaf7ff);color:#202c50}
+.s14-illustrated :is(h1,h2,h3){font-family:"S14 Display","Arial Narrow",sans-serif!important;line-height:1.12;letter-spacing:.005em}.s14-illustrated h2{font-size:clamp(27px,3.4vw,39px)}.s14-illustrated h3{font-size:25px}.s14-illustrated p,.s14-illustrated li{line-height:1.65}.s14-illustrated :is(article[class$="-card"],.adv-card,.l01-card){border:2px solid #fff;border-radius:28px;background:linear-gradient(125deg,#fffdf7,#f4f5ff);box-shadow:0 12px 30px #303a6018;margin-bottom:20px}.s14-illustrated .student-hero>.wrap{background:linear-gradient(120deg,#fff0bc,#ffd7e3 52%,#dceaff)!important;border-radius:32px!important}.s14-illustrated .student-hero h1{letter-spacing:-.02em!important}.s14-illustrated :is(button,a,summary):focus-visible{outline:3px solid #254d91;outline-offset:4px}.s14-illustrated .done{border:2px solid #a6d6b8;background:#e6f7ec;color:#235b39}.s14-illustrated .done.is-done{background:#a9dfbb;box-shadow:0 0 0 4px #d6f1df}.s14-illustrated details{background:#f5f4ff;border:1px solid #ddd8ef;border-radius:17px;padding:9px 15px;margin-top:14px}.s14-illustrated summary{cursor:pointer;font-weight:850;min-height:42px}.s14-visual{margin:20px 0;padding:14px;border:2px solid #fff;border-radius:25px;background:linear-gradient(120deg,#fff1cc,#f2e8ff,#e3f3ff);box-shadow:0 8px 22px #303a6013;overflow:hidden}.s14-visual svg{display:block;width:100%;height:auto}.s14-visual figcaption{text-align:center;color:#52617e;font-size:15px;line-height:1.5;margin:9px 0 0}.s14-visual-start{width:min(calc(100% - 36px),1080px);margin:10px auto 26px}.s14-visual-key{max-width:700px}.s14-inline-explanation{padding:12px 15px;background:#e8f5ed;border-left:4px solid #69b58a;border-radius:12px}.s14-illustrated .gnome-coach{display:none}.s14-illustrated .timer-wrap{grid-template-columns:1fr}.s14-illustrated .adv-proof{background:#e8f5ee;border-radius:14px}.s14-illustrated .task-sub{display:block;margin-top:8px;font-family:"S14 UI",sans-serif;font-size:17px;font-weight:600;line-height:1.45}
+@media(max-width:600px){.s14-visual{padding:8px;border-radius:18px}.s14-visual figcaption{font-size:14px}.s14-visual-start{width:calc(100% - 24px)}.s14-illustrated .student-hero>.wrap{padding:24px 20px!important}.s14-illustrated .s14-topic-visual{display:none}.s14-illustrated :is(.l01-grid,.l2-grid,.l3-grid,.l4-grid,.l5-grid,.l6-grid,.l7-grid,.l8-grid,.l9-grid){grid-template-columns:1fr!important}}
+@media(prefers-reduced-motion:reduce){.s14-illustrated *{animation:none!important;transition:none!important}}
+</style></head>
+<body class="s14-student theme-computer s14-illustrated">
 <header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · Урок 1</span></a></div></header>
 
 <main>
@@ -65,24 +70,18 @@
 <p>Первый урок — не про «где какая кнопка». Ты сразу пройдёшь настоящий рабочий цикл на компьютере: проверишь себя Калькулятором, создашь свою папку, сохранишь файл, найдёшь его поиском, разберёшься с Корзиной и отправишь итог себе через MAX.</p>
 </div></section>
 
-<section class="section s14-safety-section" aria-label="Правила работы с учебными файлами"><div class="wrap"><aside class="s14-safety-strip"><strong>Перед работой:</strong> используй только свои учебные файлы и папки. Не удаляй чужие или нужные материалы, не вводи пароли и личные данные в задания. Если файл надо передать через MAX, сохрани оригинал, пока не убедишься, что копия открывается. <p>Отметка «Сделано» — самопроверка, а не автоматическое подтверждение существования файла.</p></aside></div></section>
+<figure class="s14-visual s14-visual-start"><svg viewbox="0 0 700 202" role="img" aria-label="Посчитай → Запиши в Блокнот → Сохрани в папку" xmlns="http://www.w3.org/2000/svg"><rect x="18" y="20" width="203" height="162" rx="22" fill="#ffe09a" stroke="white" stroke-width="4"></rect><circle cx="119" cy="62" r="23" fill="white"></circle><text x="119" y="69" text-anchor="middle" font-family="Arial" font-size="23" font-weight="700" fill="#7462ac">1</text><text x="119" y="113" text-anchor="middle" fill="#293653" font-family="Arial,sans-serif" font-size="16" font-weight="700">Посчитай</text><rect x="248" y="20" width="203" height="162" rx="22" fill="#d6c7ff" stroke="white" stroke-width="4"></rect><circle cx="349" cy="62" r="23" fill="white"></circle><text x="349" y="69" text-anchor="middle" font-family="Arial" font-size="23" font-weight="700" fill="#7462ac">2</text><text x="349" y="113" text-anchor="middle" fill="#293653" font-family="Arial,sans-serif" font-size="16" font-weight="700">Запиши в Блокнот</text><rect x="478" y="20" width="203" height="162" rx="22" fill="#bde6d1" stroke="white" stroke-width="4"></rect><circle cx="579" cy="62" r="23" fill="white"></circle><text x="579" y="69" text-anchor="middle" font-family="Arial" font-size="23" font-weight="700" fill="#7462ac">3</text><text x="579" y="113" text-anchor="middle" fill="#293653" font-family="Arial,sans-serif" font-size="16" font-weight="700">Сохрани в папку</text></svg><figcaption>Путь урока: от первого действия к готовому результату.</figcaption></figure><section class="section s14-safety-section" aria-label="Правила работы с учебными файлами"><div class="wrap"><aside class="s14-safety-strip"><strong>Перед работой:</strong> используй только свои учебные файлы и папки. Не удаляй чужие или нужные материалы, не вводи пароли и личные данные в задания. Если файл надо передать через MAX, сохрани оригинал, пока не убедишься, что копия открывается. <p>После каждого действия посмотри на результат на компьютере.</p></aside></div></section>
 <section class="section light"><div class="wrap">
-<article class="fast-gate">
-<span class="status-badge">Уже всё это умею · быстрый маршрут ≈ 7 минут</span>
-<h2>Пройди цепочку без подсказок</h2>
-<p>Создай на Рабочем столе папку с учебным названием «Практика-01». В Блокноте сохрани в неё файл <b>Проба</b> с любой абракадаброй. Закрой Блокнот. Найди свою папку <b>не глазами</b>, а поиском в Проводнике. Удали «Проба», найди его в Корзине и удали окончательно. Затем создай в папке новый файл <b>Финиш</b>, отправь его себе через MAX, убедись, что он появился в MAX, и только после проверки файла из MAX убери только свою учебную папку, если в ней нет других нужных файлов.</p>
-<div class="actions"><a href="#fastChallenge">Справился → дополнительное испытание</a><a class="secondary" href="#normalRoute">Есть пробел → обычный маршрут</a></div>
-<p class="micro">Быстрый маршрут проверяет действие, а не знание терминов. Если где-то есть пробел — просто переходи к обычному маршруту.</p>
-</article>
+
 </div></section>
 
 <section class="section light" id="normalRoute"><div class="wrap l01-grid"><div>
 <aside class="s14-guided-assist" aria-label="Помощь во время обычного маршрута">
 <strong>Не получается? Помощь рядом с заданием.</strong><p>Ты уже сделал первую самостоятельную попытку. Если нужна помощь, открой подсказки о создании папки на рабочем столе, сохранении файла и отправке через MAX.</p>
 <details><summary>Не знаю, как выполнить действие</summary>
-<p>Открой подходящую подсказку в новой вкладке. Вернись сюда, к этому же шагу, после выполнения действия.</p>
-<a href="/school-ai-courses/computer/?help=folder" target="_blank" rel="noopener">Создать папку ↗</a>
-<a href="/school-ai-courses/computer/?help=upload" target="_blank" rel="noopener">Прикрепить файл ↗</a>
+<p>Если не получилось, раскрой объяснение здесь и вернись к тому же заданию.</p>
+<details><summary>Создать папку</summary><p>В Проводнике открой нужное место. Щёлкни правой кнопкой по пустому месту → «Создать» → «Папку». Напиши название и нажми Enter.</p></details>
+<details><summary>Прикрепить файл</summary><p>Вернись к текущему шагу. Выполни одно действие и сравни результат с описанием в задании. Если нужной программы или команды нет, сообщи преподавателю, что видишь на экране.</p></details>
 <p>Если интерфейс компьютера отличается, сверяй названия с текущим экраном. Не вводи пароли или личные данные в учебные чаты.</p>
 </details><small>Подсказка доступна по запросу. Результат проверяй по настоящему файлу или действию, а не по нажатию кнопки «Готово».</small>
 </aside>
@@ -90,16 +89,16 @@
 <div class="input-basics">
 <article class="input-card">
 <h3>Мышь: держи легко, не зажимай</h3>
-<svg viewBox="0 0 420 235" role="img" aria-label="Как держать компьютерную мышь">
-  <rect x="115" y="28" width="190" height="180" rx="85" fill="#eef3f9" stroke="#60718c" stroke-width="4"/>
-  <line x1="210" y1="30" x2="210" y2="103" stroke="#60718c" stroke-width="3"/>
-  <rect x="198" y="58" width="24" height="42" rx="10" fill="#9bb8df" stroke="#4d6688" stroke-width="2"/>
-  <ellipse cx="165" cy="62" rx="26" ry="42" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
-  <ellipse cx="255" cy="62" rx="26" ry="42" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
+<svg viewbox="0 0 420 235" role="img" aria-label="Как держать компьютерную мышь">
+  <rect x="115" y="28" width="190" height="180" rx="85" fill="#eef3f9" stroke="#60718c" stroke-width="4"></rect>
+  <line x1="210" y1="30" x2="210" y2="103" stroke="#60718c" stroke-width="3"></line>
+  <rect x="198" y="58" width="24" height="42" rx="10" fill="#9bb8df" stroke="#4d6688" stroke-width="2"></rect>
+  <ellipse cx="165" cy="62" rx="26" ry="42" fill="#ffd6b8" stroke="#a97758" stroke-width="2"></ellipse>
+  <ellipse cx="255" cy="62" rx="26" ry="42" fill="#ffd6b8" stroke="#a97758" stroke-width="2"></ellipse>
   <text x="54" y="48" font-size="18" font-weight="800" fill="#243653">указательный</text>
-  <line x1="130" y1="52" x2="145" y2="58" stroke="#243653" stroke-width="2"/>
+  <line x1="130" y1="52" x2="145" y2="58" stroke="#243653" stroke-width="2"></line>
   <text x="290" y="48" font-size="18" font-weight="800" fill="#243653">средний</text>
-  <line x1="286" y1="52" x2="273" y2="58" stroke="#243653" stroke-width="2"/>
+  <line x1="286" y1="52" x2="273" y2="58" stroke="#243653" stroke-width="2"></line>
   <text x="151" y="225" font-size="17" font-weight="800" fill="#243653">ладонь лежит свободно</text>
 </svg>
 <ul><li>Указательный палец — левая кнопка.</li><li>Средний — правая кнопка.</li><li>Колесо крути средним или указательным пальцем.</li></ul>
@@ -107,26 +106,26 @@
 
 <article class="input-card">
 <h3>Тачпад: четыре жеста, которые реально экономят время</h3>
-<svg viewBox="0 0 420 235" role="img" aria-label="Жесты тачпада на компьютере">
-  <rect x="45" y="28" width="330" height="178" rx="18" fill="#eef3f9" stroke="#60718c" stroke-width="4"/>
-  <circle cx="110" cy="92" r="15" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
+<svg viewbox="0 0 420 235" role="img" aria-label="Жесты тачпада на компьютере">
+  <rect x="45" y="28" width="330" height="178" rx="18" fill="#eef3f9" stroke="#60718c" stroke-width="4"></rect>
+  <circle cx="110" cy="92" r="15" fill="#ffd6b8" stroke="#a97758" stroke-width="2"></circle>
   <text x="76" y="145" font-size="16" font-weight="800" fill="#243653">1 палец</text>
   <text x="70" y="167" font-size="14" fill="#4c5b72">курсор / клик</text>
 
-  <circle cx="205" cy="82" r="14" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
-  <circle cx="235" cy="82" r="14" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
-  <path d="M220 107 L220 145" stroke="#2f70c8" stroke-width="5"/><path d="M210 137 L220 150 L230 137" fill="none" stroke="#2f70c8" stroke-width="5"/>
+  <circle cx="205" cy="82" r="14" fill="#ffd6b8" stroke="#a97758" stroke-width="2"></circle>
+  <circle cx="235" cy="82" r="14" fill="#ffd6b8" stroke="#a97758" stroke-width="2"></circle>
+  <path d="M220 107 L220 145" stroke="#2f70c8" stroke-width="5"></path><path d="M210 137 L220 150 L230 137" fill="none" stroke="#2f70c8" stroke-width="5"></path>
   <text x="182" y="178" font-size="14" font-weight="800" fill="#243653">2 пальца: прокрутка</text>
 
-  <circle cx="310" cy="70" r="12" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
-  <circle cx="338" cy="70" r="12" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
+  <circle cx="310" cy="70" r="12" fill="#ffd6b8" stroke="#a97758" stroke-width="2"></circle>
+  <circle cx="338" cy="70" r="12" fill="#ffd6b8" stroke="#a97758" stroke-width="2"></circle>
   <text x="286" y="112" font-size="14" font-weight="800" fill="#243653">тап двумя</text>
   <text x="292" y="131" font-size="14" fill="#4c5b72">правый клик</text>
 
-  <circle cx="300" cy="160" r="10" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
-  <circle cx="325" cy="160" r="10" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
-  <circle cx="350" cy="160" r="10" fill="#ffd6b8" stroke="#a97758" stroke-width="2"/>
-  <path d="M325 148 L325 120" stroke="#2f70c8" stroke-width="4"/><path d="M316 128 L325 117 L334 128" fill="none" stroke="#2f70c8" stroke-width="4"/>
+  <circle cx="300" cy="160" r="10" fill="#ffd6b8" stroke="#a97758" stroke-width="2"></circle>
+  <circle cx="325" cy="160" r="10" fill="#ffd6b8" stroke="#a97758" stroke-width="2"></circle>
+  <circle cx="350" cy="160" r="10" fill="#ffd6b8" stroke="#a97758" stroke-width="2"></circle>
+  <path d="M325 148 L325 120" stroke="#2f70c8" stroke-width="4"></path><path d="M316 128 L325 117 L334 128" fill="none" stroke="#2f70c8" stroke-width="4"></path>
   <text x="272" y="197" font-size="14" font-weight="800" fill="#243653">3 вверх: все окна*</text>
 </svg>
 <ul><li>Два пальца вверх/вниз — прокрутка.</li><li>Два пальца вместе — правый клик.</li><li>Свести/развести два пальца — масштаб.</li><li>Три пальца вверх — показать окна, если тачпад поддерживает жест.</li></ul>
@@ -135,7 +134,7 @@
 
 <article class="l01-card">
 <h2>1. Сначала голова, потом Калькулятор</h2>
-<div class="math-hero">
+<figure class="s14-visual" style="max-width:740px;margin:18px auto"><svg viewbox="0 0 400 250" style="max-height:240px" role="img" aria-label="1. Сначала голова, потом Калькулятор — учебная иллюстрация" xmlns="http://www.w3.org/2000/svg"><rect x="49" y="38" width="124" height="171" rx="15" fill="white" stroke="#b0c7e1" stroke-width="4"></rect><path d="M70 76h78m-78 25h78m-78 25h57" stroke="#b0c7e1" stroke-width="9" stroke-linecap="round"></path><path d="M196 125h76m-18-18 20 18-20 18" stroke="#8d76ca" stroke-width="7" fill="none" stroke-linecap="round"></path><path d="M291 87h45l12 15h37v107h-94z" fill="#ffd477" stroke="white" stroke-width="4"></path></svg><figcaption>1. Сначала голова, потом Калькулятор. Схема помогает представить действие; вид программы на твоём компьютере может отличаться.</figcaption></figure><div class="math-hero">
 <div>Попробуй посчитать в уме:</div>
 <div class="math-problem">47 × 99</div>
 <div>Не открывай Калькулятор сразу.</div>
@@ -159,7 +158,7 @@
 
 <article class="l01-card" style="margin-top:18px">
 <h2>2. Создай свою рабочую папку</h2>
-<p>На Рабочем столе создай новую папку и назови её <b>учебным названием «Практика-01»</b>. Настоящее имя и фамилия не требуются.</p>
+<figure class="s14-visual" style="max-width:740px;margin:18px auto"><svg viewbox="0 0 400 250" style="max-height:240px" role="img" aria-label="2. Создай свою рабочую папку — учебная иллюстрация" xmlns="http://www.w3.org/2000/svg"><path d="M88 43h104l20 20h101v65H88z" fill="#ffd477" stroke="white" stroke-width="5"></path><path d="M200 132v30m0 0H90m110 0h110" stroke="#9783c8" stroke-width="5"></path><path d="M42 172h48l9 10h47v43H42zM257 172h48l9 10h47v43H257z" fill="#ffd477" stroke="white" stroke-width="4"></path></svg><figcaption>2. Создай свою рабочую папку. Схема помогает представить действие; вид программы на твоём компьютере может отличаться.</figcaption></figure><p>На Рабочем столе создай новую папку и назови её <b>учебным названием «Практика-01»</b>. Настоящее имя и фамилия не требуются.</p>
 <div class="l01-task"><strong>Способ:</strong> правый клик по свободному месту Рабочего стола → создать папку → ввести имя → нажать клавишу ввода ↵.</div>
 <div class="illustration">
 <div class="desktop-mock">
@@ -173,7 +172,7 @@
 
 <article class="l01-card" style="margin-top:18px">
 <h2>3. Напиши абракадабру и просто сохрани</h2>
-<p>Через поиск на компьютере открой <b>Блокнот</b>. Напиши:</p>
+<figure class="s14-visual" style="max-width:740px;margin:18px auto"><svg viewbox="0 0 400 250" style="max-height:240px" role="img" aria-label="3. Напиши абракадабру и просто сохрани — учебная иллюстрация" xmlns="http://www.w3.org/2000/svg"><rect x="49" y="38" width="124" height="171" rx="15" fill="white" stroke="#b0c7e1" stroke-width="4"></rect><path d="M70 76h78m-78 25h78m-78 25h57" stroke="#b0c7e1" stroke-width="9" stroke-linecap="round"></path><path d="M196 125h76m-18-18 20 18-20 18" stroke="#8d76ca" stroke-width="7" fill="none" stroke-linecap="round"></path><path d="M291 87h45l12 15h37v107h-94z" fill="#ffd477" stroke="white" stroke-width="4"></path></svg><figcaption>3. Напиши абракадабру и просто сохрани. Схема помогает представить действие; вид программы на твоём компьютере может отличаться.</figcaption></figure><p>Через поиск на компьютере открой <b>Блокнот</b>. Напиши:</p>
 <div class="callout"><b>Абракадабра. Синий ёжик едет на лифте на Луну.</b></div>
 <p>Сохрани документ.</p>
 <div class="hotkey-wrap"><span>Можно мышкой: <b>Файл → Сохранить</b></span><span>или сочетанием клавиш:</span><span class="hotkey" aria-label="Сохранить с клавиатуры"><span class="key">Ctrl</span><span class="hk-plus">+</span><span class="key">S / Ы</span></span></div>
@@ -191,7 +190,7 @@
 
 <article class="l01-card" style="margin-top:18px">
 <h2>4. Найди свою папку не глазами</h2>
-<p>Закрой Блокнот. Теперь найди папку через поиск в Проводнике.</p>
+<figure class="s14-visual" style="max-width:740px;margin:18px auto"><svg viewbox="0 0 400 250" style="max-height:240px" role="img" aria-label="4. Найди свою папку не глазами — учебная иллюстрация" xmlns="http://www.w3.org/2000/svg"><path d="M88 43h104l20 20h101v65H88z" fill="#ffd477" stroke="white" stroke-width="5"></path><path d="M200 132v30m0 0H90m110 0h110" stroke="#9783c8" stroke-width="5"></path><path d="M42 172h48l9 10h47v43H42zM257 172h48l9 10h47v43H257z" fill="#ffd477" stroke="white" stroke-width="4"></path></svg><figcaption>4. Найди свою папку не глазами. Схема помогает представить действие; вид программы на твоём компьютере может отличаться.</figcaption></figure><p>Закрой Блокнот. Теперь найди папку через поиск в Проводнике.</p>
 <div class="hotkey-wrap"><span>Открой Проводник сочетанием клавиш:</span><span class="hotkey" aria-label="Открыть Проводник с клавиатуры"><span class="key win"><span class="winlogo" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span><span class="hk-plus">+</span><span class="key">E / У</span></span></div>
 <div class="l01-task"><strong>Дальше:</strong> выбери <b>Рабочий стол</b> → в поле поиска напечатай имя своей папки → открой найденную папку → проверь, что внутри есть <b>Проба</b>.</div>
 <div class="illustration">
@@ -285,7 +284,7 @@
   let done=new Set();try{done=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(_){}
   const fill=document.getElementById('progressFill'),text=document.getElementById('progressText'),dessert=document.getElementById('smartDessert');
   const labels={'1':'Посчитал и проверил','2':'Папка создана','3':'«Проба» сохранён','4':'Папка найдена поиском','5':'«Проба» найден в Корзине','6':'«Проба» удалён из Корзины','7':'Урок завершён'};
-  function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(labels[b.dataset.step]||'Готово')});fill.style.width=(done.size/buttons.length*100)+'%';text.textContent=done.size+' из '+buttons.length+' этапов';if(dessert)dessert.hidden=done.size<buttons.length}
+  function render(){buttons.forEach(b=>{const yes=done.has(b.dataset.step);b.classList.toggle('is-done',yes);b.textContent=(yes?'✓ ':'○ ')+(labels[b.dataset.step]||'Готово')});if(fill)fill.style.width=(done.size/buttons.length*100)+'%';if(text)text.textContent=done.size+' из '+buttons.length+' этапов';if(dessert)dessert.hidden=done.size<buttons.length}
   buttons.forEach(b=>b.addEventListener('click',()=>{if(b.disabled)return;done.has(b.dataset.step)?done.delete(b.dataset.step):done.add(b.dataset.step);try{localStorage.setItem(key,JSON.stringify([...done]))}catch(_){/* browser storage blocked; in-memory progress continues */};render()}));
   render();
 
