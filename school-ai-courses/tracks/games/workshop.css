@@ -113,3 +113,7 @@
 #games-practice,#games-projects{scroll-margin-top:100px}
 @media(max-width:900px){.gw-route-grid{grid-template-columns:1fr}.gw-route-card{min-height:0}}
 @media(max-width:600px){.gw-route{margin-bottom:30px;padding:17px;border-radius:22px}.gw-route-heading{margin-bottom:15px}.gw-route-heading p{font-size:15px}.gw-route-grid{gap:10px}.gw-route-card{padding:17px;border-radius:17px}.gw-route-card h3{font-size:25px}.gw-route-card p{font-size:14px;margin-bottom:14px}}
+
+.gw-practice-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:900px){.gw-practice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.gw-practice-grid{grid-template-columns:1fr}}
