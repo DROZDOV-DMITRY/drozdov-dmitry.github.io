@@ -25,10 +25,12 @@
     fix.addEventListener('click',function(){
       const issue=document.getElementById('gw-issue');
       const file=fix.getAttribute('data-file');
+      const base=file.replace(/\\.html?$/i,'');
+      const nextFile=base+'-v2.html';
       const detail=(issue?.value||'').trim();
       const msg='Продолжаем в ЭТОМ ЖЕ диалоге разработку моей HTML-игры. '
        +(detail?'Вот что я обнаружил или хочу улучшить:\n'+detail+'\n\n':'Помоги мне улучшить игру и предложи одно небольшое полезное изменение.\n\n')
-       +'Сохрани все уже работающие функции. Пришли ПОЛНЫЙ обновлённый код HTML, CSS и JavaScript одним блоком, без сокращений, без внешних библиотек и без файлов кроме '+file+'. Я целиком заменю содержимое файла '+file+' и заново проверю игру в Microsoft Edge.';
+       +'Сохрани все уже работающие функции. Пришли ПОЛНЫЙ обновлённый код HTML, CSS и JavaScript одним блоком, без сокращений, без внешних библиотек и без файлов кроме '+file+'. Прежний файл не перезаписывай. Сохрани первую рабочую версию как '+base+'-v1.html, а этот результат — как '+nextFile+'; если такое имя уже занято, увеличь номер версии (v3, v4 и далее). Перед кодом напомни: «Файл → Сохранить как» в Notepad++ или Блокноте. Заново проверь игру в Microsoft Edge.';
       copyValue(msg,fix,fix.parentElement.querySelector('.gw-copy-status'));
     });
   }
