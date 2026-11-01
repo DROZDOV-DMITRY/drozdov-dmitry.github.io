@@ -30,8 +30,12 @@
       try {
         const u = new URL(a.getAttribute('href'), location.href);
         if (u.origin === location.origin && u.pathname.startsWith(ROOT)) {
-          a.removeAttribute('target');
-          if (a.getAttribute('rel') === 'noopener') a.removeAttribute('rel');
+          if (a.closest('.gw-example-links') && a.target === '_blank') {
+            a.rel = 'noopener';
+          } else {
+            a.removeAttribute('target');
+            if (a.getAttribute('rel') === 'noopener') a.removeAttribute('rel');
+          }
         } else if (u.protocol === 'https:' && u.hostname === 'chat.deepseek.com') {
           // Full browser tab instead of a restricted popup; keep sign-in flow intact.
           a.target = '_blank';
