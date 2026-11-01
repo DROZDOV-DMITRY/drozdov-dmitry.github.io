@@ -91,3 +91,25 @@
 .gw-handoff h2{font:700 clamp(27px,3vw,36px)/1.12 "S14 Display",Arial,sans-serif;margin:0}
 .gw-handoff li{margin:8px 0}.gw-handoff code{overflow-wrap:anywhere}
 @media(max-width:650px){.gw-first-start{flex-direction:column;align-items:stretch;padding:17px}.gw-first-start .gw-button{width:100%}.gw-mini-plan{gap:6px}.gw-mini-plan .gw-plan-link{font-size:12px;padding:8px 9px}.gw-handoff{padding:17px}}
+
+
+/* Главная игр: сначала маршрут, затем каталог */
+.gw-route{margin:0 0 40px;padding:clamp(20px,3vw,34px);border:1px solid #d5e2f2;border-radius:30px;background:linear-gradient(135deg,#f7fbff 0%,#fff8f1 100%);box-shadow:0 12px 34px #1f315117}
+.gw-route-heading{margin-bottom:20px}
+.gw-route-heading>span{font-size:12px;font-weight:900;letter-spacing:.12em;color:#31558c}
+.gw-route-heading h2{margin:5px 0 7px;font:700 clamp(30px,4vw,44px)/1.08 "S14 Display","Arial Narrow",sans-serif;color:#111c36}
+.gw-route-heading p{margin:0;color:#43516b;font-size:17px}
+.gw-route-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.gw-route-card{display:flex;flex-direction:column;min-height:225px;padding:21px;border:1px solid #dce5f0;border-top:5px solid #e4ae4c;border-radius:21px;background:#fff;box-shadow:0 8px 20px #1728480b}
+.gw-route-practice{border-top-color:#5983dc}
+.gw-route-project{border-top-color:#58a88a}
+.gw-route-step{font-size:11px;font-weight:900;letter-spacing:.1em;color:#51617c}
+.gw-route-card h3{margin:10px 0 8px;font:700 clamp(23px,2.1vw,29px)/1.08 "S14 Display","Arial Narrow",sans-serif;color:#111c36}
+.gw-route-card p{margin:0 0 18px;font-size:15px;line-height:1.48;color:#3a4964}
+.gw-route-card>a{display:inline-flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:12px;border-top:1px solid #e5ebf3;color:#173d79;font-weight:850;text-decoration:none}
+.gw-route-card>a:hover{text-decoration:underline}
+.gw-route-card>a:focus-visible{outline:3px solid #1965c4;outline-offset:4px;border-radius:5px}
+.gw-route-device{margin:17px 0 0;padding:12px 15px;border-radius:14px;background:#fff9e9;color:#384760;font-size:14px;line-height:1.45}
+#games-practice,#games-projects{scroll-margin-top:100px}
+@media(max-width:900px){.gw-route-grid{grid-template-columns:1fr}.gw-route-card{min-height:0}}
+@media(max-width:600px){.gw-route{margin-bottom:30px;padding:17px;border-radius:22px}.gw-route-heading{margin-bottom:15px}.gw-route-heading p{font-size:15px}.gw-route-grid{gap:10px}.gw-route-card{padding:17px;border-radius:17px}.gw-route-card h3{font-size:25px}.gw-route-card p{font-size:14px;margin-bottom:14px}}
