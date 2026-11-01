@@ -49,95 +49,99 @@
 @media (prefers-reduced-motion: reduce){
   .test-card,.test-card::after{animation:none}
 }
+.skill-search{max-width:850px;margin:0 auto 24px;padding:20px;border-radius:20px;background:#fff;border:1px solid #d8e0ec}.skill-search label{display:block;font-weight:900;margin-bottom:8px}.skill-search-row{display:flex;gap:8px}.skill-search input{flex:1;min-width:0;padding:12px 14px;border:2px solid #8392ad;border-radius:12px;font:inherit}.skill-search button,.skill-result{font:inherit;border:0;border-radius:12px;padding:12px 16px;background:#17254a;color:#fff;font-weight:800;cursor:pointer}.skill-search-results{display:grid;gap:8px}.skill-result{display:block;text-align:left;text-decoration:none;background:#edf3fb;color:#17254a;border:1px solid #c8d5e5}.skill-result:hover,.skill-result:focus{background:#dce9f8}.skill-result small{display:block;margin-top:4px;font-weight:600}.skill-search #skillSearchStatus{margin:.7rem 0;color:#47546b}#s14QuickChat{background:rgba(255,253,248,.68)!important;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background-color .18s ease,opacity .18s ease}#s14QuickChat:hover,#s14QuickChat:focus-visible{background:rgba(255,253,248,.96)!important}.help-shell{padding-top:18px}.help-intro{font-weight:650;margin:-8px 0 16px;color:#47546b}
+@media(max-width:600px){.skill-search-row{flex-direction:column}.skill-search button{width:100%}}
 </style>
 </head><body class="has-alice theme-computer s14-student">
 <header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · Компьютер</span></a><nav class="topnav"><a href="../">Главная</a></nav></div></header>
 <main>
-<section class="student-hero"><div class="wrap"><h1>Компьютер · учебник</h1><p>Начни с ТЕСТА, затем переходи к урокам по порядку.</p><svg class="s14-topic-visual" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" viewBox="232 286 165 100" aria-hidden="true" focusable="false"><image href="/school-ai-courses/assets/home/computer.webp" width="420" height="420"/></svg></div></section>
+<section class="student-hero"><div class="wrap"><h1>Компьютер · учебник</h1><p>Найди нужный навык через поиск или пройди диагностику, чтобы выбрать стартовый урок.</p><svg class="s14-topic-visual" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" viewBox="232 286 165 100" aria-hidden="true" focusable="false"><image href="/school-ai-courses/assets/home/computer.webp" width="420" height="420"/></svg></div></section>
 
 <section class="section light"><div class="wrap">
 <h2 class="action-title">Учебник</h2>
+<div class="skill-search"><label for="skillSearch">Какой навык найти?</label><div class="skill-search-row"><input id="skillSearch" type="search" placeholder="Например: архив, скриншот, таблица" autocomplete="off"><button type="button" id="skillSearchClear">Очистить</button></div><p id="skillSearchStatus" aria-live="polite">Введи навык — покажу подходящий урок.</p><div id="skillSearchResults" class="skill-search-results"></div></div>
 <div class="lesson-cards">
 <a class="big-card test-card" href="/school-ai-courses/computer/d0/">
-  <span class="status-badge">Начни отсюда · 40 минут</span>
+  <span class="status-badge">Стартовая диагностика</span>
   <h3>ТЕСТ</h3>
-  <p>Короткая практическая проверка без оценок: покажи, как ты работаешь с компьютером, файлами, MAX и ИИ. Повторный вход сохраняет текущую попытку; новую можно запустить только отдельно.</p>
-  <span class="go">Начать или продолжить →</span>
+  <p>Практические задания помогут выбрать стартовый урок по навыкам, которые пока требуют практики. Отметки сохраняются только в этом браузере.</p>
+  <span class="go">Начать диагностику →</span>
 </a>
 <a class="big-card" href="l01/">
-  <span class="status-badge">Урок 1 · 40 минут</span>
+  <span class="status-badge">Урок 1</span>
   <h3>Урок 1 · Посчитал → записал → нашёл → удалил</h3>
   <p>Проверка в Калькуляторе, своя папка, Блокнот, поиск, Корзина и отправка результата через MAX.</p>
   <span class="go">Открыть урок →</span>
 </a>
 <a class="big-card" href="l02/">
-  <span class="status-badge">Урок 2 · 40 минут</span>
+  <span class="status-badge">Урок 2</span>
   <h3>Урок 2 · Копировать быстрее, чем перепечатывать</h3>
   <p>RU/EN, Ctrl+C, Ctrl+V и Ctrl+Z — меньше ручного набора и меньше ошибок.</p>
   <span class="go">Открыть урок →</span>
 </a>
 <a class="big-card" href="l03/">
-  <span class="status-badge">Урок 3 · 40 минут</span>
+  <span class="status-badge">Урок 3</span>
   <h3>Урок 3 · Скриншот — доказательство проблемы</h3>
   <p>Win+Shift+S, безопасная область, вставка снимка и защита паролей/кодов перед отправкой в ИИ.</p>
   <span class="go">Открыть урок →</span>
 </a>
 <a class="big-card" href="l04/">
-  <span class="status-badge">Урок 4 · 40 минут</span>
+  <span class="status-badge">Урок 4</span>
   <h3>Урок 4 · Как спросить ИИ так, чтобы он помог</h3>
   <p>Устройство + программа + симптом + один шаг → действие → сообщение результата.</p>
   <span class="go">Открыть урок →</span>
 </a>
 <a class="big-card" href="l05/">
-  <span class="status-badge">Урок 5 · 40 минут</span>
+  <span class="status-badge">Урок 5</span>
   <h3>Урок 5 · Настрой размер окон под задачу</h3>
   <p>Размер, положение и закрепление окон — чтобы Проводник, Блокнот и браузер удобно работали рядом.</p>
   <span class="go">Открыть урок →</span>
 </a>
 <a class="big-card" href="l06/">
-  <span class="status-badge">Урок 6 · 40 минут</span>
+  <span class="status-badge">Урок 6</span>
   <h3>Урок 6 · Копия, перенос и имя файла</h3>
   <p>Копировать так, чтобы исходник остался; переносить так, чтобы старое место освободилось; переименовывать без потери расширения.</p>
   <span class="go">Открыть урок →</span>
 </a>
 <a class="big-card" href="l07/">
-  <span class="status-badge">Урок 7 · 40 минут</span>
+  <span class="status-badge">Урок 7</span>
   <h3>Урок 7 · Папки: у каждого файла должно быть место</h3>
   <p>Проводник, вложенные папки и понятная структура — чтобы всегда знать, что где лежит.</p>
   <span class="go">Открыть урок →</span>
 </a>
 <a class="big-card" href="l08/">
-  <span class="status-badge">Урок 8 · 40 минут</span>
+  <span class="status-badge">Урок 8</span>
   <h3>Урок 8 · Потерял файл? Найди. Удалил? Верни.</h3>
   <p>Сам создаёшь учебные файлы, находишь нужный по имени, восстанавливаешь из Корзины и в конце полностью убираешь за собой.</p>
   <span class="go">Открыть урок →</span>
 </a>
 <a class="big-card" href="l09/">
-  <span class="status-badge">Урок 9 · 40 минут</span>
+  <span class="status-badge">Урок 9</span>
   <h3>Урок 9 · Скачал — теперь найди</h3>
   <p>Скачать файл, найти его через браузер и Проводник и определить тип по системной информации.</p>
   <span class="go">Открыть урок →</span>
 </a>
 <a class="big-card" href="l10/">
-  <span class="status-badge">Урок 10 · 40 минут</span>
+  <span class="status-badge">Урок 10</span>
   <h3>Урок 10 · Передай текст через MAX на компьютере</h3>
   <p>Передача учебного текста через MAX на компьютере → проверка сообщения → перенос в Блокнот.</p>
   <span class="go">Открыть урок →</span>
 </a>
 
-<a class="big-card" href="l11/"><span class="status-badge">Урок 11 · 40–60 минут</span><h3>Урок 11 · Браузер под задачу: настрой, проверь, верни</h3><p>Настройка загрузок и разрешений, реальная проверка и откат.</p><span class="go">Открыть урок →</span></a>
-<a class="big-card" href="l12/"><span class="status-badge">Урок 12 · 40–60 минут</span><h3>Урок 12 · Проводник: расширения, представления, типы</h3><p>Глубокая настройка вида файлов, ассоциации, двойные расширения.</p><span class="go">Открыть урок →</span></a>
-<a class="big-card" href="l13/"><span class="status-badge">Урок 13 · 40–60 минут</span><h3>Урок 13 · ZIP без сюрпризов: распакуй и сравни</h3><p>Архив, структура, контрольная сумма и обнаружение изменений.</p><span class="go">Открыть урок →</span></a>
-<a class="big-card" href="l14/"><span class="status-badge">Урок 14 · 40–60 минут</span><h3>Урок 14 · CSV и кодировки: почини нечитаемую таблицу</h3><p>Разделители, русские буквы, повторный импорт и проверка.</p><span class="go">Открыть урок →</span></a>
-<a class="big-card" href="l15/"><span class="status-badge">Урок 15 · 40–60 минут</span><h3>Урок 15 · Рабочее место: настрой под конкретную проблему</h3><p>Три окна, доступность, масштаб, измерение удобства и откат.</p><span class="go">Открыть урок →</span></a>
-<a class="big-card" href="l16/"><span class="status-badge">Урок 16 · 40–60 минут</span><h3>Урок 16 · Почему тормозит компьютер: найди узкое место</h3><p>Процессор, память, воспроизведение проблемы, измерение до/после.</p><span class="go">Открыть урок →</span></a>
-<a class="big-card" href="l17/"><span class="status-badge">Урок 17 · 40–60 минут</span><h3>Урок 17 · Сеть не работает: диагностика без обходов</h3><p>Различаем сеть, DNS и сайт, проверяем без изменения защиты.</p><span class="go">Открыть урок →</span></a>
-<a class="big-card" href="l18/"><span class="status-badge">Урок 18 · 40–60 минут</span><h3>Урок 18 · Автоматизируй папку: первые команды CMD</h3><p>Безопасная локальная автоматизация, журнал, двойной запуск.</p><span class="go">Открыть урок →</span></a>
-<a class="big-card" href="l19/"><span class="status-badge">Урок 19 · 40–60 минут</span><h3>Урок 19 · Версии и резервные копии: восстанови без потери</h3><p>Контроль целостности, имитация порчи и восстановление.</p><span class="go">Открыть урок →</span></a>
-<a class="big-card" href="l20/"><span class="status-badge">Урок 20 · 40 + 10 + 40 минут</span><h3>Урок 20 · Итоговый проект: настрой, проверь, восстанови</h3><p>Полноценная инженерная задача: дефекты, настройки, доказательства, откат.</p><span class="go">Открыть урок →</span></a>
+<a class="big-card" href="l11/"><span class="status-badge">Урок 11</span><h3>Урок 11 · Браузер под задачу: настрой, проверь, верни</h3><p>Настройка загрузок и разрешений, реальная проверка и откат.</p><span class="go">Открыть урок →</span></a>
+<a class="big-card" href="l12/"><span class="status-badge">Урок 12</span><h3>Урок 12 · Проводник: расширения, представления, типы</h3><p>Глубокая настройка вида файлов, ассоциации, двойные расширения.</p><span class="go">Открыть урок →</span></a>
+<a class="big-card" href="l13/"><span class="status-badge">Урок 13</span><h3>Урок 13 · ZIP без сюрпризов: распакуй и сравни</h3><p>Архив, структура, контрольная сумма и обнаружение изменений.</p><span class="go">Открыть урок →</span></a>
+<a class="big-card" href="l14/"><span class="status-badge">Урок 14</span><h3>Урок 14 · CSV и кодировки: почини нечитаемую таблицу</h3><p>Разделители, русские буквы, повторный импорт и проверка.</p><span class="go">Открыть урок →</span></a>
+<a class="big-card" href="l15/"><span class="status-badge">Урок 15</span><h3>Урок 15 · Рабочее место: настрой под конкретную проблему</h3><p>Три окна, доступность, масштаб, измерение удобства и откат.</p><span class="go">Открыть урок →</span></a>
+<a class="big-card" href="l16/"><span class="status-badge">Урок 16</span><h3>Урок 16 · Почему тормозит компьютер: найди узкое место</h3><p>Процессор, память, воспроизведение проблемы, измерение до/после.</p><span class="go">Открыть урок →</span></a>
+<a class="big-card" href="l17/"><span class="status-badge">Урок 17</span><h3>Урок 17 · Сеть не работает: диагностика без обходов</h3><p>Различаем сеть, DNS и сайт, проверяем без изменения защиты.</p><span class="go">Открыть урок →</span></a>
+<a class="big-card" href="l18/"><span class="status-badge">Урок 18</span><h3>Урок 18 · Автоматизируй папку: первые команды CMD</h3><p>Безопасная локальная автоматизация, журнал, двойной запуск.</p><span class="go">Открыть урок →</span></a>
+<a class="big-card" href="l19/"><span class="status-badge">Урок 19</span><h3>Урок 19 · Версии и резервные копии: восстанови без потери</h3><p>Контроль целостности, имитация порчи и восстановление.</p><span class="go">Открыть урок →</span></a>
+<a class="big-card" href="l20/"><span class="status-badge">Урок 20</span><h3>Урок 20 · Итоговый проект: настрой, проверь, восстанови</h3><p>Полноценная инженерная задача: дефекты, настройки, доказательства, откат.</p><span class="go">Открыть урок →</span></a>
 </div></section>
 
 <section class="section light"><div class="wrap help-shell">
+<h2 class="action-title">Быстрая помощь</h2><p class="help-intro">Выбери ситуацию, чтобы открыть короткую инструкцию.</p>
 <div class="choice-row" id="categories">
 <button class="choice-btn" data-cat="browser"><span>🌐</span>Браузер</button>
 <button class="choice-btn" data-cat="files"><span>📁</span>Файлы</button>
@@ -146,8 +150,8 @@
 </div>
 <div class="subchoices" id="subchoices" aria-live="polite"></div>
 <article class="answer" id="answer" aria-live="polite">
-<h3 id="answerTitle"></h3><p id="stepText" style="font-size:1.18rem;font-weight:850"></p><div class="answer-action" id="answerAction"></div>
-<div class="keyboard-shot" id="keyboardShot" hidden><img src="https://rudiskont.ru/upload/iblock/d41/aeef8vn0aueukibmlx1v0ocu5v98lb5n.jpg" alt="Клавиатура DEXP" loading="lazy"><div id="markers"></div></div>
+<h3 id="answerTitle" hidden></h3><p id="stepText" style="font-size:1.18rem;font-weight:850"></p><div class="answer-action" id="answerAction"></div>
+<div class="keyboard-shot" id="keyboardShot" hidden><svg style="display:block;width:100%;height:auto" viewBox="0 0 640 210" role="img" aria-label="Схема клавиатуры: Ctrl, Shift, Windows, Alt, Tab, C, V и другие клавиши"><rect x="10" y="10" width="620" height="190" rx="18" fill="#26334d"/><g fill="#f8fafc" font-family="Arial,sans-serif" font-size="15" font-weight="700"><text x="35" y="48">Esc</text><text x="115" y="48">F1</text><text x="175" y="48">F2</text><text x="235" y="48">F3</text><text x="295" y="48">F4</text><text x="35" y="95">Tab</text><text x="105" y="95">Q</text><text x="165" y="95">W</text><text x="225" y="95">E</text><text x="285" y="95">R</text><text x="345" y="95">T</text><text x="35" y="142">Caps</text><text x="105" y="142">A</text><text x="165" y="142">S</text><text x="225" y="142">D</text><text x="285" y="142">F</text><text x="345" y="142">G</text><text x="35" y="184">Ctrl</text><text x="105" y="184">Win</text><text x="175" y="184">Alt</text><text x="270" y="184">Пробел</text><text x="425" y="184">Alt</text><text x="495" y="184">Ctrl</text><text x="425" y="95">C</text><text x="485" y="95">V</text><text x="545" y="95">Shift</text><text x="545" y="142">H</text></g></svg><div id="markers"></div></div>
 <div class="actions"><button class="action" id="nextStep" type="button">Дальше →</button><button class="action secondary" id="backToTopics" type="button">К выбору</button></div>
 <p class="micro-note" id="progress"></p>
 </article>
@@ -159,8 +163,14 @@
 <section class="section light"><div class="wrap"><div class="section-head"><span class="eyebrow">Продвинутый практикум · ИИ + компьютер</span><h2>Уроки 21–30 · Создавай и решай вместе с ИИ</h2><p>Ты ставишь задачу, ИИ помогает выполнить работу, а ты проверяешь результат на компьютере.</p></div><div class="lesson-cards"><a class="big-card" href="l21/"><span class="status-badge">Урок 21 · ИИ-практикум</span><h3>Урок 21 · Разбери цифровой завал вместе с ИИ</h3><p>Отсортируй большой набор учебных файлов, сохранив спорные версии.</p><span class="go">Открыть урок →</span></a><a class="big-card" href="l22/"><span class="status-badge">Урок 22 · ИИ-практикум</span><h3>Урок 22 · Объясни правило — получи массовую обработку</h3><p>Приведи названия учебных файлов к единому виду без ручного переименования по одному.</p><span class="go">Открыть урок →</span></a><a class="big-card" href="l23/"><span class="status-badge">Урок 23 · ИИ-практикум</span><h3>Урок 23 · Две таблицы спорят: найди расхождения</h3><p>Сопоставь два учебных списка и объясни, какие записи совпадают, отсутствуют или требуют решения человека.</p><span class="go">Открыть урок →</span></a><a class="big-card" href="l24/"><span class="status-badge">Урок 24 · ИИ-практикум</span><h3>Урок 24 · Задай вопрос компьютеру через ИИ</h3><p>Исследуй учебную папку и получи точные сведения о её файлах.</p><span class="go">Открыть урок →</span></a><a class="big-card" href="l25/"><span class="status-badge">Урок 25 · ИИ-практикум</span><h3>Урок 25 · Собери себе рабочего помощника</h3><p>Создай небольшой сценарий, который готовит копии новых учебных материалов и отчёт.</p><span class="go">Открыть урок →</span></a><a class="big-card" href="l26/"><span class="status-badge">Урок 26 · ИИ-практикум</span><h3>Урок 26 · Исправляй проект с ИИ, сохраняя версии</h3><p>Измени небольшой текстовый проект, сравни варианты и верни только неудачную правку.</p><span class="go">Открыть урок →</span></a><a class="big-card" href="l27/"><span class="status-badge">Урок 27 · ИИ-практикум</span><h3>Урок 27 · Расследуй неисправность сайта вместе с ИИ</h3><p>Найди, почему учебная веб-страница не показывает один из своих элементов.</p><span class="go">Открыть урок →</span></a><a class="big-card" href="l28/"><span class="status-badge">Урок 28 · ИИ-практикум</span><h3>Урок 28 · Программа потеряла файл — найди почему</h3><p>Объясни, почему учебная программа не находит файл после переноса папки.</p><span class="go">Открыть урок →</span></a><a class="big-card" href="l29/"><span class="status-badge">Урок 29 · ИИ-практикум</span><h3>Урок 29 · Создай с ИИ законченный продукт</h3><p>Подготовь презентацию и комплект материалов для вымышленного школьного события.</p><span class="go">Открыть урок →</span></a><a class="big-card" href="l30/"><span class="status-badge">Урок 30 · ИИ-практикум</span><h3>Урок 30 · Выполни незнакомый заказ с ИИ</h3><p>Получив неполные требования, подготовь, проверь и передай законченный цифровой комплект.</p><span class="go">Открыть урок →</span></a></div></div></section></main>
 
 <script>
+(()=>{const input=document.getElementById('skillSearch'),out=document.getElementById('skillSearchResults'),status=document.getElementById('skillSearchStatus'),clear=document.getElementById('skillSearchClear');if(!input)return;
+const aliases={1:'калькулятор арифметика корзина удалить компьютер',2:'печать клавиатура раскладка язык копировать вставить',3:'скриншот снимок экрана обрезать приватность',4:'промпт запрос ии нейросеть ошибка программа',5:'окна развернуть размер расположить',6:'переименовать копировать файл переместить расширение',7:'папки структура иерархия',8:'удаленный файл корзина восстановить',9:'скачать загрузки найти скачанное pdf',10:'max сообщение телефон передать текст',11:'браузер настройки разрешения загрузка',12:'расширение формат файл тип',13:'архив zip распаковать checksum',14:'csv таблица разделитель кодировка',15:'масштаб доступность экран',16:'процессор cpu память ram тормозит компьютер',17:'интернет dns сайт сеть',18:'командная строка cmd автоматизация скрипт',19:'резервная копия версия восстановление',20:'проект диагностика откат',21:'сортировка версии файлы',22:'переименование пачкой массово',23:'таблицы сравнить расхождения',24:'ии папка спросить файлы',25:'помощник сценарий копирование',26:'проект ии версии откат',27:'сайт элемент отладка',28:'путь файл папка ссылка программа',29:'презентация мероприятие комплект',30:'заказ требования цифровой комплект'};
+function draw(){const q=input.value.trim().toLocaleLowerCase('ru');out.replaceChildren();if(q.length<2){status.textContent='Введи навык — покажу подходящий урок.';return}const cards=[...document.querySelectorAll('.lesson-cards a.big-card[href^="l"]')];const matches=cards.map(card=>{const n=+(card.getAttribute('href').match(/l(\d+)/)||[])[1];const title=card.querySelector('h3')?.textContent||'';const text=(title+' '+card.querySelector('p')?.textContent+' '+(aliases[n]||'')).toLocaleLowerCase('ru');return {n,card,title,text}}).filter(x=>x.n&&x.text.includes(q)).slice(0,6);if(!matches.length){status.textContent='Пока точного совпадения нет. Попробуй другое слово или выбери урок в каталоге.';return}status.textContent='Подходящие уроки:';matches.forEach(x=>{const link=document.createElement('a');link.className='skill-result';link.href=x.card.getAttribute('href');const heading=document.createElement('span');heading.textContent=x.title;const detail=document.createElement('small');detail.textContent='Открыть этот урок →';link.append(heading,detail);out.append(link)})}
+input.addEventListener('input',draw);clear.addEventListener('click',()=>{input.value='';draw();input.focus()});input.addEventListener('keydown',e=>{if(e.key==='Escape'){input.value='';draw()}});})();
+</script>
+<script>
 (() => {
- const kb={WIN:[31,68,"Win"],SHIFT:[21,60,"Shift"],S:[34,58,"S"],E:[35,51,"E"],CTRL:[19,68,"Ctrl"],C:[39,63,"C"],V:[43,63,"V"],ALT:[37,68,"Alt"],TAB:[20,49,"Tab"],H:[54,58,"H"]};
+ const kb={WIN:[16,88,"Win"],SHIFT:[89,40,"Shift"],S:[26,63,"S"],E:[35,40,"E"],CTRL:[6,88,"Ctrl"],C:[66,40,"C"],V:[76,40,"V"],ALT:[27,88,"Alt"],TAB:[6,40,"Tab"],H:[86,68,"H"]};
  const data={
   browser:{items:[
    {id:"new-tab",t:"Новая вкладка",s:[{x:"Нажми Ctrl + T.",k:["CTRL"]},{x:"Введи адрес сверху → Enter."}]},
@@ -202,11 +212,11 @@
  let current=null,step=0,currentCat=null;
  function mark(keys=[]){markers.innerHTML="";shot.hidden=!keys.length;keys.forEach(n=>{const p=kb[n];if(!p)return;const m=document.createElement("span");m.className="key-marker";m.style.left=p[0]+"%";m.style.top=p[1]+"%";m.dataset.label=p[2];markers.appendChild(m)})}
  function render(){const s=current.s[step];txt.textContent=s.x;mark(s.k||[]);progress.textContent=(step+1)+" / "+current.s.length;next.textContent=step===current.s.length-1?"Готово ✓":"Дальше →";answerAction.innerHTML=(current.action&&step===current.s.length-1)?`<a class="action" href="${current.action.href}">${current.action.label}</a>`:""}
- function openItem(cat,item){currentCat=cat;current=item;step=0;title.textContent=current.t;ans.classList.add("show");render();ans.scrollIntoView({behavior:"smooth",block:"center"})}
- function openCat(cat){const d=data[cat];subs.innerHTML=d.items.map((it,i)=>'<button class="subchoice" type="button" data-i="'+i+'">'+it.t+'</button>').join("");subs.classList.add("show");ans.classList.remove("show");subs.querySelectorAll("[data-i]").forEach(x=>x.addEventListener("click",()=>openItem(cat,d.items[+x.dataset.i])));}
+ function openItem(cat,item){currentCat=cat;current=item;step=0;title.textContent=current.t;title.hidden=false;ans.classList.add("show");render();ans.scrollIntoView({behavior:"smooth",block:"center"})}
+ function openCat(cat){const d=data[cat];subs.innerHTML=d.items.map((it,i)=>'<button class="subchoice" type="button" data-i="'+i+'">'+it.t+'</button>').join("");subs.classList.add("show");ans.classList.remove("show");title.hidden=true;title.textContent="";subs.querySelectorAll("[data-i]").forEach(x=>x.addEventListener("click",()=>openItem(cat,d.items[+x.dataset.i])));}
  document.querySelectorAll("[data-cat]").forEach(b=>b.addEventListener("click",()=>{openCat(b.dataset.cat);subs.scrollIntoView({behavior:"smooth",block:"center"})}));
- next.addEventListener("click",()=>{if(step<current.s.length-1){step++;render()}else{ans.classList.remove("show");subs.scrollIntoView({behavior:"smooth",block:"center"})}});
- document.getElementById("backToTopics").addEventListener("click",()=>{ans.classList.remove("show");subs.scrollIntoView({behavior:"smooth",block:"center"})});
+ next.addEventListener("click",()=>{if(step<current.s.length-1){step++;render()}else{ans.classList.remove("show");title.hidden=true;title.textContent="";subs.scrollIntoView({behavior:"smooth",block:"center"})}});
+ document.getElementById("backToTopics").addEventListener("click",()=>{ans.classList.remove("show");title.hidden=true;title.textContent="";subs.scrollIntoView({behavior:"smooth",block:"center"})});
  const wanted=new URLSearchParams(location.search).get("help");
  if(wanted){for(const [cat,d] of Object.entries(data)){const item=d.items.find(x=>x.id===wanted);if(item){openCat(cat);openItem(cat,item);break}}}
 })();
