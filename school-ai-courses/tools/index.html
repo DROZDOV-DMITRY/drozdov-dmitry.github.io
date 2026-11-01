@@ -7,36 +7,68 @@
 <script defer src="/school-ai-courses/assets/snow-trail.js"></script>
 <link rel="canonical" href="https://drozdov-dmitry.github.io/school-ai-courses/tools/">
 <link rel="icon" href="/school-ai-courses/assets/home/favicon.png" type="image/png">
-<style>.s14-tool-route{background:#f0f8ff;border:2px solid #aac8e6;padding:17px 19px;margin:0 0 21px;border-radius:18px;color:#173154}.s14-tool-route strong{font-size:18px}.s14-tool-route p{margin:7px 0;line-height:1.5}.s14-tool-route details{padding:10px;background:#fff;border-radius:12px;border:1px solid #bdd3e6;margin-top:10px}.s14-tool-route summary{color:#124d99;font-weight:800;cursor:pointer}.s14-tool-route summary:focus-visible{outline:3px solid #195ebb}.s14-tool-route a{font-weight:800;color:#15549c}.tool-filter-v2[aria-pressed="true"]{outline:2px solid #244c8c;outline-offset:2px}.tool-age-note{font-size:12px!important;line-height:1.45!important;color:#536a85;margin:11px 0 0}
+<style>
+.s14-tool-route{background:#f0f8ff;border:2px solid #aac8e6;padding:17px 19px;margin:0 0 21px;border-radius:18px;color:#173154}
+.s14-tool-route strong{font-size:18px}
+.s14-tool-route p{margin:7px 0;line-height:1.5}
+.s14-tool-route .tool-steps{margin:8px 0 0;padding-left:23px;line-height:1.5}
+.s14-tool-route .tool-steps li{padding:2px 0}
+.s14-tool-route details{padding:10px;background:#fff;border-radius:12px;border:1px solid #bdd3e6;margin-top:10px}
+.s14-tool-route summary{color:#124d99;font-weight:800;cursor:pointer}
+.s14-tool-route summary:focus-visible{outline:3px solid #195ebb}
+.s14-tool-route a{font-weight:800;color:#15549c}
+.tool-catalog-heading{margin:0 0 12px;font-size:1.45rem}
+.tool-search-label{display:block;margin:0 0 6px;font-weight:800;color:#173154}
+.tool-search{display:block;box-sizing:border-box;width:100%;min-height:48px;margin:0 0 12px;padding:11px 14px;border:2px solid #aac8e6;border-radius:14px;background:#fff;color:#173154;font:inherit}
+.tool-search:focus-visible,.tool-filter-v2:focus-visible,.tool-action-v2:focus-visible{outline:3px solid #195ebb;outline-offset:2px}
+.tool-filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px}
+.tool-filter-v2{appearance:none;border:1px solid var(--line);background:#fff;color:var(--ink);padding:10px 14px;border-radius:999px;font-weight:950;cursor:pointer;min-height:44px}
+.tool-filter-v2.active{background:#17254a;color:#fff;border-color:#17254a}
+.tool-results{min-height:1.5em;margin:0 0 12px;color:#43546d;font-weight:700}
+.tool-card-v2 h3{margin:0 0 7px;line-height:1.15}
+.tool-age-note{font-size:.875rem!important;line-height:1.45!important;color:#43546d!important;margin:11px 0 0!important;font-weight:600}
+.tool-age-note a{font-weight:800;color:#15549c}
+@media(max-width:620px){
+ .tool-search{font-size:16px}
+ .tool-filters{gap:6px}
+ .tool-filter-v2{padding:10px 12px}
+ .tool-catalog-heading{font-size:1.25rem}
+ .tool-age-note{font-size:.9rem!important}
+ .s14-tool-route{padding:14px}
+}
 </style>
 <meta name="description" content="Каталог ИИ-инструментов курса: узнай, для каких задач подходит каждый сервис и как начать работу.">
 </head><body class="theme-tools s14-student">
 <header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · Инструменты</span></a></div></header>
 <main>
-<section class="student-hero"><div class="wrap"><h1>Что нужно?</h1><p>Выбери решение!</p><img class="s14-topic-visual" src="/school-ai-courses/assets/home/tools.webp" width="420" height="220" alt="" decoding="async"></div></section>
+<section class="student-hero"><div class="wrap"><h1>ИИ-инструменты по задаче</h1><p>Найди сервис по названию или тому, что нужно сделать.</p><img class="s14-topic-visual" src="/school-ai-courses/assets/home/tools.webp" width="420" height="220" alt="" decoding="async"></div></section>
 
 <section class="section light"><div class="wrap">
 <section class="s14-tool-route" aria-label="Начало работы с ИИ">
 <strong>Первый раз здесь? Выбирай задачу, а не название нейросети.</strong>
-<p>1. Нажми ниже «Текст», «Картинки», «Видео» или другую нужную категорию. 2. Выбери один из показанных инструментов и открой его. 3. Возвращайся в свою мастерскую за следующим шагом — чат ИИ не заменяет выполнение задания.</p>
+<ol class="tool-steps"><li>Выбери задачу с помощью поиска или фильтра.</li><li>Открой подходящий сервис и выполни задание.</li><li>Вернись в мастерскую курса за следующим шагом.</li></ol><p>Чат ИИ помогает в работе, но не заменяет выполнение задания.</p>
 <details><summary>Не знаете, что выбрать? Сервис не открывается?</summary>
 <p><strong>Текст, идеи, вопросы к ИИ:</strong> начни с категории «Текст». <strong>Создание игры или сайта:</strong> категория «Код». <strong>Ролик:</strong> категория «Видео»; сначала прочитай маршрут «Блогинг». Если сайт требует регистрацию, оплату или не работает в школьной сети, вернись сюда и попробуй другой инструмент <em>той же категории</em>. Не вводи пароли и личные данные учеников в сторонние чаты.</p>
 <p><a href="/school-ai-courses/">Вернуться к направлениям курса →</a></p>
 </details></section>
-<div class="tool-filters">
-<button class="tool-filter-v2" data-tool-filter="text">Текст</button>
-<button class="tool-filter-v2" data-tool-filter="search">Найти</button>
-<button class="tool-filter-v2" data-tool-filter="ideas">Идеи</button>
-<button class="tool-filter-v2" data-tool-filter="slides">Презентации и схемы</button>
-<button class="tool-filter-v2" data-tool-filter="media">Картинки</button>
-<button class="tool-filter-v2" data-tool-filter="video">Видео</button>
-<button class="tool-filter-v2" data-tool-filter="music">Музыка и голос</button>
-<button class="tool-filter-v2" data-tool-filter="edit">Правка</button>
-<button class="tool-filter-v2" data-tool-filter="code">Код</button>
-<button class="tool-filter-v2" data-tool-filter="agents">Агенты</button>
-<button class="tool-filter-v2" data-tool-filter="aggregate">Агрегаторы</button>
+<h2 class="tool-catalog-heading">Каталог инструментов</h2>
+<label class="tool-search-label" for="tool-search">Поиск по сервису или задаче</label>
+<input class="tool-search" id="tool-search" type="search" data-tool-search placeholder="Например: озвучить текст, сделать схему, написать код" autocomplete="off" enterkeyhint="search">
+<div class="tool-filters" role="group" aria-label="Фильтр по задаче">
+<button type="button" class="tool-filter-v2" data-tool-filter="all" aria-pressed="false">Все</button>
+<button type="button" class="tool-filter-v2" data-tool-filter="text" aria-pressed="false">Текст</button>
+<button type="button" class="tool-filter-v2" data-tool-filter="search" aria-pressed="false">Найти</button>
+<button type="button" class="tool-filter-v2" data-tool-filter="ideas" aria-pressed="false">Идеи</button>
+<button type="button" class="tool-filter-v2" data-tool-filter="slides" aria-pressed="false">Презентации и схемы</button>
+<button type="button" class="tool-filter-v2" data-tool-filter="media" aria-pressed="false">Картинки</button>
+<button type="button" class="tool-filter-v2" data-tool-filter="video" aria-pressed="false">Видео</button>
+<button type="button" class="tool-filter-v2" data-tool-filter="music" aria-pressed="false">Музыка и голос</button>
+<button type="button" class="tool-filter-v2" data-tool-filter="edit" aria-pressed="false">Правка</button>
+<button type="button" class="tool-filter-v2" data-tool-filter="code" aria-pressed="false">Код</button>
+<button type="button" class="tool-filter-v2" data-tool-filter="agents" aria-pressed="false">Агенты</button>
+<button type="button" class="tool-filter-v2" data-tool-filter="aggregate" aria-pressed="false">Агрегаторы</button>
 </div>
-
+<p class="tool-results" data-tool-results role="status" aria-live="polite"></p>
 <div class="tool-grid-v2">
 
 <article class="tool-card-v2" data-tool-cats="text code media agents ideas">
@@ -106,8 +138,8 @@
 
 <article class="tool-card-v2" data-tool-cats="ideas">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=canva.com&sz=64" alt=""><h3>Canva</h3>
-<p>Мозговой штурм, moodboard и доски идей</p><div class="badges"><span class="badge warn">проверить доступ в школе</span></div>
-<div class="tool-actions-v2"><a class="tool-action-v2" href="https://www.canva.com/online-whiteboard/" target="_blank" rel="noopener">Доска идей ↗</a></div>
+<p>Доска для мозгового штурма и сбора идей. Ссылка открывает доску для совместной работы.</p><div class="badges"><span class="badge warn">проверить доступ в школе</span></div>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://www.canva.com/online-whiteboard/" target="_blank" rel="noopener">Открыть доску ↗</a></div>
 </article>
 
 <article class="tool-card-v2" data-tool-cats="media video edit">
@@ -142,7 +174,7 @@
 
 <article class="tool-card-v2" data-tool-cats="aggregate search">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=humaneval.org&sz=64" alt=""><h3>HumanEval.org</h3>
-<p>Формирующийся рейтинг моделей; данные сравнения пока ограничены</p><div class="badges"><span class="badge warn">рейтинг пока формируется</span></div>
+<p>Рейтинг моделей; методика и набор сравниваемых данных ограничены.</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://humaneval.org/" target="_blank" rel="noopener">Сравнить ↗</a></div>
 </article>
 
@@ -203,12 +235,14 @@
 <article class="tool-card-v2" data-tool-cats="text code">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=claude.ai&sz=64" alt=""><h3>Claude</h3>
 <p>Тексты, программирование и анализ материалов</p><div class="badges"><span class="badge ok">бесплатно с лимитами</span><span class="badge warn">вход</span></div>
+<p class="tool-age-note"><strong>18+ — ученикам самостоятельно нельзя.</strong> <a href="https://www.anthropic.com/policy" target="_blank" rel="noopener noreferrer">Возрастные ограничения ↗</a></p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://claude.ai/" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
 
 <article class="tool-card-v2" data-tool-cats="text search media">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" alt=""><h3>Gemini</h3>
 <p>Общение, поиск, объяснения и работа с изображениями</p><div class="badges"><span class="badge ok">есть бесплатный режим</span><span class="badge warn">вход Google</span></div>
+<p class="tool-age-note">Возраст и доступные функции зависят от страны и типа аккаунта. Для рабочего аккаунта Google требуется 18 лет; доступ для школьного аккаунта должен быть включён администратором. <a href="https://support.google.com/gemini/answer/13278668" target="_blank" rel="noopener noreferrer">Требования Google ↗</a></p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://gemini.google.com/" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
 
@@ -275,12 +309,14 @@
 <article class="tool-card-v2" data-tool-cats="music">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=suno.com&sz=64" alt=""><h3>Suno</h3>
 <p>Генерация песен и музыкальных фрагментов</p><div class="badges"><span class="badge ok">50 кредитов/день</span><span class="badge warn">некоммерческое использование</span></div>
+<p class="tool-age-note"><strong>С 13 лет; до 18 лет — только с предварительным согласием родителя или опекуна.</strong> Для отдельных функций могут действовать более строгие ограничения. <a href="https://suno.com/terms/" target="_blank" rel="noopener noreferrer">Условия Suno ↗</a></p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://suno.com/" target="_blank" rel="noopener">Создать музыку ↗</a></div>
 </article>
 
 <article class="tool-card-v2" data-tool-cats="music media">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=64" alt=""><h3>ElevenLabs</h3>
 <p>Озвучивание текстов, голоса и звуковые эффекты</p><div class="badges"><span class="badge ok">10 000 кредитов/месяц</span><span class="badge warn">вход</span></div>
+<p class="tool-age-note"><strong>18+ — ученикам самостоятельно нельзя.</strong> <a href="https://elevenlabs.io/terms-of-use" target="_blank" rel="noopener noreferrer">Возрастные ограничения ↗</a></p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://elevenlabs.io/" target="_blank" rel="noopener">Озвучить ↗</a></div>
 </article>
 
@@ -304,6 +340,6 @@
 
 </div>
 <p class="micro-note">Один сервис — одна плашка. Режимы выбираются цветными кнопками внутри.</p>
-<p class="micro-note">Бесплатные возможности и лимиты могут меняться: ежедневные, еженедельные и разовые кредиты — разные условия. Доступ из школьной сети проверяется отдельно. Сведения обновлены 16.10.2026.</p>
+<p class="micro-note">Бесплатные возможности и лимиты меняются. Перед занятием проверяй условия на странице сервиса по ссылке в карточке. Доступ из школьной сети проверяется отдельно. Сведения обновлены 01.11.2026.</p>
 </div></section>
 </main></body></html>
