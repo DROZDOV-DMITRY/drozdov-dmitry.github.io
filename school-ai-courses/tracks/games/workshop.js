@@ -25,7 +25,7 @@
     fix.addEventListener('click',function(){
       const issue=document.getElementById('gw-issue');
       const file=fix.getAttribute('data-file');
-      const base=file.replace(/\\.html?$/i,'');
+      const base=file.replace(/\.html?$/i,'');
       const nextFile=base+'-v2.html';
       const detail=(issue?.value||'').trim();
       const msg='Продолжаем в ЭТОМ ЖЕ диалоге разработку моей HTML-игры. '
