@@ -25,8 +25,9 @@
 <div class="sw-quick-publish"><div><strong>Выбери способ создания и публикации</strong><span>Готовый HTML — GitHub Pages. Сборка без кода — Tilda.</span></div><a class="sw-button sw-quick-button" href="publish/">Выбрать способ →</a></div>
 <section class="sw-levels" aria-label="Уровни создания сайта">
 <article class="sw-level sw-level-active"><span class="sw-level-icon" aria-hidden="true">◈</span><span class="sw-level-kicker">Уровень 1</span><h2>Мой первый сайт</h2><p>Одна страница. Своя тема, блоки, стиль и публикация в интернете.</p><a class="sw-level-go" href="#web-workshop">Создать сайт ↓</a></article>
-<article class="sw-level sw-level-mid"><span class="sw-level-icon" aria-hidden="true">▦</span><span class="sw-level-kicker">Уровень 2</span><h2>Сайт посложнее</h2><p>Несколько страниц, формы, анимация, свои изображения, точная работа с цветом и шрифтами.</p><button type="button" class="sw-level-go" disabled aria-disabled="true">В разработке</button></article>
-<article class="sw-level sw-level-pro"><span class="sw-level-icon" aria-hidden="true">✧</span><span class="sw-level-kicker">Уровень 3</span><h2>Суперсайт</h2><p>Большой проект: архитектура страниц, навигация, адаптивность, документы и политики публикации.</p><button type="button" class="sw-level-go" disabled aria-disabled="true">В разработке</button></article>
+
+
+<p class="sw-roadmap-note">Сейчас доступен маршрут первого сайта. Остальные уровни пока не входят в мастерскую.</p>
 </section>
 <section id="web-workshop" class="sw-workshop" aria-labelledby="sw-workshop-title">
 <h2 class="sw-workshop-title" id="sw-workshop-title">Мастерская первого сайта</h2>
@@ -113,7 +114,7 @@
 — сайт должен запускаться из папки на рабочем столе в Microsoft Edge БЕЗ интернета;
 — не используй внешние шрифты, библиотеки, ссылки на картинки, CDN или загружаемые ресурсы;
 — если для оформления нужен рисунок, создай его кодом как встроенный SVG или CSS-иллюстрацию;
-— тексты на русском языке, по нашей согласованной теме, без выдуманных личных данных;
+— тексты на русском языке по нашей согласованной теме; не выдумывай личные данные и факты. Если сайт содержит фактические утверждения, используй проверяемые сведения и добавь короткий блок «Источники» с работающими ссылками. Не копируй чужие тексты и изображения без разрешения; используй собственные или разрешённые к публикации материалы;
 — никаких неработающих форм, пустых ссылок, заглушек вместо содержимого;
 — после кода коротко объясни, какие блоки получились и как проверить их.
 
@@ -126,7 +127,7 @@
 </ol><p class="sw-publish-shortcut">Если сайт уже выглядит так, как ты задумал: <a href="publish/">Публикация с ИИ-проводником →</a></p></article>
 <article class="sw-step"><div class="sw-step-header"><span class="sw-number">6</span><h3>Проверь и улучши</h3></div>
 <p>Проверь сайт в Edge. Каждое исправление сохраняй отдельным файлом: <code>index_v02.html</code>, затем <code>index_v03.html</code> и дальше по порядку. Рабочий вариант не перезаписывай.</p>
-<div class="sw-checks"><label><input type="checkbox"> Заголовок и разделы соответствуют моей теме.</label><label><input type="checkbox"> Кнопки и переходы по странице работают.</label><label><input type="checkbox"> Текст и оформление хорошо видны при узком окне браузера.</label></div>
+<div class="sw-checks"><label><input type="checkbox"> Заголовок, разделы и тексты соответствуют моей теме.</label><label><input type="checkbox"> Каждая кнопка и ссылка ведёт куда обещает; проверь мышью и клавишей Tab.</label><label><input type="checkbox"> В узком окне нет горизонтальной прокрутки, текст и кнопки читаемы.</label><label><input type="checkbox"> Сайт открывается из папки компьютера; нужные элементы работают без интернета.</label><label><input type="checkbox"> Факты проверены по указанным источникам, а тексты и изображения можно публиковать.</label></div>
 <label class="sw-label" for="sw-version">Номер следующей версии (две цифры)</label><input id="sw-version" class="sw-version" type="number" min="2" max="99" value="2"><small>Например, 2 создаст файл index_v02.html. Для следующего исправления укажи 3.</small>
 <label class="sw-label" for="sw-issue">Что исправить или улучшить?</label>
 <textarea id="sw-issue" class="sw-editor" rows="4" placeholder="Например: на узком экране карточки налезают друг на друга. Исправь расположение, сохрани цвета и текст."></textarea>

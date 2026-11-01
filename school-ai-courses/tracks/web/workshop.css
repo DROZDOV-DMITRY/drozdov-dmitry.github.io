@@ -66,3 +66,5 @@ button.sw-level-go[disabled]{color:#3e5068;background:#ffffffac;border:1px solid
 @media(max-width:640px){.sw-quick-publish{flex-direction:column;align-items:stretch}.sw-quick-button{width:100%}.sw-top-publish{order:2;margin:0 0 5px}.sw-quick-publish strong{font-size:25px}}
 
 .sw-version{width:110px;max-width:100%;border:2px solid #c5d2e6;border-radius:12px;background:#fff;padding:10px 12px;font:700 16px system-ui;color:#152b4a}.sw-version:focus-visible{outline:3px solid #3175c4;outline-offset:2px}
+
+.sw-roadmap-note{margin:-18px 0 30px;color:#435470;font-size:14px;font-weight:700}
