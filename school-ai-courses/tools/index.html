@@ -1,7 +1,7 @@
 <!doctype html><html lang="ru"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#F0F8F2">
 <title>Инструменты · Курс ИИ</title>
-<link rel="stylesheet" href="../assets/s14-v2.css"><script defer src="../assets/student-ui.js?v=20261101-tools-search"></script>
+<link rel="stylesheet" href="../assets/s14-v2.css"><script defer src="../assets/student-ui.js?v=20261101-agent-catalog"></script>
 <script defer src="/school-ai-courses/assets/nav.js?v=20261022-deepseek-native-tab"></script>
 <link rel="stylesheet" href="/school-ai-courses/assets/visual-system.css">
 <script defer src="/school-ai-courses/assets/snow-trail.js"></script>
@@ -36,24 +36,26 @@
  .tool-age-note{font-size:.9rem!important}
  .s14-tool-route{padding:14px}
 }
+@media(min-width:601px){.theme-tools.s14-student .student-hero>.wrap{padding-right:24px!important;min-height:0!important}}
+@media(max-width:900px){.theme-tools.s14-student .student-hero>.wrap{padding-right:24px!important}}
+@media(max-width:600px){.theme-tools.s14-student .student-hero>.wrap{padding:20px 16px!important;min-height:0!important}}
 </style>
 <meta name="description" content="Каталог ИИ-инструментов курса: узнай, для каких задач подходит каждый сервис и как начать работу.">
 </head><body class="theme-tools s14-student">
 <header class="topbar"><div class="wrap inner"><a class="brand" href="../"><img class="s14-brand-logo" src="/school-ai-courses/assets/home/logo-ai.webp" width="52" height="52" alt="Логотип курса ИИ"><span><b>КУРС ИИ</b> · Инструменты</span></a></div></header>
 <main>
-<section class="student-hero"><div class="wrap"><h1>ИИ-инструменты по задаче</h1><p>Найди сервис по названию или тому, что нужно сделать.</p><img class="s14-topic-visual" src="/school-ai-courses/assets/home/tools.webp" width="420" height="220" alt="" decoding="async"></div></section>
+<section class="student-hero"><div class="wrap"><h1>Каталог инструментов</h1><p>Найди сервис по названию или задаче.</p></div></section>
 
 <section class="section light"><div class="wrap">
 <section class="s14-tool-route" aria-label="Начало работы с ИИ">
 <strong>Первый раз здесь? Выбирай задачу, а не название нейросети.</strong>
 <ol class="tool-steps"><li>Выбери задачу с помощью поиска или фильтра.</li><li>Открой подходящий сервис и выполни задание.</li><li>Вернись в мастерскую курса за следующим шагом.</li></ol><p>Чат ИИ помогает в работе, но не заменяет выполнение задания.</p>
 <details><summary>Не знаете, что выбрать? Сервис не открывается?</summary>
-<p><strong>Текст, идеи, вопросы к ИИ:</strong> начни с категории «Текст». <strong>Создание игры или сайта:</strong> категория «Код». <strong>Ролик:</strong> категория «Видео»; сначала прочитай маршрут «Блогинг». Если сайт требует регистрацию, оплату или не работает в школьной сети, вернись сюда и попробуй другой инструмент <em>той же категории</em>. Не вводи пароли и личные данные учеников в сторонние чаты.</p>
+<p><strong>Текст, идеи, вопросы к ИИ:</strong> начни с категории «Текст». <strong>Создание игры или сайта:</strong> категория «Код». <strong>Ролик:</strong> категория «Видео»; сначала прочитай маршрут «Блогинг». Если сайт требует регистрацию или оплату, вернись сюда и попробуй другой инструмент <em>той же категории</em>. Не вводи пароли и личные данные учеников в сторонние чаты.</p>
 <p><a href="/school-ai-courses/">Вернуться к направлениям курса →</a></p>
 </details></section>
-<h2 class="tool-catalog-heading">Каталог инструментов</h2>
-<label class="tool-search-label" for="tool-search">Поиск по сервису или задаче</label>
-<input class="tool-search" id="tool-search" type="search" data-tool-search placeholder="Например: озвучить текст, сделать схему, написать код" autocomplete="off" enterkeyhint="search">
+<h2 class="tool-catalog-heading" id="tool-search-heading">Поиск по сервису или задаче</h2>
+<input class="tool-search" id="tool-search" type="search" aria-labelledby="tool-search-heading" data-tool-search placeholder="Например: озвучить текст, сделать схему, написать код" autocomplete="off" enterkeyhint="search">
 <div class="tool-filters" role="group" aria-label="Фильтр по задаче">
 <button type="button" class="tool-filter-v2" data-tool-filter="all" aria-pressed="false">Все</button>
 <button type="button" class="tool-filter-v2" data-tool-filter="text" aria-pressed="false">Текст</button>
@@ -74,7 +76,7 @@
 <article class="tool-card-v2" data-tool-cats="text code media agents ideas">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" alt=""><h3>ChatGPT</h3>
 <p>Текст и код, создание и редактирование изображений, планирование и выполнение агентных задач при наличии нужных функций</p>
-<div class="badges"><span class="badge ok">есть бесплатный доступ</span><span class="badge warn">агентные возможности — по тарифу</span></div>
+<div class="badges"><span class="badge ok">есть бесплатный доступ</span><span class="badge warn">многошаговые задачи — в Work; доступ зависит от тарифа</span></div>
 <p class="tool-age-note">До 13 лет — только через преподавателя; в 13–17 лет — с разрешения родителей.</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Открыть ChatGPT ↗</a></div>
 </article>
@@ -109,9 +111,9 @@
 </div>
 </article>
 
-<article class="tool-card-v2" data-tool-cats="search text">
+<article class="tool-card-v2" data-tool-cats="search text agents">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=64" alt=""><h3>Perplexity</h3>
-<p>Поиск с источниками</p>
+<p>Поиск с источниками; режим Computer выполняет многошаговые задачи и создаёт готовые материалы</p><div class="badges"><span class="badge warn">Computer — доступность зависит от тарифа</span></div>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://www.perplexity.ai/" target="_blank" rel="noopener">Найти ↗</a></div>
 </article>
 
@@ -138,7 +140,7 @@
 
 <article class="tool-card-v2" data-tool-cats="ideas">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=canva.com&sz=64" alt=""><h3>Canva</h3>
-<p>Доска для мозгового штурма и сбора идей. Ссылка открывает доску для совместной работы.</p><div class="badges"><span class="badge warn">проверить доступ в школе</span></div>
+<p>Доска для мозгового штурма и сбора идей. Ссылка открывает доску для совместной работы.</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://www.canva.com/online-whiteboard/" target="_blank" rel="noopener">Открыть доску ↗</a></div>
 </article>
 
@@ -226,23 +228,23 @@
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://www.arctic.qpon/playground" target="_blank" rel="noopener">Сравнить ↗</a></div>
 </article>
 
-<article class="tool-card-v2" data-tool-cats="text code search">
+<article class="tool-card-v2" data-tool-cats="text code search agents">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=mistral.ai&sz=64" alt=""><h3>Mistral Vibe</h3>
-<p>Чат, поиск и помощь с кодом; прежнее название Le Chat</p><div class="badges"><span class="badge ok">есть бесплатный режим</span><span class="badge warn">вход может понадобиться</span></div>
+<p>Многошаговые задачи и работа с кодом в режимах Work и Code</p><div class="badges"><span class="badge ok">есть бесплатный режим</span><span class="badge warn">вход может понадобиться</span></div>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://chat.mistral.ai/" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
 
-<article class="tool-card-v2" data-tool-cats="text code">
+<article class="tool-card-v2" data-tool-cats="text code agents">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=claude.ai&sz=64" alt=""><h3>Claude</h3>
-<p>Тексты, программирование и анализ материалов</p><div class="badges"><span class="badge ok">бесплатно с лимитами</span><span class="badge warn">вход</span></div>
+<p>Тексты, программирование и анализ; Claude Cowork выполняет многошаговые задачи с файлами и подключёнными инструментами</p><div class="badges"><span class="badge ok">бесплатно с лимитами</span><span class="badge warn">вход</span></div>
 <p class="tool-age-note"><strong>18+ — ученикам самостоятельно нельзя.</strong> <a href="https://www.anthropic.com/policy" target="_blank" rel="noopener noreferrer">Возрастные ограничения ↗</a></p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://claude.ai/" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
 
-<article class="tool-card-v2" data-tool-cats="text search media">
+<article class="tool-card-v2" data-tool-cats="text search media agents">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" alt=""><h3>Gemini</h3>
 <p>Общение, поиск, объяснения и работа с изображениями</p><div class="badges"><span class="badge ok">есть бесплатный режим</span><span class="badge warn">вход Google</span></div>
-<p class="tool-age-note">Возраст и доступные функции зависят от страны и типа аккаунта. Для рабочего аккаунта Google требуется 18 лет; доступ для школьного аккаунта должен быть включён администратором. <a href="https://support.google.com/gemini/answer/13278668" target="_blank" rel="noopener noreferrer">Требования Google ↗</a></p>
+<p class="tool-age-note">Возраст и доступные функции зависят от страны и типа аккаунта. Для рабочих аккаунтов Google требуется 18 лет. Gemini Spark — агентный режим; его доступность зависит от страны и подписки. <a href="https://support.google.com/gemini/answer/13278668" target="_blank" rel="noopener noreferrer">Требования Google ↗</a></p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://gemini.google.com/" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
 
@@ -276,21 +278,21 @@
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://app.runwayml.com/" target="_blank" rel="noopener">Видео ↗</a></div>
 </article>
 
-<article class="tool-card-v2" data-tool-cats="code ideas">
+<article class="tool-card-v2" data-tool-cats="code ideas agents">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=bolt.new&sz=64" alt=""><h3>Bolt</h3>
-<p>Создание сайтов и приложений по описанию</p><div class="badges"><span class="badge ok">300 тыс. токенов/день</span><span class="badge warn">лимит 1 млн/месяц</span></div>
+<p>Создание сайтов и приложений по описанию; Bolt Agent сам проверяет и дорабатывает проект</p><div class="badges"><span class="badge ok">300 тыс. токенов/день</span><span class="badge warn">лимит 1 млн/месяц</span></div>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://bolt.new/" target="_blank" rel="noopener">Создать сайт ↗</a></div>
 </article>
 
-<article class="tool-card-v2" data-tool-cats="code ideas">
+<article class="tool-card-v2" data-tool-cats="code ideas agents">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=lovable.dev&sz=64" alt=""><h3>Lovable</h3>
-<p>Прототипы сайтов и приложений в диалоге с ИИ</p><div class="badges"><span class="badge ok">5 кредитов/день</span><span class="badge warn">до 30/месяц</span></div>
+<p>Прототипы сайтов и приложений; Lovable Agent планирует и выполняет многошаговые изменения</p><div class="badges"><span class="badge ok">5 кредитов/день</span><span class="badge warn">до 30/месяц</span></div>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://lovable.dev/" target="_blank" rel="noopener">Создать сайт ↗</a></div>
 </article>
 
-<article class="tool-card-v2" data-tool-cats="code ideas">
+<article class="tool-card-v2" data-tool-cats="code ideas agents">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=v0.app&sz=64" alt=""><h3>v0</h3>
-<p>Веб-интерфейсы, компоненты и сайты по запросу</p><div class="badges"><span class="badge ok">есть бесплатный режим</span><span class="badge warn">7 сообщений/день</span></div>
+<p>Веб-интерфейсы, компоненты и сайты по запросу; агент может работать с кодовой базой проекта</p><div class="badges"><span class="badge ok">есть бесплатный режим</span><span class="badge warn">7 сообщений/день</span></div>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://v0.app/" target="_blank" rel="noopener">Создать интерфейс ↗</a></div>
 </article>
 
@@ -320,15 +322,15 @@
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://elevenlabs.io/" target="_blank" rel="noopener">Озвучить ↗</a></div>
 </article>
 
-<article class="tool-card-v2 tool-card-deprioritized" data-tool-cats="text code">
+<article class="tool-card-v2" data-tool-cats="text code">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=chat.deepseek.com&sz=64" alt=""><h3>DeepSeek</h3>
-<p>Тексты и код</p><div class="badges"><span class="badge warn">в школе сейчас не работает</span></div>
+<p>Тексты и код</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://chat.deepseek.com/" target="_blank" rel="noopener noreferrer">Открыть DeepSeek ↗</a></div>
 </article>
 
-<article class="tool-card-v2 tool-card-deprioritized" data-tool-cats="text media">
+<article class="tool-card-v2" data-tool-cats="text media">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=ya.ru&sz=64" alt=""><h3>Алиса</h3>
-<p>Тексты и изображения</p><div class="badges"><span class="badge warn">в школе блокирует ЕСПД</span></div>
+<p>Тексты и изображения</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://ya.ru/alice" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
 
@@ -340,6 +342,6 @@
 
 </div>
 <p class="micro-note">Один сервис — одна плашка. Режимы выбираются цветными кнопками внутри.</p>
-<p class="micro-note">Бесплатные возможности и лимиты меняются. Перед занятием проверяй условия на странице сервиса по ссылке в карточке. Доступ из школьной сети проверяется отдельно. Сведения обновлены 01.11.2026.</p>
+<p class="micro-note">Бесплатные возможности и лимиты меняются. Перед занятием проверяй условия на странице сервиса по ссылке в карточке. Сведения обновлены 01.11.2026.</p>
 </div></section>
 </main></body></html>
