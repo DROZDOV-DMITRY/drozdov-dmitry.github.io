@@ -34,3 +34,14 @@
 @media(max-width:800px){.hero-layout{grid-template-columns:1fr;gap:26px}.hero-card{min-height:140px}.route-list{grid-template-columns:repeat(2,1fr)}.work-grid{grid-template-columns:1fr}.work-aside{grid-template-columns:1fr 1fr}.work-aside .aside-card{grid-row:span 2}}
 @media(max-width:560px){.b1-container{width:min(100% - 24px,1120px)}.b1-hero{padding:38px 0 32px}.hero-card{min-height:108px;padding:14px;border-radius:20px;gap:8px}.hero-card span{font-size:.72rem}.b1-section{padding:22px 17px;margin:14px 0;border-radius:19px}.route-list,.review-grid,.share-options,.field-pair{grid-template-columns:1fr}.route-list li{padding:16px}.section-menu{gap:7px}.section-menu a{padding:8px 12px;font-size:.9rem}.work-aside{grid-template-columns:1fr}.work-aside .aside-card{grid-row:auto}.btn{width:100%;box-sizing:border-box}.format-options{display:grid;grid-template-columns:1fr}.format-options span{border-radius:12px}.b1-footer .b1-container{display:grid}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+/* Локально фиксируем сетки: базовые стили курса могут менять списки и карточки. */
+.b1-page .route-list{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px!important;list-style:none!important;padding:0!important}
+.b1-page .route-list li{display:grid!important;grid-template-rows:auto auto 1fr;gap:8px!important;align-content:start;padding:20px!important;border-radius:18px;background:#fff;border:1px solid var(--b-line)}
+.b1-page .route-list li b,.b1-page .route-list li span{display:block!important}
+.b1-page .review-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}
+.b1-page .review-grid article{display:block!important;padding:20px!important;border:1px solid var(--b-line)!important;border-radius:18px!important;background:#fbfcfe!important}
+.b1-page .share-options{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}
+.b1-page .share-options article{display:block!important;padding:20px!important;border:1px solid var(--b-line)!important;border-radius:18px!important;background:#fbfcfe!important}
+.b1-page .work-grid{display:grid!important;grid-template-columns:minmax(0,1.5fr) minmax(240px,.7fr)!important;gap:28px!important}
+@media(max-width:800px){.b1-page .route-list{grid-template-columns:repeat(2,minmax(0,1fr))!important}.b1-page .work-grid{grid-template-columns:1fr!important}}
+@media(max-width:560px){.b1-page .route-list,.b1-page .review-grid,.b1-page .share-options,.b1-page .work-grid{grid-template-columns:1fr!important}.b1-page .route-list li,.b1-page .review-grid article,.b1-page .share-options article{padding:16px!important}}
