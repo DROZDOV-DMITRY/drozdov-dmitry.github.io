@@ -205,7 +205,7 @@ body.s14-student.s14-illustrated{background:linear-gradient(180deg,#fff6e9,#f3ef
     const target=missed[0]||11;
     recommendation.innerHTML=missed.length
       ?'По отмеченным заданиям начни с <a href="/school-ai-courses/computer/l'+String(target).padStart(2,'0')+'/">урока '+target+'</a> — это самый ранний урок курса, связанный с навыком, которому нужна практика. Это предварительный ориентир; результат не проверяет все 30 уроков.'
-      :'Все задания отмечены как выполненные. Продолжи с <a href="/school-ai-courses/computer/l11/">урока 11</a> и попроси учителя подтвердить навыки из диагностики. Проверка охватывает только часть программы.';
+      :'Все задания отмечены как выполненные. Начни с <a href="/school-ai-courses/computer/l01/">урока 1</a>: диагностика проверяет только часть навыков, поэтому она не подтверждает готовность пропустить первые уроки.';
   }
   function render(){
     intro.hidden=state.started;
