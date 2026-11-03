@@ -1,5 +1,0 @@
-.tool-link-status{margin:9px 0 0;padding:7px 9px;border-left:3px solid #598575;background:#f2f7f4;color:#344b42;font-size:12px;line-height:1.45}
-.tool-link-status[data-state="limited"]{border-left-color:#b78345;background:#fff8ed;color:#694b2a}
-.tool-link-status[data-state="redirect"]{border-left-color:#5576a5;background:#f2f6fb;color:#344e73}
-.tool-link-status[data-state="js"]{border-left-color:#7a6b9c;background:#f7f4fb;color:#514667}
-.tool-link-status strong{font-weight:750}
