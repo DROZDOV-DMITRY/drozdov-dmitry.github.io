@@ -3,7 +3,7 @@
 Дата: 03.11.2026  
 Объекты: [детский каталог](https://drozdov-dmitry.github.io/school-ai-courses/tools/) и [взрослый каталог](https://drozdov-dmitry.github.io/school-ai-courses/adults/tools/).  
 Baseline: child `cf325875323188f3a7019b1f57f1125ba7c5ec67`; adult `f7ca4b1b18dd3dff92b1b875fcd1280af8d08d4a`.  
-Кандидат: child `0402787ae89168fdccd5dd6d876b0f0dfed5ec5a`; adult `9c978125555ed74150888eed74e875de4b7d9a68`.  
+Кандидат: child `0402787ae89168fdccd5dd6d876b0f0dfed5ec5a`; adult `48cda95a8fd67fc0febf72e13c1bff35ed9ed58e`.  
 Это QA-1 статического исходника. Полевой тест не проводился.
 
 ## Дельта
@@ -20,10 +20,10 @@ Baseline: child `cf325875323188f3a7019b1f57f1125ba7c5ec67`; adult `f7ca4b1b18dd3
 |---|---|---|---|
 | E01 | Применимо: назначение задано заголовком «Каталог инструментов» и подзаголовком о выборе задачи. Источник подтверждает; понимание пользователями требует live walkthrough. | SOURCE_REVIEWED | SOURCE_REVIEWED |
 | E02 | Применимо: поиск и тематические фильтры — два способа входа; обе зоны явно подписаны. Оба пути сохранены; конкуренции за основной выбор не установлено. | SOURCE_REVIEWED | SOURCE_REVIEWED |
-| E03 | Применимо: поле поиска и фильтры видимы в DOM, есть подписи и placeholder. Источник подтверждает; визуальное отображение NOT_TESTED. | SOURCE_REVIEWED | NOT_TESTED_LIVE |
+| E03 | Применимо: поле поиска и фильтры видимы в DOM, есть подписи и placeholder. В Chrome на desktop видимость подтверждена; мобильное отображение NOT_TESTED. | SOURCE_REVIEWED | LIVE_DESKTOP_PASS; MOBILE_NOT_TESTED |
 | E04 | Применимо: ссылки на карточках называют сервис/действие и внешний переход. Названия сверены статически. | SOURCE_REVIEWED | SOURCE_REVIEWED |
 | E05 | Применимо: бренд ведёт к родительскому курсу; карточка открывается внешней ссылкой. Переходы проверены по source path, клик NOT_TESTED. | SOURCE_REVIEWED | NOT_TESTED_LIVE |
-| E06 | Применимо: search/filter реализованы как input/button; результаты выдаются через live region. JS-код просмотрен, runtime NOT_TESTED. | SOURCE_REVIEWED | NOT_TESTED_RUNTIME |
+| E06 | Применимо: search/filter реализованы как input/button; результаты выдаются через status region. На обеих live-страницах поиск/фильтр изменили выдачу и счётчик. | SOURCE_REVIEWED | LIVE_DESKTOP_PASS |
 | E07 | Применимо: фильтры используют фиксированные значения; всем 43 карточкам назначена ровно одна поддерживаемая категория. After: все значения соответствуют списку фильтров. | CATEGORY_MAP_REVIEW | SOURCE_FIXED |
 | L01 | Применимо: использованы названия задач и сервисов; термин «агрегатор» сохраняется как категория. Понятность термина детям NOT_ESTABLISHED. | SOURCE_REVIEWED | SOURCE_REVIEWED |
 | L02 | Применимо: предупреждение для ученика короткое; взрослый каталог содержит пояснения по тарифам и данным. Статический текстовый просмотр. | SOURCE_REVIEWED | SOURCE_REVIEWED |
@@ -35,7 +35,7 @@ Baseline: child `cf325875323188f3a7019b1f57f1125ba7c5ec67`; adult `f7ca4b1b18dd3
 | L08 | N/A: здесь нет маршрута по уровням готовности. | NOT_APPLICABLE | NOT_APPLICABLE |
 | F01 | Применимо: карточки называют сервисы; регистрация/доступ зависит от внешнего поставщика. В детском разделе добавлено напоминание проверить возрастные условия у преподавателя. | SOURCE_REVIEWED | SOURCE_REVIEWED |
 | F02 | N/A: каталог не содержит обязательной цепочки действий, которую можно зациклить. | NOT_APPLICABLE | NOT_APPLICABLE |
-| F03 | Применимо: фильтры должны менять выдачу и счётчик. Обработчик найден в коде; действие в браузере NOT_TESTED. | SOURCE_REVIEWED | SOURCE_REVIEWED |
+| F03 | Применимо: фильтры должны менять выдачу и счётчик. До финальной правки счётчик работал, но CSS оставлял карточки видимыми; добавлено правило для [hidden] и проверено live. | SOURCE_REVIEWED | LIVE_FIXED_AND_VERIFIED |
 | F04 | N/A: каталог не содержит контрольных заданий или readiness gate. | NOT_APPLICABLE | NOT_APPLICABLE |
 | F05 | Применимо: внешний сервис может быть недоступен. Отдельного fallback-пути для каждой модели нет; каталог предоставляет альтернативные карточки, но эквивалентность не заявлена. | SOURCE_REVIEWED | LIMITATION_RECORDED |
 | F06 | Применимо: названия моделей могут устаревать. Взрослый каталог содержит оговорку об актуальных условиях; дата проверки новых моделей 03.11.2026. | SOURCE_REVIEWED | SOURCE_REVIEWED |
@@ -69,13 +69,13 @@ Baseline: child `cf325875323188f3a7019b1f57f1125ba7c5ec67`; adult `f7ca4b1b18dd3
 | M03 | N/A: страница не сравнивает измеренные результаты обучения. | NOT_APPLICABLE | NOT_APPLICABLE |
 | M04 | N/A: сбор замечаний/метрик на странице отсутствует. | NOT_APPLICABLE | NOT_APPLICABLE |
 | M05 | N/A: средние оценки/рейтинги инструмента не показываются. | NOT_APPLICABLE | NOT_APPLICABLE |
-| M06 | Применимо: после правок выполнен повторный статический diff/evidence pass. Дубли категорий устранены; повторная проверка по source выполнена. | REVIEW_NOT_RECORDED | SOURCE_REVIEWED |
+| M06 | Применимо: после статических правок выполнен повторный source pass; live-ошибка фильтра обнаружена и исправлена, повторно проверена после деплоя. | REVIEW_NOT_RECORDED | SOURCE_AND_LIVE_REVIEWED |
 | T01 | Применимо: оба HTML-документа объявляют lang=ru. Source PASS. | SOURCE_REVIEWED | SOURCE_REVIEWED |
-| T02 | Применимо: обе страницы содержат viewport и responsive CSS. Код подтверждён; реальный смартфонный/браузерный просмотр NOT_TESTED. | SOURCE_ONLY | NOT_TESTED_LIVE |
+| T02 | Применимо: обе страницы содержат viewport и responsive CSS. Проверен desktop Chrome; реальный смартфонный/mobile viewport NOT_TESTED. | SOURCE_ONLY | DESKTOP_CHECKED; MOBILE_NOT_TESTED |
 | T03 | Применимо: страницы имеют структуру header/main/section, карточки и заголовки. Source pass; DOM validation NOT_TESTED. | SOURCE_REVIEWED | SOURCE_REVIEWED |
-| T04 | Применимо: проверены HTML id на дубли. Дубли не найдены. | DUPLICATE_ATTRIBUTE_ISSUE | SOURCE_REVIEWED |
-| T05 | Применимо: проверены внутренние ссылки по дереву репозитория. Неразрешённых абсолютных локальных ссылок не найдено; relative route live NOT_TESTED. | SOURCE_ONLY | NOT_TESTED_LIVE |
-| T06 | Применимо: кнопки фильтров — button, поиск связан с видимым заголовком/подписью. Accessibility tree / клавиатура NOT_TESTED. | SOURCE_ONLY | NOT_TESTED_KEYBOARD |
+| T04 | Применимо: проверены HTML id на дубли. На baseline и после правок повторяющихся id не найдено. | SOURCE_REVIEWED | SOURCE_REVIEWED |
+| T05 | Применимо: внутренние ссылки сверены с деревом репозитория; обе live-страницы открыты по целевым маршрутам. Внешние destination links не открывались. | SOURCE_ONLY | SOURCE_AND_LIVE_ROUTE_PASS |
+| T06 | Применимо: поиск связан с подписью, кнопки фильтра доступны; клавишей Tab в детском каталоге фокус дошёл от поиска до фильтра. Полный keyboard/screen-reader проход не выполнен. | SOURCE_ONLY | PARTIAL_KEYBOARD_CHECK; FULL_NOT_TESTED |
 | T07 | Применимо: у изображений присутствует alt-атрибут; логотипы карточек декоративные. Отсутствующие alt не найдены. | SOURCE_REVIEWED | SOURCE_REVIEWED |
 | T08 | Применимо: поле поиска имеет aria-labelledby/видимую подпись. Программное имя подтверждено в исходнике. | SOURCE_ONLY | SOURCE_REVIEWED |
 | K01 | N/A: карточка инструмента не требует выполнения скрытой операции как учебной цели. | NOT_APPLICABLE | NOT_APPLICABLE |
@@ -91,7 +91,7 @@ Baseline: child `cf325875323188f3a7019b1f57f1125ba7c5ec67`; adult `f7ca4b1b18dd3
 | W01 | Применимо: герой сообщает назначение и CTA ведёт к поиску/категориям. Подпись назначения есть; геометрия на разных экранах NOT_TESTED. | SOURCE_REVIEWED | SOURCE_REVIEWED |
 | W02 | Применимо: бренд и заголовок страницы обозначают местоположение в курсе. Source pass. | SOURCE_REVIEWED | SOURCE_REVIEWED |
 | W03 | Применимо: число фильтров ограничено; карточки идут ниже. Фактическая перегрузка не установлена без браузерного walkthrough. | SOURCE_REVIEWED | SOURCE_REVIEWED |
-| W04 | Применимо: live status сообщает количество результатов/пустую выдачу. Runtime и screen-reader confirmation NOT_TESTED. | SOURCE_ONLY | NOT_TESTED_RUNTIME |
+| W04 | Применимо: live status сообщал 1/43 и 10/43 при поиске/фильтре. Screen-reader announcement отдельно NOT_TESTED. | SOURCE_ONLY | LIVE_STATUS_PASS; SCREEN_READER_NOT_TESTED |
 | W05 | Применимо: внешние переходы открывают отдельную вкладку. Возврат/сохранение ориентира NOT_TESTED. | SOURCE_REVIEWED | SOURCE_REVIEWED |
 | W06 | Применимо: текст ссылок соответствует названию сервиса. Source pass для новых карточек. | SOURCE_REVIEWED | SOURCE_REVIEWED |
 | W07 | Применимо: категории и поиск находятся до сетки карточек. Визуальный приоритет NOT_TESTED. | SOURCE_REVIEWED | SOURCE_REVIEWED |
@@ -100,6 +100,8 @@ Baseline: child `cf325875323188f3a7019b1f57f1125ba7c5ec67`; adult `f7ca4b1b18dd3
 | W10 | N/A: каталог — повторно используемый список, явная конечная учебная точка не требуется. | NOT_APPLICABLE | NOT_APPLICABLE |
 ## QA-2 и итоговый статус
 
-**NOT_TESTED / BLOCKED:** замороженные candidate-страницы не развернуты и не проверены в фактическом браузере. Не выполнены live-проверки кликов/состояний фильтра, мобильных ширин, клавиатурного порядка и focus, увеличения, возврата из новой вкладки и внешних переходов. Размещение в основную ветку и production публикация не выполнялись. Код-ревью не доказывает работу браузерной сборки. Релиз не объявляется.
+**Статус: опубликовано** в основной ветке коммитом `bed6201453e762834363db27a919350ac7c2c0f8`; сборка GitHub Pages завершилась успешно. После обнаружения live-дефекта отображения взрослого фильтра добавлено правило `.adult-tool-card[hidden]{display:none!important}`, затем повторная публикация проверена в Chrome.
 
-Полевое понимание детьми терминов, возрастные условия каждого внешнего сервиса и фактическая доступность поставщиков отдельно не установлены.
+Проверки live в desktop Chrome (скриншоты 1344×900): детский каталог — фильтр «Агенты» 11/43 и поиск Kimi 1/43; взрослый — поиск Xiaomi MiMo 1/43 с одной видимой карточкой и фильтр «Найти и проверить» 10/43 с соответствующими карточками. Клавиатурная проверка: Tab от детского поля поиска переводит фокус на первый фильтр.
+
+**Не проверено:** mobile viewport на смартфоне, полный keyboard/screen-reader проход, переходы по внешним ссылкам, возрастные условия всех 43 поставщиков и полевое понимание терминов детьми. Это source/live smoke review, не независимый аудит и не полевой тест.
