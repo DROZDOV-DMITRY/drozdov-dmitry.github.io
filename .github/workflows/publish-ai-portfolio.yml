@@ -1,0 +1,59 @@
+name: Publish AI portfolio preliminary version
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-ai-portfolio.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out existing GitHub Pages site
+        uses: actions/checkout@v4
+        with:
+          path: site
+          persist-credentials: true
+      - name: Check out verified AI portfolio source
+        uses: actions/checkout@v4
+        with:
+          repository: DROZDOV-DMITRY/ai-portfolio
+          ref: 19d224a78b3d7f92bcb08f708359b88377921c07
+          path: portfolio
+          persist-credentials: false
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        working-directory: portfolio
+        run: npm install --no-audit --no-fund
+      - name: Build and verify both outputs
+        working-directory: portfolio
+        run: npm run build
+      - name: Prepare only the portfolio subfolder
+        run: |
+          mkdir -p site/ai-portfolio
+          rsync -a --delete portfolio/dist-preview/ site/ai-portfolio/
+          find site/ai-portfolio -name '*.html' -type f -exec sed -i 's/РЕДАКЦИОННЫЙ ПРЕДПРОСМОТР · НЕ ПУБЛИКОВАТЬ/ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ · СОДЕРЖАНИЕ В РЕДАКЦИИ/g' {} +
+          touch site/.nojekyll
+          test -f site/ai-portfolio/index.html
+          test -f site/ai-portfolio/project/kontur/index.html
+          test -f site/ai-portfolio/agent/metaarchitect/index.html
+          test -f site/school-ai-courses/index.html
+      - name: Publish static files into the existing Pages repository
+        working-directory: site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- ai-portfolio .nojekyll
+          if git diff --cached --quiet; then
+            echo "No site changes to publish"
+            exit 0
+          fi
+          git commit -m "publish: AI portfolio preliminary preview V0.6.1 (68 records)"
+          git push origin HEAD:main
