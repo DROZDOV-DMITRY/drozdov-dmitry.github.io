@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: DROZDOV-DMITRY/ai-portfolio
-          ref: 19d224a78b3d7f92bcb08f708359b88377921c07
+          ref: 867904717cc5bafed919e2fb03431f97efd223be
           path: portfolio
           persist-credentials: false
       - name: Set up Node 22
@@ -55,5 +55,5 @@ jobs:
             echo "No site changes to publish"
             exit 0
           fi
-          git commit -m "publish: AI portfolio preliminary preview V0.6.1 (68 records)"
+          git commit -m "publish: AI portfolio preliminary preview V0.7.0 (68 AI products)"
           git push origin HEAD:main
