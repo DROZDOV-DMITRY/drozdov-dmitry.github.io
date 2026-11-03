@@ -3,7 +3,7 @@
 Дата: 03.11.2026  
 Объекты: [детский каталог](https://drozdov-dmitry.github.io/school-ai-courses/tools/) и [взрослый каталог](https://drozdov-dmitry.github.io/school-ai-courses/adults/tools/).  
 Baseline: child `cf325875323188f3a7019b1f57f1125ba7c5ec67`; adult `f7ca4b1b18dd3dff92b1b875fcd1280af8d08d4a`.  
-Кандидат: child `0402787ae89168fdccd5dd6d876b0f0dfed5ec5a`; adult `5917e880db496acdec833e4adee7a6a620a5f62e`.  
+Кандидат: child `0402787ae89168fdccd5dd6d876b0f0dfed5ec5a`; adult `9c978125555ed74150888eed74e875de4b7d9a68`.  
 Это QA-1 статического исходника. Полевой тест не проводился.
 
 ## Дельта
