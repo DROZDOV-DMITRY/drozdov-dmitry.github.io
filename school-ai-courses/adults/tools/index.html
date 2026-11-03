@@ -53,39 +53,54 @@ body.adult-sub{--paper:#fbfaf7}body.tone-sage{--paper:#f5f9f6}body.tone-sand{--p
 <input id="adult-tool-search" class="adult-tool-search" type="search" placeholder="Например: найти источники, сделать схему, озвучить текст" autocomplete="off" aria-describedby="adult-tool-count">
 <div class="adult-tool-filters" role="group" aria-label="Выбор задачи"><button type="button" class="adult-tool-filter" data-filter="talk" aria-pressed="false">Спросить, объяснить, написать</button><button type="button" class="adult-tool-filter" data-filter="research" aria-pressed="false">Найти и проверить</button><button type="button" class="adult-tool-filter" data-filter="present" aria-pressed="false">Подготовить идею, схему, презентацию</button><button type="button" class="adult-tool-filter" data-filter="visual" aria-pressed="false">Создать изображение</button><button type="button" class="adult-tool-filter" data-filter="video" aria-pressed="false">Сделать видео</button><button type="button" class="adult-tool-filter" data-filter="audio" aria-pressed="false">Сделать голос или музыку</button><button type="button" class="adult-tool-filter" data-filter="code" aria-pressed="false">Написать код или собрать приложение</button><button type="button" class="adult-tool-filter" data-filter="models" aria-pressed="false">Сравнить модели и подключить ИИ</button></div>
 <p id="adult-tool-count" class="adult-tool-count" role="status" aria-live="polite"></p>
-<div class="adult-tool-grid"><article class="adult-tool-card adult-tool-featured" data-tool-cats="talk visual code" data-search-extra="gigachat чат текст написать объяснить картинка изображение фото дизайн код программирование приложение сайт" data-tool-cats="text code media">
+<div class="adult-tool-grid"><article data-tool-cats="talk visual code" class="adult-tool-card adult-tool-featured" data-search-extra="gigachat чат текст написать объяснить картинка изображение фото дизайн код программирование приложение сайт">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=giga.chat&sz=64" alt=""><h3>GigaChat</h3>
 <p>Тексты, код и изображения</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://giga.chat/" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
-<article class="adult-tool-card adult-tool-featured" data-tool-cats="talk research code" data-search-extra="deepseek чат текст написать объяснить поиск проверка источники исследование код программирование приложение сайт" data-tool-cats="text code">
+<article data-tool-cats="talk research code" class="adult-tool-card adult-tool-featured" data-search-extra="deepseek deepseek-v4.1-flash-1017 китайская модель текст написать код программирование">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=chat.deepseek.com&sz=64" alt=""><h3>DeepSeek</h3>
-<p>Тексты и код</p>
+<p>Текст и код; актуальная версия модели на 03.11.2026 — DeepSeek-V4.1-Flash-1017.</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://chat.deepseek.com/" target="_blank" rel="noopener noreferrer">Открыть DeepSeek ↗</a></div>
 </article>
-<article class="adult-tool-card adult-tool-featured" data-tool-cats="talk research present visual code models" data-search-extra="chatgpt чат текст написать объяснить поиск проверка источники исследование презентация схема идеи документ картинка изображение фото дизайн код программирование приложение сайт модели сравнение api разработчик" data-tool-cats="text code media agents ideas">
+<article data-tool-cats="talk research present visual code models" class="adult-tool-card adult-tool-featured" data-search-extra="chatgpt чат текст написать объяснить поиск проверка источники исследование презентация схема идеи документ картинка изображение фото дизайн код программирование приложение сайт модели сравнение api разработчик">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" alt=""><h3>ChatGPT</h3>
 <p>Текст и код, создание и редактирование изображений, планирование и выполнение агентных задач при наличии нужных функций</p>
 
 
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Открыть ChatGPT ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="talk models" data-search-extra="duck.ai чат текст написать объяснить модели сравнение api разработчик" data-tool-cats="text aggregate">
+<article data-tool-cats="talk models" class="adult-tool-card" data-search-extra="duck.ai чат текст написать объяснить модели сравнение api разработчик">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=duck.ai&sz=64" alt=""><h3>Duck.ai</h3>
 <p>Несколько моделей в одном окне</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://duck.ai/" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="talk code" data-search-extra="z.ai / glm чат текст написать объяснить код программирование приложение сайт" data-tool-cats="text code">
+<article data-tool-cats="talk code" class="adult-tool-card" data-search-extra="z.ai glm glm-5.3 тексты код программирование китайская модель">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=chat.z.ai&sz=64" alt=""><h3>Z.ai / GLM</h3>
-<p>Тексты и код</p>
-<div class="tool-actions-v2"><a class="tool-action-v2" href="https://chat.z.ai/" target="_blank" rel="noopener">Открыть ↗</a></div>
+<p>Тексты и код; среди актуальных моделей — GLM-5.3. Возможности зависят от режима и аккаунта.</p>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://chat.z.ai/" target="_blank" rel="noopener noreferrer">Открыть Z.ai ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="talk visual code" data-search-extra="qwen чат текст написать объяснить картинка изображение фото дизайн код программирование приложение сайт" data-tool-cats="text code media">
+<article data-tool-cats="talk visual code" class="adult-tool-card" data-search-extra="qwen китайская модель семейство версия тексты код изображения">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=chat.qwen.ai&sz=64" alt=""><h3>Qwen</h3>
-<p>Тексты, код и изображения</p>
-<div class="tool-actions-v2"><a class="tool-action-v2" href="https://chat.qwen.ai/" target="_blank" rel="noopener">Открыть ↗</a></div>
+<p>Семейство моделей для текста, кода и изображений. Для сравнения указывайте точную версию.</p>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://chat.qwen.ai/" target="_blank" rel="noopener noreferrer">Открыть Qwen ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="talk research visual video code" data-search-extra="deepai чат текст написать объяснить поиск проверка источники исследование картинка изображение фото дизайн ролик видео монтаж код программирование приложение сайт" data-tool-cats="text search media video edit code">
+<article data-tool-cats="talk research code models" class="adult-tool-card" data-search-extra="kimi moonshot kimi k3.1 pro китайская модель текст документы поиск код исследование">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=kimi.com&sz=64" alt=""><h3>Kimi K3.1 Pro</h3>
+<p>Тексты, документы, поиск и код; доступность модели и лимиты зависят от аккаунта.</p>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://www.kimi.com/" target="_blank" rel="noopener noreferrer">Открыть Kimi ↗</a></div>
+</article>
+<article data-tool-cats="talk research visual models" class="adult-tool-card" data-search-extra="xiaomi mimo mimo-v2.6-pro китайская модель чат текст изображение визуальный анализ поиск">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=aistudio.xiaomimimo.com&sz=64" alt=""><h3>Xiaomi MiMo V2.6 Pro</h3>
+<p>Чат и мультимодальное понимание; доступ к MiMo-V2.6-Pro и лимиты зависят от условий сервиса.</p>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://aistudio.xiaomimimo.com/" target="_blank" rel="noopener noreferrer">Открыть MiMo Studio ↗</a></div>
+</article>
+<article data-tool-cats="code visual models" class="adult-tool-card" data-search-extra="minimax m3.1 flash китайская модель код программирование многошаговые задачи визуальный анализ">
+<img class="tool-logo" src="https://www.google.com/s2/favicons?domain=agent.minimax.io&sz=64" alt=""><h3>MiniMax M3.1 Flash</h3>
+<p>Модель для кода, визуального анализа и многошаговых задач в MiniMax Code; доступность зависит от аккаунта.</p>
+<div class="tool-actions-v2"><a class="tool-action-v2" href="https://agent.minimax.io/tools/m3.1-flash" target="_blank" rel="noopener noreferrer">О модели и доступе ↗</a></div>
+</article>
+<article data-tool-cats="talk research visual video code" class="adult-tool-card" data-search-extra="deepai чат текст написать объяснить поиск проверка источники исследование картинка изображение фото дизайн ролик видео монтаж код программирование приложение сайт">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=deepai.org&sz=64" alt=""><h3>DeepAI</h3>
 <p>Один сервис — несколько режимов</p>
 <div class="tool-actions-v2">
@@ -95,12 +110,12 @@ body.adult-sub{--paper:#fbfaf7}body.tone-sage{--paper:#f5f9f6}body.tone-sand{--p
 <a class="tool-action-v2" href="https://deepai.org/video" target="_blank" rel="noopener">Видео</a>
 </div>
 </article>
-<article class="adult-tool-card" data-tool-cats="research talk" data-search-extra="perplexity поиск проверка источники исследование чат текст написать объяснить" data-tool-cats="search text agents">
+<article data-tool-cats="research talk" class="adult-tool-card" data-search-extra="perplexity поиск проверка источники исследование чат текст написать объяснить">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=64" alt=""><h3>Perplexity</h3>
 <p>Поиск с источниками; режим Computer выполняет многошаговые задачи и создаёт готовые материалы</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://www.perplexity.ai/" target="_blank" rel="noopener">Найти ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="present visual video" data-search-extra="firefly презентация схема идеи документ картинка изображение фото дизайн ролик видео монтаж" data-tool-cats="ideas media video edit">
+<article data-tool-cats="present visual video" class="adult-tool-card" data-search-extra="firefly презентация схема идеи документ картинка изображение фото дизайн ролик видео монтаж">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=64" alt=""><h3>Firefly</h3>
 <p>Идеи, изображения, видео и правка; лимит бесплатных генераций зависит от модели</p>
 <div class="tool-actions-v2">
@@ -110,7 +125,7 @@ body.adult-sub{--paper:#fbfaf7}body.tone-sage{--paper:#f5f9f6}body.tone-sand{--p
 <a class="tool-action-v2" href="https://firefly.adobe.com/generate/video" target="_blank" rel="noopener">Видео</a>
 </div>
 </article>
-<article class="adult-tool-card" data-tool-cats="present visual video" data-search-extra="krea презентация схема идеи документ картинка изображение фото дизайн ролик видео монтаж" data-tool-cats="ideas media video edit">
+<article data-tool-cats="present visual video" class="adult-tool-card" data-search-extra="krea презентация схема идеи документ картинка изображение фото дизайн ролик видео монтаж">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=krea.ai&sz=64" alt=""><h3>Krea</h3>
 <p>Визуальные идеи, изображения, видео и работа в реальном времени</p>
 <div class="tool-actions-v2">
@@ -119,12 +134,12 @@ body.adult-sub{--paper:#fbfaf7}body.tone-sage{--paper:#f5f9f6}body.tone-sand{--p
 <a class="tool-action-v2" href="https://www.krea.ai/video" target="_blank" rel="noopener">Видео</a>
 </div>
 </article>
-<article class="adult-tool-card" data-tool-cats="present" data-search-extra="canva презентация схема идеи документ" data-tool-cats="ideas">
+<article data-tool-cats="present" class="adult-tool-card" data-search-extra="canva презентация схема идеи документ">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=canva.com&sz=64" alt=""><h3>Canva</h3>
 <p>Доска для мозгового штурма и сбора идей. Ссылка открывает доску для совместной работы.</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://www.canva.com/online-whiteboard/" target="_blank" rel="noopener">Открыть доску ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="visual video" data-search-extra="vidu картинка изображение фото дизайн ролик видео монтаж" data-tool-cats="media video edit">
+<article data-tool-cats="visual video" class="adult-tool-card" data-search-extra="vidu картинка изображение фото дизайн ролик видео монтаж">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=vidu.com&sz=64" alt=""><h3>Vidu</h3>
 <p>Изображения и видео из текста, кадров и референсов</p>
 <div class="tool-actions-v2">
@@ -135,146 +150,146 @@ body.adult-sub{--paper:#fbfaf7}body.tone-sage{--paper:#f5f9f6}body.tone-sand{--p
 <a class="tool-action-v2" href="https://www.vidu.com/create/character2video" target="_blank" rel="noopener">Персонаж → видео</a>
 </div>
 </article>
-<article class="adult-tool-card" data-tool-cats="present visual" data-search-extra="recraft презентация схема идеи документ картинка изображение фото дизайн" data-tool-cats="media">
+<article data-tool-cats="present visual" class="adult-tool-card" data-search-extra="recraft презентация схема идеи документ картинка изображение фото дизайн">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=recraft.ai&sz=64" alt=""><h3>Recraft</h3>
 <p>Изображения и дизайн</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://www.recraft.ai/ai-image-generator" target="_blank" rel="noopener">Создать изображение ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="video" data-search-extra="pixverse ролик видео монтаж" data-tool-cats="video">
+<article data-tool-cats="video" class="adult-tool-card" data-search-extra="pixverse ролик видео монтаж">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=pixverse.ai&sz=64" alt=""><h3>PixVerse</h3>
 <p>Видео из текста и изображений</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://pixverse.ai/" target="_blank" rel="noopener">Создать видео ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="models" data-search-extra="arena модели сравнение api разработчик" data-tool-cats="aggregate">
+<article data-tool-cats="models" class="adult-tool-card" data-search-extra="arena модели сравнение api разработчик">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=arena.ai&sz=64" alt=""><h3>Arena</h3>
 <p>Сравнение моделей на одном запросе</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://arena.ai/" target="_blank" rel="noopener">Сравнить ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="research models" data-search-extra="humaneval.org поиск проверка источники исследование модели сравнение api разработчик" data-tool-cats="aggregate search">
+<article data-tool-cats="research models" class="adult-tool-card" data-search-extra="humaneval.org поиск проверка источники исследование модели сравнение api разработчик">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=humaneval.org&sz=64" alt=""><h3>HumanEval.org</h3>
 <p>Рейтинг моделей; методика и набор сравниваемых данных ограничены.</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://humaneval.org/" target="_blank" rel="noopener">Сравнить ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="models code" data-search-extra="openrouter модели сравнение api разработчик код программирование приложение сайт" data-tool-cats="aggregate code">
+<article data-tool-cats="models code" class="adult-tool-card" data-search-extra="openrouter модели сравнение api разработчик код программирование приложение сайт">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=openrouter.ai&sz=64" alt=""><h3>OpenRouter</h3>
 <p>Каталог моделей и единый API</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://openrouter.ai/" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="models code" data-search-extra="requesty модели сравнение api разработчик код программирование приложение сайт" data-tool-cats="aggregate code">
+<article data-tool-cats="models code" class="adult-tool-card" data-search-extra="requesty модели сравнение api разработчик код программирование приложение сайт">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=requesty.ai&sz=64" alt=""><h3>Requesty</h3>
 <p>API-шлюз для разработчиков, не обычный школьный чат</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://www.requesty.ai/models/free" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="models code" data-search-extra="kilo модели сравнение api разработчик код программирование приложение сайт" data-tool-cats="aggregate code">
+<article data-tool-cats="models code" class="adult-tool-card" data-search-extra="kilo модели сравнение api разработчик код программирование приложение сайт">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=kilo.ai&sz=64" alt=""><h3>Kilo</h3>
 <p>Рейтинг моделей и инструменты разработки</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://kilo.ai/leaderboard" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="models code" data-search-extra="aihubmix модели сравнение api разработчик код программирование приложение сайт" data-tool-cats="aggregate code">
+<article data-tool-cats="models code" class="adult-tool-card" data-search-extra="aihubmix модели сравнение api разработчик код программирование приложение сайт">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=aihubmix.com&sz=64" alt=""><h3>AIHubMix</h3>
 <p>API для разработчиков; пробные вызовы и дальнейшие условия отличаются</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://aihubmix.com/models/free" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="models visual" data-search-extra="roboflow модели сравнение api разработчик картинка изображение фото дизайн" data-tool-cats="aggregate media">
+<article data-tool-cats="models visual" class="adult-tool-card" data-search-extra="roboflow модели сравнение api разработчик картинка изображение фото дизайн">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=roboflow.com&sz=64" alt=""><h3>Roboflow</h3>
 <p>Сравнение vision-моделей</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://playground.roboflow.com/" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="talk models" data-search-extra="poe чат текст написать объяснить модели сравнение api разработчик" data-tool-cats="aggregate text media">
+<article data-tool-cats="talk models" class="adult-tool-card" data-search-extra="poe чат текст написать объяснить модели сравнение api разработчик">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=poe.com&sz=64" alt=""><h3>Poe</h3>
 <p>Каталог моделей и ботов</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://poe.com/explore" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="talk models code" data-search-extra="hugging face чат текст написать объяснить модели сравнение api разработчик код программирование приложение сайт" data-tool-cats="aggregate text code">
+<article data-tool-cats="talk models code" class="adult-tool-card" data-search-extra="hugging face чат текст написать объяснить модели сравнение api разработчик код программирование приложение сайт">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=huggingface.co&sz=64" alt=""><h3>Hugging Face</h3>
 <p>Открытые модели и inference-провайдеры</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://huggingface.co/chat/" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="talk models code" data-search-extra="arctic playground чат текст написать объяснить модели сравнение api разработчик код программирование приложение сайт" data-tool-cats="aggregate text code media">
+<article data-tool-cats="talk models code" class="adult-tool-card" data-search-extra="arctic playground чат текст написать объяснить модели сравнение api разработчик код программирование приложение сайт">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=arctic.qpon&sz=64" alt=""><h3>Arctic Playground</h3>
 <p>Несколько моделей рядом для сравнения</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://www.arctic.qpon/playground" target="_blank" rel="noopener">Сравнить ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="talk code" data-search-extra="mistral vibe чат текст написать объяснить код программирование приложение сайт" data-tool-cats="text code search agents">
+<article data-tool-cats="talk code" class="adult-tool-card" data-search-extra="mistral vibe чат текст написать объяснить код программирование приложение сайт">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=mistral.ai&sz=64" alt=""><h3>Mistral Vibe</h3>
 <p>Многошаговые задачи и работа с кодом в режимах Work и Code</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://chat.mistral.ai/" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="talk research present code" data-search-extra="claude чат текст написать объяснить поиск проверка источники исследование презентация схема идеи документ код программирование приложение сайт" data-tool-cats="text code agents">
+<article data-tool-cats="talk research present code" class="adult-tool-card" data-search-extra="claude чат текст написать объяснить поиск проверка источники исследование презентация схема идеи документ код программирование приложение сайт">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=claude.ai&sz=64" alt=""><h3>Claude</h3>
 <p>Тексты, программирование и анализ; Claude Cowork выполняет многошаговые задачи с файлами и подключёнными инструментами</p>
 
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://claude.ai/" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="talk research visual" data-search-extra="gemini чат текст написать объяснить поиск проверка источники исследование картинка изображение фото дизайн" data-tool-cats="text search media agents">
+<article data-tool-cats="talk research visual" class="adult-tool-card" data-search-extra="gemini чат текст написать объяснить поиск проверка источники исследование картинка изображение фото дизайн">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" alt=""><h3>Gemini</h3>
 <p>Общение, поиск, объяснения и работа с изображениями</p>
 
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://gemini.google.com/" target="_blank" rel="noopener">Открыть ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="research" data-search-extra="consensus поиск проверка источники исследование" data-tool-cats="search text">
+<article data-tool-cats="research" class="adult-tool-card" data-search-extra="consensus поиск проверка источники исследование">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=consensus.app&sz=64" alt=""><h3>Consensus</h3>
 <p>Ответы по научным публикациям со ссылками на исследования</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://consensus.app/" target="_blank" rel="noopener">Найти исследование ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="present visual" data-search-extra="ideogram презентация схема идеи документ картинка изображение фото дизайн" data-tool-cats="media ideas">
+<article data-tool-cats="present visual" class="adult-tool-card" data-search-extra="ideogram презентация схема идеи документ картинка изображение фото дизайн">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=ideogram.ai&sz=64" alt=""><h3>Ideogram</h3>
 <p>Генерация картинок, афиш и надписей на изображениях</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://ideogram.ai/" target="_blank" rel="noopener">Создать изображение ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="present visual" data-search-extra="leonardo ai презентация схема идеи документ картинка изображение фото дизайн" data-tool-cats="media ideas">
+<article data-tool-cats="present visual" class="adult-tool-card" data-search-extra="leonardo ai презентация схема идеи документ картинка изображение фото дизайн">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=leonardo.ai&sz=64" alt=""><h3>Leonardo AI</h3>
 <p>Иллюстрации, персонажи и графика для проектов</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://app.leonardo.ai/" target="_blank" rel="noopener">Создать изображение ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="visual video" data-search-extra="luma dream machine картинка изображение фото дизайн ролик видео монтаж" data-tool-cats="video media">
+<article data-tool-cats="visual video" class="adult-tool-card" data-search-extra="luma dream machine картинка изображение фото дизайн ролик видео монтаж">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=lumalabs.ai&sz=64" alt=""><h3>Luma Dream Machine</h3>
 <p>Видео и движение по тексту или изображению</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://lumalabs.ai/dream-machine" target="_blank" rel="noopener">Создать видео ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="visual video" data-search-extra="runway картинка изображение фото дизайн ролик видео монтаж" data-tool-cats="video edit">
+<article data-tool-cats="visual video" class="adult-tool-card" data-search-extra="runway картинка изображение фото дизайн ролик видео монтаж">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=runwayml.com&sz=64" alt=""><h3>Runway</h3>
 <p>Генерация и обработка коротких видеосцен</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://app.runwayml.com/" target="_blank" rel="noopener">Видео ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="code present" data-search-extra="bolt код программирование приложение сайт презентация схема идеи документ" data-tool-cats="code ideas agents">
+<article data-tool-cats="code present" class="adult-tool-card" data-search-extra="bolt код программирование приложение сайт презентация схема идеи документ">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=bolt.new&sz=64" alt=""><h3>Bolt</h3>
 <p>Создание сайтов и приложений по описанию; Bolt Agent сам проверяет и дорабатывает проект</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://bolt.new/" target="_blank" rel="noopener">Создать сайт ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="code present" data-search-extra="lovable код программирование приложение сайт презентация схема идеи документ" data-tool-cats="code ideas agents">
+<article data-tool-cats="code present" class="adult-tool-card" data-search-extra="lovable код программирование приложение сайт презентация схема идеи документ">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=lovable.dev&sz=64" alt=""><h3>Lovable</h3>
 <p>Прототипы сайтов и приложений; Lovable Agent планирует и выполняет многошаговые изменения</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://lovable.dev/" target="_blank" rel="noopener">Создать сайт ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="code present" data-search-extra="v0 код программирование приложение сайт презентация схема идеи документ" data-tool-cats="code ideas agents">
+<article data-tool-cats="code present" class="adult-tool-card" data-search-extra="v0 код программирование приложение сайт презентация схема идеи документ">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=v0.app&sz=64" alt=""><h3>v0</h3>
 <p>Веб-интерфейсы, компоненты и сайты по запросу; агент может работать с кодовой базой проекта</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://v0.app/" target="_blank" rel="noopener">Создать интерфейс ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="present" data-search-extra="napkin ai презентация схема идеи документ" data-tool-cats="ideas slides">
+<article data-tool-cats="present" class="adult-tool-card" data-search-extra="napkin ai презентация схема идеи документ">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=napkin.ai&sz=64" alt=""><h3>Napkin AI</h3>
 <p>Превращение текста в схемы, инфографику и диаграммы</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://www.napkin.ai/" target="_blank" rel="noopener">Создать схему ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="present" data-search-extra="gamma презентация схема идеи документ" data-tool-cats="slides ideas">
+<article data-tool-cats="present" class="adult-tool-card" data-search-extra="gamma презентация схема идеи документ">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=gamma.app&sz=64" alt=""><h3>Gamma</h3>
 <p>Презентации, страницы и документы с ИИ</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://gamma.app/" target="_blank" rel="noopener">Презентация ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="audio" data-search-extra="suno голос озвучка музыка звук" data-tool-cats="music">
+<article data-tool-cats="audio" class="adult-tool-card" data-search-extra="suno голос озвучка музыка звук">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=suno.com&sz=64" alt=""><h3>Suno</h3>
 <p>Генерация песен и музыкальных фрагментов</p>
 
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://suno.com/" target="_blank" rel="noopener">Создать музыку ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="audio" data-search-extra="elevenlabs голос озвучка музыка звук" data-tool-cats="music media">
+<article data-tool-cats="audio" class="adult-tool-card" data-search-extra="elevenlabs голос озвучка музыка звук">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=64" alt=""><h3>ElevenLabs</h3>
 <p>Озвучивание текстов, голоса и звуковые эффекты</p>
 
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://elevenlabs.io/" target="_blank" rel="noopener">Озвучить ↗</a></div>
 </article>
-<article class="adult-tool-card" data-tool-cats="talk visual" data-search-extra="алиса чат текст написать объяснить картинка изображение фото дизайн" data-tool-cats="text media">
+<article data-tool-cats="talk visual" class="adult-tool-card" data-search-extra="алиса чат текст написать объяснить картинка изображение фото дизайн">
 <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=ya.ru&sz=64" alt=""><h3>Алиса</h3>
 <p>Тексты и изображения</p>
 <div class="tool-actions-v2"><a class="tool-action-v2" href="https://ya.ru/alice" target="_blank" rel="noopener">Открыть ↗</a></div>
