@@ -46,11 +46,11 @@ import {readState,queryFromState,selectRecords,paginate,cardBadges,productHref} 
   state.q=btn.dataset.searchExample||"";
   state.page=1;
   commit();
-  $("catalog")?.scrollIntoView({behavior:"smooth",block:"start"});
+  if(!(window.AI_SEARCH_ENDPOINT&&window.AI_TURNSTILE_SITE_KEY))$("catalog")?.scrollIntoView({behavior:"smooth",block:"start"});
  }));
  search.addEventListener("input",()=>{window.clearTimeout(timer);const q=search.value;timer=window.setTimeout(()=>{state.q=q;state.page=1;commit();},200);});
  search.addEventListener("change",()=>{window.clearTimeout(timer);if(state.q!==search.value){state.q=search.value;state.page=1;commit();}});
- $("hero-search-form")?.addEventListener("submit",e=>{e.preventDefault();window.clearTimeout(timer);state.q=search.value;state.page=1;commit();$("catalog")?.scrollIntoView({behavior:"smooth",block:"start"});});
+ $("hero-search-form")?.addEventListener("submit",e=>{e.preventDefault();window.clearTimeout(timer);state.q=search.value;state.page=1;commit();if(!(window.AI_SEARCH_ENDPOINT&&window.AI_TURNSTILE_SITE_KEY))$("catalog")?.scrollIntoView({behavior:"smooth",block:"start"});});
  document.querySelectorAll("[data-cat]").forEach(e=>e.addEventListener("click",()=>change("cat",e.dataset.cat)));
  document.querySelectorAll('input[name="author"]').forEach(e=>e.addEventListener("change",()=>change("author",e.value)));
  document.querySelectorAll('input[name="school"]').forEach(e=>e.addEventListener("change",()=>change("school",e.value)));
