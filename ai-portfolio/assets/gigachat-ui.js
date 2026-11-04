@@ -69,10 +69,10 @@ if(form&&search&&panel&&result&&challenge&&endpoint.startsWith("https://")&&site
           theme:"dark",
           appearance:"interaction-only",
           execution:"execute",
-          callback:token=>{void performSearch(token,run);},
-          "error-callback":()=>{if(run===sequence)fallback("Не удалось пройти проверку Cloudflare.");},
-          "expired-callback":()=>{if(run===sequence)fallback("Срок проверки истёк. Повторите запрос.");},
-          "unsupported-callback":()=>{if(run===sequence)fallback("Этот браузер не поддерживает проверку Cloudflare.")}
+          callback:token=>{void performSearch(token,sequence);},
+          "error-callback":()=>{if(!panel.hidden)fallback("Не удалось пройти проверку Cloudflare.");},
+          "expired-callback":()=>{if(!panel.hidden)fallback("Срок проверки истёк. Повторите запрос.");},
+          "unsupported-callback":()=>{if(!panel.hidden)fallback("Этот браузер не поддерживает проверку Cloudflare.")}
         });
         if(widgetId===undefined||widgetId===null)throw new Error("turnstile_render");
       }else{
@@ -142,7 +142,7 @@ if(form&&search&&panel&&result&&challenge&&endpoint.startsWith("https://")&&site
       clearTimeout(timeout);
       if(controller===abort)controller=null;
       if(run===sequence)setWorking(false);
-      try{if(window.turnstile&&widgetId!==null)window.turnstile.reset(widgetId);}catch{}
+      try{if(run===sequence&&window.turnstile&&widgetId!==null)window.turnstile.reset(widgetId);}catch{}
     }
   }
 
