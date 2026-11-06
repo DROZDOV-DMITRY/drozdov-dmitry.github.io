@@ -42,7 +42,7 @@ async function search(token,current){
  for(const item of data.products.slice(0,5)){
   if(!item||typeof item.id!=='string'||seen.has(item.id))continue;
   const card=cards.get(item.id);
-  if(!card||(student&&card.dataset.aiAdultOnly==='true'))continue;
+  if(!card)continue;
   seen.add(item.id);
   const a=document.createElement('a');a.className='course-ai-result';a.href='#'+item.id;
   const title=document.createElement('strong');title.textContent=card.querySelector('h3')?.textContent?.trim()||'Инструмент';
