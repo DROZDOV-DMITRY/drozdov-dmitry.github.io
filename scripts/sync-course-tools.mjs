@@ -141,4 +141,7 @@ async function main(){
  console.log(JSON.stringify({mode,unique:rendered.unique,counts:rendered.counts,changed},null,2));
  if(mode==='--check'&&changed.length)process.exitCode=1;
 }
-main().catch(err=>{console.error(err.stack||String(err));process.exitCode=1});
+export {renderAll, validateRegistry};
+if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
+  main().catch(err=>{console.error(err.stack||String(err));process.exitCode=1});
+}
