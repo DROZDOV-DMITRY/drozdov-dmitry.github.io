@@ -89,6 +89,6 @@ function mount(){
 // Until then, do not interfere with the existing local search.
 const guard=new AbortController();const timeout=window.setTimeout(()=>guard.abort(),6000);
 fetch(endpoint.replace('/api/search','/health'),{cache:'no-store',signal:guard.signal})
-.then(r=>r.ok?r.json():null).then(data=>{if(data?.configured===true&&Array.isArray(data.catalogs)&&data.catalogs.includes(scope))mount()})
+.then(r=>r.ok?r.json():null).then(data=>{if(data?.configured===true&&data?.version==='0.2.1'&&Array.isArray(data.catalogs)&&data.catalogs.includes(scope))mount()})
 .catch(()=>{}).finally(()=>window.clearTimeout(timeout));
 })();
