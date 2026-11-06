@@ -1,0 +1,868 @@
+{
+  "schema": 1,
+  "release": "V1.1.0",
+  "updated_at": "2026-11-06",
+  "description": "Единый реестр AI-сервисов для школьного и взрослого курса. Все карточки и индексы генерируются из views; корректировать их только здесь.",
+  "services": [
+    {
+      "key": "chatgpt",
+      "title": "ChatGPT",
+      "views": {
+        "school": {
+          "id": "tool-s01",
+          "order": 1,
+          "category": "Текст и общение, Программирование, Изображения, Агенты и автоматизация, Идеи",
+          "keywords": "text code media agents ideas",
+          "html": "<article id=\"tool-s01\" data-ai-id=\"tool-s01\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"text code media agents ideas\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64\" alt=\"\"><h3>ChatGPT</h3>\n<p>Текст и код, создание и редактирование изображений, планирование и выполнение агентных задач при наличии нужных функций</p>\n<div class=\"badges\"><span class=\"badge ok\">есть бесплатный доступ</span><span class=\"badge warn\">многошаговые задачи — в Work; доступ зависит от тарифа</span></div>\n<p class=\"tool-age-note\">До 13 лет — только через преподавателя; в 13–17 лет — с разрешения родителей.</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://chatgpt.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Открыть ChatGPT ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a03",
+          "order": 3,
+          "category": "Текст и чат, Поиск и проверка, Презентации и схемы, Изображения, Программирование, Модели и API",
+          "keywords": "chatgpt чат текст написать объяснить поиск проверка источники исследование презентация схема идеи документ картинка изображение фото дизайн код программирование приложение сайт модели сравнение api разработчик",
+          "html": "<article id=\"tool-a03\" data-ai-id=\"tool-a03\" tabindex=\"-1\" data-tool-cats=\"talk research present visual code models\" class=\"adult-tool-card adult-tool-featured\" data-search-extra=\"chatgpt чат текст написать объяснить поиск проверка источники исследование презентация схема идеи документ картинка изображение фото дизайн код программирование приложение сайт модели сравнение api разработчик\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64\" alt=\"\"><h3>ChatGPT</h3>\n<p>Текст и код, создание и редактирование изображений, планирование и выполнение агентных задач при наличии нужных функций</p>\n\n\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://chatgpt.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Открыть ChatGPT ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "duckai",
+      "title": "Duck.ai",
+      "views": {
+        "school": {
+          "id": "tool-s02",
+          "order": 2,
+          "category": "Текст и общение, Каталоги и сравнение моделей",
+          "keywords": "text aggregate",
+          "html": "<article id=\"tool-s02\" data-ai-id=\"tool-s02\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"text aggregate\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=duck.ai&sz=64\" alt=\"\"><h3>Duck.ai</h3>\n<p>Несколько моделей в одном окне</p><div class=\"badges\"><span class=\"badge ok\">без аккаунта</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://duck.ai/\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a04",
+          "order": 4,
+          "category": "Текст и чат, Модели и API",
+          "keywords": "duck.ai чат текст написать объяснить модели сравнение api разработчик",
+          "html": "<article id=\"tool-a04\" data-ai-id=\"tool-a04\" tabindex=\"-1\" data-tool-cats=\"talk models\" class=\"adult-tool-card\" data-search-extra=\"duck.ai чат текст написать объяснить модели сравнение api разработчик\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=duck.ai&sz=64\" alt=\"\"><h3>Duck.ai</h3>\n<p>Несколько моделей в одном окне</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://duck.ai/\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "zai-glm",
+      "title": "Z.ai / GLM",
+      "views": {
+        "school": {
+          "id": "tool-s03",
+          "order": 3,
+          "category": "Текст и общение, Программирование",
+          "keywords": "text code",
+          "html": "<article id=\"tool-s03\" data-ai-id=\"tool-s03\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"text code\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=chat.z.ai&sz=64\" alt=\"\"><h3>Z.ai / GLM</h3>\n<p>Тексты и код; среди актуальных моделей — GLM-5.3. Доступные функции зависят от режима и аккаунта.</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://chat.z.ai/\" target=\"_blank\" rel=\"noopener noreferrer\">Открыть Z.ai ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a05",
+          "order": 5,
+          "category": "Текст и чат, Программирование",
+          "keywords": "z.ai glm glm-5.3 тексты код программирование китайская модель",
+          "html": "<article id=\"tool-a05\" data-ai-id=\"tool-a05\" tabindex=\"-1\" data-tool-cats=\"talk code\" class=\"adult-tool-card\" data-search-extra=\"z.ai glm glm-5.3 тексты код программирование китайская модель\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=chat.z.ai&sz=64\" alt=\"\"><h3>Z.ai / GLM</h3>\n<p>Тексты и код; среди актуальных моделей — GLM-5.3. Возможности зависят от режима и аккаунта.</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://chat.z.ai/\" target=\"_blank\" rel=\"noopener noreferrer\">Открыть Z.ai ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "qwen",
+      "title": "Qwen",
+      "views": {
+        "school": {
+          "id": "tool-s04",
+          "order": 4,
+          "category": "Текст и общение, Программирование, Изображения",
+          "keywords": "text code media",
+          "html": "<article id=\"tool-s04\" data-ai-id=\"tool-s04\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"text code media\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=chat.qwen.ai&sz=64\" alt=\"\"><h3>Qwen</h3>\n<p>Семейство моделей для текста, кода и изображений. Для сравнения указывай точную версию.</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://chat.qwen.ai/\" target=\"_blank\" rel=\"noopener noreferrer\">Открыть Qwen ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a06",
+          "order": 6,
+          "category": "Текст и чат, Изображения, Программирование",
+          "keywords": "qwen китайская модель семейство версия тексты код изображения",
+          "html": "<article id=\"tool-a06\" data-ai-id=\"tool-a06\" tabindex=\"-1\" data-tool-cats=\"talk visual code\" class=\"adult-tool-card\" data-search-extra=\"qwen китайская модель семейство версия тексты код изображения\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=chat.qwen.ai&sz=64\" alt=\"\"><h3>Qwen</h3>\n<p>Семейство моделей для текста, кода и изображений. Для сравнения указывайте точную версию.</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://chat.qwen.ai/\" target=\"_blank\" rel=\"noopener noreferrer\">Открыть Qwen ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "kimi-k31-pro",
+      "title": "Kimi K3.1 Pro",
+      "views": {
+        "school": {
+          "id": "tool-s05",
+          "order": 5,
+          "category": "Текст и общение, Поиск и исследования, Программирование, Агенты и автоматизация",
+          "keywords": "text search code agents",
+          "html": "<article id=\"tool-s05\" data-ai-id=\"tool-s05\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"text search code agents\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=kimi.com&sz=64\" alt=\"\"><h3>Kimi K3.1 Pro</h3>\n<p>Тексты, документы, поиск и код. Модель K3.1 Pro и лимиты могут зависеть от тарифа.</p>\n<div class=\"badges\"><span class=\"badge warn\">проверь условия доступа перед входом</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://www.kimi.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Открыть Kimi ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a07",
+          "order": 7,
+          "category": "Текст и чат, Поиск и проверка, Программирование, Модели и API",
+          "keywords": "kimi moonshot kimi k3.1 pro китайская модель текст документы поиск код исследование",
+          "html": "<article id=\"tool-a07\" data-ai-id=\"tool-a07\" tabindex=\"-1\" data-tool-cats=\"talk research code models\" class=\"adult-tool-card\" data-search-extra=\"kimi moonshot kimi k3.1 pro китайская модель текст документы поиск код исследование\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=kimi.com&sz=64\" alt=\"\"><h3>Kimi K3.1 Pro</h3>\n<p>Тексты, документы, поиск и код; доступность модели и лимиты зависят от аккаунта.</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://www.kimi.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Открыть Kimi ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "xiaomi-mimo-v26-pro",
+      "title": "Xiaomi MiMo V2.6 Pro",
+      "views": {
+        "school": {
+          "id": "tool-s06",
+          "order": 6,
+          "category": "Текст и общение, Изображения, Поиск и исследования, Агенты и автоматизация",
+          "keywords": "text media search agents",
+          "html": "<article id=\"tool-s06\" data-ai-id=\"tool-s06\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"text media search agents\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=aistudio.xiaomimimo.com&sz=64\" alt=\"\"><h3>Xiaomi MiMo V2.6 Pro</h3>\n<p>MiMo Chat и мультимодальные модели, включая MiMo-V2.6-Pro. Вход и лимиты зависят от условий сервиса.</p>\n<div class=\"badges\"><span class=\"badge warn\">проверь доступ к модели и тариф</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://aistudio.xiaomimimo.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Открыть MiMo Studio ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a08",
+          "order": 8,
+          "category": "Текст и чат, Поиск и проверка, Изображения, Модели и API",
+          "keywords": "xiaomi mimo mimo-v2.6-pro китайская модель чат текст изображение визуальный анализ поиск",
+          "html": "<article id=\"tool-a08\" data-ai-id=\"tool-a08\" tabindex=\"-1\" data-tool-cats=\"talk research visual models\" class=\"adult-tool-card\" data-search-extra=\"xiaomi mimo mimo-v2.6-pro китайская модель чат текст изображение визуальный анализ поиск\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=aistudio.xiaomimimo.com&sz=64\" alt=\"\"><h3>Xiaomi MiMo V2.6 Pro</h3>\n<p>Чат и мультимодальное понимание; доступ к MiMo-V2.6-Pro и лимиты зависят от условий сервиса.</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://aistudio.xiaomimimo.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Открыть MiMo Studio ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "minimax-m31-flash",
+      "title": "MiniMax M3.1 Flash",
+      "views": {
+        "school": {
+          "id": "tool-s07",
+          "order": 7,
+          "category": "Программирование, Агенты и автоматизация, Изображения",
+          "keywords": "code agents media",
+          "html": "<article id=\"tool-s07\" data-ai-id=\"tool-s07\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"code agents media\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=agent.minimax.io&sz=64\" alt=\"\"><h3>MiniMax M3.1 Flash</h3>\n<p>Модель для кода, визуального анализа и многошаговых задач в MiniMax Code; доступность зависит от аккаунта.</p>\n<div class=\"badges\"><span class=\"badge warn\">проверь способ доступа и возможную оплату</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://agent.minimax.io/tools/m3.1-flash\" target=\"_blank\" rel=\"noopener noreferrer\">О модели и доступе ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a09",
+          "order": 9,
+          "category": "Программирование, Изображения, Модели и API",
+          "keywords": "minimax m3.1 flash китайская модель код программирование многошаговые задачи визуальный анализ",
+          "html": "<article id=\"tool-a09\" data-ai-id=\"tool-a09\" tabindex=\"-1\" data-tool-cats=\"code visual models\" class=\"adult-tool-card\" data-search-extra=\"minimax m3.1 flash китайская модель код программирование многошаговые задачи визуальный анализ\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=agent.minimax.io&sz=64\" alt=\"\"><h3>MiniMax M3.1 Flash</h3>\n<p>Модель для кода, визуального анализа и многошаговых задач в MiniMax Code; доступность зависит от аккаунта.</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://agent.minimax.io/tools/m3.1-flash\" target=\"_blank\" rel=\"noopener noreferrer\">О модели и доступе ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "deepai",
+      "title": "DeepAI",
+      "views": {
+        "school": {
+          "id": "tool-s08",
+          "order": 8,
+          "category": "Текст и общение, Поиск и исследования, Изображения, Видео, Редактирование, Программирование",
+          "keywords": "text search media video edit code",
+          "html": "<article id=\"tool-s08\" data-ai-id=\"tool-s08\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"text search media video edit code\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=deepai.org&sz=64\" alt=\"\"><h3>DeepAI</h3>\n<p>Один сервис — несколько режимов</p><div class=\"badges\"><span class=\"badge ok\">есть режимы без аккаунта</span></div>\n<div class=\"tool-actions-v2\">\n<a class=\"tool-action-v2\" href=\"https://deepai.org/chat\" target=\"_blank\" rel=\"noopener\">Текст</a>\n<a class=\"tool-action-v2\" href=\"https://deepai.org/machine-learning-model/text2img\" target=\"_blank\" rel=\"noopener\">Изображение</a>\n<a class=\"tool-action-v2\" href=\"https://deepai.org/machine-learning-model/image-editor\" target=\"_blank\" rel=\"noopener\">Правка</a>\n<a class=\"tool-action-v2\" href=\"https://deepai.org/video\" target=\"_blank\" rel=\"noopener\">Видео</a>\n</div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a10",
+          "order": 10,
+          "category": "Текст и чат, Поиск и проверка, Изображения, Видео, Программирование",
+          "keywords": "deepai чат текст написать объяснить поиск проверка источники исследование картинка изображение фото дизайн ролик видео монтаж код программирование приложение сайт",
+          "html": "<article id=\"tool-a10\" data-ai-id=\"tool-a10\" tabindex=\"-1\" data-tool-cats=\"talk research visual video code\" class=\"adult-tool-card\" data-search-extra=\"deepai чат текст написать объяснить поиск проверка источники исследование картинка изображение фото дизайн ролик видео монтаж код программирование приложение сайт\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=deepai.org&sz=64\" alt=\"\"><h3>DeepAI</h3>\n<p>Один сервис — несколько режимов</p>\n<div class=\"tool-actions-v2\">\n<a class=\"tool-action-v2\" href=\"https://deepai.org/chat\" target=\"_blank\" rel=\"noopener\">Текст</a>\n<a class=\"tool-action-v2\" href=\"https://deepai.org/machine-learning-model/text2img\" target=\"_blank\" rel=\"noopener\">Изображение</a>\n<a class=\"tool-action-v2\" href=\"https://deepai.org/machine-learning-model/image-editor\" target=\"_blank\" rel=\"noopener\">Правка</a>\n<a class=\"tool-action-v2\" href=\"https://deepai.org/video\" target=\"_blank\" rel=\"noopener\">Видео</a>\n</div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "perplexity",
+      "title": "Perplexity",
+      "views": {
+        "school": {
+          "id": "tool-s09",
+          "order": 9,
+          "category": "Поиск и исследования, Текст и общение, Агенты и автоматизация",
+          "keywords": "search text agents",
+          "html": "<article id=\"tool-s09\" data-ai-id=\"tool-s09\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"search text agents\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=perplexity.ai&sz=64\" alt=\"\"><h3>Perplexity</h3>\n<p>Поиск с источниками; режим Computer выполняет многошаговые задачи и создаёт готовые материалы</p><div class=\"badges\"><span class=\"badge warn\">Computer — доступность зависит от тарифа</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://www.perplexity.ai/\" target=\"_blank\" rel=\"noopener\">Найти ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a11",
+          "order": 11,
+          "category": "Поиск и проверка, Текст и чат",
+          "keywords": "perplexity поиск проверка источники исследование чат текст написать объяснить",
+          "html": "<article id=\"tool-a11\" data-ai-id=\"tool-a11\" tabindex=\"-1\" data-tool-cats=\"research talk\" class=\"adult-tool-card\" data-search-extra=\"perplexity поиск проверка источники исследование чат текст написать объяснить\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=perplexity.ai&sz=64\" alt=\"\"><h3>Perplexity</h3>\n<p>Поиск с источниками; режим Computer выполняет многошаговые задачи и создаёт готовые материалы</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://www.perplexity.ai/\" target=\"_blank\" rel=\"noopener\">Найти ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "firefly",
+      "title": "Firefly",
+      "views": {
+        "school": {
+          "id": "tool-s10",
+          "order": 10,
+          "category": "Идеи, Изображения, Видео, Редактирование",
+          "keywords": "ideas media video edit",
+          "html": "<article id=\"tool-s10\" data-ai-id=\"tool-s10\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"ideas media video edit\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=64\" alt=\"\"><h3>Firefly</h3>\n<p>Идеи, изображения, видео и правка; лимит бесплатных генераций зависит от модели</p><div class=\"badges\"><span class=\"badge ok\">есть ежедневные бесплатные генерации</span><span class=\"badge warn\">нужна учётная запись Adobe</span></div>\n<div class=\"tool-actions-v2\">\n<a class=\"tool-action-v2\" href=\"https://www.adobe.com/products/firefly/features/boards.html\" target=\"_blank\" rel=\"noopener\">Доска идей</a>\n<a class=\"tool-action-v2\" href=\"https://firefly.adobe.com/generate/image\" target=\"_blank\" rel=\"noopener\">Текст → изображение</a>\n<a class=\"tool-action-v2\" href=\"https://firefly.adobe.com/image\" target=\"_blank\" rel=\"noopener\">Правка изображения</a>\n<a class=\"tool-action-v2\" href=\"https://firefly.adobe.com/generate/video\" target=\"_blank\" rel=\"noopener\">Видео</a>\n</div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a12",
+          "order": 12,
+          "category": "Презентации и схемы, Изображения, Видео",
+          "keywords": "firefly презентация схема идеи документ картинка изображение фото дизайн ролик видео монтаж",
+          "html": "<article id=\"tool-a12\" data-ai-id=\"tool-a12\" tabindex=\"-1\" data-tool-cats=\"present visual video\" class=\"adult-tool-card\" data-search-extra=\"firefly презентация схема идеи документ картинка изображение фото дизайн ролик видео монтаж\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=64\" alt=\"\"><h3>Firefly</h3>\n<p>Идеи, изображения, видео и правка; лимит бесплатных генераций зависит от модели</p>\n<div class=\"tool-actions-v2\">\n<a class=\"tool-action-v2\" href=\"https://www.adobe.com/products/firefly/features/boards.html\" target=\"_blank\" rel=\"noopener\">Доска идей</a>\n<a class=\"tool-action-v2\" href=\"https://firefly.adobe.com/generate/image\" target=\"_blank\" rel=\"noopener\">Текст → изображение</a>\n<a class=\"tool-action-v2\" href=\"https://firefly.adobe.com/image\" target=\"_blank\" rel=\"noopener\">Правка изображения</a>\n<a class=\"tool-action-v2\" href=\"https://firefly.adobe.com/generate/video\" target=\"_blank\" rel=\"noopener\">Видео</a>\n</div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "krea",
+      "title": "Krea",
+      "views": {
+        "school": {
+          "id": "tool-s11",
+          "order": 11,
+          "category": "Идеи, Изображения, Видео, Редактирование",
+          "keywords": "ideas media video edit",
+          "html": "<article id=\"tool-s11\" data-ai-id=\"tool-s11\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"ideas media video edit\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=krea.ai&sz=64\" alt=\"\"><h3>Krea</h3>\n<p>Визуальные идеи, изображения, видео и работа в реальном времени</p><div class=\"badges\"><span class=\"badge ok\">100 вычислительных единиц/день</span><span class=\"badge warn\">видеомодели доступны по-разному</span></div>\n<div class=\"tool-actions-v2\">\n<a class=\"tool-action-v2\" href=\"https://www.krea.ai/image\" target=\"_blank\" rel=\"noopener\">Текст → изображение</a>\n<a class=\"tool-action-v2\" href=\"https://www.krea.ai/realtime\" target=\"_blank\" rel=\"noopener\">В реальном времени</a>\n<a class=\"tool-action-v2\" href=\"https://www.krea.ai/video\" target=\"_blank\" rel=\"noopener\">Видео</a>\n</div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a13",
+          "order": 13,
+          "category": "Презентации и схемы, Изображения, Видео",
+          "keywords": "krea презентация схема идеи документ картинка изображение фото дизайн ролик видео монтаж",
+          "html": "<article id=\"tool-a13\" data-ai-id=\"tool-a13\" tabindex=\"-1\" data-tool-cats=\"present visual video\" class=\"adult-tool-card\" data-search-extra=\"krea презентация схема идеи документ картинка изображение фото дизайн ролик видео монтаж\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=krea.ai&sz=64\" alt=\"\"><h3>Krea</h3>\n<p>Визуальные идеи, изображения, видео и работа в реальном времени</p>\n<div class=\"tool-actions-v2\">\n<a class=\"tool-action-v2\" href=\"https://www.krea.ai/image\" target=\"_blank\" rel=\"noopener\">Текст → изображение</a>\n<a class=\"tool-action-v2\" href=\"https://www.krea.ai/realtime\" target=\"_blank\" rel=\"noopener\">В реальном времени</a>\n<a class=\"tool-action-v2\" href=\"https://www.krea.ai/video\" target=\"_blank\" rel=\"noopener\">Видео</a>\n</div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "canva",
+      "title": "Canva",
+      "views": {
+        "school": {
+          "id": "tool-s12",
+          "order": 12,
+          "category": "Идеи",
+          "keywords": "ideas",
+          "html": "<article id=\"tool-s12\" data-ai-id=\"tool-s12\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"ideas\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=canva.com&sz=64\" alt=\"\"><h3>Canva</h3>\n<p>Доска для мозгового штурма и сбора идей. Ссылка открывает доску для совместной работы.</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://www.canva.com/online-whiteboard/\" target=\"_blank\" rel=\"noopener\">Открыть доску ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a14",
+          "order": 14,
+          "category": "Презентации и схемы",
+          "keywords": "canva презентация схема идеи документ",
+          "html": "<article id=\"tool-a14\" data-ai-id=\"tool-a14\" tabindex=\"-1\" data-tool-cats=\"present\" class=\"adult-tool-card\" data-search-extra=\"canva презентация схема идеи документ\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=canva.com&sz=64\" alt=\"\"><h3>Canva</h3>\n<p>Доска для мозгового штурма и сбора идей. Ссылка открывает доску для совместной работы.</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://www.canva.com/online-whiteboard/\" target=\"_blank\" rel=\"noopener\">Открыть доску ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "vidu",
+      "title": "Vidu",
+      "views": {
+        "school": {
+          "id": "tool-s13",
+          "order": 13,
+          "category": "Изображения, Видео, Редактирование",
+          "keywords": "media video edit",
+          "html": "<article id=\"tool-s13\" data-ai-id=\"tool-s13\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"media video edit\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=vidu.com&sz=64\" alt=\"\"><h3>Vidu</h3>\n<p>Изображения и видео из текста, кадров и референсов</p>\n<div class=\"tool-actions-v2\">\n<a class=\"tool-action-v2\" href=\"https://www.vidu.com/create/text2image\" target=\"_blank\" rel=\"noopener\">Текст → изображение</a>\n<a class=\"tool-action-v2\" href=\"https://www.vidu.com/create/reference2image\" target=\"_blank\" rel=\"noopener\">Референсы → изображение</a>\n<a class=\"tool-action-v2\" href=\"https://www.vidu.com/create/text2video\" target=\"_blank\" rel=\"noopener\">Текст → видео</a>\n<a class=\"tool-action-v2\" href=\"https://www.vidu.com/create/img2video\" target=\"_blank\" rel=\"noopener\">Изображение → видео</a>\n<a class=\"tool-action-v2\" href=\"https://www.vidu.com/create/character2video\" target=\"_blank\" rel=\"noopener\">Персонаж → видео</a>\n</div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a15",
+          "order": 15,
+          "category": "Изображения, Видео",
+          "keywords": "vidu картинка изображение фото дизайн ролик видео монтаж",
+          "html": "<article id=\"tool-a15\" data-ai-id=\"tool-a15\" tabindex=\"-1\" data-tool-cats=\"visual video\" class=\"adult-tool-card\" data-search-extra=\"vidu картинка изображение фото дизайн ролик видео монтаж\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=vidu.com&sz=64\" alt=\"\"><h3>Vidu</h3>\n<p>Изображения и видео из текста, кадров и референсов</p>\n<div class=\"tool-actions-v2\">\n<a class=\"tool-action-v2\" href=\"https://www.vidu.com/create/text2image\" target=\"_blank\" rel=\"noopener\">Текст → изображение</a>\n<a class=\"tool-action-v2\" href=\"https://www.vidu.com/create/reference2image\" target=\"_blank\" rel=\"noopener\">Референсы → изображение</a>\n<a class=\"tool-action-v2\" href=\"https://www.vidu.com/create/text2video\" target=\"_blank\" rel=\"noopener\">Текст → видео</a>\n<a class=\"tool-action-v2\" href=\"https://www.vidu.com/create/img2video\" target=\"_blank\" rel=\"noopener\">Изображение → видео</a>\n<a class=\"tool-action-v2\" href=\"https://www.vidu.com/create/character2video\" target=\"_blank\" rel=\"noopener\">Персонаж → видео</a>\n</div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "recraft",
+      "title": "Recraft",
+      "views": {
+        "school": {
+          "id": "tool-s14",
+          "order": 14,
+          "category": "Изображения",
+          "keywords": "media",
+          "html": "<article id=\"tool-s14\" data-ai-id=\"tool-s14\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"media\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=recraft.ai&sz=64\" alt=\"\"><h3>Recraft</h3>\n<p>Изображения и дизайн</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://www.recraft.ai/ai-image-generator\" target=\"_blank\" rel=\"noopener\">Создать изображение ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a16",
+          "order": 16,
+          "category": "Презентации и схемы, Изображения",
+          "keywords": "recraft презентация схема идеи документ картинка изображение фото дизайн",
+          "html": "<article id=\"tool-a16\" data-ai-id=\"tool-a16\" tabindex=\"-1\" data-tool-cats=\"present visual\" class=\"adult-tool-card\" data-search-extra=\"recraft презентация схема идеи документ картинка изображение фото дизайн\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=recraft.ai&sz=64\" alt=\"\"><h3>Recraft</h3>\n<p>Изображения и дизайн</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://www.recraft.ai/ai-image-generator\" target=\"_blank\" rel=\"noopener\">Создать изображение ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "pixverse",
+      "title": "PixVerse",
+      "views": {
+        "school": {
+          "id": "tool-s15",
+          "order": 15,
+          "category": "Видео",
+          "keywords": "video",
+          "html": "<article id=\"tool-s15\" data-ai-id=\"tool-s15\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"video\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=pixverse.ai&sz=64\" alt=\"\"><h3>PixVerse</h3>\n<p>Видео из текста и изображений</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://pixverse.ai/\" target=\"_blank\" rel=\"noopener\">Создать видео ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a17",
+          "order": 17,
+          "category": "Видео",
+          "keywords": "pixverse ролик видео монтаж",
+          "html": "<article id=\"tool-a17\" data-ai-id=\"tool-a17\" tabindex=\"-1\" data-tool-cats=\"video\" class=\"adult-tool-card\" data-search-extra=\"pixverse ролик видео монтаж\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=pixverse.ai&sz=64\" alt=\"\"><h3>PixVerse</h3>\n<p>Видео из текста и изображений</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://pixverse.ai/\" target=\"_blank\" rel=\"noopener\">Создать видео ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "arena",
+      "title": "Arena",
+      "views": {
+        "school": {
+          "id": "tool-s16",
+          "order": 16,
+          "category": "Каталоги и сравнение моделей",
+          "keywords": "aggregate",
+          "html": "<article id=\"tool-s16\" data-ai-id=\"tool-s16\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"aggregate\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=arena.ai&sz=64\" alt=\"\"><h3>Arena</h3>\n<p>Сравнение моделей на одном запросе</p><div class=\"badges\"><span class=\"badge warn\">18+ · преподавателю</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://arena.ai/\" target=\"_blank\" rel=\"noopener\">Сравнить ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a18",
+          "order": 18,
+          "category": "Модели и API",
+          "keywords": "arena модели сравнение api разработчик",
+          "html": "<article id=\"tool-a18\" data-ai-id=\"tool-a18\" tabindex=\"-1\" data-tool-cats=\"models\" class=\"adult-tool-card\" data-search-extra=\"arena модели сравнение api разработчик\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=arena.ai&sz=64\" alt=\"\"><h3>Arena</h3>\n<p>Сравнение моделей на одном запросе</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://arena.ai/\" target=\"_blank\" rel=\"noopener\">Сравнить ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "humanevalorg",
+      "title": "HumanEval.org",
+      "views": {
+        "school": {
+          "id": "tool-s17",
+          "order": 17,
+          "category": "Каталоги и сравнение моделей, Поиск и исследования",
+          "keywords": "aggregate search",
+          "html": "<article id=\"tool-s17\" data-ai-id=\"tool-s17\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"aggregate search\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=humaneval.org&sz=64\" alt=\"\"><h3>HumanEval.org</h3>\n<p>Рейтинг моделей; методика и набор сравниваемых данных ограничены.</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://humaneval.org/\" target=\"_blank\" rel=\"noopener\">Сравнить ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a19",
+          "order": 19,
+          "category": "Поиск и проверка, Модели и API",
+          "keywords": "humaneval.org поиск проверка источники исследование модели сравнение api разработчик",
+          "html": "<article id=\"tool-a19\" data-ai-id=\"tool-a19\" tabindex=\"-1\" data-tool-cats=\"research models\" class=\"adult-tool-card\" data-search-extra=\"humaneval.org поиск проверка источники исследование модели сравнение api разработчик\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=humaneval.org&sz=64\" alt=\"\"><h3>HumanEval.org</h3>\n<p>Рейтинг моделей; методика и набор сравниваемых данных ограничены.</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://humaneval.org/\" target=\"_blank\" rel=\"noopener\">Сравнить ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "openrouter",
+      "title": "OpenRouter",
+      "views": {
+        "school": {
+          "id": "tool-s18",
+          "order": 18,
+          "category": "Каталоги и сравнение моделей, Программирование",
+          "keywords": "aggregate code",
+          "html": "<article id=\"tool-s18\" data-ai-id=\"tool-s18\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"aggregate code\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=openrouter.ai&sz=64\" alt=\"\"><h3>OpenRouter</h3>\n<p>Каталог моделей и единый API</p><div class=\"badges\"><span class=\"badge warn\">старшим · проверить доступ</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://openrouter.ai/\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a20",
+          "order": 20,
+          "category": "Модели и API, Программирование",
+          "keywords": "openrouter модели сравнение api разработчик код программирование приложение сайт",
+          "html": "<article id=\"tool-a20\" data-ai-id=\"tool-a20\" tabindex=\"-1\" data-tool-cats=\"models code\" class=\"adult-tool-card\" data-search-extra=\"openrouter модели сравнение api разработчик код программирование приложение сайт\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=openrouter.ai&sz=64\" alt=\"\"><h3>OpenRouter</h3>\n<p>Каталог моделей и единый API</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://openrouter.ai/\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "requesty",
+      "title": "Requesty",
+      "views": {
+        "school": {
+          "id": "tool-s19",
+          "order": 19,
+          "category": "Каталоги и сравнение моделей, Программирование",
+          "keywords": "aggregate code",
+          "html": "<article id=\"tool-s19\" data-ai-id=\"tool-s19\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"aggregate code\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=requesty.ai&sz=64\" alt=\"\"><h3>Requesty</h3>\n<p>API-шлюз для разработчиков, не обычный школьный чат</p><div class=\"badges\"><span class=\"badge warn\">до 200 запросов/день к бесплатным API-моделям</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://www.requesty.ai/models/free\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a21",
+          "order": 21,
+          "category": "Модели и API, Программирование",
+          "keywords": "requesty модели сравнение api разработчик код программирование приложение сайт",
+          "html": "<article id=\"tool-a21\" data-ai-id=\"tool-a21\" tabindex=\"-1\" data-tool-cats=\"models code\" class=\"adult-tool-card\" data-search-extra=\"requesty модели сравнение api разработчик код программирование приложение сайт\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=requesty.ai&sz=64\" alt=\"\"><h3>Requesty</h3>\n<p>API-шлюз для разработчиков, не обычный школьный чат</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://www.requesty.ai/models/free\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "kilo",
+      "title": "Kilo",
+      "views": {
+        "school": {
+          "id": "tool-s20",
+          "order": 20,
+          "category": "Каталоги и сравнение моделей, Программирование",
+          "keywords": "aggregate code",
+          "html": "<article id=\"tool-s20\" data-ai-id=\"tool-s20\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"aggregate code\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=kilo.ai&sz=64\" alt=\"\"><h3>Kilo</h3>\n<p>Рейтинг моделей и инструменты разработки</p><div class=\"badges\"><span class=\"badge warn\">старшим · проверить доступ</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://kilo.ai/leaderboard\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a22",
+          "order": 22,
+          "category": "Модели и API, Программирование",
+          "keywords": "kilo модели сравнение api разработчик код программирование приложение сайт",
+          "html": "<article id=\"tool-a22\" data-ai-id=\"tool-a22\" tabindex=\"-1\" data-tool-cats=\"models code\" class=\"adult-tool-card\" data-search-extra=\"kilo модели сравнение api разработчик код программирование приложение сайт\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=kilo.ai&sz=64\" alt=\"\"><h3>Kilo</h3>\n<p>Рейтинг моделей и инструменты разработки</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://kilo.ai/leaderboard\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "aihubmix",
+      "title": "AIHubMix",
+      "views": {
+        "school": {
+          "id": "tool-s21",
+          "order": 21,
+          "category": "Каталоги и сравнение моделей, Программирование",
+          "keywords": "aggregate code",
+          "html": "<article id=\"tool-s21\" data-ai-id=\"tool-s21\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"aggregate code\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=aihubmix.com&sz=64\" alt=\"\"><h3>AIHubMix</h3>\n<p>API для разработчиков; пробные вызовы и дальнейшие условия отличаются</p><div class=\"badges\"><span class=\"badge warn\">10 пробных вызовов · дальнейшие условия уточнять</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://aihubmix.com/models/free\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a23",
+          "order": 23,
+          "category": "Модели и API, Программирование",
+          "keywords": "aihubmix модели сравнение api разработчик код программирование приложение сайт",
+          "html": "<article id=\"tool-a23\" data-ai-id=\"tool-a23\" tabindex=\"-1\" data-tool-cats=\"models code\" class=\"adult-tool-card\" data-search-extra=\"aihubmix модели сравнение api разработчик код программирование приложение сайт\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=aihubmix.com&sz=64\" alt=\"\"><h3>AIHubMix</h3>\n<p>API для разработчиков; пробные вызовы и дальнейшие условия отличаются</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://aihubmix.com/models/free\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "roboflow",
+      "title": "Roboflow",
+      "views": {
+        "school": {
+          "id": "tool-s22",
+          "order": 22,
+          "category": "Каталоги и сравнение моделей, Изображения",
+          "keywords": "aggregate media",
+          "html": "<article id=\"tool-s22\" data-ai-id=\"tool-s22\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"aggregate media\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=roboflow.com&sz=64\" alt=\"\"><h3>Roboflow</h3>\n<p>Сравнение vision-моделей</p><div class=\"badges\"><span class=\"badge warn\">проверить доступ</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://playground.roboflow.com/\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a24",
+          "order": 24,
+          "category": "Модели и API, Изображения",
+          "keywords": "roboflow модели сравнение api разработчик картинка изображение фото дизайн",
+          "html": "<article id=\"tool-a24\" data-ai-id=\"tool-a24\" tabindex=\"-1\" data-tool-cats=\"models visual\" class=\"adult-tool-card\" data-search-extra=\"roboflow модели сравнение api разработчик картинка изображение фото дизайн\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=roboflow.com&sz=64\" alt=\"\"><h3>Roboflow</h3>\n<p>Сравнение vision-моделей</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://playground.roboflow.com/\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "poe",
+      "title": "Poe",
+      "views": {
+        "school": {
+          "id": "tool-s23",
+          "order": 23,
+          "category": "Каталоги и сравнение моделей, Текст и общение, Изображения",
+          "keywords": "aggregate text media",
+          "html": "<article id=\"tool-s23\" data-ai-id=\"tool-s23\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"aggregate text media\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=poe.com&sz=64\" alt=\"\"><h3>Poe</h3>\n<p>Каталог моделей и ботов</p><div class=\"badges\"><span class=\"badge warn\">проверить доступ</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://poe.com/explore\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a25",
+          "order": 25,
+          "category": "Текст и чат, Модели и API",
+          "keywords": "poe чат текст написать объяснить модели сравнение api разработчик",
+          "html": "<article id=\"tool-a25\" data-ai-id=\"tool-a25\" tabindex=\"-1\" data-tool-cats=\"talk models\" class=\"adult-tool-card\" data-search-extra=\"poe чат текст написать объяснить модели сравнение api разработчик\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=poe.com&sz=64\" alt=\"\"><h3>Poe</h3>\n<p>Каталог моделей и ботов</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://poe.com/explore\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "hugging-face",
+      "title": "Hugging Face",
+      "views": {
+        "school": {
+          "id": "tool-s24",
+          "order": 24,
+          "category": "Каталоги и сравнение моделей, Текст и общение, Программирование",
+          "keywords": "aggregate text code",
+          "html": "<article id=\"tool-s24\" data-ai-id=\"tool-s24\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"aggregate text code\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=huggingface.co&sz=64\" alt=\"\"><h3>Hugging Face</h3>\n<p>Открытые модели и inference-провайдеры</p><div class=\"badges\"><span class=\"badge warn\">проверить доступ</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://huggingface.co/chat/\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a26",
+          "order": 26,
+          "category": "Текст и чат, Модели и API, Программирование",
+          "keywords": "hugging face чат текст написать объяснить модели сравнение api разработчик код программирование приложение сайт",
+          "html": "<article id=\"tool-a26\" data-ai-id=\"tool-a26\" tabindex=\"-1\" data-tool-cats=\"talk models code\" class=\"adult-tool-card\" data-search-extra=\"hugging face чат текст написать объяснить модели сравнение api разработчик код программирование приложение сайт\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=huggingface.co&sz=64\" alt=\"\"><h3>Hugging Face</h3>\n<p>Открытые модели и inference-провайдеры</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://huggingface.co/chat/\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "arctic-playground",
+      "title": "Arctic Playground",
+      "views": {
+        "school": {
+          "id": "tool-s25",
+          "order": 25,
+          "category": "Каталоги и сравнение моделей, Текст и общение, Программирование, Изображения",
+          "keywords": "aggregate text code media",
+          "html": "<article id=\"tool-s25\" data-ai-id=\"tool-s25\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"aggregate text code media\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=arctic.qpon&sz=64\" alt=\"\"><h3>Arctic Playground</h3>\n<p>Несколько моделей рядом для сравнения</p><div class=\"badges\"><span class=\"badge warn\">проверить доступ</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://www.arctic.qpon/playground\" target=\"_blank\" rel=\"noopener\">Сравнить ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a27",
+          "order": 27,
+          "category": "Текст и чат, Модели и API, Программирование",
+          "keywords": "arctic playground чат текст написать объяснить модели сравнение api разработчик код программирование приложение сайт",
+          "html": "<article id=\"tool-a27\" data-ai-id=\"tool-a27\" tabindex=\"-1\" data-tool-cats=\"talk models code\" class=\"adult-tool-card\" data-search-extra=\"arctic playground чат текст написать объяснить модели сравнение api разработчик код программирование приложение сайт\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=arctic.qpon&sz=64\" alt=\"\"><h3>Arctic Playground</h3>\n<p>Несколько моделей рядом для сравнения</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://www.arctic.qpon/playground\" target=\"_blank\" rel=\"noopener\">Сравнить ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "mistral-vibe",
+      "title": "Mistral Vibe",
+      "views": {
+        "school": {
+          "id": "tool-s26",
+          "order": 26,
+          "category": "Текст и общение, Программирование, Поиск и исследования, Агенты и автоматизация",
+          "keywords": "text code search agents",
+          "html": "<article id=\"tool-s26\" data-ai-id=\"tool-s26\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"text code search agents\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=mistral.ai&sz=64\" alt=\"\"><h3>Mistral Vibe</h3>\n<p>Многошаговые задачи и работа с кодом в режимах Work и Code</p><div class=\"badges\"><span class=\"badge ok\">есть бесплатный режим</span><span class=\"badge warn\">вход может понадобиться</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://chat.mistral.ai/\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a28",
+          "order": 28,
+          "category": "Текст и чат, Программирование",
+          "keywords": "mistral vibe чат текст написать объяснить код программирование приложение сайт",
+          "html": "<article id=\"tool-a28\" data-ai-id=\"tool-a28\" tabindex=\"-1\" data-tool-cats=\"talk code\" class=\"adult-tool-card\" data-search-extra=\"mistral vibe чат текст написать объяснить код программирование приложение сайт\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=mistral.ai&sz=64\" alt=\"\"><h3>Mistral Vibe</h3>\n<p>Многошаговые задачи и работа с кодом в режимах Work и Code</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://chat.mistral.ai/\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "claude",
+      "title": "Claude",
+      "views": {
+        "school": {
+          "id": "tool-s27",
+          "order": 27,
+          "category": "Текст и общение, Программирование, Агенты и автоматизация",
+          "keywords": "text code agents",
+          "html": "<article id=\"tool-s27\" data-ai-id=\"tool-s27\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"text code agents\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=claude.ai&sz=64\" alt=\"\"><h3>Claude</h3>\n<p>Тексты, программирование и анализ; Claude Cowork выполняет многошаговые задачи с файлами и подключёнными инструментами</p><div class=\"badges\"><span class=\"badge ok\">бесплатно с лимитами</span><span class=\"badge warn\">вход</span></div>\n<p class=\"tool-age-note\"><strong>18+ — ученикам самостоятельно нельзя.</strong> <a href=\"https://www.anthropic.com/policy\" target=\"_blank\" rel=\"noopener noreferrer\">Возрастные ограничения ↗</a></p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://claude.ai/\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a29",
+          "order": 29,
+          "category": "Текст и чат, Поиск и проверка, Презентации и схемы, Программирование",
+          "keywords": "claude чат текст написать объяснить поиск проверка источники исследование презентация схема идеи документ код программирование приложение сайт",
+          "html": "<article id=\"tool-a29\" data-ai-id=\"tool-a29\" tabindex=\"-1\" data-tool-cats=\"talk research present code\" class=\"adult-tool-card\" data-search-extra=\"claude чат текст написать объяснить поиск проверка источники исследование презентация схема идеи документ код программирование приложение сайт\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=claude.ai&sz=64\" alt=\"\"><h3>Claude</h3>\n<p>Тексты, программирование и анализ; Claude Cowork выполняет многошаговые задачи с файлами и подключёнными инструментами</p>\n\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://claude.ai/\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "gemini",
+      "title": "Gemini",
+      "views": {
+        "school": {
+          "id": "tool-s28",
+          "order": 28,
+          "category": "Текст и общение, Поиск и исследования, Изображения, Агенты и автоматизация",
+          "keywords": "text search media agents",
+          "html": "<article id=\"tool-s28\" data-ai-id=\"tool-s28\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"text search media agents\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64\" alt=\"\"><h3>Gemini</h3>\n<p>Общение, поиск, объяснения и работа с изображениями</p><div class=\"badges\"><span class=\"badge ok\">есть бесплатный режим</span><span class=\"badge warn\">вход Google</span></div>\n<p class=\"tool-age-note\">Возраст и доступные функции зависят от страны и типа аккаунта. Для рабочих аккаунтов Google требуется 18 лет. Gemini Spark — агентный режим; его доступность зависит от страны и подписки. <a href=\"https://support.google.com/gemini/answer/13278668\" target=\"_blank\" rel=\"noopener noreferrer\">Требования Google ↗</a></p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://gemini.google.com/\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a30",
+          "order": 30,
+          "category": "Текст и чат, Поиск и проверка, Изображения",
+          "keywords": "gemini чат текст написать объяснить поиск проверка источники исследование картинка изображение фото дизайн",
+          "html": "<article id=\"tool-a30\" data-ai-id=\"tool-a30\" tabindex=\"-1\" data-tool-cats=\"talk research visual\" class=\"adult-tool-card\" data-search-extra=\"gemini чат текст написать объяснить поиск проверка источники исследование картинка изображение фото дизайн\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64\" alt=\"\"><h3>Gemini</h3>\n<p>Общение, поиск, объяснения и работа с изображениями</p>\n\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://gemini.google.com/\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "consensus",
+      "title": "Consensus",
+      "views": {
+        "school": {
+          "id": "tool-s29",
+          "order": 29,
+          "category": "Поиск и исследования, Текст и общение",
+          "keywords": "search text",
+          "html": "<article id=\"tool-s29\" data-ai-id=\"tool-s29\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"search text\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=consensus.app&sz=64\" alt=\"\"><h3>Consensus</h3>\n<p>Ответы по научным публикациям со ссылками на исследования</p><div class=\"badges\"><span class=\"badge ok\">базовый поиск бесплатно</span><span class=\"badge warn\">10 Pro-запросов/месяц</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://consensus.app/\" target=\"_blank\" rel=\"noopener\">Найти исследование ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a31",
+          "order": 31,
+          "category": "Поиск и проверка",
+          "keywords": "consensus поиск проверка источники исследование",
+          "html": "<article id=\"tool-a31\" data-ai-id=\"tool-a31\" tabindex=\"-1\" data-tool-cats=\"research\" class=\"adult-tool-card\" data-search-extra=\"consensus поиск проверка источники исследование\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=consensus.app&sz=64\" alt=\"\"><h3>Consensus</h3>\n<p>Ответы по научным публикациям со ссылками на исследования</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://consensus.app/\" target=\"_blank\" rel=\"noopener\">Найти исследование ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "ideogram",
+      "title": "Ideogram",
+      "views": {
+        "school": {
+          "id": "tool-s30",
+          "order": 30,
+          "category": "Изображения, Идеи",
+          "keywords": "media ideas",
+          "html": "<article id=\"tool-s30\" data-ai-id=\"tool-s30\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"media ideas\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=ideogram.ai&sz=64\" alt=\"\"><h3>Ideogram</h3>\n<p>Генерация картинок, афиш и надписей на изображениях</p><div class=\"badges\"><span class=\"badge ok\">бесплатные медленные генерации</span><span class=\"badge warn\">еженедельные лимиты</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://ideogram.ai/\" target=\"_blank\" rel=\"noopener\">Создать изображение ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a32",
+          "order": 32,
+          "category": "Презентации и схемы, Изображения",
+          "keywords": "ideogram презентация схема идеи документ картинка изображение фото дизайн",
+          "html": "<article id=\"tool-a32\" data-ai-id=\"tool-a32\" tabindex=\"-1\" data-tool-cats=\"present visual\" class=\"adult-tool-card\" data-search-extra=\"ideogram презентация схема идеи документ картинка изображение фото дизайн\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=ideogram.ai&sz=64\" alt=\"\"><h3>Ideogram</h3>\n<p>Генерация картинок, афиш и надписей на изображениях</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://ideogram.ai/\" target=\"_blank\" rel=\"noopener\">Создать изображение ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "leonardo-ai",
+      "title": "Leonardo AI",
+      "views": {
+        "school": {
+          "id": "tool-s31",
+          "order": 31,
+          "category": "Изображения, Идеи",
+          "keywords": "media ideas",
+          "html": "<article id=\"tool-s31\" data-ai-id=\"tool-s31\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"media ideas\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=leonardo.ai&sz=64\" alt=\"\"><h3>Leonardo AI</h3>\n<p>Иллюстрации, персонажи и графика для проектов</p><div class=\"badges\"><span class=\"badge ok\">150 токенов в день</span><span class=\"badge warn\">вход</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://app.leonardo.ai/\" target=\"_blank\" rel=\"noopener\">Создать изображение ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a33",
+          "order": 33,
+          "category": "Презентации и схемы, Изображения",
+          "keywords": "leonardo ai презентация схема идеи документ картинка изображение фото дизайн",
+          "html": "<article id=\"tool-a33\" data-ai-id=\"tool-a33\" tabindex=\"-1\" data-tool-cats=\"present visual\" class=\"adult-tool-card\" data-search-extra=\"leonardo ai презентация схема идеи документ картинка изображение фото дизайн\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=leonardo.ai&sz=64\" alt=\"\"><h3>Leonardo AI</h3>\n<p>Иллюстрации, персонажи и графика для проектов</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://app.leonardo.ai/\" target=\"_blank\" rel=\"noopener\">Создать изображение ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "luma-dream-machine",
+      "title": "Luma Dream Machine",
+      "views": {
+        "school": {
+          "id": "tool-s32",
+          "order": 32,
+          "category": "Видео, Изображения",
+          "keywords": "video media",
+          "html": "<article id=\"tool-s32\" data-ai-id=\"tool-s32\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"video media\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=lumalabs.ai&sz=64\" alt=\"\"><h3>Luma Dream Machine</h3>\n<p>Видео и движение по тексту или изображению</p><div class=\"badges\"><span class=\"badge ok\">ограниченный бесплатный режим</span><span class=\"badge warn\">черновое качество</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://lumalabs.ai/dream-machine\" target=\"_blank\" rel=\"noopener\">Создать видео ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a34",
+          "order": 34,
+          "category": "Изображения, Видео",
+          "keywords": "luma dream machine картинка изображение фото дизайн ролик видео монтаж",
+          "html": "<article id=\"tool-a34\" data-ai-id=\"tool-a34\" tabindex=\"-1\" data-tool-cats=\"visual video\" class=\"adult-tool-card\" data-search-extra=\"luma dream machine картинка изображение фото дизайн ролик видео монтаж\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=lumalabs.ai&sz=64\" alt=\"\"><h3>Luma Dream Machine</h3>\n<p>Видео и движение по тексту или изображению</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://lumalabs.ai/dream-machine\" target=\"_blank\" rel=\"noopener\">Создать видео ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "runway",
+      "title": "Runway",
+      "views": {
+        "school": {
+          "id": "tool-s33",
+          "order": 33,
+          "category": "Видео, Редактирование",
+          "keywords": "video edit",
+          "html": "<article id=\"tool-s33\" data-ai-id=\"tool-s33\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"video edit\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=runwayml.com&sz=64\" alt=\"\"><h3>Runway</h3>\n<p>Генерация и обработка коротких видеосцен</p><div class=\"badges\"><span class=\"badge ok\">125 кредитов однократно</span><span class=\"badge warn\">водяной знак</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://app.runwayml.com/\" target=\"_blank\" rel=\"noopener\">Видео ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a35",
+          "order": 35,
+          "category": "Изображения, Видео",
+          "keywords": "runway картинка изображение фото дизайн ролик видео монтаж",
+          "html": "<article id=\"tool-a35\" data-ai-id=\"tool-a35\" tabindex=\"-1\" data-tool-cats=\"visual video\" class=\"adult-tool-card\" data-search-extra=\"runway картинка изображение фото дизайн ролик видео монтаж\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=runwayml.com&sz=64\" alt=\"\"><h3>Runway</h3>\n<p>Генерация и обработка коротких видеосцен</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://app.runwayml.com/\" target=\"_blank\" rel=\"noopener\">Видео ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "bolt",
+      "title": "Bolt",
+      "views": {
+        "school": {
+          "id": "tool-s34",
+          "order": 34,
+          "category": "Программирование, Идеи, Агенты и автоматизация",
+          "keywords": "code ideas agents",
+          "html": "<article id=\"tool-s34\" data-ai-id=\"tool-s34\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"code ideas agents\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=bolt.new&sz=64\" alt=\"\"><h3>Bolt</h3>\n<p>Создание сайтов и приложений по описанию; Bolt Agent сам проверяет и дорабатывает проект</p><div class=\"badges\"><span class=\"badge ok\">300 тыс. токенов/день</span><span class=\"badge warn\">лимит 1 млн/месяц</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://bolt.new/\" target=\"_blank\" rel=\"noopener\">Создать сайт ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a36",
+          "order": 36,
+          "category": "Программирование, Презентации и схемы",
+          "keywords": "bolt код программирование приложение сайт презентация схема идеи документ",
+          "html": "<article id=\"tool-a36\" data-ai-id=\"tool-a36\" tabindex=\"-1\" data-tool-cats=\"code present\" class=\"adult-tool-card\" data-search-extra=\"bolt код программирование приложение сайт презентация схема идеи документ\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=bolt.new&sz=64\" alt=\"\"><h3>Bolt</h3>\n<p>Создание сайтов и приложений по описанию; Bolt Agent сам проверяет и дорабатывает проект</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://bolt.new/\" target=\"_blank\" rel=\"noopener\">Создать сайт ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "lovable",
+      "title": "Lovable",
+      "views": {
+        "school": {
+          "id": "tool-s35",
+          "order": 35,
+          "category": "Программирование, Идеи, Агенты и автоматизация",
+          "keywords": "code ideas agents",
+          "html": "<article id=\"tool-s35\" data-ai-id=\"tool-s35\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"code ideas agents\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=lovable.dev&sz=64\" alt=\"\"><h3>Lovable</h3>\n<p>Прототипы сайтов и приложений; Lovable Agent планирует и выполняет многошаговые изменения</p><div class=\"badges\"><span class=\"badge ok\">5 кредитов/день</span><span class=\"badge warn\">до 30/месяц</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://lovable.dev/\" target=\"_blank\" rel=\"noopener\">Создать сайт ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a37",
+          "order": 37,
+          "category": "Программирование, Презентации и схемы",
+          "keywords": "lovable код программирование приложение сайт презентация схема идеи документ",
+          "html": "<article id=\"tool-a37\" data-ai-id=\"tool-a37\" tabindex=\"-1\" data-tool-cats=\"code present\" class=\"adult-tool-card\" data-search-extra=\"lovable код программирование приложение сайт презентация схема идеи документ\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=lovable.dev&sz=64\" alt=\"\"><h3>Lovable</h3>\n<p>Прототипы сайтов и приложений; Lovable Agent планирует и выполняет многошаговые изменения</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://lovable.dev/\" target=\"_blank\" rel=\"noopener\">Создать сайт ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "v0",
+      "title": "v0",
+      "views": {
+        "school": {
+          "id": "tool-s36",
+          "order": 36,
+          "category": "Программирование, Идеи, Агенты и автоматизация",
+          "keywords": "code ideas agents",
+          "html": "<article id=\"tool-s36\" data-ai-id=\"tool-s36\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"code ideas agents\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=v0.app&sz=64\" alt=\"\"><h3>v0</h3>\n<p>Веб-интерфейсы, компоненты и сайты по запросу; агент может работать с кодовой базой проекта</p><div class=\"badges\"><span class=\"badge ok\">есть бесплатный режим</span><span class=\"badge warn\">7 сообщений/день</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://v0.app/\" target=\"_blank\" rel=\"noopener\">Создать интерфейс ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a38",
+          "order": 38,
+          "category": "Программирование, Презентации и схемы",
+          "keywords": "v0 код программирование приложение сайт презентация схема идеи документ",
+          "html": "<article id=\"tool-a38\" data-ai-id=\"tool-a38\" tabindex=\"-1\" data-tool-cats=\"code present\" class=\"adult-tool-card\" data-search-extra=\"v0 код программирование приложение сайт презентация схема идеи документ\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=v0.app&sz=64\" alt=\"\"><h3>v0</h3>\n<p>Веб-интерфейсы, компоненты и сайты по запросу; агент может работать с кодовой базой проекта</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://v0.app/\" target=\"_blank\" rel=\"noopener\">Создать интерфейс ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "napkin-ai",
+      "title": "Napkin AI",
+      "views": {
+        "school": {
+          "id": "tool-s37",
+          "order": 37,
+          "category": "Идеи, Презентации и схемы",
+          "keywords": "ideas slides",
+          "html": "<article id=\"tool-s37\" data-ai-id=\"tool-s37\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"ideas slides\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=napkin.ai&sz=64\" alt=\"\"><h3>Napkin AI</h3>\n<p>Превращение текста в схемы, инфографику и диаграммы</p><div class=\"badges\"><span class=\"badge ok\">бесплатные кредиты</span><span class=\"badge warn\">500 в неделю</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://www.napkin.ai/\" target=\"_blank\" rel=\"noopener\">Создать схему ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a39",
+          "order": 39,
+          "category": "Презентации и схемы",
+          "keywords": "napkin ai презентация схема идеи документ",
+          "html": "<article id=\"tool-a39\" data-ai-id=\"tool-a39\" tabindex=\"-1\" data-tool-cats=\"present\" class=\"adult-tool-card\" data-search-extra=\"napkin ai презентация схема идеи документ\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=napkin.ai&sz=64\" alt=\"\"><h3>Napkin AI</h3>\n<p>Превращение текста в схемы, инфографику и диаграммы</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://www.napkin.ai/\" target=\"_blank\" rel=\"noopener\">Создать схему ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "gamma",
+      "title": "Gamma",
+      "views": {
+        "school": {
+          "id": "tool-s38",
+          "order": 38,
+          "category": "Презентации и схемы, Идеи",
+          "keywords": "slides ideas",
+          "html": "<article id=\"tool-s38\" data-ai-id=\"tool-s38\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"slides ideas\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=gamma.app&sz=64\" alt=\"\"><h3>Gamma</h3>\n<p>Презентации, страницы и документы с ИИ</p><div class=\"badges\"><span class=\"badge ok\">400 стартовых кредитов</span><span class=\"badge warn\">не обновляются</span></div>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://gamma.app/\" target=\"_blank\" rel=\"noopener\">Презентация ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a40",
+          "order": 40,
+          "category": "Презентации и схемы",
+          "keywords": "gamma презентация схема идеи документ",
+          "html": "<article id=\"tool-a40\" data-ai-id=\"tool-a40\" tabindex=\"-1\" data-tool-cats=\"present\" class=\"adult-tool-card\" data-search-extra=\"gamma презентация схема идеи документ\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=gamma.app&sz=64\" alt=\"\"><h3>Gamma</h3>\n<p>Презентации, страницы и документы с ИИ</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://gamma.app/\" target=\"_blank\" rel=\"noopener\">Презентация ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "suno",
+      "title": "Suno",
+      "views": {
+        "school": {
+          "id": "tool-s39",
+          "order": 39,
+          "category": "Музыка и озвучивание",
+          "keywords": "music",
+          "html": "<article id=\"tool-s39\" data-ai-id=\"tool-s39\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"music\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=suno.com&sz=64\" alt=\"\"><h3>Suno</h3>\n<p>Генерация песен и музыкальных фрагментов</p><div class=\"badges\"><span class=\"badge ok\">50 кредитов/день</span><span class=\"badge warn\">некоммерческое использование</span></div>\n<p class=\"tool-age-note\"><strong>С 13 лет; до 18 лет — только с предварительным согласием родителя или опекуна.</strong> Для отдельных функций могут действовать более строгие ограничения. <a href=\"https://suno.com/terms/\" target=\"_blank\" rel=\"noopener noreferrer\">Условия Suno ↗</a></p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://suno.com/\" target=\"_blank\" rel=\"noopener\">Создать музыку ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a41",
+          "order": 41,
+          "category": "Музыка и голос",
+          "keywords": "suno голос озвучка музыка звук",
+          "html": "<article id=\"tool-a41\" data-ai-id=\"tool-a41\" tabindex=\"-1\" data-tool-cats=\"audio\" class=\"adult-tool-card\" data-search-extra=\"suno голос озвучка музыка звук\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=suno.com&sz=64\" alt=\"\"><h3>Suno</h3>\n<p>Генерация песен и музыкальных фрагментов</p>\n\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://suno.com/\" target=\"_blank\" rel=\"noopener\">Создать музыку ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "elevenlabs",
+      "title": "ElevenLabs",
+      "views": {
+        "school": {
+          "id": "tool-s40",
+          "order": 40,
+          "category": "Музыка и озвучивание, Изображения",
+          "keywords": "music media",
+          "html": "<article id=\"tool-s40\" data-ai-id=\"tool-s40\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"music media\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=64\" alt=\"\"><h3>ElevenLabs</h3>\n<p>Озвучивание текстов, голоса и звуковые эффекты</p><div class=\"badges\"><span class=\"badge ok\">10 000 кредитов/месяц</span><span class=\"badge warn\">вход</span></div>\n<p class=\"tool-age-note\"><strong>18+ — ученикам самостоятельно нельзя.</strong> <a href=\"https://elevenlabs.io/terms-of-use\" target=\"_blank\" rel=\"noopener noreferrer\">Возрастные ограничения ↗</a></p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://elevenlabs.io/\" target=\"_blank\" rel=\"noopener\">Озвучить ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a42",
+          "order": 42,
+          "category": "Музыка и голос",
+          "keywords": "elevenlabs голос озвучка музыка звук",
+          "html": "<article id=\"tool-a42\" data-ai-id=\"tool-a42\" tabindex=\"-1\" data-tool-cats=\"audio\" class=\"adult-tool-card\" data-search-extra=\"elevenlabs голос озвучка музыка звук\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=64\" alt=\"\"><h3>ElevenLabs</h3>\n<p>Озвучивание текстов, голоса и звуковые эффекты</p>\n\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://elevenlabs.io/\" target=\"_blank\" rel=\"noopener\">Озвучить ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "deepseek",
+      "title": "DeepSeek",
+      "views": {
+        "school": {
+          "id": "tool-s41",
+          "order": 41,
+          "category": "Текст и общение, Программирование",
+          "keywords": "text code",
+          "html": "<article id=\"tool-s41\" data-ai-id=\"tool-s41\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"text code\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=chat.deepseek.com&sz=64\" alt=\"\"><h3>DeepSeek</h3>\n<p>Текст и код; актуальная версия модели на 03.11.2026 — DeepSeek-V4.1-Flash-1017.</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://chat.deepseek.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Открыть DeepSeek ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a02",
+          "order": 2,
+          "category": "Текст и чат, Поиск и проверка, Программирование",
+          "keywords": "deepseek deepseek-v4.1-flash-1017 китайская модель текст написать код программирование",
+          "html": "<article id=\"tool-a02\" data-ai-id=\"tool-a02\" tabindex=\"-1\" data-tool-cats=\"talk research code\" class=\"adult-tool-card adult-tool-featured\" data-search-extra=\"deepseek deepseek-v4.1-flash-1017 китайская модель текст написать код программирование\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=chat.deepseek.com&sz=64\" alt=\"\"><h3>DeepSeek</h3>\n<p>Текст и код; актуальная версия модели на 03.11.2026 — DeepSeek-V4.1-Flash-1017.</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://chat.deepseek.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Открыть DeepSeek ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "алиса",
+      "title": "Алиса",
+      "views": {
+        "school": {
+          "id": "tool-s42",
+          "order": 42,
+          "category": "Текст и общение, Изображения",
+          "keywords": "text media",
+          "html": "<article id=\"tool-s42\" data-ai-id=\"tool-s42\" tabindex=\"-1\" class=\"tool-card-v2\" data-tool-cats=\"text media\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=ya.ru&sz=64\" alt=\"\"><h3>Алиса</h3>\n<p>Тексты и изображения</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://ya.ru/alice\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a43",
+          "order": 43,
+          "category": "Текст и чат, Изображения",
+          "keywords": "алиса чат текст написать объяснить картинка изображение фото дизайн",
+          "html": "<article id=\"tool-a43\" data-ai-id=\"tool-a43\" tabindex=\"-1\" data-tool-cats=\"talk visual\" class=\"adult-tool-card\" data-search-extra=\"алиса чат текст написать объяснить картинка изображение фото дизайн\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=ya.ru&sz=64\" alt=\"\"><h3>Алиса</h3>\n<p>Тексты и изображения</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://ya.ru/alice\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        }
+      }
+    },
+    {
+      "key": "gigachat",
+      "title": "GigaChat",
+      "views": {
+        "school": {
+          "id": "tool-s43",
+          "order": 43,
+          "category": "Текст и общение, Программирование, Изображения",
+          "keywords": "text code media",
+          "html": "<article id=\"tool-s43\" data-ai-id=\"tool-s43\" tabindex=\"-1\" class=\"tool-card-v2 tool-card-deprioritized\" data-tool-cats=\"text code media\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=giga.chat&sz=64\" alt=\"\"><h3>GigaChat</h3>\n<p>Тексты, код и изображения</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://giga.chat/\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        },
+        "adults": {
+          "id": "tool-a01",
+          "order": 1,
+          "category": "Текст и чат, Изображения, Программирование",
+          "keywords": "gigachat чат текст написать объяснить картинка изображение фото дизайн код программирование приложение сайт",
+          "html": "<article id=\"tool-a01\" data-ai-id=\"tool-a01\" tabindex=\"-1\" data-tool-cats=\"talk visual code\" class=\"adult-tool-card adult-tool-featured\" data-search-extra=\"gigachat чат текст написать объяснить картинка изображение фото дизайн код программирование приложение сайт\">\n<img class=\"tool-logo\" src=\"https://www.google.com/s2/favicons?domain=giga.chat&sz=64\" alt=\"\"><h3>GigaChat</h3>\n<p>Тексты, код и изображения</p>\n<div class=\"tool-actions-v2\"><a class=\"tool-action-v2\" href=\"https://giga.chat/\" target=\"_blank\" rel=\"noopener\">Открыть ↗</a></div>\n</article>"
+        }
+      }
+    }
+  ]
+}
