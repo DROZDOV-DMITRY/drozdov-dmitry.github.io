@@ -11,6 +11,8 @@ permissions:
 
 jobs:
   publish:
+    # Editing this workflow must not re-publish an older pinned portfolio build.
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - name: Check out existing GitHub Pages site
@@ -38,7 +40,7 @@ jobs:
       - name: Prepare only the portfolio subfolder
         run: |
           mkdir -p site/ai-portfolio
-          rsync -a --delete portfolio/dist-preview/ site/ai-portfolio/
+          rsync -a --delete --exclude='/agent/scenario-writer/' --exclude='/project/film/index.html' portfolio/dist-preview/ site/ai-portfolio/
           find site/ai-portfolio -name '*.html' -type f -exec sed -i 's/РЕДАКЦИОННЫЙ ПРЕДПРОСМОТР · НЕ ПУБЛИКОВАТЬ/ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ · СОДЕРЖАНИЕ В РЕДАКЦИИ/g' {} +
           touch site/.nojekyll
           test -f site/ai-portfolio/index.html
