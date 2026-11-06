@@ -10,7 +10,7 @@ const selector=adult?'.adult-tool-card':'.tool-card-v2';
 const endpoint='https://lingering-violet-d3f1ai-lab-search.matamasaki.workers.dev/api/search';
 const sitekey='0x4AAAAAAFy_t2KZHWghT5WD';
 if(!input)return;
-let button,panel,status,results,challenge,widget=null,loading=null,busy=false,run=0,query='',ctrl=null;
+let button,panel,status,results,challenge,widget=null,loading=null,busy=false,run=0,query='',ctrl=null,startedRun=-1;
 const say=t=>{if(status)status.textContent=t};
 const setBusy=x=>{busy=x;if(button)button.disabled=x};
 const cancel=()=>{run++;query='';if(ctrl){ctrl.abort();ctrl=null}setBusy(false);if(panel)panel.hidden=true};
@@ -27,7 +27,8 @@ function visit(id){const card=document.getElementById(id);if(!card)return;
  window.setTimeout(()=>card.classList.remove('course-ai-target'),3000);
 }
 async function search(token,current){
- if(!token||current!==run||query!==input.value.trim().slice(0,180))return;
+ if(!token||current!==run||startedRun===current||query!==input.value.trim().slice(0,180))return;
+ startedRun=current;
  const abort=new AbortController();ctrl=abort;const timer=window.setTimeout(()=>abort.abort(),23000);
  say('Подбираем инструменты из каталога…');
  try{
