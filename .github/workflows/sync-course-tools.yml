@@ -6,6 +6,7 @@ on:
     paths:
       - 'school-ai-courses/data/tools-registry.json'
       - 'scripts/sync-course-tools.mjs'
+      - 'scripts/test-sync-course-tools.mjs'
       - 'school-ai-courses/tools/index.html'
       - 'school-ai-courses/adults/tools/index.html'
       - 'school-ai-courses/tools/search-index.json'
@@ -62,6 +63,9 @@ jobs:
 
       - name: Verify single source and exact output
         run: node scripts/sync-course-tools.mjs --check
+
+      - name: Regression — school-only and adult-only additions
+        run: node scripts/test-sync-course-tools.mjs
 
       - name: Publish generated files (registry changes only)
         if: steps.changes.outputs.generate == 'true'
