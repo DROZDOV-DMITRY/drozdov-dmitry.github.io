@@ -1,0 +1,352 @@
+{
+  "schema": 1,
+  "brand": "Курс ИИ — взрослый каталог",
+  "updated_at": "2026-11-06",
+  "scope": "adults",
+  "products": [
+    {
+      "id": "tool-a01",
+      "title": "GigaChat",
+      "href": "/school-ai-courses/adults/tools/#tool-a01",
+      "category": "Текст и чат, Изображения, Программирование",
+      "description": "Тексты, код и изображения",
+      "keywords": "gigachat чат текст написать объяснить картинка изображение фото дизайн код программирование приложение сайт"
+    },
+    {
+      "id": "tool-a02",
+      "title": "DeepSeek",
+      "href": "/school-ai-courses/adults/tools/#tool-a02",
+      "category": "Текст и чат, Поиск и проверка, Программирование",
+      "description": "Текст и код; актуальная версия модели на 03.11.2026 — DeepSeek-V4.1-Flash-1017.",
+      "keywords": "deepseek deepseek-v4.1-flash-1017 китайская модель текст написать код программирование"
+    },
+    {
+      "id": "tool-a03",
+      "title": "ChatGPT",
+      "href": "/school-ai-courses/adults/tools/#tool-a03",
+      "category": "Текст и чат, Поиск и проверка, Презентации и схемы, Изображения, Программирование, Модели и API",
+      "description": "Текст и код, создание и редактирование изображений, планирование и выполнение агентных задач при наличии нужных функций",
+      "keywords": "chatgpt чат текст написать объяснить поиск проверка источники исследование презентация схема идеи документ картинка изображение фото дизайн код программирование приложение сайт модели сравнение api разработчик"
+    },
+    {
+      "id": "tool-a04",
+      "title": "Duck.ai",
+      "href": "/school-ai-courses/adults/tools/#tool-a04",
+      "category": "Текст и чат, Модели и API",
+      "description": "Несколько моделей в одном окне",
+      "keywords": "duck.ai чат текст написать объяснить модели сравнение api разработчик"
+    },
+    {
+      "id": "tool-a05",
+      "title": "Z.ai / GLM",
+      "href": "/school-ai-courses/adults/tools/#tool-a05",
+      "category": "Текст и чат, Программирование",
+      "description": "Тексты и код; среди актуальных моделей — GLM-5.3. Возможности зависят от режима и аккаунта.",
+      "keywords": "z.ai glm glm-5.3 тексты код программирование китайская модель"
+    },
+    {
+      "id": "tool-a06",
+      "title": "Qwen",
+      "href": "/school-ai-courses/adults/tools/#tool-a06",
+      "category": "Текст и чат, Изображения, Программирование",
+      "description": "Семейство моделей для текста, кода и изображений. Для сравнения указывайте точную версию.",
+      "keywords": "qwen китайская модель семейство версия тексты код изображения"
+    },
+    {
+      "id": "tool-a07",
+      "title": "Kimi K3.1 Pro",
+      "href": "/school-ai-courses/adults/tools/#tool-a07",
+      "category": "Текст и чат, Поиск и проверка, Программирование, Модели и API",
+      "description": "Тексты, документы, поиск и код; доступность модели и лимиты зависят от аккаунта.",
+      "keywords": "kimi moonshot kimi k3.1 pro китайская модель текст документы поиск код исследование"
+    },
+    {
+      "id": "tool-a08",
+      "title": "Xiaomi MiMo V2.6 Pro",
+      "href": "/school-ai-courses/adults/tools/#tool-a08",
+      "category": "Текст и чат, Поиск и проверка, Изображения, Модели и API",
+      "description": "Чат и мультимодальное понимание; доступ к MiMo-V2.6-Pro и лимиты зависят от условий сервиса.",
+      "keywords": "xiaomi mimo mimo-v2.6-pro китайская модель чат текст изображение визуальный анализ поиск"
+    },
+    {
+      "id": "tool-a09",
+      "title": "MiniMax M3.1 Flash",
+      "href": "/school-ai-courses/adults/tools/#tool-a09",
+      "category": "Программирование, Изображения, Модели и API",
+      "description": "Модель для кода, визуального анализа и многошаговых задач в MiniMax Code; доступность зависит от аккаунта.",
+      "keywords": "minimax m3.1 flash китайская модель код программирование многошаговые задачи визуальный анализ"
+    },
+    {
+      "id": "tool-a10",
+      "title": "DeepAI",
+      "href": "/school-ai-courses/adults/tools/#tool-a10",
+      "category": "Текст и чат, Поиск и проверка, Изображения, Видео, Программирование",
+      "description": "Один сервис — несколько режимов",
+      "keywords": "deepai чат текст написать объяснить поиск проверка источники исследование картинка изображение фото дизайн ролик видео монтаж код программирование приложение сайт"
+    },
+    {
+      "id": "tool-a11",
+      "title": "Perplexity",
+      "href": "/school-ai-courses/adults/tools/#tool-a11",
+      "category": "Поиск и проверка, Текст и чат",
+      "description": "Поиск с источниками; режим Computer выполняет многошаговые задачи и создаёт готовые материалы",
+      "keywords": "perplexity поиск проверка источники исследование чат текст написать объяснить"
+    },
+    {
+      "id": "tool-a12",
+      "title": "Firefly",
+      "href": "/school-ai-courses/adults/tools/#tool-a12",
+      "category": "Презентации и схемы, Изображения, Видео",
+      "description": "Идеи, изображения, видео и правка; лимит бесплатных генераций зависит от модели",
+      "keywords": "firefly презентация схема идеи документ картинка изображение фото дизайн ролик видео монтаж"
+    },
+    {
+      "id": "tool-a13",
+      "title": "Krea",
+      "href": "/school-ai-courses/adults/tools/#tool-a13",
+      "category": "Презентации и схемы, Изображения, Видео",
+      "description": "Визуальные идеи, изображения, видео и работа в реальном времени",
+      "keywords": "krea презентация схема идеи документ картинка изображение фото дизайн ролик видео монтаж"
+    },
+    {
+      "id": "tool-a14",
+      "title": "Canva",
+      "href": "/school-ai-courses/adults/tools/#tool-a14",
+      "category": "Презентации и схемы",
+      "description": "Доска для мозгового штурма и сбора идей. Ссылка открывает доску для совместной работы.",
+      "keywords": "canva презентация схема идеи документ"
+    },
+    {
+      "id": "tool-a15",
+      "title": "Vidu",
+      "href": "/school-ai-courses/adults/tools/#tool-a15",
+      "category": "Изображения, Видео",
+      "description": "Изображения и видео из текста, кадров и референсов",
+      "keywords": "vidu картинка изображение фото дизайн ролик видео монтаж"
+    },
+    {
+      "id": "tool-a16",
+      "title": "Recraft",
+      "href": "/school-ai-courses/adults/tools/#tool-a16",
+      "category": "Презентации и схемы, Изображения",
+      "description": "Изображения и дизайн",
+      "keywords": "recraft презентация схема идеи документ картинка изображение фото дизайн"
+    },
+    {
+      "id": "tool-a17",
+      "title": "PixVerse",
+      "href": "/school-ai-courses/adults/tools/#tool-a17",
+      "category": "Видео",
+      "description": "Видео из текста и изображений",
+      "keywords": "pixverse ролик видео монтаж"
+    },
+    {
+      "id": "tool-a18",
+      "title": "Arena",
+      "href": "/school-ai-courses/adults/tools/#tool-a18",
+      "category": "Модели и API",
+      "description": "Сравнение моделей на одном запросе",
+      "keywords": "arena модели сравнение api разработчик"
+    },
+    {
+      "id": "tool-a19",
+      "title": "HumanEval.org",
+      "href": "/school-ai-courses/adults/tools/#tool-a19",
+      "category": "Поиск и проверка, Модели и API",
+      "description": "Рейтинг моделей; методика и набор сравниваемых данных ограничены.",
+      "keywords": "humaneval.org поиск проверка источники исследование модели сравнение api разработчик"
+    },
+    {
+      "id": "tool-a20",
+      "title": "OpenRouter",
+      "href": "/school-ai-courses/adults/tools/#tool-a20",
+      "category": "Модели и API, Программирование",
+      "description": "Каталог моделей и единый API",
+      "keywords": "openrouter модели сравнение api разработчик код программирование приложение сайт"
+    },
+    {
+      "id": "tool-a21",
+      "title": "Requesty",
+      "href": "/school-ai-courses/adults/tools/#tool-a21",
+      "category": "Модели и API, Программирование",
+      "description": "API-шлюз для разработчиков, не обычный школьный чат",
+      "keywords": "requesty модели сравнение api разработчик код программирование приложение сайт"
+    },
+    {
+      "id": "tool-a22",
+      "title": "Kilo",
+      "href": "/school-ai-courses/adults/tools/#tool-a22",
+      "category": "Модели и API, Программирование",
+      "description": "Рейтинг моделей и инструменты разработки",
+      "keywords": "kilo модели сравнение api разработчик код программирование приложение сайт"
+    },
+    {
+      "id": "tool-a23",
+      "title": "AIHubMix",
+      "href": "/school-ai-courses/adults/tools/#tool-a23",
+      "category": "Модели и API, Программирование",
+      "description": "API для разработчиков; пробные вызовы и дальнейшие условия отличаются",
+      "keywords": "aihubmix модели сравнение api разработчик код программирование приложение сайт"
+    },
+    {
+      "id": "tool-a24",
+      "title": "Roboflow",
+      "href": "/school-ai-courses/adults/tools/#tool-a24",
+      "category": "Модели и API, Изображения",
+      "description": "Сравнение vision-моделей",
+      "keywords": "roboflow модели сравнение api разработчик картинка изображение фото дизайн"
+    },
+    {
+      "id": "tool-a25",
+      "title": "Poe",
+      "href": "/school-ai-courses/adults/tools/#tool-a25",
+      "category": "Текст и чат, Модели и API",
+      "description": "Каталог моделей и ботов",
+      "keywords": "poe чат текст написать объяснить модели сравнение api разработчик"
+    },
+    {
+      "id": "tool-a26",
+      "title": "Hugging Face",
+      "href": "/school-ai-courses/adults/tools/#tool-a26",
+      "category": "Текст и чат, Модели и API, Программирование",
+      "description": "Открытые модели и inference-провайдеры",
+      "keywords": "hugging face чат текст написать объяснить модели сравнение api разработчик код программирование приложение сайт"
+    },
+    {
+      "id": "tool-a27",
+      "title": "Arctic Playground",
+      "href": "/school-ai-courses/adults/tools/#tool-a27",
+      "category": "Текст и чат, Модели и API, Программирование",
+      "description": "Несколько моделей рядом для сравнения",
+      "keywords": "arctic playground чат текст написать объяснить модели сравнение api разработчик код программирование приложение сайт"
+    },
+    {
+      "id": "tool-a28",
+      "title": "Mistral Vibe",
+      "href": "/school-ai-courses/adults/tools/#tool-a28",
+      "category": "Текст и чат, Программирование",
+      "description": "Многошаговые задачи и работа с кодом в режимах Work и Code",
+      "keywords": "mistral vibe чат текст написать объяснить код программирование приложение сайт"
+    },
+    {
+      "id": "tool-a29",
+      "title": "Claude",
+      "href": "/school-ai-courses/adults/tools/#tool-a29",
+      "category": "Текст и чат, Поиск и проверка, Презентации и схемы, Программирование",
+      "description": "Тексты, программирование и анализ; Claude Cowork выполняет многошаговые задачи с файлами и подключёнными инструментами",
+      "keywords": "claude чат текст написать объяснить поиск проверка источники исследование презентация схема идеи документ код программирование приложение сайт"
+    },
+    {
+      "id": "tool-a30",
+      "title": "Gemini",
+      "href": "/school-ai-courses/adults/tools/#tool-a30",
+      "category": "Текст и чат, Поиск и проверка, Изображения",
+      "description": "Общение, поиск, объяснения и работа с изображениями",
+      "keywords": "gemini чат текст написать объяснить поиск проверка источники исследование картинка изображение фото дизайн"
+    },
+    {
+      "id": "tool-a31",
+      "title": "Consensus",
+      "href": "/school-ai-courses/adults/tools/#tool-a31",
+      "category": "Поиск и проверка",
+      "description": "Ответы по научным публикациям со ссылками на исследования",
+      "keywords": "consensus поиск проверка источники исследование"
+    },
+    {
+      "id": "tool-a32",
+      "title": "Ideogram",
+      "href": "/school-ai-courses/adults/tools/#tool-a32",
+      "category": "Презентации и схемы, Изображения",
+      "description": "Генерация картинок, афиш и надписей на изображениях",
+      "keywords": "ideogram презентация схема идеи документ картинка изображение фото дизайн"
+    },
+    {
+      "id": "tool-a33",
+      "title": "Leonardo AI",
+      "href": "/school-ai-courses/adults/tools/#tool-a33",
+      "category": "Презентации и схемы, Изображения",
+      "description": "Иллюстрации, персонажи и графика для проектов",
+      "keywords": "leonardo ai презентация схема идеи документ картинка изображение фото дизайн"
+    },
+    {
+      "id": "tool-a34",
+      "title": "Luma Dream Machine",
+      "href": "/school-ai-courses/adults/tools/#tool-a34",
+      "category": "Изображения, Видео",
+      "description": "Видео и движение по тексту или изображению",
+      "keywords": "luma dream machine картинка изображение фото дизайн ролик видео монтаж"
+    },
+    {
+      "id": "tool-a35",
+      "title": "Runway",
+      "href": "/school-ai-courses/adults/tools/#tool-a35",
+      "category": "Изображения, Видео",
+      "description": "Генерация и обработка коротких видеосцен",
+      "keywords": "runway картинка изображение фото дизайн ролик видео монтаж"
+    },
+    {
+      "id": "tool-a36",
+      "title": "Bolt",
+      "href": "/school-ai-courses/adults/tools/#tool-a36",
+      "category": "Программирование, Презентации и схемы",
+      "description": "Создание сайтов и приложений по описанию; Bolt Agent сам проверяет и дорабатывает проект",
+      "keywords": "bolt код программирование приложение сайт презентация схема идеи документ"
+    },
+    {
+      "id": "tool-a37",
+      "title": "Lovable",
+      "href": "/school-ai-courses/adults/tools/#tool-a37",
+      "category": "Программирование, Презентации и схемы",
+      "description": "Прототипы сайтов и приложений; Lovable Agent планирует и выполняет многошаговые изменения",
+      "keywords": "lovable код программирование приложение сайт презентация схема идеи документ"
+    },
+    {
+      "id": "tool-a38",
+      "title": "v0",
+      "href": "/school-ai-courses/adults/tools/#tool-a38",
+      "category": "Программирование, Презентации и схемы",
+      "description": "Веб-интерфейсы, компоненты и сайты по запросу; агент может работать с кодовой базой проекта",
+      "keywords": "v0 код программирование приложение сайт презентация схема идеи документ"
+    },
+    {
+      "id": "tool-a39",
+      "title": "Napkin AI",
+      "href": "/school-ai-courses/adults/tools/#tool-a39",
+      "category": "Презентации и схемы",
+      "description": "Превращение текста в схемы, инфографику и диаграммы",
+      "keywords": "napkin ai презентация схема идеи документ"
+    },
+    {
+      "id": "tool-a40",
+      "title": "Gamma",
+      "href": "/school-ai-courses/adults/tools/#tool-a40",
+      "category": "Презентации и схемы",
+      "description": "Презентации, страницы и документы с ИИ",
+      "keywords": "gamma презентация схема идеи документ"
+    },
+    {
+      "id": "tool-a41",
+      "title": "Suno",
+      "href": "/school-ai-courses/adults/tools/#tool-a41",
+      "category": "Музыка и голос",
+      "description": "Генерация песен и музыкальных фрагментов",
+      "keywords": "suno голос озвучка музыка звук"
+    },
+    {
+      "id": "tool-a42",
+      "title": "ElevenLabs",
+      "href": "/school-ai-courses/adults/tools/#tool-a42",
+      "category": "Музыка и голос",
+      "description": "Озвучивание текстов, голоса и звуковые эффекты",
+      "keywords": "elevenlabs голос озвучка музыка звук"
+    },
+    {
+      "id": "tool-a43",
+      "title": "Алиса",
+      "href": "/school-ai-courses/adults/tools/#tool-a43",
+      "category": "Текст и чат, Изображения",
+      "description": "Тексты и изображения",
+      "keywords": "алиса чат текст написать объяснить картинка изображение фото дизайн"
+    }
+  ]
+}
