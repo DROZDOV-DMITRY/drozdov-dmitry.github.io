@@ -347,6 +347,62 @@
       "category": "Текст и чат, Изображения",
       "description": "Тексты и изображения",
       "keywords": "алиса чат текст написать объяснить картинка изображение фото дизайн"
+    },
+    {
+      "id": "tool-a44",
+      "title": "Vheer",
+      "href": "/school-ai-courses/adults/tools/#tool-a44",
+      "category": "Визуальный контент, Видео",
+      "description": "Создание и редактирование изображений; отдельные инструменты работают с видео.",
+      "keywords": "vheer генерация изображений редактирование фото видео text to image image to video"
+    },
+    {
+      "id": "tool-a45",
+      "title": "LoreMotion",
+      "href": "/school-ai-courses/adults/tools/#tool-a45",
+      "category": "Видео, Визуальный контент",
+      "description": "Текст-в-видео и изображение-в-видео с выбором моделей.",
+      "keywords": "loremotion генерация видео текст в видео изображение в видео модели"
+    },
+    {
+      "id": "tool-a46",
+      "title": "Agnes AI",
+      "href": "/school-ai-courses/adults/tools/#tool-a46",
+      "category": "Текст и чат, Изображения, Видео, API",
+      "description": "Единая площадка и API для текстовых, графических и видеомоделей.",
+      "keywords": "agnes ai текст изображения видео api модели генерация"
+    },
+    {
+      "id": "tool-a47",
+      "title": "Fulhar",
+      "href": "/school-ai-courses/adults/tools/#tool-a47",
+      "category": "Текст и чат, Документы, Код, Модели",
+      "description": "Хаб для чата с разными моделями, документов, кода и браузерных инструментов.",
+      "keywords": "fulhar чат модели документы код браузерные инструменты"
+    },
+    {
+      "id": "tool-a48",
+      "title": "Perchance",
+      "href": "/school-ai-courses/adults/tools/#tool-a48",
+      "category": "Изображения",
+      "description": "Браузерные генераторы изображений и другие пользовательские генераторы.",
+      "keywords": "perchance генератор изображений текст в изображение без регистрации"
+    },
+    {
+      "id": "tool-a49",
+      "title": "Pollinations",
+      "href": "/school-ai-courses/adults/tools/#tool-a49",
+      "category": "Изображения, Видео, API",
+      "description": "Открытая платформа и API для генерации текста, изображений, видео и других медиа.",
+      "keywords": "pollinations генерация текста изображений видео api pollen модели"
+    },
+    {
+      "id": "tool-a50",
+      "title": "Cubric Studio",
+      "href": "/school-ai-courses/adults/tools/#tool-a50",
+      "category": "Локальная генерация, Изображения, Видео",
+      "description": "Локальная генерация изображений и видео на собственном компьютере с интерфейсом поверх открытых моделей.",
+      "keywords": "cubric studio локальная генерация изображений видео модели gpu"
     }
   ]
 }

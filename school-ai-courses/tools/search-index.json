@@ -347,6 +347,38 @@
       "category": "Текст и общение, Программирование, Изображения",
       "description": "Тексты, код и изображения",
       "keywords": "text code media"
+    },
+    {
+      "id": "tool-s44",
+      "title": "Vheer",
+      "href": "/school-ai-courses/tools/#tool-s44",
+      "category": "Изображения, Видео",
+      "description": "Создание и редактирование изображений; у сервиса есть также видеоинструменты.",
+      "keywords": "vheer генерация изображений редактирование фото видео text to image image to video"
+    },
+    {
+      "id": "tool-s45",
+      "title": "LoreMotion",
+      "href": "/school-ai-courses/tools/#tool-s45",
+      "category": "Видео, Сравнение моделей",
+      "description": "Текст-в-видео и изображение-в-видео; можно сравнивать разные видеомодели.",
+      "keywords": "loremotion генерация видео текст в видео изображение в видео модели"
+    },
+    {
+      "id": "tool-s46",
+      "title": "Agnes AI",
+      "href": "/school-ai-courses/tools/#tool-s46",
+      "category": "Текст, Изображения, Видео, API",
+      "description": "Единый доступ к текстовым, графическим и видеомоделям через веб-площадку/API.",
+      "keywords": "agnes ai текст изображения видео api модели генерация"
+    },
+    {
+      "id": "tool-s47",
+      "title": "Fulhar",
+      "href": "/school-ai-courses/tools/#tool-s47",
+      "category": "Текст и чат, Документы, Код",
+      "description": "Чат-хаб с выбором разных моделей, инструменты для документов и кода.",
+      "keywords": "fulhar чат модели документы код браузерные инструменты"
     }
   ]
 }
