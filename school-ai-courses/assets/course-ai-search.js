@@ -1,4 +1,4 @@
-/* Course AI search v1.0.0 | 2026-11-06. Local search remains the fallback. */
+/* Course AI search v1.0.1 | 2026-11-06. Local search remains the fallback. */
 (()=>{'use strict';
 const path=location.pathname;
 const adult=/^\/school-ai-courses\/adults\/tools\/(?:index\.html)?$/.test(path);
@@ -74,7 +74,7 @@ function mount(){
  panel=document.createElement('section');panel.id='course-ai-panel';panel.className='course-ai-panel';panel.hidden=true;
  panel.setAttribute('aria-label','ИИ-подбор инструментов');
  const h=document.createElement('h3');h.textContent='Инструменты для вашей задачи';
- const v=document.createElement('small');v.className='course-ai-version';v.textContent='ИИ-поиск V1.0 · 06.11.2026';
+ const v=document.createElement('small');v.className='course-ai-version';v.textContent='ИИ-поиск V1.0.1 · 06.11.2026';
  status=document.createElement('p');status.className='course-ai-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');
  challenge=document.createElement('div');challenge.className='course-ai-challenge';
  results=document.createElement('div');results.className='course-ai-results';
@@ -89,6 +89,6 @@ function mount(){
 // Until then, do not interfere with the existing local search.
 const guard=new AbortController();const timeout=window.setTimeout(()=>guard.abort(),6000);
 fetch(endpoint.replace('/api/search','/health'),{cache:'no-store',signal:guard.signal})
-.then(r=>r.ok?r.json():null).then(data=>{if(data?.configured===true&&Array.isArray(data.catalogs)&&data.catalogs.includes(scope))mount()})
+.then(r=>r.ok?r.json():null).then(data=>{if(data?.configured===true&&data?.version==='0.2.1'&&Array.isArray(data.catalogs)&&data.catalogs.includes(scope))mount()})
 .catch(()=>{}).finally(()=>window.clearTimeout(timeout));
 })();
