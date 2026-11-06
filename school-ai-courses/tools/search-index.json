@@ -10,8 +10,7 @@
       "href": "/school-ai-courses/tools/#tool-s01",
       "category": "Текст и общение, Программирование, Изображения, Агенты и автоматизация, Идеи",
       "description": "Текст и код, создание и редактирование изображений, планирование и выполнение агентных задач при наличии нужных функций",
-      "keywords": "text code media agents ideas",
-      "adult_only": false
+      "keywords": "text code media agents ideas"
     },
     {
       "id": "tool-s02",
@@ -19,8 +18,7 @@
       "href": "/school-ai-courses/tools/#tool-s02",
       "category": "Текст и общение, Каталоги и сравнение моделей",
       "description": "Несколько моделей в одном окне",
-      "keywords": "text aggregate",
-      "adult_only": false
+      "keywords": "text aggregate"
     },
     {
       "id": "tool-s03",
@@ -28,8 +26,7 @@
       "href": "/school-ai-courses/tools/#tool-s03",
       "category": "Текст и общение, Программирование",
       "description": "Тексты и код; среди актуальных моделей — GLM-5.3. Доступные функции зависят от режима и аккаунта.",
-      "keywords": "text code",
-      "adult_only": false
+      "keywords": "text code"
     },
     {
       "id": "tool-s04",
@@ -37,8 +34,7 @@
       "href": "/school-ai-courses/tools/#tool-s04",
       "category": "Текст и общение, Программирование, Изображения",
       "description": "Семейство моделей для текста, кода и изображений. Для сравнения указывай точную версию.",
-      "keywords": "text code media",
-      "adult_only": false
+      "keywords": "text code media"
     },
     {
       "id": "tool-s05",
@@ -46,8 +42,7 @@
       "href": "/school-ai-courses/tools/#tool-s05",
       "category": "Текст и общение, Поиск и исследования, Программирование, Агенты и автоматизация",
       "description": "Тексты, документы, поиск и код. Модель K3.1 Pro и лимиты могут зависеть от тарифа.",
-      "keywords": "text search code agents",
-      "adult_only": false
+      "keywords": "text search code agents"
     },
     {
       "id": "tool-s06",
@@ -55,8 +50,7 @@
       "href": "/school-ai-courses/tools/#tool-s06",
       "category": "Текст и общение, Изображения, Поиск и исследования, Агенты и автоматизация",
       "description": "MiMo Chat и мультимодальные модели, включая MiMo-V2.6-Pro. Вход и лимиты зависят от условий сервиса.",
-      "keywords": "text media search agents",
-      "adult_only": false
+      "keywords": "text media search agents"
     },
     {
       "id": "tool-s07",
@@ -64,8 +58,7 @@
       "href": "/school-ai-courses/tools/#tool-s07",
       "category": "Программирование, Агенты и автоматизация, Изображения",
       "description": "Модель для кода, визуального анализа и многошаговых задач в MiniMax Code; доступность зависит от аккаунта.",
-      "keywords": "code agents media",
-      "adult_only": false
+      "keywords": "code agents media"
     },
     {
       "id": "tool-s08",
@@ -73,8 +66,7 @@
       "href": "/school-ai-courses/tools/#tool-s08",
       "category": "Текст и общение, Поиск и исследования, Изображения, Видео, Редактирование, Программирование",
       "description": "Один сервис — несколько режимов",
-      "keywords": "text search media video edit code",
-      "adult_only": false
+      "keywords": "text search media video edit code"
     },
     {
       "id": "tool-s09",
@@ -82,8 +74,7 @@
       "href": "/school-ai-courses/tools/#tool-s09",
       "category": "Поиск и исследования, Текст и общение, Агенты и автоматизация",
       "description": "Поиск с источниками; режим Computer выполняет многошаговые задачи и создаёт готовые материалы",
-      "keywords": "search text agents",
-      "adult_only": false
+      "keywords": "search text agents"
     },
     {
       "id": "tool-s10",
@@ -91,8 +82,7 @@
       "href": "/school-ai-courses/tools/#tool-s10",
       "category": "Идеи, Изображения, Видео, Редактирование",
       "description": "Идеи, изображения, видео и правка; лимит бесплатных генераций зависит от модели",
-      "keywords": "ideas media video edit",
-      "adult_only": false
+      "keywords": "ideas media video edit"
     },
     {
       "id": "tool-s11",
@@ -100,8 +90,7 @@
       "href": "/school-ai-courses/tools/#tool-s11",
       "category": "Идеи, Изображения, Видео, Редактирование",
       "description": "Визуальные идеи, изображения, видео и работа в реальном времени",
-      "keywords": "ideas media video edit",
-      "adult_only": false
+      "keywords": "ideas media video edit"
     },
     {
       "id": "tool-s12",
@@ -109,8 +98,7 @@
       "href": "/school-ai-courses/tools/#tool-s12",
       "category": "Идеи",
       "description": "Доска для мозгового штурма и сбора идей. Ссылка открывает доску для совместной работы.",
-      "keywords": "ideas",
-      "adult_only": false
+      "keywords": "ideas"
     },
     {
       "id": "tool-s13",
@@ -118,8 +106,7 @@
       "href": "/school-ai-courses/tools/#tool-s13",
       "category": "Изображения, Видео, Редактирование",
       "description": "Изображения и видео из текста, кадров и референсов",
-      "keywords": "media video edit",
-      "adult_only": false
+      "keywords": "media video edit"
     },
     {
       "id": "tool-s14",
@@ -127,8 +114,7 @@
       "href": "/school-ai-courses/tools/#tool-s14",
       "category": "Изображения",
       "description": "Изображения и дизайн",
-      "keywords": "media",
-      "adult_only": false
+      "keywords": "media"
     },
     {
       "id": "tool-s15",
@@ -136,8 +122,7 @@
       "href": "/school-ai-courses/tools/#tool-s15",
       "category": "Видео",
       "description": "Видео из текста и изображений",
-      "keywords": "video",
-      "adult_only": false
+      "keywords": "video"
     },
     {
       "id": "tool-s16",
@@ -145,8 +130,7 @@
       "href": "/school-ai-courses/tools/#tool-s16",
       "category": "Каталоги и сравнение моделей",
       "description": "Сравнение моделей на одном запросе",
-      "keywords": "aggregate",
-      "adult_only": true
+      "keywords": "aggregate"
     },
     {
       "id": "tool-s17",
@@ -154,8 +138,7 @@
       "href": "/school-ai-courses/tools/#tool-s17",
       "category": "Каталоги и сравнение моделей, Поиск и исследования",
       "description": "Рейтинг моделей; методика и набор сравниваемых данных ограничены.",
-      "keywords": "aggregate search",
-      "adult_only": false
+      "keywords": "aggregate search"
     },
     {
       "id": "tool-s18",
@@ -163,8 +146,7 @@
       "href": "/school-ai-courses/tools/#tool-s18",
       "category": "Каталоги и сравнение моделей, Программирование",
       "description": "Каталог моделей и единый API",
-      "keywords": "aggregate code",
-      "adult_only": false
+      "keywords": "aggregate code"
     },
     {
       "id": "tool-s19",
@@ -172,8 +154,7 @@
       "href": "/school-ai-courses/tools/#tool-s19",
       "category": "Каталоги и сравнение моделей, Программирование",
       "description": "API-шлюз для разработчиков, не обычный школьный чат",
-      "keywords": "aggregate code",
-      "adult_only": false
+      "keywords": "aggregate code"
     },
     {
       "id": "tool-s20",
@@ -181,8 +162,7 @@
       "href": "/school-ai-courses/tools/#tool-s20",
       "category": "Каталоги и сравнение моделей, Программирование",
       "description": "Рейтинг моделей и инструменты разработки",
-      "keywords": "aggregate code",
-      "adult_only": false
+      "keywords": "aggregate code"
     },
     {
       "id": "tool-s21",
@@ -190,8 +170,7 @@
       "href": "/school-ai-courses/tools/#tool-s21",
       "category": "Каталоги и сравнение моделей, Программирование",
       "description": "API для разработчиков; пробные вызовы и дальнейшие условия отличаются",
-      "keywords": "aggregate code",
-      "adult_only": false
+      "keywords": "aggregate code"
     },
     {
       "id": "tool-s22",
@@ -199,8 +178,7 @@
       "href": "/school-ai-courses/tools/#tool-s22",
       "category": "Каталоги и сравнение моделей, Изображения",
       "description": "Сравнение vision-моделей",
-      "keywords": "aggregate media",
-      "adult_only": false
+      "keywords": "aggregate media"
     },
     {
       "id": "tool-s23",
@@ -208,8 +186,7 @@
       "href": "/school-ai-courses/tools/#tool-s23",
       "category": "Каталоги и сравнение моделей, Текст и общение, Изображения",
       "description": "Каталог моделей и ботов",
-      "keywords": "aggregate text media",
-      "adult_only": false
+      "keywords": "aggregate text media"
     },
     {
       "id": "tool-s24",
@@ -217,8 +194,7 @@
       "href": "/school-ai-courses/tools/#tool-s24",
       "category": "Каталоги и сравнение моделей, Текст и общение, Программирование",
       "description": "Открытые модели и inference-провайдеры",
-      "keywords": "aggregate text code",
-      "adult_only": false
+      "keywords": "aggregate text code"
     },
     {
       "id": "tool-s25",
@@ -226,8 +202,7 @@
       "href": "/school-ai-courses/tools/#tool-s25",
       "category": "Каталоги и сравнение моделей, Текст и общение, Программирование, Изображения",
       "description": "Несколько моделей рядом для сравнения",
-      "keywords": "aggregate text code media",
-      "adult_only": false
+      "keywords": "aggregate text code media"
     },
     {
       "id": "tool-s26",
@@ -235,8 +210,7 @@
       "href": "/school-ai-courses/tools/#tool-s26",
       "category": "Текст и общение, Программирование, Поиск и исследования, Агенты и автоматизация",
       "description": "Многошаговые задачи и работа с кодом в режимах Work и Code",
-      "keywords": "text code search agents",
-      "adult_only": false
+      "keywords": "text code search agents"
     },
     {
       "id": "tool-s27",
@@ -244,8 +218,7 @@
       "href": "/school-ai-courses/tools/#tool-s27",
       "category": "Текст и общение, Программирование, Агенты и автоматизация",
       "description": "Тексты, программирование и анализ; Claude Cowork выполняет многошаговые задачи с файлами и подключёнными инструментами",
-      "keywords": "text code agents",
-      "adult_only": true
+      "keywords": "text code agents"
     },
     {
       "id": "tool-s28",
@@ -253,8 +226,7 @@
       "href": "/school-ai-courses/tools/#tool-s28",
       "category": "Текст и общение, Поиск и исследования, Изображения, Агенты и автоматизация",
       "description": "Общение, поиск, объяснения и работа с изображениями",
-      "keywords": "text search media agents",
-      "adult_only": false
+      "keywords": "text search media agents"
     },
     {
       "id": "tool-s29",
@@ -262,8 +234,7 @@
       "href": "/school-ai-courses/tools/#tool-s29",
       "category": "Поиск и исследования, Текст и общение",
       "description": "Ответы по научным публикациям со ссылками на исследования",
-      "keywords": "search text",
-      "adult_only": false
+      "keywords": "search text"
     },
     {
       "id": "tool-s30",
@@ -271,8 +242,7 @@
       "href": "/school-ai-courses/tools/#tool-s30",
       "category": "Изображения, Идеи",
       "description": "Генерация картинок, афиш и надписей на изображениях",
-      "keywords": "media ideas",
-      "adult_only": false
+      "keywords": "media ideas"
     },
     {
       "id": "tool-s31",
@@ -280,8 +250,7 @@
       "href": "/school-ai-courses/tools/#tool-s31",
       "category": "Изображения, Идеи",
       "description": "Иллюстрации, персонажи и графика для проектов",
-      "keywords": "media ideas",
-      "adult_only": false
+      "keywords": "media ideas"
     },
     {
       "id": "tool-s32",
@@ -289,8 +258,7 @@
       "href": "/school-ai-courses/tools/#tool-s32",
       "category": "Видео, Изображения",
       "description": "Видео и движение по тексту или изображению",
-      "keywords": "video media",
-      "adult_only": false
+      "keywords": "video media"
     },
     {
       "id": "tool-s33",
@@ -298,8 +266,7 @@
       "href": "/school-ai-courses/tools/#tool-s33",
       "category": "Видео, Редактирование",
       "description": "Генерация и обработка коротких видеосцен",
-      "keywords": "video edit",
-      "adult_only": false
+      "keywords": "video edit"
     },
     {
       "id": "tool-s34",
@@ -307,8 +274,7 @@
       "href": "/school-ai-courses/tools/#tool-s34",
       "category": "Программирование, Идеи, Агенты и автоматизация",
       "description": "Создание сайтов и приложений по описанию; Bolt Agent сам проверяет и дорабатывает проект",
-      "keywords": "code ideas agents",
-      "adult_only": false
+      "keywords": "code ideas agents"
     },
     {
       "id": "tool-s35",
@@ -316,8 +282,7 @@
       "href": "/school-ai-courses/tools/#tool-s35",
       "category": "Программирование, Идеи, Агенты и автоматизация",
       "description": "Прототипы сайтов и приложений; Lovable Agent планирует и выполняет многошаговые изменения",
-      "keywords": "code ideas agents",
-      "adult_only": false
+      "keywords": "code ideas agents"
     },
     {
       "id": "tool-s36",
@@ -325,8 +290,7 @@
       "href": "/school-ai-courses/tools/#tool-s36",
       "category": "Программирование, Идеи, Агенты и автоматизация",
       "description": "Веб-интерфейсы, компоненты и сайты по запросу; агент может работать с кодовой базой проекта",
-      "keywords": "code ideas agents",
-      "adult_only": false
+      "keywords": "code ideas agents"
     },
     {
       "id": "tool-s37",
@@ -334,8 +298,7 @@
       "href": "/school-ai-courses/tools/#tool-s37",
       "category": "Идеи, Презентации и схемы",
       "description": "Превращение текста в схемы, инфографику и диаграммы",
-      "keywords": "ideas slides",
-      "adult_only": false
+      "keywords": "ideas slides"
     },
     {
       "id": "tool-s38",
@@ -343,8 +306,7 @@
       "href": "/school-ai-courses/tools/#tool-s38",
       "category": "Презентации и схемы, Идеи",
       "description": "Презентации, страницы и документы с ИИ",
-      "keywords": "slides ideas",
-      "adult_only": false
+      "keywords": "slides ideas"
     },
     {
       "id": "tool-s39",
@@ -352,8 +314,7 @@
       "href": "/school-ai-courses/tools/#tool-s39",
       "category": "Музыка и озвучивание",
       "description": "Генерация песен и музыкальных фрагментов",
-      "keywords": "music",
-      "adult_only": true
+      "keywords": "music"
     },
     {
       "id": "tool-s40",
@@ -361,8 +322,7 @@
       "href": "/school-ai-courses/tools/#tool-s40",
       "category": "Музыка и озвучивание, Изображения",
       "description": "Озвучивание текстов, голоса и звуковые эффекты",
-      "keywords": "music media",
-      "adult_only": true
+      "keywords": "music media"
     },
     {
       "id": "tool-s41",
@@ -370,8 +330,7 @@
       "href": "/school-ai-courses/tools/#tool-s41",
       "category": "Текст и общение, Программирование",
       "description": "Текст и код; актуальная версия модели на 03.11.2026 — DeepSeek-V4.1-Flash-1017.",
-      "keywords": "text code",
-      "adult_only": false
+      "keywords": "text code"
     },
     {
       "id": "tool-s42",
@@ -379,8 +338,7 @@
       "href": "/school-ai-courses/tools/#tool-s42",
       "category": "Текст и общение, Изображения",
       "description": "Тексты и изображения",
-      "keywords": "text media",
-      "adult_only": false
+      "keywords": "text media"
     },
     {
       "id": "tool-s43",
@@ -388,8 +346,7 @@
       "href": "/school-ai-courses/tools/#tool-s43",
       "category": "Текст и общение, Программирование, Изображения",
       "description": "Тексты, код и изображения",
-      "keywords": "text code media",
-      "adult_only": false
+      "keywords": "text code media"
     }
   ]
 }
