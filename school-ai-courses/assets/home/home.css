@@ -18,3 +18,12 @@
 .home-calendar-happ:active{transform:translateY(0)}
 .home-calendar-happ:focus-visible{outline:3px solid #173767;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.home-calendar-happ{transition:none}.home-calendar-happ:hover{transform:none}}
+
+/* Course author link at the bottom of the school course home page. */
+.course-author-footer{max-width:1640px;margin:22px auto 0;padding:0 8px 12px;display:flex;justify-content:flex-end}
+.course-author-footer a{display:flex;align-items:center;gap:18px;padding:13px 20px;border:1px solid #ffffffb8;border-radius:18px;background:#fffdf4e8;box-shadow:0 8px 22px #26335b18;color:#101c38;transition:transform .18s ease,box-shadow .18s ease}
+.course-author-footer a:hover{transform:translateY(-2px);box-shadow:0 12px 28px #26335b24}
+.course-author-footer a:focus-visible{outline:3px solid #173767;outline-offset:4px}
+.course-author-footer a>span{font-size:13px;color:#49597d}.course-author-footer strong{font-size:15px}
+@media(max-width:600px){.course-author-footer{justify-content:center;margin-top:12px}.course-author-footer a{width:100%;justify-content:space-between;padding:12px 15px}}
+@media(prefers-reduced-motion:reduce){.course-author-footer a{transition:none}.course-author-footer a:hover{transform:none}}
