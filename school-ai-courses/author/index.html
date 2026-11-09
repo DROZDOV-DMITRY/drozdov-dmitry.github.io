@@ -17,16 +17,20 @@
 </head>
 <body>
 <div class="author-page">
-<header class="author-header">
-<a class="author-brand" href="/school-ai-courses/"><img src="/school-ai-courses/assets/home/logo-ai.webp" alt="" width="48" height="48"><span><small>Школа №14</small><strong>КУРС ИИ</strong></span></a>
-<nav aria-label="Курсы"><a href="/school-ai-courses/">Школьный курс</a><a href="/school-ai-courses/adults/">ИИ для дела</a></nav>
-</header>
+<button class="author-menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="author-menu">
+<span></span><span></span><span></span>
+</button>
+<nav class="author-menu" id="author-menu" aria-label="Навигация" hidden>
+<a href="/school-ai-courses/">Школьный курс</a>
+<a href="/school-ai-courses/adults/">ИИ для дела</a>
+<a href="https://drozdov-dmitry.github.io/ai-portfolio/" target="_blank" rel="noopener noreferrer">Мои разработки и ИИ-агенты ↗</a>
+</nav>
 <main>
 <section class="author-hero" aria-labelledby="author-name">
 <div class="author-copy">
 <p class="author-eyebrow">АВТОР КУРСОВ · РАЗРАБОТЧИК ИИ-АГЕНТОВ</p>
 <h1 id="author-name">Дмитрий<br><em>Дроздов</em></h1>
-<p class="author-lead">Я создаю ИИ-агентов и цифровые инструменты для конкретных задач.</p>
+<p class="author-lead">Я создаю ИИ-агентов и цифровые инструменты для конкретных задач</p>
 <p class="author-description">В курсах показываю, как работать с ИИ осмысленно: сформулировать задачу, выбрать подходящий инструмент, проверить ответ и применить результат.</p>
 <a class="author-portfolio" href="https://drozdov-dmitry.github.io/ai-portfolio/" target="_blank" rel="noopener noreferrer">Мои разработки и ИИ-агенты </a>
 </div>
@@ -40,5 +44,28 @@
 <a href="/school-ai-courses/adults/">Перейти к курсу «ИИ для дела» ↗</a>
 </footer>
 </div>
+<script>
+(() => {
+  const button = document.querySelector(".author-menu-toggle");
+  const menu = document.getElementById("author-menu");
+  if (!button || !menu) return;
+  function setOpen(open) {
+    menu.hidden = !open;
+    button.setAttribute("aria-expanded", String(open));
+    button.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
+  }
+  button.addEventListener("click", () => setOpen(menu.hidden));
+  menu.querySelectorAll("a").forEach(link => link.addEventListener("click", () => setOpen(false)));
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      setOpen(false);
+      button.focus();
+    }
+  });
+  document.addEventListener("click", event => {
+    if (!menu.hidden && !menu.contains(event.target) && !button.contains(event.target)) setOpen(false);
+  });
+})();
+</script>
 </body>
 </html>
