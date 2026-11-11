@@ -60,6 +60,23 @@ h1 em{color:var(--accent);font-weight:400}
 @media(max-width:650px){.page{background:radial-gradient(ellipse at 45% 29%,#dce8dc 0,#e9eee5 24%,transparent 54%),var(--paper)}.menu-button{top:16px;right:16px;width:44px;height:44px}.menu{top:68px;right:16px}.hero{min-height:0;padding:0 18px}.portrait-stage{display:none}.copy{width:100%;padding:108px 0 24px;background:none}.eyebrow{margin-bottom:18px;font-size:9px}h1{font-size:clamp(58px,15vw,82px)}.lead{margin-top:19px;font-size:21px}.description{font-size:14px;line-height:1.7}.work-links{width:calc(100% - 32px);margin:16px auto 0;padding:0 0 36px;grid-template-columns:1fr 1fr;gap:8px}.work-card{min-height:140px;padding:14px;border-radius:12px}.work-card strong{font-size:16px}.work-card p{font-size:13px}.work-card span{font-size:13px}}
 @media(max-width:380px){.work-links{grid-template-columns:1fr}.work-card{min-height:auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.work-card,.menu-button span{transition:none}}
+
+/* Zoom-safe flow: text determines hero height; destination cards never cover it. */
+@media (min-width:651px){
+  .hero{min-height:calc(100svh - clamp(150px,17vh,190px));}
+  .copy{padding-bottom:clamp(52px,6vh,80px);}
+  .work-links{margin:0 auto;padding:0 0 clamp(72px,9vh,120px);}
+}
+@media (min-width:651px) and (max-width:900px){
+  .hero{min-height:calc(100svh - clamp(120px,15vh,165px));}
+  .copy{padding-bottom:clamp(44px,6vh,68px);}
+  .work-links{margin:0 auto;}
+}
+@media (max-width:650px){
+  .hero{min-height:0;}
+  .copy{padding-bottom:24px;}
+  .work-links{margin:16px auto 0;padding:0 0 36px;}
+}
 </style>
 </head>
 <body>
