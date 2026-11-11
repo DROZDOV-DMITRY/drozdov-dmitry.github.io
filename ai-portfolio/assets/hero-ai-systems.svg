@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 760" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">Сеть интеллектуальных систем</title>
+<desc id="desc">Абстрактная схема ИИ-агентов, связанных с центральным вычислительным узлом</desc>
+<defs>
+ <radialGradient id="a" cx="0" cy="0" r="1" gradientTransform="matrix(0 420 -420 0 365 360)" gradientUnits="userSpaceOnUse"><stop stop-color="#9FE2D0" stop-opacity=".22"/><stop offset="1" stop-color="#9FE2D0" stop-opacity="0"/></radialGradient>
+ <linearGradient id="b" x1="184" x2="559" y1="142" y2="598" gradientUnits="userSpaceOnUse"><stop stop-color="#A8E5D5" stop-opacity=".62"/><stop offset="1" stop-color="#6CB9A8" stop-opacity=".08"/></linearGradient>
+ <linearGradient id="c" x1="282" x2="441" y1="252" y2="469" gradientUnits="userSpaceOnUse"><stop stop-color="#D7FFF1" stop-opacity=".95"/><stop offset=".45" stop-color="#9FE2D0" stop-opacity=".55"/><stop offset="1" stop-color="#3F8A79" stop-opacity=".24"/></linearGradient>
+ <filter id="glow" width="2" height="2" x="-.5" y="-.5"><feGaussianBlur stdDeviation="22"/></filter>
+ <filter id="soft" width="1.5" height="1.5" x="-.25" y="-.25"><feGaussianBlur stdDeviation="8"/></filter>
+</defs>
+<circle cx="365" cy="360" r="350" fill="url(#a)"/>
+<circle cx="365" cy="360" r="267" stroke="url(#b)" stroke-opacity=".3"/>
+<circle cx="365" cy="360" r="211" stroke="url(#b)" stroke-opacity=".44" stroke-dasharray="2 11"/>
+<circle cx="365" cy="360" r="151" stroke="#A8E5D5" stroke-opacity=".13"/>
+<path d="M365 360 172 202m193 158 377-29M365 360l172 205M365 360 168 546m197-186 6-294m-6 294-12 339" stroke="url(#b)" stroke-width="1.5"/>
+<path d="M365 360 172 202m193 158 377-29M365 360l172 205M365 360 168 546m197-186 6-294m-6 294-12 339" stroke="#9FE2D0" stroke-opacity=".12" stroke-width="8" filter="url(#soft)"/>
+<circle cx="365" cy="360" r="103" fill="#9FE2D0" fill-opacity=".13" filter="url(#glow)"/>
+<circle cx="365" cy="360" r="78" fill="url(#c)" fill-opacity=".17" stroke="#B7F1E0" stroke-opacity=".75" stroke-width="1.5"/>
+<circle cx="365" cy="360" r="61" stroke="#D7FFF1" stroke-opacity=".2"/>
+<path d="M365 317c-18 0-33 15-33 33v20c0 18 15 33 33 33s33-15 33-33v-20c0-18-15-33-33-33Z" stroke="#C9F6E9" stroke-width="2"/>
+<path d="M351 348h28m-28 15h28m-28 15h17" stroke="#D7FFF1" stroke-linecap="round" stroke-width="3"/>
+<g fill="#C9F6E9" stroke="#17221F" stroke-width="8">
+<circle cx="172" cy="202" r="15"/><circle cx="542" cy="331" r="15"/><circle cx="537" cy="565" r="15"/><circle cx="168" cy="546" r="15"/><circle cx="371" cy="66" r="15"/><circle cx="353" cy="697" r="15"/>
+</g>
+<g fill="#A8E5D5" fill-opacity=".13" stroke="#A8E5D5" stroke-opacity=".65">
+<rect x="69" y="150" width="112" height="75" rx="15" transform="rotate(-8 69 150)"/>
+<rect x="527" y="253" width="118" height="78" rx="15" transform="rotate(5 527 253)"/>
+<rect x="467" y="570" width="120" height="78" rx="15" transform="rotate(-13 467 570)"/>
+</g>
+<g stroke="#B7F1E0" stroke-linecap="round" stroke-opacity=".8" stroke-width="2">
+<path d="m94 176 38-5m-35 18 54-7m-37 20 25-3M551 279l56 5m-53 12 34 3m-34 10 46 4m-79 285 36-8m-31 20 51-11"/>
+</g>
+<g fill="#D5F7EC" fill-opacity=".8"><circle cx="110" cy="420" r="3"/><circle cx="568" cy="162" r="4"/><circle cx="248" cy="650" r="3"/><circle cx="470" cy="97" r="3"/><circle cx="611" cy="464" r="2.5"/><circle cx="95" cy="622" r="3"/></g>
+</svg>
