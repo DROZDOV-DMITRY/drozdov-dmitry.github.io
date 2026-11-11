@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://drozdov-dmitry.github.io/sitemap.xml
 Sitemap: https://drozdov-dmitry.github.io/school-ai-courses/sitemap.xml
