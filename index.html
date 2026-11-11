@@ -34,7 +34,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #a85d33;outline-offset:4p
 .menu a:hover,.menu a:focus-visible{background:#e7ede5}
 .hero{position:relative;width:100%;min-height:100svh;margin:0;padding:0 clamp(24px,7vw,104px);display:block;overflow:visible}
 .portrait-stage{position:absolute;z-index:0;top:0;right:0;width:100%;height:128svh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;pointer-events:none}
-.portrait{position:absolute;z-index:0;display:block;width:auto;height:min(128svh,1240px);max-height:none;left:63%;top:-1.5vh;transform:translateX(-50%);object-fit:contain;object-position:center bottom;filter:drop-shadow(0 28px 42px #17201c38)}
+.portrait{position:absolute;z-index:0;display:block;width:min(58vw,700px);height:auto;max-width:none;max-height:none;left:64%;top:clamp(56px,7vh,96px);transform:translateX(-50%);object-fit:contain;object-position:center bottom;filter:drop-shadow(0 25px 42px #17201c40)}
 .copy{position:relative;z-index:2;width:min(480px,39vw);padding:clamp(100px,15vh,155px) 0 100px;background:linear-gradient(90deg,#f5f4eef8 0%,#f5f4eef0 86%,transparent 100%)}
 .eyebrow{display:flex;align-items:center;gap:11px;margin:0 0 26px;color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
 .eyebrow:before{content:"";width:27px;height:1px;background:var(--accent)}
@@ -42,21 +42,14 @@ h1{max-width:700px;margin:0;font-family:var(--serif);font-size:clamp(62px,8vw,11
 h1 em{color:var(--accent);font-weight:400}
 .lead{max-width:620px;margin:28px 0 0;font-size:clamp(21px,2.2vw,29px);font-weight:680;line-height:1.28;letter-spacing:-.025em}
 .description{max-width:590px;margin:19px 0 0;color:var(--muted);font-size:16px;line-height:1.78}
-.actions{position:absolute;z-index:5;top:52%;left:51%;display:flex;flex-wrap:wrap;gap:10px;margin:0;transform:translateX(-6%)}
-.button{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:0 19px;border:1px solid #bfcac1;border-radius:12px;font-family:var(--serif);font-size:16px;font-weight:600;letter-spacing:-.01em;box-shadow:0 8px 20px #17201c18;transition:transform .18s ease,background .18s ease}
-.button:hover{transform:translateY(-2px);background:#fff}
-.button.primary{border-color:var(--accent);background:var(--accent);color:white}
-.button:not(.primary){border-color:#cbd5cd;background:#f5f4eef0;color:var(--ink);backdrop-filter:blur(8px)}
-.button:not(.primary):hover{background:#fff}
-.button.primary:hover{background:#295843}
-.work-links{position:relative;z-index:4;width:min(1300px,calc(100% - 48px));margin:-180px auto 0;padding:0 0 72px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.work-links{position:relative;z-index:4;width:min(1300px,calc(100% - 48px));margin:-180px auto 0;padding:0 0 260px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .work-card{min-height:156px;padding:20px 21px;border:1px solid #cbd7ce;border-radius:16px;background:#f8f8f2e8;backdrop-filter:blur(5px);transition:transform .18s ease,background .18s ease}
 .work-card:hover{transform:translateY(-3px);background:#ffffff}
 .work-card strong{display:block;font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:-.02em}
 .work-card p{margin:9px 0 0;color:var(--muted);font-family:var(--serif);font-size:15px;line-height:1.55}
 .work-card span{display:block;margin-top:14px;color:var(--accent);font-family:var(--serif);font-size:14px;font-weight:600;letter-spacing:.01em}
-@media(max-width:900px){.copy{width:min(500px,49vw);padding-top:110px}.portrait{left:65%;height:118svh}.actions{left:52%;top:62%}.work-links{grid-template-columns:repeat(2,1fr);margin-top:-135px}}
-@media(max-width:650px){.page{background:radial-gradient(ellipse at 45% 29%,#dce8dc 0,#e9eee5 24%,transparent 54%),var(--paper)}.menu-button{top:16px;right:16px;width:44px;height:44px}.menu{top:68px;right:16px}.hero{min-height:940px;padding:0 18px}.portrait-stage{height:760px}.portrait{height:760px;left:50%;top:-10px}.copy{width:100%;padding:478px 0 18px;background:linear-gradient(180deg,#f5f4ee00 0,#f5f4eef0 80px,var(--paper) 100%)}.eyebrow{margin-bottom:18px;font-size:9px}h1{font-size:clamp(58px,15vw,82px)}.lead{margin-top:19px;font-size:21px}.description{font-size:14px;line-height:1.7}.actions{top:390px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 24px);gap:8px}.button{min-height:46px;padding-inline:13px;font-size:15px}.work-links{width:calc(100% - 32px);margin-top:-48px;padding-bottom:36px;grid-template-columns:1fr 1fr;gap:8px}.work-card{min-height:140px;padding:14px;border-radius:12px}.work-card strong{font-size:16px}.work-card p{font-size:13px}.work-card span{font-size:13px}}
+@media(max-width:900px){.copy{width:min(460px,47vw);padding-top:clamp(100px,13vh,140px)}.portrait{left:67%;width:min(62vw,620px);top:clamp(62px,7vh,104px)}.work-links{grid-template-columns:repeat(2,1fr);margin-top:-135px}}
+@media(max-width:650px){.page{background:radial-gradient(ellipse at 45% 29%,#dce8dc 0,#e9eee5 24%,transparent 54%),var(--paper)}.menu-button{top:16px;right:16px;width:44px;height:44px}.menu{top:68px;right:16px}.hero{min-height:1120px;padding:0 18px}.portrait-stage{height:1020px}.portrait{width:min(124vw,610px);left:50%;top:48px}.copy{width:100%;padding:500px 0 24px;background:linear-gradient(180deg,#f5f4ee00 0,#f5f4eef4 90px,var(--paper) 100%)}.eyebrow{margin-bottom:18px;font-size:9px}h1{font-size:clamp(58px,15vw,82px)}.lead{margin-top:19px;font-size:21px}.description{font-size:14px;line-height:1.7}.work-links{width:calc(100% - 32px);margin-top:-170px;padding-bottom:36px;grid-template-columns:1fr 1fr;gap:8px}.work-card{min-height:140px;padding:14px;border-radius:12px}.work-card strong{font-size:16px}.work-card p{font-size:13px}.work-card span{font-size:13px}}
 @media(max-width:380px){.work-links{grid-template-columns:1fr}.work-card{min-height:auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.work-card,.menu-button span{transition:none}}
 </style>
@@ -79,7 +72,7 @@ h1 em{color:var(--accent);font-weight:400}
 <p class="lead">Разрабатываю ИИ-агентов и образовательные решения для практических задач</p>
 <p class="description">Создаю цифровые инструменты и курсы, исследую, как встроить искусственный интеллект в работу ученика, преподавателя и школы — с понятной задачей, проверкой результата и вниманием к реальным условиям</p>
 </div>
-<div class="actions"><a class="button primary" href="/ai-portfolio/">Мои разработки</a><a class="button" href="/school-ai-ecosystem/">Наука</a></div>
+
 </section>
 <section class="work-links" aria-label="Чем я занимаюсь">
 <a class="work-card" href="/ai-portfolio/"><strong>Мои разработки</strong><p>Каталог созданных ИИ-агентов и прикладных решений</p><span>Открыть каталог</span></a>
