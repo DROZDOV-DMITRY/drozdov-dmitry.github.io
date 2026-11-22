@@ -5,24 +5,9 @@
   const home = path === ROOT;
 
   const AI_SERVICES = [
-    {
-      id: 'duck',
-      name: 'Duck.ai',
-      note: 'быстрый AI-чат',
-      url: 'https://duck.ai/'
-    },
-    {
-      id: 'deepseek',
-      name: 'DeepSeek',
-      note: 'чат · тексты и код',
-      url: 'https://chat.deepseek.com/'
-    },
-    {
-      id: 'zai',
-      name: 'Z.ai',
-      note: 'чат · GLM',
-      url: 'https://z.ai/chat'
-    }
+    { id: 'qwen', name: 'Qwen', note: 'чат Qwen', url: 'https://chat.qwen.ai/' },
+    { id: 'perplexity', name: 'Perplexity', note: 'чат с поиском и источниками', url: 'https://www.perplexity.ai/' },
+    { id: 'gemini', name: 'Gemini', note: 'чат Gemini', url: 'https://gemini.google.com/' }
   ];
 
   function normalizeLinks(scope = document) {
@@ -102,32 +87,18 @@
 
     const services = floating ? [...AI_SERVICES].reverse() : AI_SERVICES;
     services.forEach(service => {
-      const isDeepSeek = service.id === 'deepseek';
-      const item = document.createElement(isDeepSeek ? 'a' : 'button');
-      if (isDeepSeek) {
-        item.href = service.url;
-        item.target = '_blank';
-        item.rel = 'noopener noreferrer';
-      } else {
-        item.type = 'button';
-      }
+      const item = document.createElement('a');
+      item.href = service.url;
+      item.target = '_blank';
+      item.rel = 'noopener noreferrer';
       item.className = 's14-ai-menu-item s14-ai-' + service.id;
       item.setAttribute('role', 'menuitem');
+      const mark = service.id === 'qwen' ? 'Q' : service.id === 'perplexity' ? 'P' : 'G';
       item.innerHTML =
-        '<span class="s14-ai-service-mark" aria-hidden="true">' +
-          (service.id === 'duck' ? 'D' : service.id === 'deepseek' ? 'DS' : service.id === 'zai' ? 'Z' : 'A') +
-        '</span>' +
+        '<span class="s14-ai-service-mark" aria-hidden="true">' + mark + '</span>' +
         '<span class="s14-ai-service-copy"><strong>' + service.name + '</strong><small>' + service.note + '</small></span>' +
         '<span class="s14-ai-service-arrow" aria-hidden="true">↗</span>';
-      if (isDeepSeek) {
-        // Native hyperlink: open a full new browser tab without popup API.
-        item.addEventListener('click', () => window.setTimeout(closeAiMenu, 0));
-      } else {
-        item.addEventListener('click', () => {
-          closeAiMenu();
-          openAiService(service);
-        });
-      }
+      item.addEventListener('click', () => window.setTimeout(closeAiMenu, 0));
       menu.appendChild(item);
     });
 
