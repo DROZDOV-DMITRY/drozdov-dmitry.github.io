@@ -116,7 +116,7 @@
     activeAnchor = anchor;
     activeAnchor.setAttribute('aria-expanded', 'true');
     activeMenu = createAiMenu(anchor, floating);
-    activeMenu.querySelector('button')?.focus({ preventScroll: true });
+    activeMenu.querySelector('[role="menuitem"]')?.focus({ preventScroll: true });
   }
 
   function feedbackLink(className = '') {
