@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "brand": "Курс ИИ — школьный каталог",
-  "updated_at": "2026-11-06",
+  "updated_at": "2026-11-22",
   "scope": "school",
   "products": [
     {
@@ -128,9 +128,9 @@
       "id": "tool-s16",
       "title": "Arena",
       "href": "/school-ai-courses/tools/#tool-s16",
-      "category": "Каталоги и сравнение моделей",
-      "description": "Сравнение моделей на одном запросе",
-      "keywords": "aggregate"
+      "category": "Сравнить и оценить модели",
+      "description": "Инструмент для сравнения ответов нескольких моделей на одном запросе; это не API-провайдер.",
+      "keywords": "arena сравнение моделей ответы оценка слепое голосование"
     },
     {
       "id": "tool-s17",
@@ -144,9 +144,9 @@
       "id": "tool-s18",
       "title": "OpenRouter",
       "href": "/school-ai-courses/tools/#tool-s18",
-      "category": "Каталоги и сравнение моделей, Программирование",
-      "description": "Каталог моделей и единый API",
-      "keywords": "aggregate code"
+      "category": "API и инструменты разработчика",
+      "description": "API-агрегатор для разработчиков: единый доступ к моделям разных поставщиков; модель и стоимость выбираются отдельно.",
+      "keywords": "aggregate code api gateway агрегатор маршрутизатор разработчик"
     },
     {
       "id": "tool-s19",
@@ -368,9 +368,9 @@
       "id": "tool-s46",
       "title": "Agnes AI",
       "href": "/school-ai-courses/tools/#tool-s46",
-      "category": "Текст, Изображения, Видео, API",
-      "description": "Единый доступ к текстовым, графическим и видеомоделям через веб-площадку/API.",
-      "keywords": "agnes ai текст изображения видео api модели генерация"
+      "category": "Чат, генерация контента, API",
+      "description": "Собственные модели Agnes для текста, изображений и видео; доступны веб-продукт и отдельная API-платформа.",
+      "keywords": "agnes ai текст изображения видео api модели генерация собственные модели foundation developer docs"
     },
     {
       "id": "tool-s47",
@@ -379,6 +379,62 @@
       "category": "Текст и чат, Документы, Код",
       "description": "Чат-хаб с выбором разных моделей, инструменты для документов и кода.",
       "keywords": "fulhar чат модели документы код браузерные инструменты"
+    },
+    {
+      "id": "tool-s51",
+      "title": "Tencent TokenHub",
+      "href": "/school-ai-courses/tools/#tool-s51",
+      "category": "API-платформа / агрегатор моделей",
+      "description": "Единая API-платформа Tencent Cloud для моделей компании и сторонних поставщиков.",
+      "keywords": "tencent tokenhub api разработчики модельный каталог"
+    },
+    {
+      "id": "tool-s52",
+      "title": "Alibaba Model Studio",
+      "href": "/school-ai-courses/tools/#tool-s52",
+      "category": "API Qwen и мультимодальных моделей",
+      "description": "API Qwen и мультимодальных моделей Alibaba Cloud; инструмент для разработчиков.",
+      "keywords": "alibaba model studio qwen api разработчики мультимодальность"
+    },
+    {
+      "id": "tool-s53",
+      "title": "PFN PLaMo API",
+      "href": "/school-ai-courses/tools/#tool-s53",
+      "category": "API моделей / исследование",
+      "description": "Японская платформа API PLaMo; отдельная модель Fin Beta предназначена для финансовых вопросов.",
+      "keywords": "pfn preferred networks plamo api fin beta японская модель"
+    },
+    {
+      "id": "tool-s54",
+      "title": "SB Intuitions Sarashina",
+      "href": "/school-ai-courses/tools/#tool-s54",
+      "category": "API и веб-чат / beta",
+      "description": "Японская линейка моделей: API для интеграций и отдельный веб-чат; сервис находится в бета-режиме.",
+      "keywords": "sb intuitions sarashina api beta японский чат модели"
+    },
+    {
+      "id": "tool-s55",
+      "title": "iFLYTEK Spark API",
+      "href": "/school-ai-courses/tools/#tool-s55",
+      "category": "API языковых моделей",
+      "description": "API языковых моделей Spark; Lite поддерживает бесплатное использование с квотой аккаунта.",
+      "keywords": "iflytek spark lite api разработчики apipassword"
+    },
+    {
+      "id": "tool-s56",
+      "title": "Cloudflare Workers AI",
+      "href": "/school-ai-courses/tools/#tool-s56",
+      "category": "Инфраструктура для разработчиков",
+      "description": "Запуск hosted-моделей через API в инфраструктуре Cloudflare; это инструмент для разработчика, а не обычный чат.",
+      "keywords": "cloudflare workers ai api инфраструктура разработчики neurons"
+    },
+    {
+      "id": "tool-s57",
+      "title": "Groq API",
+      "href": "/school-ai-courses/tools/#tool-s57",
+      "category": "API инференса",
+      "description": "Хостинг и API для моделей из меняющегося каталога Groq; не модель Grok и не обычный чат.",
+      "keywords": "groq api inference developer rate limits модели"
     }
   ]
 }
